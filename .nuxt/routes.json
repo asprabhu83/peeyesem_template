@@ -1,0 +1,310 @@
+[
+  {
+    "name": "404",
+    "path": "/404",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\404.vue",
+    "chunkName": "pages/404",
+    "_name": "_63599393"
+  },
+  {
+    "name": "about-us",
+    "path": "/about-us",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\about-us.vue",
+    "chunkName": "pages/about-us",
+    "_name": "_28f562da"
+  },
+  {
+    "name": "blog",
+    "path": "/blog",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\blog\\\\index.vue",
+    "chunkName": "pages/blog/index",
+    "_name": "_f81bc26a"
+  },
+  {
+    "name": "cart",
+    "path": "/cart",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\cart\\\\index.vue",
+    "chunkName": "pages/cart/index",
+    "_name": "_58d4588d"
+  },
+  {
+    "name": "coming-soon",
+    "path": "/coming-soon",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\coming-soon.vue",
+    "chunkName": "pages/coming-soon",
+    "_name": "_4ac484a2"
+  },
+  {
+    "name": "contact-us",
+    "path": "/contact-us",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\contact-us\\\\index.vue",
+    "chunkName": "pages/contact-us/index",
+    "_name": "_64b94922"
+  },
+  {
+    "name": "electronics",
+    "path": "/electronics",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\electronics.vue",
+    "chunkName": "pages/electronics",
+    "_name": "_d86cc55c"
+  },
+  {
+    "name": "faq",
+    "path": "/faq",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\faq.vue",
+    "chunkName": "pages/faq",
+    "_name": "_0f4a3671"
+  },
+  {
+    "name": "furniture",
+    "path": "/furniture",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\furniture.vue",
+    "chunkName": "pages/furniture",
+    "_name": "_4243170d"
+  },
+  {
+    "name": "login",
+    "path": "/login",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\login.vue",
+    "chunkName": "pages/login",
+    "_name": "_3ebf56f8"
+  },
+  {
+    "name": "my-account",
+    "path": "/my-account",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\my-account\\\\index.vue",
+    "chunkName": "pages/my-account/index",
+    "_name": "_08767ae1"
+  },
+  {
+    "name": "privacy-policy",
+    "path": "/privacy-policy",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\privacy-policy.vue",
+    "chunkName": "pages/privacy-policy",
+    "_name": "_577a568c"
+  },
+  {
+    "name": "register",
+    "path": "/register",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\register.vue",
+    "chunkName": "pages/register",
+    "_name": "_7fc77450"
+  },
+  {
+    "name": "shop",
+    "path": "/shop",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\shop\\\\index.vue",
+    "chunkName": "pages/shop/index",
+    "_name": "_394bd6f7"
+  },
+  {
+    "name": "vendor-dashboard",
+    "path": "/vendor-dashboard",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\vendor-dashboard\\\\index.vue",
+    "chunkName": "pages/vendor-dashboard/index",
+    "_name": "_2c38e904"
+  },
+  {
+    "name": "blog-blog-2",
+    "path": "/blog/blog-2",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\blog\\\\blog-2.vue",
+    "chunkName": "pages/blog/blog-2",
+    "_name": "_f74748c4"
+  },
+  {
+    "name": "blog-blog-3",
+    "path": "/blog/blog-3",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\blog\\\\blog-3.vue",
+    "chunkName": "pages/blog/blog-3",
+    "_name": "_f72b19c2"
+  },
+  {
+    "name": "blog-blog-single-2",
+    "path": "/blog/blog-single-2",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\blog\\\\blog-single-2.vue",
+    "chunkName": "pages/blog/blog-single-2",
+    "_name": "_5f12f89e"
+  },
+  {
+    "name": "cart-cart-2",
+    "path": "/cart/cart-2",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\cart\\\\cart-2.vue",
+    "chunkName": "pages/cart/cart-2",
+    "_name": "_6f22e1cc"
+  },
+  {
+    "name": "cart-empty-cart",
+    "path": "/cart/empty-cart",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\cart\\\\empty-cart.vue",
+    "chunkName": "pages/cart/empty-cart",
+    "_name": "_6b7869f5"
+  },
+  {
+    "name": "contact-us-contact-us-2",
+    "path": "/contact-us/contact-us-2",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\contact-us\\\\contact-us-2.vue",
+    "chunkName": "pages/contact-us/contact-us-2",
+    "_name": "_7f53db30"
+  },
+  {
+    "name": "my-account-account-details",
+    "path": "/my-account/account-details",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\my-account\\\\account-details.vue",
+    "chunkName": "pages/my-account/account-details",
+    "_name": "_1209e3f1"
+  },
+  {
+    "name": "my-account-account-info-edit",
+    "path": "/my-account/account-info-edit",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\my-account\\\\account-info-edit.vue",
+    "chunkName": "pages/my-account/account-info-edit",
+    "_name": "_df99d790"
+  },
+  {
+    "name": "my-account-addresses",
+    "path": "/my-account/addresses",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\my-account\\\\addresses.vue",
+    "chunkName": "pages/my-account/addresses",
+    "_name": "_e5925b9e"
+  },
+  {
+    "name": "my-account-checkout-1",
+    "path": "/my-account/checkout-1",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\my-account\\\\checkout-1.vue",
+    "chunkName": "pages/my-account/checkout-1",
+    "_name": "_7f993e2a"
+  },
+  {
+    "name": "my-account-checkout-2",
+    "path": "/my-account/checkout-2",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\my-account\\\\checkout-2.vue",
+    "chunkName": "pages/my-account/checkout-2",
+    "_name": "_7f7d0f28"
+  },
+  {
+    "name": "my-account-compare",
+    "path": "/my-account/compare",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\my-account\\\\compare.vue",
+    "chunkName": "pages/my-account/compare",
+    "_name": "_c9dfe898"
+  },
+  {
+    "name": "my-account-downloads",
+    "path": "/my-account/downloads",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\my-account\\\\downloads.vue",
+    "chunkName": "pages/my-account/downloads",
+    "_name": "_c4aa5a0c"
+  },
+  {
+    "name": "my-account-order-tracking",
+    "path": "/my-account/order-tracking",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\my-account\\\\order-tracking.vue",
+    "chunkName": "pages/my-account/order-tracking",
+    "_name": "_0b5f4757"
+  },
+  {
+    "name": "my-account-orders",
+    "path": "/my-account/orders",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\my-account\\\\orders.vue",
+    "chunkName": "pages/my-account/orders",
+    "_name": "_0a91d166"
+  },
+  {
+    "name": "my-account-wishlist",
+    "path": "/my-account/wishlist",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\my-account\\\\wishlist.vue",
+    "chunkName": "pages/my-account/wishlist",
+    "_name": "_9d8483f4"
+  },
+  {
+    "name": "product-product-single-2",
+    "path": "/product/product-single-2",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\product\\\\product-single-2.vue",
+    "chunkName": "pages/product/product-single-2",
+    "_name": "_6f508a56"
+  },
+  {
+    "name": "shop-shop-2",
+    "path": "/shop/shop-2",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\shop\\\\shop-2.vue",
+    "chunkName": "pages/shop/shop-2",
+    "_name": "_3e208546"
+  },
+  {
+    "name": "shop-shop-3",
+    "path": "/shop/shop-3",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\shop\\\\shop-3.vue",
+    "chunkName": "pages/shop/shop-3",
+    "_name": "_3e2e9cc7"
+  },
+  {
+    "name": "shop-shop-4",
+    "path": "/shop/shop-4",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\shop\\\\shop-4.vue",
+    "chunkName": "pages/shop/shop-4",
+    "_name": "_3e3cb448"
+  },
+  {
+    "name": "shop-shop-5",
+    "path": "/shop/shop-5",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\shop\\\\shop-5.vue",
+    "chunkName": "pages/shop/shop-5",
+    "_name": "_3e4acbc9"
+  },
+  {
+    "name": "vendor-dashboard-add-product",
+    "path": "/vendor-dashboard/add-product",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\vendor-dashboard\\\\add-product.vue",
+    "chunkName": "pages/vendor-dashboard/add-product",
+    "_name": "_95d54a22"
+  },
+  {
+    "name": "vendor-dashboard-order",
+    "path": "/vendor-dashboard/order",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\vendor-dashboard\\\\order.vue",
+    "chunkName": "pages/vendor-dashboard/order",
+    "_name": "_02ae4bfa"
+  },
+  {
+    "name": "vendor-dashboard-product",
+    "path": "/vendor-dashboard/product",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\vendor-dashboard\\\\product.vue",
+    "chunkName": "pages/vendor-dashboard/product",
+    "_name": "_d5b237ca"
+  },
+  {
+    "name": "vendor-dashboard-profile",
+    "path": "/vendor-dashboard/profile",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\vendor-dashboard\\\\profile.vue",
+    "chunkName": "pages/vendor-dashboard/profile",
+    "_name": "_0eb29856"
+  },
+  {
+    "name": "vendor-dashboard-setting",
+    "path": "/vendor-dashboard/setting",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\vendor-dashboard\\\\setting.vue",
+    "chunkName": "pages/vendor-dashboard/setting",
+    "_name": "_3272e608"
+  },
+  {
+    "name": "blog-slug",
+    "path": "/blog/:slug",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\blog\\\\_slug.vue",
+    "chunkName": "pages/blog/_slug",
+    "_name": "_fb8904fa"
+  },
+  {
+    "name": "product-id",
+    "path": "/product/:id?",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\product\\\\_id.vue",
+    "chunkName": "pages/product/_id",
+    "_name": "_1cabb940"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "J:\\\\peeyesem\\\\peeyesem_hyundai\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_16f8b16d"
+  }
+]
