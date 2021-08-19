@@ -6,19 +6,13 @@
       <form @submit.prevent="Login"
         class="
           bg-white
-          xl:w-8/12
-          2xl:w-6/12
-          flex
           items-center
           justify-center
           rounded
-          px-16
-          pt-16
-          pb-16
           mb-4
         "
       >
-        <div class="form_box  px-10 pb-16 pt-8 border-l-2 border-gainsboro">
+        <div class="form_box  px-10 pb-16 pt-8 ">
           <div class="err_box h-12">
             <div class="error py-3 text-red-500" v-if="error == true">Invalid Credentials</div>
          </div>
@@ -116,6 +110,7 @@
 
 <script>
 export default {
+  layout: 'headless-layout',
   data () {
     return {
       email: '',
