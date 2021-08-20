@@ -24,6 +24,11 @@ export default {
   */
   loading: { color: '#f79837', throttle: 200, height: '3px', css: true },
 
+
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://127.0.0.1:8000/'
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '@/assets/app.css',

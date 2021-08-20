@@ -18,6 +18,16 @@ import VueSlider from 'vue-slider-component'
 import 'vue-slider-component/theme/default.css'
 
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faUserSecret, faCloudUploadAlt, faPlus, faTrash, faTimes, faSave, faEdit, faSignOutAlt, faUserPlus, faChevronLeft, faChevronRight, faUserCircle } from '@fortawesome/free-solid-svg-icons'
+library.add(faUserSecret, faCloudUploadAlt, faPlus, faTrash, faTimes, faSave, faEdit, faSignOutAlt, faUserPlus, faChevronLeft, faChevronRight, faUserCircle)
+
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+
+
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+
 Vue.use(VueAwesomeSwiper)
 Vue.component('inner-image-zoom', InnerImageZoom)
 Vue.use(VueSidebarMenu)

@@ -6,17 +6,26 @@
       <form @submit.prevent="Login"
         class="
           bg-white
+          xl:w-8/12
+          2xl:w-6/12
+          flex
           items-center
           justify-center
           rounded
+          px-16
+          pt-16
+          pb-16
           mb-4
         "
       >
-        <div class="form_box  px-10 pb-16 pt-8 ">
+        <div class="w-1/2">
+          <img src="~assets/hello.png" alt="" />
+        </div>
+        <div class="form_box w-1/2 px-10 pb-16 pt-8 border-l-2 border-gainsboro">
           <div class="err_box h-12">
             <div class="error py-3 text-red-500" v-if="error == true">Invalid Credentials</div>
          </div>
-          <div class="mb-4 inp_box">
+          <div class="mb-4">
             <label
               class="block text-gray-700 text-sm font-bold mb-2"
               for="username"
@@ -43,7 +52,7 @@
               v-model="email"
             />
           </div>
-          <div class="mb-6 inp_box">
+          <div class="mb-6">
             <label
               class="block text-gray-700 text-sm font-bold mb-2"
               for="password"
@@ -70,7 +79,7 @@
               v-model="password"
             />
           </div>
-          <div class="flex items-center justify-between btn_box">
+          <div class="flex items-center justify-between">
             <button
               class="
                 bg-blue-500
@@ -84,8 +93,7 @@
                 focus:shadow-outline
                 login_btn
               "
-              type="button"
-              @click="Login"
+              type="submit"
             >
               Sign In
             </button>
@@ -109,8 +117,9 @@
 </template>
 
 <script>
+import axios from '~/plugins/axios'
 export default {
-  layout: 'headless-layout',
+  layout:'headless-layout',
   data () {
     return {
       email: '',
@@ -118,16 +127,16 @@ export default {
       error: false
     }
   },
-//   mounted () {
-//     if (localStorage.getItem('user_token')) {
-//       this.$router.push('/')
-//     }
-//   },
+  mounted () {
+    if (localStorage.getItem('user_token')) {
+      this.$router.push('/psm-admin/add-cars')
+    }
+  },
   methods: {
     Login () {
       var btn = document.querySelector('.login_btn')
       btn.innerHTML = 'Loading'
-      this.axios.post(process.env.VUE_APP_API_URI_PREFIX + 'api/users/login', {
+      axios.post(process.env.baseUrl + 'api/users/login', {
         email: this.email,
         password: this.password
       })
@@ -150,7 +159,7 @@ export default {
           localStorage.setItem('user_role', userRole)
           localStorage.setItem('email', email)
           if (token !== '') {
-            this.$router.push('/')
+            this.$router.push('/psm-admin/add-cars')
           }
           btn.innerHTML = 'Sign In'
         })
@@ -165,32 +174,6 @@ export default {
 </script>
 <style scoped>
 form {
-  width: 35%;
-  margin: 80px auto;
-  text-align: center;
   box-shadow: 0 2px 10px 4px rgb(0 0 0/15%);
-  padding:30px;
 }
-.form_box{
-  padding: 30px;
-  padding-bottom:0 ;
-}
-.inp_box label{
-  width: 80%; 
-  text-align: start;
-}
-.inp_box input{
-  width: 80%;
-}
-.btn_box{
-  width: 80%;
-  margin: 30px auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.btn_box button{
-  background: black;
-}
-
 </style>
