@@ -201,7 +201,7 @@ export default {
       this.$el.setAttribute('data-car-id', id)
     },
     Edit (id) {
-      this.$router.push('/edit-cars?car_id=' + id)
+      this.$router.push('/psm-admin/edit-cars?car_id=' + id)
     },
     Delete () {
       var id = this.$el.getAttribute('data-car-id')

@@ -1,6 +1,6 @@
 <template>
   <section>
-      <div class="container flex justify-evenly mx-auto mt-24">
+      <div class="container flex justify-evenly mx-auto my-24">
         <div class="w-1/4 ">
             <div class="tab_box px-3 py-6 ">
               <h5 class="font-bold tab_item tab_item1 text-md my-2 flex items-center justify-between  active  px-2 py-1" data-target="1" >Car Details <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
@@ -1015,15 +1015,11 @@ export default {
     }
   },
   mounted () {
+    this.EditCars()
     this.GetModels()
-    if(!localStorage.getItem('user_token')){
-        this.$router.push('/psm-admin')
-    }
-    
   },
   methods: {
     previewFiles (event) {
-      console.log(document.querySelector('#modelImage').value)
       var label = document.querySelector('.' + event.target.getAttribute('data-file-target'))
       var fileLength = event.target.files.length
       if (fileLength === 0) {
@@ -1102,6 +1098,20 @@ export default {
           console.log(error)
         })
     },
+    EditCars () {
+      var id = this.$route.query.car_id
+      axios
+        .get(process.env.baseUrl + 'api/show/car/' + id)
+        .then((response) => {
+          this.carId = response.data.car.id
+          this.modelName = response.data.car.car_title
+          this.modelImage = response.data.car.car_image
+          this.modelType = response.data.car.car_type_id
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    },
     AddCars (e) {
       var target = e.target.getAttribute('data-current')
       var next = e.target.getAttribute('data-next')
@@ -1111,8 +1121,8 @@ export default {
       if (target === '1') {
         axios
           .post(process.env.baseUrl + 'api/store/car', {
+            id: this.carId,
             car_title: this.modelName,
-            car_image: this.modelImage,
             car_type_id: this.modelType
           })
           .then((response) => {
@@ -1385,7 +1395,7 @@ export default {
           })
           .then((response) => {
             btn.innerHTML = 'submit'
-            this.$router.push('/psm-admin/manage-cars')
+            this.$router.push('/cars-list')
           })
           .catch((error) => {
             btn.innerHTML = 'submit'
