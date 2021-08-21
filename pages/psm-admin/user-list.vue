@@ -9,7 +9,7 @@
    </div>
    
    <div class="w-8/12 mx-auto mt-14 flex items-center justify-between">
-     <input class="shadow appearance-none border rounded w-1/3 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" v-model="searchQuery" placeholder="Search by name" />
+     <input class="shadow-md appearance-none border rounded w-1/3 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" v-model="searchQuery" placeholder="Search by name" />
      <button @click="addUserDialog = true" class=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 ml-5 px-4 rounded focus:outline-none focus:shadow-outline">Add User <font-awesome-icon icon="user-plus"  size="1x" class="text-white ml-2 cursor-pointer"  /></button>
    </div>
   <div class="w-8/12 mx-auto mt-5">
@@ -18,7 +18,7 @@
         <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
           <div
             class="
-              shadow
+              shadow-md
               overflow-hidden
               border-b border-gray-200
               sm:rounded-lg
@@ -252,7 +252,7 @@
                     </label>
                     <input
                     class="
-                        shadow
+                        shadow-md
                         appearance-none
                         border
                         rounded
@@ -279,7 +279,7 @@
                     </label>
                     <input
                     class="
-                        shadow
+                        shadow-md
                         appearance-none
                         border
                         rounded
@@ -306,7 +306,7 @@
                     </label>
                     <select
                     class="
-                        shadow
+                        shadow-md
                         appearance-none
                         border
                         rounded
@@ -334,7 +334,7 @@
                     </label>
                     <input
                     class="
-                        shadow
+                        shadow-md
                         appearance-none
                         border
                         rounded

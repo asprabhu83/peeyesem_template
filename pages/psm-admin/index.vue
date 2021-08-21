@@ -34,7 +34,7 @@
             </label>
             <input
               class="
-                shadow
+                shadow-md
                 appearance-none
                 border
                 rounded
@@ -61,7 +61,7 @@
             </label>
             <input
               class="
-                shadow
+                shadow-md
                 appearance-none
                 border
                 rounded

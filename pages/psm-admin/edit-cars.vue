@@ -1123,6 +1123,7 @@ export default {
           .post(process.env.baseUrl + 'api/store/car', {
             id: this.carId,
             car_title: this.modelName,
+            car_image: this.modelImage,
             car_type_id: this.modelType
           })
           .then((response) => {
@@ -1134,6 +1135,7 @@ export default {
             document.querySelector('.tab_item' + next).classList.add('active')
           })
           .catch((error) => {
+            alert(this.modelImage)
             btn.innerHTML = 'submit'
             this.error = true
             console.log(error)

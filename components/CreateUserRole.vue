@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="pb-5 pt-0 px-7 mx-auto login_full_scrn">
+    <div class="pb-3 pt-0 px-7 mx-auto login_full_scrn">
       <form class="bg-white rounded mb-4" >
         <div class="form_box">
           <div class="err_box ">
@@ -20,7 +20,7 @@
             </label>
             <input
               class="
-                shadow
+                shadow-md
                 appearance-none
                 border
                 rounded
@@ -47,7 +47,7 @@
             </label>
             <input
               class="
-                shadow
+                shadow-md
                 appearance-none
                 border
                 rounded
