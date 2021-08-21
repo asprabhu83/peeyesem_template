@@ -1023,7 +1023,6 @@ export default {
   },
   methods: {
     previewFiles (event) {
-      console.log(document.querySelector('#modelImage').value)
       var label = document.querySelector('.' + event.target.getAttribute('data-file-target'))
       var fileLength = event.target.files.length
       if (fileLength === 0) {
