@@ -968,6 +968,7 @@
 import axios from '~/plugins/axios'
 export default {
   layout:'admin-header-layout',
+
   data () {
     return {
       postTable: [],
@@ -1019,7 +1020,6 @@ export default {
     if(!localStorage.getItem('user_token')){
         this.$router.push('/psm-admin')
     }
-    
   },
   methods: {
     previewFiles (event) {

@@ -37,6 +37,7 @@
                       <nuxt-link to="/psm-admin/user-role-list" class="text-gray-700 block px-4 py-3 text-sm  dropdown_menu_item" role="menuitem" tabindex="-1" id="menu-item-2">Manage UserRole</nuxt-link>
                       <nuxt-link to="/psm-admin/add-cars" class="text-gray-700 block px-4 py-3 text-sm  dropdown_menu_item" role="menuitem" tabindex="-1" id="menu-item-2">Add Cars</nuxt-link>
                       <nuxt-link to="/psm-admin/manage-cars" class="text-gray-700 block px-4 py-3 text-sm  dropdown_menu_item" role="menuitem" tabindex="-1" id="menu-item-2">Manage Cars</nuxt-link>
+                      <nuxt-link to="/psm-admin/add-menu" class="text-gray-700 block px-4 py-3 text-sm  dropdown_menu_item" role="menuitem" tabindex="-1" id="menu-item-2">Add Menus</nuxt-link>
                     </div>
                   </div>
                 </div>
