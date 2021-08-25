@@ -226,5 +226,16 @@ export default {
 .dialog_content {
   width: 500px;
   max-width: 100%;
+  animation: fadeDown .3s;
+}
+@keyframes fadeDown {
+  from{
+    opacity: 0;
+    transform: scale(0);
+  }
+  to{
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 </style>

@@ -63,7 +63,7 @@
               <div class="menu_sec my-3 p-2">
                     <div class="border border-black flex items-center cursor-pointer justify-between p-2 my-3"  v-for="title in titles" :key="title.id"  >
                         {{title.menu_type}}
-                        <font-awesome-icon icon="trash"  size="1x" class="text-red-600 mx-2 cursor-pointer"/>
+                        <font-awesome-icon icon="trash"  size="1x" class="text-red-600 mx-2 cursor-pointer" @click="Delete(title.id)"/>
                     </div>
               </div>
             </div>
@@ -211,7 +211,7 @@ export default {
           axios.get(process.env.baseUrl + 'api/menu/index')
           .then((res)=>{
               this.titles = res.data.title
-              this.menus = res.data.menu
+              this.menus = res.data.menu 
               console.log(res)
           }).catch((err)=>{
               console.log(err)
@@ -242,6 +242,15 @@ export default {
           }else{
               btn.nextElementSibling.classList.add('hidden')
           }
+      },
+      Delete(id){
+          axios.delete(process.env.baseUrl + 'api/menu/delete/' + id)
+          .then((res)=>{
+              console.log(res)
+              this.GetMenu()
+          }).catch((err)=>{
+              console.log(err)
+          })
       }
     }
 }
