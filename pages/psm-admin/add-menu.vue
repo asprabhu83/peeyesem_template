@@ -62,9 +62,9 @@
               </div>
               <div class="menu_sec my-3 p-2">
                     <div   v-for="(title, index) in titles" :key="title.id"  >
-                        <div class="border border-black acc_title  flex select-none items-center font-bold cursor-pointer justify-between p-2 mt-3" :class="index === 0 ? 'active': '' " @click="Toggle">
+                        <div class="border border-black acc_title  flex select-none items-center font-bold cursor-pointer justify-between p-2 mt-3" data-menu="menu" :class="index === 0 ? 'active': '' " @click="Toggle">
                             {{title.menu_type}} 
-                            <font-awesome-icon icon="trash"  size="1x" class="text-red-600 mx-2 cursor-pointer delete_icon" @click="Delete(title.id)"/>
+                            <font-awesome-icon icon="trash"   size="1x" class="text-red-600 mx-2 cursor-pointer delete_icon" @click="Delete(title.id)"/>
                         </div>
                         <div class="acc_item border border-black p-2" :class="index !== 0 ? 'hidden': '' "  >
                             <div class=" my-3 mx-2 select-none cursor-pointer" v-for="menu in title.menu_titles" :key="menu.id">
@@ -247,13 +247,15 @@ export default {
       },
       Toggle(e){
           var btn = e.target
-          
-          if(btn.nextElementSibling.classList.contains('hidden')){
+          var btn_valid = e.target.getAttribute('data-menu');
+          if(btn_valid === 'menu'){
+            if(btn.nextElementSibling.classList.contains('hidden')){
               btn.nextElementSibling.classList.remove('hidden')
               btn.classList.add('active')
-          }else{
-              btn.nextElementSibling.classList.add('hidden')
-              btn.classList.remove('active')
+            }else{
+                btn.nextElementSibling.classList.add('hidden')
+                btn.classList.remove('active')
+            }
           }
       },
       Delete(id){
