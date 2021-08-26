@@ -40,7 +40,7 @@
                 </button>
             </div>
       </div>
-       <div class="flex">
+       <div class="flex items-start">
             <div class="w-6/12 p-4 menu_box mx-5 my-16">
               <div class="flex justify-between items-center">
                   <h5 class="font-semibold">Add menus</h5>
@@ -61,9 +61,21 @@
                         Save changes</button>
               </div>
               <div class="menu_sec my-3 p-2">
-                    <div class="border border-black flex items-center cursor-pointer justify-between p-2 my-3"  v-for="title in titles" :key="title.id"  >
-                        {{title.menu_type}}
-                        <font-awesome-icon icon="trash"  size="1x" class="text-red-600 mx-2 cursor-pointer" @click="Delete(title.id)"/>
+                    <div   v-for="(title, index) in titles" :key="title.id"  >
+                        <div class="border border-black acc_title  flex select-none items-center font-bold cursor-pointer justify-between p-2 mt-3" :class="index === 0 ? 'active': '' " @click="Toggle">
+                            {{title.menu_type}} 
+                            <font-awesome-icon icon="trash"  size="1x" class="text-red-600 mx-2 cursor-pointer delete_icon" @click="Delete(title.id)"/>
+                        </div>
+                        <div class="acc_item border border-black p-2" :class="index !== 0 ? 'hidden': '' "  >
+                            <div class=" my-3 mx-2 select-none cursor-pointer" v-for="menu in title.menu_titles" :key="menu.id">
+                                <h6 class="inline-flex px-2 items-center justify-between py-2 border border-black select-none">
+                                    {{menu.menu_name}}
+                                    <!-- <font-awesome-icon icon="edit"  size="1x" class="text-green-600 ml-2  cursor-pointer "  /> -->
+                                    <font-awesome-icon icon="trash"  size="1x" class="text-red-600 ml-2 cursor-pointer "  />
+                                </h6>
+                            </div>
+                            <h6 class="p-1 my-1 select-none cursor-pointer" v-if="title.menu_titles.length === 0">Add Menus in right section -></h6>
+                        </div>
                     </div>
               </div>
             </div>
@@ -185,8 +197,7 @@ export default {
             menuName:'',
             menuLink:'',
             titles:[],
-            menus:[]
-
+            item: true
         }
     },
     mounted(){
@@ -210,8 +221,7 @@ export default {
       GetMenu(){
           axios.get(process.env.baseUrl + 'api/menu/index')
           .then((res)=>{
-              this.titles = res.data.title
-              this.menus = res.data.menu 
+              this.titles = res.data.menu
               console.log(res)
           }).catch((err)=>{
               console.log(err)
@@ -227,6 +237,7 @@ export default {
               this.menuHeading = '';
               this.menuName = '';
               this.menuLink = '';
+              this.GetMenu()
               console.log(res)
               e.target.classList.remove('loading');
           }).catch((err)=>{
@@ -235,12 +246,14 @@ export default {
           })
       },
       Toggle(e){
-          var btn = e.target;
-
+          var btn = e.target
+          
           if(btn.nextElementSibling.classList.contains('hidden')){
               btn.nextElementSibling.classList.remove('hidden')
+              btn.classList.add('active')
           }else{
               btn.nextElementSibling.classList.add('hidden')
+              btn.classList.remove('active')
           }
       },
       Delete(id){
@@ -275,6 +288,27 @@ export default {
 button.loading .spinner-border-sm{
     display: inline-block;
 }
+.acc_title.active{
+  background-color: #06b6d4;
+  color: white;
+}
 
+/* .acc_title.active .delete_icon{
+    color: white;
+} */
+.acc_item{
+    animation: fadeDown .5s;
+}
+
+@keyframes fadeDown {
+    from{
+        opacity: 1;
+        transform: scaleY(0);
+    }
+    to{
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
 
 </style>
