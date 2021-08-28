@@ -71,7 +71,7 @@
                                 <h6 class="inline-flex px-2 items-center justify-between py-2 border border-black select-none">
                                     {{menu.menu_name}}
                                     <!-- <font-awesome-icon icon="edit"  size="1x" class="text-green-600 ml-2  cursor-pointer "  /> -->
-                                    <font-awesome-icon icon="trash"  size="1x" class="text-red-600 ml-2 cursor-pointer "  />
+                                    <font-awesome-icon icon="trash"  size="1x" class="text-red-600 ml-2 cursor-pointer " @click="menuDelete(menu.id)"  />
                                 </h6>
                             </div>
                             <h6 class="p-1 my-1 select-none cursor-pointer" v-if="title.menu_titles.length === 0">Add Menus in right section -></h6>
@@ -222,7 +222,6 @@ export default {
           axios.get(process.env.baseUrl + 'api/menu/index')
           .then((res)=>{
               this.titles = res.data.menu
-              console.log(res)
           }).catch((err)=>{
               console.log(err)
           })
@@ -260,6 +259,15 @@ export default {
       },
       Delete(id){
           axios.delete(process.env.baseUrl + 'api/menu/delete/' + id)
+          .then((res)=>{
+              console.log(res)
+              this.GetMenu()
+          }).catch((err)=>{
+              console.log(err)
+          })
+      },
+      menuDelete(id){
+          axios.delete(process.env.baseUrl + 'api/menu/delete/item/' + id)
           .then((res)=>{
               console.log(res)
               this.GetMenu()
