@@ -1015,11 +1015,13 @@ export default {
 
     }
   },
-  mounted () {
-    this.GetModels()
+  beforeCreate(){
     if(!localStorage.getItem('user_token')){
         this.$router.push('/psm-admin')
     }
+  },
+  mounted () {
+    this.GetModels()
   },
   methods: {
     previewFiles (event) {

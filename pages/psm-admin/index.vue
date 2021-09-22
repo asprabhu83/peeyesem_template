@@ -127,9 +127,9 @@ export default {
       error: false
     }
   },
-  mounted () {
-    if (localStorage.getItem('user_token')) {
-      this.$router.push('/psm-admin/add-cars')
+  beforeCreate(){
+    if(localStorage.getItem('user_token')){
+        this.$router.push('/psm-admin/add-cars')
     }
   },
   methods: {
