@@ -23,8 +23,8 @@ export default {
         GetCars(){
             axios.get(process.env.baseUrl + 'api/cars/index')
             .then((response) => {
-            this.cars = response.data.cars
-            this.SingleCar()
+              this.cars = response.data.cars
+              this.SingleCar()
             })
             .catch((error) => {
             console.log(error)
@@ -35,7 +35,6 @@ export default {
               return car.id == this.$route.query.id;
             })
            this.singleCar = item
-           console.log(this.singleCar)
         }
     }
 }
