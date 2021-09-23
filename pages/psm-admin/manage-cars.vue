@@ -75,6 +75,9 @@
                 </tr>
               </thead>
               <tbody class="bg-white divide-y divide-gray-200">
+                <tr v-if="cars.length == 0" >
+                    <td class="px-6 py-4 whitespace-nowrap" colspan="4" style="text-align:center;"> No Data</td>
+                </tr>
                 <tr v-for="car in cars" :key="car.id">
                   <td class="px-6 py-4 whitespace-nowrap" >
                     <span
