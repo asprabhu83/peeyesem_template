@@ -77,6 +77,21 @@
         </div>
     </section>
 
+    <section class="my-20 cars_product_section">
+        <h2 class="text-center" >Cars Section</h2>
+        <div class="card_box flex flex-wrap mt-16 mx-auto" style="width:77%;">
+            <div class="car_box " v-for="car in cars.cars" :key="car.id">
+                <a href="#" class="text-center block my-6 px-3 cursor-pointer rounded-sm my-4" style="margin-bottom:0!important;">
+                    <img src="http://localhost:3000/_nuxt/assets/img/product-image/2.png" alt="" style="width:330px;max-height:388px;">
+                </a>
+                <div class="my-3">
+                    <div class="text-center font-medium mb-2 cursor-pointer">{{car.car_title}}</div>
+                   <div class="text-center font-medium">${{car.car_price}}</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Hot Product Area -->
     <section id="hot_Product_area" class="ptb-100">
         <div class="container">
@@ -244,6 +259,8 @@ import Timer from '../components/widgets/Timer'
 import InstagramArea from '../components/instagram/InstagramArea'
 import BlogItem1 from '~/components/blog/BlogItem1'
 
+import axios from '~/plugins/axios'
+
 export default {
     name: 'Home',
     components: {
@@ -330,6 +347,8 @@ export default {
 
         dismissCountDown: 0,
 
+        cars:[],
+
         // Todays Slider options 
         swiperOption: {
             slidesPerView: 4,
@@ -377,6 +396,7 @@ export default {
         window.scrollTo(0, 0)
 
         this.productsArray()
+        this.GetCars()
     },
     methods: {
         productsArray: function () {
@@ -403,6 +423,16 @@ export default {
         alert(item) {
             this.dismissCountDown = item
         },
+        GetCars(){
+            axios.get(process.env.baseUrl + 'api/cars/index')
+            .then((response) => {
+            this.cars = response.data
+            console.log(this.cars)
+            })
+            .catch((error) => {
+            console.log(error)
+            })
+        }
     },
 
     // Page head() Title, description for SEO 

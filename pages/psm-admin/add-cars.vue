@@ -121,7 +121,7 @@
                     />
                 </div>
                 <div class="mt-10">
-                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="1" data-next="2" @click="AddCars">submit</button>
+                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="1" data-next="2" @click="AddCars">Submit</button>
                 </div>
            </div>
            <div class="step step2">
@@ -197,7 +197,7 @@
                 </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="2" data-prev="1" @click="prevstep">Previous</button> -->
-                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="2" data-next="3" @click="AddCars">submit</button>
+                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="2" data-next="3" @click="AddCars">Submit</button>
                 </div>
            </div>
             <div class="step step3">
@@ -285,7 +285,7 @@
                 </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="3" data-prev="2" @click="prevstep">Previous</button> -->
-                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="3" data-next="4" @click="AddCars">submit</button>
+                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="3" data-next="4" @click="AddCars">Submit</button>
                 </div>
            </div>
            <div class="step step4">
@@ -321,7 +321,7 @@
                 </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="4" data-prev="3" @click="prevstep">Previous</button> -->
-                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="4" data-next="5" @click="AddCars">submit</button>
+                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="4" data-next="5" @click="AddCars">Submit</button>
                 </div>
            </div>
            <div class="step step5">
@@ -426,7 +426,7 @@
                 </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="5" data-prev="4" @click="prevstep">Previous</button> -->
-                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="5" data-next="6" @click="NextTab">submit</button>
+                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="5" data-next="6" @click="NextTab">Submit</button>
                 </div>
            </div>
            <div class="step step6">
@@ -479,7 +479,7 @@
                 </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="6" data-prev="5" @click="prevstep">Previous</button> -->
-                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="6" data-next="7" @click="NextTab">submit</button>
+                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="6" data-next="7" @click="NextTab">Submit</button>
                 </div>
            </div>
            <div class="step step7">
@@ -515,7 +515,7 @@
                 </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="7" data-prev="6" @click="prevstep">Previous</button> -->
-                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="7" data-next="8" @click="AddCars">submit</button>
+                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="7" data-next="8" @click="AddCars">Submit</button>
                 </div>
            </div>
            <div class="step step8">
@@ -620,7 +620,7 @@
                 </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="8" data-prev="7" @click="prevstep">Previous</button> -->
-                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="8" data-next="9" @click="NextTab" >submit</button>
+                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="8" data-next="9" @click="NextTab" >Submit</button>
                 </div>
            </div>
            <div class="step step9">
@@ -734,7 +734,7 @@
                 </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="9" data-prev="8" @click="prevstep">Previous</button> -->
-                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="9" data-next="10" @click="AddCars">submit</button>
+                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="9" data-next="10" @click="AddCars">Submit</button>
                 </div>
            </div>
            <div class="step step10">
@@ -796,7 +796,7 @@
                 </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="10" data-prev="9" @click="prevstep">Previous</button> -->
-                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="10" data-next="11" @click="AddCars">submit</button>
+                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="10" data-next="11" @click="AddCars">Submit</button>
                 </div>
            </div>
           <div class="step step11">
@@ -832,7 +832,7 @@
                 </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="10" data-prev="9" @click="prevstep">Previous</button> -->
-                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="11" data-next="12" @click="AddCars">submit</button>
+                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="11" data-next="12" @click="AddCars">Submit</button>
                 </div>
             </div>
           <div class="step step12">
@@ -894,7 +894,7 @@
                 </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="10" data-prev="9" @click="prevstep">Previous</button> -->
-                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="12" data-next="13" @click="AddCars">submit</button>
+                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="12" data-next="13" @click="AddCars">Submit</button>
                 </div>
             </div>
             <div class="step step13">
@@ -956,7 +956,7 @@
                 </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="10" data-prev="9" @click="prevstep">Previous</button> -->
-                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="13" @click="AddCars">submit</button>
+                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="13" @click="AddCars">Submit</button>
                 </div>
             </div>
         </div>
@@ -1117,7 +1117,7 @@ export default {
             car_type_id: this.modelType
           })
           .then((response) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             this.carId = response.data.id
             document.querySelector('.step' + target).classList.remove('active')
             document.querySelector('.step' + next).classList.add('active')
@@ -1125,7 +1125,7 @@ export default {
             document.querySelector('.tab_item' + next).classList.add('active')
           })
           .catch((error) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             this.error = true
             console.log(error)
           })
@@ -1138,7 +1138,7 @@ export default {
             overview_image: this.overviewImage
           })
           .then((response) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             this.overviewId = response.data.id
             document.querySelector('.step' + target).classList.remove('active')
             document.querySelector('.step' + next).classList.add('active')
@@ -1147,7 +1147,7 @@ export default {
             document.querySelector('.tab_item' + next).classList.add('active')
           })
           .catch((error) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             this.error = true
             console.log(error)
           })
@@ -1161,7 +1161,7 @@ export default {
             car_mileage: this.mileage
           })
           .then((response) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             document.querySelector('.step' + target).classList.remove('active')
             document.querySelector('.step' + next).classList.add('active')
 
@@ -1169,7 +1169,7 @@ export default {
             document.querySelector('.tab_item' + next).classList.add('active')
           })
           .catch((error) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             this.error = true
             console.log(error)
           })
@@ -1181,7 +1181,7 @@ export default {
             highlight_title: this.highlight
           })
           .then((response) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             this.highlightId = response.data.id
             document.querySelector('.step' + target).classList.remove('active')
             document.querySelector('.step' + next).classList.add('active')
@@ -1190,7 +1190,7 @@ export default {
             document.querySelector('.tab_item' + next).classList.add('active')
           })
           .catch((error) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             this.error = true
             console.log(error)
           })
@@ -1216,7 +1216,7 @@ export default {
             }, 2000)
           })
           .catch((error) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             this.error = true
             console.log(error)
           })
@@ -1238,7 +1238,7 @@ export default {
             }, 2000)
           })
           .catch((error) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             this.error = true
             console.log(error)
           })
@@ -1250,7 +1250,7 @@ export default {
             youtube_link: this.youtubeLink
           })
           .then((response) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             document.querySelector('.step' + target).classList.remove('active')
             document.querySelector('.step' + next).classList.add('active')
 
@@ -1258,7 +1258,7 @@ export default {
             document.querySelector('.tab_item' + next).classList.add('active')
           })
           .catch((error) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             this.error = true
             console.log(error)
           })
@@ -1284,7 +1284,7 @@ export default {
             }, 2000)
           })
           .catch((error) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             this.error = true
             console.log(error)
           })
@@ -1299,7 +1299,7 @@ export default {
             spec_diesel: this.specDiesel
           })
           .then((response) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             document.querySelector('.step' + target).classList.remove('active')
             document.querySelector('.step' + next).classList.add('active')
 
@@ -1307,7 +1307,7 @@ export default {
             document.querySelector('.tab_item' + next).classList.add('active')
           })
           .catch((error) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             this.error = true
             console.log(error)
           })
@@ -1320,7 +1320,7 @@ export default {
             feature_variant_title: this.featureVariantTitle
           })
           .then((response) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             this.featureVariantId = response.data.id
             document.querySelector('.step' + target).classList.remove('active')
             document.querySelector('.step' + next).classList.add('active')
@@ -1329,7 +1329,7 @@ export default {
             document.querySelector('.tab_item' + next).classList.add('active')
           })
           .catch((error) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             this.error = true
             console.log(error)
           })
@@ -1341,7 +1341,7 @@ export default {
             feature_type: this.feutureType
           })
           .then((response) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             this.featureModelId = response.data.id
             document.querySelector('.step' + target).classList.remove('active')
             document.querySelector('.step' + next).classList.add('active')
@@ -1350,7 +1350,7 @@ export default {
             document.querySelector('.tab_item' + next).classList.add('active')
           })
           .catch((error) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             this.error = true
             console.log(error)
           })
@@ -1363,7 +1363,7 @@ export default {
             variant_feature_value: this.variantFeutureValue
           })
           .then((response) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             document.querySelector('.step' + target).classList.remove('active')
             document.querySelector('.step' + next).classList.add('active')
 
@@ -1371,7 +1371,7 @@ export default {
             document.querySelector('.tab_item' + next).classList.add('active')
           })
           .catch((error) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             this.error = true
             console.log(error)
           })
@@ -1385,11 +1385,11 @@ export default {
             car_price: this.carPrice
           })
           .then((response) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             this.$router.push('/psm-admin/manage-cars')
           })
           .catch((error) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             this.error = true
             console.log(error)
           })

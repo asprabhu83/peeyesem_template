@@ -22,6 +22,7 @@
     "swiper": "^5.4.5",
     "vue-apexcharts": "^1.6.1",
     "vue-awesome-swiper": "^4.1.1",
+    "vue-axios": "^3.3.7",
     "vue-inner-image-zoom": "^1.1.0",
     "vue-owl-carousel": "^2.0.3",
     "vue-progressbar-component": "^1.1.0",

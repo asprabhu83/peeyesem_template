@@ -45,7 +45,7 @@
             </ul>
           </div>
         </div>
-        <button class="bg-transparent px-6 text-black font-bold cursor-pointer" @click="Logout">Logout</button>
+        <button class="bg-transparent px-6 text-black font-bold cursor-pointer" @click="Logout">Logout <font-awesome-icon icon="sign-in-alt"  size="1x" class="ml-1 text-black" /> </button>
       </nav>
     </div>
   </div>
