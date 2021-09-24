@@ -2,7 +2,7 @@
   <div class="single_page_car_sec my-20">
       <div class="my-5" v-for="car in singleCar" :key="car.id">
           <h2 class="text-center mb-3" >{{car.car_title}}</h2>
-          <h3 class="text-center" >${{car.car_price}}</h3>
+          <h3 class="text-center" ><font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mx-2" />{{car.car_price}}</h3>
       </div>
   </div>
 </template>
