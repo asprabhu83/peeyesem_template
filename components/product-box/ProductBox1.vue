@@ -55,8 +55,8 @@
           }}</nuxt-link>
         </h5>
         <span class="price">
-          <span class="new" v-if="product.discount" >${{ discountedPrice(product) }}</span>
-          <span class="new" v-else >${{ product.price }}</span>
+          <span class="new" v-if="product.discount" ><font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mx-2" />{{ discountedPrice(product) }}</span>
+          <span class="new" v-else ><font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mx-2" />{{ product.price }}</span>
         </span>
       </div>
 

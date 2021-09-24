@@ -2,7 +2,7 @@
     "data": [
         {
             "id": 1,
-            "title": "Black T-Shirt For Woman",
+            "title": "Hyundai Santro",
             "description": "Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Nulla porttitoraccumsan tincidunt. Pellentesque in ipsum id orci porta dapibus.",
             "type": "fashion",
             "brand": "nike",
@@ -116,7 +116,7 @@
         },
         {
             "id": 2,
-            "title": "T-Shirt Form Girls",
+            "title": "Hyundai Alcazar",
             "description": "Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Nulla porttitoraccumsan tincidunt. Pellentesque in ipsum id orci porta dapibus.",
             "type": "fashion",
             "brand": "geox",
@@ -259,7 +259,7 @@
         },
         {
             "id": 3,
-            "title": "White Black Line Dress",
+            "title": "Hyundai All New i20",
             "description": "Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Nulla porttitoraccumsan tincidunt. Pellentesque in ipsum id orci porta dapibus.",
             "type": "fashion",
             "brand": "nike",
@@ -337,7 +337,7 @@
         },
         {
             "id": 4,
-            "title": "Blue Dress For Woman",
+            "title": "Hyundai All New Tucson",
             "description": "Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Nulla porttitoraccumsan tincidunt. Pellentesque in ipsum id orci porta dapibus.",
             "type": "fashion",
             "brand": "geox",

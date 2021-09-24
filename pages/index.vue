@@ -17,15 +17,9 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="product_variation_one_boxed img-zoom-hover">
                         <img :src="require('@/assets/img/cars/car2.jpg')" alt="img" />
-                        <div class="product_var_one_text">
-                            <nuxt-link to="/shop/shop-2" class="theme-btn-one bg-black btn_sm">View</nuxt-link>
-                        </div>
                     </div>
                     <div class="product_variation_one_boxed img-zoom-hover">
                         <img :src="require('@/assets/img/cars/car3.jpg')" alt="img" />
-                        <div class="product_var_one_text">
-                            <nuxt-link to="/shop" class="theme-btn-one bg-black btn_sm">View</nuxt-link>
-                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 flex items-center">
@@ -38,15 +32,9 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="product_variation_one_boxed img-zoom-hover" style="margin-bottom:115px;margin-top:40px;">
                         <img :src="require('@/assets/img/cars/car9.webp')" alt="img" />
-                        <div class="product_var_one_text">
-                            <nuxt-link to="/shop/shop-2" class="theme-btn-one bg-black btn_sm">View</nuxt-link>
-                        </div>
                     </div>
                     <div class="product_variation_one_boxed img-zoom-hover" style="margin-top:40px;">
                         <img :src="require('@/assets/img/cars/car8.webp')" alt="img" />
-                        <div class="product_var_one_text">
-                            <nuxt-link to="/shop" class="theme-btn-one bg-black btn_sm">View</nuxt-link>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -54,28 +42,27 @@
     </section>
 
     <section class="my-20 cars_product_section" v-if="cars.length !== 0" >
-        <h2 class="text-center text-uppercase" >Cars Section</h2>
-        <div class="card_box flex flex-wrap mt-16 mx-auto" style="width:77%;">
-            <div class="car_box " v-for="car in cars.cars" :key="car.id">
+        <h2 class="text-center text-uppercase" >Choose Your Dream Hyundai Car<hr class="h-1 w-3/12 my-2 mx-auto bg-black" style="background-color:black!important;" /></h2>
+        <div class="card_box flex flex-wrap mt-16 mx-auto justify-center" style="width:77%;">
+            <div class="car_box m-4 shadow-md p-4 rounded-sm" v-for="car in cars.cars" :key="car.id">
                 <a :href="'/cars/?id='+ car.id" class="text-center block my-6 px-3 cursor-pointer rounded-sm my-4" style="margin-bottom:0!important;">
-                    <img src="http://localhost:3000/_nuxt/assets/img/product-image/2.png" alt="" style="width:330px;max-height:388px;">
+                    <img :src="require('@/assets/img/cars/car8.webp')" alt="" style="width:330px;max-height:388px;">
                 </a>
-                <div class="my-3">
+                <div class="mt-5 mb-4">
                     <div class="text-center font-medium mb-2 cursor-pointer">{{car.car_title}}</div>
-                   <div class="text-center font-medium">${{car.car_price}}</div>
+                   <div class="text-center font-medium"><font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mx-2" />{{car.car_price}}</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Hot Product Area -->
-    <section id="hot_Product_area" class="ptb-100">
+    <!-- <section id="hot_Product_area" class="ptb-100">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="center_heading">
                         <h2>Hot Product</h2>
-                        <p>Mauris luctus nisi sapien tristique dignissim ornare</p>
                     </div>
                 </div>
             </div>
@@ -93,23 +80,22 @@
                 </b-tab>
               </b-tabs>
         </div>
-    </section>
+    </section> -->
 
     <!-- Offer Time Area -->
-    <section class="my-20">
+    <!-- <section class="my-20">
         <div>
             <img :src="require('@/assets/img/cars/car11.jpg')" alt="img" class="" style="width:100%;height:auto;">
         </div>
-    </section>
+    </section> -->
 
     <!-- To Days Area -->
-    <section id="to_days_area" class="ptb-100 slider_arrows_one">
+    <!-- <section id="to_days_area" class="ptb-100 slider_arrows_one">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="center_heading">
                         <h2>ToDay's Deal</h2>
-                        <p>Mauris luctus nisi sapien tristique dignissim ornare</p>
                     </div>
                 </div>
             </div>
@@ -127,10 +113,10 @@
                 </div>          
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Special offer -->
-    <section class="my-20">
+    <section class="mt-20">
         <div>
             <img :src="require('@/assets/img/cars/car12.jpg')" alt="img" class="" style="width:100%;height:auto;">
         </div>
