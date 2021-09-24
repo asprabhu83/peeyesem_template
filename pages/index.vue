@@ -4,8 +4,21 @@
     <!-- Banner Area -->
     <section >
         <div class="row m-0 block">
-            <div>
-                <img :src="require('@/assets/img/cars/car1.webp')" alt="img" class="" style="width:100%;height:auto;" />
+            <div class="product_single_one_img">
+                        <swiper class="swiper product-single-2-slider" :options="swiperOption">
+                            <swiper-slide>
+                                <img :src="require('@/assets/img/cars/car13.webp')" alt="img" style="width:100%;" />
+                            </swiper-slide>
+                            <swiper-slide>
+                                <img :src="require('@/assets/img/cars/car14.webp')" alt="img" style="width:100%;" />
+                            </swiper-slide>
+                            <swiper-slide>
+                                <img :src="require('@/assets/img/cars/car15.webp')" alt="img" style="width:100%;" />
+                            </swiper-slide>
+                            <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
+                            <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
+
+                        </swiper>
             </div>
         </div>
     </section>
@@ -41,6 +54,49 @@
         </div>
     </section>
 
+    <section class="my-24">
+        <div class="container">
+            <div class="about_car_sec flex  justify-center">
+                <div class="left_sec w-1/2 mx-10 pt-6">
+                    <h3 class="text-uppercase">About cardealer <hr class="h-1 bg-black w-3/12 my-1" /></h3>
+                    <div class="flex items-center my-5">
+                        <div class="mx-3 text-3xl">10</div>
+                        <div class="mx-3">Everything you need to build an amazing dealership automotive responsive website.</div>
+                    </div>
+                    <div class="my-6 text-gray">
+                        Car Dealer is the best premium HTML5 Template. We provide everything you need to build an Amazing dealership website developed especially for car sellers, dealers or auto motor retailers.
+                    </div>
+                </div>
+                <div class="right_sec w-1/2 mx-10">
+                    <img :src="require('@/assets/img/cars/car18.webp')" style="margin-left:auto;margin-right:auto;" alt="img" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="my-24 fixed_bg_image flex items-center">
+        <div class="container">
+            <div class="row  service_items flex items-center justify-evenly">
+                <div class="text-white text-center service_items font-bold text-xl">
+                    <div class="mb-2">VEHICLES IN STOCK</div>
+                    400
+                </div>
+                <div class="text-white text-center service_items font-bold text-xl">
+                    <div class="mb-2">DEALER REVIEWS</div>
+                    255
+                </div>
+                <div class="text-white text-center service_items font-bold text-xl">
+                   <div class="mb-2">HAPPY CUSTOMER</div>
+                    430
+                </div>
+                <div class="text-white text-center service_items font-bold text-xl">
+                   <div class="mb-2">AWARDS</div>
+                    340
+                </div>
+            </div>
+        </div>
+        <div class="overlay" />
+    </section>
+
     <section class="my-20 cars_product_section" v-if="cars.length !== 0" >
         <h2 class="text-center text-uppercase" >Choose Your Dream Hyundai Car<hr class="h-1 w-3/12 my-2 mx-auto bg-black" style="background-color:black!important;" /></h2>
         <div class="card_box flex flex-wrap mt-16 mx-auto justify-center" style="width:77%;">
@@ -56,64 +112,23 @@
         </div>
     </section>
 
-    <!-- Hot Product Area -->
-    <!-- <section id="hot_Product_area" class="ptb-100">
+    <section class="my-24">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="center_heading">
-                        <h2>Hot Product</h2>
-                    </div>
+            <div class=" flex items-center">
+                <div class="left w-1/2 mx-10">
+                  <h3 class="font-bold mb-3 sales_heading">ARE YOU LOOKING FOR A CAR?</h3>
+                  <p class="sales_heading mb-3">Search your car in our Inventory and request a quote on the vehicle of your choosing.</p>
+                  <img :src="require('@/assets/img/cars/car16.webp')" alt="img"  />
+                </div>
+                <div class="right w-1/2 mx-10">
+                  <h3 class="font-bold mb-3 sales_heading">ARE YOU LOOKING FOR A CAR?</h3>
+                  <p class="sales_heading mb-3">Request search your car in our Inventory and a quote on the vehicle of your choosing.</p>
+                  <img :src="require('@/assets/img/cars/car17.webp')" alt="img" style="transform:scaleX(-1);" />
                 </div>
             </div>
-                
-            <b-tabs class="hot-product-area-tabs">
-                <b-tab
-                  :title="collection"
-                  v-for="(collection,index) in category"
-                  :key="index"
-                  class="row"
-                >
-                  <div class="col-lg-3 col-md-4 col-sm-6 col-12" v-for="(product,index) in getCategoryProduct(collection)" :key="index">
-                    <ProductBox1 :product="product" :index="index" @showalert="alert" @alertseconds="alert" />
-                  </div>
-                </b-tab>
-              </b-tabs>
         </div>
-    </section> -->
+    </section>
 
-    <!-- Offer Time Area -->
-    <!-- <section class="my-20">
-        <div>
-            <img :src="require('@/assets/img/cars/car11.jpg')" alt="img" class="" style="width:100%;height:auto;">
-        </div>
-    </section> -->
-
-    <!-- To Days Area -->
-    <!-- <section id="to_days_area" class="ptb-100 slider_arrows_one">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="center_heading">
-                        <h2>ToDay's Deal</h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <swiper class="swiper todays_slider position-relative" :options="swiperOption">
-                        <swiper-slide v-for="(product,index) in products" :key="index">
-                            <ProductBox1 :product="product" :index="index" @showalert="alert" @alertseconds="alert" />
-                        </swiper-slide>
-    
-                        <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
-                        <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
-                    </swiper>
-                </div>          
-            </div>
-        </div>
-    </section> -->
 
     <!-- Special offer -->
     <section class="mt-20">
@@ -128,7 +143,7 @@
     <!-- Instagram Arae -->
 
     <!-- Add to cart Alert / Notification  -->
-    <b-alert
+    <!-- <b-alert
       :show="dismissCountDown"
       dismissible
       fade
@@ -137,11 +152,11 @@
       @dismiss-count-down="alert"
     >
       <p class="font-weight-normal">Successfully added to your list</p>
-    </b-alert>
+    </b-alert> -->
     <!-- Add to cart Alert / Notification  -->
 
     <!-- Add to wishlist / wishlist Notification  -->
-    <b-alert
+    <!-- <b-alert
       :show="dismissCountDown"
       dismissible
       fade
@@ -150,11 +165,11 @@
       @dismiss-count-down="alert"
     >
       <p class="font-weight-normal">Successfully added to your list</p>
-    </b-alert>
+    </b-alert> -->
     <!-- Add to wishlist / wishlist Notification  -->
 
     <!-- Add to Compare / Compare Notification  -->
-    <b-alert
+    <!-- <b-alert
       :show="dismissCountDown"
       dismissible
       fade
@@ -163,7 +178,7 @@
       @dismiss-count-down="alert"
     >
       <p class="font-weight-normal">Successfully added to your list</p>
-    </b-alert>
+    </b-alert> -->
     <!-- Add to Compare / Compare Notification  -->
 
   </div>
@@ -268,38 +283,20 @@ export default {
 
         // Todays Slider options 
         swiperOption: {
-            slidesPerView: 4,
-            slidesPerGroup: 1,
-            spaceBetween: 30,
-            loop: false,
-            mousewheel: false,
-            keyboard: {
-                enabled: false,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev'
-            },
-            breakpoints: {
-                1024: {
-                    slidesPerView: 4,
-                    spaceBetween: 40
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+                spaceBetween: 0,
+                loop: true,
+                mousewheel: true,
+                keyboard: {
+                    enabled: true,
                 },
-                768: {
-                    slidesPerView: 3,
-                    spaceBetween: 30
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
                 },
-                640: {
-                    slidesPerView: 2,
-                    spaceBetween: 20
-                },
-                300: {
-                    slidesPerView: 1,
-                    spaceBetween: 10
-                }
+                autoplay: true,
             },
-            autoplay: false,
-        },
 
       }
     },
@@ -367,3 +364,30 @@ export default {
     }
 }
 </script>
+<style scoped>
+.fixed_bg_image{
+    background-image: url('../assets/img/cars/car11.jpg');
+    height: auto;
+    width: 100%;
+    background-position: center;
+    height: 250px;
+    background-attachment: fixed;
+    position: relative;
+    background-repeat: no-repeat;
+}
+.overlay{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 200;
+}
+.service_items{
+    z-index: 205;
+}
+.sales_heading{
+    width:70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>

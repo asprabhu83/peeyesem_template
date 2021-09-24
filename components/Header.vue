@@ -10,7 +10,7 @@
                             <!-- Start Header Logo -->
                             <div class="header-logo">
                                 <div class="logo">
-                                    <nuxt-link to="/"><img :src="require('@/assets/img/logo.png')" alt="logo" /></nuxt-link>
+                                    <nuxt-link to="/"><img class="site_logo" :src="require('@/assets/img/logo.png')" alt="logo" /></nuxt-link>
                                 </div>
                             </div>
                             <!-- End Header Logo -->
@@ -21,7 +21,7 @@
                                     <ul>
                                         
                                         <li class="has-dropdown">
-                                            <a href="#">Home <i class="fa fa-angle-down"></i></a>
+                                            <a href="#">New Cars <i class="fa fa-angle-down"></i></a>
                                             <!-- Sub Menu -->
                                             <ul class="sub-menu">
                                                 <li><nuxt-link to="/">Fashion</nuxt-link></li>
@@ -31,7 +31,7 @@
                                         </li>
 
                                         <li class="has-dropdown has-megaitem">
-                                            <a href="#">Shop <i class="fa fa-angle-down"></i></a>
+                                            <a href="#">Contact Us <i class="fa fa-angle-down"></i></a>
                                             <!-- Mega Menu -->
                                             <div class="mega-menu">
                                                 <ul class="mega-menu-inner">
@@ -50,7 +50,7 @@
                                                     </li>
                                                     <!-- Mega Menu Sub Link -->
                                                     <li class="mega-menu-item">
-                                                        <a href="#" class="mega-menu-item-title">Other Pages</a>
+                                                        <a href="#" class="mega-menu-item-title">Locations</a>
                                                         <ul class="mega-menu-sub">
                                                             <li><nuxt-link to="/cart/">Cart View One</nuxt-link></li>
                                                             <li>
@@ -85,7 +85,7 @@
                                             </div>
                                         </li>
                                         <li class="has-dropdown">
-                                            <a href="#">Blog <i class="fa fa-angle-down"></i></a>
+                                            <a href="#">Services <i class="fa fa-angle-down"></i></a>
                                             <!-- Sub Menu -->
                                             <ul class="sub-menu">
                                                 <li><nuxt-link to="/blog">Blog Grid View One</nuxt-link></li>
@@ -96,7 +96,7 @@
                                             </ul>
                                         </li>
                                         <li class="has-dropdown">
-                                            <a href="#">Pages <i class="fa fa-angle-down"></i></a>
+                                            <a href="#">Used Cars <i class="fa fa-angle-down"></i></a>
                                             <!-- Sub Menu -->
                                             <ul class="sub-menu">
                                                 <li><nuxt-link to="/faq">Frequently Questions</nuxt-link></li>
@@ -120,23 +120,7 @@
 
                             <!-- Start Header Action Link -->
                             <ul class="header-action-link action-color--black action-hover-color--golden">
-                                <li>
-                                    <a v-b-toggle.offcanvas-wishlish class="offcanvas-toggle">
-                                        <i class="far fa-heart"></i>
-                                        <span class="item-count">{{wishlist.length}}</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a v-b-toggle.offcanvas-add-cart class="offcanvas-toggle">
-                                        <i class="fas fa-shopping-bag"></i>
-                                        <span class="item-count">{{cart.length}}</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a v-b-toggle.search_sidebar class="search_width offcanvas-toggle">
-                                        <img src="~/assets/img/svg/search.svg" alt="img" />
-                                    </a>
-                                </li>
+                                
                                 <li>
                                     <a v-b-toggle.offcanvas-about class="offacnvas offside-about offcanvas-toggle"><i class="fas fa-bars"></i></a>
                                 </li>
@@ -397,6 +381,8 @@ export default {
     data() {
         return {
 
+            offset:0,
+
             // Mobile Menu Item Data 
             menu: [
                 
@@ -590,18 +576,22 @@ export default {
             var header = document.getElementById("header");
             var mobile_header = document.getElementById("mobile_header");
             var sticky = header.offsetTop;
-            
+            var logo = document.querySelector('.site_logo');
             function myFunction() {
                 if (window.pageYOffset > sticky) {
                 header.classList.add("sticky");
                 mobile_header.classList.add("sticky");
+                logo.classList.add("size_resize");
                 } else {
                 header.classList.remove("sticky");
                 mobile_header.classList.remove("sticky");
+                logo.classList.remove("size_resize");
                 }
             };
 
         })
+
+
         // Menu End
         
         // this.productsArray()
@@ -650,6 +640,11 @@ export default {
 
 <style>
 /* Mobile Menu Multi Dropdown Items Start */
+
+.site_logo.size_resize{
+    width:67%!important;
+    transition: .4s ease-in-out;
+}
 .v-sidebar-menu .vsm--toggle-btn {
     display: none;
 }

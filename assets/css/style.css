@@ -425,7 +425,7 @@ button {
 
 .sticky-header.sticky {
     position: fixed;
-    z-index: 99;
+    z-index: 300;
     width: 100%;
     top: 0;
     background: #333;
@@ -438,7 +438,7 @@ button {
 
 .main-menu {
     position: relative;
-    width: 60%;
+    width: 73%;
 }
 
 .main-menu nav>ul>li {
