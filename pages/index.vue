@@ -3,7 +3,7 @@
 
     <!-- Banner Area -->
     <section >
-        <div class="row m-0">
+        <div class="row m-0 block">
             <div>
                 <img :src="require('@/assets/img/cars/car1.webp')" alt="img" class="" style="width:100%;height:auto;" />
             </div>
@@ -18,41 +18,34 @@
                     <div class="product_variation_one_boxed img-zoom-hover">
                         <img :src="require('@/assets/img/cars/car2.jpg')" alt="img" />
                         <div class="product_var_one_text">
-                            <nuxt-link to="/shop/shop-2" class="theme-btn-one bg-black btn_sm">Shop Now</nuxt-link>
+                            <nuxt-link to="/shop/shop-2" class="theme-btn-one bg-black btn_sm">View</nuxt-link>
                         </div>
                     </div>
                     <div class="product_variation_one_boxed img-zoom-hover">
                         <img :src="require('@/assets/img/cars/car3.jpg')" alt="img" />
                         <div class="product_var_one_text">
-                            <nuxt-link to="/shop" class="theme-btn-one bg-black btn_sm">Shop Now</nuxt-link>
+                            <nuxt-link to="/shop" class="theme-btn-one bg-black btn_sm">View</nuxt-link>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="product_variation_one_boxed img-zoom-hover">
-                        <img :src="require('@/assets/img/offer/bag.png')" alt="img" />
+                <div class="col-lg-4 col-md-6 flex items-center">
+                    <div class="product_variation_one_boxed ">
+                        <img :src="require('@/assets/img/cars/car10.jpg')" alt="img" />
                         <div class="product_var_one_text_center">
-                            <h2 class="color_one">10% Offer</h2>
-                            <h4>No Selected Models</h4>
-                            <nuxt-link to="/shop/shop-3" class="theme-btn-one bg-black btn_sm">Shop Now</nuxt-link>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="product_variation_one_boxed img-zoom-hover" style="margin-bottom:100px;">
-                        <img :src="require('@/assets/img/cars/car7.jpg')" alt="img" />
+                    <div class="product_variation_one_boxed img-zoom-hover" style="margin-bottom:115px;margin-top:40px;">
+                        <img :src="require('@/assets/img/cars/car9.webp')" alt="img" />
                         <div class="product_var_one_text">
-                            <h2>New</h2>
-                            <h4 class="color_one">Arrivals</h4>
-                            <nuxt-link to="/shop/shop-2" class="theme-btn-one bg-black btn_sm">Shop Now</nuxt-link>
+                            <nuxt-link to="/shop/shop-2" class="theme-btn-one bg-black btn_sm">View</nuxt-link>
                         </div>
                     </div>
                     <div class="product_variation_one_boxed img-zoom-hover" style="margin-top:40px;">
                         <img :src="require('@/assets/img/cars/car8.webp')" alt="img" />
                         <div class="product_var_one_text">
-                            <h2>Hot</h2>
-                            <h4 class="color_one">Offer</h4>
-                            <nuxt-link to="/shop" class="theme-btn-one bg-black btn_sm">Shop Now</nuxt-link>
+                            <nuxt-link to="/shop" class="theme-btn-one bg-black btn_sm">View</nuxt-link>
                         </div>
                     </div>
                 </div>
@@ -60,7 +53,7 @@
         </div>
     </section>
 
-    <section class="my-20 cars_product_section">
+    <section class="my-20 cars_product_section" v-if="cars.length !== 0" >
         <h2 class="text-center text-uppercase" >Cars Section</h2>
         <div class="card_box flex flex-wrap mt-16 mx-auto" style="width:77%;">
             <div class="car_box " v-for="car in cars.cars" :key="car.id">
@@ -103,26 +96,9 @@
     </section>
 
     <!-- Offer Time Area -->
-    <section id="offer_timer_one">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-4 col-md-7 offset-md-4 col-sm-12 col-12">
-                    <div class="offer_time_flex">
-                        <div class="count_down">
-                            <div id="countdown">
-                                <Timer date="October 15, 2025" />
-                            </div>
-                        </div>
-                        <div class="offer_timer_text">
-                            <h2>20% OFF FOR ALL T-SHIRT COLLECTION</h2>
-                            <p>
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro quisquam, odit assumenda sit modi commodi esse necessitatibus temporibus aperiam veritatis eveniet!
-                            </p>
-                            <a href="#!" class="theme-btn-one bg-black btn_md">View More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section class="my-20">
+        <div>
+            <img :src="require('@/assets/img/cars/car11.jpg')" alt="img" class="" style="width:100%;height:auto;">
         </div>
     </section>
 
@@ -154,44 +130,16 @@
     </section>
 
     <!-- Special offer -->
-    <section id="special_offer_one">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 offset-lg-4 col-md-12 col-sm-12 col-12">
-                    <div class="offer_banner_one text-center">
-                        <h5>TRENDING</h5>
-                        <h2>New Fashion</h2>
-                        <p>
-                            Consectetur adipisicing elit. Dolores nisi distinctio magni, iure deserunt doloribus optio
-                        </p>
-                        <nuxt-link to="/shop" class="theme-btn-one bg-whites btn_md">Shop Now</nuxt-link>
-                    </div>
-                </div>
-            </div>
+    <section class="my-20">
+        <div>
+            <img :src="require('@/assets/img/cars/car12.jpg')" alt="img" class="" style="width:100%;height:auto;">
         </div>
     </section>
 
     <!-- Latest Blog Arae -->
-    <section id="blog_area_one" class="ptb-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="center_heading">
-                        <h2>Latest Blog</h2>
-                        <p>Mauris luctus nisi sapien tristique dignissim ornare</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div v-for="blogItem in blogItems.slice(0,3)" :key="blogItem.id" class="col-lg-4 col-md-4 col-sm-6 col-12">
-                    <BlogItem1 :blogThumb="blogItem.blogThumb" :blogTitle="blogItem.blogTitle" :blogDescription="blogItem.blogDescription" :blogPublishDate="blogItem.blogPublishDate" />
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
     <!-- Instagram Arae -->
-    <InstagramArea />
 
     <!-- Add to cart Alert / Notification  -->
     <b-alert
