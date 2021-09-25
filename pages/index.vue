@@ -108,7 +108,7 @@
         <div class="card_box  flex flex-wrap mt-16 mx-auto">
             <div class="car_box_item" v-for="car in staticcars" :key="car.id">
                 <a :href="'/cars/?id='+ car.id" class="text-center block car_image_box cursor-pointer" style="margin-bottom:0!important;min-height:198px;max-height:198px;">
-                    <img :src="require('@/assets/img/cars/static/'+ car.image)" alt="" style="width:315.7px;min-height:198px;max-height:198px;">
+                    <img :src="require('@/assets/img/cars/static/'+ car.image)" alt="" style="width:315.7px;min-height:198px;max-height:198px;max-width:100%;">
                 </a>
                 <div class="car_details" >
                     <div class="text-center font-medium mt-1 mb-1 cursor-pointer">{{car.name}}</div>
@@ -129,7 +129,7 @@
                             <swiper-slide>
                                 <div class="testimonial_content">
                                     <div class="text-center text-md mb-10 text-white font-semibold flex items-start justify-center" >
-                                        <img class="mx-1" :src="require('@/assets/img/quotewhite.png')" alt="img"  />
+                                        <img class="mx-1 quote_icon" :src="require('@/assets/img/quotewhite.png')" alt="img"  />
                                         <div class="mt-3">You will begin to realize why this exercise is called the Dickens reference to the ghost showing Scrooge Pattern with reference to the ghost showing Scrooge some different futures as you notice that the idea of this exercise.</div>
                                     </div>
                                     <div class="flex items-center justify-center">
@@ -141,7 +141,7 @@
                             <swiper-slide>
                                 <div class="testimonial_content">
                                     <div class="text-center text-md mb-10 text-white font-semibold flex items-start justify-center" >
-                                        <img class="mx-1" :src="require('@/assets/img/quotewhite.png')" alt="img"  />
+                                        <img class="mx-1 quote_icon" :src="require('@/assets/img/quotewhite.png')" alt="img"  />
                                         <div class="mt-3">You will begin to realize why this exercise is called the Dickens reference to the ghost showing Scrooge Pattern with reference to the ghost showing Scrooge some different futures as you notice that the idea of this exercise.</div>
                                     </div>
                                     <div class="flex items-center justify-center">
@@ -153,7 +153,7 @@
                             <swiper-slide>
                                 <div class="testimonial_content">
                                     <div class="text-center text-md mb-10 text-white font-semibold flex items-start justify-center" >
-                                        <img class="mx-1" :src="require('@/assets/img/quotewhite.png')" alt="img"  />
+                                        <img class="mx-1 quote_icon" :src="require('@/assets/img/quotewhite.png')" alt="img"  />
                                         <div class="mt-3">You will begin to realize why this exercise is called the Dickens reference to the ghost showing Scrooge Pattern with reference to the ghost showing Scrooge some different futures as you notice that the idea of this exercise.</div>
                                     </div>
                                     <div class="flex items-center justify-center">
@@ -574,5 +574,33 @@ export default {
 }
 .swiper-button-next:hover, .swiper-button-prev:hover{
     background: black!important;
+}
+@media only screen and (min-width:300px) and (max-width:600px){
+    .swiper-button-prev, .swiper-button-next{
+        width: 25px!important;
+        height: 25px!important;
+    }
+    .about_car_sec{
+        display: block;
+    }
+    .about_car_sec .left_sec,.about_car_sec .right_sec{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .card_box{
+        display: block;
+    }
+    .car_box_item img{
+        width: 100%!important;
+    }
+    .testimonial_content{
+        width:95%;
+        font-size: 14px;
+        padding: 50px 20px;
+    }
+    .testimonial_content .quote_icon{
+        display: none;
+    }
 }
 </style>
