@@ -17,7 +17,7 @@
                 </div>
             </div>
         </div>
-        <hr class=" bg-white my-2"/>
+        <hr class=" bg-white my-2" style="opacity:0.6" />
     </div>
     <header class="header-section d-none d-xl-block">
         <div class="header-wrapper">
@@ -42,9 +42,18 @@
                                             <a class="menu-item" href="#">New Cars <i class="fa fa-angle-down"></i></a>
                                             <!-- Sub Menu -->
                                             <ul class="sub-menu">
-                                                <li><nuxt-link to="/">ALL CARS</nuxt-link></li>
+                                                <li><nuxt-link to="/">All Cars</nuxt-link></li>
                                                 <li><nuxt-link to="/">Hyundai Santro</nuxt-link></li>
                                                 <li><nuxt-link to="/">Hyundai All New i20</nuxt-link></li>
+                                                <li><nuxt-link to="/">Hyundai Grand i10 NIOS</nuxt-link></li>
+                                                <li><nuxt-link to="/">Hyundai Aura</nuxt-link></li>
+                                                <li><nuxt-link to="/">Hyundai All New Verna</nuxt-link></li>
+                                                <li><nuxt-link to="/">Hyundai Elantra</nuxt-link></li>
+                                                <li><nuxt-link to="/">Hyundai Venue</nuxt-link></li>
+                                                <li><nuxt-link to="/">Hyundai All New Creta</nuxt-link></li>
+                                                <li><nuxt-link to="/">Hyundai Alcazar</nuxt-link></li>
+                                                <li><nuxt-link to="/">Hyundai Tucson</nuxt-link></li>
+                                                <li><nuxt-link to="/">Hyundai Kona</nuxt-link></li>
                                             </ul>
                                         </li>
 

@@ -30,7 +30,7 @@
     <section id="product_variation_one" class="pt-10 mb-14">
         <div class="container-fluid">
             <div class="my-5">
-                <div class="text-center font-bold text-3xl text-uppercase">Car features<hr class="h-1 w-1/12 my-2 mx-auto bg-black" style="background-color:black!important;" /></div>
+                <div class="text-center font-bold text-3xl text-uppercase">FEATURED CAR<hr class="h-1 w-1/12 my-2 mx-auto bg-black" style="background-color:black!important;" /></div>
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-6">
@@ -103,7 +103,7 @@
         <div class="overlay" />
     </section>
 
-    <section class="py-20 cars_product_section"  style="background: #e6eaef;">
+    <section class="pt-20 cars_product_section"  style="background: #e6eaef;">
         <div class="text-center font-bold text-3xl text-uppercase" >Choose Your Dream Hyundai Car<hr class="h-1 w-2/12 my-2 mx-auto bg-black" style="background-color:black!important;" /></div>
         <div class="card_box  flex flex-wrap mt-16 mx-auto">
             <div class="car_box_item" v-for="car in staticcars" :key="car.id">
@@ -409,7 +409,7 @@ export default {
         const obj3 = document.getElementById("value3");
         const obj4 = document.getElementById("value4");
 
-        this.animateValue(obj1, 0, 400, 7000);
+        this.animateValue(obj1, 0, 6, 2000);
         this.animateValue(obj2, 0, 255, 7000);
         this.animateValue(obj3, 0, 430, 7000);
         this.animateValue(obj4, 0, 340, 7000);
@@ -484,6 +484,7 @@ export default {
     cursor: pointer;
 }
 .car_image_box img{
+    object-fit: cover;
     transition: .5s ease-in-out;
 }
 .car_image_box img:hover{
