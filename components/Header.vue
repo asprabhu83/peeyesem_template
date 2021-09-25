@@ -3,7 +3,7 @@
     <!-- Start Header Area -->
     <div >
         <div class="container">
-            <div class="flex justify-around py-3">
+            <div class="flex justify-between pt-3">
                 <div class="left">
                     <div class="text-md text-white font-semibold shodow_css_head">Service: +91 9902099944 | Sales: +91 9731097310</div>
                 </div>
@@ -17,6 +17,7 @@
                 </div>
             </div>
         </div>
+        <hr class=" bg-white my-2"/>
     </div>
     <header class="header-section d-none d-xl-block">
         <div class="header-wrapper">

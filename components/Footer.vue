@@ -10,7 +10,8 @@
             <div class="row">
                 <div class="col-lg-4 col-md-12 col-sm-12 col-12">
                     <div class="footer_left_side">
-                        <p>
+                        <div class="text-uppercase text-lg font-semibold">About Peeyesyem hyundai</div>
+                        <p class="text-white">
                             Peeyesyem Hyundai is one of the largest Hyundai dealer having showrooms at various locations around Tamilnadu. Our branches are located at Chennai, Tuticorin, Tiruchendur, Tuticorin, Madurai and Ramnathapuram. We strive to provide the best services to our customers with great satisfaction and excellency.
                         </p>
                         <div class="footer_left_side_icon">

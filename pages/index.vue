@@ -8,12 +8,15 @@
                         <swiper class="swiper product-single-2-slider" :options="swiperOption">
                             <swiper-slide>
                                 <img :src="require('@/assets/img/cars/car15.webp')" alt="img" style="width:100%;" />
+                                <div class="overlay2" />
                             </swiper-slide>
                             <swiper-slide>
                                 <img :src="require('@/assets/img/cars/car13.webp')" alt="img" style="width:100%;" />
+                                <div class="overlay2" />
                             </swiper-slide>
                             <swiper-slide>
                                 <img :src="require('@/assets/img/cars/car14.webp')" alt="img" style="width:100%;" />
+                                <div class="overlay2" />
                             </swiper-slide>
                             <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
                             <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
@@ -21,12 +24,14 @@
                         </swiper>
             </div>
         </div>
-        <div class="overlay2" />
     </section>
 
     <!-- Product variation -->
-    <section id="product_variation_one" class="pt-100">
+    <section id="product_variation_one" class="pt-10 mb-14">
         <div class="container-fluid">
+            <div class="my-5">
+                <div class="text-center font-bold text-3xl text-uppercase">Car features<hr class="h-1 w-1/12 my-2 mx-auto bg-black" style="background-color:black!important;" /></div>
+            </div>
             <div class="row">
                 <div class="col-lg-4 col-md-6">
                     <div class="product_variation_one_boxed img-zoom-hover">
@@ -74,7 +79,7 @@
             </div>
         </div>
     </section>
-    <section class="fixed_bg_image flex items-center">
+    <section class="fixed_bg_image animated_counter flex items-center">
         <div class="container">
             <div class="row  service_items flex items-center justify-evenly">
                 <div class="text-white text-center service_items font-bold text-xl">
@@ -99,7 +104,7 @@
     </section>
 
     <section class="py-20 cars_product_section"  style="background: #e6eaef;">
-        <h2 class="text-center text-uppercase" >Choose Your Dream Hyundai Car<hr class="h-1 w-3/12 my-2 mx-auto bg-black" style="background-color:black!important;" /></h2>
+        <div class="text-center font-bold text-3xl text-uppercase" >Choose Your Dream Hyundai Car<hr class="h-1 w-2/12 my-2 mx-auto bg-black" style="background-color:black!important;" /></div>
         <div class="card_box  flex flex-wrap mt-16 mx-auto">
             <div class="car_box_item" v-for="car in staticcars" :key="car.id">
                 <a :href="'/cars/?id='+ car.id" class="text-center block car_image_box cursor-pointer" style="margin-bottom:0!important;min-height:198px;max-height:198px;">
@@ -398,16 +403,15 @@ export default {
 
         this.productsArray()
         this.GetCars()
+
         const obj1 = document.getElementById("value1");
-        this.animateValue(obj1, 0, 400, 7000);
-
         const obj2 = document.getElementById("value2");
-        this.animateValue(obj2, 0, 255, 7000);
-
         const obj3 = document.getElementById("value3");
-        this.animateValue(obj3, 0, 430, 7000);
-
         const obj4 = document.getElementById("value4");
+
+        this.animateValue(obj1, 0, 400, 7000);
+        this.animateValue(obj2, 0, 255, 7000);
+        this.animateValue(obj3, 0, 430, 7000);
         this.animateValue(obj4, 0, 340, 7000);
     },
     methods: {
@@ -556,5 +560,16 @@ export default {
 }
 .car_box_item:hover .car_details{
     transform: scale(1);
+}
+.swiper-button-prev, .swiper-button-next{
+    z-index: 220;
+    border-radius: 50%;
+    width: 40px!important;
+    height: 40px!important;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.swiper-button-next:hover, .swiper-button-prev:hover{
+    background: black!important;
 }
 </style>

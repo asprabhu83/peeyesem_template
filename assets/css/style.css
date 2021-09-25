@@ -472,6 +472,9 @@ button {
     text-transform: uppercase;
     font-weight: 700;
 }
+.main-menu nav>ul>li>a>i{
+    margin-left: 5px;
+}
 
 .main-menu-style-4 nav>ul>li>a {
     padding: 10px 30px;
