@@ -387,7 +387,7 @@ export default {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev'
                 },
-                autoplay: false,
+                autoplay: true,
             },
 
       }

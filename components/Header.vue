@@ -1,7 +1,7 @@
 <template>
   <div class="transparent_bg_sec">
     <!-- Start Header Area -->
-    <div >
+    <div class="contact_sec" >
         <div class="container">
             <div class="flex justify-between pt-3">
                 <div class="left">
@@ -143,7 +143,7 @@
                             <li>
                                 <nuxt-link to="/">
                                     <div class="logo">
-                                        <img :src="require('@/assets/img/logo.png')" alt="logo" />
+                                        <img :src="require('@/assets/img/peeyesyem.png')" alt="logo" />
                                     </div>
                                 </nuxt-link>
                             </li>
@@ -154,23 +154,6 @@
                     <!-- Start Mobile Right Side -->
                     <div class="mobile-right-side">
                         <ul class="header-action-link action-color--black action-hover-color--golden">
-                            <li>
-                                <a v-b-toggle.search_sidebar class="search_width offcanvas-toggle">
-                                    <img src="~/assets/img/svg/search.svg" alt="img" />
-                                </a>
-                            </li>
-                            <li>
-                                <a v-b-toggle.offcanvas-wishlish class="offcanvas-toggle">
-                                    <i class="far fa-heart"></i>
-                                    <span class="item-count">{{wishlist.length}}</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a v-b-toggle.offcanvas-add-cart class="offcanvas-toggle">
-                                    <i class="fas fa-shopping-bag"></i>
-                                    <span class="item-count">{{cart.length}}</span>
-                                </a>
-                            </li>
                             <li>
                                 <a v-b-toggle.offcanvas-about class="offacnvas offside-about offcanvas-toggle"><i class="fas fa-bars"></i></a>
                             </li>
@@ -385,25 +368,61 @@ export default {
             menu: [
                 
                 {
-                    title: 'Home',
+                    title: 'New Cars',
                     child: [
                         {
                             href: '/',
-                            title: 'Fashion'
+                            title: 'All Cars'
                                     
                         },
                         {
-                            href: '/furniture',
-                            title: 'Furniture'
+                            href: '/',
+                            title: 'Hyundai Santro'
                         },
                         {
-                            href: '/electronics',
-                            title: 'Electronics'
+                            href: '/',
+                            title: 'Hyundai All New i20'
+                        },
+                        {
+                            href: '/',
+                            title: 'Hyundai Grand i10 NIOS'
+                        },
+                        {
+                            href: '/',
+                            title: 'Hyundai Aura'
+                        },
+                        {
+                            href: '/',
+                            title: 'Hyundai All New Verna'
+                        },
+                        {
+                            href: '/',
+                            title: 'Hyundai Elantra'
+                        },
+                        {
+                            href: '/',
+                            title: 'Hyundai Venue'
+                        },
+                        {
+                            href: '/',
+                            title: 'Hyundai All New Creta'
+                        },
+                        {
+                            href: '/',
+                            title: 'Hyundai Alcazar'
+                        },
+                        {
+                            href: '/',
+                            title: 'Hyundai Tucson'
+                        },
+                        {
+                            href: '/',
+                            title: 'Hyundai Kona'
                         }
                     ]
                 },
                 {
-                    title: 'Shop',
+                    title: 'Contact Us',
                     child: [
                         {    
                             title: 'Shop Layout',
@@ -672,5 +691,18 @@ export default {
     -webkit-box-shadow: 3px 0px 0px 0px var(--main-theme-color) inset;
     box-shadow: 3px 0px 0px 0px var(--main-theme-color) inset;
 }
+
+@media only screen and (min-width:300px) and (max-width:600px){
+    .transparent_bg_sec{
+        background: transparent;
+        z-index: 999;
+        position: static;
+        width: 100%;
+    }
+    .contact_sec{
+        display: none;
+    }
+}
+
 /* Mobile Menu Multi Dropdown Items End */
 </style>
