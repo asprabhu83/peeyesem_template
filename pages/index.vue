@@ -409,10 +409,12 @@ export default {
         const obj3 = document.getElementById("value3");
         const obj4 = document.getElementById("value4");
 
-        this.animateValue(obj1, 0, 6, 2000);
-        this.animateValue(obj2, 0, 255, 7000);
-        this.animateValue(obj3, 0, 430, 7000);
-        this.animateValue(obj4, 0, 340, 7000);
+        setTimeout(()=>{
+            this.animateValue(obj1, 0, 6, 2000);
+            this.animateValue(obj2, 0, 255, 7000);
+            this.animateValue(obj3, 0, 430, 7000);
+            this.animateValue(obj4, 0, 340, 7000);
+        },3000)
     },
     methods: {
         productsArray: function () {
