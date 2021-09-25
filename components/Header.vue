@@ -47,7 +47,7 @@
                                             </ul>
                                         </li>
 
-                                        <li class="has-dropdown has-megaitem">
+                                        <li class="has-dropdown">
                                             <a class="menu-item" href="#">Contact Us <i class="fa fa-angle-down"></i></a>
                                                <ul class="sub-menu">
                                                 <li><nuxt-link to="/">Test Drive</nuxt-link></li>
