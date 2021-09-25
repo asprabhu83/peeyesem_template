@@ -2,18 +2,18 @@
   <div class="home-page">
 
     <!-- Banner Area -->
-    <section >
+    <section class="relative" >
         <div class="row m-0 block">
             <div class="product_single_one_img">
                         <swiper class="swiper product-single-2-slider" :options="swiperOption">
+                            <swiper-slide>
+                                <img :src="require('@/assets/img/cars/car15.webp')" alt="img" style="width:100%;" />
+                            </swiper-slide>
                             <swiper-slide>
                                 <img :src="require('@/assets/img/cars/car13.webp')" alt="img" style="width:100%;" />
                             </swiper-slide>
                             <swiper-slide>
                                 <img :src="require('@/assets/img/cars/car14.webp')" alt="img" style="width:100%;" />
-                            </swiper-slide>
-                            <swiper-slide>
-                                <img :src="require('@/assets/img/cars/car15.webp')" alt="img" style="width:100%;" />
                             </swiper-slide>
                             <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
                             <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
@@ -21,6 +21,7 @@
                         </swiper>
             </div>
         </div>
+        <div class="overlay2" />
     </section>
 
     <!-- Product variation -->
@@ -54,7 +55,7 @@
         </div>
     </section>
 
-    <section class="my-24">
+    <section class="py-24"  style="background: #f6f6f6;">
         <div class="container">
             <div class="about_car_sec flex  justify-center">
                 <div class="left_sec w-1/2 mx-10 pt-6">
@@ -73,34 +74,34 @@
             </div>
         </div>
     </section>
-    <section class="my-24 fixed_bg_image flex items-center">
+    <section class="fixed_bg_image flex items-center">
         <div class="container">
             <div class="row  service_items flex items-center justify-evenly">
                 <div class="text-white text-center service_items font-bold text-xl">
                     <div class="mb-2">VEHICLES IN STOCK</div>
-                    400
+                   <div class="flex items-center"><img class="mx-2" :src="require('@/assets/img/vehicle.png')" alt="img"  />400</div>
                 </div>
                 <div class="text-white text-center service_items font-bold text-xl">
                     <div class="mb-2">DEALER REVIEWS</div>
-                    255
+                   <div class="flex items-center"><img class="mx-2" :src="require('@/assets/img/chatwhite.png')" alt="img"  />255</div>
                 </div>
                 <div class="text-white text-center service_items font-bold text-xl">
                    <div class="mb-2">HAPPY CUSTOMER</div>
-                    430
+                   <div class="flex items-center"><img class="mx-2" :src="require('@/assets/img/userwhite.png')" alt="img"  />430</div>
                 </div>
                 <div class="text-white text-center service_items font-bold text-xl">
                    <div class="mb-2">AWARDS</div>
-                    340
+                   <div class="flex items-center"><img class="mx-2" :src="require('@/assets/img/awardicon.png')" alt="img"  />340</div>
                 </div>
             </div>
         </div>
         <div class="overlay" />
     </section>
 
-    <section class="my-20 cars_product_section" v-if="cars.length !== 0" >
+    <section class="py-20 cars_product_section" v-if="cars.length !== 0" style="background: #f6f6f6;">
         <h2 class="text-center text-uppercase" >Choose Your Dream Hyundai Car<hr class="h-1 w-3/12 my-2 mx-auto bg-black" style="background-color:black!important;" /></h2>
         <div class="card_box flex flex-wrap mt-16 mx-auto justify-center" style="width:77%;">
-            <div class="car_box m-4 shadow-md p-4 rounded-sm" v-for="car in cars.cars" :key="car.id">
+            <div class="car_box bg-white m-4 shadow-md p-4 rounded-md" v-for="car in cars.cars" :key="car.id">
                 <a :href="'/cars/?id='+ car.id" class="text-center block my-6 px-3 cursor-pointer rounded-sm my-4" style="margin-bottom:0!important;">
                     <img :src="require('@/assets/img/cars/car8.webp')" alt="" style="width:330px;max-height:388px;">
                 </a>
@@ -112,7 +113,60 @@
         </div>
     </section>
 
-    <section class="my-24">
+    <section class=" fixed_bg_image2">
+        <div class="block py-10">
+            <div class="relative bg-position_overlay">
+                <div class="text-center mb-2 text-lg  text-white">What Our Happy Clients say about us</div>
+                <div class="text-center mb-5 text-3xl text-white font-bold">OUR TESTIMONIAL<hr class="h-1 bg-white mx-auto w-1/12 my-1" /></div>
+            </div>
+            <div class="product_single_one_img relative bg-position_overlay">
+                        <swiper class="swiper product-single-2-slider" :options="swiperOption">
+                            <swiper-slide>
+                                <div class="testimonial_content">
+                                    <div class="text-center text-md mb-10 text-white font-semibold flex items-start justify-center" >
+                                        <img class="mx-1" :src="require('@/assets/img/quotewhite.png')" alt="img"  />
+                                        <div class="mt-3">You will begin to realize why this exercise is called the Dickens reference to the ghost showing Scrooge Pattern with reference to the ghost showing Scrooge some different futures as you notice that the idea of this exercise.</div>
+                                    </div>
+                                    <div class="flex items-center justify-center">
+                                        <img class="mx-1" :src="require('@/assets/img/userwhite2.png')" alt="img"  />
+                                        <div class="mx-1 font-semibold">JOHN DOE | <span class="font-normal">customer</span></div>
+                                    </div>
+                                </div>
+                            </swiper-slide>
+                            <swiper-slide>
+                                <div class="testimonial_content">
+                                    <div class="text-center text-md mb-10 text-white font-semibold flex items-start justify-center" >
+                                        <img class="mx-1" :src="require('@/assets/img/quotewhite.png')" alt="img"  />
+                                        <div class="mt-3">You will begin to realize why this exercise is called the Dickens reference to the ghost showing Scrooge Pattern with reference to the ghost showing Scrooge some different futures as you notice that the idea of this exercise.</div>
+                                    </div>
+                                    <div class="flex items-center justify-center">
+                                        <img class="mx-1" :src="require('@/assets/img/userwhite2.png')" alt="img"  />
+                                        <div class="mx-1 font-semibold">FELICA QUEEN | <span class="font-normal">Auto Dealer</span></div>
+                                    </div>
+                                </div>
+                            </swiper-slide>
+                            <swiper-slide>
+                                <div class="testimonial_content">
+                                    <div class="text-center text-md mb-10 text-white font-semibold flex items-start justify-center" >
+                                        <img class="mx-1" :src="require('@/assets/img/quotewhite.png')" alt="img"  />
+                                        <div class="mt-3">You will begin to realize why this exercise is called the Dickens reference to the ghost showing Scrooge Pattern with reference to the ghost showing Scrooge some different futures as you notice that the idea of this exercise.</div>
+                                    </div>
+                                    <div class="flex items-center justify-center">
+                                        <img class="mx-1" :src="require('@/assets/img/userwhite2.png')" alt="img"  />
+                                        <div class="mx-1 font-semibold">ALICE WILLIAMS | <span class="font-normal">Car Dealer</span></div>
+                                    </div>
+                                </div>
+                            </swiper-slide>
+                            <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
+                            <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
+
+                        </swiper>
+            </div>
+        </div>
+        <div class="overlay2 testimonial" />
+    </section>
+
+    <section class="py-24" style="background: #f6f6f6;">
         <div class="container">
             <div class=" flex items-center">
                 <div class="left w-1/2 mx-10">
@@ -131,55 +185,13 @@
 
 
     <!-- Special offer -->
-    <section class="mt-20">
+    <section class="">
         <div>
             <img :src="require('@/assets/img/cars/car12.jpg')" alt="img" class="" style="width:100%;height:auto;">
         </div>
     </section>
 
-    <!-- Latest Blog Arae -->
     
-
-    <!-- Instagram Arae -->
-
-    <!-- Add to cart Alert / Notification  -->
-    <!-- <b-alert
-      :show="dismissCountDown"
-      dismissible
-      fade
-      variant="success"
-      @dismissed="dismissCountDown=0"
-      @dismiss-count-down="alert"
-    >
-      <p class="font-weight-normal">Successfully added to your list</p>
-    </b-alert> -->
-    <!-- Add to cart Alert / Notification  -->
-
-    <!-- Add to wishlist / wishlist Notification  -->
-    <!-- <b-alert
-      :show="dismissCountDown"
-      dismissible
-      fade
-      variant="success"
-      @dismissed="dismissCountDown=0"
-      @dismiss-count-down="alert"
-    >
-      <p class="font-weight-normal">Successfully added to your list</p>
-    </b-alert> -->
-    <!-- Add to wishlist / wishlist Notification  -->
-
-    <!-- Add to Compare / Compare Notification  -->
-    <!-- <b-alert
-      :show="dismissCountDown"
-      dismissible
-      fade
-      variant="success"
-      @dismissed="dismissCountDown=0"
-      @dismiss-count-down="alert"
-    >
-      <p class="font-weight-normal">Successfully added to your list</p>
-    </b-alert> -->
-    <!-- Add to Compare / Compare Notification  -->
 
   </div>
 </template>
@@ -287,7 +299,7 @@ export default {
                 slidesPerGroup: 1,
                 spaceBetween: 0,
                 loop: true,
-                mousewheel: true,
+                mousewheel: false,
                 keyboard: {
                     enabled: true,
                 },
@@ -365,8 +377,16 @@ export default {
 }
 </script>
 <style scoped>
+.testimonial_content{
+    width: 40%;
+    color: white;
+    border-radius: 7px;
+    margin: 10px auto;
+    background-color: #002c5f;
+    padding: 50px 10px;
+}
 .fixed_bg_image{
-    background-image: url('../assets/img/cars/car11.jpg');
+    background-image: url('../assets/img/cars/car19.jpg');
     height: auto;
     width: 100%;
     background-position: center;
@@ -375,12 +395,33 @@ export default {
     position: relative;
     background-repeat: no-repeat;
 }
+.fixed_bg_image2{
+    background-image: url('../assets/img/cars/car19.jpg');
+    height: auto;
+    width: 100%;
+    background-position: center;
+    height: 540px;
+    background-attachment: fixed;
+    position: relative;
+    background-repeat: no-repeat;
+}
 .overlay{
   position: absolute;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 200;
+}
+.overlay2{
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index:200;
+}
+.overlay2.testimonial{
+    background-color: rgba(0, 0, 0, 0.6);
 }
 .service_items{
     z-index: 205;
@@ -389,5 +430,8 @@ export default {
     width:70%;
     margin-left: auto;
     margin-right: auto;
+}
+.bg-position_overlay{
+    z-index: 205;
 }
 </style>

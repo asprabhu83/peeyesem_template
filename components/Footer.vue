@@ -2,11 +2,14 @@
   <div>
     <!-- footer Area -->
     <footer id="footer_one">
+        <div class="mb-14">
+            <div class="text-center font-bold text-2xl mb-2">DO YOU NEED HELP IN CHOOSING A CAR?</div>
+            <div class="text-center text-lg">Call us : (007) 123 456 7890</div>
+        </div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-12 col-sm-12 col-12">
                     <div class="footer_left_side">
-                        <nuxt-link to="/"><img :src="require('@/assets/img/logo.png')" alt="logo" /></nuxt-link>
                         <p>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati culpa assumenda voluptas placeat amet consectetur adipisicing elit. Obcaecati culpa assumenda voluptas placeat.
                         </p>

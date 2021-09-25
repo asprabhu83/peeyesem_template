@@ -394,7 +394,9 @@ button {
 }
 
 .header-bottom-color--golden {
-    background: #FEF5EF;
+    background: transparent;
+    padding: 10px 0;
+    color: white;
 }
 
 .header-bottom-color--white {
@@ -406,7 +408,8 @@ button {
 }
 
 .sticky-header.sticky.sticky-color--golden {
-    background: #FEF5EF;
+    background: white;
+    padding: 4px 0;
 }
 
 .sticky-header.sticky.sticky-color--white {
@@ -439,6 +442,7 @@ button {
 .main-menu {
     position: relative;
     width: 73%;
+    text-align: end;
 }
 
 .main-menu nav>ul>li {
@@ -462,7 +466,6 @@ button {
 .main-menu nav>ul>li>a {
     display: block;
     line-height: 24px;
-    padding: 25px 30px;
     font-size: 14px;
     line-height: 30px;
     text-transform: uppercase;
@@ -561,9 +564,13 @@ button {
 }
 
 /*Main Menu Link Normal Color*/
-
+.sticky-header.sticky.sticky-color--golden .menu-color--black nav>ul>li>a{
+    text-shadow: none;
+    color: black;
+} 
 .menu-color--black nav>ul>li>a {
-    color: #24262b;
+    text-shadow: 2px 2px 5px black;
+    color: white;
 }
 
 .menu-color--black .sub-menu>li>a,
@@ -647,7 +654,7 @@ button {
 }
 
 .header-logo .logo img {
-    width: 100%;
+    width: 67%;
     height: auto;
 }
 
@@ -2382,7 +2389,8 @@ button {
 
 #footer_one {
     padding: 70px 0;
-    background-color: #f6f6f6;
+    background-color: #002c5f;
+    color: white;
 }
 
 #footer_one .footer_left_side p {
@@ -2400,6 +2408,7 @@ button {
 #footer_one .footer_one_widget h3 {
     text-transform: uppercase;
     font-size: 18px;
+    color: white;
 }
 
 #footer_one .footer_one_widget ul li {

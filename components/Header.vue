@@ -1,6 +1,23 @@
 <template>
-  <div>
+  <div class="transparent_bg_sec">
     <!-- Start Header Area -->
+    <div >
+        <div class="container">
+            <div class="flex justify-around py-3">
+                <div class="left">
+                    <div class="text-md text-white font-semibold shodow_css_head">Service: +91 9902099944 | Sales: +91 9731097310</div>
+                </div>
+                <div class="right flex items-center">
+                    <div class="text-md text-white font-semibold mx-1 mt-1 shodow_css_head">Follow us:</div>
+                    <div class="social_icons_box flex">
+                        <img class="cursor-pointer" :src="require('@/assets/img/fbicon.png')" alt="img"  />
+                        <img class="cursor-pointer" :src="require('@/assets/img/instaicon.png')" alt="img"  />
+                        <img class="cursor-pointer" :src="require('@/assets/img/youtubeicon.png')" alt="img"  />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <header class="header-section d-none d-xl-block">
         <div class="header-wrapper">
             <div id="header" class="header-bottom header-bottom-color--golden section-fluid sticky-header sticky-color--golden">
@@ -10,7 +27,7 @@
                             <!-- Start Header Logo -->
                             <div class="header-logo">
                                 <div class="logo">
-                                    <nuxt-link to="/"><img class="site_logo" :src="require('@/assets/img/logo.png')" alt="logo" /></nuxt-link>
+                                    <nuxt-link to="/"><img class="site_logo" :src="require('@/assets/img/peeyesyem.png')" alt="logo" /></nuxt-link>
                                 </div>
                             </div>
                             <!-- End Header Logo -->
@@ -21,7 +38,7 @@
                                     <ul>
                                         
                                         <li class="has-dropdown">
-                                            <a href="#">New Cars <i class="fa fa-angle-down"></i></a>
+                                            <a class="menu-item" href="#">New Cars <i class="fa fa-angle-down"></i></a>
                                             <!-- Sub Menu -->
                                             <ul class="sub-menu">
                                                 <li><nuxt-link to="/">Fashion</nuxt-link></li>
@@ -31,7 +48,7 @@
                                         </li>
 
                                         <li class="has-dropdown has-megaitem">
-                                            <a href="#">Contact Us <i class="fa fa-angle-down"></i></a>
+                                            <a class="menu-item" href="#">Contact Us <i class="fa fa-angle-down"></i></a>
                                             <!-- Mega Menu -->
                                             <div class="mega-menu">
                                                 <ul class="mega-menu-inner">
@@ -85,7 +102,7 @@
                                             </div>
                                         </li>
                                         <li class="has-dropdown">
-                                            <a href="#">Services <i class="fa fa-angle-down"></i></a>
+                                            <a class="menu-item" href="#">Services <i class="fa fa-angle-down"></i></a>
                                             <!-- Sub Menu -->
                                             <ul class="sub-menu">
                                                 <li><nuxt-link to="/blog">Blog Grid View One</nuxt-link></li>
@@ -96,7 +113,7 @@
                                             </ul>
                                         </li>
                                         <li class="has-dropdown">
-                                            <a href="#">Used Cars <i class="fa fa-angle-down"></i></a>
+                                            <a class="menu-item" href="#">Used Cars <i class="fa fa-angle-down"></i></a>
                                             <!-- Sub Menu -->
                                             <ul class="sub-menu">
                                                 <li><nuxt-link to="/faq">Frequently Questions</nuxt-link></li>
@@ -111,7 +128,7 @@
                                             </ul>
                                         </li>
                                         <li>
-                                            <nuxt-link to="/about-us">About Us</nuxt-link>
+                                            <nuxt-link class="menu-item" to="/about-us">About Us</nuxt-link>
                                         </li>
                                     </ul>
                                 </nav>
@@ -119,12 +136,12 @@
                             <!-- End Header Main Menu Start -->
 
                             <!-- Start Header Action Link -->
-                            <ul class="header-action-link action-color--black action-hover-color--golden">
+                            <!-- <ul class="header-action-link action-color--black action-hover-color--golden">
                                 
                                 <li>
                                     <a v-b-toggle.offcanvas-about class="offacnvas offside-about offcanvas-toggle"><i class="fas fa-bars"></i></a>
                                 </li>
-                            </ul>
+                            </ul> -->
                             <!-- End Header Action Link -->
                         </div>
                     </div>
@@ -639,10 +656,25 @@ export default {
 </script>
 
 <style>
+
 /* Mobile Menu Multi Dropdown Items Start */
+.shodow_css_head{
+    text-shadow: 2px 2px 5px black;
+}
+.transparent_bg_sec{
+    background: transparent;
+    z-index: 999;
+    position: absolute;
+    width: 100%;
+}
+.social_icons_box img{
+    margin-left: 5px;
+    margin-right: 5px;
+    width:30px;
+}
 
 .site_logo.size_resize{
-    width:67%!important;
+    width:59%!important;
     transition: .4s ease-in-out;
 }
 .v-sidebar-menu .vsm--toggle-btn {

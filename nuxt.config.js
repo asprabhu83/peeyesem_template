@@ -26,7 +26,7 @@ export default {
 
 
   env: {
-    baseUrl: 'http://127.0.0.1:8000/'
+    baseUrl: 'https://site.peeyesyemhyundai.co.in/'
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
