@@ -41,94 +41,65 @@
                                             <a class="menu-item" href="#">New Cars <i class="fa fa-angle-down"></i></a>
                                             <!-- Sub Menu -->
                                             <ul class="sub-menu">
-                                                <li><nuxt-link to="/">Fashion</nuxt-link></li>
-                                                <li><nuxt-link to="/furniture">Furniture</nuxt-link></li>
-                                                <li><nuxt-link to="/electronics">Electronics</nuxt-link></li>
+                                                <li><nuxt-link to="/">ALL CARS</nuxt-link></li>
+                                                <li><nuxt-link to="/">Hyundai Santro</nuxt-link></li>
+                                                <li><nuxt-link to="/">Hyundai All New i20</nuxt-link></li>
                                             </ul>
                                         </li>
 
                                         <li class="has-dropdown has-megaitem">
                                             <a class="menu-item" href="#">Contact Us <i class="fa fa-angle-down"></i></a>
-                                            <!-- Mega Menu -->
-                                            <div class="mega-menu">
-                                                <ul class="mega-menu-inner">
-                                                    <!-- Mega Menu Sub Link -->
-                                                    <li class="mega-menu-item">
-                                                        <a href="#" class="mega-menu-item-title">Shop Layouts</a>
-                                                        <ul class="mega-menu-sub">
-                                                            <li><nuxt-link to="/shop">Shop Four Grid</nuxt-link></li>
-                                                            <li><nuxt-link to="/shop/shop-2">Shop Three Grid</nuxt-link></li>
-                                                            <li><nuxt-link to="/shop/shop-3">Shop List View</nuxt-link></li>
-                                                            <li><nuxt-link to="/shop/shop-4">Shop Left Sidebar</nuxt-link></li>
-                                                            <li><nuxt-link to="/shop/shop-5">Shop Right Sidebar</nuxt-link></li>
-                                                            <li><nuxt-link to="/product/1">Product Single</nuxt-link></li>
-                                                            <li><nuxt-link to="/product/product-single-2">Product Single Two</nuxt-link></li>
-                                                        </ul>
-                                                    </li>
-                                                    <!-- Mega Menu Sub Link -->
-                                                    <li class="mega-menu-item">
-                                                        <a href="#" class="mega-menu-item-title">Locations</a>
-                                                        <ul class="mega-menu-sub">
-                                                            <li><nuxt-link to="/cart/">Cart View One</nuxt-link></li>
-                                                            <li>
-                                                                <nuxt-link to="/cart/cart-2">Cart View Two </nuxt-link>
-                                                            </li>
-                                                            <li>
-                                                                <nuxt-link to="/cart/empty-cart">Empty Cart</nuxt-link>
-                                                            </li>
-                                                            <li>
-                                                                <nuxt-link to="/my-account/checkout-1">Checkout View One</nuxt-link>
-                                                            </li>
-                                                            <li>
-                                                                <nuxt-link to="/my-account/checkout-2">Checkout View Two</nuxt-link>
-                                                            </li>
-                                                            <li><nuxt-link to="/my-account/wishlist">Wishlist</nuxt-link></li>
-                                                            <li><nuxt-link to="/my-account/compare">Compare</nuxt-link></li>
-                                                            <li>
-                                                                <nuxt-link to="/my-account/order-tracking">Order Tracking</nuxt-link>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
+                                               <ul class="sub-menu">
+                                                <li><nuxt-link to="/">Test Drive</nuxt-link></li>
+                                                <li><nuxt-link to="/">Sales Enquiry</nuxt-link></li>
+                                                <li><nuxt-link to="/">EMI Calculator</nuxt-link></li>
+                                                    <li><nuxt-link to="/">Special Offers</nuxt-link></li>
+                                                <li><nuxt-link to="/">Feedback</nuxt-link></li>
+                                                <li><nuxt-link to="/">Contact Us</nuxt-link></li>
+                                            <li><nuxt-link to="/">Get A Quote</nuxt-link></li>
+                                            </ul>
 
-                                                    <!-- Mega Menu Sub Link -->
-                                                    <li class="mega-menu-item">
-                                                        <div class="menu-banner">
-                                                            <nuxt-link to="/shop" class="menu-banner-link">
-                                                                <img class="menu-banner-img" :src="require('@/assets/img/common/nav_banner.png')" alt="img" />
-                                                            </nuxt-link>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li class="has-dropdown">
-                                            <a class="menu-item" href="#">Services <i class="fa fa-angle-down"></i></a>
-                                            <!-- Sub Menu -->
-                                            <ul class="sub-menu">
-                                                <li><nuxt-link to="/blog">Blog Grid View One</nuxt-link></li>
-                                                <li><nuxt-link to="/blog/blog-2">Blog Grid View Two</nuxt-link></li>
-                                                <li><nuxt-link to="/blog/blog-3">Blog List View</nuxt-link></li>
-                                                <li><nuxt-link to="/blog/blog-single">Blog Single View One </nuxt-link></li>
-                                                <li><nuxt-link to="/blog/blog-single-2">Blog Single View TWo</nuxt-link></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-dropdown">
-                                            <a class="menu-item" href="#">Used Cars <i class="fa fa-angle-down"></i></a>
-                                            <!-- Sub Menu -->
-                                            <ul class="sub-menu">
-                                                <li><nuxt-link to="/faq">Frequently Questions</nuxt-link></li>
-                                                <li><nuxt-link to="/privacy-policy">Privacy Policy</nuxt-link></li>
-                                                <li><nuxt-link to="/404">404 Page</nuxt-link></li>
-                                                <li><nuxt-link to="/contact-us">Contact Us One</nuxt-link></li>
-                                                <li><nuxt-link to="/contact-us/contact-us-2">Contact Us Two</nuxt-link></li>
-                                                <li><nuxt-link to="/coming-soon">Coming Soon</nuxt-link></li>
-                                                <li><nuxt-link to="/vendor-dashboard/">Vendor</nuxt-link></li>
-                                                <li><nuxt-link to="/my-account">My Account</nuxt-link></li>
-                                                <li><nuxt-link to="/login">Login</nuxt-link></li>
-                                            </ul>
                                         </li>
                                         <li>
+                                            <a class="menu-item" href="#">Locations <i class="fa fa-angle-down"></i></a>
+                                           
+                                        </li>
+                                        <li class="has-dropdown">
+                                            <a class="menu-item" href="#">Services<i class="fa fa-angle-down"></i></a>
+                                            <!-- Sub Menu -->
+                                            <ul class="sub-menu">
+                                                <li><nuxt-link to="/">Book a Service</nuxt-link></li>
+                                                <li><nuxt-link to="/">Safety Tips</nuxt-link></li>
+                                                <li><nuxt-link to="/">Maintenance Tips</nuxt-link></li>
+                                                <li><nuxt-link to="/">Driving Tips</nuxt-link></li>
+                                                <li><nuxt-link to="/">Fuel Saving Tips</nuxt-link></li>
+                                                <li><nuxt-link to="/">Get Insurance</nuxt-link></li>
+                                                <li><nuxt-link to="/">Extended Warranty</nuxt-link></li>
+                                                <li><nuxt-link to="/">Car Detailing Services</nuxt-link></li>
+                                                <li><nuxt-link to="/">Owners Manual</nuxt-link></li>
+                                            </ul>
+                                        </li>
+                                         <li class="has-dropdown">
+                                            <a class="menu-item" href="#">Used Cars<i class="fa fa-angle-down"></i></a>
+                                            <!-- Sub Menu -->
+                                            <ul class="sub-menu">
+                                                <li><nuxt-link to="/">Used Cars</nuxt-link></li>
+                                                <li><nuxt-link to="/">Sell a Car</nuxt-link></li>
+                                            </ul>
+                                        </li>
+                                       <li>
+                                            <a class="menu-item" href="#">Accessories<i class="fa fa-angle-down"></i></a>
+                                        </li>
+                                        <li  class="has-dropdown">
                                             <nuxt-link class="menu-item" to="/about-us">About Us</nuxt-link>
+                                            <ul class="sub-menu">
+                                                <li><nuxt-link to="/">About</nuxt-link></li>
+                                                <li><nuxt-link to="/">Blog</nuxt-link></li>
+                                                <li><nuxt-link to="/">Testimonials</nuxt-link></li>
+                                                <li><nuxt-link to="/">Gallery</nuxt-link></li>
+                                                <li><nuxt-link to="/">Careers</nuxt-link></li>
+                                                <li><nuxt-link to="/">News and Events</nuxt-link></li>
+                                            </ul>
                                         </li>
                                     </ul>
                                 </nav>

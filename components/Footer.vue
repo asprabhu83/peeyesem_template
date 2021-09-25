@@ -4,14 +4,14 @@
     <footer id="footer_one">
         <div class="mb-14">
             <div class="text-center font-bold text-2xl mb-2">DO YOU NEED HELP IN CHOOSING A CAR?</div>
-            <div class="text-center text-lg">Call us : (007) 123 456 7890</div>
+            <div class="text-center text-lg">Call us : 9962207774</div>
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-12 col-sm-12 col-12">
                     <div class="footer_left_side">
                         <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati culpa assumenda voluptas placeat amet consectetur adipisicing elit. Obcaecati culpa assumenda voluptas placeat.
+                            Peeyesyem Hyundai is one of the largest Hyundai dealer having showrooms at various locations around Tamilnadu. Our branches are located at Chennai, Tuticorin, Tiruchendur, Tuticorin, Madurai and Ramnathapuram. We strive to provide the best services to our customers with great satisfaction and excellency.
                         </p>
                         <div class="footer_left_side_icon">
                             <ul>
@@ -19,16 +19,10 @@
                                     <a href="#!"><i class="fab fa-facebook-f"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#!"><i class="fab fa-twitter"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#!"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#!"><i class="fab fa-youtube"></i></a>
                                 </li>
                                 <li>
                                     <a href="#!"><i class="fab fa-instagram"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#!"><i class="fab fa-google-plus-g"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -39,24 +33,22 @@
                         <h3>INFORMATION</h3>
                         <ul>
                             <li><nuxt-link to="/">Home</nuxt-link></li>
-                            <li><nuxt-link to="/about-us">About Us</nuxt-link></li>
-                            <li><nuxt-link to="/privacy-policy">Privacy Policy</nuxt-link></li>
-                            <li><nuxt-link to="/faq">Frequently Questions</nuxt-link></li>
-                            <li><nuxt-link to="/my-account/order-tracking">Order Tracking</nuxt-link></li>
-                            <li><nuxt-link to="/my-account/compare">Compare</nuxt-link></li>
+                            <li><nuxt-link to="/">About Us</nuxt-link></li>
+                            <li><nuxt-link to="/">Privacy Policy</nuxt-link></li>
+                            <li><nuxt-link to="/">Terms of Use</nuxt-link></li>
+                            <li><nuxt-link to="/">Warranty Policy</nuxt-link></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 col-sm-12 col-12">
                     <div class="footer_one_widget">
-                        <h3>Your Account</h3>
+                        <h3>Our Services</h3>
                         <ul>
-                            <li><nuxt-link to="/cart/">Cart View One</nuxt-link></li>
-                            <li><nuxt-link to="/cart/cart-2">Cart View Two </nuxt-link></li>
-                            <li><nuxt-link to="/cart/empty-cart">Empty Cart</nuxt-link></li>
-                            <li><nuxt-link to="/my-account/checkout-1">Checkout View One</nuxt-link></li>
-                            <li><nuxt-link to="/my-account/checkout-2">Checkout View Two</nuxt-link></li>
-                            <li><nuxt-link to="/my-account/wishlist">Wishlist</nuxt-link></li>
+                            <li><nuxt-link to="/">New Cars</nuxt-link></li>
+                            <li><nuxt-link to="/">Used Cars</nuxt-link></li>
+                            <li><nuxt-link to="/">Book a Test Drive</nuxt-link></li>
+                            <li><nuxt-link to="/">Book a Service</nuxt-link></li>
+                            <li><nuxt-link to="/">Accessories</nuxt-link></li>
                         </ul>
                     </div>
                 </div>
@@ -96,7 +88,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-12">
                     <div class="copyright_right">
-                        <img :src="require('@/assets/img/common/payment.png')" alt="img" />
+                       <!-- <img :src="require('@/assets/img/common/payment.png')" alt="img" /> -->
                     </div>
                 </div>
             </div>

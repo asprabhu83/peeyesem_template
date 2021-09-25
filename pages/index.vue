@@ -59,13 +59,13 @@
         <div class="container">
             <div class="about_car_sec flex  justify-center">
                 <div class="left_sec w-1/2 mx-10 pt-6">
-                    <h3 class="text-uppercase">About cardealer <hr class="h-1 bg-black w-3/12 my-1" /></h3>
-                    <div class="flex items-center my-5">
+                    <h3 class="text-uppercase">About Peeyesyem hyundai <hr class="h-1 bg-black w-3/12 my-1" /></h3>
+                    <!-- <div class="flex items-center my-5">
                         <div class="mx-3 text-3xl">10</div>
                         <div class="mx-3">Everything you need to build an amazing dealership automotive responsive website.</div>
-                    </div>
+                    </div> -->
                     <div class="my-6 text-gray">
-                        Car Dealer is the best premium HTML5 Template. We provide everything you need to build an Amazing dealership website developed especially for car sellers, dealers or auto motor retailers.
+                        Peeyesyem Hyundai is one of the largest Hyundai dealer having showrooms at various locations around Tamilnadu. Our branches are located at Chennai, Tuticorin, Tiruchendur, Tuticorin, Madurai and Ramnathapuram. We strive to provide the best services to our customers with great satisfaction and excellency.
                     </div>
                 </div>
                 <div class="right_sec w-1/2 mx-10 flex items-center">
@@ -78,15 +78,15 @@
         <div class="container">
             <div class="row  service_items flex items-center justify-evenly">
                 <div class="text-white text-center service_items font-bold text-xl">
-                    <div class="mb-2">VEHICLES IN STOCK</div>
-                   <div class="flex items-center"><img class="mx-2" :src="require('@/assets/img/vehicle.png')" alt="img"  /><div id="value1"> 400</div></div>
+                    <div class="mb-2">SHOWROOMS IN TAMILNADU</div>
+                   <div class="flex items-center"><img class="mx-2" :src="require('@/assets/img/vehicle.png')" alt="img"  /><div id="value1"> 6</div></div>
                 </div>
                 <div class="text-white text-center service_items font-bold text-xl">
-                    <div class="mb-2">DEALER REVIEWS</div>
+                    <div class="mb-2">REVIEWS</div>
                    <div class="flex items-center"><img class="mx-2" :src="require('@/assets/img/chatwhite.png')" alt="img"  /><div id="value2"> 255</div></div>
                 </div>
                 <div class="text-white text-center service_items font-bold text-xl">
-                   <div class="mb-2">HAPPY CUSTOMER</div>
+                   <div class="mb-2">HAPPY CUSTOMERS</div>
                    <div class="flex items-center"><img class="mx-2" :src="require('@/assets/img/userwhite.png')" alt="img"  /><div id="value3"> 430</div></div>
                 </div>
                 <div class="text-white text-center service_items font-bold text-xl">
