@@ -100,14 +100,14 @@
 
     <section class="py-20 cars_product_section"  style="background: #e6eaef;">
         <h2 class="text-center text-uppercase" >Choose Your Dream Hyundai Car<hr class="h-1 w-3/12 my-2 mx-auto bg-black" style="background-color:black!important;" /></h2>
-        <div class="card_box  flex flex-wrap mt-16 mx-auto justify-center" style="width:77%;">
-            <div class="car_box rounded-md" v-for="car in staticcars" :key="car.id">
-                <a :href="'/cars/?id='+ car.id" class="text-center block car_image_box cursor-pointer rounded-sm" style="margin-bottom:0!important;min-height:198px;max-height:198px;">
-                    <img :src="require('@/assets/img/cars/static/'+ car.image)" alt="" style="width:330px;min-height:198px;max-height:198px;">
+        <div class="card_box  flex flex-wrap mt-16 mx-auto">
+            <div class="car_box_item" v-for="car in staticcars" :key="car.id">
+                <a :href="'/cars/?id='+ car.id" class="text-center block car_image_box cursor-pointer" style="margin-bottom:0!important;min-height:198px;max-height:198px;">
+                    <img :src="require('@/assets/img/cars/static/'+ car.image)" alt="" style="width:315.7px;min-height:198px;max-height:198px;">
                 </a>
-                <div class="" >
-                    <div class="text-center font-medium mb-2 cursor-pointer">{{car.name}}</div>
-                   <div class="text-center font-medium"><font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mx-2" />{{car.price}}</div>
+                <div class="car_details" >
+                    <div class="text-center font-medium mt-1 mb-1 cursor-pointer">{{car.name}}</div>
+                   <div class="text-center font-medium mt-1 mb-1"><font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mx-2" />{{car.price}}</div>
                 </div>
             </div>
         </div>
@@ -341,6 +341,30 @@ export default {
                 name:'Hyundai Santro',
                 image:'car8.jpg',
                 price:'4,67,490'
+            },
+            {
+                id:9,
+                name:'GRAND i10 NIOS',
+                image:'car9.webp',
+                price:'8,14,900'
+            },
+            {
+                id:10,
+                name:'Hyundai i20 N Line',
+                image:'car10.webp',
+                price:'7,31,900'
+            },
+            {
+                id:11,
+                name:'Hyundai ELANTRA',
+                image:'car11.webp',
+                price:'10,68,000'
+            },
+            {
+                id:12,
+                name:'Hyundai CRETA',
+                image:'car12.jpg',
+                price:'17,00,000'
             }
         ],
 
@@ -517,5 +541,20 @@ export default {
 }
 .bg-position_overlay{
     z-index: 205;
+}
+.car_details{
+    background: white;
+    opacity: 0.8;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transform: scale(0);
+    transition: 0.4s ease-in-out;
+}
+.car_box_item{
+    position: relative;
+}
+.car_box_item:hover .car_details{
+    transform: scale(1);
 }
 </style>
