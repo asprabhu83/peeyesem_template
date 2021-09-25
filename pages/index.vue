@@ -55,7 +55,7 @@
         </div>
     </section>
 
-    <section class="py-24"  style="background: #f6f6f6;">
+    <section class="py-24"  style="background:#e6eaef;">
         <div class="container">
             <div class="about_car_sec flex  justify-center">
                 <div class="left_sec w-1/2 mx-10 pt-6">
@@ -68,8 +68,8 @@
                         Car Dealer is the best premium HTML5 Template. We provide everything you need to build an Amazing dealership website developed especially for car sellers, dealers or auto motor retailers.
                     </div>
                 </div>
-                <div class="right_sec w-1/2 mx-10">
-                    <img :src="require('@/assets/img/cars/car18.webp')" style="margin-left:auto;margin-right:auto;" alt="img" />
+                <div class="right_sec w-1/2 mx-10 flex items-center">
+                    <img :src="require('@/assets/img/cars/hyundai_group_car2.png')" style="margin-left:auto;margin-right:auto;" alt="img" />
                 </div>
             </div>
         </div>
@@ -79,35 +79,35 @@
             <div class="row  service_items flex items-center justify-evenly">
                 <div class="text-white text-center service_items font-bold text-xl">
                     <div class="mb-2">VEHICLES IN STOCK</div>
-                   <div class="flex items-center"><img class="mx-2" :src="require('@/assets/img/vehicle.png')" alt="img"  />400</div>
+                   <div class="flex items-center"><img class="mx-2" :src="require('@/assets/img/vehicle.png')" alt="img"  /><div id="value1"> 400</div></div>
                 </div>
                 <div class="text-white text-center service_items font-bold text-xl">
                     <div class="mb-2">DEALER REVIEWS</div>
-                   <div class="flex items-center"><img class="mx-2" :src="require('@/assets/img/chatwhite.png')" alt="img"  />255</div>
+                   <div class="flex items-center"><img class="mx-2" :src="require('@/assets/img/chatwhite.png')" alt="img"  /><div id="value2"> 255</div></div>
                 </div>
                 <div class="text-white text-center service_items font-bold text-xl">
                    <div class="mb-2">HAPPY CUSTOMER</div>
-                   <div class="flex items-center"><img class="mx-2" :src="require('@/assets/img/userwhite.png')" alt="img"  />430</div>
+                   <div class="flex items-center"><img class="mx-2" :src="require('@/assets/img/userwhite.png')" alt="img"  /><div id="value3"> 430</div></div>
                 </div>
                 <div class="text-white text-center service_items font-bold text-xl">
                    <div class="mb-2">AWARDS</div>
-                   <div class="flex items-center"><img class="mx-2" :src="require('@/assets/img/awardicon.png')" alt="img"  />340</div>
+                   <div class="flex items-center"><img class="mx-2" :src="require('@/assets/img/awardicon.png')" alt="img"  /><div id="value4">340</div> </div>
                 </div>
             </div>
         </div>
         <div class="overlay" />
     </section>
 
-    <section class="py-20 cars_product_section" v-if="cars.length !== 0" style="background: #f6f6f6;">
+    <section class="py-20 cars_product_section"  style="background: #e6eaef;">
         <h2 class="text-center text-uppercase" >Choose Your Dream Hyundai Car<hr class="h-1 w-3/12 my-2 mx-auto bg-black" style="background-color:black!important;" /></h2>
-        <div class="card_box flex flex-wrap mt-16 mx-auto justify-center" style="width:77%;">
-            <div class="car_box bg-white m-4 shadow-md p-4 rounded-md" v-for="car in cars.cars" :key="car.id">
-                <a :href="'/cars/?id='+ car.id" class="text-center block my-6 px-3 cursor-pointer rounded-sm my-4" style="margin-bottom:0!important;">
-                    <img :src="require('@/assets/img/cars/car8.webp')" alt="" style="width:330px;max-height:388px;">
+        <div class="card_box  flex flex-wrap mt-16 mx-auto justify-center" style="width:77%;">
+            <div class="car_box rounded-md" v-for="car in staticcars" :key="car.id">
+                <a :href="'/cars/?id='+ car.id" class="text-center block car_image_box cursor-pointer rounded-sm" style="margin-bottom:0!important;min-height:198px;max-height:198px;">
+                    <img :src="require('@/assets/img/cars/static/'+ car.image)" alt="" style="width:330px;min-height:198px;max-height:198px;">
                 </a>
-                <div class="mt-5 mb-4">
-                    <div class="text-center font-medium mb-2 cursor-pointer">{{car.car_title}}</div>
-                   <div class="text-center font-medium"><font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mx-2" />{{car.car_price}}</div>
+                <div class="" >
+                    <div class="text-center font-medium mb-2 cursor-pointer">{{car.name}}</div>
+                   <div class="text-center font-medium"><font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mx-2" />{{car.price}}</div>
                 </div>
             </div>
         </div>
@@ -166,7 +166,7 @@
         <div class="overlay2 testimonial" />
     </section>
 
-    <section class="py-24" style="background: #f6f6f6;">
+    <section class="py-24" style="background:#e6eaef;">
         <div class="container">
             <div class=" flex items-center">
                 <div class="left w-1/2 mx-10">
@@ -175,7 +175,7 @@
                   <img :src="require('@/assets/img/cars/car16.webp')" alt="img"  />
                 </div>
                 <div class="right w-1/2 mx-10">
-                  <h3 class="font-bold mb-3 sales_heading">ARE YOU LOOKING FOR A CAR?</h3>
+                  <h3 class="font-bold mb-3 sales_heading">DO YOU WANT TO SELL YOUR CAR?</h3>
                   <p class="sales_heading mb-3">Request search your car in our Inventory and a quote on the vehicle of your choosing.</p>
                   <img :src="require('@/assets/img/cars/car17.webp')" alt="img" style="transform:scaleX(-1);" />
                 </div>
@@ -293,6 +293,57 @@ export default {
 
         cars:[],
 
+        staticcars:[
+            {
+                id:1,
+                name:'Hyundai Tuscon',
+                image:'car1.webp',
+                price:'4,67,490'
+            },
+            {
+                id:2,
+                name:'Hyundai Verna',
+                image:'car3.jpg',
+                price:'8,19,900'
+            },
+            {
+                id:3,
+                name:'Hyundai Aura',
+                image:'car2.webp',
+                price:'22,30,000'
+            },
+            {
+                id:4,
+                name:'Hyundai Venue',
+                image:'car4.webp',
+                price:'8,16,500'
+            },
+            {
+                id:5,
+                name:'Hyundai Kona',
+                image:'car6.jpg',
+                price:'9,99,900'
+            },
+            {
+                id:6,
+                name:'Hyundai Alcazar',
+                image:'car5.jpg',
+                price:'16,53,300'
+            },
+            {
+                id:7,
+                name:'Hyundai All New I20',
+                image:'car7.jpg',
+                price:'8,19,900'
+            },
+            {
+                id:8,
+                name:'Hyundai Santro',
+                image:'car8.jpg',
+                price:'4,67,490'
+            }
+        ],
+
         // Todays Slider options 
         swiperOption: {
                 slidesPerView: 1,
@@ -307,7 +358,7 @@ export default {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev'
                 },
-                autoplay: true,
+                autoplay: false,
             },
 
       }
@@ -323,6 +374,17 @@ export default {
 
         this.productsArray()
         this.GetCars()
+        const obj1 = document.getElementById("value1");
+        this.animateValue(obj1, 0, 400, 7000);
+
+        const obj2 = document.getElementById("value2");
+        this.animateValue(obj2, 0, 255, 7000);
+
+        const obj3 = document.getElementById("value3");
+        this.animateValue(obj3, 0, 430, 7000);
+
+        const obj4 = document.getElementById("value4");
+        this.animateValue(obj4, 0, 340, 7000);
     },
     methods: {
         productsArray: function () {
@@ -358,8 +420,20 @@ export default {
             .catch((error) => {
             console.log(error)
             })
+        },
+         animateValue(obj, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start) + start);
+                if (progress < 1) {
+                window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
         }
-    },
+        },
 
     // Page head() Title, description for SEO 
     head() {
@@ -377,6 +451,16 @@ export default {
 }
 </script>
 <style scoped>
+.car_image_box{
+    overflow: hidden;
+    cursor: pointer;
+}
+.car_image_box img{
+    transition: .5s ease-in-out;
+}
+.car_image_box img:hover{
+    transform: scale(1.1);
+}
 .testimonial_content{
     width: 40%;
     color: white;
