@@ -424,158 +424,129 @@ export default {
                 {
                     title: 'Contact Us',
                     child: [
-                        {    
-                            title: 'Shop Layout',
-                            child: [
-                                {
-                                    href: '/shop',
-                                    title: 'Shop Four Grid'
-                                            
-                                },
-                                {
-                                    href: '/shop/shop-2',
-                                    title: 'Shop Three Grid'
-                                },
-                                {
-                                    href: '/shop/shop-3',
-                                    title: 'Shop List View'
-                                },
-                                {
-                                    href: '/shop/shop-4',
-                                    title: 'Shop Left Sidebar'
-                                },
-                                {
-                                    href: '/shop/shop-5',
-                                    title: 'Shop Right Sidebar'
-                                }
-                            ]
+                        {
+                            href: '/',
+                            title: 'Test Drive'
                                     
                         },
                         {
-                            title: 'Shop Pages',
-                            child: [
-                                {
-                                    href: '/cart/',
-                                    title: 'Cart View One'
-                                            
-                                },
-                                {
-                                    href: '/cart/cart-2',
-                                    title: 'Cart View Two'
-                                },
-                                {
-                                    href: '/cart/empty-cart',
-                                    title: 'Empty Cart'
-                                },
-                                {
-                                    href: '/my-account/checkout-1',
-                                    title: 'Checkout View One'
-                                },
-                                {
-                                    href: '/my-account/checkout-2',
-                                    title: 'Checkout View Two'
-                                },
-                                {
-                                    href: '/my-account/wishlist',
-                                    title: 'Wishlist'
-                                },
-                                {
-                                    href: '/my-account/compare',
-                                    title: 'Compare'
-                                },
-                                {
-                                    href: '/my-account/order-tracking',
-                                    title: 'Order Tracking'
-                                }
-                            ]
+                            href: '/',
+                            title: 'Sales Enquiry'
                         },
                         {
-                            title: 'Product Single',
-                            child: [
-                                {
-                                    href: '/product/1',
-                                    title: 'Product Single'         
-                                },
-                                {
-                                    href: '/product/product-single-2',
-                                    title: 'Product Single Two'
-                                }
-                            ]
+                            href: '/',
+                            title: 'EMI Calculator'
+                        },
+                        {
+                            href: '/',
+                            title: 'Special Offers'
+                        },
+                        {
+                            href: '/',
+                            title: 'Feedback'
+                        },
+                        {
+                            href: '/',
+                            title: 'Contact Us'
+                        },
+                        {
+                            href: '/',
+                            title: 'Get A Quote'
                         }
                     ]
                 },
                 {
-                    title: 'Blogs',
+                    href:'/',
+                    title: 'Locations'
+                },
+                {
+                    title: 'Services',
                     child: [
                         {
-                            href: '/blog',
-                            title: 'Blog Grid View One'
+                            href: '/',
+                            title: 'Book a Service'
                                     
                         },
                         {
-                            href: '/blog/blog-2',
-                            title: 'Blog Grid View Two'
+                            href: '/',
+                            title: 'Safety Tips'
                         },
                         {
-                            href: '/blog/blog-3',
-                            title: 'Blog List View'
+                            href: '/',
+                            title: 'Maintenance Tips'
                         },
                         {
-                            href: '/blog/blog-single',
-                            title: 'Blog Single View One'
+                            href: '/',
+                            title: 'Driving Tips'
                         },
                         {
-                            href: '/blog/blog-single-2',
-                            title: 'Blog Single View TWo'
+                            href: '/',
+                            title: 'Fuel Saving Tips'
+                        },
+                        {
+                            href: '/',
+                            title: 'Get Insurance'
+                        },
+                        {
+                            href: '/',
+                            title: 'Extended Warranty'
+                        },
+                        {
+                            href: '/',
+                            title: 'Car Detailing Services'
+                        },
+                        {
+                            href: '/',
+                            title: 'Owners Manual'
                         }
                     ]
                 },
                 {
-                    title: 'Pages',
-                    child: [
+                    title:'Used Cars',
+                    child:[
                         {
-                            href: '/faq',
-                            title: 'Frequently Questions'
-                                    
+                            href: '/',
+                            title: 'Used Cars'
                         },
                         {
-                            href: '/privacy-policy',
-                            title: 'Privacy Policy'
-                        },
-                        {
-                            href: '/404',
-                            title: '404 Page'
-                        },
-                        {
-                            href: '/contact-us',
-                            title: 'Contact Us One'
-                        },
-                        {
-                            href: '/contact-us/contact-us-2',
-                            title: 'Contact Us Two'
-                        },
-                        {
-                            href: '/coming-soon',
-                            title: 'Coming Soon'
-                        },
-                        {
-                            href: '/vendor-dashboard',
-                            title: 'Vendor'
-                        },
-                        {
-                            href: '/my-account',
-                            title: 'My Account'
-                        },
-                        {
-                            href: '/login',
-                            title: 'Login'
+                            href: '/',
+                            title: 'Sell a Car'
                         }
                     ]
                 },
                 {
-                    href: '/about-us',
-                    title: 'About Us',
+                    href: '/',
+                    title: 'Accessories',
                 },
+                {
+                    title:'About Us',
+                    child:[
+                        {
+                            href: '/',
+                            title: 'About'
+                        },
+                        {
+                            href: '/',
+                            title: 'Blog'
+                        },
+                        {
+                            href: '/',
+                            title: 'Testimonials'
+                        },
+                        {
+                            href: '/',
+                            title: 'Gallery'
+                        },
+                        {
+                            href: '/',
+                            title: 'Careers'
+                        },
+                        {
+                            href: '/',
+                            title: 'News and Events'
+                        }
+                    ]
+                }
             ],
             products: [],
             category: [],

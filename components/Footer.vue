@@ -3,7 +3,7 @@
     <!-- footer Area -->
     <footer id="footer_one">
         <div class="mb-14">
-            <div class="text-center font-bold text-2xl mb-2">DO YOU NEED HELP IN CHOOSING A CAR?</div>
+            <div class="text-center font-bold text-2xl mb-2 call_service_sec">DO YOU NEED HELP IN CHOOSING A CAR?</div>
             <div class="text-center text-lg">Call us : 9962207774</div>
         </div>
         <div class="container">
@@ -29,7 +29,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 col-12">
+                <div class="col-lg-3 col-md-6 col-sm-12 col-6 footer_mobile_menu">
                     <div class="footer_one_widget">
                         <h3>INFORMATION</h3>
                         <ul>
@@ -41,7 +41,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-6 col-sm-12 col-12">
+                <div class="col-lg-2 col-md-6 col-sm-12 col-6 footer_mobile_menu">
                     <div class="footer_one_widget">
                         <h3>Our Services</h3>
                         <ul>
@@ -147,6 +147,17 @@ export default {
 @media only screen and (min-width:300px) and (max-width:600px){
     #footer_one .footer_left_side_icon{
         text-align: center;
+    }
+    .footer_mobile_menu{
+        margin: 30px 0;
+    }
+    .mc-form .clear{
+        text-align: center;
+    }
+    .call_service_sec{
+        margin-bottom: 20px!important;
+        font-size: 20px;
+        padding: 0 17px;
     }
 }
 </style>
