@@ -143,3 +143,10 @@ export default {
     },
 }
 </script>
+<style scoped>
+@media only screen and (min-width:300px) and (max-width:600px){
+    #footer_one .footer_left_side_icon{
+        text-align: center;
+    }
+}
+</style>

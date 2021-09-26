@@ -30,22 +30,23 @@
     <section id="product_variation_one" class="pt-10 mb-14">
         <div class="container-fluid">
             <div class="my-5">
-                <div class="text-center font-bold text-3xl text-uppercase">FEATURED CAR<hr class="h-1 w-1/12 my-2 mx-auto bg-black" style="background-color:black!important;" /></div>
+                <div class="text-center font-bold text-3xl text-uppercase feature_heading">FEATURED CAR<hr class="h-1 w-1/12 my-2 mx-auto bg-black" style="background-color:black!important;" /></div>
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-6">
                     <div class="product_variation_one_boxed img-zoom-hover">
                         <img :src="require('@/assets/img/cars/car2.jpg')" alt="img" />
                     </div>
+                    <div class="product_variation_one_boxed mob_center_car_image" style="display:none;">
+                        <img :src="require('@/assets/img/cars/car10.jpg')" alt="img" />
+                    </div>
                     <div class="product_variation_one_boxed img-zoom-hover">
                         <img :src="require('@/assets/img/cars/car3.jpg')" alt="img" />
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 flex items-center">
-                    <div class="product_variation_one_boxed ">
+                    <div class="product_variation_one_boxed pc_center_car_image">
                         <img :src="require('@/assets/img/cars/car10.jpg')" alt="img" />
-                        <div class="product_var_one_text_center">
-                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -64,7 +65,7 @@
         <div class="container">
             <div class="about_car_sec flex  justify-center">
                 <div class="left_sec w-1/2 mx-10 pt-6">
-                    <h3 class="text-uppercase">About Peeyesyem hyundai <hr class="h-1 bg-black w-3/12 my-1" /></h3>
+                    <h3 class="text-uppercase about_psm_head">About Peeyesyem hyundai <hr class="h-1 bg-black w-3/12 my-1" /></h3>
                     <!-- <div class="flex items-center my-5">
                         <div class="mx-3 text-3xl">10</div>
                         <div class="mx-3">Everything you need to build an amazing dealership automotive responsive website.</div>
@@ -73,30 +74,30 @@
                         Peeyesyem Hyundai is one of the largest Hyundai dealer having showrooms at various locations around Tamilnadu. Our branches are located at Chennai, Tuticorin, Tiruchendur, Tuticorin, Madurai and Ramnathapuram. We strive to provide the best services to our customers with great satisfaction and excellency.
                     </div>
                 </div>
-                <div class="right_sec w-1/2 mx-10 flex items-center">
+                <div class="right_sec w-1/2 mx-10 flex items-center about_psm_cars">
                     <img :src="require('@/assets/img/cars/hyundai_group_car2.png')" style="margin-left:auto;margin-right:auto;" alt="img" />
                 </div>
             </div>
         </div>
     </section>
     <section class="fixed_bg_image animated_counter flex items-center">
-        <div class="container">
-            <div class="row  service_items flex items-center justify-evenly">
-                <div class="text-white text-center service_items font-bold text-xl">
+        <div class="container service_item_container">
+            <div class="row  service_items service_item_box flex items-center justify-evenly">
+                <div class="text-white text-center service_items service_item  font-bold text-xl">
                     <div class="mb-2">SHOWROOMS IN TAMILNADU</div>
-                   <div class="flex items-center"><img class="mx-2" :src="require('@/assets/img/vehicle.png')" alt="img"  /><div id="value1"> 6</div></div>
+                   <div class="flex items-center count_box"><img class="mx-2" :src="require('@/assets/img/vehicle.png')" alt="img"  /><div id="value1"> 6</div></div>
                 </div>
-                <div class="text-white text-center service_items font-bold text-xl">
+                <div class="text-white text-center service_items service_item font-bold text-xl">
                     <div class="mb-2">REVIEWS</div>
-                   <div class="flex items-center"><img class="mx-2" :src="require('@/assets/img/chatwhite.png')" alt="img"  /><div id="value2"> 255</div></div>
+                   <div class="flex items-center count_box"><img class="mx-2" :src="require('@/assets/img/chatwhite.png')" alt="img"  /><div id="value2"> 255</div></div>
                 </div>
-                <div class="text-white text-center service_items font-bold text-xl">
+                <div class="text-white text-center service_items service_item font-bold text-xl">
                    <div class="mb-2">HAPPY CUSTOMERS</div>
-                   <div class="flex items-center"><img class="mx-2" :src="require('@/assets/img/userwhite.png')" alt="img"  /><div id="value3"> 430</div></div>
+                   <div class="flex items-center count_box"><img class="mx-2" :src="require('@/assets/img/userwhite.png')" alt="img"  /><div id="value3"> 430</div></div>
                 </div>
-                <div class="text-white text-center service_items font-bold text-xl">
+                <div class="text-white text-center service_items service_item font-bold text-xl">
                    <div class="mb-2">AWARDS</div>
-                   <div class="flex items-center"><img class="mx-2" :src="require('@/assets/img/awardicon.png')" alt="img"  /><div id="value4">340</div> </div>
+                   <div class="flex items-center count_box"><img class="mx-2" :src="require('@/assets/img/awardicon.png')" alt="img"  /><div id="value4">340</div> </div>
                 </div>
             </div>
         </div>
@@ -104,7 +105,7 @@
     </section>
 
     <section class="pt-20 cars_product_section"  style="background: #e6eaef;">
-        <div class="text-center font-bold text-3xl text-uppercase" >Choose Your Dream Hyundai Car<hr class="h-1 w-2/12 my-2 mx-auto bg-black" style="background-color:black!important;" /></div>
+        <div class="text-center font-bold text-3xl text-uppercase car_sec_head" >Choose Your Dream Hyundai Car<hr class="h-1 w-2/12 my-2 mx-auto bg-black" style="background-color:black!important;" /></div>
         <div class="card_box  flex flex-wrap mt-16 mx-auto">
             <div class="car_box_item" v-for="car in staticcars" :key="car.id">
                 <a :href="'/cars/?id='+ car.id" class="text-center block car_image_box cursor-pointer" style="margin-bottom:0!important;min-height:198px;max-height:198px;">
@@ -122,7 +123,7 @@
         <div class="block py-10">
             <div class="relative bg-position_overlay">
                 <div class="text-center mb-2 text-lg  text-white">What Our Happy Clients say about us</div>
-                <div class="text-center mb-5 text-3xl text-white font-bold">OUR TESTIMONIAL<hr class="h-1 bg-white mx-auto w-1/12 my-1" /></div>
+                <div class="text-center mb-5 text-3xl text-white font-bold testimonial_head">OUR TESTIMONIAL<hr class="h-1 bg-white mx-auto w-1/12 my-1" /></div>
             </div>
             <div class="product_single_one_img relative bg-position_overlay">
                         <swiper class="swiper product-single-2-slider" :options="swiperOption">
@@ -173,14 +174,14 @@
 
     <section class="py-24" style="background:#e6eaef;">
         <div class="container">
-            <div class=" flex items-center">
+            <div class=" flex items-center sale_car_sec">
                 <div class="left w-1/2 mx-10">
-                  <h3 class="font-bold mb-3 sales_heading">ARE YOU LOOKING FOR A CAR?</h3>
+                  <h3 class="font-bold mb-3 sales_heading main_head">ARE YOU LOOKING FOR A CAR?</h3>
                   <p class="sales_heading mb-3">Search your car in our Inventory and request a quote on the vehicle of your choosing.</p>
                   <img :src="require('@/assets/img/cars/car16.webp')" alt="img"  />
                 </div>
                 <div class="right w-1/2 mx-10">
-                  <h3 class="font-bold mb-3 sales_heading">DO YOU WANT TO SELL YOUR CAR?</h3>
+                  <h3 class="font-bold mb-3 sales_heading main_head">DO YOU WANT TO SELL YOUR CAR?</h3>
                   <p class="sales_heading mb-3">Request search your car in our Inventory and a quote on the vehicle of your choosing.</p>
                   <img :src="require('@/assets/img/cars/car17.webp')" alt="img" style="transform:scaleX(-1);" />
                 </div>
@@ -579,6 +580,8 @@ export default {
     .swiper-button-prev, .swiper-button-next{
         width: 25px!important;
         height: 25px!important;
+        margin-left: 4px;
+        margin-right: 4px;
     }
     .about_car_sec{
         display: block;
@@ -600,6 +603,76 @@ export default {
         padding: 50px 20px;
     }
     .testimonial_content .quote_icon{
+        display: none;
+    }
+    .feature_heading{
+        font-size: 23px;
+    }
+    .feature_heading hr{
+        width: 20%;
+        margin-top: 1px!important;
+    }
+    .car_sec_head{
+        font-size: 18px;
+    }
+    .car_sec_head hr{
+        width: 40%;
+        margin-top: 1px!important;
+    }
+    .about_psm_head{
+        font-size: 20px;
+    }
+    .about_psm_head hr{
+        width:30%;
+    }
+    .about_psm_cars{
+        margin-top:65px!important;
+    }
+    .service_item_box{
+        display: block;
+    }
+    .fixed_bg_image{
+        height: 465px;
+    }
+    .service_item{
+        margin-top: 35px;
+        margin-bottom: 35px;
+        font-size: 18px;
+    }
+    .count_box{
+        justify-content: center;
+    }
+    .service_item_container{
+        position: relative;
+        z-index: 205;
+    }
+    .testimonial_head{
+        font-size: 25px;
+    }
+    .sale_car_sec{
+        display: block;
+    }
+    .sale_car_sec .left{
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 60px;
+    }
+    .sale_car_sec .right{
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .sales_heading.main_head{
+        font-size: 20px;
+    }
+    .sales_heading{
+        width: 95%;
+    }
+    .mob_center_car_image{
+        display: block!important;
+    }
+    .pc_center_car_image{
         display: none;
     }
 }
