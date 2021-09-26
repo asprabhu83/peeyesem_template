@@ -19,7 +19,7 @@
         </div>
         <hr class=" bg-white my-2" style="opacity:0.6" />
     </div>
-    <header class="header-section d-none d-xl-block">
+    <header class="header-section d-none d-sm-block d-lg-block d-xl-block">
         <div class="header-wrapper">
             <div id="header" class="header-bottom header-bottom-color--golden section-fluid sticky-header sticky-color--golden">
                 <div class="container">
@@ -133,7 +133,7 @@
     <!-- Start Header Area -->
 
     <!-- Start Mobile Header -->
-    <div id="mobile_header" class="mobile-header sticky-header sticky-color--golden mobile-header-bg-color--golden section-fluid d-lg-block d-xl-none">
+    <div id="mobile_header" class="mobile-header sticky-header sticky-color--golden mobile-header-bg-color--golden section-fluid d-lg-none d-sm-none d-md-none d-block d-xl-none">
         <div class="container">
             <div class="row">
                 <div class="col-12 d-flex align-items-center justify-content-between">
@@ -182,38 +182,6 @@
             <!-- End Mobile Menu Nav -->
         </div>
         <!-- End Mobile Menu Navbar Wrap -->
-
-        <!-- Start Mobile contact Info -->
-        <div class="mobile-contact-info">
-            <address class="address">
-                <img :src="require('@/assets/img/logo-white.png')" alt="logo" />
-                <span>Address: Your address goes here.</span>
-                <span>Call Us: 0123456789, 0123456789</span>
-                <span>Email: demo@example.com</span>
-            </address>
-
-            <ul class="social-link">
-                <li>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                </li>
-            </ul>
-
-            <ul class="user-link">
-                <li><nuxt-link to="/my-account/wishlist">Wishlist</nuxt-link></li>
-                <li><nuxt-link to="/cart/">Cart</nuxt-link></li>
-                <li><nuxt-link to="/my-account/checkout-1">Checkout</nuxt-link></li>
-            </ul>
-        </div>
-        <!-- End Mobile contact Info -->
     </b-sidebar>
     <!-- ...:::: End Offcanvas Mobile Menu Section:::... -->
 
@@ -649,7 +617,7 @@ export default {
     transition: .4s ease-in-out;
 }
 .v-sidebar-menu .vsm--toggle-btn {
-    display: none;
+    display: none !important;
 }
 .v-sidebar-menu {
     position: relative;
