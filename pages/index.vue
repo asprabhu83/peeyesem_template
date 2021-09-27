@@ -109,7 +109,7 @@
         <div class="card_box  flex flex-wrap mt-16 mx-auto">
             <div class="car_box_item" v-for="car in staticcars" :key="car.id">
                 <a :href="'/cars/?id='+ car.id" class="text-center block car_image_box cursor-pointer" style="margin-bottom:0!important;min-height:198px;max-height:198px;">
-                    <img :src="require('@/assets/img/cars/static/'+ car.image)" alt="" style="width:315.7px;min-height:198px;max-height:198px;max-width:100%;">
+                    <img :src="require('@/assets/img/cars/static/'+ car.image)" alt="" style="width:317.1px;min-height:198px;max-height:198px;max-width:100%;">
                 </a>
                 <div class="car_details" >
                     <div class="text-center font-medium mt-1 mb-1 cursor-pointer">{{car.name}}</div>
