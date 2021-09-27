@@ -1,4 +1,4 @@
-<template>
+<template >
   <div class="home-page">
 
     <!-- Banner Area -->
@@ -196,6 +196,10 @@
             <img :src="require('@/assets/img/cars/car12.jpg')" alt="img" class="" style="width:100%;height:auto;">
         </div>
     </section>
+
+    <div class="back_to_top" @click="backToTop">
+        <img :src="require('@/assets/img/back_to_top_car.png')" alt="img" style="width:100%;height:auto;"/>
+    </div>
 
     
 
@@ -417,7 +421,25 @@ export default {
             this.animateValue(obj4, 0, 340, 7000);
         },3000)
     },
+    created () {
+        window.addEventListener('scroll', this.handleScroll);
+    },
+    destroyed () {
+        window.removeEventListener('scroll', this.handleScroll);
+    },
     methods: {
+        handleScroll(){
+            var btn = document.querySelector('.back_to_top')
+            if(pageYOffset > 260){
+                btn.classList.add('show')
+            }else{
+                btn.classList.remove('show')
+            }
+
+            if(pageYOffset < 10){
+                btn.classList.remove('car_up')
+            }
+        },
         productsArray: function () {
             this.productslist.map((item) => {
                 if (item.type === 'fashion') {
@@ -463,8 +485,14 @@ export default {
                 }
             };
             window.requestAnimationFrame(step);
-        }
         },
+        backToTop(){
+            var btn = document.querySelector('.back_to_top');
+            btn.classList.add('car_up')
+            window.scrollTo({top: 0, behavior: 'smooth'});
+            // btn.classList.remove('car_up')
+        }
+    },
 
     // Page head() Title, description for SEO 
     head() {
@@ -482,6 +510,30 @@ export default {
 }
 </script>
 <style scoped>
+.back_to_top{
+    position: fixed;
+    bottom: 4%;
+    right: 2%;
+    transition: 1s ease-in-out;
+    display: none;
+    z-index: 900;
+    cursor: pointer;
+}
+.back_to_top.show{
+    animation: fadeDown .5s;
+    display: inline-block;
+}
+@keyframes fadeDown {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.back_to_top.car_up{
+   bottom: 100% !important;
+}
 .sale_car_sec .left img, .sale_car_sec .right img{
     transition: .6s ease-in-out;
 }
