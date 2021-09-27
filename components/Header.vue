@@ -1,5 +1,5 @@
 <template>
-  <div class="transparent_bg_sec">
+  <div class="transparent_bg_sec" :class="this.$route.path == '/' ? 'home_page' : 'sub_page'">
     <!-- Start Header Area -->
     <div class="contact_sec" >
         <div class="container">
@@ -605,6 +605,27 @@ export default {
     z-index: 999;
     position: absolute;
     width: 100%;
+}
+.transparent_bg_sec.sub_page{
+    position: static;
+}
+.transparent_bg_sec.sub_page .header-bottom-color--golden{
+    background: #FEF5EF;
+}
+.transparent_bg_sec.sub_page .menu-color--black nav>ul>li>a{
+    text-shadow: none;
+    color: black;
+}
+.transparent_bg_sec.sub_page .contact_sec hr{
+    margin-bottom: 0!important;
+}
+.transparent_bg_sec.sub_page .contact_sec .left div{
+    color: black !important;
+    text-shadow: none;
+}
+.transparent_bg_sec.sub_page .contact_sec .right div{
+    color: black !important;
+    text-shadow: none;
 }
 .social_icons_box img{
     margin-left: 5px;
