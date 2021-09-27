@@ -98,6 +98,9 @@
                 </tr>
               </thead>
               <tbody class="bg-white divide-y divide-gray-200">
+                <tr v-if="userRoles.length == 0" >
+                    <td class="px-6 py-4 whitespace-nowrap" colspan="5" style="text-align:center;"> No Data</td>
+                </tr>
                 <tr v-for="userRole in userRoles" :key="userRole.id">
                   <td class="px-6 py-4 whitespace-nowrap" >
                     <span

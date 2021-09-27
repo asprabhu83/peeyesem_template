@@ -114,6 +114,9 @@
                 </tr>
               </thead>
               <tbody class="bg-white divide-y divide-gray-200">
+                <tr v-if="users.length == 1 || users.length == 0" >
+                    <td class="px-6 py-4 whitespace-nowrap" colspan="6" style="text-align:center;"> No Data</td>
+                </tr>
                 <tr v-for="item in resultQuery" :key="item.id" >
                   <td class="px-6 py-4 whitespace-nowrap" v-if="item.id !== 1">
                     <span
