@@ -482,6 +482,15 @@ export default {
 }
 </script>
 <style scoped>
+.sale_car_sec .left img, .sale_car_sec .right img{
+    transition: .6s ease-in-out;
+}
+.sale_car_sec:hover .left img{
+    margin-left: 80px;
+}
+.sale_car_sec:hover .right img{
+    margin-left: -80px;
+}
 .car_image_box{
     overflow: hidden;
     cursor: pointer;
@@ -674,6 +683,12 @@ export default {
     }
     .pc_center_car_image{
         display: none;
+    }
+    .sale_car_sec:hover .left img{
+        margin-left: 0px;
+    }
+    .sale_car_sec:hover .right img{
+        margin-left: 0px;
     }
 }
 </style>
