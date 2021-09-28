@@ -394,9 +394,9 @@ button {
 }
 
 .header-bottom-color--golden {
-    background: transparent;
-    padding: 10px 0;
-    color: white;
+    background: #FEF5EF;
+    padding: 30px 0;
+    color: black;
 }
 
 .header-bottom-color--white {
@@ -407,10 +407,20 @@ button {
     background: #24262b;
 }
 
+.sticky_logo{
+    display: none;
+}
+
+.sticky-header.sticky.sticky-color--golden .sticky_logo{
+    display: inline-block;
+}
+.sticky-header.sticky.sticky-color--golden ul{
+    text-align: center;
+}
 .sticky-header.sticky.sticky-color--golden {
     box-shadow: 0 2px 10px 4px rgb(0 0 0 / 20%);
     background: white;
-    padding: 4px 0;
+    padding: 15px 0;
 }
 
 .sticky-header.sticky.sticky-color--white {
@@ -443,7 +453,7 @@ button {
 .main-menu {
     position: relative;
     width: 73%;
-    text-align: end;
+    text-align: center;
 }
 
 .main-menu nav>ul>li {
@@ -573,8 +583,7 @@ button {
     color: black;
 } 
 .menu-color--black nav>ul>li>a {
-    text-shadow: 2px 2px 5px black;
-    color: white;
+    color: black;
 }
 
 .menu-color--black .sub-menu>li>a,
@@ -653,12 +662,12 @@ button {
     color: #66cec4;
 }
 
-.header-logo {
+/* .header-logo {
     width: 18%;
-}
+} */
 
 .header-logo .logo img {
-    width: 67%;
+    width: 28%;
     height: auto;
 }
 
@@ -2392,7 +2401,7 @@ button {
 ---------------------------*/
 
 #footer_one {
-    padding: 70px 0;
+    padding: 50px 0 40px 0;
     background-color: #002c5f;
     color: white;
 }

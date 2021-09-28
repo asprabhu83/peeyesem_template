@@ -3,34 +3,40 @@
     <!-- Start Header Area -->
     <div class="contact_sec" >
         <div class="container">
-            <div class="flex justify-between pt-3">
-                <div class="left">
-                    <div class="text-md text-white font-semibold shodow_css_head">Service: +91 9902099944 | Sales: +91 9731097310</div>
+            <div class="flex justify-around py-3 top_sec">
+                <div>
+                    <div class="header-logo">
+                        <div class="logo">
+                            <nuxt-link to="/"><img class="site_logo" :src="require('@/assets/img/peeyesyem.png')" alt="logo"  /></nuxt-link>
+                        </div>
+                    </div>
                 </div>
-                <div class="right flex items-center">
-                    <div class="text-md text-white font-semibold mx-1 mt-1 shodow_css_head">Follow us:</div>
-                    <div class="social_icons_box flex">
-                        <img class="cursor-pointer" :src="require('@/assets/img/fbicon.png')" alt="img"  />
-                        <img class="cursor-pointer" :src="require('@/assets/img/instaicon.png')" alt="img"  />
-                        <img class="cursor-pointer" :src="require('@/assets/img/youtubeicon.png')" alt="img"  />
+                <div class="flex items-center call_service_details justify-center">
+                    <div class="left mx-2">
+                        <div class="text-md text-black font-semibold pt-1 shodow_css_head">Service: +91 9902099944 | Sales: +91 9731097310</div>
+                    </div>
+                    <div class="right flex items-center mx-2">
+                        <div class="text-md text-black font-semibold mx-1 mt-1 shodow_css_head">Follow us:</div>
+                        <div class="social_icons_box flex">
+                            <img class="cursor-pointer" :src="require('@/assets/img/fbicon.png')" alt="img"  />
+                            <img class="cursor-pointer" :src="require('@/assets/img/instaicon.png')" alt="img"  />
+                            <img class="cursor-pointer" :src="require('@/assets/img/youtubeicon.png')" alt="img"  />
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <hr class=" bg-white my-2" style="opacity:0.6" />
     </div>
     <header class="header-section d-none d-sm-block d-lg-block d-xl-block">
         <div class="header-wrapper">
             <div id="header" class="header-bottom header-bottom-color--golden section-fluid sticky-header sticky-color--golden">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12 d-flex align-items-center justify-content-between">
+                        <div class="col-12 d-flex align-items-center justify-content-center">
                             <!-- Start Header Logo -->
-                            <div class="header-logo">
-                                <div class="logo">
-                                    <nuxt-link to="/"><img class="site_logo" :src="require('@/assets/img/peeyesyem.png')" alt="logo" /></nuxt-link>
+                                <div class="sticky_logo">
+                                    <nuxt-link to="/"><img class="site_logo" :src="require('@/assets/img/resized_logo.png')" alt="logo"  /></nuxt-link>
                                 </div>
-                            </div>
                             <!-- End Header Logo -->
 
                             <!-- Start Header Main Menu -->
@@ -461,36 +467,6 @@ export default {
 <style>
 
 /* Mobile Menu Multi Dropdown Items Start */
-.shodow_css_head{
-    text-shadow: 2px 2px 5px black;
-}
-.transparent_bg_sec{
-    background: transparent;
-    z-index: 999;
-    position: absolute;
-    width: 100%;
-}
-.transparent_bg_sec.sub_page{
-    position: static;
-}
-.transparent_bg_sec.sub_page .header-bottom-color--golden{
-    background: #FEF5EF;
-}
-.transparent_bg_sec.sub_page .menu-color--black nav>ul>li>a{
-    text-shadow: none;
-    color: black;
-}
-.transparent_bg_sec.sub_page .contact_sec hr{
-    margin-bottom: 0!important;
-}
-.transparent_bg_sec.sub_page .contact_sec .left div{
-    color: black !important;
-    text-shadow: none;
-}
-.transparent_bg_sec.sub_page .contact_sec .right div{
-    color: black !important;
-    text-shadow: none;
-}
 .social_icons_box img{
     margin-left: 5px;
     margin-right: 5px;
@@ -517,14 +493,46 @@ export default {
 }
 
 @media only screen and (min-width:300px) and (max-width:600px){
-    .transparent_bg_sec{
-        background: transparent;
-        z-index: 999;
-        position: static;
-        width: 100%;
-    }
     .contact_sec{
         display: none;
+    }
+}
+@media only screen and (min-width: 1270px) and (max-width: 1366px){
+    .main-menu{
+        width:90%;
+    }
+    .main-menu nav > ul > li > a{
+        padding: 10px;
+        font-size: 10px;
+    }
+    .header-bottom-color--golden{
+        padding: 10px 0;
+    }
+    .header-logo .logo img {
+        width: 20%;
+        height: auto;
+    }
+    .call_service_details .left div, .call_service_details .right div{
+        font-size: 10px;
+    }
+    .social_icons_box img{
+        width: 22px;
+    }
+    .contact_sec .top_sec{
+        padding: 10px 0!important;
+    }
+    .sticky-header.sticky.sticky-color--golden .main-menu nav > ul > li > a{
+        padding: 10px;
+        font-size: 10px;
+    }
+    .sticky-header.sticky.sticky-color--golden .sticky_logo img{
+        width:80%;
+    }
+    .sticky-header.sticky.sticky-color--golden{
+        padding: 9px 0;
+    }
+    .sticky-header.sticky.sticky-color--golden .main-menu{
+        width: 77%;
     }
 }
 

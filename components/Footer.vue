@@ -2,36 +2,19 @@
   <div>
     <!-- footer Area -->
     <footer id="footer_one">
-        <div class="mb-14">
-            <div class="text-center font-bold text-2xl mb-2 call_service_sec">DO YOU NEED HELP IN CHOOSING A CAR?</div>
-            <div class="text-center text-lg">Call us : 9962207774</div>
-        </div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-12 col-sm-12 col-12">
                     <div class="footer_left_side">
-                        <div class="text-uppercase text-lg font-semibold">About Peeyesyem hyundai</div>
+                        <div class="text-capitalize text-lg font-semibold">About Peeyesyem hyundai</div>
                         <p class="text-white">
                             Peeyesyem Hyundai is one of the largest Hyundai dealer having showrooms at various locations around Tamilnadu. Our branches are located at Chennai, Tuticorin, Tiruchendur, Tuticorin, Madurai and Ramnathapuram. We strive to provide the best services to our customers with great satisfaction and excellency.
                         </p>
-                        <div class="footer_left_side_icon">
-                            <ul>
-                                <li>
-                                    <a href="#!"><i class="fab fa-facebook-f"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#!"><i class="fab fa-youtube"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#!"><i class="fab fa-instagram"></i></a>
-                                </li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 col-6 footer_mobile_menu">
                     <div class="footer_one_widget">
-                        <h3>INFORMATION</h3>
+                        <h3 class="text-capitalize">Information</h3>
                         <ul>
                             <li><nuxt-link to="/">Home</nuxt-link></li>
                             <li><nuxt-link to="/">About Us</nuxt-link></li>
@@ -43,7 +26,7 @@
                 </div>
                 <div class="col-lg-2 col-md-6 col-sm-12 col-6 footer_mobile_menu">
                     <div class="footer_one_widget">
-                        <h3>Our Services</h3>
+                        <h3 class="text-capitalize">Our Services</h3>
                         <ul>
                             <li><nuxt-link to="/">New Cars</nuxt-link></li>
                             <li><nuxt-link to="/">Used Cars</nuxt-link></li>
@@ -55,22 +38,19 @@
                 </div>
                 <div class="col-lg-3 col-md-12 col-sm-12 col-12">
                     <div class="footer_one_widget">
-                        <h3>NEWSLETTER</h3>
-                        <div id="mc_embed_signup" class="subscribe-form">
-                            <form @submit.prevent="handleSubmit">
-                                <div class="mc-form">
-                                    <input class="form-control" type="email" v-model="user.email" id="email" name="email" placeholder="Your Mail*" :class="{ 'is-invalid': submitted && $v.user.email.$error }" />
-                                    <div v-if="submitted && $v.user.email.$error" class="invalid-feedback">
-                                        <span v-if="!$v.user.email.required">Email is required</span>
-                                        <span v-if="!$v.user.email.email">Email is invalid</span>
-                                    </div>
-                                    <div class="clear">
-                                        <button class="theme-btn-one btn_md" name="subscribe">
-                                            <i class="icon-cursor"></i> Send Mail
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
+                        <h3 class="text-capitalize">Follows Us</h3>
+                        <div class="footer_left_side_icon pt-0">
+                            <ul class="pl-1">
+                                <li>
+                                    <a href="#!"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#!"><i class="fab fa-youtube"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#!"><i class="fab fa-instagram"></i></a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>

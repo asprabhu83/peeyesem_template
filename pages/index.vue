@@ -7,16 +7,13 @@
             <div class="product_single_one_img">
                         <swiper class="swiper product-single-2-slider" :options="swiperOption">
                             <swiper-slide>
-                                <img :src="require('@/assets/img/cars/car15.webp')" alt="img" style="width:100%;" />
-                                <div class="overlay2" />
+                               <nuxt-link to="/" class="cursor-pointer"><img :src="require('@/assets/img/cars/car15.webp')" alt="img" style="width:100%;" /></nuxt-link>
                             </swiper-slide>
                             <swiper-slide>
-                                <img :src="require('@/assets/img/cars/car13.webp')" alt="img" style="width:100%;" />
-                                <div class="overlay2" />
+                               <nuxt-link to="/" class="cursor-pointer"> <img :src="require('@/assets/img/cars/car13.webp')" alt="img" style="width:100%;" /></nuxt-link>
                             </swiper-slide>
                             <swiper-slide>
-                                <img :src="require('@/assets/img/cars/car14.webp')" alt="img" style="width:100%;" />
-                                <div class="overlay2" />
+                               <nuxt-link to="/" class="cursor-pointer"><img :src="require('@/assets/img/cars/car14.webp')" alt="img" style="width:100%;" /></nuxt-link>
                             </swiper-slide>
                             <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
                             <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
@@ -27,7 +24,7 @@
     </section>
 
     <!-- Product variation -->
-    <section id="product_variation_one" class="pt-10 mb-14">
+    <!-- <section id="product_variation_one" class="pt-10 mb-14">
         <div class="container-fluid">
             <div class="my-5">
                 <div class="text-center font-bold text-3xl text-uppercase feature_heading">FEATURED CAR<hr class="h-1 w-1/12 my-2 mx-auto bg-black" style="background-color:black!important;" /></div>
@@ -59,7 +56,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section class="py-24"  style="background:#e6eaef;">
         <div class="container">
@@ -108,9 +105,12 @@
         <div class="text-center font-bold text-3xl text-uppercase car_sec_head" >Choose Your Dream Hyundai Car<hr class="h-1 w-2/12 my-2 mx-auto bg-black" style="background-color:black!important;" /></div>
         <div class="card_box  flex flex-wrap mt-16 mx-auto">
             <div class="car_box_item" v-for="car in staticcars" :key="car.id">
-                <a :href="'/cars/?id='+ car.id" class="text-center block car_image_box cursor-pointer" style="margin-bottom:0!important;min-height:198px;max-height:198px;">
-                    <img :src="require('@/assets/img/cars/static/'+ car.image)" alt="" style="width:317.1px;min-height:198px;max-height:198px;max-width:100%;">
+                <a :href="'/cars/?id='+ car.id" class="text-center block car_image_box cursor-pointer" >
+                    <img :src="require('@/assets/img/cars/static/'+ car.image)" alt="" >
                 </a>
+                <div class="car_name">
+                     <div class="text-center text-white py-1 font-medium mt-1 mb-1">{{car.name}}</div>
+                </div>
                 <div class="car_details" >
                     <div class="text-center font-medium mt-1 mb-1 cursor-pointer">{{car.name}}</div>
                    <div class="text-center font-medium mt-1 mb-1"><font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mx-2" />{{car.price}}</div>
@@ -121,15 +121,15 @@
 
     <section class=" fixed_bg_image2">
         <div class="block py-10">
-            <div class="relative bg-position_overlay">
-                <div class="text-center mb-2 text-lg  text-white">What Our Happy Clients say about us</div>
+            <div class="relative bg-position_overlay testimonial_haeding">
+                <div class="text-center mb-2 text-lg  text-white sub_head">What Our Happy Clients say about us</div>
                 <div class="text-center mb-5 text-3xl text-white font-bold testimonial_head">OUR TESTIMONIAL<hr class="h-1 bg-white mx-auto w-1/12 my-1" /></div>
             </div>
             <div class="product_single_one_img relative bg-position_overlay">
                         <swiper class="swiper product-single-2-slider" :options="swiperOption">
                             <swiper-slide>
                                 <div class="testimonial_content">
-                                    <div class="text-center text-md mb-10 text-white font-semibold flex items-start justify-center" >
+                                    <div class="text-center quote_lines text-md mb-10 text-white font-semibold flex items-start justify-center" >
                                         <img class="mx-1 quote_icon" :src="require('@/assets/img/quotewhite.png')" alt="img"  />
                                         <div class="mt-3">You will begin to realize why this exercise is called the Dickens reference to the ghost showing Scrooge Pattern with reference to the ghost showing Scrooge some different futures as you notice that the idea of this exercise.</div>
                                     </div>
@@ -141,7 +141,7 @@
                             </swiper-slide>
                             <swiper-slide>
                                 <div class="testimonial_content">
-                                    <div class="text-center text-md mb-10 text-white font-semibold flex items-start justify-center" >
+                                    <div class="text-center  quote_lines text-md mb-10 text-white font-semibold flex items-start justify-center" >
                                         <img class="mx-1 quote_icon" :src="require('@/assets/img/quotewhite.png')" alt="img"  />
                                         <div class="mt-3">You will begin to realize why this exercise is called the Dickens reference to the ghost showing Scrooge Pattern with reference to the ghost showing Scrooge some different futures as you notice that the idea of this exercise.</div>
                                     </div>
@@ -153,7 +153,7 @@
                             </swiper-slide>
                             <swiper-slide>
                                 <div class="testimonial_content">
-                                    <div class="text-center text-md mb-10 text-white font-semibold flex items-start justify-center" >
+                                    <div class="text-center quote_lines text-md mb-10 text-white font-semibold flex items-start justify-center" >
                                         <img class="mx-1 quote_icon" :src="require('@/assets/img/quotewhite.png')" alt="img"  />
                                         <div class="mt-3">You will begin to realize why this exercise is called the Dickens reference to the ghost showing Scrooge Pattern with reference to the ghost showing Scrooge some different futures as you notice that the idea of this exercise.</div>
                                     </div>
@@ -172,7 +172,7 @@
         <div class="overlay2 testimonial" />
     </section>
 
-    <section class="py-24" style="background:#e6eaef;">
+    <section class="py-24 sales_car_box" style="background:#e6eaef;">
         <div class="container">
             <div class=" flex items-center sale_car_sec">
                 <div class="left w-1/2 mx-10">
@@ -189,17 +189,206 @@
         </div>
     </section>
 
+    <section class="pb-24 blog_post_section">
+        <div class="container">
+            <div class="blog_heading text-capitalize text-center py-16 font-bold text-3xl">LATEST NEWS <hr class="w-1/12 mx-auto bg-black h-0.5" style="background-color:black!important;"/></div>
+            <div class="flex items-center justify-around">
+                <div class="blog_card_box w-3/12 cursor-pointer">
+                    <div class="photo_box">
+                        <img :src="require('@/assets/img/cars/blog/img1.jpg')" alt="img" style="width:100%;"  />
+                    </div>
+                    <div class="content px-3 py-3">
+                        <div class="text-center text-lg font-semibold my-4">Does Your Life Lack Meaning <hr class="w-2/12 mx-auto bg-black h-0.5" style="background-color:black!important;"/></div>
+                        <p class="text-gray text-md my-4 text-center">You will begin to realize why this exercise Pattern is called the Dickens with reference to the ghost</p>
+                    </div>
+                </div>
+                <div class="blog_card_box w-3/12 cursor-pointer">
+                    <div class="photo_box">
+                        <img :src="require('@/assets/img/cars/blog/img2.jpg')" alt="img" style="width:100%;"  />
+                    </div>
+                    <div class="content px-3 py-3">
+                        <div class="text-center text-lg font-semibold my-4">The A Z Of Motivation <hr class="w-2/12 mx-auto bg-black h-0.5" style="background-color:black!important;"/></div>
+                        <p class="text-gray text-md my-4 text-center">Exercise is called you will begin to Pattern realize why this the Dickens Pattern with reference to ghost</p>
+                    </div>
+                </div>
+                <div class="blog_card_box w-3/12 cursor-pointer">
+                    <div class="photo_box">
+                        <img :src="require('@/assets/img/cars/blog/img3.jpg')" alt="img" style="width:100%;"  />
+                    </div>
+                    <div class="content px-3 py-3">
+                        <div class="text-center text-lg font-semibold my-4">Motivation In Life <hr class="w-2/12 mx-auto bg-black h-0.5" style="background-color:black!important;"/></div>
+                        <p class="text-gray text-md my-4 text-center">Dickens Pattern you will begin to realize why this Dickens exercise is the with reference to the ghost</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="book_form_section ">
+        <div class="flex">
+            <div class="left w-1/2 relative cursor-pointer" @click="formModal = true">
+                <img :src="require('@/assets/img/cars/form1.jpg')" alt="img" class="" style="width:100%;height:auto;">
+                <div class="heading" >
+                    <div class="text-center font-bold text-white text-2xl">Book a Car</div>
+                </div>
+            </div>
+            <div class="right w-1/2 relative cursor-pointer" @click="formModal2 = true">
+                <img :src="require('@/assets/img/cars/form2.jpg')" alt="img" class="" style="width:100%;height:auto;">
+                <div class="heading" >
+                    <div class="text-center font-bold text-white text-2xl">Book a Service</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Special offer -->
-    <section class="">
-        <div>
-            <img :src="require('@/assets/img/cars/car12.jpg')" alt="img" class="" style="width:100%;height:auto;">
+    <section class="" style="background:#e6eaef;">
+        <div class="text-capitalize text-center pt-14 pb-10 font-bold text-3xl upcoming_car_heading">Upcoming Cars<hr class="h-1 w-1/12 my-2 mx-auto bg-black" style="background-color:black!important;" /></div>
+        <div class="row m-0 block">
+            <div class="product_single_one_img">
+                <swiper class="swiper product-single-2-slider" :options="swiperOption">
+                    <swiper-slide>
+                        <nuxt-link to="/" class="cursor-pointer"><img :src="require('@/assets/img/cars/car12.jpg')" alt="img" class="" style="width:100%;height:auto;"></nuxt-link>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <nuxt-link to="/" class="cursor-pointer"><img :src="require('@/assets/img/cars/poster_car1.jpg')" alt="img" class="" style="width:100%;height:auto;"></nuxt-link>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <nuxt-link to="/" class="cursor-pointer"><img :src="require('@/assets/img/cars/poster_car2.jpg')" alt="img" class="" style="width:100%;height:auto;"></nuxt-link>
+                    </swiper-slide>
+                    <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
+                    <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
+                </swiper>
+            </div>
         </div>
     </section>
 
     <div class="back_to_top" @click="backToTop">
         <img :src="require('@/assets/img/back_to_top_car.png')" alt="img" style="width:100%;height:auto;"/>
     </div>
+
+    <section class="form_modal_box" v-if="formModal == true">
+        <div class="w-4/12 bg-white card mx-auto">
+           <form class="pb-12 px-8">
+               <div class="heading flex items-center justify-between pt-6 pb-8 font-semibold text-lg">Book a Car<font-awesome-icon icon="times"  size="1x" class="text-red-600 cursor-pointer" @click="formModal = false" /></div>
+               <div class="mb-4">
+                    <label
+                    class="block text-gray-700 text-sm font-bold mb-2"
+                    for="email"
+                    >
+                    Your Email
+                    </label>
+                    <input
+                    class="
+                        shadow
+                        appearance-none
+                        border
+                        rounded
+                        w-full
+                        py-2
+                        px-3
+                        text-gray-700
+                        leading-tight
+                        focus:outline-none
+                        focus:shadow-outline
+                    "
+                    type="text"
+                    placeholder="Your Email"
+                    />
+                </div>
+               <div class="mb-8">
+                    <label
+                    class="block text-gray-700 text-sm font-bold mb-2"
+                    for="phone"
+                    >
+                    Your Phone
+                    </label>
+                    <input
+                    class="
+                        shadow
+                        appearance-none
+                        border
+                        rounded
+                        w-full
+                        py-2
+                        px-3
+                        text-gray-700
+                        leading-tight
+                        focus:outline-none
+                        focus:shadow-outline
+                    "
+                    type="text"
+                    placeholder="Your Phone"
+                    />
+                </div>
+               <div class="btn_grp">
+                   <button  type="button" class=" flex items-center text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline">Book a Car</button>
+               </div>
+           </form>
+        </div>
+    </section>
+
+    <section class="form_modal_box" v-if="formModal2 == true">
+        <div class="w-4/12 bg-white card mx-auto">
+           <form class="pb-12 px-8">
+               <div class="heading flex items-center justify-between pt-6 pb-8 font-semibold text-lg">Book a Service<font-awesome-icon icon="times"  size="1x" class="text-red-600 cursor-pointer" @click="formModal2 = false" /></div>
+               <div class="mb-4">
+                    <label
+                    class="block text-gray-700 text-sm font-bold mb-2"
+                    for="email"
+                    >
+                    Your Email
+                    </label>
+                    <input
+                    class="
+                        shadow
+                        appearance-none
+                        border
+                        rounded
+                        w-full
+                        py-2
+                        px-3
+                        text-gray-700
+                        leading-tight
+                        focus:outline-none
+                        focus:shadow-outline
+                    "
+                    type="text"
+                    placeholder="Your Email"
+                    />
+                </div>
+               <div class="mb-8">
+                    <label
+                    class="block text-gray-700 text-sm font-bold mb-2"
+                    for="phone"
+                    >
+                    Your Phone
+                    </label>
+                    <input
+                    class="
+                        shadow
+                        appearance-none
+                        border
+                        rounded
+                        w-full
+                        py-2
+                        px-3
+                        text-gray-700
+                        leading-tight
+                        focus:outline-none
+                        focus:shadow-outline
+                    "
+                    type="text"
+                    placeholder="Your Phone"
+                    />
+                </div>
+               <div class="btn_grp">
+                   <button  type="button" class=" flex items-center text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline">Book a Service</button>
+               </div>
+           </form>
+        </div>
+    </section>
 
     
 
@@ -227,6 +416,8 @@ export default {
     data() {
       return { 
         title: 'Home',
+        formModal:false,
+        formModal2:false,
          blogItems: [
             {
                 id: 1,
@@ -392,7 +583,7 @@ export default {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev'
                 },
-                autoplay: true,
+                autoplay: false,
             },
 
       }
@@ -432,8 +623,10 @@ export default {
             var btn = document.querySelector('.back_to_top')
             if(pageYOffset > 260){
                 btn.classList.add('show')
+                btn.classList.remove('not_show');
             }else{
                 btn.classList.remove('show')
+                btn.classList.add('not_show');
             }
 
             if(pageYOffset < 10){
@@ -510,6 +703,45 @@ export default {
 }
 </script>
 <style scoped>
+.form_modal_box{
+    height: 100vh;
+    width: 100%;
+    z-index: 999999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.6);
+}
+.form_modal_box .card{
+    border-radius: 8px;
+    animation: moveDown .7s;
+}
+.form_modal_box button{
+    background-color: #002c5f;
+}
+@keyframes moveDown {
+    from{
+        opacity: 0;
+        transform: translate3d(0,-100%,0);
+    }
+    to{
+        opacity: 1;
+        transform: none;
+    }
+}
+.blog_post_section .blog_card_box{
+    box-shadow: 0 2px 10px 4px rgb(0 0 0 / 12%);
+    border-radius: 7px;
+    overflow: hidden;
+}
+.book_form_section .heading{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
 .back_to_top::before{
     position: absolute;
     top: -1px;
@@ -539,11 +771,14 @@ export default {
 @keyframes fadeDown {
     from{
         opacity: 0;
+        transform: translate3d(0,100%,0);
     }
     to{
         opacity: 1;
+        transform: none;
     }
 }
+
 .back_to_top.car_up{
    bottom: 100% !important;
 }
@@ -576,7 +811,7 @@ export default {
     padding: 50px 10px;
 }
 .fixed_bg_image{
-    background-image: url('../assets/img/cars/car19.jpg');
+    background-image: url('../assets/img/cars/counter_poster.jpg');
     height: auto;
     width: 100%;
     background-position: center;
@@ -590,7 +825,7 @@ export default {
     height: auto;
     width: 100%;
     background-position: center;
-    height: 540px;
+    height: 500px;
     background-attachment: fixed;
     position: relative;
     background-repeat: no-repeat;
@@ -624,6 +859,15 @@ export default {
 .bg-position_overlay{
     z-index: 205;
 }
+.car_name{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transition: .4s ease-in-out;
+}
+.car_name div{
+    text-shadow: 2px 2px 5px black;
+}
 .car_details{
     background: white;
     opacity: 0.8;
@@ -639,6 +883,9 @@ export default {
 .car_box_item:hover .car_details{
     transform: scale(1);
 }
+.car_box_item:hover .car_name{
+    opacity: 0;
+}
 .swiper-button-prev, .swiper-button-next{
     z-index: 220;
     border-radius: 50%;
@@ -649,6 +896,123 @@ export default {
 }
 .swiper-button-next:hover, .swiper-button-prev:hover{
     background: black!important;
+}
+.car_box_item a{
+    margin-bottom:0!important;
+    min-height:198px;
+    max-height:198px;
+}
+.car_box_item a img{
+    width:317.1px;
+    min-height:198px;
+    max-height:198px;
+    max-width:100%;
+}
+@media only screen and (min-width: 1270px) and (max-width: 1366px){
+    .testimonial_content{
+        padding: 20px 10px;
+    }
+    .testimonial_content .quote_lines div{
+        font-size: 11px;
+    }
+    .testimonial_content div{
+        font-size: 11px;
+    }
+    .testimonial_content .quote_icon{
+        width: 50px;
+    }
+    .testimonial_content img{
+        width:35px;
+    }
+    .fixed_bg_image2{
+        height: 370px;
+    }
+    .testimonial_haeding .sub_head{
+        font-size: 12px;
+    }
+    .testimonial_head{
+        font-size: 16px;
+        margin-bottom: 25px!important;
+    }
+    .testimonial_head hr{
+        height: 2px;
+        margin-top: -5px!important;
+    }
+    .blog_heading{
+        font-size: 20px;
+    }
+    .blog_card_box .content div{
+        font-size: 14px;
+        margin: 12px 0!important;
+    }
+    .blog_card_box p{
+        font-size: 12px;
+        margin: 12px 0!important;
+    }
+    .blog_card_box .content{
+        padding: 10px !important;
+    }
+    .upcoming_car_heading{
+        font-size: 22px;
+    }
+    .upcoming_car_heading hr{
+        height: 2px;
+        margin-top: 2px!important;
+    }
+    .sale_car_sec h3{
+        font-size: 20px;
+    }
+    .sale_car_sec p{
+      font-size: 12px;
+    }
+    .sales_car_box{
+        padding: 60px 0!important;
+    }
+    .car_sec_head{
+        font-size: 21px;
+    }
+    .car_sec_head hr{
+        height: 2px;
+        margin-top: 2px!important;
+    }
+    .cars_product_section{
+        padding-top:60px !important;
+    }
+    .cars_product_section .card_box{
+        margin-top: 60px !important;
+    }
+}
+
+@media only screen and (min-width: 1367px) and (max-width: 1600px){
+    .car_box_item a img{
+        width:380.1px;
+    }
+    .testimonial_content{
+        padding: 30px 10px;
+    }
+    .testimonial_content .quote_lines div{
+        font-size: 13px;
+    }
+    .testimonial_content div{
+        font-size: 13px;
+    }
+    .car_sec_head{
+        font-size: 25px;
+    }
+    .blog_heading{
+        font-size: 24px;
+    }
+    .upcoming_car_heading{
+        font-size: 24px;
+    }
+}
+@media only screen and (min-width: 1600px) and (max-width: 1750px){
+    .car_box_item a img{
+        width:345.1px;
+    }
+    .testimonial_content{
+        padding: 30px 10px;
+    }
 }
 @media only screen and (min-width:300px) and (max-width:600px){
     .swiper-button-prev, .swiper-button-next{
