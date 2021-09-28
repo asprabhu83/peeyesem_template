@@ -941,6 +941,10 @@ export default {
     .blog_heading{
         font-size: 20px;
     }
+    .blog_heading hr{
+        height: 2px;
+        margin-top: 2px!important;
+    }
     .blog_card_box .content div{
         font-size: 14px;
         margin: 12px 0!important;
