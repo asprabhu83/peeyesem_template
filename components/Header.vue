@@ -13,10 +13,11 @@
                 </div>
                 <div class="flex items-center call_service_details justify-center">
                     <div class="left mx-2">
-                        <div class="text-md text-black font-semibold pt-1 shodow_css_head">Service: +91 9902099944 | Sales: +91 9731097310</div>
+                        <div class="text-md  font-semibold pt-1 shodow_css_head">Service: +91 9902099944 <span class="divider">|</span> Sales: +91 9731097310</div>
                     </div>
+                    <span class="divider mx-1">|</span>
                     <div class="right flex items-center mx-2">
-                        <div class="text-md text-black font-semibold mx-1 mt-1 shodow_css_head">Follow us:</div>
+                        <div class="text-md  font-semibold mx-1 mt-1 shodow_css_head">Follow us:</div>
                         <div class="social_icons_box flex">
                             <img class="cursor-pointer" :src="require('@/assets/img/fbicon.png')" alt="img"  />
                             <img class="cursor-pointer" :src="require('@/assets/img/instaicon.png')" alt="img"  />
@@ -62,23 +63,13 @@
                                                 <li><nuxt-link to="/">Hyundai Kona</nuxt-link></li>
                                             </ul>
                                         </li>
-
                                         <li class="has-dropdown">
-                                            <a class="menu-item" href="#">Contact Us <i class="fa fa-angle-down"></i></a>
-                                               <ul class="sub-menu">
-                                                <li><nuxt-link to="/">Test Drive</nuxt-link></li>
-                                                <li><nuxt-link to="/">Sales Enquiry</nuxt-link></li>
-                                                <li><nuxt-link to="/">EMI Calculator</nuxt-link></li>
-                                                    <li><nuxt-link to="/">Special Offers</nuxt-link></li>
-                                                <li><nuxt-link to="/">Feedback</nuxt-link></li>
-                                                <li><nuxt-link to="/">Contact Us</nuxt-link></li>
-                                            <li><nuxt-link to="/">Get A Quote</nuxt-link></li>
+                                            <a class="menu-item" href="#">Used Cars<i class="fa fa-angle-down"></i></a>
+                                            <!-- Sub Menu -->
+                                            <ul class="sub-menu">
+                                                <li><nuxt-link to="/">Used Cars</nuxt-link></li>
+                                                <li><nuxt-link to="/">Sell a Car</nuxt-link></li>
                                             </ul>
-
-                                        </li>
-                                        <li>
-                                            <a class="menu-item" href="#">Locations <i class="fa fa-angle-down"></i></a>
-                                           
                                         </li>
                                         <li class="has-dropdown">
                                             <a class="menu-item" href="#">Services<i class="fa fa-angle-down"></i></a>
@@ -95,19 +86,14 @@
                                                 <li><nuxt-link to="/">Owners Manual</nuxt-link></li>
                                             </ul>
                                         </li>
-                                         <li class="has-dropdown">
-                                            <a class="menu-item" href="#">Used Cars<i class="fa fa-angle-down"></i></a>
-                                            <!-- Sub Menu -->
-                                            <ul class="sub-menu">
-                                                <li><nuxt-link to="/">Used Cars</nuxt-link></li>
-                                                <li><nuxt-link to="/">Sell a Car</nuxt-link></li>
-                                            </ul>
+                                        <li>
+                                            <a class="menu-item" href="#">Accessories </a>
                                         </li>
-                                       <li>
-                                            <a class="menu-item" href="#">Accessories<i class="fa fa-angle-down"></i></a>
+                                        <li>
+                                            <a class="menu-item" href="#">Locations </a>
                                         </li>
                                         <li  class="has-dropdown">
-                                            <nuxt-link class="menu-item" to="/about-us">About Us</nuxt-link>
+                                            <nuxt-link class="menu-item" to="/about-us">About Us <i class="fa fa-angle-down"></i></nuxt-link>
                                             <ul class="sub-menu">
                                                 <li><nuxt-link to="/">About</nuxt-link></li>
                                                 <li><nuxt-link to="/">Blog</nuxt-link></li>
@@ -116,6 +102,20 @@
                                                 <li><nuxt-link to="/">Careers</nuxt-link></li>
                                                 <li><nuxt-link to="/">News and Events</nuxt-link></li>
                                             </ul>
+                                        </li>
+
+                                        <li class="has-dropdown">
+                                            <a class="menu-item" href="#">Contact Us <i class="fa fa-angle-down"></i></a>
+                                               <ul class="sub-menu">
+                                                <li><nuxt-link to="/">Test Drive</nuxt-link></li>
+                                                <li><nuxt-link to="/">Sales Enquiry</nuxt-link></li>
+                                                <li><nuxt-link to="/">EMI Calculator</nuxt-link></li>
+                                                    <li><nuxt-link to="/">Special Offers</nuxt-link></li>
+                                                <li><nuxt-link to="/">Feedback</nuxt-link></li>
+                                                <li><nuxt-link to="/">Contact Us</nuxt-link></li>
+                                            <li><nuxt-link to="/">Get A Quote</nuxt-link></li>
+                                            </ul>
+
                                         </li>
                                     </ul>
                                 </nav>
@@ -465,6 +465,15 @@ export default {
 </script>
 
 <style>
+.shodow_css_head{
+    color: gray;
+}
+.divider{
+    font-weight: 500;
+    color: #002c5f;
+    font-size: 20px;
+    margin-top: 3px;
+}
 
 /* Mobile Menu Multi Dropdown Items Start */
 .social_icons_box img{
@@ -498,6 +507,10 @@ export default {
     }
 }
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
+    .divider{
+      font-size: 17px;
+      margin-top: 1px;
+    }
     .main-menu{
         width:90%;
     }
@@ -506,7 +519,7 @@ export default {
         font-size: 10px;
     }
     .header-bottom-color--golden{
-        padding: 10px 0;
+        padding: 0;
     }
     .header-logo .logo img {
         width: 20%;

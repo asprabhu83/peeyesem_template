@@ -106,7 +106,7 @@
         <div class="mt-14 category_sec">
             <div class="container">
                 <div class="flex items-center justify-center">
-                    <div class="mx-3 px-2 category_item font-semibold text-lg cursor-pointer"  v-for="(item, index) in carCategory" :class="categoryIndex == index ? 'active': ''" @click="categoryIndex = index, filterItems(item)" :key="index">
+                    <div class=" category_item font-semibold text-lg cursor-pointer"  v-for="(item, index) in carCategory" :class="categoryIndex == index ? 'active': ''" @click="categoryIndex = index, filterItems(item)" :key="index">
                         {{item}}
                     </div>
                 </div>
@@ -181,7 +181,7 @@
         <div class="overlay2 testimonial" />
     </section>
 
-    <section class="py-24 sales_car_box" style="background:#e6eaef;">
+    <!-- <section class="py-24 sales_car_box" style="background:#e6eaef;">
         <div class="container">
             <div class=" flex items-center sale_car_sec">
                 <div class="left w-1/2 mx-10">
@@ -196,12 +196,12 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
-    <section class="pb-24 blog_post_section">
+    <section class="pb-20 blog_post_section">
         <div class="container">
             <div class="blog_heading text-capitalize text-center py-16 font-bold text-3xl">LATEST NEWS <hr class="w-1/12 mx-auto bg-black h-0.5" style="background-color:black!important;"/></div>
-            <div class="flex items-center justify-around">
+            <div class="flex blog_card_body items-center justify-around">
                 <div class="blog_card_box w-3/12 cursor-pointer">
                     <div class="photo_box">
                         <img :src="require('@/assets/img/cars/blog/img1.jpg')" alt="img" style="width:100%;"  />
@@ -231,10 +231,13 @@
                 </div>
             </div>
         </div>
+        <div class="mt-20 text-center">
+            <button type="button" class="blog_post_button">View All Posts</button>
+        </div>
     </section>
 
     <section class="book_form_section ">
-        <div class="flex">
+        <div class="flex book_form_box">
             <div class="left w-1/2 relative cursor-pointer" @click="formModal = true">
                 <img :src="require('@/assets/img/cars/form1.jpg')" alt="img" class="" style="width:100%;height:auto;">
                 <div class="heading" >
@@ -278,9 +281,63 @@
     </div>
 
     <section class="form_modal_box" v-if="formModal == true">
-        <div class="w-4/12 bg-white card mx-auto">
+        <div class="w-4/12 card_body bg-white card mx-auto">
            <form class="pb-12 px-8">
                <div class="heading flex items-center justify-between pt-6 pb-8 font-semibold text-lg">Book a Car<font-awesome-icon icon="times"  size="1x" class="text-red-600 cursor-pointer" @click="formModal = false" /></div>
+               <div class="mb-4">
+                    <label
+                    class="block text-gray-700 text-sm font-bold mb-2"
+                    for="name"
+                    >
+                    Your Email
+                    </label>
+                    <input
+                    class="
+                        shadow
+                        appearance-none
+                        border
+                        rounded
+                        w-full
+                        py-2
+                        px-3
+                        text-gray-700
+                        leading-tight
+                        focus:outline-none
+                        focus:shadow-outline
+                    "
+                    type="text"
+                    placeholder="Your Name"
+                    />
+                </div>
+                <div class="mb-4">
+                    <label
+                    class="block text-gray-700 text-sm font-bold mb-2"
+                    for="cars"
+                    >
+                    Car Models
+                    </label>
+                    <select
+                    class="
+                      shadow
+                      appearance-none
+                      border
+                      rounded
+                      w-full
+                      py-2
+                      px-3
+                      text-gray-700
+                      cursor-pointer
+                      leading-tight
+                      focus:outline-none
+                      focus:shadow-outline
+                    "
+                    id="cars"
+                  >
+                  <option class="text-xl " value="">Choose Model</option>
+                  <option class="text-xl" :value="model.id" v-for="model in originalcars"
+                    :key="model.id" >{{model.name}}</option>
+                  </select>
+                </div>
                <div class="mb-4">
                     <label
                     class="block text-gray-700 text-sm font-bold mb-2"
@@ -327,21 +384,75 @@
                         focus:outline-none
                         focus:shadow-outline
                     "
-                    type="text"
+                    type="number"
                     placeholder="Your Phone"
                     />
                 </div>
                <div class="btn_grp">
-                   <button  type="button" class=" flex items-center text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline">Book a Car</button>
+                   <button  type="button" class="  text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline">Book a Car</button>
                </div>
            </form>
         </div>
     </section>
 
     <section class="form_modal_box" v-if="formModal2 == true">
-        <div class="w-4/12 bg-white card mx-auto">
+        <div class="w-4/12 card_body bg-white card mx-auto">
            <form class="pb-12 px-8">
                <div class="heading flex items-center justify-between pt-6 pb-8 font-semibold text-lg">Book a Service<font-awesome-icon icon="times"  size="1x" class="text-red-600 cursor-pointer" @click="formModal2 = false" /></div>
+               <div class="mb-4">
+                    <label
+                    class="block text-gray-700 text-sm font-bold mb-2"
+                    for="name"
+                    >
+                    Your Email
+                    </label>
+                    <input
+                    class="
+                        shadow
+                        appearance-none
+                        border
+                        rounded
+                        w-full
+                        py-2
+                        px-3
+                        text-gray-700
+                        leading-tight
+                        focus:outline-none
+                        focus:shadow-outline
+                    "
+                    type="text"
+                    placeholder="Your Name"
+                    />
+                </div>
+                <div class="mb-4">
+                    <label
+                    class="block text-gray-700 text-sm font-bold mb-2"
+                    for="cars"
+                    >
+                    Car Models
+                    </label>
+                    <select
+                    class="
+                      shadow
+                      appearance-none
+                      border
+                      rounded
+                      w-full
+                      py-2
+                      px-3
+                      text-gray-700
+                      cursor-pointer
+                      leading-tight
+                      focus:outline-none
+                      focus:shadow-outline
+                    "
+                    id="cars"
+                  >
+                  <option class="text-xl " value="">Choose Model</option>
+                  <option class="text-xl" :value="model.id" v-for="model in originalcars"
+                    :key="model.id" >{{model.name}}</option>
+                  </select>
+                </div>
                <div class="mb-4">
                     <label
                     class="block text-gray-700 text-sm font-bold mb-2"
@@ -388,12 +499,12 @@
                         focus:outline-none
                         focus:shadow-outline
                     "
-                    type="text"
+                    type="number"
                     placeholder="Your Phone"
                     />
                 </div>
                <div class="btn_grp">
-                   <button  type="button" class=" flex items-center text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline">Book a Service</button>
+                   <button  type="button" class=" text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline">Book a Service</button>
                </div>
            </form>
         </div>
@@ -412,6 +523,7 @@ import InstagramArea from '../components/instagram/InstagramArea'
 import BlogItem1 from '~/components/blog/BlogItem1'
 
 import axios from '~/plugins/axios'
+import isotope  from 'vueisotope'
 
 export default {
     name: 'Home',
@@ -420,6 +532,7 @@ export default {
         Timer,
         InstagramArea,
         BlogItem1,
+        isotope
     },
 
     data() {
@@ -427,71 +540,9 @@ export default {
         title: 'Home',
         formModal:false,
         formModal2:false,
-         blogItems: [
-            {
-                id: 1,
-                blogThumb: require('assets/img/blog/post1.png'),
-                blogTitle: 'This Designer Bronzer Has Even The Drugstore-Beauty-Buyers Splurging!',
-                blogDescription: 'Today kicks off early access to the Sephora Spring Sales Event so I wanted to share some of my top recent beauty buys I’ve been',
-                blogPublishDate: '24 February 2021'
-            },
-            {
-                id: 2,
-                blogThumb: require('assets/img/blog/post2.png'),
-                blogTitle: '4 Fresh Ways To Style Leather Shorts For Spring',
-                blogDescription: 'We spent spring break this year in California with Cody’s family and it was such a fun getaway. Cody’s family always goes hard on vacation',
-                blogPublishDate: '29 jan 2018'
-            },
-            {
-                id: 3,
-                blogThumb: require('assets/img/blog/post3.png'),
-                blogTitle: 'Shopbop Spring Sale Selects All Under Around $100!',
-                blogDescription: 'STRAIGHT LEG DENIM (UNDER $100) – Love all the Ribcage Levi’s styles! They are all really flattering. but since these are wider leg I stuck with my usual size (25).',
-                blogPublishDate: '24 February 2021'
-            },
-            {
-                id: 4,
-                blogThumb: require('assets/img/blog/post4.png'),
-                blogTitle: 'This Made Me Splurge on The Apple Watch',
-                blogDescription: 'From our favourite UK influencers to the best missives from Milan and the coolest New Yorkers, read on some of the best fashion blogs out there.',
-                blogPublishDate: '21 February 2019'
-            },
-            {
-                id: 5,
-                blogThumb: require('assets/img/blog/post5.png'),
-                blogTitle: 'This Designer Bronzer Has Even Buyers Splurging!',
-                blogDescription: 'Today kicks off early access to the Sephora Spring Sales Event so I wanted to share some of my top recent beauty buys',
-                blogPublishDate: '24 February 2021'
-            },
-            {
-                id: 6,
-                blogThumb: require('assets/img/blog/post6.png'),
-                blogTitle: '4 Tips for A Colorful Easter Tablescape',
-                blogDescription: 'Spring is all about the colors! Especially after what feels like an endless winter, I catch myself craving more color than usual.',
-                blogPublishDate: '24 February 2021'
-            },
-            {
-                id: 7,
-                blogThumb: require('assets/img/blog/post7.png'),
-                blogTitle: 'Hawaii Couples Trip Guide and Spring Break Faves',
-                blogDescription: 'After every trip to Hawaii, I always have a few DMs asking where we stayed, our favorite beaches, etc. Especially with spring break around the corner.',
-                blogPublishDate: '24 February 2021'
-            },
-            {
-                id: 8,
-                blogThumb: require('assets/img/blog/post8.png'),
-                blogTitle: 'If You Struggle To Hit Your Goals, Try This Instead',
-                blogDescription: 'This year, instead of setting grand, lofty goals and New Years Resolutions, I realized that I respond better to smaller targets that I can cross',
-                blogPublishDate: '24 February 2021'
-            },
-            {
-                id: 9,
-                blogThumb: require('assets/img/blog/post9.png'),
-                blogTitle: 'The Luxury Winter Accessory That’s Trending Now',
-                blogDescription: 'No matter what you spend on your wardrobe, there are three pieces that can always elevate your look – shoes, handbags, and sunglasses.',
-                blogPublishDate: '24 February 2021'
-            }
-        ],
+        options: {
+            sortBy : "category"
+        },
 
         products: [],
         category: [],
@@ -506,65 +557,65 @@ export default {
         staticcars:[
             {
                 id:1,
-                name:'Hyundai Tuscon',
-                image:'car1.webp',
+                name:'Hyundai All New I20',
+                image:'car7.jpg',
                 category:'Hatchback',
-                price:'4,67,490'
+                price:'8,19,900'
             },
             {
                 id:2,
-                name:'Hyundai Verna',
-                image:'car3.jpg',
-                category:'Hatchback',
-                price:'8,19,900'
-            },
-            {
-                id:3,
                 name:'Hyundai Aura',
                 image:'car2.webp',
-                category:'Hatchback',
+                category:'Sedan',
                 price:'22,30,000'
             },
             {
+                id:3,
+                name:'Hyundai Tuscon',
+                image:'car1.webp',
+                category:'SUV',
+                price:'4,67,490'
+            },
+            {
                 id:4,
-                name:'Hyundai Venue',
-                image:'car4.webp',
-                category:'Hatchback',
-                price:'8,16,500'
+                name:'Hyundai Verna',
+                image:'car3.jpg',
+                category:'Sedan',
+                price:'8,19,900'
             },
             {
                 id:5,
-                name:'Hyundai Kona',
-                image:'car6.jpg',
-                category:'Sedan',
-                price:'9,99,900'
+                name:'Hyundai Venue',
+                image:'car4.webp',
+                category:'SUV',
+                price:'8,16,500'
             },
             {
                 id:6,
-                name:'Hyundai Alcazar',
-                image:'car5.jpg',
-                category:'Sedan',
-                price:'16,53,300'
+                name:'Hyundai Kona',
+                image:'car6.jpg',
+                category:'SUV',
+                price:'9,99,900'
             },
             {
                 id:7,
-                name:'Hyundai All New I20',
-                image:'car7.jpg',
-                category:'Sedan',
-                price:'8,19,900'
+                name:'Hyundai Alcazar',
+                image:'car5.jpg',
+                category:'SUV',
+                price:'16,53,300'
             },
             {
                 id:8,
                 name:'Hyundai Santro',
                 image:'car8.jpg',
-                category:'SUV',
+                category:'Hatchback',
                 price:'4,67,490'
             },
             {
                 id:9,
                 name:'GRAND i10 NIOS',
                 image:'car9.webp',
-                category:'SUV',
+                category:'Hatchback',
                 price:'8,14,900'
             },
             {
@@ -578,7 +629,7 @@ export default {
                 id:11,
                 name:'Hyundai ELANTRA',
                 image:'car11.webp',
-                category:'SUV',
+                category:'Sedan',
                 price:'10,68,000'
             },
             {
@@ -593,65 +644,65 @@ export default {
         originalcars:[
             {
                 id:1,
-                name:'Hyundai Tuscon',
-                image:'car1.webp',
+                name:'Hyundai All New I20',
+                image:'car7.jpg',
                 category:'Hatchback',
-                price:'4,67,490'
+                price:'8,19,900'
             },
             {
                 id:2,
-                name:'Hyundai Verna',
-                image:'car3.jpg',
-                category:'Hatchback',
-                price:'8,19,900'
-            },
-            {
-                id:3,
                 name:'Hyundai Aura',
                 image:'car2.webp',
-                category:'Hatchback',
+                category:'Sedan',
                 price:'22,30,000'
             },
             {
+                id:3,
+                name:'Hyundai Tuscon',
+                image:'car1.webp',
+                category:'SUV',
+                price:'4,67,490'
+            },
+            {
                 id:4,
-                name:'Hyundai Venue',
-                image:'car4.webp',
-                category:'Hatchback',
-                price:'8,16,500'
+                name:'Hyundai Verna',
+                image:'car3.jpg',
+                category:'Sedan',
+                price:'8,19,900'
             },
             {
                 id:5,
-                name:'Hyundai Kona',
-                image:'car6.jpg',
-                category:'Sedan',
-                price:'9,99,900'
+                name:'Hyundai Venue',
+                image:'car4.webp',
+                category:'SUV',
+                price:'8,16,500'
             },
             {
                 id:6,
-                name:'Hyundai Alcazar',
-                image:'car5.jpg',
-                category:'Sedan',
-                price:'16,53,300'
+                name:'Hyundai Kona',
+                image:'car6.jpg',
+                category:'SUV',
+                price:'9,99,900'
             },
             {
                 id:7,
-                name:'Hyundai All New I20',
-                image:'car7.jpg',
-                category:'Sedan',
-                price:'8,19,900'
+                name:'Hyundai Alcazar',
+                image:'car5.jpg',
+                category:'SUV',
+                price:'16,53,300'
             },
             {
                 id:8,
                 name:'Hyundai Santro',
                 image:'car8.jpg',
-                category:'SUV',
+                category:'Hatchback',
                 price:'4,67,490'
             },
             {
                 id:9,
                 name:'GRAND i10 NIOS',
                 image:'car9.webp',
-                category:'SUV',
+                category:'Hatchback',
                 price:'8,14,900'
             },
             {
@@ -665,7 +716,7 @@ export default {
                 id:11,
                 name:'Hyundai ELANTRA',
                 image:'car11.webp',
-                category:'SUV',
+                category:'Sedan',
                 price:'10,68,000'
             },
             {
@@ -709,6 +760,7 @@ export default {
     },
     mounted() {
         // For scroll page top for every Route 
+
         window.scrollTo(0, 0)
 
         this.productsArray()
@@ -736,6 +788,7 @@ export default {
     methods: {
         filterItems(name){
           var newItems =  this.originalcars.filter((item)=> item.category == name);
+          newItems.reverse()
           this.staticcars = newItems;
           if(name == 'ALL'){
               this.staticcars = this.originalcars
@@ -831,11 +884,28 @@ export default {
 }
 </script>
 <style scoped>
-
+.blog_post_button{
+    background:#002c5f;
+    border: none;
+    outline: none;
+    padding: 10px 30px;
+    color: white;
+    border-radius: 5px;
+    font-size: 17px;
+}
 .category_item.active{
     border-bottom:2px solid #002c5f;
     color:#002c5f;
 }
+.category_item:hover{
+    border-bottom:2px solid #002c5f;
+    color:#002c5f;
+}
+.category_item{
+    margin: 0 16px;
+    padding: 0 8px;
+}
+
 .form_modal_box{
     height: 100vh;
     width: 100%;
@@ -1012,6 +1082,17 @@ export default {
 }
 .car_box_item{
     position: relative;
+    animation:scaleIn .7s;
+}
+@keyframes scaleIn{
+    from{
+        opacity: 0;
+        transform: scale(0);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 .car_box_item:hover .car_details{
     transform: scale(1);
@@ -1152,6 +1233,46 @@ export default {
     }
 }
 @media only screen and (min-width:300px) and (max-width:600px){
+    .blog_post_button{
+        padding: 6px 20px;
+    }
+    .form_modal_box .card_body{
+        width: 95%;
+    }
+    .form_modal_box .btn_grp button{
+        width: 100%;
+    }
+    .upcoming_car_heading hr{
+        margin-top: 1px!important;
+    }
+    .upcoming_car_heading{
+        font-size: 24px;
+        padding: 45px 0 !important;
+    }
+    .book_form_box{
+        display: block!important;
+    }
+    .book_form_box .left, .book_form_box .right{
+        width:100%;
+    }
+    .book_form_box .left .heading, .book_form_box .right .heading{
+        font-size: 18px;
+        transform: translate(-50%, -50%);
+    }
+    .blog_heading {
+        font-size: 20px;
+    }
+    .blog_card_body{
+        display: block!important;
+    }
+    .blog_card_box {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+    .category_item{
+        margin: 0 8px;
+        padding: 0 5px;
+    }
     .swiper-button-prev, .swiper-button-next{
         width: 25px!important;
         height: 25px!important;
@@ -1168,6 +1289,9 @@ export default {
     }
     .card_box{
         display: block;
+    }
+    .car_box_item{
+        width:100%;
     }
     .car_box_item img{
         width: 100%!important;
@@ -1223,6 +1347,7 @@ export default {
     }
     .testimonial_head{
         font-size: 25px;
+        margin-bottom: 16px!important;
     }
     .sale_car_sec{
         display: block;

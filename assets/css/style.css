@@ -394,9 +394,9 @@ button {
 }
 
 .header-bottom-color--golden {
-    background: #FEF5EF;
-    padding: 30px 0;
-    color: black;
+    background: #002c5f;
+    padding: 20px 0;
+    color: white;
 }
 
 .header-bottom-color--white {
@@ -583,7 +583,7 @@ button {
     color: black;
 } 
 .menu-color--black nav>ul>li>a {
-    color: black;
+    color: white;
 }
 
 .menu-color--black .sub-menu>li>a,
