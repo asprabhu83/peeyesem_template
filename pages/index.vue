@@ -777,7 +777,7 @@ export default {
             this.animateValue(obj2, 0, 255, 7000);
             this.animateValue(obj3, 0, 430, 7000);
             this.animateValue(obj4, 0, 340, 7000);
-        },3000)
+        },2000)
     },
     created () {
         window.addEventListener('scroll', this.handleScroll);
