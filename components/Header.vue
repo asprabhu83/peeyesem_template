@@ -515,7 +515,7 @@ export default {
         width:90%;
     }
     .main-menu nav > ul > li > a{
-        padding: 10px;
+        padding: 1px 10px;
         font-size: 10px;
     }
     .header-bottom-color--golden{
