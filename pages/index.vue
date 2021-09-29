@@ -112,7 +112,7 @@
                 </div>
             </div>
         </div>
-        <div class="card_box  flex flex-wrap mt-16 mx-auto">
+        <div class="card_box  flex flex-wrap mt-16 mx-auto" id="isotope">
             <div class="car_box_item" v-for="car in staticcars" :key="car.id">
                 <a :href="'/cars/?id='+ car.id" class="text-center block car_image_box cursor-pointer" >
                     <img :src="require('@/assets/img/cars/static/'+ car.image)" alt="" >
