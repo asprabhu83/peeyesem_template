@@ -622,7 +622,7 @@ export default {
                 id:10,
                 name:'Hyundai i20 N Line',
                 image:'car10.webp',
-                category:'SUV',
+                category:'Hatchback',
                 price:'7,31,900'
             },
             {
@@ -709,7 +709,7 @@ export default {
                 id:10,
                 name:'Hyundai i20 N Line',
                 image:'car10.webp',
-                category:'SUV',
+                category:'Hatchback',
                 price:'7,31,900'
             },
             {
