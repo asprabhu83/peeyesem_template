@@ -7,14 +7,19 @@
                 <div class="col-lg-4 col-md-12 col-sm-12 col-12">
                     <div class="footer_left_side">
                         <div class="text-capitalize mb-3 text-lg font-semibold">Peeyesyem hyundai</div>
-                        <div class="text-sm mb-2"><i class="far fa-envelope mr-2"></i> hyundai@gmail.com</div>
+                        <div class="text-sm mb-2"><i class="far fa-envelope mr-2"></i> peeyesyemhyundai@gmail.com</div>
                         <div class="text-sm mb-3"> <font-awesome-icon icon="phone-alt"  size="1x" class="text-white  mr-2" />+91 9902099944</div>
                         <div class="location_sec">
                             <div>Thanjavur</div>
+                            <span>|</span>
                             <div>Trichy</div>
+                            <span>|</span>
                             <div>Madurai</div>
+                            <span>|</span>
                             <div>Salem</div>
+                            <span>|</span>
                             <div>Chennai</div>
+                            <span>|</span>
                             <div>Coimbatore</div>
                         </div>
                     </div>
@@ -130,10 +135,8 @@ export default {
     display: flex;
     flex-wrap: wrap;
 }
-.location_sec div{
-    border:1px solid white;
+.location_sec div,.location_sec span{
     color: white;
-    padding: 2px 15px;
     margin: 5px 10px 5px 0;
     cursor: pointer;
 }

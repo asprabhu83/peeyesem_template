@@ -140,6 +140,9 @@
             <div class="text-center font-bold text-white ">
                 <button type="button" class="blog_post_button" @click="formModal2 = true">Book a Service</button> 
             </div>
+            <div class="text-center font-bold text-white ">
+                <button type="button" class="blog_post_button" @click="formModal3 = true">Request a Test drive</button> 
+            </div>
         </div>
     </section>
 
@@ -283,20 +286,16 @@
     <div class="fixed_form_sec">
         <div class="text-uppercase font-semibold text-white form1 form_div" @click="formModal = true"><img class="mx-2" :src="require('@/assets/img/vehicle.png')" alt="img"  /><div class="sub_form1 sub_form_div">Book a car</div></div>
         <div class="text-uppercase font-semibold text-white form2 form_div" @click="formModal3 = true"><img class="mx-2" :src="require('@/assets/img/book_drive.png')" alt="img" style="width:32px;"  /> <div class="sub_form2 sub_form_div">Book a test drive</div></div>
-        <div class="text-uppercase font-semibold text-white form3 form_div" @click="formModal2 = true"><img class="mx-2" :src="require('@/assets/img/book_service.png')" alt="img" style="width:32px;"  /> <div class="sub_form3 sub_form_div">Book a service</div></div>
+        <div class="text-uppercase font-semibold text-white form3 form_div" @click="formModal2 = true"><img class="mx-2" :src="require('@/assets/img/book_service2.png')" alt="img" style="width:32px;"  /> <div class="sub_form3 sub_form_div">Book a service</div></div>
+        <div class="text-uppercase font-semibold text-white form4 form_div" @click="formModal4 = true"><img class="mx-2" :src="require('@/assets/img/book_service.png')" alt="img" style="width:32px;"  /> <div class="sub_form3 sub_form_div">Request a callback</div></div>
     </div>
 
     <section class="form_modal_box" v-if="formModal == true">
         <div class="w-4/12 card_body bg-white card mx-auto">
            <form class="pb-12 px-8">
-               <div class="heading flex items-center justify-between pt-6 pb-8 font-semibold text-lg">Book a Car<font-awesome-icon icon="times"  size="1x" class="text-red-600 cursor-pointer" @click="formModal = false" /></div>
+               <div class="heading flex items-center justify-between pt-6 pb-2 font-semibold text-lg">Book a Car<font-awesome-icon icon="times"  size="1x" class="text-red-600 cursor-pointer" @click="formModal = false" /></div>
+               <hr class="mb-8" style="height:1px;background:gray;opacity:0.3;" />
                <div class="mb-4">
-                    <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
-                    for="name"
-                    >
-                    Your Email
-                    </label>
                     <input
                     class="
                         shadow
@@ -316,12 +315,6 @@
                     />
                 </div>
                 <div class="mb-4">
-                    <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
-                    for="cars"
-                    >
-                    Car Models
-                    </label>
                     <select
                     class="
                       shadow
@@ -345,12 +338,6 @@
                   </select>
                 </div>
                <div class="mb-4">
-                    <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
-                    for="email"
-                    >
-                    Your Email
-                    </label>
                     <input
                     class="
                         shadow
@@ -370,12 +357,6 @@
                     />
                 </div>
                <div class="mb-8">
-                    <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
-                    for="phone"
-                    >
-                    Your Phone
-                    </label>
                     <input
                     class="
                         shadow
@@ -395,7 +376,7 @@
                     />
                 </div>
                <div class="btn_grp">
-                   <button  type="button" class="  text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline">Book a Car</button>
+                   <button  type="button" class="  text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
                </div>
            </form>
         </div>
@@ -404,14 +385,9 @@
     <section class="form_modal_box" v-if="formModal2 == true">
         <div class="w-4/12 card_body bg-white card mx-auto">
            <form class="pb-12 px-8">
-               <div class="heading flex items-center justify-between pt-6 pb-8 font-semibold text-lg">Book a Service<font-awesome-icon icon="times"  size="1x" class="text-red-600 cursor-pointer" @click="formModal2 = false" /></div>
+               <div class="heading flex items-center justify-between pt-6 pb-2 font-semibold text-lg">Book a Service<font-awesome-icon icon="times"  size="1x" class="text-red-600 cursor-pointer" @click="formModal2 = false" /></div>
+               <hr class="mb-8" style="height:1px;background:gray;opacity:0.3;" />
                <div class="mb-4">
-                    <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
-                    for="name"
-                    >
-                    Your Email
-                    </label>
                     <input
                     class="
                         shadow
@@ -431,12 +407,6 @@
                     />
                 </div>
                 <div class="mb-4">
-                    <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
-                    for="cars"
-                    >
-                    Car Models
-                    </label>
                     <select
                     class="
                       shadow
@@ -460,12 +430,6 @@
                   </select>
                 </div>
                <div class="mb-4">
-                    <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
-                    for="email"
-                    >
-                    Your Email
-                    </label>
                     <input
                     class="
                         shadow
@@ -485,12 +449,6 @@
                     />
                 </div>
                <div class="mb-8">
-                    <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
-                    for="phone"
-                    >
-                    Your Phone
-                    </label>
                     <input
                     class="
                         shadow
@@ -510,7 +468,7 @@
                     />
                 </div>
                <div class="btn_grp">
-                   <button  type="button" class=" text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline">Book a Service</button>
+                   <button  type="button" class=" text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
                </div>
            </form>
         </div>
@@ -519,14 +477,9 @@
     <section class="form_modal_box" v-if="formModal3 == true">
         <div class="w-4/12 card_body bg-white card mx-auto">
            <form class="pb-12 px-8">
-               <div class="heading flex items-center justify-between pt-6 pb-8 font-semibold text-lg">Book a Test Drive<font-awesome-icon icon="times"  size="1x" class="text-red-600 cursor-pointer" @click="formModal3 = false" /></div>
+               <div class="heading flex items-center justify-between pt-6 pb-2 font-semibold text-lg">Book a Test Drive<font-awesome-icon icon="times"  size="1x" class="text-red-600 cursor-pointer" @click="formModal3 = false" /></div>
+               <hr class="mb-8" style="height:1px;background:gray;opacity:0.3;" />
                <div class="mb-4">
-                    <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
-                    for="name"
-                    >
-                    Your Email
-                    </label>
                     <input
                     class="
                         shadow
@@ -546,12 +499,6 @@
                     />
                 </div>
                 <div class="mb-4">
-                    <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
-                    for="cars"
-                    >
-                    Car Models
-                    </label>
                     <select
                     class="
                       shadow
@@ -575,12 +522,6 @@
                   </select>
                 </div>
                <div class="mb-4">
-                    <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
-                    for="email"
-                    >
-                    Your Email
-                    </label>
                     <input
                     class="
                         shadow
@@ -600,12 +541,98 @@
                     />
                 </div>
                <div class="mb-8">
-                    <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
-                    for="phone"
-                    >
-                    Your Phone
-                    </label>
+                    <input
+                    class="
+                        shadow
+                        appearance-none
+                        border
+                        rounded
+                        w-full
+                        py-2
+                        px-3
+                        text-gray-700
+                        leading-tight
+                        focus:outline-none
+                        focus:shadow-outline
+                    "
+                    type="number"
+                    placeholder="Your Phone"
+                    />
+                </div>
+               <div class="btn_grp">
+                   <button  type="button" class=" text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
+               </div>
+           </form>
+        </div>
+    </section>
+
+    <section class="form_modal_box" v-if="formModal4 == true">
+        <div class="w-4/12 card_body bg-white card mx-auto">
+           <form class="pb-12 px-8">
+               <div class="heading flex items-center justify-between pt-6 pb-2 font-semibold text-lg">Request a callback<font-awesome-icon icon="times"  size="1x" class="text-red-600 cursor-pointer" @click="formModal4 = false" /></div>
+               <hr class="mb-8" style="height:1px;background:gray;opacity:0.3;" />
+               <div class="mb-4">
+                    <input
+                    class="
+                        shadow
+                        appearance-none
+                        border
+                        rounded
+                        w-full
+                        py-2
+                        px-3
+                        text-gray-700
+                        leading-tight
+                        focus:outline-none
+                        focus:shadow-outline
+                    "
+                    type="text"
+                    placeholder="Your Name"
+                    />
+                </div>
+                <div class="mb-4">
+                    <select
+                    class="
+                      shadow
+                      appearance-none
+                      border
+                      rounded
+                      w-full
+                      py-2
+                      px-3
+                      text-gray-700
+                      cursor-pointer
+                      leading-tight
+                      focus:outline-none
+                      focus:shadow-outline
+                    "
+                    id="cars"
+                  >
+                  <option class="text-xl " value="">Choose Model</option>
+                  <option class="text-xl" :value="model.id" v-for="model in originalcars"
+                    :key="model.id" >{{model.name}}</option>
+                  </select>
+                </div>
+               <div class="mb-4">
+                    <input
+                    class="
+                        shadow
+                        appearance-none
+                        border
+                        rounded
+                        w-full
+                        py-2
+                        px-3
+                        text-gray-700
+                        leading-tight
+                        focus:outline-none
+                        focus:shadow-outline
+                    "
+                    type="text"
+                    placeholder="Your Email"
+                    />
+                </div>
+               <div class="mb-8">
                     <input
                     class="
                         shadow
@@ -662,6 +689,7 @@ export default {
         formModal:false,
         formModal2:false,
         formModal3:false,
+        formModal4:false,
         options: {
             sortBy : "category"
         },
@@ -1025,7 +1053,7 @@ export default {
     cursor: pointer;
     display: flex;
     align-items: center;
-    transform: translateX(165px);
+    transform: translateX(188px);
     transition: .6s ease-in-out;
 }
 .fixed_form_sec div i{
@@ -1044,6 +1072,9 @@ export default {
     transform: translateX(0px);
 }
 .fixed_form_sec .form3:hover{
+    transform: translateX(0px);
+}
+.fixed_form_sec .form4:hover{
     transform: translateX(0px);
 }
 
@@ -1417,6 +1448,12 @@ export default {
     }
 }
 @media only screen and (min-width:300px) and (max-width:600px){
+    .book_form_box{
+        display: block;
+    }
+    .book_form_box div{
+        margin-bottom: 20px;
+    }
     .whtsapp_btn .pc_whtsap_img{
         display: none;
     }
