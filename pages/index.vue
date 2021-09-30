@@ -81,15 +81,15 @@
         <div class="container service_item_container">
             <div class="row  service_items service_item_box flex items-center justify-evenly">
                 <div class="text-white text-center service_items service_item  font-bold text-xl">
-                    <div class="mb-2">SHOWROOMS</div>
+                    <div class="mb-2 text-uppercase">Sales Showroom</div>
                    <div class="flex items-center count_box"><img class="mx-2" :src="require('@/assets/img/vehicle.png')" alt="img"  /><div id="value1"> 6</div></div>
                 </div>
                 <div class="text-white text-center service_items service_item font-bold text-xl">
-                    <div class="mb-2">CAR SOLD</div>
+                    <div class="mb-2 text-uppercase">Service workshops</div>
                    <div class="flex items-center count_box"><img class="mx-2 car_sold" :src="require('@/assets/img/car_sold.png')" alt="img"  /><div id="value2"> 255</div></div>
                 </div>
                 <div class="text-white text-center service_items service_item font-bold text-xl">
-                    <div class="mb-2">CAR SERVICED</div>
+                    <div class="mb-2 text-uppercase">Used car Showroom</div>
                    <div class="flex items-center count_box"><img class="mx-2 car_service" :src="require('@/assets/img/car_service.png')" alt="img"  /><div id="value5"> 255</div></div>
                 </div>
                 <div class="text-white text-center service_items service_item font-bold text-xl">
