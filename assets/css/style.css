@@ -413,9 +413,10 @@ button {
 
 .sticky-header.sticky.sticky-color--golden .sticky_logo{
     display: inline-block;
+    margin: 0 10px;
 }
 .sticky-header.sticky.sticky-color--golden ul{
-    text-align: center;
+    text-align: left;
 }
 .sticky-header.sticky.sticky-color--golden {
     box-shadow: 0 2px 10px 4px rgb(0 0 0 / 20%);
@@ -477,7 +478,7 @@ button {
 .main-menu nav>ul>li>a {
     display: block;
     line-height: 24px;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 30px;
     text-transform: uppercase;
     font-weight: 700;
@@ -667,7 +668,7 @@ button {
 } */
 
 .header-logo .logo img {
-    width: 28%;
+    width: 38%;
     height: auto;
 }
 
@@ -2401,7 +2402,7 @@ button {
 ---------------------------*/
 
 #footer_one {
-    padding: 50px 0 40px 0;
+    padding: 25px 0 15px 0;
     background-color: #002c5f;
     color: white;
 }
@@ -2424,8 +2425,12 @@ button {
     color: white;
 }
 
+#footer_one .footer_one_widget ul li a {
+    font-size: 14px;
+}
+
 #footer_one .footer_one_widget ul li {
-    padding-top: 10px;
+    padding-top: 6px;
 }
 
 #footer_one .footer_one_widget ul li:first-child {

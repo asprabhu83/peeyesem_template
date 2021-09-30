@@ -1,5 +1,5 @@
 <template >
-  <div class="home-page">
+  <div class="home-page" style="overflow:hidden;">
 
     <!-- Banner Area -->
     <section class="relative" >
@@ -62,7 +62,7 @@
         <div class="container">
             <div class="about_car_sec flex  justify-center">
                 <div class="left_sec w-1/2 mx-10 pt-6">
-                    <h3 class="text-uppercase about_psm_head">About Peeyesyem hyundai <hr class="h-1 bg-black w-3/12 my-1" /></h3>
+                    <h3 class="text-uppercase about_psm_head">Welcome to Peeyesyem hyundai <hr class="h-1 bg-black w-3/12 my-1" /></h3>
                     <!-- <div class="flex items-center my-5">
                         <div class="mx-3 text-3xl">10</div>
                         <div class="mx-3">Everything you need to build an amazing dealership automotive responsive website.</div>
@@ -81,12 +81,16 @@
         <div class="container service_item_container">
             <div class="row  service_items service_item_box flex items-center justify-evenly">
                 <div class="text-white text-center service_items service_item  font-bold text-xl">
-                    <div class="mb-2">SHOWROOMS IN TAMILNADU</div>
+                    <div class="mb-2">SHOWROOMS</div>
                    <div class="flex items-center count_box"><img class="mx-2" :src="require('@/assets/img/vehicle.png')" alt="img"  /><div id="value1"> 6</div></div>
                 </div>
                 <div class="text-white text-center service_items service_item font-bold text-xl">
-                    <div class="mb-2">REVIEWS</div>
-                   <div class="flex items-center count_box"><img class="mx-2" :src="require('@/assets/img/chatwhite.png')" alt="img"  /><div id="value2"> 255</div></div>
+                    <div class="mb-2">CAR SOLD</div>
+                   <div class="flex items-center count_box"><img class="mx-2 car_sold" :src="require('@/assets/img/car_sold.png')" alt="img"  /><div id="value2"> 255</div></div>
+                </div>
+                <div class="text-white text-center service_items service_item font-bold text-xl">
+                    <div class="mb-2">CAR SERVICED</div>
+                   <div class="flex items-center count_box"><img class="mx-2 car_service" :src="require('@/assets/img/car_service.png')" alt="img"  /><div id="value5"> 255</div></div>
                 </div>
                 <div class="text-white text-center service_items service_item font-bold text-xl">
                    <div class="mb-2">HAPPY CUSTOMERS</div>
@@ -128,57 +132,15 @@
         </div>
     </section>
 
-    <section class=" fixed_bg_image2">
-        <div class="block py-10">
-            <div class="relative bg-position_overlay testimonial_haeding">
-                <div class="text-center mb-2 text-lg  text-white sub_head">What Our Happy Clients say about us</div>
-                <div class="text-center mb-5 text-3xl text-white font-bold testimonial_head">OUR TESTIMONIAL<hr class="h-1 bg-white mx-auto w-1/12 my-1" /></div>
-            </div>
-            <div class="product_single_one_img relative bg-position_overlay">
-                        <swiper class="swiper product-single-2-slider" :options="swiperOption">
-                            <swiper-slide>
-                                <div class="testimonial_content">
-                                    <div class="text-center quote_lines text-md mb-10 text-white font-semibold flex items-start justify-center" >
-                                        <img class="mx-1 quote_icon" :src="require('@/assets/img/quotewhite.png')" alt="img"  />
-                                        <div class="mt-3">You will begin to realize why this exercise is called the Dickens reference to the ghost showing Scrooge Pattern with reference to the ghost showing Scrooge some different futures as you notice that the idea of this exercise.</div>
-                                    </div>
-                                    <div class="flex items-center justify-center">
-                                        <img class="mx-1" :src="require('@/assets/img/userwhite2.png')" alt="img"  />
-                                        <div class="mx-1 font-semibold">JOHN DOE | <span class="font-normal">customer</span></div>
-                                    </div>
-                                </div>
-                            </swiper-slide>
-                            <swiper-slide>
-                                <div class="testimonial_content">
-                                    <div class="text-center  quote_lines text-md mb-10 text-white font-semibold flex items-start justify-center" >
-                                        <img class="mx-1 quote_icon" :src="require('@/assets/img/quotewhite.png')" alt="img"  />
-                                        <div class="mt-3">You will begin to realize why this exercise is called the Dickens reference to the ghost showing Scrooge Pattern with reference to the ghost showing Scrooge some different futures as you notice that the idea of this exercise.</div>
-                                    </div>
-                                    <div class="flex items-center justify-center">
-                                        <img class="mx-1" :src="require('@/assets/img/userwhite2.png')" alt="img"  />
-                                        <div class="mx-1 font-semibold">FELICA QUEEN | <span class="font-normal">Auto Dealer</span></div>
-                                    </div>
-                                </div>
-                            </swiper-slide>
-                            <swiper-slide>
-                                <div class="testimonial_content">
-                                    <div class="text-center quote_lines text-md mb-10 text-white font-semibold flex items-start justify-center" >
-                                        <img class="mx-1 quote_icon" :src="require('@/assets/img/quotewhite.png')" alt="img"  />
-                                        <div class="mt-3">You will begin to realize why this exercise is called the Dickens reference to the ghost showing Scrooge Pattern with reference to the ghost showing Scrooge some different futures as you notice that the idea of this exercise.</div>
-                                    </div>
-                                    <div class="flex items-center justify-center">
-                                        <img class="mx-1" :src="require('@/assets/img/userwhite2.png')" alt="img"  />
-                                        <div class="mx-1 font-semibold">ALICE WILLIAMS | <span class="font-normal">Car Dealer</span></div>
-                                    </div>
-                                </div>
-                            </swiper-slide>
-                            <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
-                            <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
-
-                        </swiper>
+    <section class="book_form_section py-24" >
+        <div class="flex book_form_box items-center justify-evenly">
+            <div class="text-center font-bold text-white ">
+                <button type="button" class="blog_post_button" @click="formModal = true">Book a Car</button>
+             </div>
+            <div class="text-center font-bold text-white ">
+                <button type="button" class="blog_post_button" @click="formModal2 = true">Book a Service</button> 
             </div>
         </div>
-        <div class="overlay2 testimonial" />
     </section>
 
     <!-- <section class="py-24 sales_car_box" style="background:#e6eaef;">
@@ -235,27 +197,62 @@
             <button type="button" class="blog_post_button">View All Posts</button>
         </div>
     </section>
-
-    <section class="book_form_section ">
-        <div class="flex book_form_box">
-            <div class="left w-1/2 relative cursor-pointer" @click="formModal = true">
-                <img :src="require('@/assets/img/cars/form1.jpg')" alt="img" class="" style="width:100%;height:auto;">
-                <div class="heading" >
-                    <div class="text-center font-bold text-white text-2xl">Book a Car</div>
-                </div>
+    <section class=" fixed_bg_image2">
+        <div class="block py-4">
+            <div class="relative bg-position_overlay testimonial_haeding">
+                <div class="text-center mb-2 text-lg  text-white sub_head">What Our Happy Clients say about us</div>
+                <div class="text-center mb-4 text-3xl text-white font-bold testimonial_head">OUR TESTIMONIAL<hr class="h-1 bg-white mx-auto w-1/12 my-1" /></div>
             </div>
-            <div class="right w-1/2 relative cursor-pointer" @click="formModal2 = true">
-                <img :src="require('@/assets/img/cars/form2.jpg')" alt="img" class="" style="width:100%;height:auto;">
-                <div class="heading" >
-                    <div class="text-center font-bold text-white text-2xl">Book a Service</div>
-                </div>
+            <div class="product_single_one_img relative bg-position_overlay">
+                        <swiper class="swiper product-single-2-slider" :options="swiperOption">
+                            <swiper-slide>
+                                <div class="testimonial_content">
+                                    <div class="text-center quote_lines text-md mb-10 text-white font-semibold flex items-start justify-center" >
+                                        <img class="mx-1 quote_icon" :src="require('@/assets/img/quotewhite.png')" alt="img"  />
+                                        <div class="mt-3">You will begin to realize why this exercise is called the Dickens reference to the ghost showing Scrooge Pattern with reference to the ghost showing Scrooge some different futures as you notice that the idea of this exercise.</div>
+                                    </div>
+                                    <div class="flex items-center justify-center">
+                                        <img class="mx-1" :src="require('@/assets/img/userwhite2.png')" alt="img"  />
+                                        <div class="mx-1 font-semibold">JOHN DOE | <span class="font-normal">customer</span></div>
+                                    </div>
+                                </div>
+                            </swiper-slide>
+                            <swiper-slide>
+                                <div class="testimonial_content">
+                                    <div class="text-center  quote_lines text-md mb-10 text-white font-semibold flex items-start justify-center" >
+                                        <img class="mx-1 quote_icon" :src="require('@/assets/img/quotewhite.png')" alt="img"  />
+                                        <div class="mt-3">You will begin to realize why this exercise is called the Dickens reference to the ghost showing Scrooge Pattern with reference to the ghost showing Scrooge some different futures as you notice that the idea of this exercise.</div>
+                                    </div>
+                                    <div class="flex items-center justify-center">
+                                        <img class="mx-1" :src="require('@/assets/img/userwhite2.png')" alt="img"  />
+                                        <div class="mx-1 font-semibold">FELICA QUEEN | <span class="font-normal">Auto Dealer</span></div>
+                                    </div>
+                                </div>
+                            </swiper-slide>
+                            <swiper-slide>
+                                <div class="testimonial_content">
+                                    <div class="text-center quote_lines text-md mb-10 text-white font-semibold flex items-start justify-center" >
+                                        <img class="mx-1 quote_icon" :src="require('@/assets/img/quotewhite.png')" alt="img"  />
+                                        <div class="mt-3">You will begin to realize why this exercise is called the Dickens reference to the ghost showing Scrooge Pattern with reference to the ghost showing Scrooge some different futures as you notice that the idea of this exercise.</div>
+                                    </div>
+                                    <div class="flex items-center justify-center">
+                                        <img class="mx-1" :src="require('@/assets/img/userwhite2.png')" alt="img"  />
+                                        <div class="mx-1 font-semibold">ALICE WILLIAMS | <span class="font-normal">Car Dealer</span></div>
+                                    </div>
+                                </div>
+                            </swiper-slide>
+                            <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
+                            <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
+
+                        </swiper>
             </div>
         </div>
+        <div class="overlay2 testimonial" />
     </section>
 
 
     <!-- Special offer -->
-    <section class="" style="background:#e6eaef;">
+    <section class="" >
         <div class="text-capitalize text-center pt-14 pb-10 font-bold text-3xl upcoming_car_heading">Upcoming Cars<hr class="h-1 w-1/12 my-2 mx-auto bg-black" style="background-color:black!important;" /></div>
         <div class="row m-0 block">
             <div class="product_single_one_img">
@@ -278,6 +275,16 @@
 
     <div class="back_to_top" @click="backToTop">
         <img :src="require('@/assets/img/back_to_top_car.png')" alt="img" style="width:100%;height:auto;"/>
+    </div>
+    <div class="whtsapp_btn">
+        <img class="pc_whtsap_img" :src="require('@/assets/img/whatsapp.gif')" alt="img" />
+        <img class="mob_whtsap_img" :src="require('@/assets/img/whatsapp_mob.png')" alt="img" />
+    </div>
+    <div class="fixed_form_sec">
+        <div class="text-uppercase font-semibold text-white form1 form_div" @mouseover="onHover" @mouseleave="onLeave"><i class="fab fa-facebook-f"></i> <div class="sub_form1 sub_form_div">Book a test drive</div></div>
+        <div class="text-uppercase font-semibold text-white form2 form_div" @mouseover="onHover" @mouseleave="onLeave"><i class="fab fa-facebook-f"></i> <div class="sub_form2 sub_form_div">Book a test drive</div></div>
+        <div class="text-uppercase font-semibold text-white form3 form_div" @mouseover="onHover" @mouseleave="onLeave"><i class="fab fa-facebook-f"></i> <div class="sub_form3 sub_form_div">Book a test drive</div></div>
+        <div class="text-uppercase font-semibold text-white form4 form_div" @mouseover="onHover" @mouseleave="onLeave"><i class="fab fa-facebook-f"></i> <div class="sub_form4 sub_form_div">Book a test drive</div></div>
     </div>
 
     <section class="form_modal_box" v-if="formModal == true">
@@ -564,73 +571,73 @@ export default {
             },
             {
                 id:2,
-                name:'Hyundai Aura',
-                image:'car2.webp',
-                category:'Sedan',
-                price:'22,30,000'
-            },
-            {
-                id:3,
-                name:'Hyundai Tuscon',
-                image:'car1.webp',
-                category:'SUV',
-                price:'4,67,490'
-            },
-            {
-                id:4,
-                name:'Hyundai Verna',
-                image:'car3.jpg',
-                category:'Sedan',
-                price:'8,19,900'
-            },
-            {
-                id:5,
-                name:'Hyundai Venue',
-                image:'car4.webp',
-                category:'SUV',
-                price:'8,16,500'
-            },
-            {
-                id:6,
-                name:'Hyundai Kona',
-                image:'car6.jpg',
-                category:'SUV',
-                price:'9,99,900'
-            },
-            {
-                id:7,
-                name:'Hyundai Alcazar',
-                image:'car5.jpg',
-                category:'SUV',
-                price:'16,53,300'
-            },
-            {
-                id:8,
                 name:'Hyundai Santro',
                 image:'car8.jpg',
                 category:'Hatchback',
                 price:'4,67,490'
             },
             {
-                id:9,
+                id:3,
                 name:'GRAND i10 NIOS',
                 image:'car9.webp',
                 category:'Hatchback',
                 price:'8,14,900'
             },
             {
-                id:10,
+                id:4,
                 name:'Hyundai i20 N Line',
                 image:'car10.webp',
                 category:'Hatchback',
                 price:'7,31,900'
             },
             {
-                id:11,
+                id:5,
+                name:'Hyundai Aura',
+                image:'car2.webp',
+                category:'Sedan',
+                price:'22,30,000'
+            },
+            {
+                id:6,
+                name:'Hyundai Verna',
+                image:'car15.jpg',
+                category:'Sedan',
+                price:'8,19,900'
+            },
+            {
+                id:7,
                 name:'Hyundai ELANTRA',
                 image:'car11.webp',
                 category:'Sedan',
                 price:'10,68,000'
+            },
+            {
+                id:8,
+                name:'Hyundai Tuscon',
+                image:'car18.webp',
+                category:'SUV',
+                price:'4,67,490'
+            },
+            {
+                id:9,
+                name:'Hyundai Venue',
+                image:'car4.webp',
+                category:'SUV',
+                price:'8,16,500'
+            },
+            {
+                id:10,
+                name:'Hyundai Kona',
+                image:'car14.webp',
+                category:'SUV',
+                price:'9,99,900'
+            },
+            {
+                id:11,
+                name:'Hyundai Alcazar',
+                image:'car17.jpg',
+                category:'SUV',
+                price:'16,53,300'
             },
             {
                 id:12,
@@ -651,73 +658,73 @@ export default {
             },
             {
                 id:2,
-                name:'Hyundai Aura',
-                image:'car2.webp',
-                category:'Sedan',
-                price:'22,30,000'
-            },
-            {
-                id:3,
-                name:'Hyundai Tuscon',
-                image:'car1.webp',
-                category:'SUV',
-                price:'4,67,490'
-            },
-            {
-                id:4,
-                name:'Hyundai Verna',
-                image:'car3.jpg',
-                category:'Sedan',
-                price:'8,19,900'
-            },
-            {
-                id:5,
-                name:'Hyundai Venue',
-                image:'car4.webp',
-                category:'SUV',
-                price:'8,16,500'
-            },
-            {
-                id:6,
-                name:'Hyundai Kona',
-                image:'car6.jpg',
-                category:'SUV',
-                price:'9,99,900'
-            },
-            {
-                id:7,
-                name:'Hyundai Alcazar',
-                image:'car5.jpg',
-                category:'SUV',
-                price:'16,53,300'
-            },
-            {
-                id:8,
                 name:'Hyundai Santro',
                 image:'car8.jpg',
                 category:'Hatchback',
                 price:'4,67,490'
             },
             {
-                id:9,
+                id:3,
                 name:'GRAND i10 NIOS',
                 image:'car9.webp',
                 category:'Hatchback',
                 price:'8,14,900'
             },
             {
-                id:10,
+                id:4,
                 name:'Hyundai i20 N Line',
                 image:'car10.webp',
                 category:'Hatchback',
                 price:'7,31,900'
             },
             {
-                id:11,
+                id:5,
+                name:'Hyundai Aura',
+                image:'car2.webp',
+                category:'Sedan',
+                price:'22,30,000'
+            },
+            {
+                id:6,
+                name:'Hyundai Verna',
+                image:'car15.jpg',
+                category:'Sedan',
+                price:'8,19,900'
+            },
+            {
+                id:7,
                 name:'Hyundai ELANTRA',
                 image:'car11.webp',
                 category:'Sedan',
                 price:'10,68,000'
+            },
+            {
+                id:8,
+                name:'Hyundai Tuscon',
+                image:'car18.webp',
+                category:'SUV',
+                price:'4,67,490'
+            },
+            {
+                id:9,
+                name:'Hyundai Venue',
+                image:'car4.webp',
+                category:'SUV',
+                price:'8,16,500'
+            },
+            {
+                id:10,
+                name:'Hyundai Kona',
+                image:'car14.webp',
+                category:'SUV',
+                price:'9,99,900'
+            },
+            {
+                id:11,
+                name:'Hyundai Alcazar',
+                image:'car17.jpg',
+                category:'SUV',
+                price:'16,53,300'
             },
             {
                 id:12,
@@ -771,12 +778,14 @@ export default {
         const obj2 = document.getElementById("value2");
         const obj3 = document.getElementById("value3");
         const obj4 = document.getElementById("value4");
+        const obj5 = document.getElementById("value5");
 
         setTimeout(()=>{
             this.animateValue(obj1, 0, 6, 2000);
-            this.animateValue(obj2, 0, 255, 7000);
-            this.animateValue(obj3, 0, 430, 7000);
-            this.animateValue(obj4, 0, 340, 7000);
+            this.animateValue(obj2, 0, 255, 11000);
+            this.animateValue(obj3, 0, 430, 11000);
+            this.animateValue(obj4, 0, 340, 11000);
+            this.animateValue(obj5, 0, 255, 11000);
         },2000)
     },
     created () {
@@ -786,6 +795,12 @@ export default {
         window.removeEventListener('scroll', this.handleScroll);
     },
     methods: {
+        onHover(e){
+            e.target.classList.add('active');
+        },
+        onLeave(e){
+             e.target.classList.remove('active');
+        },
         filterItems(name){
           var newItems =  this.originalcars.filter((item)=> item.category == name);
           newItems.reverse()
@@ -884,6 +899,50 @@ export default {
 }
 </script>
 <style scoped>
+.fixed_form_sec{
+    position: fixed;
+    z-index: 999999;
+    bottom: 40%;
+    right: 0;
+}
+.fixed_form_sec .form_div{
+    background: #002c5f;
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.fixed_form_sec div i{
+    color: white;
+}
+.fixed_form_sec div .sub_form_div{
+    padding: 0 8px;
+    transition: .6s ease-in-out;
+    display: none;
+}
+.fixed_form_sec div.active .sub_form_div{
+    display: inline-block;
+}
+.whtsapp_btn{
+    position: fixed;
+    z-index: 999999;
+    bottom: 18%;
+    left: 0;
+    margin-left: -5px;
+    cursor: pointer;
+}
+.whtsapp_btn .pc_whtsap_img{
+    width: 60%;
+    margin-right: auto;
+}
+.whtsapp_btn .mob_whtsap_img{
+    display: none;
+}
+.service_item_box .car_sold{
+    width: 38px;
+}
+.service_item_box .car_service{
+    width: 33px;
+}
 .blog_post_button{
     background:#002c5f;
     border: none;
@@ -940,11 +999,7 @@ export default {
     border-radius: 7px;
     overflow: hidden;
 }
-.book_form_section .heading{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-}
+
 .back_to_top::before{
     position: absolute;
     top: -1px;
@@ -1028,7 +1083,7 @@ export default {
     height: auto;
     width: 100%;
     background-position: center;
-    height: 500px;
+    height: 445px;
     background-attachment: fixed;
     position: relative;
     background-repeat: no-repeat;
@@ -1139,10 +1194,11 @@ export default {
         width:35px;
     }
     .fixed_bg_image2{
-        height: 370px;
+        height: 325px;
     }
     .testimonial_haeding .sub_head{
         font-size: 12px;
+        margin-bottom: 0!important;
     }
     .testimonial_head{
         font-size: 16px;
@@ -1199,11 +1255,14 @@ export default {
     .cars_product_section .card_box{
         margin-top: 60px !important;
     }
+    .car_box_item a img{
+      width: 315.6px;
+    }
 }
 
 @media only screen and (min-width: 1367px) and (max-width: 1600px){
     .car_box_item a img{
-        width:380.1px;
+        width:303.7px;
     }
     .testimonial_content{
         padding: 30px 10px;
@@ -1233,6 +1292,18 @@ export default {
     }
 }
 @media only screen and (min-width:300px) and (max-width:600px){
+    .whtsapp_btn .pc_whtsap_img{
+        display: none;
+    }
+    .whtsapp_btn .mob_whtsap_img{
+        display: block;
+        width: 30%;
+        margin-right: auto;
+    }
+    .whtsapp_btn{
+        margin-left: 0;
+        bottom: 10%;
+    }
     .blog_post_button{
         padding: 6px 20px;
     }
@@ -1248,16 +1319,6 @@ export default {
     .upcoming_car_heading{
         font-size: 24px;
         padding: 45px 0 !important;
-    }
-    .book_form_box{
-        display: block!important;
-    }
-    .book_form_box .left, .book_form_box .right{
-        width:100%;
-    }
-    .book_form_box .left .heading, .book_form_box .right .heading{
-        font-size: 18px;
-        transform: translate(-50%, -50%);
     }
     .blog_heading {
         font-size: 20px;
@@ -1299,7 +1360,7 @@ export default {
     .testimonial_content{
         width:95%;
         font-size: 14px;
-        padding: 50px 20px;
+        padding: 30px 20px;
     }
     .testimonial_content .quote_icon{
         display: none;
@@ -1331,7 +1392,7 @@ export default {
         display: block;
     }
     .fixed_bg_image{
-        height: 465px;
+        height: 530px;
     }
     .service_item{
         margin-top: 35px;

@@ -6,10 +6,17 @@
             <div class="row">
                 <div class="col-lg-4 col-md-12 col-sm-12 col-12">
                     <div class="footer_left_side">
-                        <div class="text-capitalize text-lg font-semibold">About Peeyesyem hyundai</div>
-                        <p class="text-white">
-                            Peeyesyem Hyundai is one of the largest Hyundai dealer having showrooms at various locations around Tamilnadu. Our branches are located at Chennai, Tuticorin, Tiruchendur, Tuticorin, Madurai and Ramnathapuram. We strive to provide the best services to our customers with great satisfaction and excellency.
-                        </p>
+                        <div class="text-capitalize mb-3 text-lg font-semibold">Peeyesyem hyundai</div>
+                        <div class="text-sm mb-2"><i class="far fa-envelope mr-2"></i> hyundai@gmail.com</div>
+                        <div class="text-sm mb-3"> <font-awesome-icon icon="phone-alt"  size="1x" class="text-white  mr-2" />+91 9902099944</div>
+                        <div class="location_sec">
+                            <div>Thanjavur</div>
+                            <div>Trichy</div>
+                            <div>Madurai</div>
+                            <div>Salem</div>
+                            <div>Chennai</div>
+                            <div>Coimbatore</div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 col-6 footer_mobile_menu">
@@ -38,7 +45,7 @@
                 </div>
                 <div class="col-lg-3 col-md-12 col-sm-12 col-12">
                     <div class="footer_one_widget">
-                        <h3 class="text-capitalize">Follows Us</h3>
+                        <h3 class="text-capitalize follows">Follows Us</h3>
                         <div class="footer_left_side_icon pt-0">
                             <ul class="pl-1">
                                 <li>
@@ -62,14 +69,9 @@
     <section id="copyright_one">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-12 mx-auto">
                     <div class="copyright_left">
-                        <h6>© CopyRight 2021 <span>PEEYESEM HYUNDAI</span></h6>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                    <div class="copyright_right">
-                       <!-- <img :src="require('@/assets/img/common/payment.png')" alt="img" /> -->
+                        <h6 class="text-center">© CopyRight 2021 PEEYESEM HYUNDAI</h6>
                     </div>
                 </div>
             </div>
@@ -124,7 +126,21 @@ export default {
 }
 </script>
 <style scoped>
+.location_sec{
+    display: flex;
+    flex-wrap: wrap;
+}
+.location_sec div{
+    border:1px solid white;
+    color: white;
+    padding: 2px 15px;
+    margin: 5px 10px 5px 0;
+    cursor: pointer;
+}
 @media only screen and (min-width:300px) and (max-width:600px){
+    .footer_one_widget .follows{
+        text-align: center;
+    }
     #footer_one .footer_left_side_icon{
         text-align: center;
     }

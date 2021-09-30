@@ -13,15 +13,14 @@
                 </div>
                 <div class="flex items-center call_service_details justify-center">
                     <div class="left mx-2">
-                        <div class="text-md  font-semibold pt-1 shodow_css_head">Service: +91 9902099944 <span class="divider">|</span> Sales: +91 9731097310</div>
+                        <div class="text-lg  font-semibold pt-1 shodow_css_head">Service: +91 9902099944 <span class="divider">|</span> Sales: +91 9731097310</div>
                     </div>
                     <span class="divider mx-1">|</span>
                     <div class="right flex items-center mx-2">
-                        <div class="text-md  font-semibold mx-1 mt-1 shodow_css_head">Follow us:</div>
                         <div class="social_icons_box flex">
-                            <img class="cursor-pointer" :src="require('@/assets/img/fbicon.png')" alt="img"  />
-                            <img class="cursor-pointer" :src="require('@/assets/img/instaicon.png')" alt="img"  />
-                            <img class="cursor-pointer" :src="require('@/assets/img/youtubeicon.png')" alt="img"  />
+                            <i class="fab fa-facebook-f"></i>
+                            <i class="fab fa-instagram"></i>
+                            <i class="fab fa-youtube"></i>
                         </div>
                     </div>
                 </div>
@@ -476,10 +475,11 @@ export default {
 }
 
 /* Mobile Menu Multi Dropdown Items Start */
-.social_icons_box img{
-    margin-left: 5px;
-    margin-right: 5px;
-    width:30px;
+.social_icons_box i{
+    margin-left: 8px;
+    margin-right: 8px;
+    color: #002c5f;
+    font-size: 20px;
 }
 
 .site_logo.size_resize{
@@ -508,7 +508,7 @@ export default {
 }
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
     .divider{
-      font-size: 17px;
+      font-size: 13px;
       margin-top: 1px;
     }
     .main-menu{
@@ -528,8 +528,10 @@ export default {
     .call_service_details .left div, .call_service_details .right div{
         font-size: 10px;
     }
-    .social_icons_box img{
-        width: 22px;
+    .social_icons_box i{
+        font-size: 11px;
+        margin-left: 5px;
+        margin-right: 5px;
     }
     .contact_sec .top_sec{
         padding: 10px 0!important;
