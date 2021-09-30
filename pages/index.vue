@@ -166,29 +166,29 @@
             <div class="flex blog_card_body items-center justify-around">
                 <div class="blog_card_box w-3/12 cursor-pointer">
                     <div class="photo_box">
-                        <img :src="require('@/assets/img/cars/blog/img1.jpg')" alt="img" style="width:100%;"  />
+                        <img :src="require('@/assets/img/cars/blog/blog4.webp')" alt="img" style="width:100%;"  />
                     </div>
                     <div class="content px-3 py-3">
-                        <div class="text-center text-lg font-semibold my-4">Does Your Life Lack Meaning <hr class="w-2/12 mx-auto bg-black h-0.5" style="background-color:black!important;"/></div>
-                        <p class="text-gray text-md my-4 text-center">You will begin to realize why this exercise Pattern is called the Dickens with reference to the ghost</p>
+                        <div class="text-center text-lg font-semibold my-4">Brand<hr class="w-2/12 mx-auto bg-black h-0.5" style="background-color:black!important;"/></div>
+                        <p class="text-gray text-md my-4 text-center">I am i20, I am Born Magnetic</p>
                     </div>
                 </div>
                 <div class="blog_card_box w-3/12 cursor-pointer">
                     <div class="photo_box">
-                        <img :src="require('@/assets/img/cars/blog/img2.jpg')" alt="img" style="width:100%;"  />
+                        <img :src="require('@/assets/img/cars/blog/blog5.webp')" alt="img" style="width:100%;"  />
                     </div>
                     <div class="content px-3 py-3">
-                        <div class="text-center text-lg font-semibold my-4">The A Z Of Motivation <hr class="w-2/12 mx-auto bg-black h-0.5" style="background-color:black!important;"/></div>
-                        <p class="text-gray text-md my-4 text-center">Exercise is called you will begin to Pattern realize why this the Dickens Pattern with reference to ghost</p>
+                        <div class="text-center text-lg font-semibold my-4">Innovation <hr class="w-2/12 mx-auto bg-black h-0.5" style="background-color:black!important;"/></div>
+                        <p class="text-gray text-md my-4 text-center">Creating Seamless experience!</p>
                     </div>
                 </div>
                 <div class="blog_card_box w-3/12 cursor-pointer">
                     <div class="photo_box">
-                        <img :src="require('@/assets/img/cars/blog/img3.jpg')" alt="img" style="width:100%;"  />
+                        <img :src="require('@/assets/img/cars/blog/blog6.webp')" alt="img" style="width:100%;"  />
                     </div>
                     <div class="content px-3 py-3">
-                        <div class="text-center text-lg font-semibold my-4">Motivation In Life <hr class="w-2/12 mx-auto bg-black h-0.5" style="background-color:black!important;"/></div>
-                        <p class="text-gray text-md my-4 text-center">Dickens Pattern you will begin to realize why this Dickens exercise is the with reference to the ghost</p>
+                        <div class="text-center text-lg font-semibold my-4">Community<hr class="w-2/12 mx-auto bg-black h-0.5" style="background-color:black!important;"/></div>
+                        <p class="text-gray text-md my-4 text-center">Because We Care</p>
                     </div>
                 </div>
             </div>
@@ -281,10 +281,9 @@
         <img class="mob_whtsap_img" :src="require('@/assets/img/whatsapp_mob.png')" alt="img" />
     </div>
     <div class="fixed_form_sec">
-        <div class="text-uppercase font-semibold text-white form1 form_div" @mouseover="onHover" @mouseleave="onLeave"><i class="fab fa-facebook-f"></i> <div class="sub_form1 sub_form_div">Book a test drive</div></div>
-        <div class="text-uppercase font-semibold text-white form2 form_div" @mouseover="onHover" @mouseleave="onLeave"><i class="fab fa-facebook-f"></i> <div class="sub_form2 sub_form_div">Book a test drive</div></div>
-        <div class="text-uppercase font-semibold text-white form3 form_div" @mouseover="onHover" @mouseleave="onLeave"><i class="fab fa-facebook-f"></i> <div class="sub_form3 sub_form_div">Book a test drive</div></div>
-        <div class="text-uppercase font-semibold text-white form4 form_div" @mouseover="onHover" @mouseleave="onLeave"><i class="fab fa-facebook-f"></i> <div class="sub_form4 sub_form_div">Book a test drive</div></div>
+        <div class="text-uppercase font-semibold text-white form1 form_div" @click="formModal = true"><img class="mx-2" :src="require('@/assets/img/vehicle.png')" alt="img"  /><div class="sub_form1 sub_form_div">Book a car</div></div>
+        <div class="text-uppercase font-semibold text-white form2 form_div" @click="formModal3 = true"><img class="mx-2" :src="require('@/assets/img/book_drive.png')" alt="img" style="width:32px;"  /> <div class="sub_form2 sub_form_div">Book a test drive</div></div>
+        <div class="text-uppercase font-semibold text-white form3 form_div" @click="formModal2 = true"><img class="mx-2" :src="require('@/assets/img/book_service.png')" alt="img" style="width:32px;"  /> <div class="sub_form3 sub_form_div">Book a service</div></div>
     </div>
 
     <section class="form_modal_box" v-if="formModal == true">
@@ -517,6 +516,121 @@
         </div>
     </section>
 
+    <section class="form_modal_box" v-if="formModal3 == true">
+        <div class="w-4/12 card_body bg-white card mx-auto">
+           <form class="pb-12 px-8">
+               <div class="heading flex items-center justify-between pt-6 pb-8 font-semibold text-lg">Book a Test Drive<font-awesome-icon icon="times"  size="1x" class="text-red-600 cursor-pointer" @click="formModal3 = false" /></div>
+               <div class="mb-4">
+                    <label
+                    class="block text-gray-700 text-sm font-bold mb-2"
+                    for="name"
+                    >
+                    Your Email
+                    </label>
+                    <input
+                    class="
+                        shadow
+                        appearance-none
+                        border
+                        rounded
+                        w-full
+                        py-2
+                        px-3
+                        text-gray-700
+                        leading-tight
+                        focus:outline-none
+                        focus:shadow-outline
+                    "
+                    type="text"
+                    placeholder="Your Name"
+                    />
+                </div>
+                <div class="mb-4">
+                    <label
+                    class="block text-gray-700 text-sm font-bold mb-2"
+                    for="cars"
+                    >
+                    Car Models
+                    </label>
+                    <select
+                    class="
+                      shadow
+                      appearance-none
+                      border
+                      rounded
+                      w-full
+                      py-2
+                      px-3
+                      text-gray-700
+                      cursor-pointer
+                      leading-tight
+                      focus:outline-none
+                      focus:shadow-outline
+                    "
+                    id="cars"
+                  >
+                  <option class="text-xl " value="">Choose Model</option>
+                  <option class="text-xl" :value="model.id" v-for="model in originalcars"
+                    :key="model.id" >{{model.name}}</option>
+                  </select>
+                </div>
+               <div class="mb-4">
+                    <label
+                    class="block text-gray-700 text-sm font-bold mb-2"
+                    for="email"
+                    >
+                    Your Email
+                    </label>
+                    <input
+                    class="
+                        shadow
+                        appearance-none
+                        border
+                        rounded
+                        w-full
+                        py-2
+                        px-3
+                        text-gray-700
+                        leading-tight
+                        focus:outline-none
+                        focus:shadow-outline
+                    "
+                    type="text"
+                    placeholder="Your Email"
+                    />
+                </div>
+               <div class="mb-8">
+                    <label
+                    class="block text-gray-700 text-sm font-bold mb-2"
+                    for="phone"
+                    >
+                    Your Phone
+                    </label>
+                    <input
+                    class="
+                        shadow
+                        appearance-none
+                        border
+                        rounded
+                        w-full
+                        py-2
+                        px-3
+                        text-gray-700
+                        leading-tight
+                        focus:outline-none
+                        focus:shadow-outline
+                    "
+                    type="number"
+                    placeholder="Your Phone"
+                    />
+                </div>
+               <div class="btn_grp">
+                   <button  type="button" class=" text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
+               </div>
+           </form>
+        </div>
+    </section>
+
     
 
   </div>
@@ -547,6 +661,7 @@ export default {
         title: 'Home',
         formModal:false,
         formModal2:false,
+        formModal3:false,
         options: {
             sortBy : "category"
         },
@@ -628,7 +743,7 @@ export default {
             {
                 id:10,
                 name:'Hyundai Kona',
-                image:'car14.webp',
+                image:'car20.jpg',
                 category:'SUV',
                 price:'9,99,900'
             },
@@ -642,7 +757,7 @@ export default {
             {
                 id:12,
                 name:'Hyundai CRETA',
-                image:'car12.jpg',
+                image:'car19.webp',
                 category:'SUV',
                 price:'17,00,000'
             }
@@ -715,7 +830,7 @@ export default {
             {
                 id:10,
                 name:'Hyundai Kona',
-                image:'car14.webp',
+                image:'car20.jpg',
                 category:'SUV',
                 price:'9,99,900'
             },
@@ -729,7 +844,7 @@ export default {
             {
                 id:12,
                 name:'Hyundai CRETA',
-                image:'car12.jpg',
+                image:'car19.webp',
                 category:'SUV',
                 price:'17,00,000'
             }
@@ -795,12 +910,6 @@ export default {
         window.removeEventListener('scroll', this.handleScroll);
     },
     methods: {
-        onHover(e){
-            e.target.classList.add('active');
-        },
-        onLeave(e){
-             e.target.classList.remove('active');
-        },
         filterItems(name){
           var newItems =  this.originalcars.filter((item)=> item.category == name);
           newItems.reverse()
@@ -899,6 +1008,10 @@ export default {
 }
 </script>
 <style scoped>
+.photo_box img{
+    height: 325px;
+    object-fit: cover;
+}
 .fixed_form_sec{
     position: fixed;
     z-index: 999999;
@@ -907,27 +1020,39 @@ export default {
 }
 .fixed_form_sec .form_div{
     background: #002c5f;
-    padding: 10px 15px;
-    margin-bottom: 5px;
+    padding: 11px 5px;
+    margin-bottom: 4px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    transform: translateX(165px);
+    transition: .6s ease-in-out;
 }
 .fixed_form_sec div i{
     color: white;
+    margin: 0 15px;
 }
 .fixed_form_sec div .sub_form_div{
     padding: 0 8px;
     transition: .6s ease-in-out;
-    display: none;
+    text-align: center;
 }
-.fixed_form_sec div.active .sub_form_div{
-    display: inline-block;
+.fixed_form_sec .form1:hover{
+    transform: translateX(0px);
 }
+.fixed_form_sec .form2:hover{
+    transform: translateX(0px);
+}
+.fixed_form_sec .form3:hover{
+    transform: translateX(0px);
+}
+
 .whtsapp_btn{
     position: fixed;
     z-index: 999999;
     bottom: 18%;
     left: 0;
-    margin-left: -5px;
+    margin-left: -7px;
     cursor: pointer;
 }
 .whtsapp_btn .pc_whtsap_img{
