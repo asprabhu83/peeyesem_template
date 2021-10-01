@@ -1044,7 +1044,7 @@ export default {
     position: fixed;
     z-index: 999999;
     bottom: 40%;
-    right: 0;
+    right: -188px;
 }
 .fixed_form_sec .form_div{
     background: #002c5f;
@@ -1053,7 +1053,6 @@ export default {
     cursor: pointer;
     display: flex;
     align-items: center;
-    transform: translateX(188px);
     transition: .6s ease-in-out;
 }
 .fixed_form_sec div i{
@@ -1066,16 +1065,16 @@ export default {
     text-align: center;
 }
 .fixed_form_sec .form1:hover{
-    transform: translateX(0px);
+    transform: translateX(-188px);
 }
 .fixed_form_sec .form2:hover{
-    transform: translateX(0px);
+    transform: translateX(-188px);
 }
 .fixed_form_sec .form3:hover{
-    transform: translateX(0px);
+    transform: translateX(-188px);
 }
 .fixed_form_sec .form4:hover{
-    transform: translateX(0px);
+    transform: translateX(-188px);
 }
 
 .whtsapp_btn{
