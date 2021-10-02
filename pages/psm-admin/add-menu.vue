@@ -85,7 +85,7 @@
                         class="block text-gray-700 text-sm font-bold mb-2"
                         for="menuHeading"
                         >
-                        Menu Type
+                        Menu Title
                         </label>
                         <select
                         class="
@@ -105,8 +105,67 @@
                         id="menuHeading"
                         v-model="menuHeading"
                         >
+                        <option class="text-xl " value="">Choose Menu Title</option>
+                        <option class="text-xl" v-for="(title,index) in titles" :key="title.id" :value="index">{{title.menu_type}}</option>
+                      </select>
+                    </div>
+                    <div class="mb-4">
+                        <label
+                        class="block text-gray-700 text-sm font-bold mb-2"
+                        for="menuType"
+                        >
+                        Menu Type
+                        </label>
+                        <select
+                        class="
+                            shadow-md
+                            appearance-none
+                            cursor-pointer
+                            border
+                            rounded
+                            w-full
+                            py-1
+                            px-3
+                            text-gray-700
+                            leading-tight
+                            focus:outline-none
+                            focus:shadow-outline
+                        "
+                        id="menuType"
+                        v-model="menuType"
+                        >
                         <option class="text-xl " value="">Choose Menu Type</option>
-                        <option class="text-xl" v-for="title in titles" :key="title.id" :value="title.id">{{title.menu_type}}</option>
+                        <option class="text-xl" value="menu">Menu</option>
+                        <option class="text-xl" value="sub_menu">Sub Menu</option>
+                      </select>
+                    </div>
+                    <div class="mb-4" v-if="menuType == 'sub_menu'">
+                        <label
+                        class="block text-gray-700 text-sm font-bold mb-2"
+                        for="parentMenu"
+                        >
+                        Menu Name
+                        </label>
+                        <select
+                        class="
+                            shadow-md
+                            appearance-none
+                            cursor-pointer
+                            border
+                            rounded
+                            w-full
+                            py-1
+                            px-3
+                            text-gray-700
+                            leading-tight
+                            focus:outline-none
+                            focus:shadow-outline
+                        "
+                        id="parentMenu"
+                        v-model="parentMenu"
+                        >
+                        <option class="text-xl " value="">Choose Menu Name</option>
+                        <option class="text-xl" v-for="menu in MenuItems" :key="menu.id" :value="menu.id">{{menu.menu_name}}</option>
                       </select>
                     </div>
                 <div class="mb-4">
@@ -176,8 +235,8 @@
                         px-3
                         rounded
                         focus:outline-none
-                        focus:shadow-outline" @click="AddMenu">
-                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        focus:shadow-outline" :data-target="menuType == 'menu' ? '1' : '2'" @click="AddMenu">
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" ></span>
                         Add
                         </button>
                 </div>
@@ -197,11 +256,15 @@ export default {
             menuName:'',
             menuLink:'',
             titles:[],
-            item: true
+            item: true,
+            menuType:'',
+            parentMenu:'',
+            Menus:[],
+            MenuItems:[]
         }
     },
     mounted(){
-        this.GetMenu()
+        this.GetMenu();
     },
     methods:{
       AddTitle(e){
@@ -222,11 +285,30 @@ export default {
           axios.get(process.env.baseUrl + 'api/menu/index')
           .then((res)=>{
               this.titles = res.data.menu
+              this.FilterMenu()
           }).catch((err)=>{
               console.log(err)
           })
       },
+      FilterMenu(){
+         var menu =  this.titles.map((item)=>{
+             return item.menu_titles
+          })
+         var sub_menu = menu.filter((item)=>{
+              if(item.length > 0){
+                  return item
+              }
+          })
+         this.Menus = sub_menu
+         this.Menus.filter((item)=>{
+             item.filter((item)=>{
+                 this.MenuItems.push(item)
+             })
+         })
+      },
       AddMenu(e){
+          var api = e.target.getAttribute('data-target');
+          alert(api)
           e.target.classList.add('loading');
           axios.post(process.env.baseUrl + 'api/menu/menu',{
               menu_title_id:this.menuHeading,
