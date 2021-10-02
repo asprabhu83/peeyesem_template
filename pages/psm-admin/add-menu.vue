@@ -106,10 +106,10 @@
                         v-model="menuHeading"
                         >
                         <option class="text-xl " value="">Choose Menu Title</option>
-                        <option class="text-xl" v-for="(title,index) in titles" :key="title.id" :value="index">{{title.menu_type}}</option>
+                        <option class="text-xl" v-for="(title) in titles" :key="title.id" :value="title.id">{{title.menu_type}}</option>
                       </select>
                     </div>
-                    <div class="mb-4">
+                    <!-- <div class="mb-4">
                         <label
                         class="block text-gray-700 text-sm font-bold mb-2"
                         for="menuType"
@@ -167,7 +167,7 @@
                         <option class="text-xl " value="">Choose Menu Name</option>
                         <option class="text-xl" v-for="menu in MenuItems" :key="menu.id" :value="menu.id">{{menu.menu_name}}</option>
                       </select>
-                    </div>
+                    </div> -->
                 <div class="mb-4">
                     <label
                     class="block text-gray-700 text-sm font-bold mb-2"
@@ -285,30 +285,28 @@ export default {
           axios.get(process.env.baseUrl + 'api/menu/index')
           .then((res)=>{
               this.titles = res.data.menu
-              this.FilterMenu()
+            //   this.FilterMenu()
           }).catch((err)=>{
               console.log(err)
           })
       },
-      FilterMenu(){
-         var menu =  this.titles.map((item)=>{
-             return item.menu_titles
-          })
-         var sub_menu = menu.filter((item)=>{
-              if(item.length > 0){
-                  return item
-              }
-          })
-         this.Menus = sub_menu
-         this.Menus.filter((item)=>{
-             item.filter((item)=>{
-                 this.MenuItems.push(item)
-             })
-         })
-      },
+    //   FilterMenu(){
+    //      var menu =  this.titles.map((item)=>{
+    //          return item.menu_titles
+    //       })
+    //      var sub_menu = menu.filter((item)=>{
+    //           if(item.length > 0){
+    //               return item
+    //           }
+    //       })
+    //      this.Menus = sub_menu
+    //      this.Menus.filter((item)=>{
+    //          item.filter((item)=>{
+    //              this.MenuItems.push(item)
+    //          })
+    //      })
+    //   },
       AddMenu(e){
-          var api = e.target.getAttribute('data-target');
-          alert(api)
           e.target.classList.add('loading');
           axios.post(process.env.baseUrl + 'api/menu/menu',{
               menu_title_id:this.menuHeading,

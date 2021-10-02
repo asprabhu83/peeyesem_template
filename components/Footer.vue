@@ -10,17 +10,19 @@
                         <div class="text-sm mb-2"><i class="far fa-envelope mr-2"></i> peeyesyemhyundai@gmail.com</div>
                         <div class="text-sm mb-3"> <font-awesome-icon icon="phone-alt"  size="1x" class="text-white  mr-2" />+91 9902099944</div>
                         <div class="location_sec">
-                            <div>Thanjavur</div>
+                            <div>Mylapore</div>
                             <span>|</span>
-                            <div>Trichy</div>
+                            <div>Tuticorin</div>
+                            <span>|</span>
+                            <div>Thiruchendur</div>
+                            <span>|</span>
+                            <div>Kovilpatti</div>
                             <span>|</span>
                             <div>Madurai</div>
                             <span>|</span>
-                            <div>Salem</div>
+                            <div>Ramnad</div>
                             <span>|</span>
-                            <div>Chennai</div>
-                            <span>|</span>
-                            <div>Coimbatore</div>
+                            <div>Karaikudi</div>
                         </div>
                     </div>
                 </div>
