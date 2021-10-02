@@ -18,9 +18,9 @@
                     <span class="divider mx-1">|</span>
                     <div class="right flex items-center mx-2">
                         <div class="social_icons_box flex">
-                            <i class="fab fa-facebook-f"></i>
-                            <i class="fab fa-instagram"></i>
-                            <i class="fab fa-youtube"></i>
+                            <i class="fab fa-facebook-f cursor-pointer"></i>
+                            <i class="fab fa-instagram cursor-pointer"></i>
+                            <i class="fab fa-youtube cursor-pointer"></i>
                         </div>
                     </div>
                 </div>
