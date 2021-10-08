@@ -15,7 +15,7 @@ export default {
       { hid: 'description', name: 'description', content: 'PEEYESEM HYUNDAI' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon5.ico' },
     ]
   },
 

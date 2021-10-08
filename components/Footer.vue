@@ -9,40 +9,6 @@
                         <div class="text-capitalize mb-3  footer_heading text-lg font-semibold">Peeyesyem hyundai</div>
                         <div class="text-sm contact_text mb-2"><i class="far fa-envelope mr-2"></i> peeyesyemhyundai@gmail.com</div>
                         <div class="text-sm contact_text mb-3"> <font-awesome-icon icon="phone-alt"  size="1x" class="text-white  mr-2" />+91 9902099944</div>
-                        <div class="location_sec">
-                            <div class="mr-2 font-semibold">Sales:</div>
-                            <div>Mylapore</div>
-                            <span>|</span>
-                            <div>Tuticorin</div>
-                            <span>|</span>
-                            <div>Thiruchendur</div>
-                            <span>|</span>
-                            <div>Kovilpatti</div>
-                            <span>|</span>
-                            <div>Madurai</div>
-                            <span>|</span>
-                            <div>Ramnad</div>
-                            <span>|</span>
-                            <div>Karaikudi</div>
-                        </div>
-                        <!-- <div class="location_sec">
-                            <div class="mr-2 font-semibold">Service:</div>
-                            <div>Tondaripet</div>
-                            <span>|</span>
-                            <div>Kotturpuram</div>
-                            <span>|</span>
-                            <div>Guindy</div>
-                            <span>|</span>
-                            <div>Tuticorin</div>
-                            <span>|</span>
-                            <div>Madurai</div>
-                            <span>|</span>
-                            <div>Thiruchendur</div>
-                            <span>|</span>
-                            <div>Kovilpatti</div>
-                            <span>|</span>
-                            <div>Ramnad</div>
-                        </div> -->
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 col-6 footer_mobile_menu">
@@ -85,6 +51,44 @@
                                 </li>
                             </ul>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-3">
+                <div>
+                    <div class="location_sec">
+                        <div class="mr-2 font-semibold">Sales:</div>
+                        <div>Mylapore</div>
+                        <span>|</span>
+                        <div>Tuticorin</div>
+                        <span>|</span>
+                        <div>Thiruchendur</div>
+                        <span>|</span>
+                        <div>Kovilpatti</div>
+                        <span>|</span>
+                        <div>Madurai</div>
+                        <span>|</span>
+                        <div>Ramnad</div>
+                        <span>|</span>
+                        <div>Karaikudi</div>
+                    </div>
+                    <div class="location_sec ">
+                            <div class="mr-2 font-semibold">Service:</div>
+                            <div>Tondaripet</div>
+                            <span>|</span>
+                            <div>Kotturpuram</div>
+                            <span>|</span>
+                            <div>Guindy</div>
+                            <span>|</span>
+                            <div>Tuticorin</div>
+                            <span>|</span>
+                            <div>Madurai</div>
+                            <span>|</span>
+                            <div>Thiruchendur</div>
+                            <span>|</span>
+                            <div>Kovilpatti</div>
+                            <span>|</span>
+                            <div>Ramnad</div>
                     </div>
                 </div>
             </div>
@@ -152,9 +156,22 @@ export default {
 }
 </script>
 <style scoped>
+/* .location_heading{
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.location_heading hr{
+    height: 2px;
+    background: white;
+    margin: 0 7px;
+} */
 .location_sec{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 .location_sec div,.location_sec span{
     color: white;
