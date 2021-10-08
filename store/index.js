@@ -6,6 +6,9 @@ import cart from './module/cart'
 Vue.use(Vuex)
 const createStore = () => {
   return new Vuex.Store({
+    state:{
+      currentYear:new Date().getFullYear(),
+    },
     modules: {
       products: products,
       cart: cart,

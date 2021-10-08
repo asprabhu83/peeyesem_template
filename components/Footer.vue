@@ -97,7 +97,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-12 mx-auto">
                     <div class="copyright_left">
-                        <h6 class="text-center">© CopyRight 2021 PEEYESEM HYUNDAI</h6>
+                        <h6 class="text-center text-uppercase">© CopyRight {{$store.state.currentYear}} PEEYESEM HYUNDAI</h6>
                     </div>
                 </div>
             </div>

@@ -95,7 +95,7 @@
 
     <div class="notice_card_sec text-center my-5">
         <div>
-            <font-awesome-icon icon="star-of-life"  size="1x" class="star_icon mx-2" /><font-awesome-icon icon="arrow-right"  size="1x" class="text-black mx-2" /> Represents Ex-Showroom Price 
+            <font-awesome-icon icon="star-of-life"  size="1x" class="star_icon mx-2" /> - <span style="padding-left:5px;"> Represents Ex-Showroom Price </span>
         </div>
     </div>
 
