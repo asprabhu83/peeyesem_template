@@ -6,10 +6,11 @@
             <div class="row">
                 <div class="col-lg-4 col-md-12 col-sm-12 col-12">
                     <div class="footer_left_side">
-                        <div class="text-capitalize mb-3 text-lg font-semibold">Peeyesyem hyundai</div>
-                        <div class="text-sm mb-2"><i class="far fa-envelope mr-2"></i> peeyesyemhyundai@gmail.com</div>
-                        <div class="text-sm mb-3"> <font-awesome-icon icon="phone-alt"  size="1x" class="text-white  mr-2" />+91 9902099944</div>
+                        <div class="text-capitalize mb-3  footer_heading text-lg font-semibold">Peeyesyem hyundai</div>
+                        <div class="text-sm contact_text mb-2"><i class="far fa-envelope mr-2"></i> peeyesyemhyundai@gmail.com</div>
+                        <div class="text-sm contact_text mb-3"> <font-awesome-icon icon="phone-alt"  size="1x" class="text-white  mr-2" />+91 9902099944</div>
                         <div class="location_sec">
+                            <div class="mr-2 font-semibold">Sales:</div>
                             <div>Mylapore</div>
                             <span>|</span>
                             <div>Tuticorin</div>
@@ -24,11 +25,29 @@
                             <span>|</span>
                             <div>Karaikudi</div>
                         </div>
+                        <!-- <div class="location_sec">
+                            <div class="mr-2 font-semibold">Service:</div>
+                            <div>Tondaripet</div>
+                            <span>|</span>
+                            <div>Kotturpuram</div>
+                            <span>|</span>
+                            <div>Guindy</div>
+                            <span>|</span>
+                            <div>Tuticorin</div>
+                            <span>|</span>
+                            <div>Madurai</div>
+                            <span>|</span>
+                            <div>Thiruchendur</div>
+                            <span>|</span>
+                            <div>Kovilpatti</div>
+                            <span>|</span>
+                            <div>Ramnad</div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 col-6 footer_mobile_menu">
                     <div class="footer_one_widget">
-                        <h3 class="text-capitalize">Information</h3>
+                        <h3 class="text-capitalize footer_heading">Information</h3>
                         <ul>
                             <li><nuxt-link to="/">Home</nuxt-link></li>
                             <li><nuxt-link to="/">About Us</nuxt-link></li>
@@ -40,7 +59,7 @@
                 </div>
                 <div class="col-lg-2 col-md-6 col-sm-12 col-6 footer_mobile_menu">
                     <div class="footer_one_widget">
-                        <h3 class="text-capitalize">Our Services</h3>
+                        <h3 class="text-capitalize footer_heading">Our Services</h3>
                         <ul>
                             <li><nuxt-link to="/">New Cars</nuxt-link></li>
                             <li><nuxt-link to="/">Used Cars</nuxt-link></li>
@@ -50,9 +69,9 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-12 col-sm-12 col-12">
+                <div class="col-lg-3 col-md-12 col-sm-12 col-12 follows_us_sec">
                     <div class="footer_one_widget">
-                        <h3 class="text-capitalize follows">Follows Us</h3>
+                        <h3 class="text-capitalize follows footer_heading">Follows Us</h3>
                         <div class="footer_left_side_icon pt-0">
                             <ul class="pl-1">
                                 <li>
@@ -142,6 +161,7 @@ export default {
     margin: 5px 10px 5px 0;
     cursor: pointer;
 }
+
 @media only screen and (min-width:300px) and (max-width:600px){
     .footer_one_widget .follows{
         text-align: center;
@@ -160,5 +180,36 @@ export default {
         font-size: 20px;
         padding: 0 17px;
     }
+}
+@media only screen and (min-width: 1367px) and (max-width: 1600px){
+    .follows_us_sec{
+        max-width: 20%!important;
+    }
+    #footer_one .row{
+        justify-content: center;
+    }
+}
+@media only screen and (min-width: 1270px) and (max-width: 1366px){
+    .follows_us_sec{
+        max-width: 15%!important;
+    }
+    #footer_one .row{
+        justify-content: center;
+    }
+    #footer_one .footer_heading{
+        font-size: 14px;
+    }
+     #footer_one .footer_one_widget ul li a{
+         font-size: 11px;
+     }
+     .location_sec{
+         font-size: 11px;
+     }
+     .location_sec span{
+        margin: 5px 5px 5px 0
+     }
+     #footer_one .contact_text{
+         font-size: 11px;
+     }
 }
 </style>

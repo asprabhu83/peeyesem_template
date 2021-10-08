@@ -13,7 +13,7 @@
                 </div>
                 <div class="flex items-center call_service_details justify-center">
                     <div class="left mx-2">
-                        <div class="text-lg  font-semibold pt-1 shodow_css_head">Service: +91 9902099944 <span class="divider">|</span> Sales: +91 9731097310</div>
+                        <div class="text-lg  font-semibold pt-1 shodow_css_head">Service: +91 9962666118 <span class="divider">|</span> Sales: +91 9962666228</div>
                     </div>
                     <span class="divider mx-1">|</span>
                     <div class="right flex items-center mx-2">
@@ -49,24 +49,23 @@
                                             <!-- Sub Menu -->
                                             <ul class="sub-menu">
                                                 <li><nuxt-link to="/">All Cars</nuxt-link></li>
-                                                <li><nuxt-link to="/">Hyundai Santro</nuxt-link></li>
-                                                <li><nuxt-link to="/">Hyundai All New i20</nuxt-link></li>
-                                                <li><nuxt-link to="/">Hyundai Grand i10 NIOS</nuxt-link></li>
-                                                <li><nuxt-link to="/">Hyundai Aura</nuxt-link></li>
-                                                <li><nuxt-link to="/">Hyundai All New Verna</nuxt-link></li>
-                                                <li><nuxt-link to="/">Hyundai Elantra</nuxt-link></li>
-                                                <li><nuxt-link to="/">Hyundai Venue</nuxt-link></li>
-                                                <li><nuxt-link to="/">Hyundai All New Creta</nuxt-link></li>
-                                                <li><nuxt-link to="/">Hyundai Alcazar</nuxt-link></li>
-                                                <li><nuxt-link to="/">Hyundai Tucson</nuxt-link></li>
-                                                <li><nuxt-link to="/">Hyundai Kona</nuxt-link></li>
+                                                <li><nuxt-link to="/"> Santro</nuxt-link></li>
+                                                <li><nuxt-link to="/"> All New i20</nuxt-link></li>
+                                                <li><nuxt-link to="/"> Grand i10 NIOS</nuxt-link></li>
+                                                <li><nuxt-link to="/"> Aura</nuxt-link></li>
+                                                <li><nuxt-link to="/"> All New Verna</nuxt-link></li>
+                                                <li><nuxt-link to="/"> Elantra</nuxt-link></li>
+                                                <li><nuxt-link to="/"> Venue</nuxt-link></li>
+                                                <li><nuxt-link to="/"> All New Creta</nuxt-link></li>
+                                                <li><nuxt-link to="/"> Alcazar</nuxt-link></li>
+                                                <li><nuxt-link to="/"> Tucson</nuxt-link></li>
                                             </ul>
                                         </li>
                                         <li class="has-dropdown">
                                             <a class="menu-item" href="#">Used Cars<i class="fa fa-angle-down"></i></a>
                                             <!-- Sub Menu -->
                                             <ul class="sub-menu">
-                                                <li><nuxt-link to="/">Used Cars</nuxt-link></li>
+                                                <li><nuxt-link to="/">Buy a car</nuxt-link></li>
                                                 <li><nuxt-link to="/">Sell a Car</nuxt-link></li>
                                             </ul>
                                         </li>
@@ -75,6 +74,9 @@
                                             <!-- Sub Menu -->
                                             <ul class="sub-menu">
                                                 <li><nuxt-link to="/">Book a Service</nuxt-link></li>
+                                                <li><nuxt-link to="/">SOT</nuxt-link></li>
+                                                <li><nuxt-link to="/">RAS</nuxt-link></li>
+                                                <li><nuxt-link to="/">ERS</nuxt-link></li>
                                                 <li><nuxt-link to="/">Safety Tips</nuxt-link></li>
                                                 <li><nuxt-link to="/">Maintenance Tips</nuxt-link></li>
                                                 <li><nuxt-link to="/">Driving Tips</nuxt-link></li>
@@ -214,47 +216,43 @@ export default {
                         },
                         {
                             href: '/',
-                            title: 'Hyundai Santro'
+                            title: 'Santro'
                         },
                         {
                             href: '/',
-                            title: 'Hyundai All New i20'
+                            title: 'All New i20'
                         },
                         {
                             href: '/',
-                            title: 'Hyundai Grand i10 NIOS'
+                            title: 'Grand i10 NIOS'
                         },
                         {
                             href: '/',
-                            title: 'Hyundai Aura'
+                            title: 'Aura'
                         },
                         {
                             href: '/',
-                            title: 'Hyundai All New Verna'
+                            title: 'All New Verna'
                         },
                         {
                             href: '/',
-                            title: 'Hyundai Elantra'
+                            title: 'Elantra'
                         },
                         {
                             href: '/',
-                            title: 'Hyundai Venue'
+                            title: 'Venue'
                         },
                         {
                             href: '/',
-                            title: 'Hyundai All New Creta'
+                            title: 'All New Creta'
                         },
                         {
                             href: '/',
-                            title: 'Hyundai Alcazar'
+                            title: 'Alcazar'
                         },
                         {
                             href: '/',
-                            title: 'Hyundai Tucson'
-                        },
-                        {
-                            href: '/',
-                            title: 'Hyundai Kona'
+                            title: 'Tucson'
                         }
                     ]
                 },
@@ -506,7 +504,32 @@ export default {
         display: none;
     }
 }
+@media only screen and (min-width: 1367px) and (max-width: 1600px){
+    .header-logo .logo img{
+        width: 36%;
+    }
+    .call_service_details .left div, .call_service_details .right div{
+        font-size: 13px;
+    }
+    .social_icons_box i{
+        font-size: 16px;
+    }
+    .main-menu nav>ul>li>a{
+        font-size: 13px;
+    }
+    .sub-menu>li>a{
+        font-size: 12px;
+    }
+}
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
+    .sub-menu>li>a{
+        font-size: 9px;
+        line-height: 28px;
+    }
+    .sub-menu{
+      padding: 10px 20px;
+      min-width: 200px;
+    }
     .divider{
       font-size: 13px;
       margin-top: 1px;
@@ -522,7 +545,7 @@ export default {
         padding: 0;
     }
     .header-logo .logo img {
-        width: 20%;
+        width: 33%;
         height: auto;
     }
     .call_service_details .left div, .call_service_details .right div{

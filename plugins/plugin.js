@@ -19,8 +19,8 @@ import 'vue-slider-component/theme/default.css'
 
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faUserSecret, faCloudUploadAlt, faPlus, faTrash, faTimes, faSave, faEdit, faSignOutAlt, faUserPlus, faChevronLeft, faChevronRight, faUserCircle,faSignInAlt, faRupeeSign, faPhoneAlt,faTools} from '@fortawesome/free-solid-svg-icons'
-library.add(faUserSecret, faCloudUploadAlt, faPlus, faTrash, faTimes, faSave, faEdit, faSignOutAlt, faUserPlus, faChevronLeft, faChevronRight, faUserCircle,faSignInAlt, faRupeeSign, faPhoneAlt,faTools)
+import { faUserSecret, faCloudUploadAlt, faPlus, faTrash, faTimes, faSave, faEdit, faSignOutAlt, faUserPlus, faChevronLeft, faChevronRight, faUserCircle,faSignInAlt, faRupeeSign, faPhoneAlt,faTools,faArrowRight,faStarOfLife} from '@fortawesome/free-solid-svg-icons'
+library.add(faUserSecret, faCloudUploadAlt, faPlus, faTrash, faTimes, faSave, faEdit, faSignOutAlt, faUserPlus, faChevronLeft, faChevronRight, faUserCircle,faSignInAlt, faRupeeSign, faPhoneAlt,faTools,faArrowRight,faStarOfLife)
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 

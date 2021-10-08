@@ -23,52 +23,13 @@
         </div>
     </section>
 
-    <!-- Product variation -->
-    <!-- <section id="product_variation_one" class="pt-10 mb-14">
-        <div class="container-fluid">
-            <div class="my-5">
-                <div class="text-center font-bold text-3xl text-uppercase feature_heading">FEATURED CAR<hr class="h-1 w-1/12 my-2 mx-auto bg-black" style="background-color:black!important;" /></div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="product_variation_one_boxed img-zoom-hover">
-                        <img :src="require('@/assets/img/cars/car2.jpg')" alt="img" />
-                    </div>
-                    <div class="product_variation_one_boxed mob_center_car_image" style="display:none;">
-                        <img :src="require('@/assets/img/cars/car10.jpg')" alt="img" />
-                    </div>
-                    <div class="product_variation_one_boxed img-zoom-hover">
-                        <img :src="require('@/assets/img/cars/car3.jpg')" alt="img" />
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 flex items-center">
-                    <div class="product_variation_one_boxed pc_center_car_image">
-                        <img :src="require('@/assets/img/cars/car10.jpg')" alt="img" />
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="product_variation_one_boxed img-zoom-hover" style="margin-bottom:115px;margin-top:40px;">
-                        <img :src="require('@/assets/img/cars/car9.webp')" alt="img" />
-                    </div>
-                    <div class="product_variation_one_boxed img-zoom-hover" style="margin-top:40px;">
-                        <img :src="require('@/assets/img/cars/car8.webp')" alt="img" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
     <section class="py-24"  style="background:#e6eaef;">
         <div class="container">
             <div class="about_car_sec flex  justify-center">
                 <div class="left_sec w-1/2 mx-10 pt-6">
                     <h3 class="text-uppercase about_psm_head">Welcome to Peeyesyem hyundai <hr class="h-1 bg-black w-3/12 my-1" /></h3>
-                    <!-- <div class="flex items-center my-5">
-                        <div class="mx-3 text-3xl">10</div>
-                        <div class="mx-3">Everything you need to build an amazing dealership automotive responsive website.</div>
-                    </div> -->
                     <div class="my-6 text-gray">
-                        Peeyesyem Hyundai is one of the largest Hyundai dealer having showrooms at various locations around Tamilnadu. Our branches are located at Chennai, Tuticorin, Tiruchendur, Tuticorin, Madurai and Ramnathapuram. We strive to provide the best services to our customers with great satisfaction and excellency.
+                        Peeyesyem Hyundai is one of the largest Hyundai dealer having showrooms at various locations around Tamilnadu. Our branches are located at Chennai, Karaikudi, Kovilpatti, Tuticorin, Tiruchendur, Tuticorin, Madurai and Ramnathapuram. We strive to provide the best services to our customers with great satisfaction and excellency.
                     </div>
                 </div>
                 <div class="right_sec w-1/2 mx-10 flex items-center about_psm_cars">
@@ -126,11 +87,17 @@
                 </div>
                 <div class="car_details" >
                     <div class="text-center font-medium mt-1 mb-1 cursor-pointer">{{car.name}}</div>
-                   <div class="text-center font-medium mt-1 mb-1"><font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mx-2" />{{car.price}}</div>
+                   <div class="text-center font-medium mt-1 mb-1"><font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mx-2" />{{car.price}}<span class="notice_mark">*</span></div>
                 </div>
             </div>
         </div>
     </section>
+
+    <div class="notice_card_sec text-center my-5">
+        <div>
+            <font-awesome-icon icon="star-of-life"  size="1x" class="star_icon mx-2" /><font-awesome-icon icon="arrow-right"  size="1x" class="text-black mx-2" /> Represents Ex-Showroom Price 
+        </div>
+    </div>
 
     <section class="book_form_section py-24" >
         <div class="flex book_form_box items-center justify-evenly">
@@ -145,23 +112,6 @@
             </div>
         </div>
     </section>
-
-    <!-- <section class="py-24 sales_car_box" style="background:#e6eaef;">
-        <div class="container">
-            <div class=" flex items-center sale_car_sec">
-                <div class="left w-1/2 mx-10">
-                  <h3 class="font-bold mb-3 sales_heading main_head">ARE YOU LOOKING FOR A CAR?</h3>
-                  <p class="sales_heading mb-3">Search your car in our Inventory and request a quote on the vehicle of your choosing.</p>
-                  <img :src="require('@/assets/img/cars/car16.webp')" alt="img"  />
-                </div>
-                <div class="right w-1/2 mx-10">
-                  <h3 class="font-bold mb-3 sales_heading main_head">DO YOU WANT TO SELL YOUR CAR?</h3>
-                  <p class="sales_heading mb-3">Request search your car in our Inventory and a quote on the vehicle of your choosing.</p>
-                  <img :src="require('@/assets/img/cars/car17.webp')" alt="img" style="transform:scaleX(-1);" />
-                </div>
-            </div>
-        </div>
-    </section> -->
 
     <section class="pb-20 blog_post_section">
         <div class="container">
@@ -254,8 +204,8 @@
     </section>
 
 
-    <!-- Special offer -->
-    <section class="" >
+    <!-- Upcoming Cars -->
+    <!-- <section class="" >
         <div class="text-capitalize text-center pt-14 pb-10 font-bold text-3xl upcoming_car_heading">Upcoming Cars<hr class="h-1 w-1/12 my-2 mx-auto bg-black" style="background-color:black!important;" /></div>
         <div class="row m-0 block">
             <div class="product_single_one_img">
@@ -274,19 +224,18 @@
                 </swiper>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <div class="back_to_top" @click="backToTop">
         <img :src="require('@/assets/img/back_to_top_car.png')" alt="img" style="width:100%;height:auto;"/>
     </div>
     <div class="whtsapp_btn">
-        <img class="pc_whtsap_img" :src="require('@/assets/img/whatsapp.gif')" alt="img" />
         <img class="mob_whtsap_img" :src="require('@/assets/img/whatsapp_mob.png')" alt="img" />
     </div>
     <div class="fixed_form_sec">
         <div class="text-uppercase font-semibold text-white form1 form_div" @click="formModal = true"><img class="mx-2" :src="require('@/assets/img/vehicle.png')" alt="img"  /><div class="sub_form1 sub_form_div">Book a car</div></div>
         <div class="text-uppercase font-semibold text-white form2 form_div" @click="formModal3 = true"><img class="mx-2" :src="require('@/assets/img/book_drive.png')" alt="img" style="width:32px;"  /> <div class="sub_form2 sub_form_div">Book a test drive</div></div>
-        <div class="text-uppercase font-semibold text-white form3 form_div" @click="formModal2 = true"><font-awesome-icon icon="tools"  size="2x" class="text-white mx-2" /> <div class="sub_form3 sub_form_div">Book a service</div></div>
+        <div class="text-uppercase font-semibold text-white form3 form_div" @click="formModal2 = true"><font-awesome-icon icon="tools"  size="2x" class="text-white spanner_icon mx-2" /> <div class="sub_form3 sub_form_div">Book a service</div></div>
         <div class="text-uppercase font-semibold text-white form4 form_div" @click="formModal4 = true"><img class="mx-2" :src="require('@/assets/img/book_service.png')" alt="img" style="width:32px;"  /> <div class="sub_form3 sub_form_div">Request a callback</div></div>
     </div>
 
@@ -769,13 +718,6 @@ export default {
                 price:'8,16,500'
             },
             {
-                id:10,
-                name:'Hyundai Kona',
-                image:'car20.jpg',
-                category:'SUV',
-                price:'9,99,900'
-            },
-            {
                 id:11,
                 name:'Hyundai Alcazar',
                 image:'car17.jpg',
@@ -854,13 +796,6 @@ export default {
                 image:'car4.webp',
                 category:'SUV',
                 price:'8,16,500'
-            },
-            {
-                id:10,
-                name:'Hyundai Kona',
-                image:'car20.jpg',
-                category:'SUV',
-                price:'9,99,900'
             },
             {
                 id:11,
@@ -954,12 +889,20 @@ export default {
         },
         handleScroll(){
             var btn = document.querySelector('.back_to_top')
+            var fixed_form_sec = document.querySelector('.fixed_form_sec');
+            
             if(pageYOffset > 260){
                 btn.classList.add('show')
                 btn.classList.remove('not_show');
             }else{
                 btn.classList.remove('show')
                 btn.classList.add('not_show');
+            }
+
+            if(pageYOffset > 340){
+                fixed_form_sec.classList.add('show')
+            }else{
+                fixed_form_sec.classList.remove('show')
             }
 
             if(pageYOffset < 10){
@@ -1036,280 +979,6 @@ export default {
 }
 </script>
 <style scoped>
-.photo_box img{
-    height: 325px;
-    object-fit: cover;
-}
-.fixed_form_sec{
-    position: fixed;
-    z-index: 999999;
-    bottom: 40%;
-    right: -188px;
-}
-.fixed_form_sec .form_div{
-    background: #002c5f;
-    padding: 11px 5px;
-    margin-bottom: 4px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    transition: .6s ease-in-out;
-}
-.fixed_form_sec div i{
-    color: white;
-    margin: 0 15px;
-}
-.fixed_form_sec div .sub_form_div{
-    padding: 0 8px;
-    transition: .6s ease-in-out;
-    text-align: center;
-}
-.fixed_form_sec .form1:hover{
-    transform: translateX(-188px);
-}
-.fixed_form_sec .form2:hover{
-    transform: translateX(-188px);
-}
-.fixed_form_sec .form3:hover{
-    transform: translateX(-188px);
-}
-.fixed_form_sec .form4:hover{
-    transform: translateX(-188px);
-}
-
-.whtsapp_btn{
-    position: fixed;
-    z-index: 999999;
-    bottom: 18%;
-    left: 0;
-    margin-left: -7px;
-    cursor: pointer;
-}
-.whtsapp_btn .pc_whtsap_img{
-    width: 60%;
-    margin-right: auto;
-}
-.whtsapp_btn .mob_whtsap_img{
-    display: none;
-}
-.service_item_box .car_sold{
-    width: 38px;
-}
-.service_item_box .car_service{
-    width: 33px;
-}
-.blog_post_button{
-    background:#002c5f;
-    border: none;
-    outline: none;
-    padding: 10px 30px;
-    color: white;
-    border-radius: 5px;
-    font-size: 17px;
-}
-.category_item.active{
-    border-bottom:2px solid #002c5f;
-    color:#002c5f;
-}
-.category_item:hover{
-    border-bottom:2px solid #002c5f;
-    color:#002c5f;
-}
-.category_item{
-    margin: 0 16px;
-    padding: 0 8px;
-}
-
-.form_modal_box{
-    height: 100vh;
-    width: 100%;
-    z-index: 999999;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0,0,0,0.6);
-}
-.form_modal_box .card{
-    border-radius: 8px;
-    animation: moveDown .7s;
-}
-.form_modal_box button{
-    background-color: #002c5f;
-}
-@keyframes moveDown {
-    from{
-        opacity: 0;
-        transform: translate3d(0,-100%,0);
-    }
-    to{
-        opacity: 1;
-        transform: none;
-    }
-}
-.blog_post_section .blog_card_box{
-    box-shadow: 0 2px 10px 4px rgb(0 0 0 / 12%);
-    border-radius: 7px;
-    overflow: hidden;
-}
-
-.back_to_top::before{
-    position: absolute;
-    top: -1px;
-    left: 0px;
-    width: 85px;
-    height: 89px;
-    content: "";
-    background-image: url('../assets/img/car_focus.png');
-    opacity: 0;
-}
-.back_to_top:hover::before{
-    opacity: 1;
-}
-.back_to_top{
-    position: fixed;
-    bottom: 4%;
-    right: 2%;
-    transition: 1s ease-in-out;
-    display: none;
-    z-index: 900;
-    cursor: pointer;
-}
-.back_to_top.show{
-    animation: fadeDown .5s;
-    display: inline-block;
-}
-@keyframes fadeDown {
-    from{
-        opacity: 0;
-        transform: translate3d(0,100%,0);
-    }
-    to{
-        opacity: 1;
-        transform: none;
-    }
-}
-
-.back_to_top.car_up{
-   bottom: 100% !important;
-}
-.sale_car_sec .left img, .sale_car_sec .right img{
-    transition: .6s ease-in-out;
-}
-.sale_car_sec:hover .left img{
-    margin-left: 80px;
-}
-.sale_car_sec:hover .right img{
-    margin-left: -80px;
-}
-.car_image_box{
-    overflow: hidden;
-    cursor: pointer;
-}
-.car_image_box img{
-    object-fit: cover;
-    transition: .5s ease-in-out;
-}
-.car_image_box img:hover{
-    transform: scale(1.1);
-}
-.testimonial_content{
-    width: 40%;
-    color: white;
-    border-radius: 7px;
-    margin: 10px auto;
-    background-color: #002c5f;
-    padding: 50px 10px;
-}
-.fixed_bg_image{
-    background-image: url('../assets/img/cars/counter_poster.jpg');
-    height: auto;
-    width: 100%;
-    background-position: center;
-    height: 250px;
-    background-attachment: fixed;
-    position: relative;
-    background-repeat: no-repeat;
-}
-.fixed_bg_image2{
-    background-image: url('../assets/img/cars/car19.jpg');
-    height: auto;
-    width: 100%;
-    background-position: center;
-    height: 445px;
-    background-attachment: fixed;
-    position: relative;
-    background-repeat: no-repeat;
-}
-.overlay{
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 200;
-}
-.overlay2{
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index:200;
-}
-.overlay2.testimonial{
-    background-color: rgba(0, 0, 0, 0.6);
-}
-.service_items{
-    z-index: 205;
-}
-.sales_heading{
-    width:70%;
-    margin-left: auto;
-    margin-right: auto;
-}
-.bg-position_overlay{
-    z-index: 205;
-}
-.car_name{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    transition: .4s ease-in-out;
-}
-.car_name div{
-    text-shadow: 2px 2px 5px black;
-}
-.car_details{
-    background: white;
-    opacity: 0.8;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    transform: scale(0);
-    transition: 0.4s ease-in-out;
-}
-.car_box_item{
-    position: relative;
-    animation:scaleIn .7s;
-}
-@keyframes scaleIn{
-    from{
-        opacity: 0;
-        transform: scale(0);
-    }
-    to{
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-.car_box_item:hover .car_details{
-    transform: scale(1);
-}
-.car_box_item:hover .car_name{
-    opacity: 0;
-}
 .swiper-button-prev, .swiper-button-next{
     z-index: 220;
     border-radius: 50%;
@@ -1320,298 +989,5 @@ export default {
 }
 .swiper-button-next:hover, .swiper-button-prev:hover{
     background: black!important;
-}
-.car_box_item a{
-    margin-bottom:0!important;
-    min-height:198px;
-    max-height:198px;
-}
-.car_box_item a img{
-    width:317.1px;
-    min-height:198px;
-    max-height:198px;
-    max-width:100%;
-}
-@media only screen and (min-width: 1270px) and (max-width: 1366px){
-    .testimonial_content{
-        padding: 20px 10px;
-    }
-    .testimonial_content .quote_lines div{
-        font-size: 11px;
-    }
-    .testimonial_content div{
-        font-size: 11px;
-    }
-    .testimonial_content .quote_icon{
-        width: 50px;
-    }
-    .testimonial_content img{
-        width:35px;
-    }
-    .fixed_bg_image2{
-        height: 325px;
-    }
-    .testimonial_haeding .sub_head{
-        font-size: 12px;
-        margin-bottom: 0!important;
-    }
-    .testimonial_head{
-        font-size: 16px;
-        margin-bottom: 25px!important;
-    }
-    .testimonial_head hr{
-        height: 2px;
-        margin-top: -5px!important;
-    }
-    .blog_heading{
-        font-size: 20px;
-    }
-    .blog_heading hr{
-        height: 2px;
-        margin-top: 2px!important;
-    }
-    .blog_card_box .content div{
-        font-size: 14px;
-        margin: 12px 0!important;
-    }
-    .blog_card_box p{
-        font-size: 12px;
-        margin: 12px 0!important;
-    }
-    .blog_card_box .content{
-        padding: 10px !important;
-    }
-    .upcoming_car_heading{
-        font-size: 22px;
-    }
-    .upcoming_car_heading hr{
-        height: 2px;
-        margin-top: 2px!important;
-    }
-    .sale_car_sec h3{
-        font-size: 20px;
-    }
-    .sale_car_sec p{
-      font-size: 12px;
-    }
-    .sales_car_box{
-        padding: 60px 0!important;
-    }
-    .car_sec_head{
-        font-size: 21px;
-    }
-    .car_sec_head hr{
-        height: 2px;
-        margin-top: 2px!important;
-    }
-    .cars_product_section{
-        padding-top:60px !important;
-    }
-    .cars_product_section .card_box{
-        margin-top: 60px !important;
-    }
-    .car_box_item a img{
-      width: 315.6px;
-    }
-}
-
-@media only screen and (min-width: 1367px) and (max-width: 1600px){
-    .car_box_item a img{
-        width:303.7px;
-    }
-    .testimonial_content{
-        padding: 30px 10px;
-    }
-    .testimonial_content .quote_lines div{
-        font-size: 13px;
-    }
-    .testimonial_content div{
-        font-size: 13px;
-    }
-    .car_sec_head{
-        font-size: 25px;
-    }
-    .blog_heading{
-        font-size: 24px;
-    }
-    .upcoming_car_heading{
-        font-size: 24px;
-    }
-}
-@media only screen and (min-width: 1600px) and (max-width: 1750px){
-    .car_box_item a img{
-        width:345.1px;
-    }
-    .testimonial_content{
-        padding: 30px 10px;
-    }
-}
-@media only screen and (min-width:300px) and (max-width:600px){
-    .fixed_form_sec .form_div{
-        transform: translateX(0px);
-    }
-    .fixed_form_sec div .sub_form_div{
-        display: none;
-    }
-    .book_form_box{
-        display: block;
-    }
-    .book_form_box div{
-        margin-bottom: 20px;
-    }
-    .whtsapp_btn .pc_whtsap_img{
-        display: none;
-    }
-    .whtsapp_btn .mob_whtsap_img{
-        display: block;
-        width: 30%;
-        margin-right: auto;
-    }
-    .whtsapp_btn{
-        margin-left: 0;
-        bottom: 10%;
-    }
-    .blog_post_button{
-        padding: 6px 20px;
-        width: 222px;
-    }
-    .book_form_section{
-        padding-bottom: 0px!important;
-    }
-    .form_modal_box .card_body{
-        width: 95%;
-    }
-    .form_modal_box .btn_grp button{
-        width: 100%;
-    }
-    .upcoming_car_heading hr{
-        margin-top: 1px!important;
-    }
-    .upcoming_car_heading{
-        font-size: 24px;
-        padding: 45px 0 !important;
-    }
-    .blog_heading {
-        font-size: 20px;
-    }
-    .blog_card_body{
-        display: block!important;
-    }
-    .blog_card_box {
-        width: 100%;
-        margin-bottom: 35px;
-    }
-    .category_item{
-        margin: 0 8px;
-        padding: 0 5px;
-    }
-    .swiper-button-prev, .swiper-button-next{
-        width: 25px!important;
-        height: 25px!important;
-        margin-left: 4px;
-        margin-right: 4px;
-    }
-    .about_car_sec{
-        display: block;
-    }
-    .about_car_sec .left_sec,.about_car_sec .right_sec{
-        width: 100%;
-        margin: 0;
-        padding: 0;
-    }
-    .card_box{
-        display: block;
-    }
-    .car_box_item{
-        width:100%;
-    }
-    .car_box_item img{
-        width: 100%!important;
-    }
-    .testimonial_content{
-        width:95%;
-        font-size: 14px;
-        padding: 30px 20px;
-    }
-    .testimonial_content .quote_icon{
-        display: none;
-    }
-    .feature_heading{
-        font-size: 23px;
-    }
-    .feature_heading hr{
-        width: 20%;
-        margin-top: 1px!important;
-    }
-    .car_sec_head{
-        font-size: 18px;
-    }
-    .car_sec_head hr{
-        width: 40%;
-        margin-top: 1px!important;
-    }
-    .about_psm_head{
-        font-size: 20px;
-    }
-    .about_psm_head hr{
-        width:30%;
-    }
-    .about_psm_cars{
-        margin-top:65px!important;
-    }
-    .service_item_box{
-        display: block;
-    }
-    .fixed_bg_image{
-        height: 530px;
-    }
-    .service_item{
-        margin-top: 35px;
-        margin-bottom: 35px;
-        font-size: 18px;
-    }
-    .count_box{
-        justify-content: center;
-    }
-    .service_item_container{
-        position: relative;
-        z-index: 205;
-    }
-    .testimonial_head{
-        font-size: 25px;
-        margin-bottom: 16px!important;
-    }
-    .sale_car_sec{
-        display: block;
-    }
-    .sale_car_sec .left{
-        width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-        margin-bottom: 60px;
-    }
-    .sale_car_sec .right{
-        width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-    }
-    .sales_heading.main_head{
-        font-size: 20px;
-    }
-    .sales_heading{
-        width: 95%;
-    }
-    .mob_center_car_image{
-        display: block!important;
-    }
-    .pc_center_car_image{
-        display: none;
-    }
-    .sale_car_sec:hover .left img{
-        margin-left: 0px;
-    }
-    .sale_car_sec:hover .right img{
-        margin-left: 0px;
-    }
 }
 </style>
