@@ -3,7 +3,7 @@
 <div >
   <div class="dialog_box fixed inset-0 h-screen w-full flex justify-center items-center" v-if="addUserDialog === true">
       <div class="dialog_content bg-white rounded-md shadow-md">
-         <div class="my-2   flex items-center justify-between py-3 px-6"><span class="font-bold text-lg" >Add User Role</span><font-awesome-icon icon="times"  size="1x" class="text-red-600 cursor-pointer" @click="addUserDialog = false" /></div>
+         <div class="my-2   flex items-center justify-between py-3 px-6"><span class="font-bold text-lg" >Add Testimonial</span><font-awesome-icon icon="times"  size="1x" class="text-red-600 cursor-pointer" @click="addUserDialog = false" /></div>
          <AddTesimonial @created="GetTestimonials" @childDialog="childDialog"/>
       </div>
    </div>
