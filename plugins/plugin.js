@@ -19,8 +19,8 @@ import 'vue-slider-component/theme/default.css'
 
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faUserSecret, faCloudUploadAlt, faPlus, faTrash, faTimes, faSave, faEdit, faSignOutAlt, faUserPlus, faChevronLeft, faChevronRight, faUserCircle,faSignInAlt, faRupeeSign, faPhoneAlt,faTools,faArrowRight,faStarOfLife,faMapMarkerAlt} from '@fortawesome/free-solid-svg-icons'
-library.add(faUserSecret, faCloudUploadAlt, faPlus, faTrash, faTimes, faSave, faEdit, faSignOutAlt, faUserPlus, faChevronLeft, faChevronRight, faUserCircle,faSignInAlt, faRupeeSign, faPhoneAlt,faTools,faArrowRight,faStarOfLife,faMapMarkerAlt)
+import { faUserSecret, faCloudUploadAlt, faPlus, faTrash, faTimes, faSave, faEdit, faSignOutAlt, faUserPlus, faChevronLeft, faChevronRight, faUserCircle,faSignInAlt, faRupeeSign, faPhoneAlt,faTools,faArrowRight,faStarOfLife,faMapMarkerAlt, faTachometerAlt, faGasPump, faCogs} from '@fortawesome/free-solid-svg-icons'
+library.add(faUserSecret, faCloudUploadAlt, faPlus, faTrash, faTimes, faSave, faEdit, faSignOutAlt, faUserPlus, faChevronLeft, faChevronRight, faUserCircle,faSignInAlt, faRupeeSign, faPhoneAlt,faTools,faArrowRight,faStarOfLife,faMapMarkerAlt, faTachometerAlt, faGasPump, faCogs)
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
