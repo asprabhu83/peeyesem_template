@@ -72,6 +72,18 @@
                   </div>
               </div>
           </div>
+          <div class="car_gallery_sec my-24">
+              <div class="title">{{car.name}} Gallery <hr /></div>
+              <div class="car_gallery_item">
+                  <swiper class="swiper product-single-2-slider" :options="swiperOption">
+                            <swiper-slide v-for="car in car.gallery" :key="car.id">
+                               <img :src="require('@/assets/img/cars/car_gallery/' + car.image)" alt="img" style="width:100%;" />
+                            </swiper-slide>
+                            <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
+                            <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
+                    </swiper>
+              </div>
+          </div>
       </div>
   </div>
 </template>
@@ -167,6 +179,24 @@ export default {
                         image:'12.jpg'
                     }
                 ],
+                car_gallery:[
+                    {
+                        id:1,
+                        image:'1.jpg'
+                    },
+                    {
+                        id:2,
+                        image:'2.jpg'
+                    },
+                    {
+                        id:3,
+                        image:'3.jpg'
+                    },
+                    {
+                        id:4,
+                        image:'4.jpg'
+                    }
+                ],
                 price:'8,19,900',
                 description:"Hyundai All New I20 - Modern Stylish Tallboy: The overall design theme is based on Rhythmical Tension that exudes a Refined yet Sporty Image. The front of The All New SANTRO is defined by Hyundai's Signature Cascade Grille with chrome surround that projects Modern and Premium appeal of the car"
             },
@@ -254,6 +284,24 @@ export default {
                         image:'24.jpg'
                     }
                 ],
+                car_gallery:[
+                    {
+                        id:1,
+                        image:'5.jpg'
+                    },
+                    {
+                        id:2,
+                        image:'6.jpg'
+                    },
+                    {
+                        id:3,
+                        image:'7.jpg'
+                    },
+                    {
+                        id:4,
+                        image:'8.jpg'
+                    }
+                ],
                 price:'4,67,490',
                 description:"Hyundai Santro - Modern Stylish Tallboy: The overall design theme is based on Rhythmical Tension that exudes a Refined yet Sporty Image. The front of The All New SANTRO is defined by Hyundai's Signature Cascade Grille with chrome surround that projects Modern and Premium appeal of the car"
             },
@@ -338,6 +386,24 @@ export default {
                         id:12,
                         name:'Turbo Branding On Front Grille',
                         description:'Its stylish design, sleek lines and bold stance stand out no matter what environment it is in.',
+                        image:'12.jpg'
+                    }
+                ],
+                car_gallery:[
+                    {
+                        id:1,
+                        image:'9.jpg'
+                    },
+                    {
+                        id:2,
+                        image:'10.jpg'
+                    },
+                    {
+                        id:3,
+                        image:'11.jpg'
+                    },
+                    {
+                        id:4,
                         image:'12.jpg'
                     }
                 ],
@@ -428,6 +494,24 @@ export default {
                         image:'12.jpg'
                     }
                 ],
+                car_gallery:[
+                    {
+                        id:1,
+                        image:'13.webp'
+                    },
+                    {
+                        id:2,
+                        image:'14.webp'
+                    },
+                    {
+                        id:3,
+                        image:'15.webp'
+                    },
+                    {
+                        id:4,
+                        image:'16.webp'
+                    }
+                ],
                 price:'7,31,900',
                 description:"Hyundai i20 N Line - Modern Stylish Tallboy: The overall design theme is based on Rhythmical Tension that exudes a Refined yet Sporty Image. The front of The All New SANTRO is defined by Hyundai's Signature Cascade Grille with chrome surround that projects Modern and Premium appeal of the car"
             },
@@ -513,6 +597,24 @@ export default {
                         name:'Turbo Branding On Front Grille',
                         description:'Its stylish design, sleek lines and bold stance stand out no matter what environment it is in.',
                         image:'12.jpg'
+                    }
+                ],
+                car_gallery:[
+                    {
+                        id:1,
+                        image:'17.jpg'
+                    },
+                    {
+                        id:2,
+                        image:'18.jpg'
+                    },
+                    {
+                        id:3,
+                        image:'19.jpg'
+                    },
+                    {
+                        id:4,
+                        image:'20.jpg'
                     }
                 ],
                 price:'22,30,000',
@@ -602,6 +704,24 @@ export default {
                         image:'12.jpg'
                     }
                 ],
+                car_gallery:[
+                    {
+                        id:1,
+                        image:'21.jpg'
+                    },
+                    {
+                        id:2,
+                        image:'22.jpg'
+                    },
+                    {
+                        id:3,
+                        image:'23.jpg'
+                    },
+                    {
+                        id:4,
+                        image:'24.jpg'
+                    }
+                ],
                 price:'8,19,900',
                 description:"Hyundai Verna - Modern Stylish Tallboy: The overall design theme is based on Rhythmical Tension that exudes a Refined yet Sporty Image. The front of The All New SANTRO is defined by Hyundai's Signature Cascade Grille with chrome surround that projects Modern and Premium appeal of the car"
             },
@@ -687,6 +807,24 @@ export default {
                         name:'Turbo Branding On Front Grille',
                         description:'Its stylish design, sleek lines and bold stance stand out no matter what environment it is in.',
                         image:'12.jpg'
+                    }
+                ],
+                car_gallery:[
+                    {
+                        id:1,
+                        image:'25.jpg'
+                    },
+                    {
+                        id:2,
+                        image:'26.jpg'
+                    },
+                    {
+                        id:3,
+                        image:'27.jpg'
+                    },
+                    {
+                        id:4,
+                        image:'28.jpg'
                     }
                 ],
                 price:'10,68,000',
@@ -776,6 +914,24 @@ export default {
                         image:'12.jpg'
                     }
                 ],
+                car_gallery:[
+                    {
+                        id:1,
+                        image:'29.jpg'
+                    },
+                    {
+                        id:2,
+                        image:'30.jpg'
+                    },
+                    {
+                        id:3,
+                        image:'31.jpg'
+                    },
+                    {
+                        id:4,
+                        image:'32.jpg'
+                    }
+                ],
                 price:'4,67,490',
                 description:"Hyundai Tuscon - Modern Stylish Tallboy: The overall design theme is based on Rhythmical Tension that exudes a Refined yet Sporty Image. The front of The All New SANTRO is defined by Hyundai's Signature Cascade Grille with chrome surround that projects Modern and Premium appeal of the car"
             },
@@ -861,6 +1017,24 @@ export default {
                         name:'Turbo Branding On Front Grille',
                         description:'Its stylish design, sleek lines and bold stance stand out no matter what environment it is in.',
                         image:'12.jpg'
+                    }
+                ],
+                car_gallery:[
+                    {
+                        id:1,
+                        image:'33.jpg'
+                    },
+                    {
+                        id:2,
+                        image:'34.jpg'
+                    },
+                    {
+                        id:3,
+                        image:'35.jpg'
+                    },
+                    {
+                        id:4,
+                        image:'36.jpg'
                     }
                 ],
                 price:'8,16,500',
@@ -950,6 +1124,24 @@ export default {
                         image:'12.jpg'
                     }
                 ],
+                car_gallery:[
+                    {
+                        id:1,
+                        image:'37.webp'
+                    },
+                    {
+                        id:2,
+                        image:'38.webp'
+                    },
+                    {
+                        id:3,
+                        image:'39.webp'
+                    },
+                    {
+                        id:4,
+                        image:'40.webp'
+                    }
+                ],
                 price:'16,53,300',
                 description:"Hyundai Alcazar - Modern Stylish Tallboy: The overall design theme is based on Rhythmical Tension that exudes a Refined yet Sporty Image. The front of The All New SANTRO is defined by Hyundai's Signature Cascade Grille with chrome surround that projects Modern and Premium appeal of the car"
             },
@@ -1037,6 +1229,24 @@ export default {
                         image:'12.jpg'
                     }
                 ],
+                car_gallery:[
+                    {
+                        id:1,
+                        image:'41.jpg'
+                    },
+                    {
+                        id:2,
+                        image:'42.jpg'
+                    },
+                    {
+                        id:3,
+                        image:'43.jpg'
+                    },
+                    {
+                        id:4,
+                        image:'44.jpg'
+                    }
+                ],
                 price:'17,00,000',
                 description:"Hyundai CRETA - Modern Stylish Tallboy: The overall design theme is based on Rhythmical Tension that exudes a Refined yet Sporty Image. The front of The All New SANTRO is defined by Hyundai's Signature Cascade Grille with chrome surround that projects Modern and Premium appeal of the car"
             }
@@ -1051,7 +1261,8 @@ export default {
               power:'',
               transmission:'',
               mileage:'',
-              highlights:[]
+              highlights:[],
+              gallery:[]
            },
            car_details_tab:[
                'Overview',
@@ -1066,6 +1277,21 @@ export default {
                'How To Proceed'
            ],
            car_tab_index:0,
+           swiperOption: {
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+                spaceBetween: 0,
+                loop: true,
+                mousewheel: false,
+                keyboard: {
+                    enabled: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                },
+                autoplay: false,
+            }
         }
     },
     beforeMount(){
@@ -1095,10 +1321,14 @@ export default {
             }else{
                 car_header.classList.remove('sticky');
             }
+            if(pageYOffset < 1045){
+                this.car_tab_index = 0
+            }
             if(pageYOffset > 1050){
                 this.car_tab_index = 1
-            }else{
-                this.car_tab_index = 0
+            }
+             if(pageYOffset > 2918){
+                this.car_tab_index = 2
             }
         },
         SingleCar(){
@@ -1107,7 +1337,7 @@ export default {
             })
            this.singleCar = item
            const [car] = this.singleCar
-           const {name,price,poster_image,image,overview_image,description,power,transmission,mileage,highlights} = car
+           const {name,price,poster_image,image,overview_image,description,power,transmission,mileage,highlights,car_gallery} = car
            this.car.name=name;
            this.car.price=price;
            this.car.poster_image=poster_image;
@@ -1117,13 +1347,24 @@ export default {
            this.car.power=power;
            this.car.transmission=transmission;
            this.car.mileage=mileage;
-           this.car.highlights = highlights
+           this.car.highlights = highlights;
+           this.car.gallery = car_gallery;
         }
     }
 }
 </script>
 
 <style scoped>
+.car_gallery_item{
+    width: 75%;
+    margin: 60px auto;
+}
+.car_gallery_sec .title{
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 40px 0;
+}
 .car_title_sticky_header.sticky{
     position: fixed;
     top: 0;
@@ -1134,6 +1375,9 @@ export default {
     box-shadow: 0 2px 10px 4px rgb(0 0 0 / 20%);
     animation: fadeDown .7s;
 }
+.car_title_sticky_header.sticky .car_title_sec{
+    margin:30px auto!important;
+} 
 @keyframes fadeDown {
     from{
         opacity: 1;
@@ -1148,7 +1392,7 @@ export default {
     width: 90%;
     margin: 10px auto;
 }
-.car_overview_sec .title hr, .car_highlights_sec .title hr{
+.car_overview_sec .title hr, .car_highlights_sec .title hr, .car_gallery_sec .title hr{
     width: 8%;
     margin: 3px auto;
     background: black;
@@ -1198,7 +1442,7 @@ export default {
     margin-right: auto;
 }
 .car_title_sec .car_title{
-    font-size: 30px;
+    font-size: 27px;
     font-weight: 600;
     padding: 10px;
 }
@@ -1214,7 +1458,7 @@ export default {
 .tab_item_box .tab_item{
     margin: 0 10px;
     padding: 6px 20px;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 600;
     color: #838383;
     border-radius: 5px;
@@ -1267,5 +1511,14 @@ export default {
 .price_item .detail{
     margin: 10px 0;
     text-align: start;
+}
+.swiper-button-prev, .swiper-button-next{
+    z-index: 220;
+    border-radius: 50%;
+    width: 40px!important;
+    height: 40px!important;
+}
+.swiper-button-next:hover, .swiper-button-prev:hover{
+    background: black!important;
 }
 </style>
