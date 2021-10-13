@@ -84,6 +84,24 @@
                     </swiper>
               </div>
           </div>
+          <div class="car_video_sec my-24">
+              <div class="title">{{car.name}} Video <hr /></div>
+              <div class="car_video_item">
+                  <iframe width="800" height="450"  :src="'https://www.youtube.com/embed/' + car.video_link" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+          </div>
+          <div class="car_colour_sec my-24">
+              <div class="title">{{car.name}} Colours <hr /></div>
+              <div class="car_colour_image_box"> 
+                  <img v-for="(car,index) in car.car_colours" :key="car.id" class="car_colour_img" :class="car_clr_img_index == index ? 'active' : ''" :src="require('@/assets/img/cars/car_colours/' + car.image)" alt="img" />
+              </div>
+              <div class="car_colour_item_box" >
+                  <div class="colour_item" v-for="(clr,index) in car.car_colours" :key="index" @click="car_clr_img_index = index" >
+                      <div class="car_clr" :style="{background:clr.colour1}"></div>
+                      <div class="car_clr" :style="{background:clr.colour2}"></div>
+                  </div>
+              </div>
+          </div>
       </div>
   </div>
 </template>
@@ -197,6 +215,33 @@ export default {
                         image:'4.jpg'
                     }
                 ],
+                video_link:'ZCMpGWkgs-c',
+                car_colours:[
+                    {
+                        id:1,
+                        colour1:'#644a49',
+                        colour2:'#644a49',
+                        image:'1.jpg'
+                    },
+                    {
+                        id:2,
+                        colour1:'#941b0a',
+                        colour2:'#111111',
+                        image:'2.jpg'
+                    },
+                    {
+                        id:3,
+                        colour1:'#242736',
+                        colour2:'#242736',
+                        image:'3.jpg'
+                    },
+                    {
+                        id:4,
+                        colour1:'#e2e3e5',
+                        colour2:'#e2e3e5',
+                        image:'4.jpg'
+                    }
+                ],
                 price:'8,19,900',
                 description:"Hyundai All New I20 - Modern Stylish Tallboy: The overall design theme is based on Rhythmical Tension that exudes a Refined yet Sporty Image. The front of The All New SANTRO is defined by Hyundai's Signature Cascade Grille with chrome surround that projects Modern and Premium appeal of the car"
             },
@@ -300,6 +345,33 @@ export default {
                     {
                         id:4,
                         image:'8.jpg'
+                    }
+                ],
+                video_link:'y5gauLb-Pbs',
+                car_colours:[
+                    {
+                        id:1,
+                        colour1:'#93121c',
+                        colour2:'#93121c',
+                        image:'5.png'
+                    },
+                    {
+                        id:2,
+                        colour1:'#99937d',
+                        colour2:'#99937d',
+                        image:'6.png'
+                    },
+                    {
+                        id:3,
+                        colour1:'#00438e',
+                        colour2:'#00438e',
+                        image:'7.png'
+                    },
+                    {
+                        id:4,
+                        colour1:'#f7f4f0',
+                        colour2:'#f7f4f0',
+                        image:'8.png'
                     }
                 ],
                 price:'4,67,490',
@@ -407,6 +479,33 @@ export default {
                         image:'12.jpg'
                     }
                 ],
+                video_link:'9YEG89MbEaU',
+                car_colours:[
+                    {
+                        id:1,
+                        colour1:'#e4e5e7',
+                        colour2:'#e4e5e7',
+                        image:'9.png'
+                    },
+                    {
+                        id:2,
+                        colour1:'#585f63',
+                        colour2:'#585f63',
+                        image:'10.png'
+                    },
+                    {
+                        id:3,
+                        colour1:'#a81514',
+                        colour2:'#a81514',
+                        image:'11.png'
+                    },
+                    {
+                        id:4,
+                        colour1:'#15405f',
+                        colour2:'#15405f',
+                        image:'12.png'
+                    }
+                ],
                 price:'8,14,900',
                 description:"GRAND i10 NIOS - Modern Stylish Tallboy: The overall design theme is based on Rhythmical Tension that exudes a Refined yet Sporty Image. The front of The All New SANTRO is defined by Hyundai's Signature Cascade Grille with chrome surround that projects Modern and Premium appeal of the car"
             },
@@ -510,6 +609,33 @@ export default {
                     {
                         id:4,
                         image:'16.webp'
+                    }
+                ],
+                video_link:'vWFtZhOkcFY',
+                car_colours:[
+                    {
+                        id:1,
+                        colour1:'#93121c',
+                        colour2:'#93121c',
+                        image:'1.jpg'
+                    },
+                    {
+                        id:2,
+                        colour1:'#99937d',
+                        colour2:'#99937d',
+                        image:'2.jpg'
+                    },
+                    {
+                        id:3,
+                        colour1:'#00438e',
+                        colour2:'#00438e',
+                        image:'3.jpg'
+                    },
+                    {
+                        id:4,
+                        colour1:'#f7f4f0',
+                        colour2:'#f7f4f0',
+                        image:'4.jpg'
                     }
                 ],
                 price:'7,31,900',
@@ -617,6 +743,33 @@ export default {
                         image:'20.jpg'
                     }
                 ],
+                video_link:'AUqP_0h_AD8',
+                car_colours:[
+                    {
+                        id:1,
+                        colour1:'#ad1518',
+                        colour2:'#ad1518',
+                        image:'13.png'
+                    },
+                    {
+                        id:2,
+                        colour1:'#90573e',
+                        colour2:'#90573e',
+                        image:'14.png'
+                    },
+                    {
+                        id:3,
+                        colour1:'#595f63',
+                        colour2:'#595f63',
+                        image:'15.png'
+                    },
+                    {
+                        id:4,
+                        colour1:'#f0f4f5',
+                        colour2:'#f0f4f5',
+                        image:'16.png'
+                    }
+                ],
                 price:'22,30,000',
                 description:"Hyundai Aura - Modern Stylish Tallboy: The overall design theme is based on Rhythmical Tension that exudes a Refined yet Sporty Image. The front of The All New SANTRO is defined by Hyundai's Signature Cascade Grille with chrome surround that projects Modern and Premium appeal of the car"
             },
@@ -720,6 +873,33 @@ export default {
                     {
                         id:4,
                         image:'24.jpg'
+                    }
+                ],
+                video_link:'XsBBeAz3EeQ',
+                car_colours:[
+                    {
+                        id:1,
+                        colour1:'#595f63',
+                        colour2:'#595f63',
+                        image:'17.png'
+                    },
+                    {
+                        id:2,
+                        colour1:'#2c2e43',
+                        colour2:'#2c2e43',
+                        image:'18.png'
+                    },
+                    {
+                        id:3,
+                        colour1:'#e0e1e5',
+                        colour2:'#e0e1e5',
+                        image:'19.png'
+                    },
+                    {
+                        id:4,
+                        colour1:'#000000',
+                        colour2:'#000000',
+                        image:'20.png'
                     }
                 ],
                 price:'8,19,900',
@@ -827,6 +1007,33 @@ export default {
                         image:'28.jpg'
                     }
                 ],
+                video_link:'KDz64uFl3tM',
+                car_colours:[
+                    {
+                        id:1,
+                        colour1:'#9d121e',
+                        colour2:'#9d121e',
+                        image:'21.jpg'
+                    },
+                    {
+                        id:2,
+                        colour1:'#004383',
+                        colour2:'#004383',
+                        image:'22.jpg'
+                    },
+                    {
+                        id:3,
+                        colour1:'#f2f7f2',
+                        colour2:'#f2f7f2',
+                        image:'23.jpg'
+                    },
+                    {
+                        id:4,
+                        colour1:'#151515',
+                        colour2:'#151515',
+                        image:'24.jpg'
+                    }
+                ],
                 price:'10,68,000',
                 description:"Hyundai ELANTRA - Modern Stylish Tallboy: The overall design theme is based on Rhythmical Tension that exudes a Refined yet Sporty Image. The front of The All New SANTRO is defined by Hyundai's Signature Cascade Grille with chrome surround that projects Modern and Premium appeal of the car"
             },
@@ -930,6 +1137,33 @@ export default {
                     {
                         id:4,
                         image:'32.jpg'
+                    }
+                ],
+                video_link:'exMC7ELHgNc',
+                car_colours:[
+                    {
+                        id:1,
+                        colour1:'#f6f6f6',
+                        colour2:'#f6f6f6',
+                        image:'25.jpg'
+                    },
+                    {
+                        id:2,
+                        colour1:'#171d30',
+                        colour2:'#171d30',
+                        image:'26.jpg'
+                    },
+                    {
+                        id:3,
+                        colour1:'#151517',
+                        colour2:'#151517',
+                        image:'27.jpg'
+                    },
+                    {
+                        id:4,
+                        colour1:'#171d30',
+                        colour2:'#171d30',
+                        image:'28.jpg'
                     }
                 ],
                 price:'4,67,490',
@@ -1037,6 +1271,33 @@ export default {
                         image:'36.jpg'
                     }
                 ],
+                video_link:'_rSAGRa7WZI',
+                car_colours:[
+                    {
+                        id:1,
+                        colour1:'#2f3728',
+                        colour2:'#2f3728',
+                        image:'29.png'
+                    },
+                    {
+                        id:2,
+                        colour1:'#151e3d',
+                        colour2:'#151e3d',
+                        image:'30.png'
+                    },
+                    {
+                        id:3,
+                        colour1:'#9d1414',
+                        colour2:'#9d1414',
+                        image:'31.png'
+                    },
+                    {
+                        id:4,
+                        colour1:'#ffffff',
+                        colour2:'#151e3d',
+                        image:'32.png'
+                    }
+                ],
                 price:'8,16,500',
                 description:"Hyundai Venue - Modern Stylish Tallboy: The overall design theme is based on Rhythmical Tension that exudes a Refined yet Sporty Image. The front of The All New SANTRO is defined by Hyundai's Signature Cascade Grille with chrome surround that projects Modern and Premium appeal of the car"
             },
@@ -1140,6 +1401,33 @@ export default {
                     {
                         id:4,
                         image:'40.webp'
+                    }
+                ],
+                video_link:'i1n_5yo6tQk',
+                car_colours:[
+                    {
+                        id:1,
+                        colour1:'#151515',
+                        colour2:'#151515',
+                        image:'33.webp'
+                    },
+                    {
+                        id:2,
+                        colour1:'#242736',
+                        colour2:'#242736',
+                        image:'34.webp'
+                    },
+                    {
+                        id:3,
+                        colour1:'#362b26',
+                        colour2:'#362b26',
+                        image:'35.webp'
+                    },
+                    {
+                        id:4,
+                        colour1:'#f0f4f5',
+                        colour2:'#f0f4f5',
+                        image:'36.webp'
                     }
                 ],
                 price:'16,53,300',
@@ -1247,6 +1535,33 @@ export default {
                         image:'44.jpg'
                     }
                 ],
+                video_link:'ENLimS5tuww',
+                car_colours:[
+                    {
+                        id:1,
+                        colour1:'#2d3537',
+                        colour2:'#2d3537',
+                        image:'37.png'
+                    },
+                    {
+                        id:2,
+                        colour1:'#152b5c',
+                        colour2:'#152b5c',
+                        image:'38.png'
+                    },
+                    {
+                        id:3,
+                        colour1:'#e34323',
+                        colour2:'#e34323',
+                        image:'39.png'
+                    },
+                    {
+                        id:4,
+                        colour1:'#000000',
+                        colour2:'#e34323',
+                        image:'40.png'
+                    }
+                ],
                 price:'17,00,000',
                 description:"Hyundai CRETA - Modern Stylish Tallboy: The overall design theme is based on Rhythmical Tension that exudes a Refined yet Sporty Image. The front of The All New SANTRO is defined by Hyundai's Signature Cascade Grille with chrome surround that projects Modern and Premium appeal of the car"
             }
@@ -1262,7 +1577,9 @@ export default {
               transmission:'',
               mileage:'',
               highlights:[],
-              gallery:[]
+              gallery:[],
+              video_link:'',
+              car_colours:[]
            },
            car_details_tab:[
                'Overview',
@@ -1277,6 +1594,7 @@ export default {
                'How To Proceed'
            ],
            car_tab_index:0,
+           car_clr_img_index:0,
            swiperOption: {
                 slidesPerView: 1,
                 slidesPerGroup: 1,
@@ -1330,6 +1648,9 @@ export default {
              if(pageYOffset > 2918){
                 this.car_tab_index = 2
             }
+            if(pageYOffset > 4058){
+                this.car_tab_index = 3
+            }
         },
         SingleCar(){
           var item = this.originalcars.filter((car)=>{
@@ -1337,7 +1658,7 @@ export default {
             })
            this.singleCar = item
            const [car] = this.singleCar
-           const {name,price,poster_image,image,overview_image,description,power,transmission,mileage,highlights,car_gallery} = car
+           const {name,price,poster_image,image,overview_image,description,power,transmission,mileage,highlights,car_gallery,video_link,car_colours} = car
            this.car.name=name;
            this.car.price=price;
            this.car.poster_image=poster_image;
@@ -1349,17 +1670,51 @@ export default {
            this.car.mileage=mileage;
            this.car.highlights = highlights;
            this.car.gallery = car_gallery;
+           this.car.video_link = video_link;
+           this.car.car_colours = car_colours;
+           console.log(this.car.car_colours[0])
         }
     }
 }
 </script>
 
 <style scoped>
+.car_colour_image_box .car_colour_img{
+    margin:60px auto;
+    display: none;
+}
+.car_colour_image_box .car_colour_img.active{
+    display: block;
+}
+.car_colour_item_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.colour_item{
+    display: flex;
+    flex-direction: row;
+    margin: 10px 20px;
+    box-shadow: 0 2px 10px 4px rgb(0 0 0/25%);
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.colour_item .car_clr{
+    width: 50%;
+}
+.car_video_item iframe{
+    margin: 60px auto;
+}
 .car_gallery_item{
     width: 75%;
     margin: 60px auto;
 }
-.car_gallery_sec .title{
+.car_gallery_sec .title, .car_video_sec .title, .car_colour_sec .title{
     text-align: center;
     font-size: 28px;
     font-weight: 700;
@@ -1392,7 +1747,7 @@ export default {
     width: 90%;
     margin: 10px auto;
 }
-.car_overview_sec .title hr, .car_highlights_sec .title hr, .car_gallery_sec .title hr{
+.car_overview_sec .title hr, .car_highlights_sec .title hr, .car_gallery_sec .title hr, .car_video_sec .title hr, .car_colour_sec .title hr{
     width: 8%;
     margin: 3px auto;
     background: black;
