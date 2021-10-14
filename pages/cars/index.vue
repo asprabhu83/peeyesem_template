@@ -3085,7 +3085,7 @@ export default {
             if(pageYOffset > 4058){
                 this.car_tab_index = 3
             }
-            if(pageYOffset > 4522){
+            if(pageYOffset > 4560){
                 this.car_tab_index = 4
             }
             if(pageYOffset > 5433){
@@ -3147,12 +3147,13 @@ export default {
 
 .car_spec_tab_box .tab_item{
     margin: 10px 25px;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: bold;
     cursor: pointer;
 }
 
 .car_spec_tab_box .tab_item.active{
+    color: #002c5f;
     border-bottom: 3px solid #002c5f;
 }
 
