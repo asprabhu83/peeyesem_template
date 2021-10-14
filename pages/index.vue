@@ -880,7 +880,6 @@ export default {
           if(name == 'ALL'){
               this.staticcars = this.originalcars
           }
-          console.log(this.staticcars)
         },
         categoryNames(){
            var category = ['ALL',...new Set(this.staticcars.map((item)=>{return item.category}))]

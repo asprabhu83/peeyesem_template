@@ -11,13 +11,13 @@
             </div>
             <div class="car_details_tab">
                 <div class="tab_item_box" v-for="(tab, index) in car_details_tab" :key="index">
-                    <div class="tab_item cursor-pointer" :class="car_tab_index === index ? 'active' : ''" @click="car_tab_index = index">{{tab}}</div>
+                    <div class="tab_item cursor-pointer" :class="car_tab_index === index ? 'active' : ''" @click="car_tab_index = index, smoothScroll(index)">{{tab}}</div>
                 </div>
             </div>
         </div>
       </section>
       <div class="car_wrapper_sec">
-          <div class="car_overview_sec my-24">
+          <div class="car_overview_sec step0 my-24">
               <div class="title">{{car.name}} Overview <hr /></div>
               <div class="description">
                   <div class="paragraph">
@@ -27,34 +27,34 @@
                     <img :src="require('@/assets/img/cars/static_car_images/'+ car.overview_image)" alt="overview_image" />
                   </div>
               </div>
-              <div class="price_details my-5">
+              <div class="price_details my-16">
                   <div class="price_item">
-                      <div class="title"><font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mr-3" />Price</div>
+                      <div class="price_title"><font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mr-2" />Price</div>
                       <div class="detail">
                           Petrol: {{car.price}}
                       </div>
                   </div>
                   <div class="price_item">
-                      <div class="title"><font-awesome-icon icon="tachometer-alt"  size="1x" class="text-black mr-3" />Power</div>
+                      <div class="price_title"><font-awesome-icon icon="tachometer-alt"  size="1x" class="text-black mr-2" />Power</div>
                       <div class="detail">
                           Petrol: {{car.power}}
                       </div>
                   </div>
                   <div class="price_item">
-                      <div class="title"><font-awesome-icon icon="cogs"  size="1x" class="text-black mr-3" />Transmission</div>
+                      <div class="price_title"><font-awesome-icon icon="cogs"  size="1x" class="text-black mr-2" />Transmission</div>
                       <div class="detail">
                           Petrol: {{car.transmission}}
                       </div>
                   </div>
                   <div class="price_item">
-                      <div class="title"><font-awesome-icon icon="gas-pump"  size="1x" class="text-black mr-3" />Mileage</div>
+                      <div class="price_title"><font-awesome-icon icon="gas-pump"  size="1x" class="text-black mr-2" />Mileage</div>
                       <div class="detail">
                           Petrol: {{car.mileage}}
                       </div>
                   </div>
               </div>
           </div>
-          <div class="car_highlights_sec my-24">
+          <div class="car_highlights_sec step1 my-24">
               <div class="title">{{car.name}} Highlights <hr /></div>
               <div class="highlight_items">
                   <div class="item" v-for="item in car.highlights" :key="item.id">
@@ -72,7 +72,7 @@
                   </div>
               </div>
           </div>
-          <div class="car_gallery_sec my-24">
+          <div class="car_gallery_sec step2 my-24">
               <div class="title">{{car.name}} Gallery <hr /></div>
               <div class="car_gallery_item">
                   <swiper class="swiper product-single-2-slider" :options="swiperOption">
@@ -84,25 +84,145 @@
                     </swiper>
               </div>
           </div>
-          <div class="car_video_sec my-24">
+          <div class="car_video_sec step3 my-24">
               <div class="title">{{car.name}} Video <hr /></div>
               <div class="car_video_item">
-                  <iframe width="800" height="450"  :src="'https://www.youtube.com/embed/' + car.video_link" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <iframe width="1239" height="450"  :src="'https://www.youtube.com/embed/' + car.video_link" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
           </div>
-          <div class="car_colour_sec my-24">
+          <div class="car_colour_sec step4 my-24">
               <div class="title">{{car.name}} Colours <hr /></div>
               <div class="car_colour_image_box"> 
                   <img v-for="(car,index) in car.car_colours" :key="car.id" class="car_colour_img" :class="car_clr_img_index == index ? 'active' : ''" :src="require('@/assets/img/cars/car_colours/' + car.image)" alt="img" />
               </div>
+              <div class="colour_item_title car_colour_img" v-for="(car,index) in car.car_colours" :key="index" :class="car_clr_img_index == index ? 'active' : ''">{{car.title}}</div>
               <div class="car_colour_item_box" >
-                  <div class="colour_item" v-for="(clr,index) in car.car_colours" :key="index" @click="car_clr_img_index = index" >
+                  <div class="colour_item" v-for="(clr,index) in car.car_colours" :key="index" @click="car_clr_img_index = index" :class="car_clr_img_index == index ? 'active' : ''" >
                       <div class="car_clr" :style="{background:clr.colour1}"></div>
                       <div class="car_clr" :style="{background:clr.colour2}"></div>
                   </div>
               </div>
           </div>
-      </div>
+          <div class="car_specs_tab step5 my-24">
+              <div class="car_type_main_title">{{car.name}} Specs <hr /></div>
+              <div class="car_spec_item_box my-5">
+                  <div class="car_spec_tab_box">
+                      <div class="tab_item" v-for="(item,index) in car.car_spec_tab" :class="car_spec_tab_index == index ? 'active' : ''" @click="car_spec_tab_index = index, filterCarSpecs(item)" :key="index">{{item}}</div>
+                  </div>
+                   <div class="w-8/12 mx-auto mt-16">
+                            <div class="flex flex-col">
+                                <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                                    <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                                        <div
+                                            class="
+                                            shadow-md
+                                            overflow-hidden
+                                            border-b border-gray-200
+                                            sm:rounded-lg
+                                            "
+                                        >
+                                            <table class="min-w-full car_spec_table divide-y divide-gray-200">
+                                            <thead class="">
+                                                <tr>
+                                                <th
+                                                    scope="col"
+                                                    class="
+                                                    px-6
+                                                    py-3
+                                                    text-left text-xs
+                                                    font-medium
+                                                    text-gray-500
+                                                    uppercase
+                                                    tracking-wider
+                                                    "
+                                                >
+                                                    Model
+                                                </th>
+                                                <th
+                                                    scope="col"
+                                                    class="
+                                                    px-6
+                                                    py-3
+                                                    text-left text-xs
+                                                    font-medium
+                                                    text-gray-500
+                                                    uppercase
+                                                    tracking-wider
+                                                    "
+                                                >
+                                                    Petrol
+                                                </th>
+                                                <th
+                                                    scope="col"
+                                                    class="
+                                                    px-6
+                                                    py-3
+                                                    text-left text-xs
+                                                    font-medium
+                                                    text-gray-500
+                                                    uppercase
+                                                    tracking-wider
+                                                    "
+                                                >
+                                                    Diesel
+                                                </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="bg-white divide-y divide-gray-200">
+                                                <tr v-for="spec in car.car_specs" :key="spec.id">
+                                                <td class="px-6 py-4 whitespace-nowrap" >
+                                                    <span
+                                                    class="
+                                                        inline-flex
+                                                        text-xs
+                                                        leading-5
+                                                        font-semibold
+                                                        text-black
+                                                    "
+                                                    >
+                                                    {{spec.model}}
+                                                    </span>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap" >
+                                                    <span
+                                                    class="
+                                                        inline-flex
+                                                        text-xs
+                                                        leading-5
+                                                        font-semibold
+                                                        text-black
+                                                    "
+                                                    >
+                                                    {{spec.petrol}}
+                                                    </span>
+                                                </td>
+
+                                                <td class="px-6 py-4 whitespace-nowrap" >
+                                                    <span
+                                                    class="
+                                                        inline-flex
+                                                        text-xs
+                                                        leading-5
+                                                        font-semibold
+                                                        text-black
+                                                    "
+                                                    >
+                                                    {{spec.diesel}}
+                                                    </span>
+                                                </td>
+                                                </tr>
+
+                                                <!-- More people... -->
+                                            </tbody>
+                                            </table>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                  </div>
+             </div>
+         </div>
+    </div> 
   </div>
 </template>
 
@@ -219,28 +339,147 @@ export default {
                 car_colours:[
                     {
                         id:1,
+                        title:'Hyundai All New i20 Copper Metalic',
                         colour1:'#644a49',
                         colour2:'#644a49',
                         image:'1.jpg'
                     },
                     {
                         id:2,
+                        title:'Hyundai All New i20 Fiery Red Black Roof ',
                         colour1:'#941b0a',
                         colour2:'#111111',
                         image:'2.jpg'
                     },
                     {
                         id:3,
+                        title:'Hyundai All New i20 Starry Night',
                         colour1:'#242736',
                         colour2:'#242736',
                         image:'3.jpg'
                     },
                     {
                         id:4,
+                        title:'Hyundai All New i20 Tyhoon Silver ',
                         colour1:'#e2e3e5',
                         colour2:'#e2e3e5',
                         image:'4.jpg'
                     }
+                ],
+                car_specs:[
+                    {
+                        id:1,
+                        model:'Max. Power (ps / rpm)',
+                        petrol:'88 (IVT) @ 6000 - 120 (DCT, iMT) @ 6000',
+                        diesel:'100 @ 4000',
+                        category:'Engine',
+                    },
+                    {
+                        id:2,
+                        model:'Displacement (cc)',
+                        petrol:'1197 | 998 (1.0 Turbo GDI)',
+                        diesel:'1493',
+                        category:'Engine',
+                    },
+                    {
+                        id:3,
+                        model:'Max. Torque (kgm / rpm)',
+                        petrol:'11.7 @ 4200 - 17.5 @ 1500 ~ 4000',
+                        diesel:'24.5 @ 1500 ~ 2750',
+                        category:'Engine',
+                    },
+                    {
+                        id:4,
+                        model:'Transmission type',
+                        petrol:'5-7 speed (5 MT - 7 DCT)',
+                        diesel:'6-speed (6 MT)',
+                        category:'Transmission',
+                    },
+                    {
+                        id:5,
+                        model:'Front',
+                        petrol:'McPherson strut',
+                        diesel:'McPherson strut',
+                        category:'Suspension',
+                    },
+                    {
+                        id:6,
+                        model:'Rear',
+                        petrol:'Coupled torsion beam axle',
+                        diesel:'Coupled torsion beam axle',
+                        category:'Suspension',
+                    },
+                    {
+                        id:7,
+                        model:'Shock Absorber',
+                        petrol:'Gas Type',
+                        diesel:'Gas Type',
+                        category:'Suspension',
+                    },
+                    {
+                        id:8,
+                        model:'Front',
+                        petrol:'Disc',
+                        diesel:'Disc',
+                        category:'Brakes',
+                    },
+                    {
+                        id:9,
+                        model:'Rear',
+                        petrol:'Drum',
+                        diesel:'Drum',
+                        category:'Brakes',
+                    },
+                    {
+                        id:10,
+                        model:'Fuel Tank Capacity (Ltrs)',
+                        petrol:'37 L',
+                        diesel:'37 L',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:11,
+                        model:'Overall length (mm)',
+                        petrol:'3995',
+                        diesel:'3995',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:12,
+                        model:'Overall width (mm)',
+                        petrol:'1775',
+                        diesel:'1775',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:13,
+                        model:'Overall height (mm)',
+                        petrol:'1505',
+                        diesel:'1505',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:14,
+                        model:'Wheelbase (mm)',
+                        petrol:'2580',
+                        diesel:'2580',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:15,
+                        model:'Size',
+                        petrol:'185/65 R15(Magna), 195/55 R16 (Sportz), 195/55 R16 (Asta, Asta (O))',
+                        diesel:'185/65 R15(Magna), 195/55 R16 (Sportz), 195/55 R16 (Asta, Asta (O))',
+                        category:'Tyre Size',
+                    },
+                    {
+                        id:16,
+                        model:'Spare Tyre',
+                        petrol:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
+                        diesel:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
+                        category:'Tyre Size',
+                    }
+
                 ],
                 price:'8,19,900',
                 description:"Hyundai All New I20 - Modern Stylish Tallboy: The overall design theme is based on Rhythmical Tension that exudes a Refined yet Sporty Image. The front of The All New SANTRO is defined by Hyundai's Signature Cascade Grille with chrome surround that projects Modern and Premium appeal of the car"
@@ -351,27 +590,145 @@ export default {
                 car_colours:[
                     {
                         id:1,
+                        title:'Hyundai Santro Fiery Red',
                         colour1:'#93121c',
                         colour2:'#93121c',
                         image:'5.png'
                     },
                     {
                         id:2,
+                        title:'Hyundai Santro Imperial Beige',
                         colour1:'#99937d',
                         colour2:'#99937d',
                         image:'6.png'
                     },
                     {
                         id:3,
+                        title:'Hyundai Santro Marina Blue',
                         colour1:'#00438e',
                         colour2:'#00438e',
                         image:'7.png'
                     },
                     {
                         id:4,
+                        title:'Hyundai Santro Polar White ',
                         colour1:'#f7f4f0',
                         colour2:'#f7f4f0',
                         image:'8.png'
+                    }
+                ],
+                car_specs:[
+                    {
+                        id:1,
+                        model:'Max. Power (ps / rpm)',
+                        petrol:'88 (IVT) @ 6000 - 120 (DCT, iMT) @ 6000',
+                        diesel:'100 @ 4000',
+                        category:'Engine',
+                    },
+                    {
+                        id:2,
+                        model:'Displacement (cc)',
+                        petrol:'1197 | 998 (1.0 Turbo GDI)',
+                        diesel:'1493',
+                        category:'Engine',
+                    },
+                    {
+                        id:3,
+                        model:'Max. Torque (kgm / rpm)',
+                        petrol:'11.7 @ 4200 - 17.5 @ 1500 ~ 4000',
+                        diesel:'24.5 @ 1500 ~ 2750',
+                        category:'Engine',
+                    },
+                    {
+                        id:4,
+                        model:'Transmission type',
+                        petrol:'5-7 speed (5 MT - 7 DCT)',
+                        diesel:'6-speed (6 MT)',
+                        category:'Transmission',
+                    },
+                    {
+                        id:5,
+                        model:'Front',
+                        petrol:'McPherson strut',
+                        diesel:'McPherson strut',
+                        category:'Suspension',
+                    },
+                    {
+                        id:6,
+                        model:'Rear',
+                        petrol:'Coupled torsion beam axle',
+                        diesel:'Coupled torsion beam axle',
+                        category:'Suspension',
+                    },
+                    {
+                        id:7,
+                        model:'Shock Absorber',
+                        petrol:'Gas Type',
+                        diesel:'Gas Type',
+                        category:'Suspension',
+                    },
+                    {
+                        id:8,
+                        model:'Front',
+                        petrol:'Disc',
+                        diesel:'Disc',
+                        category:'Brakes',
+                    },
+                    {
+                        id:9,
+                        model:'Rear',
+                        petrol:'Drum',
+                        diesel:'Drum',
+                        category:'Brakes',
+                    },
+                    {
+                        id:10,
+                        model:'Fuel Tank Capacity (Ltrs)',
+                        petrol:'37 L',
+                        diesel:'37 L',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:11,
+                        model:'Overall length (mm)',
+                        petrol:'3995',
+                        diesel:'3995',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:12,
+                        model:'Overall width (mm)',
+                        petrol:'1775',
+                        diesel:'1775',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:13,
+                        model:'Overall height (mm)',
+                        petrol:'1505',
+                        diesel:'1505',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:14,
+                        model:'Wheelbase (mm)',
+                        petrol:'2580',
+                        diesel:'2580',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:15,
+                        model:'Size',
+                        petrol:'185/65 R15(Magna), 195/55 R16 (Sportz), 195/55 R16 (Asta, Asta (O))',
+                        diesel:'185/65 R15(Magna), 195/55 R16 (Sportz), 195/55 R16 (Asta, Asta (O))',
+                        category:'Tyre Size',
+                    },
+                    {
+                        id:16,
+                        model:'Spare Tyre',
+                        petrol:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
+                        diesel:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
+                        category:'Tyre Size',
                     }
                 ],
                 price:'4,67,490',
@@ -483,27 +840,145 @@ export default {
                 car_colours:[
                     {
                         id:1,
+                        title:'Hyundai Grand i10 NIOS Typhoon Silver',
                         colour1:'#e4e5e7',
                         colour2:'#e4e5e7',
                         image:'9.png'
                     },
                     {
                         id:2,
+                        title:'Hyundai Grand i10 NIOS Titan Gray ',
                         colour1:'#585f63',
                         colour2:'#585f63',
                         image:'10.png'
                     },
                     {
                         id:3,
+                        title:'Hyundai Grand i10 NIOS Fiery Red',
                         colour1:'#a81514',
                         colour2:'#a81514',
                         image:'11.png'
                     },
                     {
                         id:4,
+                        title:'Hyundai Grand i10 NIOS Aqua Teal ',
                         colour1:'#15405f',
                         colour2:'#15405f',
                         image:'12.png'
+                    }
+                ],
+                car_specs:[
+                    {
+                        id:1,
+                        model:'Max. Power (ps / rpm)',
+                        petrol:'88 (IVT) @ 6000 - 120 (DCT, iMT) @ 6000',
+                        diesel:'100 @ 4000',
+                        category:'Engine',
+                    },
+                    {
+                        id:2,
+                        model:'Displacement (cc)',
+                        petrol:'1197 | 998 (1.0 Turbo GDI)',
+                        diesel:'1493',
+                        category:'Engine',
+                    },
+                    {
+                        id:3,
+                        model:'Max. Torque (kgm / rpm)',
+                        petrol:'11.7 @ 4200 - 17.5 @ 1500 ~ 4000',
+                        diesel:'24.5 @ 1500 ~ 2750',
+                        category:'Engine',
+                    },
+                    {
+                        id:4,
+                        model:'Transmission type',
+                        petrol:'5-7 speed (5 MT - 7 DCT)',
+                        diesel:'6-speed (6 MT)',
+                        category:'Transmission',
+                    },
+                    {
+                        id:5,
+                        model:'Front',
+                        petrol:'McPherson strut',
+                        diesel:'McPherson strut',
+                        category:'Suspension',
+                    },
+                    {
+                        id:6,
+                        model:'Rear',
+                        petrol:'Coupled torsion beam axle',
+                        diesel:'Coupled torsion beam axle',
+                        category:'Suspension',
+                    },
+                    {
+                        id:7,
+                        model:'Shock Absorber',
+                        petrol:'Gas Type',
+                        diesel:'Gas Type',
+                        category:'Suspension',
+                    },
+                    {
+                        id:8,
+                        model:'Front',
+                        petrol:'Disc',
+                        diesel:'Disc',
+                        category:'Brakes',
+                    },
+                    {
+                        id:9,
+                        model:'Rear',
+                        petrol:'Drum',
+                        diesel:'Drum',
+                        category:'Brakes',
+                    },
+                    {
+                        id:10,
+                        model:'Fuel Tank Capacity (Ltrs)',
+                        petrol:'37 L',
+                        diesel:'37 L',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:11,
+                        model:'Overall length (mm)',
+                        petrol:'3995',
+                        diesel:'3995',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:12,
+                        model:'Overall width (mm)',
+                        petrol:'1775',
+                        diesel:'1775',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:13,
+                        model:'Overall height (mm)',
+                        petrol:'1505',
+                        diesel:'1505',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:14,
+                        model:'Wheelbase (mm)',
+                        petrol:'2580',
+                        diesel:'2580',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:15,
+                        model:'Size',
+                        petrol:'185/65 R15(Magna), 195/55 R16 (Sportz), 195/55 R16 (Asta, Asta (O))',
+                        diesel:'185/65 R15(Magna), 195/55 R16 (Sportz), 195/55 R16 (Asta, Asta (O))',
+                        category:'Tyre Size',
+                    },
+                    {
+                        id:16,
+                        model:'Spare Tyre',
+                        petrol:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
+                        diesel:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
+                        category:'Tyre Size',
                     }
                 ],
                 price:'8,14,900',
@@ -615,27 +1090,145 @@ export default {
                 car_colours:[
                     {
                         id:1,
-                        colour1:'#93121c',
-                        colour2:'#93121c',
+                        title:'Hyundai All New i20 Copper Metalic',
+                        colour1:'#644a49',
+                        colour2:'#644a49',
                         image:'1.jpg'
                     },
                     {
                         id:2,
-                        colour1:'#99937d',
-                        colour2:'#99937d',
+                        title:'Hyundai All New i20 Fiery Red Black Roof ',
+                        colour1:'#941b0a',
+                        colour2:'#111111',
                         image:'2.jpg'
                     },
                     {
                         id:3,
-                        colour1:'#00438e',
-                        colour2:'#00438e',
+                        title:'Hyundai All New i20 Starry Night',
+                        colour1:'#242736',
+                        colour2:'#242736',
                         image:'3.jpg'
                     },
                     {
                         id:4,
-                        colour1:'#f7f4f0',
-                        colour2:'#f7f4f0',
+                        title:'Hyundai All New i20 Tyhoon Silver ',
+                        colour1:'#e2e3e5',
+                        colour2:'#e2e3e5',
                         image:'4.jpg'
+                    }
+                ],
+                car_specs:[
+                    {
+                        id:1,
+                        model:'Max. Power (ps / rpm)',
+                        petrol:'88 (IVT) @ 6000 - 120 (DCT, iMT) @ 6000',
+                        diesel:'100 @ 4000',
+                        category:'Engine',
+                    },
+                    {
+                        id:2,
+                        model:'Displacement (cc)',
+                        petrol:'1197 | 998 (1.0 Turbo GDI)',
+                        diesel:'1493',
+                        category:'Engine',
+                    },
+                    {
+                        id:3,
+                        model:'Max. Torque (kgm / rpm)',
+                        petrol:'11.7 @ 4200 - 17.5 @ 1500 ~ 4000',
+                        diesel:'24.5 @ 1500 ~ 2750',
+                        category:'Engine',
+                    },
+                    {
+                        id:4,
+                        model:'Transmission type',
+                        petrol:'5-7 speed (5 MT - 7 DCT)',
+                        diesel:'6-speed (6 MT)',
+                        category:'Transmission',
+                    },
+                    {
+                        id:5,
+                        model:'Front',
+                        petrol:'McPherson strut',
+                        diesel:'McPherson strut',
+                        category:'Suspension',
+                    },
+                    {
+                        id:6,
+                        model:'Rear',
+                        petrol:'Coupled torsion beam axle',
+                        diesel:'Coupled torsion beam axle',
+                        category:'Suspension',
+                    },
+                    {
+                        id:7,
+                        model:'Shock Absorber',
+                        petrol:'Gas Type',
+                        diesel:'Gas Type',
+                        category:'Suspension',
+                    },
+                    {
+                        id:8,
+                        model:'Front',
+                        petrol:'Disc',
+                        diesel:'Disc',
+                        category:'Brakes',
+                    },
+                    {
+                        id:9,
+                        model:'Rear',
+                        petrol:'Drum',
+                        diesel:'Drum',
+                        category:'Brakes',
+                    },
+                    {
+                        id:10,
+                        model:'Fuel Tank Capacity (Ltrs)',
+                        petrol:'37 L',
+                        diesel:'37 L',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:11,
+                        model:'Overall length (mm)',
+                        petrol:'3995',
+                        diesel:'3995',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:12,
+                        model:'Overall width (mm)',
+                        petrol:'1775',
+                        diesel:'1775',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:13,
+                        model:'Overall height (mm)',
+                        petrol:'1505',
+                        diesel:'1505',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:14,
+                        model:'Wheelbase (mm)',
+                        petrol:'2580',
+                        diesel:'2580',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:15,
+                        model:'Size',
+                        petrol:'185/65 R15(Magna), 195/55 R16 (Sportz), 195/55 R16 (Asta, Asta (O))',
+                        diesel:'185/65 R15(Magna), 195/55 R16 (Sportz), 195/55 R16 (Asta, Asta (O))',
+                        category:'Tyre Size',
+                    },
+                    {
+                        id:16,
+                        model:'Spare Tyre',
+                        petrol:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
+                        diesel:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
+                        category:'Tyre Size',
                     }
                 ],
                 price:'7,31,900',
@@ -747,27 +1340,145 @@ export default {
                 car_colours:[
                     {
                         id:1,
+                        title:'Hyundai Aura Fiery Red ',
                         colour1:'#ad1518',
                         colour2:'#ad1518',
                         image:'13.png'
                     },
                     {
                         id:2,
+                        title:'Hyundai Aura Vintage Brown ',
                         colour1:'#90573e',
                         colour2:'#90573e',
                         image:'14.png'
                     },
                     {
                         id:3,
+                        title:'Hyundai Aura Titan Grey ',
                         colour1:'#595f63',
                         colour2:'#595f63',
                         image:'15.png'
                     },
                     {
                         id:4,
+                        title:'Hyundai Aura Polar White',
                         colour1:'#f0f4f5',
                         colour2:'#f0f4f5',
                         image:'16.png'
+                    }
+                ],
+                car_specs:[
+                    {
+                        id:1,
+                        model:'Max. Power (ps / rpm)',
+                        petrol:'88 (IVT) @ 6000 - 120 (DCT, iMT) @ 6000',
+                        diesel:'100 @ 4000',
+                        category:'Engine',
+                    },
+                    {
+                        id:2,
+                        model:'Displacement (cc)',
+                        petrol:'1197 | 998 (1.0 Turbo GDI)',
+                        diesel:'1493',
+                        category:'Engine',
+                    },
+                    {
+                        id:3,
+                        model:'Max. Torque (kgm / rpm)',
+                        petrol:'11.7 @ 4200 - 17.5 @ 1500 ~ 4000',
+                        diesel:'24.5 @ 1500 ~ 2750',
+                        category:'Engine',
+                    },
+                    {
+                        id:4,
+                        model:'Transmission type',
+                        petrol:'5-7 speed (5 MT - 7 DCT)',
+                        diesel:'6-speed (6 MT)',
+                        category:'Transmission',
+                    },
+                    {
+                        id:5,
+                        model:'Front',
+                        petrol:'McPherson strut',
+                        diesel:'McPherson strut',
+                        category:'Suspension',
+                    },
+                    {
+                        id:6,
+                        model:'Rear',
+                        petrol:'Coupled torsion beam axle',
+                        diesel:'Coupled torsion beam axle',
+                        category:'Suspension',
+                    },
+                    {
+                        id:7,
+                        model:'Shock Absorber',
+                        petrol:'Gas Type',
+                        diesel:'Gas Type',
+                        category:'Suspension',
+                    },
+                    {
+                        id:8,
+                        model:'Front',
+                        petrol:'Disc',
+                        diesel:'Disc',
+                        category:'Brakes',
+                    },
+                    {
+                        id:9,
+                        model:'Rear',
+                        petrol:'Drum',
+                        diesel:'Drum',
+                        category:'Brakes',
+                    },
+                    {
+                        id:10,
+                        model:'Fuel Tank Capacity (Ltrs)',
+                        petrol:'37 L',
+                        diesel:'37 L',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:11,
+                        model:'Overall length (mm)',
+                        petrol:'3995',
+                        diesel:'3995',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:12,
+                        model:'Overall width (mm)',
+                        petrol:'1775',
+                        diesel:'1775',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:13,
+                        model:'Overall height (mm)',
+                        petrol:'1505',
+                        diesel:'1505',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:14,
+                        model:'Wheelbase (mm)',
+                        petrol:'2580',
+                        diesel:'2580',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:15,
+                        model:'Size',
+                        petrol:'185/65 R15(Magna), 195/55 R16 (Sportz), 195/55 R16 (Asta, Asta (O))',
+                        diesel:'185/65 R15(Magna), 195/55 R16 (Sportz), 195/55 R16 (Asta, Asta (O))',
+                        category:'Tyre Size',
+                    },
+                    {
+                        id:16,
+                        model:'Spare Tyre',
+                        petrol:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
+                        diesel:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
+                        category:'Tyre Size',
                     }
                 ],
                 price:'22,30,000',
@@ -879,27 +1590,145 @@ export default {
                 car_colours:[
                     {
                         id:1,
+                        title:'Hyundai All New Verna Titan Grey ',
                         colour1:'#595f63',
                         colour2:'#595f63',
                         image:'17.png'
                     },
                     {
                         id:2,
+                        title:'Hyundai All New Verna Starry Night ',
                         colour1:'#2c2e43',
                         colour2:'#2c2e43',
                         image:'18.png'
                     },
                     {
                         id:3,
-                        colour1:'#e0e1e5',
-                        colour2:'#e0e1e5',
+                        title:'Hyundai All New Verna Phantom Black  ',
+                        colour1:'#000000',
+                        colour2:'#000000',
                         image:'19.png'
                     },
                     {
                         id:4,
-                        colour1:'#000000',
-                        colour2:'#000000',
+                        title:'Hyundai All New Verna Fiery Red ',
+                        colour1:'#ad1518',
+                        colour2:'#ad1518',
                         image:'20.png'
+                    }
+                ],
+                car_specs:[
+                    {
+                        id:1,
+                        model:'Max. Power (ps / rpm)',
+                        petrol:'88 (IVT) @ 6000 - 120 (DCT, iMT) @ 6000',
+                        diesel:'100 @ 4000',
+                        category:'Engine',
+                    },
+                    {
+                        id:2,
+                        model:'Displacement (cc)',
+                        petrol:'1197 | 998 (1.0 Turbo GDI)',
+                        diesel:'1493',
+                        category:'Engine',
+                    },
+                    {
+                        id:3,
+                        model:'Max. Torque (kgm / rpm)',
+                        petrol:'11.7 @ 4200 - 17.5 @ 1500 ~ 4000',
+                        diesel:'24.5 @ 1500 ~ 2750',
+                        category:'Engine',
+                    },
+                    {
+                        id:4,
+                        model:'Transmission type',
+                        petrol:'5-7 speed (5 MT - 7 DCT)',
+                        diesel:'6-speed (6 MT)',
+                        category:'Transmission',
+                    },
+                    {
+                        id:5,
+                        model:'Front',
+                        petrol:'McPherson strut',
+                        diesel:'McPherson strut',
+                        category:'Suspension',
+                    },
+                    {
+                        id:6,
+                        model:'Rear',
+                        petrol:'Coupled torsion beam axle',
+                        diesel:'Coupled torsion beam axle',
+                        category:'Suspension',
+                    },
+                    {
+                        id:7,
+                        model:'Shock Absorber',
+                        petrol:'Gas Type',
+                        diesel:'Gas Type',
+                        category:'Suspension',
+                    },
+                    {
+                        id:8,
+                        model:'Front',
+                        petrol:'Disc',
+                        diesel:'Disc',
+                        category:'Brakes',
+                    },
+                    {
+                        id:9,
+                        model:'Rear',
+                        petrol:'Drum',
+                        diesel:'Drum',
+                        category:'Brakes',
+                    },
+                    {
+                        id:10,
+                        model:'Fuel Tank Capacity (Ltrs)',
+                        petrol:'37 L',
+                        diesel:'37 L',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:11,
+                        model:'Overall length (mm)',
+                        petrol:'3995',
+                        diesel:'3995',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:12,
+                        model:'Overall width (mm)',
+                        petrol:'1775',
+                        diesel:'1775',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:13,
+                        model:'Overall height (mm)',
+                        petrol:'1505',
+                        diesel:'1505',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:14,
+                        model:'Wheelbase (mm)',
+                        petrol:'2580',
+                        diesel:'2580',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:15,
+                        model:'Size',
+                        petrol:'185/65 R15(Magna), 195/55 R16 (Sportz), 195/55 R16 (Asta, Asta (O))',
+                        diesel:'185/65 R15(Magna), 195/55 R16 (Sportz), 195/55 R16 (Asta, Asta (O))',
+                        category:'Tyre Size',
+                    },
+                    {
+                        id:16,
+                        model:'Spare Tyre',
+                        petrol:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
+                        diesel:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
+                        category:'Tyre Size',
                     }
                 ],
                 price:'8,19,900',
@@ -1011,27 +1840,145 @@ export default {
                 car_colours:[
                     {
                         id:1,
+                        title:'Hyundai All New Elantra Fiery Red ',
                         colour1:'#9d121e',
                         colour2:'#9d121e',
                         image:'21.jpg'
                     },
                     {
                         id:2,
+                        title:'Hyundai All New Elantra Marina Blue ',
                         colour1:'#004383',
                         colour2:'#004383',
                         image:'22.jpg'
                     },
                     {
                         id:3,
+                        title:'Hyundai All New Elantra Polar White ',
                         colour1:'#f2f7f2',
                         colour2:'#f2f7f2',
                         image:'23.jpg'
                     },
                     {
                         id:4,
+                        title:'Hyundai All New Elantra Phantom Black ',
                         colour1:'#151515',
                         colour2:'#151515',
                         image:'24.jpg'
+                    }
+                ],
+                car_specs:[
+                    {
+                        id:1,
+                        model:'Max. Power (ps / rpm)',
+                        petrol:'88 (IVT) @ 6000 - 120 (DCT, iMT) @ 6000',
+                        diesel:'100 @ 4000',
+                        category:'Engine',
+                    },
+                    {
+                        id:2,
+                        model:'Displacement (cc)',
+                        petrol:'1197 | 998 (1.0 Turbo GDI)',
+                        diesel:'1493',
+                        category:'Engine',
+                    },
+                    {
+                        id:3,
+                        model:'Max. Torque (kgm / rpm)',
+                        petrol:'11.7 @ 4200 - 17.5 @ 1500 ~ 4000',
+                        diesel:'24.5 @ 1500 ~ 2750',
+                        category:'Engine',
+                    },
+                    {
+                        id:4,
+                        model:'Transmission type',
+                        petrol:'5-7 speed (5 MT - 7 DCT)',
+                        diesel:'6-speed (6 MT)',
+                        category:'Transmission',
+                    },
+                    {
+                        id:5,
+                        model:'Front',
+                        petrol:'McPherson strut',
+                        diesel:'McPherson strut',
+                        category:'Suspension',
+                    },
+                    {
+                        id:6,
+                        model:'Rear',
+                        petrol:'Coupled torsion beam axle',
+                        diesel:'Coupled torsion beam axle',
+                        category:'Suspension',
+                    },
+                    {
+                        id:7,
+                        model:'Shock Absorber',
+                        petrol:'Gas Type',
+                        diesel:'Gas Type',
+                        category:'Suspension',
+                    },
+                    {
+                        id:8,
+                        model:'Front',
+                        petrol:'Disc',
+                        diesel:'Disc',
+                        category:'Brakes',
+                    },
+                    {
+                        id:9,
+                        model:'Rear',
+                        petrol:'Drum',
+                        diesel:'Drum',
+                        category:'Brakes',
+                    },
+                    {
+                        id:10,
+                        model:'Fuel Tank Capacity (Ltrs)',
+                        petrol:'37 L',
+                        diesel:'37 L',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:11,
+                        model:'Overall length (mm)',
+                        petrol:'3995',
+                        diesel:'3995',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:12,
+                        model:'Overall width (mm)',
+                        petrol:'1775',
+                        diesel:'1775',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:13,
+                        model:'Overall height (mm)',
+                        petrol:'1505',
+                        diesel:'1505',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:14,
+                        model:'Wheelbase (mm)',
+                        petrol:'2580',
+                        diesel:'2580',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:15,
+                        model:'Size',
+                        petrol:'185/65 R15(Magna), 195/55 R16 (Sportz), 195/55 R16 (Asta, Asta (O))',
+                        diesel:'185/65 R15(Magna), 195/55 R16 (Sportz), 195/55 R16 (Asta, Asta (O))',
+                        category:'Tyre Size',
+                    },
+                    {
+                        id:16,
+                        model:'Spare Tyre',
+                        petrol:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
+                        diesel:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
+                        category:'Tyre Size',
                     }
                 ],
                 price:'10,68,000',
@@ -1143,27 +2090,145 @@ export default {
                 car_colours:[
                     {
                         id:1,
+                        title:'Hyundai All New Tucson Polar White',
                         colour1:'#f6f6f6',
                         colour2:'#f6f6f6',
                         image:'25.jpg'
                     },
                     {
                         id:2,
+                        title:'Hyundai All New Tucson Starry Night ',
                         colour1:'#171d30',
                         colour2:'#171d30',
                         image:'26.jpg'
                     },
                     {
                         id:3,
+                        title:'Hyundai All New Tucson Phantom Black ',
                         colour1:'#151517',
                         colour2:'#151517',
                         image:'27.jpg'
                     },
                     {
                         id:4,
+                        title:'Hyundai All New Tucson Typhoon Silver ',
                         colour1:'#171d30',
                         colour2:'#171d30',
                         image:'28.jpg'
+                    }
+                ],
+                car_specs:[
+                    {
+                        id:1,
+                        model:'Max. Power (ps / rpm)',
+                        petrol:'88 (IVT) @ 6000 - 120 (DCT, iMT) @ 6000',
+                        diesel:'100 @ 4000',
+                        category:'Engine',
+                    },
+                    {
+                        id:2,
+                        model:'Displacement (cc)',
+                        petrol:'1197 | 998 (1.0 Turbo GDI)',
+                        diesel:'1493',
+                        category:'Engine',
+                    },
+                    {
+                        id:3,
+                        model:'Max. Torque (kgm / rpm)',
+                        petrol:'11.7 @ 4200 - 17.5 @ 1500 ~ 4000',
+                        diesel:'24.5 @ 1500 ~ 2750',
+                        category:'Engine',
+                    },
+                    {
+                        id:4,
+                        model:'Transmission type',
+                        petrol:'5-7 speed (5 MT - 7 DCT)',
+                        diesel:'6-speed (6 MT)',
+                        category:'Transmission',
+                    },
+                    {
+                        id:5,
+                        model:'Front',
+                        petrol:'McPherson strut',
+                        diesel:'McPherson strut',
+                        category:'Suspension',
+                    },
+                    {
+                        id:6,
+                        model:'Rear',
+                        petrol:'Coupled torsion beam axle',
+                        diesel:'Coupled torsion beam axle',
+                        category:'Suspension',
+                    },
+                    {
+                        id:7,
+                        model:'Shock Absorber',
+                        petrol:'Gas Type',
+                        diesel:'Gas Type',
+                        category:'Suspension',
+                    },
+                    {
+                        id:8,
+                        model:'Front',
+                        petrol:'Disc',
+                        diesel:'Disc',
+                        category:'Brakes',
+                    },
+                    {
+                        id:9,
+                        model:'Rear',
+                        petrol:'Drum',
+                        diesel:'Drum',
+                        category:'Brakes',
+                    },
+                    {
+                        id:10,
+                        model:'Fuel Tank Capacity (Ltrs)',
+                        petrol:'37 L',
+                        diesel:'37 L',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:11,
+                        model:'Overall length (mm)',
+                        petrol:'3995',
+                        diesel:'3995',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:12,
+                        model:'Overall width (mm)',
+                        petrol:'1775',
+                        diesel:'1775',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:13,
+                        model:'Overall height (mm)',
+                        petrol:'1505',
+                        diesel:'1505',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:14,
+                        model:'Wheelbase (mm)',
+                        petrol:'2580',
+                        diesel:'2580',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:15,
+                        model:'Size',
+                        petrol:'185/65 R15(Magna), 195/55 R16 (Sportz), 195/55 R16 (Asta, Asta (O))',
+                        diesel:'185/65 R15(Magna), 195/55 R16 (Sportz), 195/55 R16 (Asta, Asta (O))',
+                        category:'Tyre Size',
+                    },
+                    {
+                        id:16,
+                        model:'Spare Tyre',
+                        petrol:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
+                        diesel:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
+                        category:'Tyre Size',
                     }
                 ],
                 price:'4,67,490',
@@ -1275,27 +2340,145 @@ export default {
                 car_colours:[
                     {
                         id:1,
+                        title:'Hyundai Venue Deep_Forest ',
                         colour1:'#2f3728',
                         colour2:'#2f3728',
                         image:'29.png'
                     },
                     {
                         id:2,
+                        title:'Hyundai Venue Denim Blue ',
                         colour1:'#151e3d',
                         colour2:'#151e3d',
                         image:'30.png'
                     },
                     {
                         id:3,
+                        title:'Hyundai Venue Fiery Red ',
                         colour1:'#9d1414',
                         colour2:'#9d1414',
                         image:'31.png'
                     },
                     {
                         id:4,
+                        title:'Hyundai Venue Denim Blue Dual Tone ',
                         colour1:'#ffffff',
                         colour2:'#151e3d',
                         image:'32.png'
+                    }
+                ],
+                car_specs:[
+                    {
+                        id:1,
+                        model:'Max. Power (ps / rpm)',
+                        petrol:'88 (IVT) @ 6000 - 120 (DCT, iMT) @ 6000',
+                        diesel:'100 @ 4000',
+                        category:'Engine',
+                    },
+                    {
+                        id:2,
+                        model:'Displacement (cc)',
+                        petrol:'1197 | 998 (1.0 Turbo GDI)',
+                        diesel:'1493',
+                        category:'Engine',
+                    },
+                    {
+                        id:3,
+                        model:'Max. Torque (kgm / rpm)',
+                        petrol:'11.7 @ 4200 - 17.5 @ 1500 ~ 4000',
+                        diesel:'24.5 @ 1500 ~ 2750',
+                        category:'Engine',
+                    },
+                    {
+                        id:4,
+                        model:'Transmission type',
+                        petrol:'5-7 speed (5 MT - 7 DCT)',
+                        diesel:'6-speed (6 MT)',
+                        category:'Transmission',
+                    },
+                    {
+                        id:5,
+                        model:'Front',
+                        petrol:'McPherson strut',
+                        diesel:'McPherson strut',
+                        category:'Suspension',
+                    },
+                    {
+                        id:6,
+                        model:'Rear',
+                        petrol:'Coupled torsion beam axle',
+                        diesel:'Coupled torsion beam axle',
+                        category:'Suspension',
+                    },
+                    {
+                        id:7,
+                        model:'Shock Absorber',
+                        petrol:'Gas Type',
+                        diesel:'Gas Type',
+                        category:'Suspension',
+                    },
+                    {
+                        id:8,
+                        model:'Front',
+                        petrol:'Disc',
+                        diesel:'Disc',
+                        category:'Brakes',
+                    },
+                    {
+                        id:9,
+                        model:'Rear',
+                        petrol:'Drum',
+                        diesel:'Drum',
+                        category:'Brakes',
+                    },
+                    {
+                        id:10,
+                        model:'Fuel Tank Capacity (Ltrs)',
+                        petrol:'37 L',
+                        diesel:'37 L',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:11,
+                        model:'Overall length (mm)',
+                        petrol:'3995',
+                        diesel:'3995',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:12,
+                        model:'Overall width (mm)',
+                        petrol:'1775',
+                        diesel:'1775',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:13,
+                        model:'Overall height (mm)',
+                        petrol:'1505',
+                        diesel:'1505',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:14,
+                        model:'Wheelbase (mm)',
+                        petrol:'2580',
+                        diesel:'2580',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:15,
+                        model:'Size',
+                        petrol:'185/65 R15(Magna), 195/55 R16 (Sportz), 195/55 R16 (Asta, Asta (O))',
+                        diesel:'185/65 R15(Magna), 195/55 R16 (Sportz), 195/55 R16 (Asta, Asta (O))',
+                        category:'Tyre Size',
+                    },
+                    {
+                        id:16,
+                        model:'Spare Tyre',
+                        petrol:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
+                        diesel:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
+                        category:'Tyre Size',
                     }
                 ],
                 price:'8,16,500',
@@ -1407,27 +2590,145 @@ export default {
                 car_colours:[
                     {
                         id:1,
+                        title:'Hyundai Alcazar Phantom Black ',
                         colour1:'#151515',
                         colour2:'#151515',
                         image:'33.webp'
                     },
                     {
                         id:2,
+                        title:'Hyundai Alcazar Starry Night ',
                         colour1:'#242736',
                         colour2:'#242736',
                         image:'34.webp'
                     },
                     {
                         id:3,
+                        title:'Hyundai Alcazar Taiga Brown ',
                         colour1:'#362b26',
                         colour2:'#362b26',
                         image:'35.webp'
                     },
                     {
                         id:4,
+                        title:'Hyundai Alcazar Polar White ',
                         colour1:'#f0f4f5',
                         colour2:'#f0f4f5',
                         image:'36.webp'
+                    }
+                ],
+                car_specs:[
+                    {
+                        id:1,
+                        model:'Max. Power (ps / rpm)',
+                        petrol:'88 (IVT) @ 6000 - 120 (DCT, iMT) @ 6000',
+                        diesel:'100 @ 4000',
+                        category:'Engine',
+                    },
+                    {
+                        id:2,
+                        model:'Displacement (cc)',
+                        petrol:'1197 | 998 (1.0 Turbo GDI)',
+                        diesel:'1493',
+                        category:'Engine',
+                    },
+                    {
+                        id:3,
+                        model:'Max. Torque (kgm / rpm)',
+                        petrol:'11.7 @ 4200 - 17.5 @ 1500 ~ 4000',
+                        diesel:'24.5 @ 1500 ~ 2750',
+                        category:'Engine',
+                    },
+                    {
+                        id:4,
+                        model:'Transmission type',
+                        petrol:'5-7 speed (5 MT - 7 DCT)',
+                        diesel:'6-speed (6 MT)',
+                        category:'Transmission',
+                    },
+                    {
+                        id:5,
+                        model:'Front',
+                        petrol:'McPherson strut',
+                        diesel:'McPherson strut',
+                        category:'Suspension',
+                    },
+                    {
+                        id:6,
+                        model:'Rear',
+                        petrol:'Coupled torsion beam axle',
+                        diesel:'Coupled torsion beam axle',
+                        category:'Suspension',
+                    },
+                    {
+                        id:7,
+                        model:'Shock Absorber',
+                        petrol:'Gas Type',
+                        diesel:'Gas Type',
+                        category:'Suspension',
+                    },
+                    {
+                        id:8,
+                        model:'Front',
+                        petrol:'Disc',
+                        diesel:'Disc',
+                        category:'Brakes',
+                    },
+                    {
+                        id:9,
+                        model:'Rear',
+                        petrol:'Drum',
+                        diesel:'Drum',
+                        category:'Brakes',
+                    },
+                    {
+                        id:10,
+                        model:'Fuel Tank Capacity (Ltrs)',
+                        petrol:'37 L',
+                        diesel:'37 L',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:11,
+                        model:'Overall length (mm)',
+                        petrol:'3995',
+                        diesel:'3995',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:12,
+                        model:'Overall width (mm)',
+                        petrol:'1775',
+                        diesel:'1775',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:13,
+                        model:'Overall height (mm)',
+                        petrol:'1505',
+                        diesel:'1505',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:14,
+                        model:'Wheelbase (mm)',
+                        petrol:'2580',
+                        diesel:'2580',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:15,
+                        model:'Size',
+                        petrol:'185/65 R15(Magna), 195/55 R16 (Sportz), 195/55 R16 (Asta, Asta (O))',
+                        diesel:'185/65 R15(Magna), 195/55 R16 (Sportz), 195/55 R16 (Asta, Asta (O))',
+                        category:'Tyre Size',
+                    },
+                    {
+                        id:16,
+                        model:'Spare Tyre',
+                        petrol:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
+                        diesel:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
+                        category:'Tyre Size',
                     }
                 ],
                 price:'16,53,300',
@@ -1539,27 +2840,145 @@ export default {
                 car_colours:[
                     {
                         id:1,
+                        title:'Hyundai All New Creta Deep Forest ',
                         colour1:'#2d3537',
                         colour2:'#2d3537',
                         image:'37.png'
                     },
                     {
                         id:2,
+                        title:'Hyundai All New Creta Galaxy Blue ',
                         colour1:'#152b5c',
                         colour2:'#152b5c',
                         image:'38.png'
                     },
                     {
                         id:3,
+                        title:'Hyundai All New Creta Lava Orange',
                         colour1:'#e34323',
                         colour2:'#e34323',
                         image:'39.png'
                     },
                     {
                         id:4,
+                        title:'Hyundai All New Creta Lava Orange Dual Tone ',
                         colour1:'#000000',
                         colour2:'#e34323',
                         image:'40.png'
+                    }
+                ],
+                car_specs:[
+                    {
+                        id:1,
+                        model:'Max. Power (ps / rpm)',
+                        petrol:'88 (IVT) @ 6000 - 120 (DCT, iMT) @ 6000',
+                        diesel:'100 @ 4000',
+                        category:'Engine',
+                    },
+                    {
+                        id:2,
+                        model:'Displacement (cc)',
+                        petrol:'1197 | 998 (1.0 Turbo GDI)',
+                        diesel:'1493',
+                        category:'Engine',
+                    },
+                    {
+                        id:3,
+                        model:'Max. Torque (kgm / rpm)',
+                        petrol:'11.7 @ 4200 - 17.5 @ 1500 ~ 4000',
+                        diesel:'24.5 @ 1500 ~ 2750',
+                        category:'Engine',
+                    },
+                    {
+                        id:4,
+                        model:'Transmission type',
+                        petrol:'5-7 speed (5 MT - 7 DCT)',
+                        diesel:'6-speed (6 MT)',
+                        category:'Transmission',
+                    },
+                    {
+                        id:5,
+                        model:'Front',
+                        petrol:'McPherson strut',
+                        diesel:'McPherson strut',
+                        category:'Suspension',
+                    },
+                    {
+                        id:6,
+                        model:'Rear',
+                        petrol:'Coupled torsion beam axle',
+                        diesel:'Coupled torsion beam axle',
+                        category:'Suspension',
+                    },
+                    {
+                        id:7,
+                        model:'Shock Absorber',
+                        petrol:'Gas Type',
+                        diesel:'Gas Type',
+                        category:'Suspension',
+                    },
+                    {
+                        id:8,
+                        model:'Front',
+                        petrol:'Disc',
+                        diesel:'Disc',
+                        category:'Brakes',
+                    },
+                    {
+                        id:9,
+                        model:'Rear',
+                        petrol:'Drum',
+                        diesel:'Drum',
+                        category:'Brakes',
+                    },
+                    {
+                        id:10,
+                        model:'Fuel Tank Capacity (Ltrs)',
+                        petrol:'37 L',
+                        diesel:'37 L',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:11,
+                        model:'Overall length (mm)',
+                        petrol:'3995',
+                        diesel:'3995',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:12,
+                        model:'Overall width (mm)',
+                        petrol:'1775',
+                        diesel:'1775',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:13,
+                        model:'Overall height (mm)',
+                        petrol:'1505',
+                        diesel:'1505',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:14,
+                        model:'Wheelbase (mm)',
+                        petrol:'2580',
+                        diesel:'2580',
+                        category:'Dimensions',
+                    },
+                    {
+                        id:15,
+                        model:'Size',
+                        petrol:'185/65 R15(Magna), 195/55 R16 (Sportz), 195/55 R16 (Asta, Asta (O))',
+                        diesel:'185/65 R15(Magna), 195/55 R16 (Sportz), 195/55 R16 (Asta, Asta (O))',
+                        category:'Tyre Size',
+                    },
+                    {
+                        id:16,
+                        model:'Spare Tyre',
+                        petrol:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
+                        diesel:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
+                        category:'Tyre Size',
                     }
                 ],
                 price:'17,00,000',
@@ -1579,7 +2998,10 @@ export default {
               highlights:[],
               gallery:[],
               video_link:'',
-              car_colours:[]
+              car_colours:[],
+              car_specs:[],
+              car_specs_original:[],
+              car_spec_tab:null
            },
            car_details_tab:[
                'Overview',
@@ -1595,6 +3017,7 @@ export default {
            ],
            car_tab_index:0,
            car_clr_img_index:0,
+           car_spec_tab_index:0,
            swiperOption: {
                 slidesPerView: 1,
                 slidesPerGroup: 1,
@@ -1632,6 +3055,17 @@ export default {
         //     console.log(error)
         //     })
         // },
+        smoothScroll(index){
+            var element = document.querySelector('.step' + index);
+            var Headerposition = this.handleScroll();
+            var position;
+            if(Headerposition > 642){
+                position = element.offsetTop - 200;
+            }else{
+                position = element.offsetTop - 380;
+            }
+            window.scrollTo({top: position, behavior: 'smooth'});
+        },
         handleScroll(){
             var car_header = document.querySelector('.car_title_sticky_header');
             if(pageYOffset > 640){
@@ -1651,6 +3085,21 @@ export default {
             if(pageYOffset > 4058){
                 this.car_tab_index = 3
             }
+            if(pageYOffset > 4522){
+                this.car_tab_index = 4
+            }
+            if(pageYOffset > 5433){
+                this.car_tab_index = 5
+            }
+            return pageYOffset;
+        },
+        filterCarSpecCategories(){
+           var category = [...new Set(this.car.car_specs.map((item)=>{return item.category}))];
+           this.car.car_spec_tab = category;
+        },
+        filterCarSpecs(cat){
+           var newItem = this.car.car_specs_original.filter((item)=>{return item.category == cat})
+           this.car.car_specs = newItem;
         },
         SingleCar(){
           var item = this.originalcars.filter((car)=>{
@@ -1658,7 +3107,7 @@ export default {
             })
            this.singleCar = item
            const [car] = this.singleCar
-           const {name,price,poster_image,image,overview_image,description,power,transmission,mileage,highlights,car_gallery,video_link,car_colours} = car
+           const {name,price,poster_image,image,overview_image,description,power,transmission,mileage,highlights,car_gallery,video_link,car_colours,car_specs} = car
            this.car.name=name;
            this.car.price=price;
            this.car.poster_image=poster_image;
@@ -1672,18 +3121,53 @@ export default {
            this.car.gallery = car_gallery;
            this.car.video_link = video_link;
            this.car.car_colours = car_colours;
-           console.log(this.car.car_colours[0])
+           this.car.car_specs = car_specs;
+           this.car.car_specs_original = car_specs;
+           this.filterCarSpecCategories();
+           this.filterCarSpecs('Engine');
         }
     }
 }
 </script>
 
 <style scoped>
+
+.car_spec_table thead{
+    background: #002c5f;
+}
+.car_spec_table thead th{
+    color: white;
+}
+
+.car_spec_tab_box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.car_spec_tab_box .tab_item{
+    margin: 10px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.car_spec_tab_box .tab_item.active{
+    border-bottom: 3px solid #002c5f;
+}
+
 .car_colour_image_box .car_colour_img{
     margin:60px auto;
     display: none;
 }
-.car_colour_image_box .car_colour_img.active{
+.colour_item_title.car_colour_img{
+    margin:60px auto 30px auto;
+    display: none;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+.car_colour_image_box .car_colour_img.active, .colour_item_title.car_colour_img.active{
     display: block;
 }
 .car_colour_item_box{
@@ -1703,6 +3187,9 @@ export default {
     overflow: hidden;
     cursor: pointer;
 }
+.colour_item.active{
+    border: 2px solid black;
+}
 
 .colour_item .car_clr{
     width: 50%;
@@ -1719,6 +3206,18 @@ export default {
     font-size: 28px;
     font-weight: 700;
     margin: 40px 0;
+}
+.car_type_main_title{
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 40px 0;
+}
+.car_type_main_title hr{
+    width: 8%;
+    margin: 3px auto;
+    background: black;
+    height: 3px;
 }
 .car_title_sticky_header.sticky{
     position: fixed;
@@ -1856,16 +3355,21 @@ export default {
 }
 .price_details .price_item{
     margin: 10px 45px;
+    padding: 30px 10px;
+    width: 15%;
+    box-shadow: 0 2px 10px 4px rgb(0 0 0/15%);
+    border-radius: 8px;
 }
-.price_item .title{
-    font-size: 20px;
+.price_item .price_title{
+    font-size: 18px;
     font-weight: 600;
     color: black;
-    text-align: start;
+    margin: 20px 0;
+    text-align: center;
 }
 .price_item .detail{
-    margin: 10px 0;
-    text-align: start;
+    margin: 25px 0 10px 0;
+    text-align: center;
 }
 .swiper-button-prev, .swiper-button-next{
     z-index: 220;
