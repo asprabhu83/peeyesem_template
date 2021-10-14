@@ -4,6 +4,7 @@
     <transition name="fade" mode="out-in">
       <Nuxt />
     </transition>
+    <FixedForm />
     <Footer />
   </div>
 </template>
