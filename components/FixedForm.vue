@@ -7,6 +7,16 @@
         <div class="text-uppercase font-semibold text-white form4 form_div" @click="formModal4 = true"><img class="mx-2" :src="require('@/assets/img/book_service.png')" alt="img" style="width:32px;"  /> <div class="sub_form3 sub_form_div">Request a callback</div></div>
       </div>
 
+      <!-- Whatsapp Button -->
+      <div class="whtsapp_btn">
+        <img class="mob_whtsap_img" :src="require('@/assets/img/whatsapp_mob.png')" alt="img" />
+    </div>
+
+    <!-- Back To Top Button -->
+    <div class="back_to_top" @click="backToTop">
+        <img :src="require('@/assets/img/back_to_top_car.png')" alt="img" style="width:100%;height:auto;"/>
+    </div>
+
     <section class="form_modal_box" v-if="formModal == true">
         <div class="w-4/12 card_body bg-white card mx-auto">
            <form class="pb-12 px-8">
@@ -385,6 +395,85 @@ export default {
             formModal2:false,
             formModal3:false,
             formModal4:false,
+            originalcars:[
+            {
+                id:1,
+                name:'Hyundai All New I20',
+                image:'car7.jpg',
+                category:'Hatchback',
+                price:'8,19,900'
+            },
+            {
+                id:2,
+                name:'Hyundai Santro',
+                image:'car8.jpg',
+                category:'Hatchback',
+                price:'4,67,490'
+            },
+            {
+                id:3,
+                name:'GRAND i10 NIOS',
+                image:'car9.webp',
+                category:'Hatchback',
+                price:'8,14,900'
+            },
+            {
+                id:4,
+                name:'Hyundai i20 N Line',
+                image:'car10.webp',
+                category:'Hatchback',
+                price:'7,31,900'
+            },
+            {
+                id:5,
+                name:'Hyundai Aura',
+                image:'car2.webp',
+                category:'Sedan',
+                price:'22,30,000'
+            },
+            {
+                id:6,
+                name:'Hyundai Verna',
+                image:'car15.jpg',
+                category:'Sedan',
+                price:'8,19,900'
+            },
+            {
+                id:7,
+                name:'Hyundai ELANTRA',
+                image:'car11.webp',
+                category:'Sedan',
+                price:'10,68,000'
+            },
+            {
+                id:8,
+                name:'Hyundai Tuscon',
+                image:'car18.webp',
+                category:'SUV',
+                price:'4,67,490'
+            },
+            {
+                id:9,
+                name:'Hyundai Venue',
+                image:'car4.webp',
+                category:'SUV',
+                price:'8,16,500'
+            },
+            {
+                id:11,
+                name:'Hyundai Alcazar',
+                image:'car17.jpg',
+                category:'SUV',
+                price:'16,53,300'
+            },
+            {
+                id:12,
+                name:'Hyundai CRETA',
+                image:'car19.webp',
+                category:'SUV',
+                price:'17,00,000'
+            }
+            ],
         }
     },
     created () {
@@ -396,12 +485,30 @@ export default {
     methods:{
         handleScroll(){
             var fixed_form_sec = document.querySelector('.fixed_form_sec');
+            var btn = document.querySelector('.back_to_top')
+            
+            if(pageYOffset > 260){
+                btn.classList.add('show')
+                btn.classList.remove('not_show');
+            }else{
+                btn.classList.remove('show')
+                btn.classList.add('not_show');
+            }
+
+            if(pageYOffset < 10){
+                btn.classList.remove('car_up')
+            }
 
             if(pageYOffset > 340){
                 fixed_form_sec.classList.add('show')
             }else{
                 fixed_form_sec.classList.remove('show')
             }
+        },
+        backToTop(){
+            var btn = document.querySelector('.back_to_top');
+            btn.classList.add('car_up')
+            window.scrollTo({top: 0, behavior: 'smooth'});
         }
     }
 }

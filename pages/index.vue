@@ -225,13 +225,6 @@
             </div>
         </div>
     </section> -->
-
-    <div class="back_to_top" @click="backToTop">
-        <img :src="require('@/assets/img/back_to_top_car.png')" alt="img" style="width:100%;height:auto;"/>
-    </div>
-    <div class="whtsapp_btn">
-        <img class="mob_whtsap_img" :src="require('@/assets/img/whatsapp_mob.png')" alt="img" />
-    </div>
     
 
     
@@ -489,12 +482,6 @@ export default {
             this.animateValue(obj5, 0, 255, 11000);
         },2000)
     },
-    created () {
-        window.addEventListener('scroll', this.handleScroll);
-    },
-    destroyed () {
-        window.removeEventListener('scroll', this.handleScroll);
-    },
     methods: {
         filterItems(name){
           var newItems =  this.originalcars.filter((item)=> item.category == name);
@@ -508,21 +495,6 @@ export default {
            var category = ['ALL',...new Set(this.staticcars.map((item)=>{return item.category}))]
            this.carCategory = category;
            
-        },
-        handleScroll(){
-            var btn = document.querySelector('.back_to_top')
-            
-            if(pageYOffset > 260){
-                btn.classList.add('show')
-                btn.classList.remove('not_show');
-            }else{
-                btn.classList.remove('show')
-                btn.classList.add('not_show');
-            }
-
-            if(pageYOffset < 10){
-                btn.classList.remove('car_up')
-            }
         },
         productsArray: function () {
             this.productslist.map((item) => {
@@ -569,12 +541,6 @@ export default {
                 }
             };
             window.requestAnimationFrame(step);
-        },
-        backToTop(){
-            var btn = document.querySelector('.back_to_top');
-            btn.classList.add('car_up')
-            window.scrollTo({top: 0, behavior: 'smooth'});
-            // btn.classList.remove('car_up')
         }
     },
 
