@@ -5245,6 +5245,9 @@ export default {
 .car_spec_table thead th{
     color: white;
 }
+.car_spec_table tbody tr:nth-child(odd){
+    background: #e6f0fa;
+}
 
 .car_spec_tab_box{
     display: flex;
