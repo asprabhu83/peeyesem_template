@@ -109,7 +109,7 @@
                   <div class="car_spec_tab_box">
                       <div class="tab_item" v-for="(item,index) in car.car_spec_tab" :class="car_spec_tab_index == index ? 'active' : ''" @click="car_spec_tab_index = index, filterCarSpecs(item)" :key="index">{{item}}</div>
                   </div>
-                   <div class="w-8/12 mx-auto mt-16">
+                   <div class="w-8/12 spec_table_sec mx-auto mt-16">
                             <div class="flex flex-col">
                                 <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                                     <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -208,6 +208,123 @@
                                                     "
                                                     >
                                                     {{spec.diesel}}
+                                                    </span>
+                                                </td>
+                                                </tr>
+
+                                                <!-- More people... -->
+                                            </tbody>
+                                            </table>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                  </div>
+             </div>
+         </div>
+         <div class="car_features_tab step6 my-24">
+              <div class="car_type_main_title">{{car.name}} Features <hr /></div>
+              <div class="car_spec_item_box my-5">
+                  <div class="car_feature_variant_box my-14">
+                      <div class="select_box w-3/12 mx-auto">
+                          <select
+                                class="
+                                shadow
+                                appearance-none
+                                border
+                                rounded
+                                w-full
+                                py-2
+                                px-3
+                                text-gray-700
+                                cursor-pointer
+                                leading-tight
+                                focus:outline-none
+                                focus:shadow-outline
+                                "
+                                id="variant"
+                                v-model="VariantFeature"
+                                @change="VariantChange"
+                            >
+                            <option class="text-xl"  :value="model.id" v-for="(model,index) in car_feature_variants"
+                                :key="index" >{{model.name}}</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="car_spec_tab_box">
+                      <div class="tab_item" v-for="(item,index) in car.car_features_tab" :class="car_feature_tab_index == index ? 'active' : ''" @click="car_feature_tab_index = index, filterFeatures(item)" :key="index">{{item}}</div>
+                  </div>
+                   <div class="w-1/2 spec_table_sec mx-auto mt-16">
+                            <div class="flex flex-col">
+                                <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                                    <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                                        <div
+                                            class="
+                                            shadow-md
+                                            overflow-hidden
+                                            border-b border-gray-200
+                                            sm:rounded-lg
+                                            "
+                                        >
+                                            <table class="min-w-full car_spec_table divide-y divide-gray-200">
+                                            <thead class="">
+                                                <tr>
+                                                <th
+                                                    scope="col"
+                                                    class="
+                                                    px-6
+                                                    py-3
+                                                    text-left text-xs
+                                                    font-medium
+                                                    text-gray-500
+                                                    uppercase
+                                                    tracking-wider
+                                                    "
+                                                >
+                                                    Feature
+                                                </th>
+                                                <th
+                                                    scope="col"
+                                                    class="
+                                                    px-6
+                                                    py-3
+                                                    text-left text-xs
+                                                    font-medium
+                                                    text-gray-500
+                                                    uppercase
+                                                    tracking-wider
+                                                    "
+                                                >
+                                                    Value
+                                                </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="bg-white divide-y divide-gray-200">
+                                                <tr v-for="feature in car.car_features" :key="feature.id">
+                                                <td class="px-6 py-4 whitespace-nowrap" >
+                                                    <span
+                                                    class="
+                                                        inline-flex
+                                                        text-xs
+                                                        leading-5
+                                                        font-semibold
+                                                        text-black
+                                                    "
+                                                    >
+                                                    {{feature.feature}}
+                                                    </span>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap" >
+                                                    <span
+                                                    class="
+                                                        inline-flex
+                                                        text-xs
+                                                        leading-5
+                                                        font-semibold
+                                                        text-black
+                                                    "
+                                                    >
+                                                    {{feature.value}}
                                                     </span>
                                                 </td>
                                                 </tr>
@@ -481,6 +598,183 @@ export default {
                     }
 
                 ],
+                car_features:[
+                    {
+                        id:1,
+                        variant_id:1,
+                        category:'Exterior',
+                        feature:'Standard Halogen Headlamps',
+                        value:'Yes'
+                    },
+                    {
+                        id:2,
+                        variant_id:1,
+                        category:'Exterior',
+                        feature:'High Gloss Front Grille',
+                        value:'Yes'
+                    },
+                    {
+                        id:3,
+                        variant_id:1,
+                        category:'Exterior',
+                        feature:'B-Pillar Blackout',
+                        value:'Yes'
+                    },
+                    {
+                        id:4,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'C Pillar Black Finish',
+                        value:'Yes'
+                    },
+                    {
+                        id:5,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'Body Color Bumper',
+                        value:'Yes'
+                    },
+                    {
+                        id:6,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'Body Color Outside Mirrors',
+                        value:'Yes'
+                    },
+                    {
+                        id:7,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'Body Color Outside Door Handles',
+                        value:'Yes'
+                    },
+                    {
+                        id:8,
+                        variant_id:1,
+                        category:'Interior',
+                        feature:'Fabric Seat Upholstery-with Copper Stitching',
+                        value:'Yes'
+                    },
+                    {
+                        id:9,
+                        variant_id:1,
+                        category:'Interior',
+                        feature:'Sunglass Holder',
+                        value:'Yes'
+                    },
+                    {
+                        id:10,
+                        variant_id:1,
+                        category:'Interior',
+                        feature:'2-Tone Beige & Black Interior Color',
+                        value:'Yes'
+                    },
+                    {
+                        id:11,
+                        variant_id:2,
+                        category:'Interior',
+                        feature:'Map Pockets',
+                        value:'Front & Rear Door'
+                    },
+                    {
+                        id:12,
+                        variant_id:2,
+                        category:'Interior',
+                        feature:'Front Passenger Seat Back Pocket',
+                        value:'Yes'
+                    },
+                    {
+                        id:13,
+                        variant_id:1,
+                        category:'Comfort And Convenience',
+                        feature:'Power Windows',
+                        value:'Front, Rear'
+                    },
+                    {
+                        id:14,
+                        variant_id:1,
+                        category:'Comfort And Convenience',
+                        feature:'Timelag Power Windows',
+                        value:'Yes'
+                    },
+                    {
+                        id:15,
+                        variant_id:2,
+                        category:'Comfort And Convenience',
+                        feature:'Switch Illumination Driver side Power Windows',
+                        value:'Yes'
+                    },
+                    {
+                        id:16,
+                        variant_id:2,
+                        category:'Comfort And Convenience',
+                        feature:'Air Conditioner',
+                        value:'Manual'
+                    },
+                    {
+                        id:17,
+                        variant_id:2,
+                        category:'Comfort And Convenience',
+                        feature:'Power Steering',
+                        value:'Motor Driven (Electric)'
+                    },
+                    {
+                        id:18,
+                        variant_id:1,
+                        category:'Safety And Security',
+                        feature:'Airbag',
+                        value:'Driver & Passenger'
+                    },
+                    {
+                        id:19,
+                        variant_id:1,
+                        category:'Safety And Security',
+                        feature:'ABS with EBD',
+                        value:'Yes'
+                    },
+                    {
+                        id:20,
+                        variant_id:2,
+                        category:'Safety And Security',
+                        feature:'Fog Lamps',
+                        value:'Front Projector'
+                    },
+                    {
+                        id:21,
+                        variant_id:2,
+                        category:'Safety And Security',
+                        feature:'Central Locking',
+                        value:'Yes'
+                    },
+                    {
+                        id:22,
+                        variant_id:1,
+                        category:'Audio & Entertainment',
+                        feature:'DRM',
+                        value:'Yes'
+                    },
+                    {
+                        id:23,
+                        variant_id:1,
+                        category:'Audio & Entertainment',
+                        feature:'2-DIN Radio+MP3 Audio',
+                        value:'Yes'
+                    },
+                    {
+                        id:24,
+                        variant_id:1,
+                        category:'Audio & Entertainment',
+                        feature:'Speakers',
+                        value:'Front & Rear'
+                    },
+                    {
+                        id:25,
+                        variant_id:2,
+                        category:'Audio & Entertainment',
+                        feature:'Tweeters',
+                        value:'Front Only'
+                    }
+                ],
                 price:'8,19,900',
                 description:"Hyundai All New I20 - Modern Stylish Tallboy: The overall design theme is based on Rhythmical Tension that exudes a Refined yet Sporty Image. The front of The All New SANTRO is defined by Hyundai's Signature Cascade Grille with chrome surround that projects Modern and Premium appeal of the car"
             },
@@ -729,6 +1023,183 @@ export default {
                         petrol:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
                         diesel:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
                         category:'Tyre Size',
+                    }
+                ],
+                car_features:[
+                    {
+                        id:1,
+                        variant_id:1,
+                        category:'Exterior',
+                        feature:'Standard Halogen Headlamps',
+                        value:'Yes'
+                    },
+                    {
+                        id:2,
+                        variant_id:1,
+                        category:'Exterior',
+                        feature:'High Gloss Front Grille',
+                        value:'Yes'
+                    },
+                    {
+                        id:3,
+                        variant_id:1,
+                        category:'Exterior',
+                        feature:'B-Pillar Blackout',
+                        value:'Yes'
+                    },
+                    {
+                        id:4,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'C Pillar Black Finish',
+                        value:'Yes'
+                    },
+                    {
+                        id:5,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'Body Color Bumper',
+                        value:'Yes'
+                    },
+                    {
+                        id:6,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'Body Color Outside Mirrors',
+                        value:'Yes'
+                    },
+                    {
+                        id:7,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'Body Color Outside Door Handles',
+                        value:'Yes'
+                    },
+                    {
+                        id:8,
+                        variant_id:1,
+                        category:'Interior',
+                        feature:'Fabric Seat Upholstery-with Copper Stitching',
+                        value:'Yes'
+                    },
+                    {
+                        id:9,
+                        variant_id:1,
+                        category:'Interior',
+                        feature:'Sunglass Holder',
+                        value:'Yes'
+                    },
+                    {
+                        id:10,
+                        variant_id:1,
+                        category:'Interior',
+                        feature:'2-Tone Beige & Black Interior Color',
+                        value:'Yes'
+                    },
+                    {
+                        id:11,
+                        variant_id:2,
+                        category:'Interior',
+                        feature:'Map Pockets',
+                        value:'Front & Rear Door'
+                    },
+                    {
+                        id:12,
+                        variant_id:2,
+                        category:'Interior',
+                        feature:'Front Passenger Seat Back Pocket',
+                        value:'Yes'
+                    },
+                    {
+                        id:13,
+                        variant_id:1,
+                        category:'Comfort And Convenience',
+                        feature:'Power Windows',
+                        value:'Front, Rear'
+                    },
+                    {
+                        id:14,
+                        variant_id:1,
+                        category:'Comfort And Convenience',
+                        feature:'Timelag Power Windows',
+                        value:'Yes'
+                    },
+                    {
+                        id:15,
+                        variant_id:2,
+                        category:'Comfort And Convenience',
+                        feature:'Switch Illumination Driver side Power Windows',
+                        value:'Yes'
+                    },
+                    {
+                        id:16,
+                        variant_id:2,
+                        category:'Comfort And Convenience',
+                        feature:'Air Conditioner',
+                        value:'Manual'
+                    },
+                    {
+                        id:17,
+                        variant_id:2,
+                        category:'Comfort And Convenience',
+                        feature:'Power Steering',
+                        value:'Motor Driven (Electric)'
+                    },
+                    {
+                        id:18,
+                        variant_id:1,
+                        category:'Safety And Security',
+                        feature:'Airbag',
+                        value:'Driver & Passenger'
+                    },
+                    {
+                        id:19,
+                        variant_id:1,
+                        category:'Safety And Security',
+                        feature:'ABS with EBD',
+                        value:'Yes'
+                    },
+                    {
+                        id:20,
+                        variant_id:2,
+                        category:'Safety And Security',
+                        feature:'Fog Lamps',
+                        value:'Front Projector'
+                    },
+                    {
+                        id:21,
+                        variant_id:2,
+                        category:'Safety And Security',
+                        feature:'Central Locking',
+                        value:'Yes'
+                    },
+                    {
+                        id:22,
+                        variant_id:1,
+                        category:'Audio & Entertainment',
+                        feature:'DRM',
+                        value:'Yes'
+                    },
+                    {
+                        id:23,
+                        variant_id:1,
+                        category:'Audio & Entertainment',
+                        feature:'2-DIN Radio+MP3 Audio',
+                        value:'Yes'
+                    },
+                    {
+                        id:24,
+                        variant_id:1,
+                        category:'Audio & Entertainment',
+                        feature:'Speakers',
+                        value:'Front & Rear'
+                    },
+                    {
+                        id:25,
+                        variant_id:2,
+                        category:'Audio & Entertainment',
+                        feature:'Tweeters',
+                        value:'Front Only'
                     }
                 ],
                 price:'4,67,490',
@@ -981,6 +1452,183 @@ export default {
                         category:'Tyre Size',
                     }
                 ],
+                car_features:[
+                    {
+                        id:1,
+                        variant_id:1,
+                        category:'Exterior',
+                        feature:'Standard Halogen Headlamps',
+                        value:'Yes'
+                    },
+                    {
+                        id:2,
+                        variant_id:1,
+                        category:'Exterior',
+                        feature:'High Gloss Front Grille',
+                        value:'Yes'
+                    },
+                    {
+                        id:3,
+                        variant_id:1,
+                        category:'Exterior',
+                        feature:'B-Pillar Blackout',
+                        value:'Yes'
+                    },
+                    {
+                        id:4,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'C Pillar Black Finish',
+                        value:'Yes'
+                    },
+                    {
+                        id:5,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'Body Color Bumper',
+                        value:'Yes'
+                    },
+                    {
+                        id:6,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'Body Color Outside Mirrors',
+                        value:'Yes'
+                    },
+                    {
+                        id:7,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'Body Color Outside Door Handles',
+                        value:'Yes'
+                    },
+                    {
+                        id:8,
+                        variant_id:1,
+                        category:'Interior',
+                        feature:'Fabric Seat Upholstery-with Copper Stitching',
+                        value:'Yes'
+                    },
+                    {
+                        id:9,
+                        variant_id:1,
+                        category:'Interior',
+                        feature:'Sunglass Holder',
+                        value:'Yes'
+                    },
+                    {
+                        id:10,
+                        variant_id:1,
+                        category:'Interior',
+                        feature:'2-Tone Beige & Black Interior Color',
+                        value:'Yes'
+                    },
+                    {
+                        id:11,
+                        variant_id:2,
+                        category:'Interior',
+                        feature:'Map Pockets',
+                        value:'Front & Rear Door'
+                    },
+                    {
+                        id:12,
+                        variant_id:2,
+                        category:'Interior',
+                        feature:'Front Passenger Seat Back Pocket',
+                        value:'Yes'
+                    },
+                    {
+                        id:13,
+                        variant_id:1,
+                        category:'Comfort And Convenience',
+                        feature:'Power Windows',
+                        value:'Front, Rear'
+                    },
+                    {
+                        id:14,
+                        variant_id:1,
+                        category:'Comfort And Convenience',
+                        feature:'Timelag Power Windows',
+                        value:'Yes'
+                    },
+                    {
+                        id:15,
+                        variant_id:2,
+                        category:'Comfort And Convenience',
+                        feature:'Switch Illumination Driver side Power Windows',
+                        value:'Yes'
+                    },
+                    {
+                        id:16,
+                        variant_id:2,
+                        category:'Comfort And Convenience',
+                        feature:'Air Conditioner',
+                        value:'Manual'
+                    },
+                    {
+                        id:17,
+                        variant_id:2,
+                        category:'Comfort And Convenience',
+                        feature:'Power Steering',
+                        value:'Motor Driven (Electric)'
+                    },
+                    {
+                        id:18,
+                        variant_id:1,
+                        category:'Safety And Security',
+                        feature:'Airbag',
+                        value:'Driver & Passenger'
+                    },
+                    {
+                        id:19,
+                        variant_id:1,
+                        category:'Safety And Security',
+                        feature:'ABS with EBD',
+                        value:'Yes'
+                    },
+                    {
+                        id:20,
+                        variant_id:2,
+                        category:'Safety And Security',
+                        feature:'Fog Lamps',
+                        value:'Front Projector'
+                    },
+                    {
+                        id:21,
+                        variant_id:2,
+                        category:'Safety And Security',
+                        feature:'Central Locking',
+                        value:'Yes'
+                    },
+                    {
+                        id:22,
+                        variant_id:1,
+                        category:'Audio & Entertainment',
+                        feature:'DRM',
+                        value:'Yes'
+                    },
+                    {
+                        id:23,
+                        variant_id:1,
+                        category:'Audio & Entertainment',
+                        feature:'2-DIN Radio+MP3 Audio',
+                        value:'Yes'
+                    },
+                    {
+                        id:24,
+                        variant_id:1,
+                        category:'Audio & Entertainment',
+                        feature:'Speakers',
+                        value:'Front & Rear'
+                    },
+                    {
+                        id:25,
+                        variant_id:2,
+                        category:'Audio & Entertainment',
+                        feature:'Tweeters',
+                        value:'Front Only'
+                    }
+                ],
                 price:'8,14,900',
                 description:"GRAND i10 NIOS - Modern Stylish Tallboy: The overall design theme is based on Rhythmical Tension that exudes a Refined yet Sporty Image. The front of The All New SANTRO is defined by Hyundai's Signature Cascade Grille with chrome surround that projects Modern and Premium appeal of the car"
             },
@@ -1229,6 +1877,183 @@ export default {
                         petrol:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
                         diesel:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
                         category:'Tyre Size',
+                    }
+                ],
+                car_features:[
+                    {
+                        id:1,
+                        variant_id:1,
+                        category:'Exterior',
+                        feature:'Standard Halogen Headlamps',
+                        value:'Yes'
+                    },
+                    {
+                        id:2,
+                        variant_id:1,
+                        category:'Exterior',
+                        feature:'High Gloss Front Grille',
+                        value:'Yes'
+                    },
+                    {
+                        id:3,
+                        variant_id:1,
+                        category:'Exterior',
+                        feature:'B-Pillar Blackout',
+                        value:'Yes'
+                    },
+                    {
+                        id:4,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'C Pillar Black Finish',
+                        value:'Yes'
+                    },
+                    {
+                        id:5,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'Body Color Bumper',
+                        value:'Yes'
+                    },
+                    {
+                        id:6,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'Body Color Outside Mirrors',
+                        value:'Yes'
+                    },
+                    {
+                        id:7,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'Body Color Outside Door Handles',
+                        value:'Yes'
+                    },
+                    {
+                        id:8,
+                        variant_id:1,
+                        category:'Interior',
+                        feature:'Fabric Seat Upholstery-with Copper Stitching',
+                        value:'Yes'
+                    },
+                    {
+                        id:9,
+                        variant_id:1,
+                        category:'Interior',
+                        feature:'Sunglass Holder',
+                        value:'Yes'
+                    },
+                    {
+                        id:10,
+                        variant_id:1,
+                        category:'Interior',
+                        feature:'2-Tone Beige & Black Interior Color',
+                        value:'Yes'
+                    },
+                    {
+                        id:11,
+                        variant_id:2,
+                        category:'Interior',
+                        feature:'Map Pockets',
+                        value:'Front & Rear Door'
+                    },
+                    {
+                        id:12,
+                        variant_id:2,
+                        category:'Interior',
+                        feature:'Front Passenger Seat Back Pocket',
+                        value:'Yes'
+                    },
+                    {
+                        id:13,
+                        variant_id:1,
+                        category:'Comfort And Convenience',
+                        feature:'Power Windows',
+                        value:'Front, Rear'
+                    },
+                    {
+                        id:14,
+                        variant_id:1,
+                        category:'Comfort And Convenience',
+                        feature:'Timelag Power Windows',
+                        value:'Yes'
+                    },
+                    {
+                        id:15,
+                        variant_id:2,
+                        category:'Comfort And Convenience',
+                        feature:'Switch Illumination Driver side Power Windows',
+                        value:'Yes'
+                    },
+                    {
+                        id:16,
+                        variant_id:2,
+                        category:'Comfort And Convenience',
+                        feature:'Air Conditioner',
+                        value:'Manual'
+                    },
+                    {
+                        id:17,
+                        variant_id:2,
+                        category:'Comfort And Convenience',
+                        feature:'Power Steering',
+                        value:'Motor Driven (Electric)'
+                    },
+                    {
+                        id:18,
+                        variant_id:1,
+                        category:'Safety And Security',
+                        feature:'Airbag',
+                        value:'Driver & Passenger'
+                    },
+                    {
+                        id:19,
+                        variant_id:1,
+                        category:'Safety And Security',
+                        feature:'ABS with EBD',
+                        value:'Yes'
+                    },
+                    {
+                        id:20,
+                        variant_id:2,
+                        category:'Safety And Security',
+                        feature:'Fog Lamps',
+                        value:'Front Projector'
+                    },
+                    {
+                        id:21,
+                        variant_id:2,
+                        category:'Safety And Security',
+                        feature:'Central Locking',
+                        value:'Yes'
+                    },
+                    {
+                        id:22,
+                        variant_id:1,
+                        category:'Audio & Entertainment',
+                        feature:'DRM',
+                        value:'Yes'
+                    },
+                    {
+                        id:23,
+                        variant_id:1,
+                        category:'Audio & Entertainment',
+                        feature:'2-DIN Radio+MP3 Audio',
+                        value:'Yes'
+                    },
+                    {
+                        id:24,
+                        variant_id:1,
+                        category:'Audio & Entertainment',
+                        feature:'Speakers',
+                        value:'Front & Rear'
+                    },
+                    {
+                        id:25,
+                        variant_id:2,
+                        category:'Audio & Entertainment',
+                        feature:'Tweeters',
+                        value:'Front Only'
                     }
                 ],
                 price:'7,31,900',
@@ -1481,6 +2306,183 @@ export default {
                         category:'Tyre Size',
                     }
                 ],
+                car_features:[
+                    {
+                        id:1,
+                        variant_id:1,
+                        category:'Exterior',
+                        feature:'Standard Halogen Headlamps',
+                        value:'Yes'
+                    },
+                    {
+                        id:2,
+                        variant_id:1,
+                        category:'Exterior',
+                        feature:'High Gloss Front Grille',
+                        value:'Yes'
+                    },
+                    {
+                        id:3,
+                        variant_id:1,
+                        category:'Exterior',
+                        feature:'B-Pillar Blackout',
+                        value:'Yes'
+                    },
+                    {
+                        id:4,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'C Pillar Black Finish',
+                        value:'Yes'
+                    },
+                    {
+                        id:5,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'Body Color Bumper',
+                        value:'Yes'
+                    },
+                    {
+                        id:6,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'Body Color Outside Mirrors',
+                        value:'Yes'
+                    },
+                    {
+                        id:7,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'Body Color Outside Door Handles',
+                        value:'Yes'
+                    },
+                    {
+                        id:8,
+                        variant_id:1,
+                        category:'Interior',
+                        feature:'Fabric Seat Upholstery-with Copper Stitching',
+                        value:'Yes'
+                    },
+                    {
+                        id:9,
+                        variant_id:1,
+                        category:'Interior',
+                        feature:'Sunglass Holder',
+                        value:'Yes'
+                    },
+                    {
+                        id:10,
+                        variant_id:1,
+                        category:'Interior',
+                        feature:'2-Tone Beige & Black Interior Color',
+                        value:'Yes'
+                    },
+                    {
+                        id:11,
+                        variant_id:2,
+                        category:'Interior',
+                        feature:'Map Pockets',
+                        value:'Front & Rear Door'
+                    },
+                    {
+                        id:12,
+                        variant_id:2,
+                        category:'Interior',
+                        feature:'Front Passenger Seat Back Pocket',
+                        value:'Yes'
+                    },
+                    {
+                        id:13,
+                        variant_id:1,
+                        category:'Comfort And Convenience',
+                        feature:'Power Windows',
+                        value:'Front, Rear'
+                    },
+                    {
+                        id:14,
+                        variant_id:1,
+                        category:'Comfort And Convenience',
+                        feature:'Timelag Power Windows',
+                        value:'Yes'
+                    },
+                    {
+                        id:15,
+                        variant_id:2,
+                        category:'Comfort And Convenience',
+                        feature:'Switch Illumination Driver side Power Windows',
+                        value:'Yes'
+                    },
+                    {
+                        id:16,
+                        variant_id:2,
+                        category:'Comfort And Convenience',
+                        feature:'Air Conditioner',
+                        value:'Manual'
+                    },
+                    {
+                        id:17,
+                        variant_id:2,
+                        category:'Comfort And Convenience',
+                        feature:'Power Steering',
+                        value:'Motor Driven (Electric)'
+                    },
+                    {
+                        id:18,
+                        variant_id:1,
+                        category:'Safety And Security',
+                        feature:'Airbag',
+                        value:'Driver & Passenger'
+                    },
+                    {
+                        id:19,
+                        variant_id:1,
+                        category:'Safety And Security',
+                        feature:'ABS with EBD',
+                        value:'Yes'
+                    },
+                    {
+                        id:20,
+                        variant_id:2,
+                        category:'Safety And Security',
+                        feature:'Fog Lamps',
+                        value:'Front Projector'
+                    },
+                    {
+                        id:21,
+                        variant_id:2,
+                        category:'Safety And Security',
+                        feature:'Central Locking',
+                        value:'Yes'
+                    },
+                    {
+                        id:22,
+                        variant_id:1,
+                        category:'Audio & Entertainment',
+                        feature:'DRM',
+                        value:'Yes'
+                    },
+                    {
+                        id:23,
+                        variant_id:1,
+                        category:'Audio & Entertainment',
+                        feature:'2-DIN Radio+MP3 Audio',
+                        value:'Yes'
+                    },
+                    {
+                        id:24,
+                        variant_id:1,
+                        category:'Audio & Entertainment',
+                        feature:'Speakers',
+                        value:'Front & Rear'
+                    },
+                    {
+                        id:25,
+                        variant_id:2,
+                        category:'Audio & Entertainment',
+                        feature:'Tweeters',
+                        value:'Front Only'
+                    }
+                ],
                 price:'22,30,000',
                 description:"Hyundai Aura - Modern Stylish Tallboy: The overall design theme is based on Rhythmical Tension that exudes a Refined yet Sporty Image. The front of The All New SANTRO is defined by Hyundai's Signature Cascade Grille with chrome surround that projects Modern and Premium appeal of the car"
             },
@@ -1729,6 +2731,183 @@ export default {
                         petrol:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
                         diesel:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
                         category:'Tyre Size',
+                    }
+                ],
+                car_features:[
+                    {
+                        id:1,
+                        variant_id:1,
+                        category:'Exterior',
+                        feature:'Standard Halogen Headlamps',
+                        value:'Yes'
+                    },
+                    {
+                        id:2,
+                        variant_id:1,
+                        category:'Exterior',
+                        feature:'High Gloss Front Grille',
+                        value:'Yes'
+                    },
+                    {
+                        id:3,
+                        variant_id:1,
+                        category:'Exterior',
+                        feature:'B-Pillar Blackout',
+                        value:'Yes'
+                    },
+                    {
+                        id:4,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'C Pillar Black Finish',
+                        value:'Yes'
+                    },
+                    {
+                        id:5,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'Body Color Bumper',
+                        value:'Yes'
+                    },
+                    {
+                        id:6,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'Body Color Outside Mirrors',
+                        value:'Yes'
+                    },
+                    {
+                        id:7,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'Body Color Outside Door Handles',
+                        value:'Yes'
+                    },
+                    {
+                        id:8,
+                        variant_id:1,
+                        category:'Interior',
+                        feature:'Fabric Seat Upholstery-with Copper Stitching',
+                        value:'Yes'
+                    },
+                    {
+                        id:9,
+                        variant_id:1,
+                        category:'Interior',
+                        feature:'Sunglass Holder',
+                        value:'Yes'
+                    },
+                    {
+                        id:10,
+                        variant_id:1,
+                        category:'Interior',
+                        feature:'2-Tone Beige & Black Interior Color',
+                        value:'Yes'
+                    },
+                    {
+                        id:11,
+                        variant_id:2,
+                        category:'Interior',
+                        feature:'Map Pockets',
+                        value:'Front & Rear Door'
+                    },
+                    {
+                        id:12,
+                        variant_id:2,
+                        category:'Interior',
+                        feature:'Front Passenger Seat Back Pocket',
+                        value:'Yes'
+                    },
+                    {
+                        id:13,
+                        variant_id:1,
+                        category:'Comfort And Convenience',
+                        feature:'Power Windows',
+                        value:'Front, Rear'
+                    },
+                    {
+                        id:14,
+                        variant_id:1,
+                        category:'Comfort And Convenience',
+                        feature:'Timelag Power Windows',
+                        value:'Yes'
+                    },
+                    {
+                        id:15,
+                        variant_id:2,
+                        category:'Comfort And Convenience',
+                        feature:'Switch Illumination Driver side Power Windows',
+                        value:'Yes'
+                    },
+                    {
+                        id:16,
+                        variant_id:2,
+                        category:'Comfort And Convenience',
+                        feature:'Air Conditioner',
+                        value:'Manual'
+                    },
+                    {
+                        id:17,
+                        variant_id:2,
+                        category:'Comfort And Convenience',
+                        feature:'Power Steering',
+                        value:'Motor Driven (Electric)'
+                    },
+                    {
+                        id:18,
+                        variant_id:1,
+                        category:'Safety And Security',
+                        feature:'Airbag',
+                        value:'Driver & Passenger'
+                    },
+                    {
+                        id:19,
+                        variant_id:1,
+                        category:'Safety And Security',
+                        feature:'ABS with EBD',
+                        value:'Yes'
+                    },
+                    {
+                        id:20,
+                        variant_id:2,
+                        category:'Safety And Security',
+                        feature:'Fog Lamps',
+                        value:'Front Projector'
+                    },
+                    {
+                        id:21,
+                        variant_id:2,
+                        category:'Safety And Security',
+                        feature:'Central Locking',
+                        value:'Yes'
+                    },
+                    {
+                        id:22,
+                        variant_id:1,
+                        category:'Audio & Entertainment',
+                        feature:'DRM',
+                        value:'Yes'
+                    },
+                    {
+                        id:23,
+                        variant_id:1,
+                        category:'Audio & Entertainment',
+                        feature:'2-DIN Radio+MP3 Audio',
+                        value:'Yes'
+                    },
+                    {
+                        id:24,
+                        variant_id:1,
+                        category:'Audio & Entertainment',
+                        feature:'Speakers',
+                        value:'Front & Rear'
+                    },
+                    {
+                        id:25,
+                        variant_id:2,
+                        category:'Audio & Entertainment',
+                        feature:'Tweeters',
+                        value:'Front Only'
                     }
                 ],
                 price:'8,19,900',
@@ -1981,6 +3160,183 @@ export default {
                         category:'Tyre Size',
                     }
                 ],
+                car_features:[
+                    {
+                        id:1,
+                        variant_id:1,
+                        category:'Exterior',
+                        feature:'Standard Halogen Headlamps',
+                        value:'Yes'
+                    },
+                    {
+                        id:2,
+                        variant_id:1,
+                        category:'Exterior',
+                        feature:'High Gloss Front Grille',
+                        value:'Yes'
+                    },
+                    {
+                        id:3,
+                        variant_id:1,
+                        category:'Exterior',
+                        feature:'B-Pillar Blackout',
+                        value:'Yes'
+                    },
+                    {
+                        id:4,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'C Pillar Black Finish',
+                        value:'Yes'
+                    },
+                    {
+                        id:5,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'Body Color Bumper',
+                        value:'Yes'
+                    },
+                    {
+                        id:6,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'Body Color Outside Mirrors',
+                        value:'Yes'
+                    },
+                    {
+                        id:7,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'Body Color Outside Door Handles',
+                        value:'Yes'
+                    },
+                    {
+                        id:8,
+                        variant_id:1,
+                        category:'Interior',
+                        feature:'Fabric Seat Upholstery-with Copper Stitching',
+                        value:'Yes'
+                    },
+                    {
+                        id:9,
+                        variant_id:1,
+                        category:'Interior',
+                        feature:'Sunglass Holder',
+                        value:'Yes'
+                    },
+                    {
+                        id:10,
+                        variant_id:1,
+                        category:'Interior',
+                        feature:'2-Tone Beige & Black Interior Color',
+                        value:'Yes'
+                    },
+                    {
+                        id:11,
+                        variant_id:2,
+                        category:'Interior',
+                        feature:'Map Pockets',
+                        value:'Front & Rear Door'
+                    },
+                    {
+                        id:12,
+                        variant_id:2,
+                        category:'Interior',
+                        feature:'Front Passenger Seat Back Pocket',
+                        value:'Yes'
+                    },
+                    {
+                        id:13,
+                        variant_id:1,
+                        category:'Comfort And Convenience',
+                        feature:'Power Windows',
+                        value:'Front, Rear'
+                    },
+                    {
+                        id:14,
+                        variant_id:1,
+                        category:'Comfort And Convenience',
+                        feature:'Timelag Power Windows',
+                        value:'Yes'
+                    },
+                    {
+                        id:15,
+                        variant_id:2,
+                        category:'Comfort And Convenience',
+                        feature:'Switch Illumination Driver side Power Windows',
+                        value:'Yes'
+                    },
+                    {
+                        id:16,
+                        variant_id:2,
+                        category:'Comfort And Convenience',
+                        feature:'Air Conditioner',
+                        value:'Manual'
+                    },
+                    {
+                        id:17,
+                        variant_id:2,
+                        category:'Comfort And Convenience',
+                        feature:'Power Steering',
+                        value:'Motor Driven (Electric)'
+                    },
+                    {
+                        id:18,
+                        variant_id:1,
+                        category:'Safety And Security',
+                        feature:'Airbag',
+                        value:'Driver & Passenger'
+                    },
+                    {
+                        id:19,
+                        variant_id:1,
+                        category:'Safety And Security',
+                        feature:'ABS with EBD',
+                        value:'Yes'
+                    },
+                    {
+                        id:20,
+                        variant_id:2,
+                        category:'Safety And Security',
+                        feature:'Fog Lamps',
+                        value:'Front Projector'
+                    },
+                    {
+                        id:21,
+                        variant_id:2,
+                        category:'Safety And Security',
+                        feature:'Central Locking',
+                        value:'Yes'
+                    },
+                    {
+                        id:22,
+                        variant_id:1,
+                        category:'Audio & Entertainment',
+                        feature:'DRM',
+                        value:'Yes'
+                    },
+                    {
+                        id:23,
+                        variant_id:1,
+                        category:'Audio & Entertainment',
+                        feature:'2-DIN Radio+MP3 Audio',
+                        value:'Yes'
+                    },
+                    {
+                        id:24,
+                        variant_id:1,
+                        category:'Audio & Entertainment',
+                        feature:'Speakers',
+                        value:'Front & Rear'
+                    },
+                    {
+                        id:25,
+                        variant_id:2,
+                        category:'Audio & Entertainment',
+                        feature:'Tweeters',
+                        value:'Front Only'
+                    }
+                ],
                 price:'10,68,000',
                 description:"Hyundai ELANTRA - Modern Stylish Tallboy: The overall design theme is based on Rhythmical Tension that exudes a Refined yet Sporty Image. The front of The All New SANTRO is defined by Hyundai's Signature Cascade Grille with chrome surround that projects Modern and Premium appeal of the car"
             },
@@ -2229,6 +3585,183 @@ export default {
                         petrol:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
                         diesel:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
                         category:'Tyre Size',
+                    }
+                ],
+                car_features:[
+                    {
+                        id:1,
+                        variant_id:1,
+                        category:'Exterior',
+                        feature:'Standard Halogen Headlamps',
+                        value:'Yes'
+                    },
+                    {
+                        id:2,
+                        variant_id:1,
+                        category:'Exterior',
+                        feature:'High Gloss Front Grille',
+                        value:'Yes'
+                    },
+                    {
+                        id:3,
+                        variant_id:1,
+                        category:'Exterior',
+                        feature:'B-Pillar Blackout',
+                        value:'Yes'
+                    },
+                    {
+                        id:4,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'C Pillar Black Finish',
+                        value:'Yes'
+                    },
+                    {
+                        id:5,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'Body Color Bumper',
+                        value:'Yes'
+                    },
+                    {
+                        id:6,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'Body Color Outside Mirrors',
+                        value:'Yes'
+                    },
+                    {
+                        id:7,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'Body Color Outside Door Handles',
+                        value:'Yes'
+                    },
+                    {
+                        id:8,
+                        variant_id:1,
+                        category:'Interior',
+                        feature:'Fabric Seat Upholstery-with Copper Stitching',
+                        value:'Yes'
+                    },
+                    {
+                        id:9,
+                        variant_id:1,
+                        category:'Interior',
+                        feature:'Sunglass Holder',
+                        value:'Yes'
+                    },
+                    {
+                        id:10,
+                        variant_id:1,
+                        category:'Interior',
+                        feature:'2-Tone Beige & Black Interior Color',
+                        value:'Yes'
+                    },
+                    {
+                        id:11,
+                        variant_id:2,
+                        category:'Interior',
+                        feature:'Map Pockets',
+                        value:'Front & Rear Door'
+                    },
+                    {
+                        id:12,
+                        variant_id:2,
+                        category:'Interior',
+                        feature:'Front Passenger Seat Back Pocket',
+                        value:'Yes'
+                    },
+                    {
+                        id:13,
+                        variant_id:1,
+                        category:'Comfort And Convenience',
+                        feature:'Power Windows',
+                        value:'Front, Rear'
+                    },
+                    {
+                        id:14,
+                        variant_id:1,
+                        category:'Comfort And Convenience',
+                        feature:'Timelag Power Windows',
+                        value:'Yes'
+                    },
+                    {
+                        id:15,
+                        variant_id:2,
+                        category:'Comfort And Convenience',
+                        feature:'Switch Illumination Driver side Power Windows',
+                        value:'Yes'
+                    },
+                    {
+                        id:16,
+                        variant_id:2,
+                        category:'Comfort And Convenience',
+                        feature:'Air Conditioner',
+                        value:'Manual'
+                    },
+                    {
+                        id:17,
+                        variant_id:2,
+                        category:'Comfort And Convenience',
+                        feature:'Power Steering',
+                        value:'Motor Driven (Electric)'
+                    },
+                    {
+                        id:18,
+                        variant_id:1,
+                        category:'Safety And Security',
+                        feature:'Airbag',
+                        value:'Driver & Passenger'
+                    },
+                    {
+                        id:19,
+                        variant_id:1,
+                        category:'Safety And Security',
+                        feature:'ABS with EBD',
+                        value:'Yes'
+                    },
+                    {
+                        id:20,
+                        variant_id:2,
+                        category:'Safety And Security',
+                        feature:'Fog Lamps',
+                        value:'Front Projector'
+                    },
+                    {
+                        id:21,
+                        variant_id:2,
+                        category:'Safety And Security',
+                        feature:'Central Locking',
+                        value:'Yes'
+                    },
+                    {
+                        id:22,
+                        variant_id:1,
+                        category:'Audio & Entertainment',
+                        feature:'DRM',
+                        value:'Yes'
+                    },
+                    {
+                        id:23,
+                        variant_id:1,
+                        category:'Audio & Entertainment',
+                        feature:'2-DIN Radio+MP3 Audio',
+                        value:'Yes'
+                    },
+                    {
+                        id:24,
+                        variant_id:1,
+                        category:'Audio & Entertainment',
+                        feature:'Speakers',
+                        value:'Front & Rear'
+                    },
+                    {
+                        id:25,
+                        variant_id:2,
+                        category:'Audio & Entertainment',
+                        feature:'Tweeters',
+                        value:'Front Only'
                     }
                 ],
                 price:'4,67,490',
@@ -2481,6 +4014,183 @@ export default {
                         category:'Tyre Size',
                     }
                 ],
+                car_features:[
+                    {
+                        id:1,
+                        variant_id:1,
+                        category:'Exterior',
+                        feature:'Standard Halogen Headlamps',
+                        value:'Yes'
+                    },
+                    {
+                        id:2,
+                        variant_id:1,
+                        category:'Exterior',
+                        feature:'High Gloss Front Grille',
+                        value:'Yes'
+                    },
+                    {
+                        id:3,
+                        variant_id:1,
+                        category:'Exterior',
+                        feature:'B-Pillar Blackout',
+                        value:'Yes'
+                    },
+                    {
+                        id:4,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'C Pillar Black Finish',
+                        value:'Yes'
+                    },
+                    {
+                        id:5,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'Body Color Bumper',
+                        value:'Yes'
+                    },
+                    {
+                        id:6,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'Body Color Outside Mirrors',
+                        value:'Yes'
+                    },
+                    {
+                        id:7,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'Body Color Outside Door Handles',
+                        value:'Yes'
+                    },
+                    {
+                        id:8,
+                        variant_id:1,
+                        category:'Interior',
+                        feature:'Fabric Seat Upholstery-with Copper Stitching',
+                        value:'Yes'
+                    },
+                    {
+                        id:9,
+                        variant_id:1,
+                        category:'Interior',
+                        feature:'Sunglass Holder',
+                        value:'Yes'
+                    },
+                    {
+                        id:10,
+                        variant_id:1,
+                        category:'Interior',
+                        feature:'2-Tone Beige & Black Interior Color',
+                        value:'Yes'
+                    },
+                    {
+                        id:11,
+                        variant_id:2,
+                        category:'Interior',
+                        feature:'Map Pockets',
+                        value:'Front & Rear Door'
+                    },
+                    {
+                        id:12,
+                        variant_id:2,
+                        category:'Interior',
+                        feature:'Front Passenger Seat Back Pocket',
+                        value:'Yes'
+                    },
+                    {
+                        id:13,
+                        variant_id:1,
+                        category:'Comfort And Convenience',
+                        feature:'Power Windows',
+                        value:'Front, Rear'
+                    },
+                    {
+                        id:14,
+                        variant_id:1,
+                        category:'Comfort And Convenience',
+                        feature:'Timelag Power Windows',
+                        value:'Yes'
+                    },
+                    {
+                        id:15,
+                        variant_id:2,
+                        category:'Comfort And Convenience',
+                        feature:'Switch Illumination Driver side Power Windows',
+                        value:'Yes'
+                    },
+                    {
+                        id:16,
+                        variant_id:2,
+                        category:'Comfort And Convenience',
+                        feature:'Air Conditioner',
+                        value:'Manual'
+                    },
+                    {
+                        id:17,
+                        variant_id:2,
+                        category:'Comfort And Convenience',
+                        feature:'Power Steering',
+                        value:'Motor Driven (Electric)'
+                    },
+                    {
+                        id:18,
+                        variant_id:1,
+                        category:'Safety And Security',
+                        feature:'Airbag',
+                        value:'Driver & Passenger'
+                    },
+                    {
+                        id:19,
+                        variant_id:1,
+                        category:'Safety And Security',
+                        feature:'ABS with EBD',
+                        value:'Yes'
+                    },
+                    {
+                        id:20,
+                        variant_id:2,
+                        category:'Safety And Security',
+                        feature:'Fog Lamps',
+                        value:'Front Projector'
+                    },
+                    {
+                        id:21,
+                        variant_id:2,
+                        category:'Safety And Security',
+                        feature:'Central Locking',
+                        value:'Yes'
+                    },
+                    {
+                        id:22,
+                        variant_id:1,
+                        category:'Audio & Entertainment',
+                        feature:'DRM',
+                        value:'Yes'
+                    },
+                    {
+                        id:23,
+                        variant_id:1,
+                        category:'Audio & Entertainment',
+                        feature:'2-DIN Radio+MP3 Audio',
+                        value:'Yes'
+                    },
+                    {
+                        id:24,
+                        variant_id:1,
+                        category:'Audio & Entertainment',
+                        feature:'Speakers',
+                        value:'Front & Rear'
+                    },
+                    {
+                        id:25,
+                        variant_id:2,
+                        category:'Audio & Entertainment',
+                        feature:'Tweeters',
+                        value:'Front Only'
+                    }
+                ],
                 price:'8,16,500',
                 description:"Hyundai Venue - Modern Stylish Tallboy: The overall design theme is based on Rhythmical Tension that exudes a Refined yet Sporty Image. The front of The All New SANTRO is defined by Hyundai's Signature Cascade Grille with chrome surround that projects Modern and Premium appeal of the car"
             },
@@ -2729,6 +4439,183 @@ export default {
                         petrol:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
                         diesel:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
                         category:'Tyre Size',
+                    }
+                ],
+                car_features:[
+                    {
+                        id:1,
+                        variant_id:1,
+                        category:'Exterior',
+                        feature:'Standard Halogen Headlamps',
+                        value:'Yes'
+                    },
+                    {
+                        id:2,
+                        variant_id:1,
+                        category:'Exterior',
+                        feature:'High Gloss Front Grille',
+                        value:'Yes'
+                    },
+                    {
+                        id:3,
+                        variant_id:1,
+                        category:'Exterior',
+                        feature:'B-Pillar Blackout',
+                        value:'Yes'
+                    },
+                    {
+                        id:4,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'C Pillar Black Finish',
+                        value:'Yes'
+                    },
+                    {
+                        id:5,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'Body Color Bumper',
+                        value:'Yes'
+                    },
+                    {
+                        id:6,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'Body Color Outside Mirrors',
+                        value:'Yes'
+                    },
+                    {
+                        id:7,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'Body Color Outside Door Handles',
+                        value:'Yes'
+                    },
+                    {
+                        id:8,
+                        variant_id:1,
+                        category:'Interior',
+                        feature:'Fabric Seat Upholstery-with Copper Stitching',
+                        value:'Yes'
+                    },
+                    {
+                        id:9,
+                        variant_id:1,
+                        category:'Interior',
+                        feature:'Sunglass Holder',
+                        value:'Yes'
+                    },
+                    {
+                        id:10,
+                        variant_id:1,
+                        category:'Interior',
+                        feature:'2-Tone Beige & Black Interior Color',
+                        value:'Yes'
+                    },
+                    {
+                        id:11,
+                        variant_id:2,
+                        category:'Interior',
+                        feature:'Map Pockets',
+                        value:'Front & Rear Door'
+                    },
+                    {
+                        id:12,
+                        variant_id:2,
+                        category:'Interior',
+                        feature:'Front Passenger Seat Back Pocket',
+                        value:'Yes'
+                    },
+                    {
+                        id:13,
+                        variant_id:1,
+                        category:'Comfort And Convenience',
+                        feature:'Power Windows',
+                        value:'Front, Rear'
+                    },
+                    {
+                        id:14,
+                        variant_id:1,
+                        category:'Comfort And Convenience',
+                        feature:'Timelag Power Windows',
+                        value:'Yes'
+                    },
+                    {
+                        id:15,
+                        variant_id:2,
+                        category:'Comfort And Convenience',
+                        feature:'Switch Illumination Driver side Power Windows',
+                        value:'Yes'
+                    },
+                    {
+                        id:16,
+                        variant_id:2,
+                        category:'Comfort And Convenience',
+                        feature:'Air Conditioner',
+                        value:'Manual'
+                    },
+                    {
+                        id:17,
+                        variant_id:2,
+                        category:'Comfort And Convenience',
+                        feature:'Power Steering',
+                        value:'Motor Driven (Electric)'
+                    },
+                    {
+                        id:18,
+                        variant_id:1,
+                        category:'Safety And Security',
+                        feature:'Airbag',
+                        value:'Driver & Passenger'
+                    },
+                    {
+                        id:19,
+                        variant_id:1,
+                        category:'Safety And Security',
+                        feature:'ABS with EBD',
+                        value:'Yes'
+                    },
+                    {
+                        id:20,
+                        variant_id:2,
+                        category:'Safety And Security',
+                        feature:'Fog Lamps',
+                        value:'Front Projector'
+                    },
+                    {
+                        id:21,
+                        variant_id:2,
+                        category:'Safety And Security',
+                        feature:'Central Locking',
+                        value:'Yes'
+                    },
+                    {
+                        id:22,
+                        variant_id:1,
+                        category:'Audio & Entertainment',
+                        feature:'DRM',
+                        value:'Yes'
+                    },
+                    {
+                        id:23,
+                        variant_id:1,
+                        category:'Audio & Entertainment',
+                        feature:'2-DIN Radio+MP3 Audio',
+                        value:'Yes'
+                    },
+                    {
+                        id:24,
+                        variant_id:1,
+                        category:'Audio & Entertainment',
+                        feature:'Speakers',
+                        value:'Front & Rear'
+                    },
+                    {
+                        id:25,
+                        variant_id:2,
+                        category:'Audio & Entertainment',
+                        feature:'Tweeters',
+                        value:'Front Only'
                     }
                 ],
                 price:'16,53,300',
@@ -2981,10 +4868,187 @@ export default {
                         category:'Tyre Size',
                     }
                 ],
+                car_features:[
+                    {
+                        id:1,
+                        variant_id:1,
+                        category:'Exterior',
+                        feature:'Standard Halogen Headlamps',
+                        value:'Yes'
+                    },
+                    {
+                        id:2,
+                        variant_id:1,
+                        category:'Exterior',
+                        feature:'High Gloss Front Grille',
+                        value:'Yes'
+                    },
+                    {
+                        id:3,
+                        variant_id:1,
+                        category:'Exterior',
+                        feature:'B-Pillar Blackout',
+                        value:'Yes'
+                    },
+                    {
+                        id:4,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'C Pillar Black Finish',
+                        value:'Yes'
+                    },
+                    {
+                        id:5,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'Body Color Bumper',
+                        value:'Yes'
+                    },
+                    {
+                        id:6,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'Body Color Outside Mirrors',
+                        value:'Yes'
+                    },
+                    {
+                        id:7,
+                        variant_id:2,
+                        category:'Exterior',
+                        feature:'Body Color Outside Door Handles',
+                        value:'Yes'
+                    },
+                    {
+                        id:8,
+                        variant_id:1,
+                        category:'Interior',
+                        feature:'Fabric Seat Upholstery-with Copper Stitching',
+                        value:'Yes'
+                    },
+                    {
+                        id:9,
+                        variant_id:1,
+                        category:'Interior',
+                        feature:'Sunglass Holder',
+                        value:'Yes'
+                    },
+                    {
+                        id:10,
+                        variant_id:1,
+                        category:'Interior',
+                        feature:'2-Tone Beige & Black Interior Color',
+                        value:'Yes'
+                    },
+                    {
+                        id:11,
+                        variant_id:2,
+                        category:'Interior',
+                        feature:'Map Pockets',
+                        value:'Front & Rear Door'
+                    },
+                    {
+                        id:12,
+                        variant_id:2,
+                        category:'Interior',
+                        feature:'Front Passenger Seat Back Pocket',
+                        value:'Yes'
+                    },
+                    {
+                        id:13,
+                        variant_id:1,
+                        category:'Comfort And Convenience',
+                        feature:'Power Windows',
+                        value:'Front, Rear'
+                    },
+                    {
+                        id:14,
+                        variant_id:1,
+                        category:'Comfort And Convenience',
+                        feature:'Timelag Power Windows',
+                        value:'Yes'
+                    },
+                    {
+                        id:15,
+                        variant_id:2,
+                        category:'Comfort And Convenience',
+                        feature:'Switch Illumination Driver side Power Windows',
+                        value:'Yes'
+                    },
+                    {
+                        id:16,
+                        variant_id:2,
+                        category:'Comfort And Convenience',
+                        feature:'Air Conditioner',
+                        value:'Manual'
+                    },
+                    {
+                        id:17,
+                        variant_id:2,
+                        category:'Comfort And Convenience',
+                        feature:'Power Steering',
+                        value:'Motor Driven (Electric)'
+                    },
+                    {
+                        id:18,
+                        variant_id:1,
+                        category:'Safety And Security',
+                        feature:'Airbag',
+                        value:'Driver & Passenger'
+                    },
+                    {
+                        id:19,
+                        variant_id:1,
+                        category:'Safety And Security',
+                        feature:'ABS with EBD',
+                        value:'Yes'
+                    },
+                    {
+                        id:20,
+                        variant_id:2,
+                        category:'Safety And Security',
+                        feature:'Fog Lamps',
+                        value:'Front Projector'
+                    },
+                    {
+                        id:21,
+                        variant_id:2,
+                        category:'Safety And Security',
+                        feature:'Central Locking',
+                        value:'Yes'
+                    },
+                    {
+                        id:22,
+                        variant_id:1,
+                        category:'Audio & Entertainment',
+                        feature:'DRM',
+                        value:'Yes'
+                    },
+                    {
+                        id:23,
+                        variant_id:1,
+                        category:'Audio & Entertainment',
+                        feature:'2-DIN Radio+MP3 Audio',
+                        value:'Yes'
+                    },
+                    {
+                        id:24,
+                        variant_id:1,
+                        category:'Audio & Entertainment',
+                        feature:'Speakers',
+                        value:'Front & Rear'
+                    },
+                    {
+                        id:25,
+                        variant_id:2,
+                        category:'Audio & Entertainment',
+                        feature:'Tweeters',
+                        value:'Front Only'
+                    }
+                ],
                 price:'17,00,000',
                 description:"Hyundai CRETA - Modern Stylish Tallboy: The overall design theme is based on Rhythmical Tension that exudes a Refined yet Sporty Image. The front of The All New SANTRO is defined by Hyundai's Signature Cascade Grille with chrome surround that projects Modern and Premium appeal of the car"
             }
-        ],
+           ],
            car:{
               name:'',
               price:'',
@@ -3001,7 +5065,10 @@ export default {
               car_colours:[],
               car_specs:[],
               car_specs_original:[],
-              car_spec_tab:null
+              car_spec_tab:null,
+              car_features:[],
+              car_features_original:[],
+              car_features_tab:null
            },
            car_details_tab:[
                'Overview',
@@ -3012,12 +5079,23 @@ export default {
                'Specs',
                'Features',
                'Price List',
-               'Variants Compare',
-               'How To Proceed'
+               'Variants Compare'
            ],
+           car_feature_variants:[
+               {
+                   id:1,
+                   name:'variant_1',
+               },
+               {
+                   id:2,
+                   name:'variant_2',
+               }
+           ],
+           VariantFeature:1,
            car_tab_index:0,
            car_clr_img_index:0,
            car_spec_tab_index:0,
+           car_feature_tab_index:0,
            swiperOption: {
                 slidesPerView: 1,
                 slidesPerGroup: 1,
@@ -3085,13 +5163,29 @@ export default {
             if(pageYOffset > 4058){
                 this.car_tab_index = 3
             }
-            if(pageYOffset > 4560){
-                this.car_tab_index = 4
+            if(this.$route.query.id == 4){
+                if(pageYOffset > 4606){
+                    this.car_tab_index = 4
+                }
+            }else{
+                if(pageYOffset > 4560){
+                    this.car_tab_index = 4
+                }
             }
             if(pageYOffset > 5433){
                 this.car_tab_index = 5
             }
+            if(pageYOffset > 6218){
+                this.car_tab_index = 6
+            }
             return pageYOffset;
+        },
+        VariantChange(e){
+            var variantId = e.target.value;
+            var catIndex = this.car_feature_tab_index;
+            var catName = this.car.car_features_tab[catIndex]
+            var newItem = this.car.car_features_original.filter((item)=> item.variant_id == variantId && item.category == catName )
+            this.car.car_features = newItem;
         },
         filterCarSpecCategories(){
            var category = [...new Set(this.car.car_specs.map((item)=>{return item.category}))];
@@ -3101,13 +5195,22 @@ export default {
            var newItem = this.car.car_specs_original.filter((item)=>{return item.category == cat})
            this.car.car_specs = newItem;
         },
+        filterFeatureCategories(){
+            var category = [...new Set(this.car.car_features.map((item)=>{return item.category}))];
+            this.car.car_features_tab = category;
+        },
+        filterFeatures(cat){
+            var variantId = this.VariantFeature;
+            var newItem = this.car.car_features_original.filter((item)=>{return item.category == cat && item.variant_id == variantId})
+            this.car.car_features = newItem;
+        },
         SingleCar(){
           var item = this.originalcars.filter((car)=>{
               return car.id == this.$route.query.id;
             })
            this.singleCar = item
            const [car] = this.singleCar
-           const {name,price,poster_image,image,overview_image,description,power,transmission,mileage,highlights,car_gallery,video_link,car_colours,car_specs} = car
+           const {name,price,poster_image,image,overview_image,description,power,transmission,mileage,highlights,car_gallery,video_link,car_colours,car_specs,car_features} = car
            this.car.name=name;
            this.car.price=price;
            this.car.poster_image=poster_image;
@@ -3123,8 +5226,12 @@ export default {
            this.car.car_colours = car_colours;
            this.car.car_specs = car_specs;
            this.car.car_specs_original = car_specs;
+           this.car.car_features = car_features;
+           this.car.car_features_original = car_features;
            this.filterCarSpecCategories();
+           this.filterFeatureCategories();
            this.filterCarSpecs('Engine');
+           this.filterFeatures('Exterior');
         }
     }
 }
@@ -3148,7 +5255,7 @@ export default {
 .car_spec_tab_box .tab_item{
     margin: 10px 25px;
     font-size: 17px;
-    font-weight: bold;
+    font-weight: 600;
     cursor: pointer;
 }
 
@@ -3265,7 +5372,7 @@ export default {
 .highlight_items .item_title{
     color: #002c5f;
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 600;
     padding: 10px 20px 0px 20px;
 }
 .highlight_items .item_desc{
@@ -3372,6 +5479,89 @@ export default {
     margin: 25px 0 10px 0;
     text-align: center;
 }
+/* Mobile Fixes */
+@media only screen and (min-width:300px) and (max-width:600px){
+    .car_video_item iframe{
+       max-width: 100%;
+       height: 220px;
+    }
+    .car_gallery_sec .title, .car_video_sec .title, .car_colour_sec .title{
+        font-size: 21px;
+    }
+    .car_highlights_sec .title{
+        font-size: 21px;
+    }
+    .car_overview_sec .title{
+        font-size: 21px;
+    }
+    .highlight_items .item{
+        width: 100%;
+        margin:25px 10px;
+    }
+    .highlight_items .item_title{
+        padding: 10px;
+        font-size: 18px;
+    }
+    .highlight_items .item_desc{
+        padding: 10px 10px;
+    }
+    .car_gallery_item{
+        width: 100%;
+    }
+    .car_type_main_title{
+        font-size: 21px;
+    }
+    .car_spec_tab_box{
+        flex-direction: column;
+    }
+    .spec_table_sec{
+        width: 100%;
+    }
+    .car_title_sec .car_title{
+        font-size: 21px;
+    }
+    .car_details_tab{
+        padding: 0;
+        flex-direction: column;
+    }
+    .car_details_tab .tab_item_box{
+        margin: 15px 0;
+    }
+    .car_title_sticky_header.sticky{
+        position: static;
+        box-shadow: none;
+        z-index: 0;
+    }
+    .car_overview_sec .description{
+        flex-wrap: wrap;
+    }
+    .car_overview_sec .description .paragraph{
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    .car_overview_sec .description .img_sec{
+        width: 100%;
+    }
+    .description p{
+        width: 96%;
+        font-size: 16px;
+    }
+    .price_details .price_item{
+        width: 100%;
+        margin: 30px 15px;
+    }
+    .price_details{
+        flex-wrap: wrap;
+    }
+    .colour_item_title.car_colour_img{
+        font-size: 17px;
+    }
+    .car_feature_variant_box .select_box{
+        width: 95%;
+    }
+}
+
+
 .swiper-button-prev, .swiper-button-next{
     z-index: 220;
     border-radius: 50%;
