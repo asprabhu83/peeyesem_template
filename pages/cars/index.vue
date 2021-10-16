@@ -5190,6 +5190,7 @@ export default {
         filterCarSpecCategories(){
            var category = [...new Set(this.car.car_specs.map((item)=>{return item.category}))];
            this.car.car_spec_tab = category;
+           return category;
         },
         filterCarSpecs(cat){
            var newItem = this.car.car_specs_original.filter((item)=>{return item.category == cat})
@@ -5198,6 +5199,7 @@ export default {
         filterFeatureCategories(){
             var category = [...new Set(this.car.car_features.map((item)=>{return item.category}))];
             this.car.car_features_tab = category;
+            return category;
         },
         filterFeatures(cat){
             var variantId = this.VariantFeature;
@@ -5228,10 +5230,10 @@ export default {
            this.car.car_specs_original = car_specs;
            this.car.car_features = car_features;
            this.car.car_features_original = car_features;
-           this.filterCarSpecCategories();
-           this.filterFeatureCategories();
-           this.filterCarSpecs('Engine');
-           this.filterFeatures('Exterior');
+           var Tab1 = this.filterCarSpecCategories();
+           var Tab2 = this.filterFeatureCategories();
+           this.filterCarSpecs(Tab1[0]);
+           this.filterFeatures(Tab2[0]);
         }
     }
 }
