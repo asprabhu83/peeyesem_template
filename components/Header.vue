@@ -88,7 +88,7 @@
                                             </ul>
                                         </li>
                                         <li>
-                                            <a class="menu-item" href="#">Accessories </a>
+                                            <nuxt-link class="menu-item" to="/accessories">Accessories</nuxt-link>
                                         </li>
                                         <li>
                                             <a class="menu-item" href="#">Locations </a>
