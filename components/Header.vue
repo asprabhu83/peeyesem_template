@@ -108,8 +108,8 @@
                                         <li class="has-dropdown">
                                             <a class="menu-item" href="#">Contact Us <i class="fa fa-angle-down"></i></a>
                                                <ul class="sub-menu">
-                                                <li><nuxt-link to="/">Test Drive</nuxt-link></li>
-                                                <li><nuxt-link to="/">Sales Enquiry</nuxt-link></li>
+                                                <li><nuxt-link to="/contact-us/test-drive">Test Drive</nuxt-link></li>
+                                                <li><nuxt-link to="/contact-us/sales-enquiry">Sales Enquiry</nuxt-link></li>
                                                 <li><nuxt-link to="/">EMI Calculator</nuxt-link></li>
                                                     <li><nuxt-link to="/">Special Offers</nuxt-link></li>
                                                 <li><nuxt-link to="/">Feedback</nuxt-link></li>
