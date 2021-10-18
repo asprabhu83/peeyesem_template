@@ -292,13 +292,6 @@ export default {
                 price:'8,14,900'
             },
             {
-                id:4,
-                name:'Hyundai i20 N Line',
-                image:'car10.webp',
-                category:'Hatchback',
-                price:'7,31,900'
-            },
-            {
                 id:5,
                 name:'Hyundai Aura',
                 image:'car2.webp',
@@ -370,13 +363,6 @@ export default {
                 image:'car9.webp',
                 category:'Hatchback',
                 price:'8,14,900'
-            },
-            {
-                id:4,
-                name:'Hyundai i20 N Line',
-                image:'car10.webp',
-                category:'Hatchback',
-                price:'7,31,900'
             },
             {
                 id:5,

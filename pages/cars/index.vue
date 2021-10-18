@@ -31,25 +31,29 @@
                   <div class="price_item">
                       <div class="price_title"><font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mr-2" />Price</div>
                       <div class="detail">
-                          Petrol: {{car.price}}
+                          Petrol: {{car.price}}*<br/>
+                          <span v-if="car.price2 !== ''">Diesel: {{car.price2}}*</span>
                       </div>
                   </div>
                   <div class="price_item">
                       <div class="price_title"><font-awesome-icon icon="tachometer-alt"  size="1x" class="text-black mr-2" />Power</div>
                       <div class="detail">
-                          Petrol: {{car.power}}
+                          Petrol: {{car.power}}<br/>
+                          <span v-if="car.power2 !== ''">Diesel: {{car.power2}}</span>
                       </div>
                   </div>
                   <div class="price_item">
                       <div class="price_title"><font-awesome-icon icon="cogs"  size="1x" class="text-black mr-2" />Transmission</div>
                       <div class="detail">
-                          Petrol: {{car.transmission}}
+                          Petrol: {{car.transmission}}<br/>
+                          <span v-if="car.transmission2 !== ''">Diesel: {{car.transmission2}}</span>
                       </div>
                   </div>
                   <div class="price_item">
                       <div class="price_title"><font-awesome-icon icon="gas-pump"  size="1x" class="text-black mr-2" />Mileage</div>
                       <div class="detail">
-                          Petrol: {{car.mileage}}
+                          Petrol: {{car.mileage}}<br/>
+                          <span v-if="car.mileage2 !== ''">Diesel: {{car.mileage2}}</span>
                       </div>
                   </div>
               </div>
@@ -356,9 +360,12 @@ export default {
                 image:'car7.jpg',
                 poster_image:'car1.jpg',    
                 overview_image:'car1.webp',
-                power:' 152 PS @ 6,200 RPM',
+                power:' 89 Bhp @ 4000 RPM',
+                power2:'89 Bhp @ 4000 RPM',
                 transmission:'Manual,Automatic',
-                mileage:'13.03 KMPL',
+                transmission2:'Manual',
+                mileage:'17.4 Kmpl To 22.54 Kmpl',
+                mileage2:'17.4 Kmpl To 22.54 Kmpl',
                 category:'Hatchback',
                 highlights:[
                     {
@@ -775,7 +782,8 @@ export default {
                         value:'Front Only'
                     }
                 ],
-                price:'8,19,900',
+                price:'6,79,900',
+                price2:'8,19,900',
                 description:"Hyundai All New I20 - Modern Stylish Tallboy: The overall design theme is based on Rhythmical Tension that exudes a Refined yet Sporty Image. The front of The All New SANTRO is defined by Hyundai's Signature Cascade Grille with chrome surround that projects Modern and Premium appeal of the car"
             },
             {
@@ -784,9 +792,12 @@ export default {
                 image:'car8.jpg',
                 poster_image:'car2.webp',
                 overview_image:'car2.webp',
-                power:' 152 PS @ 6,200 RPM',
+                power:' 69 PS @ 5,500 RPM',
+                power2:'',
                 transmission:'Manual,Automatic',
-                mileage:'13.03 KMPL',
+                transmission2:'',
+                mileage:'20.3 KMPL',
+                mileage2:'',
                 category:'Hatchback',
                 highlights:[
                     {
@@ -1203,6 +1214,7 @@ export default {
                     }
                 ],
                 price:'4,67,490',
+                price2:'',
                 description:"Hyundai Santro - Modern Stylish Tallboy: The overall design theme is based on Rhythmical Tension that exudes a Refined yet Sporty Image. The front of The All New SANTRO is defined by Hyundai's Signature Cascade Grille with chrome surround that projects Modern and Premium appeal of the car"
             },
             {
@@ -1211,9 +1223,12 @@ export default {
                 image:'car9.webp',
                 poster_image:'car3.jpg',
                 overview_image:'car3.webp',
-                power:' 152 PS @ 6,200 RPM',
+                power:'  83 PS @ 6,000 RPM',
+                power2:'75 PS @ 4,000 RPM',
                 transmission:'Manual,Automatic',
-                mileage:'13.03 KMPL',
+                transmission2:'Manual',
+                mileage:'26.2 Kmpl',
+                mileage2:'28.4 Kmpl',
                 category:'Hatchback',
                 highlights:[
                     {
@@ -1629,435 +1644,9 @@ export default {
                         value:'Front Only'
                     }
                 ],
-                price:'8,14,900',
+                price:'5,12,690',
+                price2:' 7,05,810',
                 description:"GRAND i10 NIOS - Modern Stylish Tallboy: The overall design theme is based on Rhythmical Tension that exudes a Refined yet Sporty Image. The front of The All New SANTRO is defined by Hyundai's Signature Cascade Grille with chrome surround that projects Modern and Premium appeal of the car"
-            },
-            {
-                id:4,
-                name:'Hyundai i20 N Line',
-                image:'car10.webp',
-                poster_image:'car11.webp',
-                overview_image:'car11.webp',
-                power:' 152 PS @ 6,200 RPM',
-                transmission:'Manual,Automatic',
-                mileage:'13.03 KMPL',
-                category:'Hatchback',
-                highlights:[
-                    {
-                        id:1,
-                        name:'Oxyboost Air Purifier With Air Quality Indicator',
-                        description:'Its stylish design, sleek lines and bold stance stand out no matter what environment it is in.',
-                        image:'1.jpg'
-                    },
-                    {
-                        id:2,
-                        name:'Wireless Charger With Cooling Pad',
-                        description:'Its stylish design, sleek lines and bold stance stand out no matter what environment it is in.',
-                        image:'2.jpg'
-                    },
-                    {
-                        id:3,
-                        name:'Soothing Blue Ambient Lighting',
-                        description:'Its stylish design, sleek lines and bold stance stand out no matter what environment it is in.',
-                        image:'3.jpg'
-                    },
-                    {
-                        id:4,
-                        name:'Electric Sunroof',
-                        description:'Its stylish design, sleek lines and bold stance stand out no matter what environment it is in.',
-                        image:'4.jpg'
-                    },
-                    {
-                        id:5,
-                        name:'26.03 Cm HD Touchscreen Infotainment & Navigation System',
-                        description:'Its stylish design, sleek lines and bold stance stand out no matter what environment it is in.',
-                        image:'5.jpg'
-                    },
-                    {
-                        id:6,
-                        name:'Bose Premium 7 Speaker System',
-                        description:'Its stylish design, sleek lines and bold stance stand out no matter what environment it is in.',
-                        image:'6.jpg'
-                    },
-                    {
-                        id:7,
-                        name:'Hyundai BlueLink With Over The Air (OTA) Map',
-                        description:'Its stylish design, sleek lines and bold stance stand out no matter what environment it is in.',
-                        image:'7.jpg'
-                    },
-                    {
-                        id:8,
-                        name:'Front Grille',
-                        description:'Its stylish design, sleek lines and bold stance stand out no matter what environment it is in.',
-                        image:'8.jpg'
-                    },
-                    {
-                        id:9,
-                        name:'Superior Turbo GDi Engine Lightening Fast',
-                        description:'Its stylish design, sleek lines and bold stance stand out no matter what environment it is in.',
-                        image:'9.jpg'
-                    },
-                    {
-                        id:10,
-                        name:'Metal Pedals',
-                        description:'Its stylish design, sleek lines and bold stance stand out no matter what environment it is in.',
-                        image:'10.jpg'
-                    },
-                    {
-                        id:11,
-                        name:'Premium Leather* Seat Upholstery',
-                        description:'Its stylish design, sleek lines and bold stance stand out no matter what environment it is in.',
-                        image:'11.jpg'
-                    },
-                    {
-                        id:12,
-                        name:'Turbo Branding On Front Grille',
-                        description:'Its stylish design, sleek lines and bold stance stand out no matter what environment it is in.',
-                        image:'12.jpg'
-                    }
-                ],
-                car_gallery:[
-                    {
-                        id:1,
-                        image:'13.webp'
-                    },
-                    {
-                        id:2,
-                        image:'14.webp'
-                    },
-                    {
-                        id:3,
-                        image:'15.webp'
-                    },
-                    {
-                        id:4,
-                        image:'16.webp'
-                    }
-                ],
-                video_link:'vWFtZhOkcFY',
-                car_colours:[
-                    {
-                        id:1,
-                        title:'Hyundai All New i20 Copper Metalic',
-                        colour1:'#644a49',
-                        colour2:'#644a49',
-                        image:'1.jpg'
-                    },
-                    {
-                        id:2,
-                        title:'Hyundai All New i20 Fiery Red Black Roof ',
-                        colour1:'#941b0a',
-                        colour2:'#111111',
-                        image:'2.jpg'
-                    },
-                    {
-                        id:3,
-                        title:'Hyundai All New i20 Starry Night',
-                        colour1:'#242736',
-                        colour2:'#242736',
-                        image:'3.jpg'
-                    },
-                    {
-                        id:4,
-                        title:'Hyundai All New i20 Tyhoon Silver ',
-                        colour1:'#e2e3e5',
-                        colour2:'#e2e3e5',
-                        image:'4.jpg'
-                    }
-                ],
-                car_specs:[
-                    {
-                        id:1,
-                        model:'Max. Power (ps / rpm)',
-                        petrol:'88 (IVT) @ 6000 - 120 (DCT, iMT) @ 6000',
-                        diesel:'100 @ 4000',
-                        category:'Engine',
-                    },
-                    {
-                        id:2,
-                        model:'Displacement (cc)',
-                        petrol:'1197 | 998 (1.0 Turbo GDI)',
-                        diesel:'1493',
-                        category:'Engine',
-                    },
-                    {
-                        id:3,
-                        model:'Max. Torque (kgm / rpm)',
-                        petrol:'11.7 @ 4200 - 17.5 @ 1500 ~ 4000',
-                        diesel:'24.5 @ 1500 ~ 2750',
-                        category:'Engine',
-                    },
-                    {
-                        id:4,
-                        model:'Transmission type',
-                        petrol:'5-7 speed (5 MT - 7 DCT)',
-                        diesel:'6-speed (6 MT)',
-                        category:'Transmission',
-                    },
-                    {
-                        id:5,
-                        model:'Front',
-                        petrol:'McPherson strut',
-                        diesel:'McPherson strut',
-                        category:'Suspension',
-                    },
-                    {
-                        id:6,
-                        model:'Rear',
-                        petrol:'Coupled torsion beam axle',
-                        diesel:'Coupled torsion beam axle',
-                        category:'Suspension',
-                    },
-                    {
-                        id:7,
-                        model:'Shock Absorber',
-                        petrol:'Gas Type',
-                        diesel:'Gas Type',
-                        category:'Suspension',
-                    },
-                    {
-                        id:8,
-                        model:'Front',
-                        petrol:'Disc',
-                        diesel:'Disc',
-                        category:'Brakes',
-                    },
-                    {
-                        id:9,
-                        model:'Rear',
-                        petrol:'Drum',
-                        diesel:'Drum',
-                        category:'Brakes',
-                    },
-                    {
-                        id:10,
-                        model:'Fuel Tank Capacity (Ltrs)',
-                        petrol:'37 L',
-                        diesel:'37 L',
-                        category:'Dimensions',
-                    },
-                    {
-                        id:11,
-                        model:'Overall length (mm)',
-                        petrol:'3995',
-                        diesel:'3995',
-                        category:'Dimensions',
-                    },
-                    {
-                        id:12,
-                        model:'Overall width (mm)',
-                        petrol:'1775',
-                        diesel:'1775',
-                        category:'Dimensions',
-                    },
-                    {
-                        id:13,
-                        model:'Overall height (mm)',
-                        petrol:'1505',
-                        diesel:'1505',
-                        category:'Dimensions',
-                    },
-                    {
-                        id:14,
-                        model:'Wheelbase (mm)',
-                        petrol:'2580',
-                        diesel:'2580',
-                        category:'Dimensions',
-                    },
-                    {
-                        id:15,
-                        model:'Size',
-                        petrol:'185/65 R15(Magna), 195/55 R16 (Sportz), 195/55 R16 (Asta, Asta (O))',
-                        diesel:'185/65 R15(Magna), 195/55 R16 (Sportz), 195/55 R16 (Asta, Asta (O))',
-                        category:'Tyre Size',
-                    },
-                    {
-                        id:16,
-                        model:'Spare Tyre',
-                        petrol:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
-                        diesel:'185/70 R14 (Magna), 185/65 R15 (Sportz, Asta, Asta (O))',
-                        category:'Tyre Size',
-                    }
-                ],
-                car_features:[
-                    {
-                        id:1,
-                        variant_id:1,
-                        category:'Exterior',
-                        feature:'Standard Halogen Headlamps',
-                        value:'Yes'
-                    },
-                    {
-                        id:2,
-                        variant_id:1,
-                        category:'Exterior',
-                        feature:'High Gloss Front Grille',
-                        value:'Yes'
-                    },
-                    {
-                        id:3,
-                        variant_id:1,
-                        category:'Exterior',
-                        feature:'B-Pillar Blackout',
-                        value:'Yes'
-                    },
-                    {
-                        id:4,
-                        variant_id:2,
-                        category:'Exterior',
-                        feature:'C Pillar Black Finish',
-                        value:'Yes'
-                    },
-                    {
-                        id:5,
-                        variant_id:2,
-                        category:'Exterior',
-                        feature:'Body Color Bumper',
-                        value:'Yes'
-                    },
-                    {
-                        id:6,
-                        variant_id:2,
-                        category:'Exterior',
-                        feature:'Body Color Outside Mirrors',
-                        value:'Yes'
-                    },
-                    {
-                        id:7,
-                        variant_id:2,
-                        category:'Exterior',
-                        feature:'Body Color Outside Door Handles',
-                        value:'Yes'
-                    },
-                    {
-                        id:8,
-                        variant_id:1,
-                        category:'Interior',
-                        feature:'Fabric Seat Upholstery-with Copper Stitching',
-                        value:'Yes'
-                    },
-                    {
-                        id:9,
-                        variant_id:1,
-                        category:'Interior',
-                        feature:'Sunglass Holder',
-                        value:'Yes'
-                    },
-                    {
-                        id:10,
-                        variant_id:1,
-                        category:'Interior',
-                        feature:'2-Tone Beige & Black Interior Color',
-                        value:'Yes'
-                    },
-                    {
-                        id:11,
-                        variant_id:2,
-                        category:'Interior',
-                        feature:'Map Pockets',
-                        value:'Front & Rear Door'
-                    },
-                    {
-                        id:12,
-                        variant_id:2,
-                        category:'Interior',
-                        feature:'Front Passenger Seat Back Pocket',
-                        value:'Yes'
-                    },
-                    {
-                        id:13,
-                        variant_id:1,
-                        category:'Comfort And Convenience',
-                        feature:'Power Windows',
-                        value:'Front, Rear'
-                    },
-                    {
-                        id:14,
-                        variant_id:1,
-                        category:'Comfort And Convenience',
-                        feature:'Timelag Power Windows',
-                        value:'Yes'
-                    },
-                    {
-                        id:15,
-                        variant_id:2,
-                        category:'Comfort And Convenience',
-                        feature:'Switch Illumination Driver side Power Windows',
-                        value:'Yes'
-                    },
-                    {
-                        id:16,
-                        variant_id:2,
-                        category:'Comfort And Convenience',
-                        feature:'Air Conditioner',
-                        value:'Manual'
-                    },
-                    {
-                        id:17,
-                        variant_id:2,
-                        category:'Comfort And Convenience',
-                        feature:'Power Steering',
-                        value:'Motor Driven (Electric)'
-                    },
-                    {
-                        id:18,
-                        variant_id:1,
-                        category:'Safety And Security',
-                        feature:'Airbag',
-                        value:'Driver & Passenger'
-                    },
-                    {
-                        id:19,
-                        variant_id:1,
-                        category:'Safety And Security',
-                        feature:'ABS with EBD',
-                        value:'Yes'
-                    },
-                    {
-                        id:20,
-                        variant_id:2,
-                        category:'Safety And Security',
-                        feature:'Fog Lamps',
-                        value:'Front Projector'
-                    },
-                    {
-                        id:21,
-                        variant_id:2,
-                        category:'Safety And Security',
-                        feature:'Central Locking',
-                        value:'Yes'
-                    },
-                    {
-                        id:22,
-                        variant_id:1,
-                        category:'Audio & Entertainment',
-                        feature:'DRM',
-                        value:'Yes'
-                    },
-                    {
-                        id:23,
-                        variant_id:1,
-                        category:'Audio & Entertainment',
-                        feature:'2-DIN Radio+MP3 Audio',
-                        value:'Yes'
-                    },
-                    {
-                        id:24,
-                        variant_id:1,
-                        category:'Audio & Entertainment',
-                        feature:'Speakers',
-                        value:'Front & Rear'
-                    },
-                    {
-                        id:25,
-                        variant_id:2,
-                        category:'Audio & Entertainment',
-                        feature:'Tweeters',
-                        value:'Front Only'
-                    }
-                ],
-                price:'7,31,900',
-                description:"Hyundai i20 N Line - Modern Stylish Tallboy: The overall design theme is based on Rhythmical Tension that exudes a Refined yet Sporty Image. The front of The All New SANTRO is defined by Hyundai's Signature Cascade Grille with chrome surround that projects Modern and Premium appeal of the car"
             },
             {
                 id:5,
@@ -2065,9 +1654,12 @@ export default {
                 image:'car2.webp',
                 poster_image:'car4.jpg',
                 overview_image:'car4.webp',
-                power:' 152 PS @ 6,200 RPM',
+                power:' 81 Bhp @ 6000 Rpm',
+                power2:' 74 Bhp @ 4000 Rpm',
                 transmission:'Manual,Automatic',
-                mileage:'13.03 KMPL',
+                transmission2:'Manual,Automatic',
+                mileage:'16 KMPL',
+                mileage2:'24 KMPL',
                 category:'Sedan',
                 highlights:[
                     {
@@ -2483,7 +2075,8 @@ export default {
                         value:'Front Only'
                     }
                 ],
-                price:'22,30,000',
+                price:'8,60,600',
+                price2:'7,79,500',
                 description:"Hyundai Aura - Modern Stylish Tallboy: The overall design theme is based on Rhythmical Tension that exudes a Refined yet Sporty Image. The front of The All New SANTRO is defined by Hyundai's Signature Cascade Grille with chrome surround that projects Modern and Premium appeal of the car"
             },
             {
@@ -2492,9 +2085,12 @@ export default {
                 image:'car15.jpg',
                 poster_image:'car5.jpg',
                 overview_image:'car5.webp',
-                power:' 152 PS @ 6,200 RPM',
+                power:' 123 PS @ 6,400 RPM',
+                power2:'128 PS @ 4,000 RPM',
                 transmission:'Manual,Automatic',
-                mileage:'13.03 KMPL',
+                transmission2:'Manual,Automatic',
+                mileage:'17.7 Kmpl',
+                mileage2:'25 Kmpl',
                 category:'Sedan',
                 highlights:[
                     {
@@ -2910,7 +2506,8 @@ export default {
                         value:'Front Only'
                     }
                 ],
-                price:'8,19,900',
+                price:'9,02,900',
+                price2:'',
                 description:"Hyundai Verna - Modern Stylish Tallboy: The overall design theme is based on Rhythmical Tension that exudes a Refined yet Sporty Image. The front of The All New SANTRO is defined by Hyundai's Signature Cascade Grille with chrome surround that projects Modern and Premium appeal of the car"
             },
             {
@@ -3347,8 +2944,11 @@ export default {
                 poster_image:'car10.jpg',
                 overview_image:'car10.webp',
                 power:' 152 PS @ 6,200 RPM',
+                power2:'',
                 transmission:'Manual,Automatic',
-                mileage:'13.03 KMPL',
+                transmission2:'',
+                mileage:'16.3 Kmpl',
+                mileage2:'',
                 category:'SUV',
                 highlights:[
                     {
@@ -3764,7 +3364,8 @@ export default {
                         value:'Front Only'
                     }
                 ],
-                price:'4,67,490',
+                price:'17,60,000',
+                price2:'',
                 description:"Hyundai Tuscon - Modern Stylish Tallboy: The overall design theme is based on Rhythmical Tension that exudes a Refined yet Sporty Image. The front of The All New SANTRO is defined by Hyundai's Signature Cascade Grille with chrome surround that projects Modern and Premium appeal of the car"
             },
             {
@@ -3773,9 +3374,12 @@ export default {
                 image:'car4.webp',
                 poster_image:'car7.jpg',
                 overview_image:'car7.webp',
-                power:' 152 PS @ 6,200 RPM',
+                power:' Kappa 1.2 MPI: 83 Ps/6000 Rpm',
+                power2:'U2 1.4 CRDi: 90 Ps /4000 Rpm',
                 transmission:'Manual,Automatic',
-                mileage:'13.03 KMPL',
+                transmission2:'Manual',
+                mileage:'17.52 Kmpl',
+                mileage2:'23.7 Kmpl',
                 category:'SUV',
                 highlights:[
                     {
@@ -4191,7 +3795,8 @@ export default {
                         value:'Front Only'
                     }
                 ],
-                price:'8,16,500',
+                price:'6,75,000',
+                price2:'8,16,500',
                 description:"Hyundai Venue - Modern Stylish Tallboy: The overall design theme is based on Rhythmical Tension that exudes a Refined yet Sporty Image. The front of The All New SANTRO is defined by Hyundai's Signature Cascade Grille with chrome surround that projects Modern and Premium appeal of the car"
             },
             {
@@ -4200,9 +3805,12 @@ export default {
                 image:'car17.jpg',
                 poster_image:'car9.jpg',
                 overview_image:'car9.webp',
-                power:' 152 PS @ 6,200 RPM',
+                power:' 117 KW (159 PS) / 6 500 R/Min',
+                power2:' 84.6 KW (115 PS)/ 4 000 R/Min',
                 transmission:'Manual,Automatic',
-                mileage:'13.03 KMPL',
+                transmission2:'Manual,Automatic',
+                mileage:'14.5* Kmpl',
+                mileage2:'20.4* Kmpl',
                 category:'SUV',
                 highlights:[
                     {
@@ -4618,7 +4226,8 @@ export default {
                         value:'Front Only'
                     }
                 ],
-                price:'16,53,300',
+                price:'16,30,300',
+                price2:'16,53,300',
                 description:"Hyundai Alcazar - Modern Stylish Tallboy: The overall design theme is based on Rhythmical Tension that exudes a Refined yet Sporty Image. The front of The All New SANTRO is defined by Hyundai's Signature Cascade Grille with chrome surround that projects Modern and Premium appeal of the car"
             },
             {
@@ -4627,9 +4236,12 @@ export default {
                 image:'car19.webp',
                 poster_image:'car8.jpg',
                 overview_image:'car8.webp',
-                power:' 152 PS @ 6,200 RPM',
+                power:'121.3 BHP @ 6400 RPM',
+                power2:'113.42 BHP @ 4000 RPM',
                 transmission:'Manual,Automatic',
-                mileage:'13.03 KMPL',
+                transmission2:'Manual,Automatic',
+                mileage:'16.8 - 21.4 KMPL',
+                mileage2:'16.9 - 18.5 KMPL',
                 category:'SUV',
                 highlights:[
                     {
@@ -5045,20 +4657,25 @@ export default {
                         value:'Front Only'
                     }
                 ],
-                price:'17,00,000',
+                price:'9,81,890',
+                price2:'9,99,900',
                 description:"Hyundai CRETA - Modern Stylish Tallboy: The overall design theme is based on Rhythmical Tension that exudes a Refined yet Sporty Image. The front of The All New SANTRO is defined by Hyundai's Signature Cascade Grille with chrome surround that projects Modern and Premium appeal of the car"
             }
            ],
            car:{
               name:'',
               price:'',
+              price2:'',
               image:'',
               poster_image:'',
               overview_image:'',
               description:'',
               power:'',
+              power2:'',
               transmission:'',
+              transmission2:'',
               mileage:'',
+              mileage2:'',
               highlights:[],
               gallery:[],
               video_link:'',
@@ -5212,16 +4829,20 @@ export default {
             })
            this.singleCar = item
            const [car] = this.singleCar
-           const {name,price,poster_image,image,overview_image,description,power,transmission,mileage,highlights,car_gallery,video_link,car_colours,car_specs,car_features} = car
+           const {name,price,price2,poster_image,image,overview_image,description,power,power2,transmission,transmission2,mileage,mileage2,highlights,car_gallery,video_link,car_colours,car_specs,car_features} = car
            this.car.name=name;
            this.car.price=price;
+           this.car.price2 = price2;
            this.car.poster_image=poster_image;
            this.car.image=image;
            this.car.overview_image=overview_image;
            this.car.description=description;
            this.car.power=power;
+           this.car.power2 = power2;
            this.car.transmission=transmission;
+           this.car.transmission2 = transmission2;
            this.car.mileage=mileage;
+           this.car.mileage2 = mileage2;
            this.car.highlights = highlights;
            this.car.gallery = car_gallery;
            this.car.video_link = video_link;
@@ -5469,7 +5090,7 @@ export default {
 .price_details .price_item{
     margin: 10px 45px;
     padding: 30px 10px;
-    width: 15%;
+    width: 20%;
     box-shadow: 0 2px 10px 4px rgb(0 0 0/15%);
     border-radius: 8px;
 }
@@ -5483,6 +5104,10 @@ export default {
 .price_item .detail{
     margin: 25px 0 10px 0;
     text-align: center;
+}
+.price_item .detail span{
+    margin-top: 7px;
+    display: inline-block;
 }
 /* Mobile Fixes */
 @media only screen and (min-width:300px) and (max-width:600px){

@@ -48,17 +48,17 @@
                                             <a class="menu-item" href="#">New Cars <i class="fa fa-angle-down"></i></a>
                                             <!-- Sub Menu -->
                                             <ul class="sub-menu">
-                                                <li><nuxt-link to="/">All Cars</nuxt-link></li>
-                                                <li><nuxt-link to="/"> Santro</nuxt-link></li>
-                                                <li><nuxt-link to="/"> All New i20</nuxt-link></li>
-                                                <li><nuxt-link to="/"> Grand i10 NIOS</nuxt-link></li>
-                                                <li><nuxt-link to="/"> Aura</nuxt-link></li>
-                                                <li><nuxt-link to="/"> All New Verna</nuxt-link></li>
-                                                <li><nuxt-link to="/"> Elantra</nuxt-link></li>
-                                                <li><nuxt-link to="/"> Venue</nuxt-link></li>
-                                                <li><nuxt-link to="/"> All New Creta</nuxt-link></li>
-                                                <li><nuxt-link to="/"> Alcazar</nuxt-link></li>
-                                                <li><nuxt-link to="/"> Tucson</nuxt-link></li>
+                                                <li><a href="/">All Cars</a></li>
+                                                <li><a href="/cars/?id=2"> Santro</a></li>
+                                                <li><a href="/cars/?id=1"> All New i20</a></li>
+                                                <li><a href="/cars/?id=3"> Grand i10 NIOS</a></li>
+                                                <li><a href="/cars/?id=5"> Aura</a></li>
+                                                <li><a href="/cars/?id=6"> All New Verna</a></li>
+                                                <li><a href="/cars/?id=7"> Elantra</a></li>
+                                                <li><a href="/cars/?id=9"> Venue</a></li>
+                                                <li><a href="/cars/?id=12"> All New Creta</a></li>
+                                                <li><a href="/cars/?id=11"> Alcazar</a></li>
+                                                <li><a href="/cars/?id=8"> Tucson</a></li>
                                             </ul>
                                         </li>
                                         <li class="has-dropdown">
@@ -96,12 +96,12 @@
                                         <li  class="has-dropdown">
                                             <nuxt-link class="menu-item" to="/about-us">About Us <i class="fa fa-angle-down"></i></nuxt-link>
                                             <ul class="sub-menu">
-                                                <li><nuxt-link to="/">About</nuxt-link></li>
-                                                <li><nuxt-link to="/">Blog</nuxt-link></li>
+                                                <li><nuxt-link to="/about">About</nuxt-link></li>
+                                                <li><nuxt-link to="/blog">Blog</nuxt-link></li>
                                                 <li><nuxt-link to="/">Testimonials</nuxt-link></li>
                                                 <li><nuxt-link to="/">Gallery</nuxt-link></li>
                                                 <li><nuxt-link to="/">Careers</nuxt-link></li>
-                                                <li><nuxt-link to="/">News and Events</nuxt-link></li>
+                                                <li><nuxt-link to="/news-event">News and Events</nuxt-link></li>
                                             </ul>
                                         </li>
 
