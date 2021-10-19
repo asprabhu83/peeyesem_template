@@ -1,9 +1,11 @@
 <template>
   <div class="my-16">
       <div class="heading text-center my-4">
-          Sales Enquiry
+         Contact Us
       </div>
-      <div class="explain text-center mt-4 mb-5">Please fill the below fields to know more about your favorite Hyundai car.</div>
+      <div class="explain  text-center mt-4 mb-5">
+          We care about you and your vehicle. Our goal is to resolve any problems if you have, quickly and completely. Please fill the below form and choose your reason for contacting us. We are always eager to assist you – Advaith Hyundai caring for you always
+      </div>
       <div class="form_sec">
           <div class="image_sec">
               <img :src="require('@/assets/img/cars/form_poster2.jpg')" alt="img" style="width:100%;" />
@@ -53,7 +55,7 @@
                         v-model="email"
                         />
                     </div>
-                    <div class="mb-6 ">
+                    <div class="mb-4 ">
                         <input
                         class="
                             shadow-md
@@ -74,35 +76,6 @@
                         v-model="mobile"
                         />
                     </div>
-                    <div class="btn_box">
-                        <button type="button" @click="form_tab_index = 1">Next</button>
-                    </div>
-            </form>
-          </div>
-          <div class="step step2" :class="form_tab_index == 1 ? 'active' : ''" >
-              <div class="title">Dealership & Enquiry Details</div>
-              <form >
-                <div class="mb-4 mt-4">
-                        <input
-                        class="
-                            shadow-md
-                            appearance-none
-                            border
-                            rounded
-                            w-full
-                            py-2
-                            px-3
-                            text-gray-700
-                            leading-tight
-                            focus:outline-none
-                            focus:shadow-outline
-                        "
-                        id="enquiry"
-                        type="text"
-                        placeholder="Select Enquiry for"
-                        v-model="name"
-                        />
-                    </div>
                     <div class="mb-4 ">
                         <input
                         class="
@@ -118,31 +91,10 @@
                             focus:outline-none
                             focus:shadow-outline
                         "
-                        id="dealer"
+                        id="message"
                         type="text"
-                        placeholder="Select Dealer"
-                        v-model="email"
-                        />
-                    </div>
-                    <div class="mb-4 ">
-                        <input
-                        class="
-                            shadow-md
-                            appearance-none
-                            border
-                            rounded
-                            w-full
-                            py-2
-                            px-3
-                            text-gray-700
-                            leading-tight
-                            focus:outline-none
-                            focus:shadow-outline
-                        "
-                        id="comments"
-                        type="text"
-                        placeholder="Comments"
-                        v-model="mobile"
+                        placeholder="Message"
+                        v-model="message"
                         />
                     </div>
                     <div class="mb-6">
@@ -154,15 +106,10 @@
                         </div>
                     </div>
                     <div class="btn_box">
-                        <button type="button" @click="form_tab_index = 0">Previous</button>
                         <button type="button">Submit</button>
                     </div>
             </form>
           </div>
-      </div>
-      <div class="my-5 active_sec">
-          <div :class="form_tab_index == 0 ? 'active' : ''"></div>
-          <div :class="form_tab_index == 1 ? 'active' : ''"></div>
       </div>
   </div>
 </template>
@@ -171,10 +118,10 @@
 export default {
     data(){
         return{
+            form_tab_index:0,
             name:'',
             email:'',
             mobile:'',
-            form_tab_index:0,
         }
     }
 }
@@ -187,6 +134,9 @@ export default {
 }
 .explain{
     font-size: 16px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
 }
 .btn_box button{
     padding: 4px 20px;

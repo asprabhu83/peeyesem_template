@@ -1,9 +1,11 @@
 <template>
   <div class="my-16">
       <div class="heading text-center my-4">
-          Sales Enquiry
+          Give Us A Feedback
       </div>
-      <div class="explain text-center mt-4 mb-5">Please fill the below fields to know more about your favorite Hyundai car.</div>
+      <div class="explain  text-center mt-4 mb-5">Please help us serve you better by taking a moment to give us your feedback.
+         Dear Customer, Your complete satisfactions is of primary importance to us should ever have questions or comments about Advaith Hyundai, our Product or our services, we request you to follow these steps so our concerns can be addressed as quickly and efficiently as possible.
+      </div>
       <div class="form_sec">
           <div class="image_sec">
               <img :src="require('@/assets/img/cars/form_poster2.jpg')" alt="img" style="width:100%;" />
@@ -99,8 +101,8 @@
                         "
                         id="enquiry"
                         type="text"
-                        placeholder="Select Enquiry for"
-                        v-model="name"
+                        placeholder="Select Feedback for"
+                        v-model="Feedback"
                         />
                     </div>
                     <div class="mb-4 ">
@@ -121,7 +123,7 @@
                         id="dealer"
                         type="text"
                         placeholder="Select Dealer"
-                        v-model="email"
+                        v-model="dealer"
                         />
                     </div>
                     <div class="mb-4 ">
@@ -142,7 +144,7 @@
                         id="comments"
                         type="text"
                         placeholder="Comments"
-                        v-model="mobile"
+                        v-model="comments"
                         />
                     </div>
                     <div class="mb-6">
@@ -171,10 +173,13 @@
 export default {
     data(){
         return{
+            form_tab_index:0,
             name:'',
             email:'',
             mobile:'',
-            form_tab_index:0,
+            Feedback:'',
+            dealer:'',
+            comments:'',
         }
     }
 }
@@ -187,6 +192,9 @@ export default {
 }
 .explain{
     font-size: 16px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
 }
 .btn_box button{
     padding: 4px 20px;

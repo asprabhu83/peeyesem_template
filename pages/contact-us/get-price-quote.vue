@@ -1,9 +1,8 @@
 <template>
   <div class="my-16">
-      <div class="heading text-center my-4">
-          Sales Enquiry
+      <div class="heading text-center mt-4 mb-16">
+          Get Price Quote
       </div>
-      <div class="explain text-center mt-4 mb-5">Please fill the below fields to know more about your favorite Hyundai car.</div>
       <div class="form_sec">
           <div class="image_sec">
               <img :src="require('@/assets/img/cars/form_poster2.jpg')" alt="img" style="width:100%;" />
@@ -80,7 +79,7 @@
             </form>
           </div>
           <div class="step step2" :class="form_tab_index == 1 ? 'active' : ''" >
-              <div class="title">Dealership & Enquiry Details</div>
+              <div class="title">Vehicle Details</div>
               <form >
                 <div class="mb-4 mt-4">
                         <input
@@ -99,8 +98,8 @@
                         "
                         id="enquiry"
                         type="text"
-                        placeholder="Select Enquiry for"
-                        v-model="name"
+                        placeholder="Select Vehicle Model"
+                        v-model="vehicleModel"
                         />
                     </div>
                     <div class="mb-4 ">
@@ -120,8 +119,8 @@
                         "
                         id="dealer"
                         type="text"
-                        placeholder="Select Dealer"
-                        v-model="email"
+                        placeholder="Select Vehicle Variant"
+                        v-model="vehicleVariant"
                         />
                     </div>
                     <div class="mb-4 ">
@@ -141,8 +140,8 @@
                         "
                         id="comments"
                         type="text"
-                        placeholder="Comments"
-                        v-model="mobile"
+                        placeholder="Select Dealer"
+                        v-model="dealer"
                         />
                     </div>
                     <div class="mb-6">
@@ -171,10 +170,13 @@
 export default {
     data(){
         return{
+            form_tab_index:0,
             name:'',
             email:'',
             mobile:'',
-            form_tab_index:0,
+            dealer:'',
+            vehicleModel:'',
+            vehicleVariant:''
         }
     }
 }
@@ -187,6 +189,9 @@ export default {
 }
 .explain{
     font-size: 16px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
 }
 .btn_box button{
     padding: 4px 20px;

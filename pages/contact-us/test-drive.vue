@@ -8,7 +8,7 @@
           <div class="image_sec">
               <img :src="require('@/assets/img/cars/form_poster2.jpg')" alt="img" style="width:100%;" />
           </div>
-          <div class="step step1">
+          <div class="step step1" :class="form_tab_index == 0 ? 'active' : ''">
                <div class="title">Personal Details</div>
             <form >
                 <div class="mb-4 mt-4">
@@ -75,15 +75,146 @@
                         />
                     </div>
                     <div class="btn_box">
-                        <button>Next</button>
+                        <button type="button" @click="form_tab_index = 1">Next</button>
+                    </div>
+            </form>
+          </div>
+          <div class="step step2" :class="form_tab_index == 1 ? 'active' : ''">
+               <div class="title">Vehicle Details</div>
+            <form >
+                <div class="mb-4 mt-4">
+                        <input
+                        class="
+                            shadow-md
+                            appearance-none
+                            border
+                            rounded
+                            w-full
+                            py-2
+                            px-3
+                            text-gray-700
+                            leading-tight
+                            focus:outline-none
+                            focus:shadow-outline
+                        "
+                        id="vehicle_model"
+                        type="text"
+                        placeholder="Select Vehicle Model"
+                        v-model="vehicleModel"
+                        />
+                    </div>
+                    <div class="mb-6 ">
+                        <input
+                        class="
+                            shadow-md
+                            appearance-none
+                            border
+                            rounded
+                            w-full
+                            py-2
+                            px-3
+                            text-gray-700
+                            leading-tight
+                            focus:outline-none
+                            focus:shadow-outline
+                        "
+                        id="fuel_type"
+                        type="text"
+                        placeholder="Select fuel type"
+                        v-model="fuelType"
+                        />
+                    </div>
+                    <div class="btn_box">
+                        <button type="button" @click="form_tab_index = 0">Previous</button>
+                        <button type="button" @click="form_tab_index = 2">Next</button>
+                    </div>
+            </form>
+          </div>
+          <div class="step step3" :class="form_tab_index == 2 ? 'active' : ''">
+               <div class="title">Dealership Details</div>
+            <form >
+                <div class="mb-4 mt-4">
+                        <input
+                        class="
+                            shadow-md
+                            appearance-none
+                            border
+                            rounded
+                            w-full
+                            py-2
+                            px-3
+                            text-gray-700
+                            leading-tight
+                            focus:outline-none
+                            focus:shadow-outline
+                        "
+                        id="vehicle_model"
+                        type="text"
+                        placeholder="Test drive date"
+                        v-model="testDriveDate"
+                        />
+                    </div>
+                    <div class="mb-4 ">
+                        <input
+                        class="
+                            shadow-md
+                            appearance-none
+                            border
+                            rounded
+                            w-full
+                            py-2
+                            px-3
+                            text-gray-700
+                            leading-tight
+                            focus:outline-none
+                            focus:shadow-outline
+                        "
+                        id="fuel_type"
+                        type="text"
+                        placeholder="Select Dealer"
+                        v-model="Dealer"
+                        />
+                    </div>
+                    <div class="mb-4 ">
+                        <textarea
+                        class="
+                            shadow-md
+                            appearance-none
+                            border
+                            rounded
+                            w-full
+                            py-2
+                            px-3
+                            text-gray-700
+                            leading-tight
+                            focus:outline-none
+                            focus:shadow-outline
+                        "
+                        id="fuel_type"
+                        type="text"
+                        placeholder="Address"
+                        v-model="address"
+                        />
+                    </div>
+                    <div class="mb-6">
+                        <div class="checkbox_sec">
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" class="form-checkbox">
+                                <span class="ml-2 cursor-pointer">I have read & understood the disclaimer</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="btn_box">
+                        <button type="button" @click="form_tab_index = 1">Previous</button>
+                        <button type="button">Submit</button>
                     </div>
             </form>
           </div>
       </div>
       <div class="my-5 active_sec">
-          <div></div>
-          <div></div>
-          <div></div>
+          <div :class="form_tab_index == 0 ? 'active' : ''"></div>
+          <div :class="form_tab_index == 1 ? 'active' : ''"></div>
+          <div :class="form_tab_index == 2 ? 'active' : ''"></div>
       </div>
   </div>
 </template>
@@ -92,9 +223,15 @@
 export default {
     data(){
         return{
+            form_tab_index:0,
             name:'',
             email:'',
-            mobile:''
+            mobile:'',
+            vehicleModel:'',
+            fuelType:'',
+            testDriveDate:'',
+            Dealer:'',
+            address:''
         }
     }
 }
@@ -124,10 +261,20 @@ export default {
 }
 .form_sec .image_sec{
     width: 49%;
+    height: 370px;
+    object-fit: cover;
+    object-position: left;
+}
+.image_sec img{
+    height: 100%;
 }
 .form_sec .step{
     width: 49%;
     padding: 0 40px;
+    display: none;
+}
+.form_sec .step.active{
+    display: block;
 }
 .form_sec .step .title{
     font-weight: 600;
@@ -141,7 +288,23 @@ export default {
 .active_sec div{
     height: 10px;
     width: 10px;
-    background: #002c5f;
+    background: lightgray;
     margin: 10px;
+}
+.active_sec div.active{
+    background: #002c5f;
+    height: 11px;
+    width: 11px;
+}
+.step2 .btn_box, .step3 .btn_box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.checkbox_sec span{
+    font-size: 15px;
+}
+.checkbox_sec{
+    padding-left:4px;
 }
 </style>
