@@ -125,7 +125,7 @@
                     class="block text-gray-700 text-sm font-bold mb-2"
                     for="name"
                     >
-                    Model image
+                    Poster image
                     </label>
                     <label
                     class="shadow
@@ -589,6 +589,32 @@
                     v-model="colorCode"
                     />
                 </div>
+                <div class="mb-4">
+                    <label
+                    class="block text-gray-700 text-sm font-bold mb-2"
+                    for="name"
+                    >
+                    Second Color Code
+                    </label>
+                    <input
+                    class="
+                        shadow
+                        appearance-none
+                        border
+                        rounded
+                        w-full
+                        py-2
+                        px-3
+                        text-gray-700
+                        leading-tight
+                        focus:outline-none
+                        focus:shadow-outline
+                    "
+                    type="text"
+                    placeholder="Second Color Code"
+                    v-model="colorCode2"
+                    />
+                </div>
                  <div class="mb-4">
                     <label
                     class="block text-gray-700 text-sm font-bold mb-2"
@@ -665,7 +691,7 @@
            </div>
            <div class="step step9">
              <div class="msg_box h-12">
-                   <div class="error py-3 text-green-500" v-if="success == true">Added Successfully</div>
+                   <div class="error py-3 text-green-500" v-if="specsuccess == true">Added Successfully</div>
                    <div class="error py-3 text-red-500" v-if="error == true">Invalid Data</div>
               </div>
              <div class="mb-4">
@@ -880,7 +906,7 @@
             </div>
           <div class="step step12">
              <div class="msg_box h-12">
-                   <div class="error py-3 text-green-500" v-if="success == true">Added Successfully</div>
+                   <div class="error py-3 text-green-500" v-if="variantsuccess == true">Added Successfully</div>
                    <div class="error py-3 text-red-500" v-if="error == true">Invalid Data</div>
               </div>
              <div class="mb-4">
@@ -1067,6 +1093,8 @@ export default {
       postsuccess: false,
       success: false,
       colorsuccess: false,
+      specsuccess: false,
+      variantsuccess: false,
       error: false,
       gallerysuccess: false,
       highlight: '',
@@ -1074,6 +1102,7 @@ export default {
       postDescription: '',
       youtubeLink: '',
       colorCode: '',
+      colorCode2:'',
       colorTitle: '',
       specType: '',
       specModel: '',
@@ -1349,6 +1378,7 @@ export default {
           .post(process.env.baseUrl + 'api/store/carcolor', {
             car_id: this.carId,
             color_code: this.colorCode,
+            second_color_date:this.colorCode2,
             color_title: this.colorTitle,
             color_image: this.colorImage
           })
@@ -1356,6 +1386,7 @@ export default {
             btn.innerText = 'Add'
             this.colorsuccess = true
             this.colorCode = ''
+            this.colorCode2 = ''
             this.colorTitle = ''
             this.colorImage = ''
             var label = document.querySelector('.colorImage')
@@ -1380,16 +1411,15 @@ export default {
             spec_diesel: this.specDiesel
           })
           .then((response) => {
+            this.specsuccess = true
             btn.innerHTML = 'Submit'
             this.specType = ''
             this.specModel = ''
             this.specPetrol = ''
             this.specDiesel = ''
-            document.querySelector('.step' + target).classList.remove('active')
-            document.querySelector('.step' + next).classList.add('active')
-
-            document.querySelector('.tab_item' + target).classList.remove('active')
-            document.querySelector('.tab_item' + next).classList.add('active')
+            setTimeout(() => {
+              this.specsuccess = false
+            }, 2000)
           })
           .catch((error) => {
             btn.innerHTML = 'Submit'
@@ -1449,16 +1479,15 @@ export default {
             variant_category:this.variantCategory,
           })
           .then((response) => {
+            this.variantsuccess = true
             this.featureModelId = ''
             this.variantFeutureType = ''
             this.variantFeutureValue = ''
             this.variantCategory = ''
             btn.innerHTML = 'Submit'
-            document.querySelector('.step' + target).classList.remove('active')
-            document.querySelector('.step' + next).classList.add('active')
-
-            document.querySelector('.tab_item' + target).classList.remove('active')
-            document.querySelector('.tab_item' + next).classList.add('active')
+            setTimeout(() => {
+              this.variantsuccess = false
+            }, 2000)
           })
           .catch((error) => {
             btn.innerHTML = 'Submit'
