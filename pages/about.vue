@@ -17,8 +17,8 @@
             <p>Entire range of world class leading Hyundai cars is on display at Peeyesyem Hyundai showrooms.</p>
         </div>
         <div class="form_btns_box pt-16 pb-24">
-            <button>Why Advaith</button>
-            <button>Advaith Awards</button>
+            <button>Why Peeyesyem</button>
+            <button>Peeyesyem Awards</button>
             <button>Media Gallery</button>
             <button>News and Events </button>
         </div>
