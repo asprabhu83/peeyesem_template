@@ -84,7 +84,7 @@
                                                 <li><nuxt-link to="/">Get Insurance</nuxt-link></li>
                                                 <li><nuxt-link to="/extended-warrenty">Extended Warranty</nuxt-link></li>
                                                 <li><nuxt-link to="/">Car Detailing Services</nuxt-link></li>
-                                                <li><nuxt-link to="/">Owners Manual</nuxt-link></li>
+                                                <li><nuxt-link to="/owner-manual">Owners Manual</nuxt-link></li>
                                             </ul>
                                         </li>
                                         <li>

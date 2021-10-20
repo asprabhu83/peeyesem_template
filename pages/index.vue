@@ -90,6 +90,9 @@
                    <div class="text-center font-medium mt-1 mb-1"><font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mx-2" />{{car.price}}<span class="notice_mark">*</span></div>
                 </div>
             </div>
+            <div class=" btn_box">
+                <a :href="'/all-cars'">Know More</a>
+            </div>
         </div>
     </section>
 
@@ -546,6 +549,24 @@ export default {
 }
 </script>
 <style scoped>
+.btn_box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16.6%;
+}
+.btn_box a{
+    background: #002c5f;
+    color: white;
+    padding: 5px 20px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+}
+.btn_box a:hover{
+    color: white;
+}
 .swiper-button-prev, .swiper-button-next{
     z-index: 220;
     border-radius: 50%;
