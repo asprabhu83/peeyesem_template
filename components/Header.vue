@@ -99,7 +99,7 @@
                                                 <li><nuxt-link to="/about">About</nuxt-link></li>
                                                 <li><nuxt-link to="/blog">Blog</nuxt-link></li>
                                                 <li><nuxt-link to="/testimonials">Testimonials</nuxt-link></li>
-                                                <li><nuxt-link to="/">Gallery</nuxt-link></li>
+                                                <li><nuxt-link to="/gallery">Gallery</nuxt-link></li>
                                                 <li><nuxt-link to="/careers">Careers</nuxt-link></li>
                                                 <li><nuxt-link to="/news-event">News and Events</nuxt-link></li>
                                             </ul>
