@@ -80,7 +80,7 @@
                                                 <li><nuxt-link to="/tips/safety-tips">Safety Tips</nuxt-link></li>
                                                 <li><nuxt-link to="/tips/maintenance-tips">Maintenance Tips</nuxt-link></li>
                                                 <li><nuxt-link to="/tips/driving-tips">Driving Tips</nuxt-link></li>
-                                                <li><nuxt-link to="/">Fuel Saving Tips</nuxt-link></li>
+                                                <li><nuxt-link to="/tips/fuel-saving-tips">Fuel Saving Tips</nuxt-link></li>
                                                 <li><nuxt-link to="/">Get Insurance</nuxt-link></li>
                                                 <li><nuxt-link to="/">Extended Warranty</nuxt-link></li>
                                                 <li><nuxt-link to="/">Car Detailing Services</nuxt-link></li>
@@ -98,9 +98,9 @@
                                             <ul class="sub-menu">
                                                 <li><nuxt-link to="/about">About</nuxt-link></li>
                                                 <li><nuxt-link to="/blog">Blog</nuxt-link></li>
-                                                <li><nuxt-link to="/">Testimonials</nuxt-link></li>
+                                                <li><nuxt-link to="/testimonials">Testimonials</nuxt-link></li>
                                                 <li><nuxt-link to="/">Gallery</nuxt-link></li>
-                                                <li><nuxt-link to="/">Careers</nuxt-link></li>
+                                                <li><nuxt-link to="/careers">Careers</nuxt-link></li>
                                                 <li><nuxt-link to="/news-event">News and Events</nuxt-link></li>
                                             </ul>
                                         </li>

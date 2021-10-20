@@ -120,6 +120,46 @@
                     @change="previewFiles"
                     />
                 </div>
+                <div class="mb-4">
+                    <label
+                    class="block text-gray-700 text-sm font-bold mb-2"
+                    for="name"
+                    >
+                    Model image
+                    </label>
+                    <label
+                    class="shadow
+                        block
+                        mt-2
+                        posterImage
+                        cursor-pointer
+                        appearance-none
+                        border
+                        rounded
+                        w-full
+                        py-2
+                        px-3
+                        text-gray-700
+                        leading-tight
+                        focus:outline-none
+                        focus:shadow-outline"
+                    for="posterImage"
+                    >
+                    Select image
+                    </label>
+                    <input
+                    class="
+                        hidden
+                    "
+                    accept="image/*"
+                    id="posterImage"
+                    ref="myFiles"
+                    type="file"
+                    data-file-target="posterImage"
+                    placeholder="Poster Image"
+                    @change="previewFiles"
+                    />
+                </div>
                 <div class="mt-10">
                     <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="1" data-next="2" @click="AddCars">Submit</button>
                 </div>
@@ -732,9 +772,12 @@
                     v-model="specDiesel"
                     />
                 </div>
+                <div class="mt-5">
+                  <button type="button" class="bg-blue-500 hover:bg-blue-700 flex items-center text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="9" data-next="10" @click="AddCars">Add <font-awesome-icon icon="plus"  size="1x" class="text-white cursor-pointer ml-2"  /></button>
+                </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="9" data-prev="8" @click="prevstep">Previous</button> -->
-                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="9" data-next="10" @click="AddCars">Submit</button>
+                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="9" data-next="10" @click="NextTab">Submit</button>
                 </div>
            </div>
            <div class="step step10">
@@ -892,9 +935,39 @@
                     v-model="variantFeutureValue"
                     />
                 </div>
+                <div class="mb-4">
+                    <label
+                    class="block text-gray-700 text-sm font-bold mb-2"
+                    for="category"
+                    >
+                    Variant Category
+                    </label>
+                    <input
+                    class="
+                        shadow
+                        appearance-none
+                        border
+                        rounded
+                        w-full
+                        py-2
+                        px-3
+                        text-gray-700
+                        leading-tight
+                        focus:outline-none
+                        focus:shadow-outline
+                    "
+                    id="category"
+                    type="text"
+                    placeholder="Variant Category"
+                    v-model="variantCategory"
+                    />
+                </div>
+                <div class="mt-5">
+                  <button type="button" class="bg-blue-500 hover:bg-blue-700 flex items-center text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="12" data-next="13" @click="AddCars">Add <font-awesome-icon icon="plus"  size="1x" class="text-white cursor-pointer ml-2"  /></button>
+                </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="10" data-prev="9" @click="prevstep">Previous</button> -->
-                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="12" data-next="13" @click="AddCars">Submit</button>
+                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="12" data-next="13"  @click="NextTab">Submit</button>
                 </div>
             </div>
             <div class="step step13">
@@ -981,6 +1054,7 @@ export default {
       featureModelId: '',
       modelName: '',
       modelImage: '',
+      posterImage:'',
       modelType: '',
       overviewImage: '',
       postImage: '',
@@ -1011,7 +1085,8 @@ export default {
       variantFeutureType: '',
       variantFeutureValue: '',
       carFuelType: '',
-      carPrice: ''
+      carPrice: '',
+      variantCategory:''
 
     }
   },
@@ -1042,6 +1117,11 @@ export default {
       if (path === 'modelImage') {
         reader.onload = (e) => {
           vm.modelImage = e.target.result
+        }
+      }
+      if (path === 'posterImage') {
+        reader.onload = (e) => {
+          vm.posterImage = e.target.result
         }
       }
       if (path === 'overviewImage') {
@@ -1300,6 +1380,10 @@ export default {
           })
           .then((response) => {
             btn.innerHTML = 'Submit'
+            this.specType = ''
+            this.specModel = ''
+            this.specPetrol = ''
+            this.specDiesel = ''
             document.querySelector('.step' + target).classList.remove('active')
             document.querySelector('.step' + next).classList.add('active')
 
@@ -1360,9 +1444,14 @@ export default {
           .post(process.env.baseUrl + 'api/store/variant_feature', {
             features_model_id: this.featureModelId,
             variant_feature_type: this.variantFeutureType,
-            variant_feature_value: this.variantFeutureValue
+            variant_feature_value: this.variantFeutureValue,
+            variant_category:this.variantCategory,
           })
           .then((response) => {
+            this.featureModelId = ''
+            this.variantFeutureType = ''
+            this.variantFeutureValue = ''
+            this.variantCategory = ''
             btn.innerHTML = 'Submit'
             document.querySelector('.step' + target).classList.remove('active')
             document.querySelector('.step' + next).classList.add('active')
