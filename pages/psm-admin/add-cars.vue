@@ -899,9 +899,12 @@
                     v-model="feutureType"
                     />
                 </div>
+                <div class="mt-5">
+                  <button type="button" class="bg-blue-500 hover:bg-blue-700 flex items-center text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="11" data-next="12" @click="AddCars">Add <font-awesome-icon icon="plus"  size="1x" class="text-white cursor-pointer ml-2"  /></button>
+                </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="10" data-prev="9" @click="prevstep">Previous</button> -->
-                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="11" data-next="12" @click="AddCars">Submit</button>
+                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="11" data-next="12" @click="NextTab">Submit</button>
                 </div>
             </div>
           <div class="step step12">
@@ -909,6 +912,32 @@
                    <div class="error py-3 text-green-500" v-if="variantsuccess == true">Added Successfully</div>
                    <div class="error py-3 text-red-500" v-if="error == true">Invalid Data</div>
               </div>
+              <div class="mb-4">
+                    <label
+                    class="block text-gray-700 text-sm font-bold mb-2"
+                    for="name"
+                    >
+                    Variant Feature Model
+                    </label>
+                    <input
+                    class="
+                        shadow
+                        appearance-none
+                        border
+                        rounded
+                        w-full
+                        py-2
+                        px-3
+                        text-gray-700
+                        leading-tight
+                        focus:outline-none
+                        focus:shadow-outline
+                    "
+                    type="text"
+                    placeholder="Variant Feature Model"
+                    v-model="variantFeatureModel"
+                    />
+                </div>
              <div class="mb-4">
                     <label
                     class="block text-gray-700 text-sm font-bold mb-2"
@@ -1095,6 +1124,7 @@ export default {
       colorsuccess: false,
       specsuccess: false,
       variantsuccess: false,
+      carvariantsuccess: false,
       error: false,
       gallerysuccess: false,
       highlight: '',
@@ -1115,7 +1145,8 @@ export default {
       variantFeutureValue: '',
       carFuelType: '',
       carPrice: '',
-      variantCategory:''
+      variantCategory:'',
+      variantFeatureModel:''
 
     }
   },
@@ -1456,13 +1487,13 @@ export default {
             feature_type: this.feutureType
           })
           .then((response) => {
+            this.carvariantsuccess = true
             btn.innerHTML = 'Submit'
             this.featureModelId = response.data.id
-            document.querySelector('.step' + target).classList.remove('active')
-            document.querySelector('.step' + next).classList.add('active')
-
-            document.querySelector('.tab_item' + target).classList.remove('active')
-            document.querySelector('.tab_item' + next).classList.add('active')
+            this.feutureType = ''
+             setTimeout(() => {
+              this.carvariantsuccess = false
+            }, 2000)
           })
           .catch((error) => {
             btn.innerHTML = 'Submit'
@@ -1474,6 +1505,7 @@ export default {
         axios
           .post(process.env.baseUrl + 'api/store/variant_feature', {
             features_model_id: this.featureModelId,
+            variant_feature_model:this.variantFeatureModel,
             variant_feature_type: this.variantFeutureType,
             variant_feature_value: this.variantFeutureValue,
             variant_category:this.variantCategory,
@@ -1481,6 +1513,7 @@ export default {
           .then((response) => {
             this.variantsuccess = true
             this.featureModelId = ''
+            this.variantFeatureModel = ''
             this.variantFeutureType = ''
             this.variantFeutureValue = ''
             this.variantCategory = ''
