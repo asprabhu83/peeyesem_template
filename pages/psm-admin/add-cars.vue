@@ -1194,6 +1194,7 @@ export default {
           .post(process.env.baseUrl + 'api/store/car', {
             car_title: this.modelName,
             car_image: this.modelImage,
+            poster_image:this.posterImage,
             car_type_id: this.modelType
           })
           .then((response) => {
