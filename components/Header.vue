@@ -48,7 +48,7 @@
                                             <a class="menu-item" href="#">New Cars <i class="fa fa-angle-down"></i></a>
                                             <!-- Sub Menu -->
                                             <ul class="sub-menu">
-                                                <li><a href="/">All Cars</a></li>
+                                                <li><a href="/all-cars">All Cars</a></li>
                                                 <li><a href="/cars/?id=2"> Santro</a></li>
                                                 <li><a href="/cars/?id=1"> All New i20</a></li>
                                                 <li><a href="/cars/?id=3"> Grand i10 NIOS</a></li>
@@ -66,7 +66,7 @@
                                             <!-- Sub Menu -->
                                             <ul class="sub-menu">
                                                 <li><nuxt-link to="/">Buy a car</nuxt-link></li>
-                                                <li><nuxt-link to="/">Sell a Car</nuxt-link></li>
+                                                <li><nuxt-link to="/sell-car">Sell a Car</nuxt-link></li>
                                             </ul>
                                         </li>
                                         <li class="has-dropdown">
@@ -82,7 +82,7 @@
                                                 <li><nuxt-link to="/tips/driving-tips">Driving Tips</nuxt-link></li>
                                                 <li><nuxt-link to="/tips/fuel-saving-tips">Fuel Saving Tips</nuxt-link></li>
                                                 <li><nuxt-link to="/">Get Insurance</nuxt-link></li>
-                                                <li><nuxt-link to="/">Extended Warranty</nuxt-link></li>
+                                                <li><nuxt-link to="/extended-warrenty">Extended Warranty</nuxt-link></li>
                                                 <li><nuxt-link to="/">Car Detailing Services</nuxt-link></li>
                                                 <li><nuxt-link to="/">Owners Manual</nuxt-link></li>
                                             </ul>

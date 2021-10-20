@@ -6,8 +6,9 @@
       <div class="my-16">
           <div class="heading my-5">Careers</div>
           <div class="career_item_box">
-              <div class="item">
-                  <div class="card_box my-16">
+              <div class="item my-16">
+                  <div class="tag_heading">Sales Consultants</div>
+                  <div class="card_box ">
                       <div class="head">We Are Hiring Sales Consultants</div>
                       <div class="desc">
                           Advaith Hyundai Has A Rich Legacy And It Is Karnataka's Largest Hyundai Dealer With A Gigantic Network Of 24 Showrooms, 29 Service Centers, And 4 Pre-Owned Car Showrooms Spread Across Karnataka. To Deliver On Our Promise We Have Most
@@ -18,8 +19,9 @@
                       </div>
                   </div>
               </div>
-              <div class="item">
-                  <div class="card_box my-16">
+              <div class="item my-16">
+                  <div class="tag_heading">Team Leader - Sales</div>
+                  <div class="card_box ">
                       <div class="head">We Are Hiring Sales Team Leaders</div>
                       <div class="desc">
                           Advaith Hyundai Has A Rich Legacy And It Is Karnataka's Largest Hyundai Dealer With A Gigantic Network Of 24 Showrooms, 29 Service Centers, And 4 Pre-Owned Car Showrooms Spread Across Karnataka. We Are Looking For Young, Enthusiastic
@@ -49,9 +51,13 @@ export default {
 }
 .item{
     width: 30%;
+    margin-left: auto;
+    margin-right: auto;
 }
 .item .card_box{
+    border-radius: 7px;
     box-shadow: 0 2px 10px 4px rgb(0 0 0/15%);
+    margin-top: -8px;
 }
 .card_box .head{
     font-size: 17px;
@@ -84,10 +90,21 @@ export default {
     border: none;
     outline: none;
     cursor: pointer;
+    border-radius: 4px;
 }
 .career_item_box{
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+}
+.tag_heading{
+    display: inline-block;
+    margin-left: 2px;
+    padding: 4px 20px;
+    background: #002c5f;
+    color: white;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+
 }
 </style>
