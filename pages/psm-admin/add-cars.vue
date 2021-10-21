@@ -1162,7 +1162,6 @@ export default {
   },
   mounted () {
     this.GetModels()
-    this.GetVariant()
   },
   methods: {
     previewFiles (event) {
@@ -1504,14 +1503,15 @@ export default {
           })
           .then((response) => {
             this.carvariantsuccess = true
-            btn.innerHTML = 'Submit'
+            btn.innerHTML = 'Add'
             this.feutureType = ''
              setTimeout(() => {
               this.carvariantsuccess = false
             }, 2000)
+            this.GetVariant()
           })
           .catch((error) => {
-            btn.innerHTML = 'Submit'
+            btn.innerHTML = 'Add'
             this.error = true
             console.log(error)
           })
@@ -1527,17 +1527,16 @@ export default {
           .then((response) => {
             this.variantsuccess = true
             this.featureModelId = ''
-            this.variantFeatureModel = ''
             this.variantFeutureType = ''
             this.variantFeutureValue = ''
             this.variantCategory = ''
-            btn.innerHTML = 'Submit'
+            btn.innerHTML = 'Add'
             setTimeout(() => {
               this.variantsuccess = false
             }, 2000)
           })
           .catch((error) => {
-            btn.innerHTML = 'Submit'
+            btn.innerHTML = 'Add'
             this.error = true
             console.log(error)
           })
