@@ -266,7 +266,7 @@
                         focus:outline-none
                         focus:shadow-outline
                     "
-                    type="number"
+                    type="text"
                     placeholder="Power"
                     v-model="power"
                     />
@@ -318,7 +318,7 @@
                         focus:outline-none
                         focus:shadow-outline
                     "
-                    type="number"
+                    type="text"
                     placeholder="Mileage"
                     v-model="mileage"
                     />
@@ -915,9 +915,39 @@
               <div class="mb-4">
                     <label
                     class="block text-gray-700 text-sm font-bold mb-2"
-                    for="name"
+                    for="modeltype"
+                  >
+                    Variant Model
+                  </label>
+                  <select
+                    class="
+                      shadow
+                      appearance-none
+                      border
+                      rounded
+                      w-full
+                      py-2
+                      px-3
+                      text-gray-700
+                      cursor-pointer
+                      leading-tight
+                      focus:outline-none
+                      focus:shadow-outline
+                    "
+                    id="modeltype"
+                    v-model="featureModelId"
+                  >
+                  <option class="text-xl " value="">Choose Variant Model</option>
+                  <option class="text-xl" :value="model.id" v-for="model in variantsTypes"
+                    :key="model.id" >{{model.feature_type}}</option>
+                  </select>
+                </div>
+                <div class="mb-4">
+                    <label
+                    class="block text-gray-700 text-sm font-bold mb-2"
+                    for="category"
                     >
-                    Variant Feature Model
+                    Variant Category
                     </label>
                     <input
                     class="
@@ -933,9 +963,10 @@
                         focus:outline-none
                         focus:shadow-outline
                     "
+                    id="category"
                     type="text"
-                    placeholder="Variant Feature Model"
-                    v-model="variantFeatureModel"
+                    placeholder="Variant Category"
+                    v-model="variantCategory"
                     />
                 </div>
              <div class="mb-4">
@@ -988,33 +1019,6 @@
                     type="text"
                     placeholder="Variant Feature Value"
                     v-model="variantFeutureValue"
-                    />
-                </div>
-                <div class="mb-4">
-                    <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
-                    for="category"
-                    >
-                    Variant Category
-                    </label>
-                    <input
-                    class="
-                        shadow
-                        appearance-none
-                        border
-                        rounded
-                        w-full
-                        py-2
-                        px-3
-                        text-gray-700
-                        leading-tight
-                        focus:outline-none
-                        focus:shadow-outline
-                    "
-                    id="category"
-                    type="text"
-                    placeholder="Variant Category"
-                    v-model="variantCategory"
                     />
                 </div>
                 <div class="mt-5">
@@ -1146,7 +1150,8 @@ export default {
       carFuelType: '',
       carPrice: '',
       variantCategory:'',
-      variantFeatureModel:''
+      variantFeatureModel:'',
+      variantsTypes:[]
 
     }
   },
@@ -1157,6 +1162,7 @@ export default {
   },
   mounted () {
     this.GetModels()
+    this.GetVariant()
   },
   methods: {
     previewFiles (event) {
@@ -1238,6 +1244,16 @@ export default {
         .get(process.env.baseUrl + 'api/car/types')
         .then((response) => {
           this.models = response.data.types
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    },
+    GetVariant(){
+      axios
+        .get(process.env.baseUrl + 'api/cars_variant/index')
+        .then((response) => {
+          this.variantsTypes = response.data
         })
         .catch((error) => {
           console.log(error)
@@ -1409,7 +1425,7 @@ export default {
           .post(process.env.baseUrl + 'api/store/carcolor', {
             car_id: this.carId,
             color_code: this.colorCode,
-            second_color_date:this.colorCode2,
+            second_color_code:this.colorCode2,
             color_title: this.colorTitle,
             color_image: this.colorImage
           })
@@ -1489,7 +1505,6 @@ export default {
           .then((response) => {
             this.carvariantsuccess = true
             btn.innerHTML = 'Submit'
-            this.featureModelId = response.data.id
             this.feutureType = ''
              setTimeout(() => {
               this.carvariantsuccess = false
@@ -1505,7 +1520,6 @@ export default {
         axios
           .post(process.env.baseUrl + 'api/store/variant_feature', {
             features_model_id: this.featureModelId,
-            variant_feature_model:this.variantFeatureModel,
             variant_feature_type: this.variantFeutureType,
             variant_feature_value: this.variantFeutureValue,
             variant_category:this.variantCategory,
