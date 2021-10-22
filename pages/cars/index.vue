@@ -4662,6 +4662,7 @@ export default {
                 description:"Hyundai CRETA - Modern Stylish Tallboy: The overall design theme is based on Rhythmical Tension that exudes a Refined yet Sporty Image. The front of The All New SANTRO is defined by Hyundai's Signature Cascade Grille with chrome surround that projects Modern and Premium appeal of the car"
             }
            ],
+           DataBaseSingleCar:[],
            car:{
               name:'',
               price:'',
@@ -4732,6 +4733,7 @@ export default {
     },
     beforeMount(){
         this.SingleCar()
+        this.GetSingleCarData();
     },
     created () {
         window.addEventListener('scroll', this.handleScroll);
@@ -4750,6 +4752,22 @@ export default {
         //     console.log(error)
         //     })
         // },
+        GetSingleCarData(){
+            var id = this.$route.query.id
+            axios
+                .get(process.env.baseUrl + 'api/show/car/' + id)
+                .then((response) => {
+                    this.DataBaseSingleCar = response.data;
+                    console.log(this.DataBaseSingleCar)
+                })
+                .catch((error) => {
+                console.log(error)
+                })
+        },
+        FilterDatabasedata(){
+            const {car,overview,overview_details,highlight,highlight_post,gallery,videos,colors,specs,feature_variant,feature_model,varient_feature,price} = this.DataBaseSingleCar;
+            const {car_title,poster_image} = car;
+        },
         smoothScroll(index){
             var element = document.querySelector('.step' + index);
             var Headerposition = this.handleScroll();
