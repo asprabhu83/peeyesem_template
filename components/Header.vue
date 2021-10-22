@@ -83,7 +83,7 @@
                                                 <li><nuxt-link to="/tips/fuel-saving-tips">Fuel Saving Tips</nuxt-link></li>
                                                 <li><nuxt-link to="/get-insurance">Get Insurance</nuxt-link></li>
                                                 <li><nuxt-link to="/extended-warrenty">Extended Warranty</nuxt-link></li>
-                                                <li><nuxt-link to="/">Car Detailing Services</nuxt-link></li>
+                                                <li><nuxt-link to="/car-detailing-services">Car Detailing Services</nuxt-link></li>
                                                 <li><nuxt-link to="/owner-manual">Owners Manual</nuxt-link></li>
                                             </ul>
                                         </li>
