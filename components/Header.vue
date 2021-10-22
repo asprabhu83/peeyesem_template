@@ -210,48 +210,48 @@ export default {
                     title: 'New Cars',
                     child: [
                         {
-                            href: '/',
+                            href: '/all-cars',
                             title: 'All Cars'
                                     
                         },
                         {
-                            href: '/',
+                            href: '/cars/?id=2',
                             title: 'Santro'
                         },
                         {
-                            href: '/',
+                            href: '/cars/?id=1',
                             title: 'All New i20'
                         },
                         {
-                            href: '/',
+                            href: '/cars/?id=3',
                             title: 'Grand i10 NIOS'
                         },
                         {
-                            href: '/',
+                            href: '/cars/?id=5',
                             title: 'Aura'
                         },
                         {
-                            href: '/',
+                            href: '/cars/?id=6',
                             title: 'All New Verna'
                         },
                         {
-                            href: '/',
+                            href: '/cars/?id=7',
                             title: 'Elantra'
                         },
                         {
-                            href: '/',
+                            href: '/cars/?id=9',
                             title: 'Venue'
                         },
                         {
-                            href: '/',
+                            href: '/cars/?id=12',
                             title: 'All New Creta'
                         },
                         {
-                            href: '/',
+                            href: '/cars/?id=11',
                             title: 'Alcazar'
                         },
                         {
-                            href: '/',
+                            href: '/cars/?id=8',
                             title: 'Tucson'
                         }
                     ]
@@ -260,32 +260,32 @@ export default {
                     title: 'Contact Us',
                     child: [
                         {
-                            href: '/',
+                            href: '/contact-us/test-drive',
                             title: 'Test Drive'
                                     
                         },
                         {
-                            href: '/',
+                            href: '/contact-us/sales-enquiry',
                             title: 'Sales Enquiry'
                         },
                         {
-                            href: '/',
+                            href: '/emi-calculator',
                             title: 'EMI Calculator'
                         },
                         {
-                            href: '/',
+                            href: '/hyundai-offers',
                             title: 'Special Offers'
                         },
                         {
-                            href: '/',
+                            href: '/contact-us/feedback',
                             title: 'Feedback'
                         },
                         {
-                            href: '/',
+                            href: '/contact-us/contact',
                             title: 'Contact Us'
                         },
                         {
-                            href: '/',
+                            href: '/contact-us/get-price-quote',
                             title: 'Get A Quote'
                         }
                     ]
@@ -298,40 +298,55 @@ export default {
                     title: 'Services',
                     child: [
                         {
-                            href: '/',
+                            href: '/service-booking',
                             title: 'Book a Service'
                                     
                         },
                         {
                             href: '/',
+                            title: 'SOT'
+                                    
+                        },
+                        {
+                            href: '/',
+                            title: 'RAS'
+                                    
+                        },
+                        {
+                            href: '/',
+                            title: 'ERS'
+                                    
+                        },
+                        {
+                            href: '/tips/safety-tips',
                             title: 'Safety Tips'
                         },
                         {
-                            href: '/',
+                            href: '/tips/maintenance-tips',
                             title: 'Maintenance Tips'
                         },
                         {
-                            href: '/',
+                            href: '/tips/driving-tips',
                             title: 'Driving Tips'
                         },
                         {
-                            href: '/',
+                            href: '/tips/fuel-saving-tips',
                             title: 'Fuel Saving Tips'
                         },
                         {
-                            href: '/',
+                            href: '/get-insurance',
                             title: 'Get Insurance'
                         },
                         {
-                            href: '/',
+                            href: '/extended-warrenty',
                             title: 'Extended Warranty'
                         },
                         {
-                            href: '/',
+                            href: '/car-detailing-services',
                             title: 'Car Detailing Services'
                         },
                         {
-                            href: '/',
+                            href: '/owner-manual',
                             title: 'Owners Manual'
                         }
                     ]
@@ -344,40 +359,40 @@ export default {
                             title: 'Used Cars'
                         },
                         {
-                            href: '/',
+                            href: '/sell-car',
                             title: 'Sell a Car'
                         }
                     ]
                 },
                 {
-                    href: '/',
+                    href: '/accessories',
                     title: 'Accessories',
                 },
                 {
                     title:'About Us',
                     child:[
                         {
-                            href: '/',
+                            href: '/about',
                             title: 'About'
                         },
                         {
-                            href: '/',
+                            href: '/blog',
                             title: 'Blog'
                         },
                         {
-                            href: '/',
+                            href: '/testimonials',
                             title: 'Testimonials'
                         },
                         {
-                            href: '/',
+                            href: '/gallery',
                             title: 'Gallery'
                         },
                         {
-                            href: '/',
+                            href: '/careers',
                             title: 'Careers'
                         },
                         {
-                            href: '/',
+                            href: '/news-event',
                             title: 'News and Events'
                         }
                     ]
