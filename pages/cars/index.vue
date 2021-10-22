@@ -4758,7 +4758,7 @@ export default {
                 .get(process.env.baseUrl + 'api/show/car/' + id)
                 .then((response) => {
                     this.DataBaseSingleCar = response.data;
-                    console.log(this.DataBaseSingleCar)
+                    this.FilterDatabasedata();
                 })
                 .catch((error) => {
                 console.log(error)
@@ -4767,6 +4767,9 @@ export default {
         FilterDatabasedata(){
             const {car,overview,overview_details,highlight,highlight_post,gallery,videos,colors,specs,feature_variant,feature_model,varient_feature,price} = this.DataBaseSingleCar;
             const {car_title,poster_image} = car;
+            const {car_description,overview_image} = overview;
+            const {car_power,car_transmission,car_mileage} = overview_details;
+            console.log(highlight_post)
         },
         smoothScroll(index){
             var element = document.querySelector('.step' + index);
