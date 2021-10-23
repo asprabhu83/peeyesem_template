@@ -4769,7 +4769,9 @@ export default {
             const {car_title,poster_image} = car;
             const {car_description,overview_image} = overview;
             const {car_power,car_transmission,car_mileage} = overview_details;
-            console.log(highlight_post)
+            const [video] = videos;
+            const {youtube_link} = video;
+            const {car_price} = price
         },
         smoothScroll(index){
             var element = document.querySelector('.step' + index);
