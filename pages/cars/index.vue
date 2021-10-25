@@ -1,7 +1,7 @@
 <template>
   <div class="single_page_car_sec">
       <div class="car_poster_sec">
-          <img :src="require('@/assets/img/cars/static_car_posters/'+ car.poster_image)" alt="poster_image" />
+          <img :src="car.baseUrl + 'images/' + car.poster_image" alt="poster_image" />
       </div>
       <section class="car_title_sticky_header">
           <div class="car_title_sec my-5">
@@ -24,36 +24,32 @@
                     <p>{{car.description}}</p>
                   </div>
                   <div class="img_sec">
-                    <img :src="require('@/assets/img/cars/static_car_images/'+ car.overview_image)" alt="overview_image" />
+                    <img :src="car.baseUrl + 'images/' + car.overview_image" alt="overview_image" />
                   </div>
               </div>
               <div class="price_details my-16">
                   <div class="price_item">
                       <div class="price_title"><font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mr-2" />Price</div>
                       <div class="detail">
-                          Petrol: {{car.price}}*<br/>
-                          <span v-if="car.price2 !== ''">Diesel: {{car.price2}}*</span>
+                          {{car.price}}*
                       </div>
                   </div>
                   <div class="price_item">
                       <div class="price_title"><font-awesome-icon icon="tachometer-alt"  size="1x" class="text-black mr-2" />Power</div>
                       <div class="detail">
-                          Petrol: {{car.power}}<br/>
-                          <span v-if="car.power2 !== ''">Diesel: {{car.power2}}</span>
+                          {{car.power}}<br/>
                       </div>
                   </div>
                   <div class="price_item">
                       <div class="price_title"><font-awesome-icon icon="cogs"  size="1x" class="text-black mr-2" />Transmission</div>
                       <div class="detail">
-                          Petrol: {{car.transmission}}<br/>
-                          <span v-if="car.transmission2 !== ''">Diesel: {{car.transmission2}}</span>
+                          {{car.transmission}}
                       </div>
                   </div>
                   <div class="price_item">
                       <div class="price_title"><font-awesome-icon icon="gas-pump"  size="1x" class="text-black mr-2" />Mileage</div>
                       <div class="detail">
-                          Petrol: {{car.mileage}}<br/>
-                          <span v-if="car.mileage2 !== ''">Diesel: {{car.mileage2}}</span>
+                          {{car.mileage}}
                       </div>
                   </div>
               </div>
@@ -63,14 +59,14 @@
               <div class="highlight_items">
                   <div class="item" v-for="item in car.highlights" :key="item.id">
                       <div class="item_image">
-                          <img :src="require('@/assets/img/cars/car_highlights/'+ item.image)" alt="highlights_image" />
+                          <img :src="car.baseUrl + 'images/' + item.post_image" alt="highlights_image" />
                       </div>
                       <div class="content">
                           <div class="item_title">
-                            {{item.name}}
+                            {{item.post_title}}
                         </div>
                         <div class="item_desc">
-                            {{item.description}}
+                            {{item.post_description}}
                         </div>
                       </div>
                   </div>
@@ -80,8 +76,8 @@
               <div class="title">{{car.name}} Gallery <hr /></div>
               <div class="car_gallery_item">
                   <swiper class="swiper product-single-2-slider" :options="swiperOption">
-                            <swiper-slide v-for="car in car.gallery" :key="car.id">
-                               <img :src="require('@/assets/img/cars/car_gallery/' + car.image)" alt="img" style="width:100%;" />
+                            <swiper-slide v-for="item in car.gallery" :key="item.id">
+                               <img :src="car.baseUrl + 'images/' + item.gallery_image" alt="img" style="width:100%;" />
                             </swiper-slide>
                             <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
                             <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
@@ -97,13 +93,13 @@
           <div class="car_colour_sec step4 my-24">
               <div class="title">{{car.name}} Colours <hr /></div>
               <div class="car_colour_image_box"> 
-                  <img v-for="(car,index) in car.car_colours" :key="car.id" class="car_colour_img" :class="car_clr_img_index == index ? 'active' : ''" :src="require('@/assets/img/cars/car_colours/' + car.image)" alt="img" />
+                  <img v-for="(item,index) in car.car_colours" :key="item.id" class="car_colour_img" :class="car_clr_img_index == index ? 'active' : ''" :src="car.baseUrl + 'images/' + item.color_image" alt="img" />
               </div>
-              <div class="colour_item_title car_colour_img" v-for="(car,index) in car.car_colours" :key="index" :class="car_clr_img_index == index ? 'active' : ''">{{car.title}}</div>
+              <div class="colour_item_title car_colour_img" v-for="(car,index) in car.car_colours" :key="index" :class="car_clr_img_index == index ? 'active' : ''">{{car.color_title}}</div>
               <div class="car_colour_item_box" >
                   <div class="colour_item" v-for="(clr,index) in car.car_colours" :key="index" @click="car_clr_img_index = index" :class="car_clr_img_index == index ? 'active' : ''" >
-                      <div class="car_clr" :style="{background:clr.colour1}"></div>
-                      <div class="car_clr" :style="{background:clr.colour2}"></div>
+                      <div class="car_clr" :style="{background:clr.color_code}"></div>
+                      <div class="car_clr" :style="{background:clr.second_color_code}"></div>
                   </div>
               </div>
           </div>
@@ -184,7 +180,7 @@
                                                         text-black
                                                     "
                                                     >
-                                                    {{spec.model}}
+                                                    {{spec.spec_model}}
                                                     </span>
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap" >
@@ -197,7 +193,7 @@
                                                         text-black
                                                     "
                                                     >
-                                                    {{spec.petrol}}
+                                                    {{spec.spec_petrol}}
                                                     </span>
                                                 </td>
 
@@ -211,7 +207,7 @@
                                                         text-black
                                                     "
                                                     >
-                                                    {{spec.diesel}}
+                                                    {{spec.spec_diesel}}
                                                     </span>
                                                 </td>
                                                 </tr>
@@ -250,8 +246,8 @@
                                 v-model="VariantFeature"
                                 @change="VariantChange"
                             >
-                            <option class="text-xl"  :value="model.id" v-for="(model,index) in car_feature_variants"
-                                :key="index" >{{model.name}}</option>
+                            <option class="text-xl"  :value="model.id" v-for="(model,index) in car.car_feature_variants"
+                                :key="index" >{{model.feature_type}}</option>
                           </select>
                       </div>
                   </div>
@@ -315,7 +311,7 @@
                                                         text-black
                                                     "
                                                     >
-                                                    {{feature.feature}}
+                                                    {{feature.variant_feature_type}}
                                                     </span>
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap" >
@@ -328,7 +324,7 @@
                                                         text-black
                                                     "
                                                     >
-                                                    {{feature.value}}
+                                                    {{feature.variant_feature_value}}
                                                     </span>
                                                 </td>
                                                 </tr>
@@ -4664,6 +4660,7 @@ export default {
            ],
            DataBaseSingleCar:[],
            car:{
+              baseUrl:process.env.baseUrl, 
               name:'',
               price:'',
               price2:'',
@@ -4686,7 +4683,8 @@ export default {
               car_spec_tab:null,
               car_features:[],
               car_features_original:[],
-              car_features_tab:null
+              car_features_tab:null,
+              car_feature_variants:[]
            },
            car_details_tab:[
                'Overview',
@@ -4698,16 +4696,6 @@ export default {
                'Features',
                'Price List',
                'Variants Compare'
-           ],
-           car_feature_variants:[
-               {
-                   id:1,
-                   name:'variant_1',
-               },
-               {
-                   id:2,
-                   name:'variant_2',
-               }
            ],
            VariantFeature:1,
            car_tab_index:0,
@@ -4732,7 +4720,6 @@ export default {
         }
     },
     beforeMount(){
-        this.SingleCar()
         this.GetSingleCarData();
     },
     created () {
@@ -4763,15 +4750,6 @@ export default {
                 .catch((error) => {
                 console.log(error)
                 })
-        },
-        FilterDatabasedata(){
-            const {car,overview,overview_details,highlight,highlight_post,gallery,videos,colors,specs,feature_variant,feature_model,varient_feature,price} = this.DataBaseSingleCar;
-            const {car_title,poster_image} = car;
-            const {car_description,overview_image} = overview;
-            const {car_power,car_transmission,car_mileage} = overview_details;
-            const [video] = videos;
-            const {youtube_link} = video;
-            const {car_price} = price
         },
         smoothScroll(index){
             var element = document.querySelector('.step' + index);
@@ -4824,27 +4802,61 @@ export default {
             var variantId = e.target.value;
             var catIndex = this.car_feature_tab_index;
             var catName = this.car.car_features_tab[catIndex]
-            var newItem = this.car.car_features_original.filter((item)=> item.variant_id == variantId && item.category == catName )
+            var newItem = this.car.car_features_original.filter((item)=> item.features_model_id == variantId && item.variant_category == catName )
             this.car.car_features = newItem;
         },
         filterCarSpecCategories(){
-           var category = [...new Set(this.car.car_specs.map((item)=>{return item.category}))];
+           var category = [...new Set(this.car.car_specs.map((item)=>{return item.spec_type}))];
            this.car.car_spec_tab = category;
            return category;
         },
         filterCarSpecs(cat){
-           var newItem = this.car.car_specs_original.filter((item)=>{return item.category == cat})
+           var newItem = this.car.car_specs_original.filter((item)=>{return item.spec_type == cat})
            this.car.car_specs = newItem;
         },
         filterFeatureCategories(){
-            var category = [...new Set(this.car.car_features.map((item)=>{return item.category}))];
+            var category = [...new Set(this.car.car_features.map((item)=>{return item.variant_category}))];
             this.car.car_features_tab = category;
             return category;
         },
         filterFeatures(cat){
             var variantId = this.VariantFeature;
-            var newItem = this.car.car_features_original.filter((item)=>{return item.category == cat && item.variant_id == variantId})
+            var newItem = this.car.car_features_original.filter((item)=>{return item.variant_category == cat && item.features_model_id == variantId})
             this.car.car_features = newItem;
+        },
+        FilterDatabasedata(){
+            const {car,overview,overview_details,highlight,highlight_post,gallery,videos,colors,specs,feature_variant,feature_model,varient_feature,price} = this.DataBaseSingleCar;
+            const {car_title,poster_image,car_image} = car;
+            const {car_description,overview_image} = overview;
+            const [price_details] = overview_details;
+            const {car_power,car_transmission,car_mileage} = price_details;
+            const [video] = videos;
+            const {youtube_link} = video;
+            const {car_price} = price
+
+            this.car.name=car_title;
+            this.car.price=car_price;
+            this.car.poster_image=poster_image;
+            this.car.image=car_image;
+            this.car.overview_image=overview_image;
+            this.car.description=car_description;
+            this.car.power=car_power;
+            this.car.transmission=car_transmission;
+            this.car.mileage=car_mileage;
+            this.car.highlights = highlight_post;
+            this.car.gallery = gallery;
+            this.car.video_link = youtube_link;
+            this.car.car_colours = colors;
+            this.car.car_specs = specs;
+            this.car.car_specs_original = specs;
+            this.car.car_features = varient_feature;
+            this.car.car_features_original = varient_feature;
+            this.car.car_feature_variants = feature_model;
+            var Tab1 = this.filterCarSpecCategories();
+            var Tab2 = this.filterFeatureCategories();
+            this.filterCarSpecs(Tab1[0]);
+            this.VariantFeature = this.car.car_feature_variants[0].id;
+            this.filterFeatures(Tab2[0]);
         },
         SingleCar(){
           var item = this.originalcars.filter((car)=>{
@@ -4936,7 +4948,7 @@ export default {
 .colour_item{
     display: flex;
     flex-direction: row;
-    margin: 10px 20px;
+    margin: 10px;
     box-shadow: 0 2px 10px 4px rgb(0 0 0/25%);
     border-radius: 50%;
     height: 45px;

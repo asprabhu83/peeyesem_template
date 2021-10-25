@@ -78,16 +78,16 @@
             </div>
         </div>
         <div class="card_box  flex flex-wrap mt-16 mx-auto" id="isotope">
-            <div class="car_box_item" v-for="car in staticcars" :key="car.id">
+            <div class="car_box_item" v-for="car in cars" :key="car.id">
                 <a :href="'/cars/?id='+ car.id" class="text-center block car_image_box cursor-pointer" >
-                    <img :src="require('@/assets/img/cars/static/'+ car.image)" alt="" >
+                    <img :src="baseUrl + 'images/' + car.car_image" alt="" >
                 </a>
                 <div class="car_name">
-                     <div class="text-center text-white py-1 font-medium mt-1 mb-1">{{car.name}}</div>
+                     <div class="text-center text-white py-1 font-medium mt-1 mb-1">{{car.car_title}}</div>
                 </div>
                 <div class="car_details" >
-                    <div class="text-center font-medium mt-1 mb-1 cursor-pointer">{{car.name}}</div>
-                   <div class="text-center font-medium mt-1 mb-1"><font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mx-2" />{{car.price}}<span class="notice_mark">*</span></div>
+                    <div class="text-center font-medium mt-1 mb-1 cursor-pointer">{{car.car_title}}</div>
+                   <div class="text-center font-medium mt-1 mb-1"><font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mx-2" />{{car.car_price}}<span class="notice_mark">*</span></div>
                 </div>
             </div>
             <div class=" btn_box">
@@ -265,12 +265,14 @@ export default {
         products: [],
         category: [],
         cartproduct: {},
+        baseUrl:process.env.baseUrl, 
 
         compareproduct: {},
 
         dismissCountDown: 0,
 
         cars:[],
+        originalDataCars:[],
 
         staticcars:[
             {
@@ -455,7 +457,6 @@ export default {
 
         this.productsArray()
         this.GetCars()
-        this.categoryNames()
 
         const obj1 = document.getElementById("value1");
         const obj2 = document.getElementById("value2");
@@ -472,16 +473,29 @@ export default {
         },2000)
     },
     methods: {
+        GetCars(){
+            axios.get(process.env.baseUrl + 'api/cars/index')
+            .then((response) => {
+            this.cars = response.data.cars
+            this.originalDataCars = response.data.cars
+            this.categoryNames();
+            })
+            .catch((error) => {
+            console.log(error)
+            })
+        },
         filterItems(name){
-          var newItems =  this.originalcars.filter((item)=> item.category == name);
+          var newItems =  this.originalDataCars.filter((item)=> item.car_type == name);
           newItems.reverse()
-          this.staticcars = newItems;
+          this.cars = newItems;
           if(name == 'ALL'){
-              this.staticcars = this.originalcars
+              this.cars = this.originalDataCars
           }
         },
         categoryNames(){
-           var category = ['ALL',...new Set(this.staticcars.map((item)=>{return item.category}))]
+           var items =  this.cars.map((item)=>{return item.car_type});
+           items.reverse()
+           var category = ['ALL',...new Set(items)]
            this.carCategory = category;
            
         },
@@ -508,16 +522,6 @@ export default {
         // Product added Alert / notificaion 
         alert(item) {
             this.dismissCountDown = item
-        },
-        GetCars(){
-            axios.get(process.env.baseUrl + 'api/cars/index')
-            .then((response) => {
-            this.cars = response.data
-            console.log(this.cars)
-            })
-            .catch((error) => {
-            console.log(error)
-            })
         },
          animateValue(obj, start, end, duration) {
             let startTimestamp = null;
