@@ -553,6 +553,13 @@ export default {
 }
 </script>
 <style scoped>
+
+@media only screen and (min-width: 1270px) and (max-width: 1366px){
+    .product_single_one_img img{
+        height: 430px;
+        object-fit: cover;
+    }
+}
 .btn_box{
     display: flex;
     align-items: center;

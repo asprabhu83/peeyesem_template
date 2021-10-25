@@ -6241,10 +6241,6 @@ table {
     max-width:100%;
 }
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
-    .product_single_one_img img{
-        height: 430px;
-        object-fit: cover;
-    }
     .whtsapp_btn .mob_whtsap_img{
         width: 30%;
         margin-right: auto;
