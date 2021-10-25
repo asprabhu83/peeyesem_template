@@ -228,7 +228,9 @@
             </div>
         </div>
     </section> -->
-    
+    <Modal1 @closeModal="closeModal" v-if="formModal == true" />
+    <Modal2 @closeModal="closeModal" v-if="formModal2 == true" />
+    <Modal3 @closeModal="closeModal" v-if="formModal3 == true" />
 
     
 
@@ -244,7 +246,9 @@ import BlogItem1 from '~/components/blog/BlogItem1'
 
 import axios from '~/plugins/axios'
 import isotope  from 'vueisotope'
-
+import Modal1 from '../components/modals/formModal1.vue'
+import Modal2 from '../components/modals/formModal2.vue'
+import Modal3 from '../components/modals/formModal3.vue'
 export default {
     name: 'Home',
     components: {
@@ -252,7 +256,10 @@ export default {
         Timer,
         InstagramArea,
         BlogItem1,
-        isotope
+        isotope,
+        Modal1,
+        Modal2,
+        Modal3
     },
 
     data() {
@@ -261,6 +268,9 @@ export default {
         options: {
             sortBy : "category"
         },
+        formModal:false,
+        formModal2:false,
+        formModal3:false,
 
         products: [],
         category: [],
@@ -473,6 +483,17 @@ export default {
         },2000)
     },
     methods: {
+        closeModal(value){
+            if(value == 'modal1'){
+                this.formModal = false;
+            }
+            if(value == 'modal2'){
+                this.formModal2 = false;
+            }
+            if(value == 'modal3'){
+                this.formModal3 = false;
+            }
+        },
         GetCars(){
             axios.get(process.env.baseUrl + 'api/cars/index')
             .then((response) => {

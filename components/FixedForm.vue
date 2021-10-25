@@ -16,379 +16,25 @@
     <div class="back_to_top" @click="backToTop">
         <img :src="require('@/assets/img/back_to_top_car.png')" alt="img" style="width:100%;height:auto;"/>
     </div>
-
-    <section class="form_modal_box" v-if="formModal == true">
-        <div class="w-4/12 card_body bg-white card mx-auto">
-           <form class="pb-12 px-8">
-               <div class="heading flex items-center justify-between pt-6 pb-2 font-semibold text-lg">Book a Car<font-awesome-icon icon="times"  size="1x" class="text-red-600 cursor-pointer" @click="formModal = false" /></div>
-               <hr class="mb-8" style="height:1px;background:gray;opacity:0.3;" />
-               <div class="mb-4">
-                    <input
-                    class="
-                        shadow
-                        appearance-none
-                        border
-                        rounded
-                        w-full
-                        py-2
-                        px-3
-                        text-gray-700
-                        leading-tight
-                        focus:outline-none
-                        focus:shadow-outline
-                    "
-                    type="text"
-                    placeholder="Your Name"
-                    />
-                </div>
-                <div class="mb-4">
-                    <select
-                    class="
-                      shadow
-                      appearance-none
-                      border
-                      rounded
-                      w-full
-                      py-2
-                      px-3
-                      text-gray-700
-                      cursor-pointer
-                      leading-tight
-                      focus:outline-none
-                      focus:shadow-outline
-                    "
-                    id="cars"
-                  >
-                  <option class="text-xl " value="">Choose Model</option>
-                  <option class="text-xl" :value="model.id" v-for="model in originalcars"
-                    :key="model.id" >{{model.name}}</option>
-                  </select>
-                </div>
-               <div class="mb-4">
-                    <input
-                    class="
-                        shadow
-                        appearance-none
-                        border
-                        rounded
-                        w-full
-                        py-2
-                        px-3
-                        text-gray-700
-                        leading-tight
-                        focus:outline-none
-                        focus:shadow-outline
-                    "
-                    type="text"
-                    placeholder="Your Email"
-                    />
-                </div>
-               <div class="mb-8">
-                    <input
-                    class="
-                        shadow
-                        appearance-none
-                        border
-                        rounded
-                        w-full
-                        py-2
-                        px-3
-                        text-gray-700
-                        leading-tight
-                        focus:outline-none
-                        focus:shadow-outline
-                    "
-                    type="number"
-                    placeholder="Your Phone"
-                    />
-                </div>
-               <div class="btn_grp">
-                   <button  type="button" class="  text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
-               </div>
-           </form>
-        </div>
-    </section>
-
-    <section class="form_modal_box" v-if="formModal2 == true">
-        <div class="w-4/12 card_body bg-white card mx-auto">
-           <form class="pb-12 px-8">
-               <div class="heading flex items-center justify-between pt-6 pb-2 font-semibold text-lg">Book a Service<font-awesome-icon icon="times"  size="1x" class="text-red-600 cursor-pointer" @click="formModal2 = false" /></div>
-               <hr class="mb-8" style="height:1px;background:gray;opacity:0.3;" />
-               <div class="mb-4">
-                    <input
-                    class="
-                        shadow
-                        appearance-none
-                        border
-                        rounded
-                        w-full
-                        py-2
-                        px-3
-                        text-gray-700
-                        leading-tight
-                        focus:outline-none
-                        focus:shadow-outline
-                    "
-                    type="text"
-                    placeholder="Your Name"
-                    />
-                </div>
-                <div class="mb-4">
-                    <select
-                    class="
-                      shadow
-                      appearance-none
-                      border
-                      rounded
-                      w-full
-                      py-2
-                      px-3
-                      text-gray-700
-                      cursor-pointer
-                      leading-tight
-                      focus:outline-none
-                      focus:shadow-outline
-                    "
-                    id="cars"
-                  >
-                  <option class="text-xl " value="">Choose Model</option>
-                  <option class="text-xl" :value="model.id" v-for="model in originalcars"
-                    :key="model.id" >{{model.name}}</option>
-                  </select>
-                </div>
-               <div class="mb-4">
-                    <input
-                    class="
-                        shadow
-                        appearance-none
-                        border
-                        rounded
-                        w-full
-                        py-2
-                        px-3
-                        text-gray-700
-                        leading-tight
-                        focus:outline-none
-                        focus:shadow-outline
-                    "
-                    type="text"
-                    placeholder="Your Email"
-                    />
-                </div>
-               <div class="mb-8">
-                    <input
-                    class="
-                        shadow
-                        appearance-none
-                        border
-                        rounded
-                        w-full
-                        py-2
-                        px-3
-                        text-gray-700
-                        leading-tight
-                        focus:outline-none
-                        focus:shadow-outline
-                    "
-                    type="number"
-                    placeholder="Your Phone"
-                    />
-                </div>
-               <div class="btn_grp">
-                   <button  type="button" class=" text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
-               </div>
-           </form>
-        </div>
-    </section>
-
-    <section class="form_modal_box" v-if="formModal3 == true">
-        <div class="w-4/12 card_body bg-white card mx-auto">
-           <form class="pb-12 px-8">
-               <div class="heading flex items-center justify-between pt-6 pb-2 font-semibold text-lg">Book a Test Drive<font-awesome-icon icon="times"  size="1x" class="text-red-600 cursor-pointer" @click="formModal3 = false" /></div>
-               <hr class="mb-8" style="height:1px;background:gray;opacity:0.3;" />
-               <div class="mb-4">
-                    <input
-                    class="
-                        shadow
-                        appearance-none
-                        border
-                        rounded
-                        w-full
-                        py-2
-                        px-3
-                        text-gray-700
-                        leading-tight
-                        focus:outline-none
-                        focus:shadow-outline
-                    "
-                    type="text"
-                    placeholder="Your Name"
-                    />
-                </div>
-                <div class="mb-4">
-                    <select
-                    class="
-                      shadow
-                      appearance-none
-                      border
-                      rounded
-                      w-full
-                      py-2
-                      px-3
-                      text-gray-700
-                      cursor-pointer
-                      leading-tight
-                      focus:outline-none
-                      focus:shadow-outline
-                    "
-                    id="cars"
-                  >
-                  <option class="text-xl " value="">Choose Model</option>
-                  <option class="text-xl" :value="model.id" v-for="model in originalcars"
-                    :key="model.id" >{{model.name}}</option>
-                  </select>
-                </div>
-               <div class="mb-4">
-                    <input
-                    class="
-                        shadow
-                        appearance-none
-                        border
-                        rounded
-                        w-full
-                        py-2
-                        px-3
-                        text-gray-700
-                        leading-tight
-                        focus:outline-none
-                        focus:shadow-outline
-                    "
-                    type="text"
-                    placeholder="Your Email"
-                    />
-                </div>
-               <div class="mb-8">
-                    <input
-                    class="
-                        shadow
-                        appearance-none
-                        border
-                        rounded
-                        w-full
-                        py-2
-                        px-3
-                        text-gray-700
-                        leading-tight
-                        focus:outline-none
-                        focus:shadow-outline
-                    "
-                    type="number"
-                    placeholder="Your Phone"
-                    />
-                </div>
-               <div class="btn_grp">
-                   <button  type="button" class=" text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
-               </div>
-           </form>
-        </div>
-    </section>
-
-    <section class="form_modal_box" v-if="formModal4 == true">
-        <div class="w-4/12 card_body bg-white card mx-auto">
-           <form class="pb-12 px-8">
-               <div class="heading flex items-center justify-between pt-6 pb-2 font-semibold text-lg">Request a callback<font-awesome-icon icon="times"  size="1x" class="text-red-600 cursor-pointer" @click="formModal4 = false" /></div>
-               <hr class="mb-8" style="height:1px;background:gray;opacity:0.3;" />
-               <div class="mb-4">
-                    <input
-                    class="
-                        shadow
-                        appearance-none
-                        border
-                        rounded
-                        w-full
-                        py-2
-                        px-3
-                        text-gray-700
-                        leading-tight
-                        focus:outline-none
-                        focus:shadow-outline
-                    "
-                    type="text"
-                    placeholder="Your Name"
-                    />
-                </div>
-                <div class="mb-4">
-                    <select
-                    class="
-                      shadow
-                      appearance-none
-                      border
-                      rounded
-                      w-full
-                      py-2
-                      px-3
-                      text-gray-700
-                      cursor-pointer
-                      leading-tight
-                      focus:outline-none
-                      focus:shadow-outline
-                    "
-                    id="cars"
-                  >
-                  <option class="text-xl " value="">Choose Model</option>
-                  <option class="text-xl" :value="model.id" v-for="model in originalcars"
-                    :key="model.id" >{{model.name}}</option>
-                  </select>
-                </div>
-               <div class="mb-4">
-                    <input
-                    class="
-                        shadow
-                        appearance-none
-                        border
-                        rounded
-                        w-full
-                        py-2
-                        px-3
-                        text-gray-700
-                        leading-tight
-                        focus:outline-none
-                        focus:shadow-outline
-                    "
-                    type="text"
-                    placeholder="Your Email"
-                    />
-                </div>
-               <div class="mb-8">
-                    <input
-                    class="
-                        shadow
-                        appearance-none
-                        border
-                        rounded
-                        w-full
-                        py-2
-                        px-3
-                        text-gray-700
-                        leading-tight
-                        focus:outline-none
-                        focus:shadow-outline
-                    "
-                    type="number"
-                    placeholder="Your Phone"
-                    />
-                </div>
-               <div class="btn_grp">
-                   <button  type="button" class=" text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
-               </div>
-           </form>
-        </div>
-    </section>
+    <Modal1 @closeModal="closeModal" v-if="formModal == true" />
+    <Modal2 @closeModal="closeModal" v-if="formModal2 == true" />
+    <Modal3 @closeModal="closeModal" v-if="formModal3 == true" />
+    <Modal4 @closeModal="closeModal" v-if="formModal4 == true" />
   </div>
 </template>
 
 <script>
+import Modal1 from './modals/formModal1.vue'
+import Modal2 from './modals/formModal2.vue'
+import Modal3 from './modals/formModal3.vue'
+import Modal4 from './modals/formModal4.vue'
 export default {
+    components:{
+        Modal1,
+        Modal2,
+        Modal3,
+        Modal4
+    },
     data(){
         return{
             formModal:false,
@@ -483,6 +129,20 @@ export default {
         window.removeEventListener('scroll', this.handleScroll);
     },
     methods:{
+        closeModal(value){
+            if(value == 'modal1'){
+                this.formModal = false;
+            }
+            if(value == 'modal2'){
+                this.formModal2 = false;
+            }
+            if(value == 'modal3'){
+                this.formModal3 = false;
+            }
+            if(value == 'modal4'){
+                this.formModal4 = false;
+            }
+        },
         handleScroll(){
             var fixed_form_sec = document.querySelector('.fixed_form_sec');
             var btn = document.querySelector('.back_to_top')
