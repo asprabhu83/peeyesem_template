@@ -159,7 +159,7 @@
                 <div class="text-center mb-2 text-lg  text-white sub_head">What Our Happy Clients say about us</div>
                 <div class="text-center mb-4 text-3xl text-white font-bold testimonial_head">OUR TESTIMONIAL<hr class="h-1 bg-white mx-auto w-1/12 my-1" /></div>
             </div>
-            <div class="product_single_one_img relative bg-position_overlay">
+            <div class=" relative bg-position_overlay">
                         <swiper class="swiper product-single-2-slider" :options="swiperOption">
                             <swiper-slide>
                                 <div class="testimonial_content">
@@ -440,7 +440,7 @@ export default {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev'
                 },
-                autoplay: true,
+                autoplay: false,
             },
 
       }
