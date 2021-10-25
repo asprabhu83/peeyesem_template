@@ -96,13 +96,13 @@
         </div>
     </section>
 
-    <div class="notice_card_sec text-center my-5">
+    <div class="notice_card_sec px-2 my-4">
         <div>
             <font-awesome-icon icon="star-of-life"  size="1x" class="star_icon mx-2" /> - <span style="padding-left:5px;"> Represents Ex-Showroom Price </span>
         </div>
     </div>
 
-    <section class="book_form_section py-24" >
+    <section class="book_form_section py-8" >
         <div class="flex book_form_box items-center justify-evenly">
             <div class="text-center font-bold text-white ">
                 <button type="button" class="blog_post_button" @click="formModal = true">Book a Car</button>
@@ -570,6 +570,12 @@ export default {
 }
 .btn_box a:hover{
     color: white;
+}
+@media only screen and (min-width:300px) and (max-width:600px){
+    .btn_box{
+        width: 100%;
+        padding: 40px 0;
+    }
 }
 .swiper-button-prev, .swiper-button-next{
     z-index: 220;

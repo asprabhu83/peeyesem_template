@@ -55,55 +55,55 @@
                     </div>
                 </div>
             </div>
-            <div class="mt-3">
-                <div>
-                    <div class="location_sec">
-                        <div class="mr-2 font-semibold">Sales:</div>
-                        <div>Mylapore</div>
-                        <span>|</span>
-                        <div>Tuticorin</div>
-                        <span>|</span>
-                        <div>Thiruchendur</div>
-                        <span>|</span>
-                        <div>Kovilpatti</div>
-                        <span>|</span>
-                        <div>Madurai</div>
-                        <span>|</span>
-                        <div>Ramnad</div>
-                        <span>|</span>
-                        <div>Karaikudi</div>
-                    </div>
-                    <div class="location_sec ">
-                            <div class="mr-2 font-semibold">Service:</div>
-                            <div>Tondaripet</div>
-                            <span>|</span>
-                            <div>Kotturpuram</div>
-                            <span>|</span>
-                            <div>Guindy</div>
-                            <span>|</span>
-                            <div>Tuticorin</div>
-                            <span>|</span>
-                            <div>Madurai</div>
-                            <span>|</span>
-                            <div>Thiruchendur</div>
-                            <span>|</span>
-                            <div>Kovilpatti</div>
-                            <span>|</span>
-                            <div>Ramnad</div>
-                    </div>
-                </div>
-            </div>
         </div>
     </footer>
 
     <!-- CopyRight Area -->
     <section id="copyright_one">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-12 mx-auto">
-                    <div class="copyright_left">
-                        <h6 class="text-center text-uppercase">© CopyRight {{$store.state.currentYear}} PEEYESEM HYUNDAI</h6>
-                    </div>
+            <div class="">
+                <div class="">
+                    <div class="mt-1">
+                            <div>
+                                <div class="location_sec">
+                                    <div class="mr-2 font-semibold">Sales:</div>
+                                    <div>Mylapore</div>
+                                    <span>|</span>
+                                    <div>Tuticorin</div>
+                                    <span>|</span>
+                                    <div>Thiruchendur</div>
+                                    <span>|</span>
+                                    <div>Kovilpatti</div>
+                                    <span>|</span>
+                                    <div>Madurai</div>
+                                    <span>|</span>
+                                    <div>Ramnad</div>
+                                    <span>|</span>
+                                    <div>Karaikudi</div>
+                                </div>
+                                <div class="location_sec ">
+                                        <div class="mr-2 font-semibold">Service:</div>
+                                        <div>Tondaripet</div>
+                                        <span>|</span>
+                                        <div>Kotturpuram</div>
+                                        <span>|</span>
+                                        <div>Guindy</div>
+                                        <span>|</span>
+                                        <div>Tuticorin</div>
+                                        <span>|</span>
+                                        <div>Madurai</div>
+                                        <span>|</span>
+                                        <div>Thiruchendur</div>
+                                        <span>|</span>
+                                        <div>Kovilpatti</div>
+                                        <span>|</span>
+                                        <div>Ramnad</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="copyright_left mt-3">
+                            <h6 class="text-center text-uppercase">© CopyRight {{$store.state.currentYear}} PEEYESEM HYUNDAI</h6>
+                        </div>
                 </div>
             </div>
         </div>

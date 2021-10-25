@@ -1458,7 +1458,7 @@ export default {
           })
           .then((response) => {
             this.specsuccess = true
-            btn.innerHTML = 'Submit'
+            btn.innerHTML = 'Add'
             this.specType = ''
             this.specModel = ''
             this.specPetrol = ''
@@ -1468,7 +1468,7 @@ export default {
             }, 2000)
           })
           .catch((error) => {
-            btn.innerHTML = 'Submit'
+            btn.innerHTML = 'Add'
             this.error = true
             console.log(error)
           })
