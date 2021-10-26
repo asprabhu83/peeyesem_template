@@ -1,24 +1,24 @@
 <template>
   <section>
-      <div class="container flex justify-evenly mx-auto mt-24">
+      <div class="Form_box_container flex justify-evenly mx-auto mt-16">
         <div class="w-1/4 ">
             <div class="tab_box px-3 py-6 ">
-              <h5 class="font-bold tab_item tab_item1 text-md my-2 flex items-center justify-between   active  px-2 py-1" data-target="1" >Car Details <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
-              <h5 class="font-bold tab_item tab_item2 text-md my-2 flex items-center justify-between    px-2 py-1" data-target="2" >Overview <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
-              <h5 class="font-bold tab_item tab_item3 text-md my-2 flex items-center justify-between    px-2 py-1" data-target="3" >Overview Details <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
-              <h5 class="font-bold tab_item tab_item4 text-md my-2 flex items-center justify-between    px-2 py-1" data-target="4" >Highlight <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
-              <h5 class="font-bold tab_item tab_item5 text-md my-2 flex items-center justify-between    px-2 py-1" data-target="5" >Highlight Post <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
-              <h5 class="font-bold tab_item tab_item6 text-md my-2 flex items-center justify-between    px-2 py-1" data-target="6" >Gallery <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
-              <h5 class="font-bold tab_item tab_item7 text-md my-2 flex items-center justify-between    px-2 py-1" data-target="7" >Videos <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
-              <h5 class="font-bold tab_item tab_item8 text-md my-2 flex items-center justify-between    px-2 py-1" data-target="8" >Colors <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
-              <h5 class="font-bold tab_item tab_item9 text-md my-2 flex items-center justify-between    px-2 py-1" data-target="9" >Specifications <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
-              <h5 class="font-bold tab_item tab_item10 text-md my-2 flex items-center justify-between    px-2 py-1" data-target="10" >Features Variant <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
-              <h5 class="font-bold tab_item tab_item11 text-md my-2 flex items-center justify-between    px-2 py-1" data-target="11" >Features Model <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
-              <h5 class="font-bold tab_item tab_item12 text-md my-2 flex items-center justify-between    px-2 py-1" data-target="12" >Variant Features <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
-              <h5 class="font-bold tab_item tab_item13 text-md my-2 flex items-center justify-between    px-2 py-1" data-target="13" >Price List <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
+              <h5 class="font-bold tab_item tab_item1 text-md my-2 flex items-center justify-between cursor-pointer active  px-2 py-1" @click="tabFunc" data-target="1" >Car Details <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
+              <h5 class="font-bold tab_item tab_item2 text-md my-2 flex items-center justify-between cursor-pointer  px-2 py-1" @click="tabFunc" data-target="2" >Overview <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
+              <h5 class="font-bold tab_item tab_item3 text-md my-2 flex items-center justify-between cursor-pointer  px-2 py-1" @click="tabFunc" data-target="3" >Overview Details <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
+              <h5 class="font-bold tab_item tab_item4 text-md my-2 flex items-center justify-between cursor-pointer  px-2 py-1" @click="tabFunc" data-target="4" >Highlight <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
+              <h5 class="font-bold tab_item tab_item5 text-md my-2 flex items-center justify-between cursor-pointer  px-2 py-1" @click="tabFunc" data-target="5" >Highlight Post <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
+              <h5 class="font-bold tab_item tab_item6 text-md my-2 flex items-center justify-between cursor-pointer  px-2 py-1" @click="tabFunc" data-target="6" >Gallery <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
+              <h5 class="font-bold tab_item tab_item7 text-md my-2 flex items-center justify-between cursor-pointer  px-2 py-1" @click="tabFunc" data-target="7" >Videos <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
+              <h5 class="font-bold tab_item tab_item8 text-md my-2 flex items-center justify-between cursor-pointer  px-2 py-1" @click="tabFunc" data-target="8" >Colors <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
+              <h5 class="font-bold tab_item tab_item9 text-md my-2 flex items-center justify-between cursor-pointer  px-2 py-1" @click="tabFunc" data-target="9" >Specifications <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
+              <h5 class="font-bold tab_item tab_item10 text-md my-2 flex items-center justify-between cursor-pointer  px-2 py-1" @click="tabFunc" data-target="10" >Features Variant <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
+              <h5 class="font-bold tab_item tab_item11 text-md my-2 flex items-center justify-between cursor-pointer  px-2 py-1" @click="tabFunc" data-target="11" >Features Model <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
+              <h5 class="font-bold tab_item tab_item12 text-md my-2 flex items-center justify-between cursor-pointer  px-2 py-1" @click="tabFunc" data-target="12" >Variant Features <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
+              <h5 class="font-bold tab_item tab_item13 text-md my-2 flex items-center justify-between cursor-pointer  px-2 py-1" @click="tabFunc" data-target="13" >Price List <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
             </div>
         </div>
-        <div class="w-2/5 px-8 pb-10">
+        <div class="w-2/5 px-8 pb-10 form_tab_box">
           <div class="step step1 active">
                  <div class="msg_box h-12">
                    <div class="error py-3 text-green-500" v-if="success == true">Added Successfully</div>
@@ -464,6 +464,33 @@
                 <div class="mt-5">
                   <button type="button" class="bg-blue-500 hover:bg-blue-700 flex items-center text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="5" data-next="6" @click="AddCars">Add <font-awesome-icon icon="plus"  size="1x" class="text-white cursor-pointer ml-2"  /></button>
                 </div>
+                <div class="edit_table my-5">
+                   <table>
+                     <thead>
+                       <tr>
+                         <th>Title</th>
+                         <th>Description</th>
+                         <th>Image</th>
+                         <th>Actions</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <tr v-for="post in LoopDatas.highlightPost" :key="post.id">
+                         <td>{{post.post_title}}</td>
+                         <td>{{post.post_description.substring(0,30)}}...</td>
+                         <td>
+                            <div class="model_image">
+                                <img :src="baseUrl + 'images/' + post.post_image" style="width:100%;" />
+                            </div>
+                         </td>
+                         <td class="actions">
+                           <font-awesome-icon icon="edit"  size="1x" class="text-green-600  cursor-pointer mx-1" @click="filterPost(post.id)"  />
+                           <font-awesome-icon icon="trash"  size="1x" class="text-red-600 cursor-pointer mx-1"  />
+                         </td>
+                       </tr>
+                     </tbody>
+                   </table>
+                </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="5" data-prev="4" @click="prevstep">Previous</button> -->
                     <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="5" data-next="6" @click="NextTab">Submit</button>
@@ -516,6 +543,28 @@
                 </div>
                 <div class="mt-5">
                   <button type="button" class="bg-blue-500 hover:bg-blue-700 flex items-center text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="6" data-next="7"  @click="AddCars">Add <font-awesome-icon icon="plus"  size="1x" class="text-white cursor-pointer ml-2"  /></button>
+                </div>
+                <div class="edit_table my-5">
+                   <table>
+                     <thead>
+                       <tr>
+                         <th>Image</th>
+                         <th>Actions</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <tr v-for="gallery in LoopDatas.Gallery" :key="gallery.id">
+                         <td>
+                            <div class="model_image">
+                                <img :src="baseUrl + 'images/' + gallery.gallery_image" style="width:100%;" />
+                            </div>
+                         </td>
+                         <td class="actions">
+                           <font-awesome-icon icon="trash"  size="1x" class="text-red-600 cursor-pointer mx-1"  />
+                         </td>
+                       </tr>
+                     </tbody>
+                   </table>
                 </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="6" data-prev="5" @click="prevstep">Previous</button> -->
@@ -684,6 +733,35 @@
                 <div class="mt-5">
                   <button type="button" class="bg-blue-500 hover:bg-blue-700 flex items-center text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="8" data-next="9" @click="AddCars">Add <font-awesome-icon icon="plus"  size="1x" class="text-white cursor-pointer ml-2"  /></button>
                 </div>
+                <div class="edit_table my-5">
+                   <table>
+                     <thead>
+                       <tr>
+                         <th>First Color</th>
+                         <th>Second Color</th>
+                         <th>Title</th>
+                         <th>Image</th>
+                         <th>Actions</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <tr v-for="color in LoopDatas.colors" :key="color.id">
+                         <td>{{color.color_code}}</td>
+                         <td>{{color.second_color_code}}</td>
+                         <td>{{color.color_title}}</td>
+                         <td>
+                            <div class="model_image">
+                                <img :src="baseUrl + 'images/' + color.color_image" style="width:100%;" />
+                            </div>
+                         </td>
+                         <td class="actions">
+                           <font-awesome-icon icon="edit"  size="1x" class="text-green-600  cursor-pointer mx-1" @click="filterColor(color.id)"/>
+                           <font-awesome-icon icon="trash"  size="1x" class="text-red-600 cursor-pointer mx-1"  />
+                         </td>
+                       </tr>
+                     </tbody>
+                   </table>
+                </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="8" data-prev="7" @click="prevstep">Previous</button> -->
                     <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="8" data-next="9" @click="NextTab" >Submit</button>
@@ -801,6 +879,31 @@
                 <div class="mt-5">
                   <button type="button" class="bg-blue-500 hover:bg-blue-700 flex items-center text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="9" data-next="10" @click="AddCars">Add <font-awesome-icon icon="plus"  size="1x" class="text-white cursor-pointer ml-2"  /></button>
                 </div>
+                <div class="edit_table my-5">
+                   <table>
+                     <thead>
+                       <tr>
+                         <th>Type</th>
+                         <th>Model</th>
+                         <th>Petrol</th>
+                         <th>Diesel</th>
+                         <th>Actions</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <tr v-for="spec in LoopDatas.specs" :key="spec.id">
+                         <td>{{spec.spec_type}}</td>
+                         <td>{{spec.spec_model}}</td>
+                         <td>{{spec.spec_petrol}}</td>
+                         <td>{{spec.spec_diesel}}</td>
+                         <td class="actions">
+                           <font-awesome-icon icon="edit"  size="1x" class="text-green-600  cursor-pointer mx-1" @click="filterSpec(spec.id)"/>
+                           <font-awesome-icon icon="trash"  size="1x" class="text-red-600 cursor-pointer mx-1"  />
+                         </td>
+                       </tr>
+                     </tbody>
+                   </table>
+                </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="9" data-prev="8" @click="prevstep">Previous</button> -->
                     <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="9" data-next="10" @click="NextTab">Submit</button>
@@ -901,6 +1004,25 @@
                 </div>
                 <div class="mt-5">
                   <button type="button" class="bg-blue-500 hover:bg-blue-700 flex items-center text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="11" data-next="12" @click="AddCars">Add <font-awesome-icon icon="plus"  size="1x" class="text-white cursor-pointer ml-2"  /></button>
+                </div>
+                <div class="edit_table my-5">
+                   <table>
+                     <thead>
+                       <tr>
+                         <th>Varaint Model</th>
+                         <th>Actions</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <tr v-for="variant in LoopDatas.Variants" :key="variant.id">
+                         <td>{{variant.feature_type}}</td>
+                         <td class="actions">
+                           <font-awesome-icon icon="edit"  size="1x" class="text-green-600  cursor-pointer mx-1" @click="filterVariant(variant.id)"/>
+                           <font-awesome-icon icon="trash"  size="1x" class="text-red-600 cursor-pointer mx-1"  />
+                         </td>
+                       </tr>
+                     </tbody>
+                   </table>
                 </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="10" data-prev="9" @click="prevstep">Previous</button> -->
@@ -1023,6 +1145,29 @@
                 </div>
                 <div class="mt-5">
                   <button type="button" class="bg-blue-500 hover:bg-blue-700 flex items-center text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="12" data-next="13" @click="AddCars">Add <font-awesome-icon icon="plus"  size="1x" class="text-white cursor-pointer ml-2"  /></button>
+                </div>
+                <div class="edit_table my-5">
+                   <table>
+                     <thead>
+                       <tr>
+                         <th>Category</th>
+                         <th>Feature Type</th>
+                         <th>Feature Value</th>
+                         <th>Actions</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <tr v-for="feature in LoopDatas.Features" :key="feature.id">
+                         <td>{{feature.variant_category}}</td>
+                         <td>{{feature.variant_feature_type}}</td>
+                         <td>{{feature.variant_feature_value}}</td>
+                         <td class="actions">
+                           <font-awesome-icon icon="edit"  size="1x" class="text-green-600  cursor-pointer mx-1" @click="filterVariantFeature(feature.id)"/>
+                           <font-awesome-icon icon="trash"  size="1x" class="text-red-600 cursor-pointer mx-1"  />
+                         </td>
+                       </tr>
+                     </tbody>
+                   </table>
                 </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="10" data-prev="9" @click="prevstep">Previous</button> -->
@@ -1151,13 +1296,26 @@ export default {
       carPrice: '',
       variantCategory:'',
       variantFeatureModel:'',
-      variantsTypes:[]
+      variantsTypes:[],
+      DataBaseSingleCar:[],
+      LoopDatas:{
+        highlightPost:[],
+        colors:[],
+        specs:[],
+        Variants:[],
+        Features:[],
+        Gallery:[]
+      },
+      baseUrl:process.env.baseUrl
     }
   },
   beforeCreate(){
     if(!localStorage.getItem('user_token')){
         this.$router.push('/psm-admin')
     }
+  },
+  beforeMount(){
+    this.GetSingleCar();
   },
   mounted () {
     this.GetModels()
@@ -1212,23 +1370,23 @@ export default {
         reader.readAsDataURL(file)
       }
     },
-    // tabFunc (e) {
-    //   var alltabs = document.querySelectorAll('.tab_item')
-    //   alltabs.forEach(tab => {
-    //     if (tab.classList.contains('active')) {
-    //       tab.classList.remove('active')
-    //     }
-    //   })
-    //   var alltabItems = document.querySelectorAll('.step')
-    //   alltabItems.forEach(item => {
-    //     if (item.classList.contains('active')) {
-    //       item.classList.remove('active')
-    //     }
-    //   })
-    //   var target = e.target.getAttribute('data-target')
-    //   document.querySelector('.step' + target).classList.add('active')
-    //   e.target.classList.add('active')
-    // },
+    tabFunc (e) {
+      var alltabs = document.querySelectorAll('.tab_item')
+      alltabs.forEach(tab => {
+        if (tab.classList.contains('active')) {
+          tab.classList.remove('active')
+        }
+      })
+      var alltabItems = document.querySelectorAll('.step')
+      alltabItems.forEach(item => {
+        if (item.classList.contains('active')) {
+          item.classList.remove('active')
+        }
+      })
+      var target = e.target.getAttribute('data-target')
+      document.querySelector('.step' + target).classList.add('active')
+      e.target.classList.add('active')
+    },
     NextTab (e) {
       var current = e.target.getAttribute('data-current')
       var next = e.target.getAttribute('data-next')
@@ -1247,15 +1405,109 @@ export default {
           console.log(error)
         })
     },
-    GetVariant(){
+
+    GetSingleCar(){
+      var id = this.$route.query.car_id;
       axios
-        .get(process.env.baseUrl + 'api/cars_variant/index')
-        .then((response) => {
-          this.variantsTypes = response.data
-        })
-        .catch((error) => {
+          .get(process.env.baseUrl + 'api/show/car/' + id)
+          .then((response) => {
+              this.DataBaseSingleCar = response.data;
+              this.FilterDatabasedata();
+          })
+          .catch((error) => {
           console.log(error)
-        })
+          })
+    },
+    filterPost(postId){
+      var item = this.LoopDatas.highlightPost.filter((item)=>{
+        return item.id == postId
+      })
+      const [post] = item;
+      const {post_title,post_description} = post;
+      this.postTitle = post_title;
+      this.postDescription = post_description;
+    },
+    filterColor(clrId){
+       var item = this.LoopDatas.colors.filter((item)=>{
+        return item.id == clrId
+      })
+      const [color] = item;
+      const {color_code,second_color_code,color_title} = color;
+      this.colorCode = color_code;
+      this.colorCode2 = second_color_code;
+      this.colorTitle = color_title;
+    },
+    filterSpec(specId){
+       var item = this.LoopDatas.specs.filter((item)=>{
+        return item.id == specId
+      })
+      const [spec] = item;
+      const {spec_type,spec_model,spec_petrol,spec_diesel} = spec;
+      this.specType = spec_type;
+      this.specModel = spec_model;
+      this.specPetrol = spec_petrol;
+      this.specDiesel = spec_diesel;
+    },
+    filterVariant(varId){
+      var item = this.LoopDatas.Variants.filter((item)=>{
+        return item.id == varId
+      })
+      const [variant] = item;
+      const {feature_type} = variant;
+      this.feutureType = feature_type;
+    },
+    filterVariantFeature(feuId){
+      var item = this.LoopDatas.Features.filter((item)=>{
+        return item.id == feuId
+      })
+      const [feature] = item;
+      const {features_model_id,variant_feature_type,variant_category,variant_feature_value} = feature;
+      this.featureModelId = features_model_id;
+      this.variantFeutureType = variant_feature_type;
+      this.variantFeutureValue = variant_feature_value;
+      this.variantCategory = variant_category;
+    },
+    FilterDatabasedata(){
+            const {car,overview,overview_details,highlight,highlight_post,gallery,videos,colors,specs,feature_variant,feature_model,varient_feature,price} = this.DataBaseSingleCar;
+            const {car_title,car_type_id,poster_image,car_image} = car;
+            const {car_id,car_description,overview_image} = overview;
+            const [FirstHighlight] = highlight;
+            const {highlight_title} = FirstHighlight;
+            const [price_details] = overview_details;
+            const {overview_id,car_power,car_transmission,car_mileage} = price_details;
+            const [video] = videos;
+            const {youtube_link} = video;
+            const {car_price,car_fuel_type} = price;
+
+            const [FirstVariantTitle] = feature_variant;
+            const {feature_title,feature_variant_title} = FirstVariantTitle;
+
+            const [firstModel] = feature_model;
+            const {features_variant_id} = firstModel;
+
+            this.carId = car_id;
+            this.overviewId = overview_id;
+            this.featureVariantId = features_variant_id;
+            
+            this.modelName=car_title;
+            this.modelType = car_type_id;
+            this.description = car_description;
+            this.power=car_power;
+            this.transmission=car_transmission;
+            this.mileage=car_mileage;
+            this.highlight = highlight_title;
+            this.youtubeLink = youtube_link;
+            this.feutureTitle = feature_title;
+            this.featureVariantTitle = feature_variant_title;
+            this.carPrice = car_price;
+            this.carFuelType = car_fuel_type;
+            this.LoopDatas.highlightPost = highlight_post;
+            this.LoopDatas.colors = colors;
+            this.LoopDatas.Gallery = gallery;
+            this.LoopDatas.specs = specs;
+            this.LoopDatas.Variants = feature_model;
+            this.variantsTypes = feature_model;
+            this.LoopDatas.Features = varient_feature;
     },
     AddCars (e) {
       var target = e.target.getAttribute('data-current')
@@ -1564,6 +1816,45 @@ export default {
 </script>
 
 <style scoped>
+
+.Form_box_container{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.edit_table table{
+  border-collapse: collapse;
+}
+.edit_table table td, .edit_table th{
+  border: 1px solid lightgray;
+  padding: 10px;
+}
+
+
+/* .form_tab_box{
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.form_tab_box::-webkit-scrollbar{
+  display: none;
+} */
+.edit_table{
+  height: 200px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.edit_table::-webkit-scrollbar{
+  display: none;
+}
+.model_image{
+  height: 120px;
+  width: 120px;
+}
+.model_image img{
+  height: 100%;
+  object-fit: contain;
+}
 .tab_box{
   box-shadow: 0 2px 10px 4px rgb(0 0 0/15%);
   border-radius: 10px;
