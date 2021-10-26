@@ -170,7 +170,7 @@
                                             </thead>
                                             <tbody class="bg-white divide-y divide-gray-200">
                                                 <tr v-for="spec in car.car_specs" :key="spec.id">
-                                                <td class="px-6 py-4 whitespace-nowrap" >
+                                                <td class="px-6 py-4 " >
                                                     <span
                                                     class="
                                                         inline-flex
@@ -183,7 +183,7 @@
                                                     {{spec.spec_model}}
                                                     </span>
                                                 </td>
-                                                <td class="px-6 py-4 whitespace-nowrap" >
+                                                <td class="px-6 py-4 " >
                                                     <span
                                                     class="
                                                         inline-flex
@@ -197,7 +197,7 @@
                                                     </span>
                                                 </td>
 
-                                                <td class="px-6 py-4 whitespace-nowrap" >
+                                                <td class="px-6 py-4 " >
                                                     <span
                                                     class="
                                                         inline-flex
@@ -301,7 +301,7 @@
                                             </thead>
                                             <tbody class="bg-white divide-y divide-gray-200">
                                                 <tr v-for="feature in car.car_features" :key="feature.id">
-                                                <td class="px-6 py-4 whitespace-nowrap" >
+                                                <td class="px-6 py-4 " >
                                                     <span
                                                     class="
                                                         inline-flex
@@ -314,7 +314,7 @@
                                                     {{feature.variant_feature_type}}
                                                     </span>
                                                 </td>
-                                                <td class="px-6 py-4 whitespace-nowrap" >
+                                                <td class="px-6 py-4 " >
                                                     <span
                                                     class="
                                                         inline-flex
@@ -4769,33 +4769,33 @@ export default {
             }else{
                 car_header.classList.remove('sticky');
             }
-            if(pageYOffset < 1045){
-                this.car_tab_index = 0
-            }
-            if(pageYOffset > 1050){
-                this.car_tab_index = 1
-            }
-             if(pageYOffset > 2918){
-                this.car_tab_index = 2
-            }
-            if(pageYOffset > 4058){
-                this.car_tab_index = 3
-            }
-            if(this.$route.query.id == 4){
-                if(pageYOffset > 4606){
-                    this.car_tab_index = 4
-                }
-            }else{
-                if(pageYOffset > 4560){
-                    this.car_tab_index = 4
-                }
-            }
-            if(pageYOffset > 5433){
-                this.car_tab_index = 5
-            }
-            if(pageYOffset > 6218){
-                this.car_tab_index = 6
-            }
+            // if(pageYOffset < 1045){
+            //     this.car_tab_index = 0
+            // }
+            // if(pageYOffset > 1050){
+            //     this.car_tab_index = 1
+            // }
+            //  if(pageYOffset > 2918){
+            //     this.car_tab_index = 2
+            // }
+            // if(pageYOffset > 4058){
+            //     this.car_tab_index = 3
+            // }
+            // if(this.$route.query.id == 4){
+            //     if(pageYOffset > 4606){
+            //         this.car_tab_index = 4
+            //     }
+            // }else{
+            //     if(pageYOffset > 4560){
+            //         this.car_tab_index = 4
+            //     }
+            // }
+            // if(pageYOffset > 5433){
+            //     this.car_tab_index = 5
+            // }
+            // if(pageYOffset > 6218){
+            //     this.car_tab_index = 6
+            // }
             return pageYOffset;
         },
         VariantChange(e){
