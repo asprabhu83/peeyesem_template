@@ -1,21 +1,21 @@
 <template>
   <section>
-      <div class="container flex justify-evenly mx-auto my-24">
+      <div class="container flex justify-evenly mx-auto mt-24">
         <div class="w-1/4 ">
             <div class="tab_box px-3 py-6 ">
-              <h5 class="font-bold tab_item tab_item1 text-md my-2 flex items-center justify-between  active  px-2 py-1" data-target="1" >Car Details <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
-              <h5 class="font-bold tab_item tab_item2 text-md my-2 flex items-center justify-between   px-2 py-1" data-target="2" >Overview <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
-              <h5 class="font-bold tab_item tab_item3 text-md my-2 flex items-center justify-between   px-2 py-1" data-target="3" >Overview Details <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
-              <h5 class="font-bold tab_item tab_item4 text-md my-2 flex items-center justify-between   px-2 py-1" data-target="4" >Highlight <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
-              <h5 class="font-bold tab_item tab_item5 text-md my-2 flex items-center justify-between   px-2 py-1" data-target="5" >Highlight Post <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
-              <h5 class="font-bold tab_item tab_item6 text-md my-2 flex items-center justify-between   px-2 py-1" data-target="6" >Gallery <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
-              <h5 class="font-bold tab_item tab_item7 text-md my-2 flex items-center justify-between   px-2 py-1" data-target="7" >Videos <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
-              <h5 class="font-bold tab_item tab_item8 text-md my-2 flex items-center justify-between   px-2 py-1" data-target="8" >Colors <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
-              <h5 class="font-bold tab_item tab_item9 text-md my-2 flex items-center justify-between   px-2 py-1" data-target="9" >Specifications <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
-              <h5 class="font-bold tab_item tab_item10 text-md my-2 flex items-center justify-between   px-2 py-1" data-target="10" >Features Variant <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
-              <h5 class="font-bold tab_item tab_item11 text-md my-2 flex items-center justify-between   px-2 py-1" data-target="11" >Features Model <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
-              <h5 class="font-bold tab_item tab_item12 text-md my-2 flex items-center justify-between   px-2 py-1" data-target="12" >Variant Features <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
-              <h5 class="font-bold tab_item tab_item13 text-md my-2 flex items-center justify-between   px-2 py-1" data-target="13" >Price List <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
+              <h5 class="font-bold tab_item tab_item1 text-md my-2 flex items-center justify-between   active  px-2 py-1" data-target="1" >Car Details <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
+              <h5 class="font-bold tab_item tab_item2 text-md my-2 flex items-center justify-between    px-2 py-1" data-target="2" >Overview <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
+              <h5 class="font-bold tab_item tab_item3 text-md my-2 flex items-center justify-between    px-2 py-1" data-target="3" >Overview Details <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
+              <h5 class="font-bold tab_item tab_item4 text-md my-2 flex items-center justify-between    px-2 py-1" data-target="4" >Highlight <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
+              <h5 class="font-bold tab_item tab_item5 text-md my-2 flex items-center justify-between    px-2 py-1" data-target="5" >Highlight Post <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
+              <h5 class="font-bold tab_item tab_item6 text-md my-2 flex items-center justify-between    px-2 py-1" data-target="6" >Gallery <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
+              <h5 class="font-bold tab_item tab_item7 text-md my-2 flex items-center justify-between    px-2 py-1" data-target="7" >Videos <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
+              <h5 class="font-bold tab_item tab_item8 text-md my-2 flex items-center justify-between    px-2 py-1" data-target="8" >Colors <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
+              <h5 class="font-bold tab_item tab_item9 text-md my-2 flex items-center justify-between    px-2 py-1" data-target="9" >Specifications <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
+              <h5 class="font-bold tab_item tab_item10 text-md my-2 flex items-center justify-between    px-2 py-1" data-target="10" >Features Variant <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
+              <h5 class="font-bold tab_item tab_item11 text-md my-2 flex items-center justify-between    px-2 py-1" data-target="11" >Features Model <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
+              <h5 class="font-bold tab_item tab_item12 text-md my-2 flex items-center justify-between    px-2 py-1" data-target="12" >Variant Features <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
+              <h5 class="font-bold tab_item tab_item13 text-md my-2 flex items-center justify-between    px-2 py-1" data-target="13" >Price List <font-awesome-icon icon="chevron-right"  size="1x" class="text-white  mt-1" /></h5>
             </div>
         </div>
         <div class="w-2/5 px-8 pb-10">
@@ -120,8 +120,48 @@
                     @change="previewFiles"
                     />
                 </div>
+                <div class="mb-4">
+                    <label
+                    class="block text-gray-700 text-sm font-bold mb-2"
+                    for="name"
+                    >
+                    Poster image
+                    </label>
+                    <label
+                    class="shadow
+                        block
+                        mt-2
+                        posterImage
+                        cursor-pointer
+                        appearance-none
+                        border
+                        rounded
+                        w-full
+                        py-2
+                        px-3
+                        text-gray-700
+                        leading-tight
+                        focus:outline-none
+                        focus:shadow-outline"
+                    for="posterImage"
+                    >
+                    Select image
+                    </label>
+                    <input
+                    class="
+                        hidden
+                    "
+                    accept="image/*"
+                    id="posterImage"
+                    ref="myFiles"
+                    type="file"
+                    data-file-target="posterImage"
+                    placeholder="Poster Image"
+                    @change="previewFiles"
+                    />
+                </div>
                 <div class="mt-10">
-                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="1" data-next="2" @click="AddCars">submit</button>
+                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="1" data-next="2" @click="AddCars">Submit</button>
                 </div>
            </div>
            <div class="step step2">
@@ -197,7 +237,7 @@
                 </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="2" data-prev="1" @click="prevstep">Previous</button> -->
-                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="2" data-next="3" @click="AddCars">submit</button>
+                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="2" data-next="3" @click="AddCars">Submit</button>
                 </div>
            </div>
             <div class="step step3">
@@ -226,7 +266,7 @@
                         focus:outline-none
                         focus:shadow-outline
                     "
-                    type="number"
+                    type="text"
                     placeholder="Power"
                     v-model="power"
                     />
@@ -278,14 +318,14 @@
                         focus:outline-none
                         focus:shadow-outline
                     "
-                    type="number"
+                    type="text"
                     placeholder="Mileage"
                     v-model="mileage"
                     />
                 </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="3" data-prev="2" @click="prevstep">Previous</button> -->
-                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="3" data-next="4" @click="AddCars">submit</button>
+                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="3" data-next="4" @click="AddCars">Submit</button>
                 </div>
            </div>
            <div class="step step4">
@@ -321,7 +361,7 @@
                 </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="4" data-prev="3" @click="prevstep">Previous</button> -->
-                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="4" data-next="5" @click="AddCars">submit</button>
+                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="4" data-next="5" @click="AddCars">Submit</button>
                 </div>
            </div>
            <div class="step step5">
@@ -426,7 +466,7 @@
                 </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="5" data-prev="4" @click="prevstep">Previous</button> -->
-                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="5" data-next="6" @click="NextTab">submit</button>
+                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="5" data-next="6" @click="NextTab">Submit</button>
                 </div>
            </div>
            <div class="step step6">
@@ -479,7 +519,7 @@
                 </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="6" data-prev="5" @click="prevstep">Previous</button> -->
-                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="6" data-next="7" @click="NextTab">submit</button>
+                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="6" data-next="7" @click="NextTab">Submit</button>
                 </div>
            </div>
            <div class="step step7">
@@ -515,7 +555,7 @@
                 </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="7" data-prev="6" @click="prevstep">Previous</button> -->
-                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="7" data-next="8" @click="AddCars">submit</button>
+                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="7" data-next="8" @click="AddCars">Submit</button>
                 </div>
            </div>
            <div class="step step8">
@@ -547,6 +587,32 @@
                     type="text"
                     placeholder="Color Code"
                     v-model="colorCode"
+                    />
+                </div>
+                <div class="mb-4">
+                    <label
+                    class="block text-gray-700 text-sm font-bold mb-2"
+                    for="name"
+                    >
+                    Second Color Code
+                    </label>
+                    <input
+                    class="
+                        shadow
+                        appearance-none
+                        border
+                        rounded
+                        w-full
+                        py-2
+                        px-3
+                        text-gray-700
+                        leading-tight
+                        focus:outline-none
+                        focus:shadow-outline
+                    "
+                    type="text"
+                    placeholder="Second Color Code"
+                    v-model="colorCode2"
                     />
                 </div>
                  <div class="mb-4">
@@ -620,12 +686,12 @@
                 </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="8" data-prev="7" @click="prevstep">Previous</button> -->
-                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="8" data-next="9" @click="NextTab" >submit</button>
+                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="8" data-next="9" @click="NextTab" >Submit</button>
                 </div>
            </div>
            <div class="step step9">
              <div class="msg_box h-12">
-                   <div class="error py-3 text-green-500" v-if="success == true">Added Successfully</div>
+                   <div class="error py-3 text-green-500" v-if="specsuccess == true">Added Successfully</div>
                    <div class="error py-3 text-red-500" v-if="error == true">Invalid Data</div>
               </div>
              <div class="mb-4">
@@ -732,9 +798,12 @@
                     v-model="specDiesel"
                     />
                 </div>
+                <div class="mt-5">
+                  <button type="button" class="bg-blue-500 hover:bg-blue-700 flex items-center text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="9" data-next="10" @click="AddCars">Add <font-awesome-icon icon="plus"  size="1x" class="text-white cursor-pointer ml-2"  /></button>
+                </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="9" data-prev="8" @click="prevstep">Previous</button> -->
-                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="9" data-next="10" @click="AddCars">submit</button>
+                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="9" data-next="10" @click="NextTab">Submit</button>
                 </div>
            </div>
            <div class="step step10">
@@ -796,7 +865,7 @@
                 </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="10" data-prev="9" @click="prevstep">Previous</button> -->
-                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="10" data-next="11" @click="AddCars">submit</button>
+                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="10" data-next="11" @click="AddCars">Submit</button>
                 </div>
            </div>
           <div class="step step11">
@@ -830,16 +899,76 @@
                     v-model="feutureType"
                     />
                 </div>
+                <div class="mt-5">
+                  <button type="button" class="bg-blue-500 hover:bg-blue-700 flex items-center text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="11" data-next="12" @click="AddCars">Add <font-awesome-icon icon="plus"  size="1x" class="text-white cursor-pointer ml-2"  /></button>
+                </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="10" data-prev="9" @click="prevstep">Previous</button> -->
-                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="11" data-next="12" @click="AddCars">submit</button>
+                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="11" data-next="12" @click="NextTab">Submit</button>
                 </div>
             </div>
           <div class="step step12">
              <div class="msg_box h-12">
-                   <div class="error py-3 text-green-500" v-if="success == true">Added Successfully</div>
+                   <div class="error py-3 text-green-500" v-if="variantsuccess == true">Added Successfully</div>
                    <div class="error py-3 text-red-500" v-if="error == true">Invalid Data</div>
               </div>
+              <div class="mb-4">
+                    <label
+                    class="block text-gray-700 text-sm font-bold mb-2"
+                    for="modeltype"
+                  >
+                    Variant Model
+                  </label>
+                  <select
+                    class="
+                      shadow
+                      appearance-none
+                      border
+                      rounded
+                      w-full
+                      py-2
+                      px-3
+                      text-gray-700
+                      cursor-pointer
+                      leading-tight
+                      focus:outline-none
+                      focus:shadow-outline
+                    "
+                    id="modeltype"
+                    v-model="featureModelId"
+                  >
+                  <option class="text-xl " value="">Choose Variant Model</option>
+                  <option class="text-xl" :value="model.id" v-for="model in variantsTypes"
+                    :key="model.id" >{{model.feature_type}}</option>
+                  </select>
+                </div>
+                <div class="mb-4">
+                    <label
+                    class="block text-gray-700 text-sm font-bold mb-2"
+                    for="category"
+                    >
+                    Variant Category
+                    </label>
+                    <input
+                    class="
+                        shadow
+                        appearance-none
+                        border
+                        rounded
+                        w-full
+                        py-2
+                        px-3
+                        text-gray-700
+                        leading-tight
+                        focus:outline-none
+                        focus:shadow-outline
+                    "
+                    id="category"
+                    type="text"
+                    placeholder="Variant Category"
+                    v-model="variantCategory"
+                    />
+                </div>
              <div class="mb-4">
                     <label
                     class="block text-gray-700 text-sm font-bold mb-2"
@@ -892,9 +1021,12 @@
                     v-model="variantFeutureValue"
                     />
                 </div>
+                <div class="mt-5">
+                  <button type="button" class="bg-blue-500 hover:bg-blue-700 flex items-center text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="12" data-next="13" @click="AddCars">Add <font-awesome-icon icon="plus"  size="1x" class="text-white cursor-pointer ml-2"  /></button>
+                </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="10" data-prev="9" @click="prevstep">Previous</button> -->
-                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="12" data-next="13" @click="AddCars">submit</button>
+                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="12" data-next="13"  @click="NextTab">Submit</button>
                 </div>
             </div>
             <div class="step step13">
@@ -956,7 +1088,7 @@
                 </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="10" data-prev="9" @click="prevstep">Previous</button> -->
-                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="13" @click="AddCars">submit</button>
+                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="13" @click="AddCars">Submit</button>
                 </div>
             </div>
         </div>
@@ -968,6 +1100,7 @@
 import axios from '~/plugins/axios'
 export default {
   layout:'admin-header-layout',
+
   data () {
     return {
       postTable: [],
@@ -980,6 +1113,7 @@ export default {
       featureModelId: '',
       modelName: '',
       modelImage: '',
+      posterImage:'',
       modelType: '',
       overviewImage: '',
       postImage: '',
@@ -992,6 +1126,9 @@ export default {
       postsuccess: false,
       success: false,
       colorsuccess: false,
+      specsuccess: false,
+      variantsuccess: false,
+      carvariantsuccess: false,
       error: false,
       gallerysuccess: false,
       highlight: '',
@@ -999,6 +1136,7 @@ export default {
       postDescription: '',
       youtubeLink: '',
       colorCode: '',
+      colorCode2:'',
       colorTitle: '',
       specType: '',
       specModel: '',
@@ -1010,12 +1148,18 @@ export default {
       variantFeutureType: '',
       variantFeutureValue: '',
       carFuelType: '',
-      carPrice: ''
-
+      carPrice: '',
+      variantCategory:'',
+      variantFeatureModel:'',
+      variantsTypes:[]
+    }
+  },
+  beforeCreate(){
+    if(!localStorage.getItem('user_token')){
+        this.$router.push('/psm-admin')
     }
   },
   mounted () {
-    this.EditCars()
     this.GetModels()
   },
   methods: {
@@ -1037,6 +1181,11 @@ export default {
       if (path === 'modelImage') {
         reader.onload = (e) => {
           vm.modelImage = e.target.result
+        }
+      }
+      if (path === 'posterImage') {
+        reader.onload = (e) => {
+          vm.posterImage = e.target.result
         }
       }
       if (path === 'overviewImage') {
@@ -1098,15 +1247,11 @@ export default {
           console.log(error)
         })
     },
-    EditCars () {
-      var id = this.$route.query.car_id
+    GetVariant(){
       axios
-        .get(process.env.baseUrl + 'api/show/car/' + id)
+        .get(process.env.baseUrl + 'api/cars_variant/index')
         .then((response) => {
-          this.carId = response.data.car.id
-          this.modelName = response.data.car.car_title
-          this.modelImage = response.data.car.car_image
-          this.modelType = response.data.car.car_type_id
+          this.variantsTypes = response.data
         })
         .catch((error) => {
           console.log(error)
@@ -1121,13 +1266,13 @@ export default {
       if (target === '1') {
         axios
           .post(process.env.baseUrl + 'api/store/car', {
-            id: this.carId,
             car_title: this.modelName,
             car_image: this.modelImage,
+            poster_image:this.posterImage,
             car_type_id: this.modelType
           })
           .then((response) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             this.carId = response.data.id
             document.querySelector('.step' + target).classList.remove('active')
             document.querySelector('.step' + next).classList.add('active')
@@ -1135,8 +1280,7 @@ export default {
             document.querySelector('.tab_item' + next).classList.add('active')
           })
           .catch((error) => {
-            alert(this.modelImage)
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             this.error = true
             console.log(error)
           })
@@ -1149,7 +1293,7 @@ export default {
             overview_image: this.overviewImage
           })
           .then((response) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             this.overviewId = response.data.id
             document.querySelector('.step' + target).classList.remove('active')
             document.querySelector('.step' + next).classList.add('active')
@@ -1158,7 +1302,7 @@ export default {
             document.querySelector('.tab_item' + next).classList.add('active')
           })
           .catch((error) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             this.error = true
             console.log(error)
           })
@@ -1172,7 +1316,7 @@ export default {
             car_mileage: this.mileage
           })
           .then((response) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             document.querySelector('.step' + target).classList.remove('active')
             document.querySelector('.step' + next).classList.add('active')
 
@@ -1180,7 +1324,7 @@ export default {
             document.querySelector('.tab_item' + next).classList.add('active')
           })
           .catch((error) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             this.error = true
             console.log(error)
           })
@@ -1192,7 +1336,7 @@ export default {
             highlight_title: this.highlight
           })
           .then((response) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             this.highlightId = response.data.id
             document.querySelector('.step' + target).classList.remove('active')
             document.querySelector('.step' + next).classList.add('active')
@@ -1201,7 +1345,7 @@ export default {
             document.querySelector('.tab_item' + next).classList.add('active')
           })
           .catch((error) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             this.error = true
             console.log(error)
           })
@@ -1227,7 +1371,7 @@ export default {
             }, 2000)
           })
           .catch((error) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             this.error = true
             console.log(error)
           })
@@ -1249,7 +1393,7 @@ export default {
             }, 2000)
           })
           .catch((error) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             this.error = true
             console.log(error)
           })
@@ -1261,7 +1405,7 @@ export default {
             youtube_link: this.youtubeLink
           })
           .then((response) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             document.querySelector('.step' + target).classList.remove('active')
             document.querySelector('.step' + next).classList.add('active')
 
@@ -1269,7 +1413,7 @@ export default {
             document.querySelector('.tab_item' + next).classList.add('active')
           })
           .catch((error) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             this.error = true
             console.log(error)
           })
@@ -1279,6 +1423,7 @@ export default {
           .post(process.env.baseUrl + 'api/store/carcolor', {
             car_id: this.carId,
             color_code: this.colorCode,
+            second_color_code:this.colorCode2,
             color_title: this.colorTitle,
             color_image: this.colorImage
           })
@@ -1286,6 +1431,7 @@ export default {
             btn.innerText = 'Add'
             this.colorsuccess = true
             this.colorCode = ''
+            this.colorCode2 = ''
             this.colorTitle = ''
             this.colorImage = ''
             var label = document.querySelector('.colorImage')
@@ -1295,7 +1441,7 @@ export default {
             }, 2000)
           })
           .catch((error) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             this.error = true
             console.log(error)
           })
@@ -1310,15 +1456,18 @@ export default {
             spec_diesel: this.specDiesel
           })
           .then((response) => {
-            btn.innerHTML = 'submit'
-            document.querySelector('.step' + target).classList.remove('active')
-            document.querySelector('.step' + next).classList.add('active')
-
-            document.querySelector('.tab_item' + target).classList.remove('active')
-            document.querySelector('.tab_item' + next).classList.add('active')
+            this.specsuccess = true
+            btn.innerHTML = 'Add'
+            this.specType = ''
+            this.specModel = ''
+            this.specPetrol = ''
+            this.specDiesel = ''
+            setTimeout(() => {
+              this.specsuccess = false
+            }, 2000)
           })
           .catch((error) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Add'
             this.error = true
             console.log(error)
           })
@@ -1331,7 +1480,7 @@ export default {
             feature_variant_title: this.featureVariantTitle
           })
           .then((response) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             this.featureVariantId = response.data.id
             document.querySelector('.step' + target).classList.remove('active')
             document.querySelector('.step' + next).classList.add('active')
@@ -1340,7 +1489,7 @@ export default {
             document.querySelector('.tab_item' + next).classList.add('active')
           })
           .catch((error) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             this.error = true
             console.log(error)
           })
@@ -1352,16 +1501,16 @@ export default {
             feature_type: this.feutureType
           })
           .then((response) => {
-            btn.innerHTML = 'submit'
-            this.featureModelId = response.data.id
-            document.querySelector('.step' + target).classList.remove('active')
-            document.querySelector('.step' + next).classList.add('active')
-
-            document.querySelector('.tab_item' + target).classList.remove('active')
-            document.querySelector('.tab_item' + next).classList.add('active')
+            this.carvariantsuccess = true
+            btn.innerHTML = 'Add'
+            this.feutureType = ''
+             setTimeout(() => {
+              this.carvariantsuccess = false
+            }, 2000)
+            this.GetVariant()
           })
           .catch((error) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Add'
             this.error = true
             console.log(error)
           })
@@ -1371,18 +1520,22 @@ export default {
           .post(process.env.baseUrl + 'api/store/variant_feature', {
             features_model_id: this.featureModelId,
             variant_feature_type: this.variantFeutureType,
-            variant_feature_value: this.variantFeutureValue
+            variant_feature_value: this.variantFeutureValue,
+            variant_category:this.variantCategory,
           })
           .then((response) => {
-            btn.innerHTML = 'submit'
-            document.querySelector('.step' + target).classList.remove('active')
-            document.querySelector('.step' + next).classList.add('active')
-
-            document.querySelector('.tab_item' + target).classList.remove('active')
-            document.querySelector('.tab_item' + next).classList.add('active')
+            this.variantsuccess = true
+            this.featureModelId = ''
+            this.variantFeutureType = ''
+            this.variantFeutureValue = ''
+            this.variantCategory = ''
+            btn.innerHTML = 'Add'
+            setTimeout(() => {
+              this.variantsuccess = false
+            }, 2000)
           })
           .catch((error) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Add'
             this.error = true
             console.log(error)
           })
@@ -1396,11 +1549,11 @@ export default {
             car_price: this.carPrice
           })
           .then((response) => {
-            btn.innerHTML = 'submit'
-            this.$router.push('/cars-list')
+            btn.innerHTML = 'Submit'
+            this.$router.push('/psm-admin/manage-cars')
           })
           .catch((error) => {
-            btn.innerHTML = 'submit'
+            btn.innerHTML = 'Submit'
             this.error = true
             console.log(error)
           })

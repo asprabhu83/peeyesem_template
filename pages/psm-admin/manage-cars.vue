@@ -28,7 +28,7 @@
                       tracking-wider
                     "
                   >
-                    ID
+                    Model
                   </th>
                   <th
                     scope="col"
@@ -79,20 +79,12 @@
                     <td class="px-6 py-4 whitespace-nowrap" colspan="4" style="text-align:center;"> No Data</td>
                 </tr>
                 <tr v-for="car in cars" :key="car.id">
-                  <td class="px-6 py-4 whitespace-nowrap" >
-                    <span
-                      class="
-                        inline-flex
-                        text-xs
-                        leading-5
-                        font-semibold
-                        text-green-800
-                      "
-                    >
-                      {{car.id}}
-                    </span>
+                  <td class="px-4 py-1 whitespace-nowrap" >
+                    <div class="model_image">
+                        <img :src="baseUrl + 'images/' + car.car_image" style="width:100%;" />
+                    </div>
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap" >
+                  <td class="px-4 py-1 whitespace-nowrap" >
                     <span
                       class="
                         inline-flex
@@ -106,7 +98,7 @@
                     </span>
                   </td>
 
-                  <td class="px-6 py-4 whitespace-nowrap" >
+                  <td class="px-4 py-1 whitespace-nowrap" >
                     <span
                       class="
                         inline-flex
@@ -121,13 +113,10 @@
                   </td>
                   <td
                     class="
-                      px-6
-                      py-4
-                      flex
-                      items-center
-                      justify-start
+                      px-4
+                      py-1
                       whitespace-nowrap
-                      text-right text-sm
+                      text-left text-sm
                       font-medium
                     "
                   >
@@ -179,7 +168,8 @@ export default {
   data () {
     return {
       cars: [],
-      deleteDialog: false
+      deleteDialog: false,
+      baseUrl:process.env.baseUrl,
     }
   },
   mounted () {
@@ -223,6 +213,14 @@ export default {
 </script>
 
 <style scoped>
+.model_image{
+  height: 120px;
+  width: 120px;
+}
+.model_image img{
+  height: 100%;
+  object-fit: contain;
+}
 .dialog_box {
   background-color: rgba(0, 0, 0, 0.5);
 }
