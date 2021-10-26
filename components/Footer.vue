@@ -177,7 +177,6 @@ export default {
 .location_sec div,.location_sec span{
     color: white;
     margin: 5px 10px 5px 0;
-    cursor: pointer;
 }
 
 @media only screen and (min-width:300px) and (max-width:600px){
