@@ -61,6 +61,21 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width:300px) and (max-width:600px){
+    .img_Sec img{
+        object-position: left;
+    }
+    .img_Sec{
+        height: 200px!important;
+    }
+    .gallery_item_box{
+        width: 96%!important;
+    }
+    .gallery_item_box .item{
+        width: 100%!important;
+        margin: 20px 10px!important;
+    }
+}
 .img_Sec{
     height: 500px;
 }

@@ -152,6 +152,17 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width:300px) and (max-width:600px){
+    .explanation {
+        padding: 0 15px;
+    }
+    .form_sec{
+        width: 90%!important;
+    }
+    .form_sec .input_box{
+        width: 90%!important;
+    }
+}
 .heading{
     font-size: 24px;
     font-weight: 600;

@@ -167,6 +167,20 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width:300px) and (max-width:600px){
+    .select_input{
+        width: 95%!important;
+    }
+    .select_input select{
+        width: 90%!important;
+    }
+    .testimonial_sec{
+        width: 98%!important;
+    }
+    .testimonial_sec .item{
+        width: 96%!important;
+    }
+}
 .testimonialModal{
     font-size: 19px;
     font-weight: 500;

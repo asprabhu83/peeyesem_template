@@ -33,6 +33,22 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width:300px) and (max-width:600px){
+    .form_btns_box{
+        display: block!important;
+        text-align: center;
+    }
+    .form_btns_box button{
+        margin: 20px!important;
+        min-width: 195px!important;
+    }
+    .about_description{
+        padding-top: 40px!important;
+    }
+    .about_heading h3{
+        font-size: 23px!important;
+    }
+}
 .about_description{
     width: 80%;
     margin-left: auto;

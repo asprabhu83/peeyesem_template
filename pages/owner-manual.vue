@@ -105,6 +105,25 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width:300px) and (max-width:600px){
+    .main_heading{
+        font-size: 18px!important;
+        padding: 0 20px;
+    }
+    .img_sec .heading{
+        font-size: 23px!important;
+        top: 25%!important;
+    }
+    .car_item_sec{
+        width: 95%!important;
+    }
+    .car_item_sec .items{
+        width: 98%!important;
+    }
+    .car_item_sec .detail button{
+        padding: 5px 7px!important;
+    }
+}
 .car_item_sec .photo{
     min-height: 230px;
     max-height: 230px;

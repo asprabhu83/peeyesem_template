@@ -213,6 +213,20 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width:300px) and (max-width:600px){
+    .select_input select{
+        width: 80%!important;
+    }
+    .select_input{
+        width: 100%!important;
+    }
+    .car_detail_item_box{
+        width: 90%!important;
+    }
+    .car_detail_item_box .item{
+        width: 100%!important;
+    }
+}
 .car_detail_item_box{
     display: flex;
     flex-wrap: wrap;

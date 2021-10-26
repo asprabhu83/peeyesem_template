@@ -181,6 +181,17 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width:300px) and (max-width:600px){
+  .form_sec .step{
+     width: 100%!important;
+   }
+  .form_sec{
+    width: 100%!important;
+  }
+  .image_sec{
+      display: none;
+  }
+}
 .heading{
     font-weight: 600;
     font-size: 25px;

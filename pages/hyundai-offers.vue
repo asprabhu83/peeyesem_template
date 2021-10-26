@@ -134,6 +134,25 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width:300px) and (max-width:600px){
+    .car_offer_sec{
+        width: 100%!important;
+    }
+    .car_offer_sec .item_box{
+        width: 100%!important;
+        margin: 20px!important;
+    }
+    .item_box .detail{
+        display: block!important;
+    }
+    .item_box .detail .image, .item_box .detail .offer_points{
+        width: 100%!important;
+        margin: 40px 0!important;
+    }
+    .item_box .detail .offer_points{
+        padding: 0 20px!important;
+    }
+}
 .offer_heading{
     font-size: 23px;
     font-weight: 600;

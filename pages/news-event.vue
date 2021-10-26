@@ -76,6 +76,15 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width:300px) and (max-width:600px){
+  .news_events_item_box{
+    width: 96%!important;
+  }
+  .news_events_item_box .item{
+    width: 100%!important;
+    margin: 20px 14px !important;
+  }
+}
 .news_events_item_box{
     width: 85%;
     margin: 40px auto;

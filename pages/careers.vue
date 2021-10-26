@@ -44,6 +44,14 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width:300px) and (max-width:600px){
+    .career_item_box{
+        width: 95%!important;
+    }
+    .career_item_box .item{
+        width: 95%!important;
+    }
+}
 .heading{
     font-size: 24px;
     font-weight: 600;

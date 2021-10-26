@@ -43,6 +43,11 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width:300px) and (max-width:600px){
+    .accordian_item_box{
+        width: 90%!important;
+    }
+}
 .heading{
     font-size: 24px;
     font-weight: 600;

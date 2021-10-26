@@ -83,6 +83,28 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width:300px) and (max-width:600px){
+    .blog_item_sec{
+        width: 95%!important;
+        display: block!important;
+    }
+    .blog_item_sec .item{
+        display: block!important;
+    }
+    .blog_item_sec .item .photo_box{
+        width: 100%!important;
+    }
+    .blog_item_sec .item .details_box{
+        width: 100%!important;
+        padding: 20px !important;
+        margin-left: 0 !important;
+    }
+    .blog_item_sec .item{
+        width: 90%!important;
+        margin-left: auto!important;
+        margin-right: auto!important;
+    }
+}
 .heading{
     font-size: 27px;
     font-weight: 600;

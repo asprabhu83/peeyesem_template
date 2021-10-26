@@ -89,6 +89,11 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width:300px) and (max-width:600px){
+    .signle_event{
+        width: 85%!important;
+    }
+}
 .signle_event{
     width: 60%;
     margin: 60px auto;
