@@ -90,8 +90,8 @@
                    <div class="text-center font-medium mt-1 mb-1"><font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mx-2" />{{car.car_price}}<span class="notice_mark">*</span></div>
                 </div>
             </div>
-            <div class=" btn_box">
-                <a :href="'/all-cars'">Know More</a>
+            <div class="car_box_item flex items-center justify-center" style="background:#002c5f;">
+                <a class="cursor-pointer text-white" style="min-height:unset;" :href="'/all-cars'">Know More</a>
             </div>
         </div>
     </section>
