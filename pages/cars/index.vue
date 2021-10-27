@@ -170,7 +170,7 @@
                                             </thead>
                                             <tbody class="bg-white divide-y divide-gray-200">
                                                 <tr v-for="spec in car.car_specs" :key="spec.id">
-                                                <td class="px-6 py-4 " >
+                                                <td class="px-4 py-3 " >
                                                     <span
                                                     class="
                                                         inline-flex
@@ -183,7 +183,7 @@
                                                     {{spec.spec_model}}
                                                     </span>
                                                 </td>
-                                                <td class="px-6 py-4 " >
+                                                <td class="px-4 py-3 " >
                                                     <span
                                                     class="
                                                         inline-flex
@@ -197,7 +197,7 @@
                                                     </span>
                                                 </td>
 
-                                                <td class="px-6 py-4 " >
+                                                <td class="px-4 py-3 " >
                                                     <span
                                                     class="
                                                         inline-flex
@@ -301,7 +301,7 @@
                                             </thead>
                                             <tbody class="bg-white divide-y divide-gray-200">
                                                 <tr v-for="feature in car.car_features" :key="feature.id">
-                                                <td class="px-6 py-4 " >
+                                                <td class="px-4 py-3 " >
                                                     <span
                                                     class="
                                                         inline-flex
@@ -314,7 +314,7 @@
                                                     {{feature.variant_feature_type}}
                                                     </span>
                                                 </td>
-                                                <td class="px-6 py-4 " >
+                                                <td class="px-4 py-3 " >
                                                     <span
                                                     class="
                                                         inline-flex
@@ -4805,6 +4805,7 @@ export default {
             var Editcategory = [...new Set(othersItem.map((item)=>{return item.variant_category}))];
             this.car.car_features_tab = Editcategory;
             //******************* */
+            this.car_feature_tab_index = 0;
             var catIndex = this.car_feature_tab_index;
             var catName = this.car.car_features_tab[catIndex]
             var newItem = this.car.car_features_original.filter((item)=> item.features_model_id == variantId && item.variant_category == catName )
@@ -4919,7 +4920,7 @@ export default {
 }
 
 .car_spec_tab_box .tab_item{
-    margin: 10px 25px;
+    margin: 10px 20px;
     font-size: 17px;
     font-weight: 600;
     cursor: pointer;
