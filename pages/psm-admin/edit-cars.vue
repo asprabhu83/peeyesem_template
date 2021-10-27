@@ -1316,6 +1316,17 @@ export default {
         Features:[],
         Gallery:[]
       },
+      EditID:{
+        overviewDetailId:'',
+        postId:'',
+        colorId:'',
+        specId:'',
+        variantId:'',
+        featureId:'',
+        VariantTitleId:'',
+        priceId:'',
+        VideoId:''
+      },
       baseUrl:process.env.baseUrl
     }
   },
@@ -1441,7 +1452,8 @@ export default {
         return item.id == postId
       })
       const [post] = item;
-      const {post_title,post_description} = post;
+      const {id,post_title,post_description} = post;
+      this.EditID.postId = id;
       this.postTitle = post_title;
       this.postDescription = post_description;
     },
@@ -1450,7 +1462,8 @@ export default {
         return item.id == clrId
       })
       const [color] = item;
-      const {color_code,second_color_code,color_title} = color;
+      const {id,color_code,second_color_code,color_title} = color;
+      this.EditID.colorId = id;
       this.colorCode = color_code;
       this.colorCode2 = second_color_code;
       this.colorTitle = color_title;
@@ -1460,7 +1473,8 @@ export default {
         return item.id == specId
       })
       const [spec] = item;
-      const {spec_type,spec_model,spec_petrol,spec_diesel} = spec;
+      const {id,spec_type,spec_model,spec_petrol,spec_diesel} = spec;
+      this.EditID.specId = id;
       this.specType = spec_type;
       this.specModel = spec_model;
       this.specPetrol = spec_petrol;
@@ -1471,7 +1485,8 @@ export default {
         return item.id == varId
       })
       const [variant] = item;
-      const {feature_type} = variant;
+      const {id,feature_type} = variant;
+      this.EditID.variantId = id;
       this.feutureType = feature_type;
     },
     filterVariantFeature(feuId){
@@ -1479,7 +1494,8 @@ export default {
         return item.id == feuId
       })
       const [feature] = item;
-      const {features_model_id,variant_feature_type,variant_category,variant_feature_value} = feature;
+      const {id,features_model_id,variant_feature_type,variant_category,variant_feature_value} = feature;
+      this.EditID.featureId = id;
       this.featureModelId = features_model_id;
       this.variantFeutureType = variant_feature_type;
       this.variantFeutureValue = variant_feature_value;
@@ -1510,6 +1526,10 @@ export default {
             this.overviewId = overview_id;
             this.featureVariantId = features_variant_id;
             this.highlightId = highlight_id;
+            this.EditID.overviewDetailId = price_details.id;
+            this.EditID.VariantTitleId = FirstVariantTitle.id;
+            this.EditID.priceId = price.id;
+            this.EditID.VideoId = video.id;
             
             this.modelName=car_title;
             this.modelType = car_type_id;
@@ -1539,7 +1559,7 @@ export default {
       this.error = false
       if (target === '1') {
         axios
-          .post(process.env.baseUrl + 'api/store/car', {
+          .put(process.env.baseUrl + 'api/update/car_detail/'+ this.carId, {
             car_title: this.modelName,
             car_image: this.modelImage,
             poster_image:this.posterImage,
@@ -1547,11 +1567,11 @@ export default {
           })
           .then((response) => {
             btn.innerHTML = 'Submit'
-            this.carId = response.data.id
             document.querySelector('.step' + target).classList.remove('active')
             document.querySelector('.step' + next).classList.add('active')
             document.querySelector('.tab_item' + target).classList.remove('active')
             document.querySelector('.tab_item' + next).classList.add('active')
+            this.GetSingleCar();
           })
           .catch((error) => {
             btn.innerHTML = 'Submit'
@@ -1561,14 +1581,14 @@ export default {
       }
       if (target === '2') {
         axios
-          .post(process.env.baseUrl + 'api/store/overview', {
+          .put(process.env.baseUrl + 'api/update/car_overview/' + this.overviewId, {
             car_id: this.carId,
             car_description: this.description,
             overview_image: this.overviewImage
           })
           .then((response) => {
             btn.innerHTML = 'Submit'
-            this.overviewId = response.data.id
+            this.GetSingleCar();
             document.querySelector('.step' + target).classList.remove('active')
             document.querySelector('.step' + next).classList.add('active')
 
@@ -1583,7 +1603,7 @@ export default {
       }
       if (target === '3') {
         axios
-          .post(process.env.baseUrl + 'api/store/overview_details', {
+          .put(process.env.baseUrl + 'api/update/overview_details/' + this.EditID.overviewDetailId, {
             overview_id: this.overviewId,
             car_power: this.power,
             car_transmission: this.transmission,
@@ -1591,6 +1611,7 @@ export default {
           })
           .then((response) => {
             btn.innerHTML = 'Submit'
+            this.GetSingleCar();
             document.querySelector('.step' + target).classList.remove('active')
             document.querySelector('.step' + next).classList.add('active')
 
@@ -1605,13 +1626,13 @@ export default {
       }
       if (target === '4') {
         axios
-          .post(process.env.baseUrl + 'api/store/highlight', {
+          .put(process.env.baseUrl + 'api/update/highlight/' + this.highlightId , {
             car_id: this.carId,
             highlight_title: this.highlight
           })
           .then((response) => {
             btn.innerHTML = 'Submit'
-            this.highlightId = response.data.id
+            this.GetSingleCar();
             document.querySelector('.step' + target).classList.remove('active')
             document.querySelector('.step' + next).classList.add('active')
 
@@ -1626,7 +1647,7 @@ export default {
       }
       if (target === '5') {
         axios
-          .post(process.env.baseUrl + 'api/store/highlight_post', {
+          .put(process.env.baseUrl + 'api/update/highlight_post/' + this.EditID.postId, {
             highlight_id: this.highlightId,
             post_title: this.postTitle,
             post_description: this.postDescription,
@@ -1640,6 +1661,7 @@ export default {
             this.postImage = ''
             var label = document.querySelector('.postImage')
             label.innerHTML = 'Select image'
+            this.GetSingleCar();
             setTimeout(() => {
               this.postsuccess = false
             }, 2000)
@@ -1659,6 +1681,7 @@ export default {
           .then((response) => {
             this.gallerysuccess = true
             btn.innerText = 'Add'
+            this.GetSingleCar();
             this.galleryImage = ''
             var label = document.querySelector('.galleryImage')
             label.innerHTML = 'Select image'
@@ -1674,12 +1697,13 @@ export default {
       }
       if (target === '7') {
         axios
-          .post(process.env.baseUrl + 'api/store/videolink', {
+          .put(process.env.baseUrl + 'api/update/video/' + this.EditID.VideoId, {
             car_id: this.carId,
             youtube_link: this.youtubeLink
           })
           .then((response) => {
             btn.innerHTML = 'Submit'
+            this.GetSingleCar();
             document.querySelector('.step' + target).classList.remove('active')
             document.querySelector('.step' + next).classList.add('active')
 
@@ -1694,7 +1718,7 @@ export default {
       }
       if (target === '8') {
         axios
-          .post(process.env.baseUrl + 'api/store/carcolor', {
+          .put(process.env.baseUrl + 'api/update/color/' + this.EditID.colorId, {
             car_id: this.carId,
             color_code: this.colorCode,
             second_color_code:this.colorCode2,
@@ -1703,6 +1727,7 @@ export default {
           })
           .then((response) => {
             btn.innerText = 'Add'
+            this.GetSingleCar();
             this.colorsuccess = true
             this.colorCode = ''
             this.colorCode2 = ''
@@ -1722,7 +1747,7 @@ export default {
       }
       if (target === '9') {
         axios
-          .post(process.env.baseUrl + 'api/store/specs', {
+          .put(process.env.baseUrl + 'api/update/specs/' + this.EditID.specId, {
             car_id: this.carId,
             spec_type: this.specType,
             spec_model: this.specModel,
@@ -1732,6 +1757,7 @@ export default {
           .then((response) => {
             this.specsuccess = true
             btn.innerHTML = 'Add'
+            this.GetSingleCar();
             this.specType = ''
             this.specModel = ''
             this.specPetrol = ''
@@ -1748,14 +1774,14 @@ export default {
       }
       if (target === '10') {
         axios
-          .post(process.env.baseUrl + 'api/store/variant', {
+          .put(process.env.baseUrl + 'api/update/variant/' + this.featureVariantId, {
             car_id: this.carId,
             feature_title: this.feutureTitle,
             feature_variant_title: this.featureVariantTitle
           })
           .then((response) => {
             btn.innerHTML = 'Submit'
-            this.featureVariantId = response.data.id
+            this.GetSingleCar();
             document.querySelector('.step' + target).classList.remove('active')
             document.querySelector('.step' + next).classList.add('active')
 
@@ -1770,13 +1796,14 @@ export default {
       }
       if (target === '11') {
         axios
-          .post(process.env.baseUrl + 'api/store/feature_model', {
+          .put(process.env.baseUrl + 'api/update/variant_model/' + this.EditID.variantId, {
             features_variant_id: this.featureVariantId,
             feature_type: this.feutureType
           })
           .then((response) => {
             this.carvariantsuccess = true
             btn.innerHTML = 'Add'
+            this.GetSingleCar();
             this.feutureType = ''
              setTimeout(() => {
               this.carvariantsuccess = false
@@ -1791,7 +1818,7 @@ export default {
       }
       if (target === '12') {
         axios
-          .post(process.env.baseUrl + 'api/store/variant_feature', {
+          .put(process.env.baseUrl + 'api/update/feature/' + this.EditID.featureId, {
             features_model_id: this.featureModelId,
             variant_feature_type: this.variantFeutureType,
             variant_feature_value: this.variantFeutureValue,
@@ -1799,6 +1826,7 @@ export default {
           })
           .then((response) => {
             this.variantsuccess = true
+            this.GetSingleCar();
             this.featureModelId = ''
             this.variantFeutureType = ''
             this.variantFeutureValue = ''
@@ -1816,7 +1844,7 @@ export default {
       }
       if (target === '13') {
         axios
-          .post(process.env.baseUrl + 'api/store/pricelist', {
+          .put(process.env.baseUrl + 'api/update/price/' + this.EditID.priceId, {
             car_id: this.carId,
             features_variant_id: this.featureVariantId,
             car_fuel_type: this.carFuelType,
@@ -1824,6 +1852,7 @@ export default {
           })
           .then((response) => {
             btn.innerHTML = 'Submit'
+            this.GetSingleCar();
             this.$router.push('/psm-admin/manage-cars')
           })
           .catch((error) => {
