@@ -485,7 +485,7 @@
                          </td>
                          <td class="actions">
                            <font-awesome-icon icon="edit"  size="1x" class="text-green-600  cursor-pointer mx-1" @click="filterPost(post.id)"  />
-                           <font-awesome-icon icon="trash"  size="1x" class="text-red-600 cursor-pointer mx-1"  />
+                           <font-awesome-icon icon="trash"  size="1x" class="text-red-600 cursor-pointer mx-1" @click="OpenDeleteModal(post.id,'post')"  />
                          </td>
                        </tr>
                      </tbody>
@@ -560,7 +560,7 @@
                             </div>
                          </td>
                          <td class="actions">
-                           <font-awesome-icon icon="trash"  size="1x" class="text-red-600 cursor-pointer mx-1"  />
+                           <font-awesome-icon icon="trash"  size="1x" class="text-red-600 cursor-pointer mx-1" @click="OpenDeleteModal(gallery.id,'gallery')" />
                          </td>
                        </tr>
                      </tbody>
@@ -756,7 +756,7 @@
                          </td>
                          <td class="actions">
                            <font-awesome-icon icon="edit"  size="1x" class="text-green-600  cursor-pointer mx-1" @click="filterColor(color.id)"/>
-                           <font-awesome-icon icon="trash"  size="1x" class="text-red-600 cursor-pointer mx-1"  />
+                           <font-awesome-icon icon="trash"  size="1x" class="text-red-600 cursor-pointer mx-1" @click="OpenDeleteModal(color.id,'color')"  />
                          </td>
                        </tr>
                      </tbody>
@@ -898,7 +898,7 @@
                          <td>{{spec.spec_diesel}}</td>
                          <td class="actions">
                            <font-awesome-icon icon="edit"  size="1x" class="text-green-600  cursor-pointer mx-1" @click="filterSpec(spec.id)"/>
-                           <font-awesome-icon icon="trash"  size="1x" class="text-red-600 cursor-pointer mx-1"  />
+                           <font-awesome-icon icon="trash"  size="1x" class="text-red-600 cursor-pointer mx-1" @click="OpenDeleteModal(spec.id,'spec')" />
                          </td>
                        </tr>
                      </tbody>
@@ -1018,7 +1018,7 @@
                          <td>{{variant.feature_type}}</td>
                          <td class="actions">
                            <font-awesome-icon icon="edit"  size="1x" class="text-green-600  cursor-pointer mx-1" @click="filterVariant(variant.id)"/>
-                           <font-awesome-icon icon="trash"  size="1x" class="text-red-600 cursor-pointer mx-1"  />
+                           <font-awesome-icon icon="trash"  size="1x" class="text-red-600 cursor-pointer mx-1" @click="OpenDeleteModal(variant.id,'variant')" />
                          </td>
                        </tr>
                      </tbody>
@@ -1163,7 +1163,7 @@
                          <td>{{feature.variant_feature_value}}</td>
                          <td class="actions">
                            <font-awesome-icon icon="edit"  size="1x" class="text-green-600  cursor-pointer mx-1" @click="filterVariantFeature(feature.id)"/>
-                           <font-awesome-icon icon="trash"  size="1x" class="text-red-600 cursor-pointer mx-1"  />
+                           <font-awesome-icon icon="trash"  size="1x" class="text-red-600 cursor-pointer mx-1" @click="OpenDeleteModal(feature.id,'feature')" />
                          </td>
                        </tr>
                      </tbody>
@@ -1238,16 +1238,26 @@
             </div>
         </div>
       </div>
+      <DeleteModal  @closeModal="closeModal" :itemName="itemName" :id="modalId.id" :name="modalId.name" v-if="DeleteModal == true" />
   </section>
 </template>
 
 <script>
 import axios from '~/plugins/axios'
+import DeleteModal from '../../components/modals/DeleteModal.vue'
 export default {
   layout:'admin-header-layout',
-
+  components:{
+    DeleteModal
+  },
   data () {
     return {
+      DeleteModal:false,
+      itemName:'item',
+      modalId:{
+        id:null,
+        name:'',
+      },
       postTable: [],
       cars: [],
       models: [],
@@ -1321,6 +1331,14 @@ export default {
     this.GetModels()
   },
   methods: {
+    closeModal(){
+      this.DeleteModal = false;
+    },
+    OpenDeleteModal(ItemId,name){
+      this.modalId.id = ItemId;
+      this.modalId.name = name;
+      this.DeleteModal = true;
+    },
     previewFiles (event) {
       var label = document.querySelector('.' + event.target.getAttribute('data-file-target'))
       var fileLength = event.target.files.length
@@ -1482,12 +1500,16 @@ export default {
             const [FirstVariantTitle] = feature_variant;
             const {feature_title,feature_variant_title} = FirstVariantTitle;
 
+            const [FirstHighlightPost] = highlight_post;
+            const {highlight_id} = FirstHighlightPost;
+
             const [firstModel] = feature_model;
             const {features_variant_id} = firstModel;
 
             this.carId = car_id;
             this.overviewId = overview_id;
             this.featureVariantId = features_variant_id;
+            this.highlightId = highlight_id;
             
             this.modelName=car_title;
             this.modelType = car_type_id;

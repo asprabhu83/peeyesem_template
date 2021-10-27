@@ -252,7 +252,7 @@
                       </div>
                   </div>
                   <div class="car_spec_tab_box">
-                      <div class="tab_item" v-for="(item,index) in car.car_features_tab" :class="car_feature_tab_index == index ? 'active' : ''" @click="car_feature_tab_index = index, filterFeatures(item)" :key="index">{{item}}</div>
+                      <div class="tab_item" v-for="(item,index) in car.car_features_tab" :class="car_feature_tab_index == index ? 'active' : ''" v-show="item !== 'none'" @click="car_feature_tab_index = index, filterFeatures(item)" :key="index">{{item}}</div>
                   </div>
                    <div class="w-1/2 spec_table_sec mx-auto mt-16">
                             <div class="flex flex-col">
@@ -4800,6 +4800,11 @@ export default {
         },
         VariantChange(e){
             var variantId = e.target.value;
+            // change category Tab based on Varaint change
+            var othersItem = this.car.car_features_original.filter((item)=> item.features_model_id == variantId);
+            var Editcategory = [...new Set(othersItem.map((item)=>{return item.variant_category}))];
+            this.car.car_features_tab = Editcategory;
+            //******************* */
             var catIndex = this.car_feature_tab_index;
             var catName = this.car.car_features_tab[catIndex]
             var newItem = this.car.car_features_original.filter((item)=> item.features_model_id == variantId && item.variant_category == catName )
