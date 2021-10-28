@@ -339,6 +339,161 @@
                   </div>
              </div>
          </div>
+         <div class="my-24" style="display:none;" >
+             <div class="car_type_main_title">{{car.name}} Comparison <hr /></div>
+             <div class="comp_box my-5">
+                 <div class="flex justify-evenly items-center">
+                     <div class="select_box w-3/12 mx-auto">
+                          <select
+                                class="
+                                shadow
+                                appearance-none
+                                border
+                                rounded
+                                w-full
+                                py-2
+                                px-3
+                                text-gray-700
+                                cursor-pointer
+                                leading-tight
+                                focus:outline-none
+                                focus:shadow-outline
+                                "
+                                id="variantName1"
+                                v-model="compareData.VariantFeatureCompare1"
+                                @change="VariantCompareChange"
+                            >
+                            <option class="text-xl"  :value="model.id" v-for="(model,index) in car.car_feature_variants"
+                                :key="index" >{{model.feature_type}}</option>
+                          </select>
+                      </div>
+                      <div class="select_box w-3/12 mx-auto">
+                          <select
+                                class="
+                                shadow
+                                appearance-none
+                                border
+                                rounded
+                                w-full
+                                py-2
+                                px-3
+                                text-gray-700
+                                cursor-pointer
+                                leading-tight
+                                focus:outline-none
+                                focus:shadow-outline
+                                "
+                                id="variantName2"
+                                v-model="compareData.VariantFeatureCompare2"
+                                @change="VariantCompareChange"
+                            >
+                            <option class="text-xl"  :value="model.id" v-for="(model,index) in car.car_feature_variants"
+                                :key="index" >{{model.feature_type}}</option>
+                          </select>
+                      </div>
+                 </div>
+                 <div class="car_spec_tab_box my-5">
+                      <div class="tab_item" v-for="(item,index) in compareData.compareTab" :class="compareData.TabIndex == index ? 'active' : ''"  @click="compareData.TabIndex = index, filterFeatures(item)" :key="index">{{item}}</div>
+                  </div>
+                  <div class="w-1/2 spec_table_sec mx-auto mt-16">
+                            <div class="flex flex-col">
+                                <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                                    <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                                        <div
+                                            class="
+                                            shadow-md
+                                            overflow-hidden
+                                            border-b border-gray-200
+                                            sm:rounded-lg
+                                            "
+                                        >
+                                            <table class="min-w-full car_spec_table divide-y divide-gray-200">
+                                            <thead class="">
+                                                <tr>
+                                                <th
+                                                    scope="col"
+                                                    class="
+                                                    px-6
+                                                    py-3
+                                                    text-left text-xs
+                                                    font-medium
+                                                    text-gray-500
+                                                    uppercase
+                                                    tracking-wider
+                                                    "
+                                                >
+                                                    Feature
+                                                </th>
+                                                <th
+                                                    scope="col"
+                                                    class="
+                                                    px-6
+                                                    py-3
+                                                    text-left text-xs
+                                                    font-medium
+                                                    text-gray-500
+                                                    uppercase
+                                                    tracking-wider
+                                                    "
+                                                >
+                                                    {{compareData.VariantName1}}
+                                                </th>
+                                                <th
+                                                    scope="col"
+                                                    class="
+                                                    px-6
+                                                    py-3
+                                                    text-left text-xs
+                                                    font-medium
+                                                    text-gray-500
+                                                    uppercase
+                                                    tracking-wider
+                                                    "
+                                                >
+                                                    {{compareData.VariantName2}}
+                                                </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="bg-white divide-y divide-gray-200">
+                                                <tr v-for="feature in compareData.compareFeatures" :key="feature.id">
+                                                <td class="px-4 py-3 " >
+                                                    <span
+                                                    class="
+                                                        inline-flex
+                                                        text-xs
+                                                        leading-5
+                                                        font-semibold
+                                                        text-black
+                                                    "
+                                                    >
+                                                    {{feature.variant_feature_type}}
+                                                    </span>
+                                                </td>
+                                                <td class="px-4 py-3 " >
+                                                    <span
+                                                    class="
+                                                        inline-flex
+                                                        text-xs
+                                                        leading-5
+                                                        font-semibold
+                                                        text-black
+                                                    "
+                                                    >
+                                                    {{feature.variant_feature_value}}
+                                                    </span>
+                                                </td>
+                                                </tr>
+
+                                                <!-- More people... -->
+                                            </tbody>
+                                            </table>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                  </div>
+             </div>
+         </div>
     </div> 
   </div>
 </template>
@@ -4686,6 +4841,16 @@ export default {
               car_features_tab:null,
               car_feature_variants:[]
            },
+           compareData:{
+               compareTab:[],
+               VariantFeatureCompare1:1,
+               VariantFeatureCompare2:1,
+               VariantName1:'',
+               VariantName2:'',
+               TabIndex:0,
+               compareFeatures:[],
+               FeatureType:[]
+           },
            car_details_tab:[
                'Overview',
                'Highlights',
@@ -4798,6 +4963,37 @@ export default {
             // }
             return pageYOffset;
         },
+        filterCompareCategories(){
+            var category = [...new Set(this.car.car_features.map((item)=>{return item.variant_category}))];
+            this.compareData.compareTab = category;
+            return category;
+        },
+        VariantCompareChange(e){
+            if(e.target.id == 'variantName1'){
+                this.compareData.VariantName1 = this.car.car_feature_variants[e.target.selectedIndex].feature_type;
+            }
+            if(e.target.id == 'variantName2'){
+                this.compareData.VariantName2 = this.car.car_feature_variants[e.target.selectedIndex].feature_type;
+            }
+            //change category for comparison Data
+            var variantId1 =  this.compareData.VariantFeatureCompare1;
+            var variantId2 = this.compareData.VariantFeatureCompare2;
+            var compareItem = this.car.car_features_original.filter((item)=> item.features_model_id == variantId1 || item.features_model_id == variantId2);
+            var Editcategory = [...new Set(compareItem.map((item)=>{return item.variant_category}))];
+            this.compareData.compareTab = Editcategory;
+            this.compareData.TabIndex = 0;
+            //***************************** */
+        },
+        filterCompareFeatures(cat){
+            this.compareData.VariantName1 = this.car.car_feature_variants[0].feature_type;
+            this.compareData.VariantName2 = this.car.car_feature_variants[1].feature_type;
+            var variantId1 =  this.compareData.VariantFeatureCompare1;
+            var variantId2 = this.compareData.VariantFeatureCompare2;
+            var newItem = this.car.car_features_original.filter((item)=>{return item.variant_category == cat && (item.features_model_id == variantId1 || item.features_model_id == variantId2)})
+            this.compareData.compareFeatures = newItem;
+            var uniqueFeature = [...new Set(newItem.map((item)=>{return item.variant_feature_type}))];
+            this.compareData.FeatureType = uniqueFeature;
+        },
         VariantChange(e){
             var variantId = e.target.value;
             // change category Tab based on Varaint change
@@ -4860,9 +5056,13 @@ export default {
             this.car.car_feature_variants = feature_model;
             var Tab1 = this.filterCarSpecCategories();
             var Tab2 = this.filterFeatureCategories();
+            var Tab3 = this.filterCompareCategories();
             this.filterCarSpecs(Tab1[0]);
             this.VariantFeature = this.car.car_feature_variants[0].id;
+            this.compareData.VariantFeatureCompare1= this.car.car_feature_variants[0].id;
+            this.compareData.VariantFeatureCompare2 = this.car.car_feature_variants[1].id;
             this.filterFeatures(Tab2[0]);
+            this.filterCompareFeatures(Tab3[0]);
         },
         SingleCar(){
           var item = this.originalcars.filter((car)=>{
@@ -4894,6 +5094,7 @@ export default {
            this.car.car_features_original = car_features;
            var Tab1 = this.filterCarSpecCategories();
            var Tab2 = this.filterFeatureCategories();
+           var Tab3 = this.filterCompareCategories();
            this.filterCarSpecs(Tab1[0]);
            this.filterFeatures(Tab2[0]);
         }

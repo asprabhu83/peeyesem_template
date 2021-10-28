@@ -1516,8 +1516,11 @@ export default {
             const [FirstVariantTitle] = feature_variant;
             const {feature_title,feature_variant_title} = FirstVariantTitle;
 
-            const [FirstHighlightPost] = highlight_post;
-            const {highlight_id} = FirstHighlightPost;
+            if(car_id !== 15){
+              const [FirstHighlightPost] = highlight_post;
+              const {highlight_id} = FirstHighlightPost;
+              this.highlightId = highlight_id;
+            }
 
             const [firstModel] = feature_model;
             const {features_variant_id} = firstModel;
@@ -1525,7 +1528,6 @@ export default {
             this.carId = car_id;
             this.overviewId = overview_id;
             this.featureVariantId = features_variant_id;
-            this.highlightId = highlight_id;
             this.EditID.overviewDetailId = price_details.id;
             this.EditID.VariantTitleId = FirstVariantTitle.id;
             this.EditID.priceId = price.id;
