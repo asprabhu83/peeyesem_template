@@ -1810,7 +1810,6 @@ export default {
              setTimeout(() => {
               this.carvariantsuccess = false
             }, 2000)
-            this.GetVariant()
           })
           .catch((error) => {
             btn.innerHTML = 'Add'
