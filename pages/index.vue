@@ -71,14 +71,14 @@
         <div class="mt-14 category_sec">
             <div class="container">
                 <div class="flex items-center justify-center">
-                    <div class=" category_item font-semibold text-lg cursor-pointer"  v-for="(item, index) in carCategory" :class="categoryIndex == index ? 'active': ''" @click="categoryIndex = index, filterItems(item)" :key="index">
+                    <div class=" category_item font-semibold text-lg cursor-pointer"  v-for="(item, index) in this.$store.state.carCategory" :class="categoryIndex == index ? 'active': ''" @click="categoryIndex = index, filterItems(item)" :key="index">
                         {{item}}
                     </div>
                 </div>
             </div>
         </div>
         <div class="card_box  flex flex-wrap mt-16 mx-auto" id="isotope">
-            <div class="car_box_item" v-for="car in cars" :key="car.id">
+            <div class="car_box_item" v-for="car in this.$store.state.cars" :key="car.id">
                 <a :href="'/cars/?id='+ car.id" class="text-center block car_image_box cursor-pointer" >
                     <img :src="baseUrl + 'images/' + car.car_image" alt="" >
                 </a>
@@ -91,7 +91,7 @@
                 </div>
             </div>
             <div class="car_box_item flex items-center justify-center" style="background:#002c5f;">
-                <a class="cursor-pointer text-white" style="min-height:unset;" :href="'/all-cars'">Know More</a>
+                <nuxt-link class="cursor-pointer text-white" to="/all-cars" style="min-height:unset;" >Know More</nuxt-link>
             </div>
         </div>
     </section>
@@ -232,6 +232,8 @@
     <Modal2 @closeModal="closeModal" v-if="formModal2 == true" />
     <Modal3 @closeModal="closeModal" v-if="formModal3 == true" />
 
+    <Loading v-if="loading == true" />
+
     
 
   </div>
@@ -249,6 +251,7 @@ import isotope  from 'vueisotope'
 import Modal1 from '../components/modals/formModal1.vue'
 import Modal2 from '../components/modals/formModal2.vue'
 import Modal3 from '../components/modals/formModal3.vue'
+import Loading from '../components/Loading.vue'
 export default {
     name: 'Home',
     components: {
@@ -259,7 +262,8 @@ export default {
         isotope,
         Modal1,
         Modal2,
-        Modal3
+        Modal3,
+        Loading
     },
 
     data() {
@@ -271,6 +275,7 @@ export default {
         formModal:false,
         formModal2:false,
         formModal3:false,
+        loading:false,
 
         products: [],
         category: [],
@@ -281,8 +286,8 @@ export default {
 
         dismissCountDown: 0,
 
-        cars:[],
-        originalDataCars:[],
+        cars:this.$store.state.cars,
+        originalDataCars:this.$store.state.cars,
 
         staticcars:[
             {
@@ -466,7 +471,11 @@ export default {
         window.scrollTo(0, 0)
 
         this.productsArray()
-        this.GetCars()
+        if(this.$store.state.cars.length == 0){
+            this.GetCars();
+        }else{
+            this.filterItems('ALL');
+        }
 
         const obj1 = document.getElementById("value1");
         const obj2 = document.getElementById("value2");
@@ -495,29 +504,32 @@ export default {
             }
         },
         GetCars(){
+            this.loading = true;
             axios.get(process.env.baseUrl + 'api/cars/index')
             .then((response) => {
-            this.cars = response.data.cars
-            this.originalDataCars = response.data.cars
+            this.$store.state.cars = response.data.cars;
+            this.$store.state.originalDataCars = response.data.cars;
+            this.loading = false;
             this.categoryNames();
             })
             .catch((error) => {
+            this.loading = false;
             console.log(error)
             })
         },
         filterItems(name){
-          var newItems =  this.originalDataCars.filter((item)=> item.car_type == name);
+          var newItems =  this.$store.state.originalDataCars.filter((item)=> item.car_type == name);
           newItems.reverse()
-          this.cars = newItems;
+          this.$store.state.cars = newItems;
           if(name == 'ALL'){
-              this.cars = this.originalDataCars
+              this.$store.state.cars = this.$store.state.originalDataCars
           }
         },
         categoryNames(){
-           var items =  this.cars.map((item)=>{return item.car_type});
+           var items =  this.$store.state.cars.map((item)=>{return item.car_type});
            items.reverse()
            var category = ['ALL',...new Set(items)]
-           this.carCategory = category;
+           this.$store.state.carCategory = category;
            
         },
         productsArray: function () {

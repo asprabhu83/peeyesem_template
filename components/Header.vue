@@ -48,7 +48,7 @@
                                             <a class="menu-item" href="#">New Cars <i class="fa fa-angle-down"></i></a>
                                             <!-- Sub Menu -->
                                             <ul class="sub-menu">
-                                                <li><a href="/all-cars">All Cars</a></li>
+                                                <li><nuxt-link to="/all-cars">All Cars</nuxt-link></li>
                                                 <li><a href="/cars/?id=1"> Santro</a></li>
                                                 <li><a href="/cars/?id=7"> All New i20</a></li>
                                                 <li><a href="/cars/?id=14"> Grand i10 NIOS</a></li>

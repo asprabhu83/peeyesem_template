@@ -1,17 +1,18 @@
 <template>
+<div>
   <section class="pt-20 cars_product_section"  style="background: #e6eaef;">
         <div class="text-center font-bold text-3xl text-uppercase car_sec_head" >Choose Your Dream Hyundai Car<hr class="h-1 w-2/12 my-2 mx-auto bg-black" style="background-color:black!important;" /></div>
         <div class="mt-14 category_sec">
             <div class="container">
                 <div class="flex items-center justify-center">
-                    <div class=" category_item font-semibold text-lg cursor-pointer"  v-for="(item, index) in carCategory" :class="categoryIndex == index ? 'active': ''" @click="categoryIndex = index, filterItems(item)" :key="index">
+                    <div class=" category_item font-semibold text-lg cursor-pointer"  v-for="(item, index) in this.$store.state.carCategory" :class="categoryIndex == index ? 'active': ''" @click="categoryIndex = index, filterItems(item)" :key="index">
                         {{item}}
                     </div>
                 </div>
             </div>
         </div>
         <div class="card_box  flex flex-wrap mt-16 mx-auto" id="isotope">
-            <div class="car_box_item" v-for="car in cars" :key="car.id">
+            <div class="car_box_item" v-for="car in this.$store.state.cars" :key="car.id">
                 <a :href="'/cars/?id='+ car.id" class="text-center block car_image_box cursor-pointer" >
                     <img :src="baseUrl + 'images/' + car.car_image" alt="" >
                 </a>
@@ -25,193 +26,64 @@
             </div>
         </div>
     </section>
+    <Loading v-if="loading == true" />
+</div>
 </template>
 
 <script>
 import axios from '~/plugins/axios'
+import Loading from '../components/Loading.vue'
 export default {
+    components:{
+        Loading
+    },
     data(){
         return{
-            staticcars:[
-            {
-                id:1,
-                name:'Hyundai All New I20',
-                image:'car7.jpg',
-                category:'Hatchback',
-                price:'8,19,900'
-            },
-            {
-                id:2,
-                name:'Hyundai Santro',
-                image:'car8.jpg',
-                category:'Hatchback',
-                price:'4,67,490'
-            },
-            {
-                id:3,
-                name:'GRAND i10 NIOS',
-                image:'car9.webp',
-                category:'Hatchback',
-                price:'8,14,900'
-            },
-            {
-                id:5,
-                name:'Hyundai Aura',
-                image:'car2.webp',
-                category:'Sedan',
-                price:'22,30,000'
-            },
-            {
-                id:6,
-                name:'Hyundai Verna',
-                image:'car15.jpg',
-                category:'Sedan',
-                price:'8,19,900'
-            },
-            {
-                id:7,
-                name:'Hyundai ELANTRA',
-                image:'car11.webp',
-                category:'Sedan',
-                price:'10,68,000'
-            },
-            {
-                id:8,
-                name:'Hyundai Tuscon',
-                image:'car18.webp',
-                category:'SUV',
-                price:'4,67,490'
-            },
-            {
-                id:9,
-                name:'Hyundai Venue',
-                image:'car4.webp',
-                category:'SUV',
-                price:'8,16,500'
-            },
-            {
-                id:11,
-                name:'Hyundai Alcazar',
-                image:'car17.jpg',
-                category:'SUV',
-                price:'16,53,300'
-            },
-            {
-                id:12,
-                name:'Hyundai CRETA',
-                image:'car19.webp',
-                category:'SUV',
-                price:'17,00,000'
-            }
-        ],
 
-        originalcars:[
-            {
-                id:1,
-                name:'Hyundai All New I20',
-                image:'car7.jpg',
-                category:'Hatchback',
-                price:'8,19,900'
-            },
-            {
-                id:2,
-                name:'Hyundai Santro',
-                image:'car8.jpg',
-                category:'Hatchback',
-                price:'4,67,490'
-            },
-            {
-                id:3,
-                name:'GRAND i10 NIOS',
-                image:'car9.webp',
-                category:'Hatchback',
-                price:'8,14,900'
-            },
-            {
-                id:5,
-                name:'Hyundai Aura',
-                image:'car2.webp',
-                category:'Sedan',
-                price:'22,30,000'
-            },
-            {
-                id:6,
-                name:'Hyundai Verna',
-                image:'car15.jpg',
-                category:'Sedan',
-                price:'8,19,900'
-            },
-            {
-                id:7,
-                name:'Hyundai ELANTRA',
-                image:'car11.webp',
-                category:'Sedan',
-                price:'10,68,000'
-            },
-            {
-                id:8,
-                name:'Hyundai Tuscon',
-                image:'car18.webp',
-                category:'SUV',
-                price:'4,67,490'
-            },
-            {
-                id:9,
-                name:'Hyundai Venue',
-                image:'car4.webp',
-                category:'SUV',
-                price:'8,16,500'
-            },
-            {
-                id:11,
-                name:'Hyundai Alcazar',
-                image:'car17.jpg',
-                category:'SUV',
-                price:'16,53,300'
-            },
-            {
-                id:12,
-                name:'Hyundai CRETA',
-                image:'car19.webp',
-                category:'SUV',
-                price:'17,00,000'
-            }
-        ],
+
         categoryIndex:0,
         carCategory:null,
         baseUrl:process.env.baseUrl, 
-        cars:[],
-        cars:[],
+        cars:this.$store.state.cars,
+        originalDataCars:this.$store.state.cars,
+        loading:false
         }
     },
     mounted(){
-        this.GetCars()
+        if(this.$store.state.cars.length == 0){
+           this.GetCars()
+        }else{
+            this.filterItems('ALL');
+        }
     },
     methods:{
         GetCars(){
+            this.loading = true;
             axios.get(process.env.baseUrl + 'api/cars/index')
             .then((response) => {
-            this.cars = response.data.cars
-            this.originalDataCars = response.data.cars
+             this.loading =false;
+            this.$store.state.cars = response.data.cars;
+            this.$store.state.originalDataCars = response.data.cars;
             this.categoryNames();
             })
             .catch((error) => {
+            this.loading = false;
             console.log(error)
             })
         },
         filterItems(name){
-          var newItems =  this.originalDataCars.filter((item)=> item.car_type == name);
+          var newItems =  this.$store.state.originalDataCars.filter((item)=> item.car_type == name);
           newItems.reverse()
-          this.cars = newItems;
+          this.$store.state.cars = newItems;
           if(name == 'ALL'){
-              this.cars = this.originalDataCars
+              this.$store.state.cars = this.$store.state.originalDataCars
           }
         },
         categoryNames(){
-           var items =  this.cars.map((item)=>{return item.car_type});
+           var items =  this.$store.state.cars.map((item)=>{return item.car_type});
            items.reverse()
            var category = ['ALL',...new Set(items)]
-           this.carCategory = category;
+           this.$store.state.carCategory = category;
            
         }
     }

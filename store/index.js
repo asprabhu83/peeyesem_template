@@ -8,6 +8,12 @@ const createStore = () => {
   return new Vuex.Store({
     state:{
       currentYear:new Date().getFullYear(),
+      cars:[],
+      originalDataCars:[],
+      carCategory:[],
+      AllCars:[],
+      AlloriginalDataCars:[],
+      AllcarCategory:[]
     },
     modules: {
       products: products,

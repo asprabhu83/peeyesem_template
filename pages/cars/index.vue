@@ -1,7 +1,7 @@
 <template>
   <div class="single_page_car_sec">
       <div class="car_poster_sec">
-          <img :src="car.baseUrl + 'images/' + car.poster_image" alt="poster_image" />
+          <img :src="car.baseUrl + 'images/' + car.poster_image"  />
       </div>
       <section class="car_title_sticky_header">
           <div class="car_title_sec my-5">
@@ -24,7 +24,7 @@
                     <p>{{car.description}}</p>
                   </div>
                   <div class="img_sec">
-                    <img :src="car.baseUrl + 'images/' + car.overview_image" alt="overview_image" />
+                    <img :src="car.baseUrl + 'images/' + car.overview_image"  />
                   </div>
               </div>
               <div class="price_details my-16">
@@ -495,12 +495,17 @@
              </div>
          </div>
     </div> 
+    <Loading v-if="loading == true" />
   </div>
 </template>
 
 <script>
 import axios from '~/plugins/axios'
+import Loading from '../../components/Loading.vue'
 export default {
+    components:{
+        Loading
+    },
     data(){
         return{
             singleCar:[],
@@ -4813,6 +4818,7 @@ export default {
                 description:"Hyundai CRETA - Modern Stylish Tallboy: The overall design theme is based on Rhythmical Tension that exudes a Refined yet Sporty Image. The front of The All New SANTRO is defined by Hyundai's Signature Cascade Grille with chrome surround that projects Modern and Premium appeal of the car"
             }
            ],
+           loading:false,
            DataBaseSingleCar:[],
            car:{
               baseUrl:process.env.baseUrl, 
@@ -4905,14 +4911,17 @@ export default {
         //     })
         // },
         GetSingleCarData(){
-            var id = this.$route.query.id
+            var id = this.$route.query.id;
+            this.loading = true;
             axios
                 .get(process.env.baseUrl + 'api/show/car/' + id)
                 .then((response) => {
                     this.DataBaseSingleCar = response.data;
                     this.FilterDatabasedata();
+                    this.loading = false;
                 })
                 .catch((error) => {
+                    this.loading = false;
                 console.log(error)
                 })
         },
