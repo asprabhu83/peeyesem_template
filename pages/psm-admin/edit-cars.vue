@@ -1400,6 +1400,8 @@ export default {
       }
     },
     tabFunc (e) {
+      this.success = false;
+      this.error = false;
       var alltabs = document.querySelectorAll('.tab_item')
       alltabs.forEach(tab => {
         if (tab.classList.contains('active')) {
