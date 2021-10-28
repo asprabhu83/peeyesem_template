@@ -220,6 +220,7 @@
 </template>
 
 <script>
+import axios from '~/plugins/axios'
 export default {
     data(){
         return{
@@ -231,7 +232,22 @@ export default {
             fuelType:'',
             testDriveDate:'',
             Dealer:'',
-            address:''
+            address:'',
+            Cars:[]
+        }
+    },
+    mounted(){
+        this.GetModels();
+    },
+    methods:{
+        GetModels(){
+            axios.get(process.env.baseUrl + 'api/cars/index')
+            .then((res)=>{
+                this.Cars = res.data.cars;
+                console.log(this.Cars);
+            }).catch((err)=>{
+                console.log(err);
+            })
         }
     }
 }

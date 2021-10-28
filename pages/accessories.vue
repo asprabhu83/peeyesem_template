@@ -6,6 +6,11 @@
      <div class="form_sec">
           <div class="step step1" :class="form_tab_index == 0 ? 'active' : ''" >
                <div class="title">Personal Details</div>
+               <div class="msg_box my-1">
+                   <div class="error pt-3 text-green-500" v-if="success == true">Added Successfully</div>
+                   <div class="error pt-3 text-red-500" v-if="error == true">Invalid Data</div>
+                   <div class="error pt-3 text-red-500" v-if="email_err == true">Invalid Email</div>
+              </div>
             <form >
                 <div class="mb-4 mt-4">
                         <input
@@ -49,7 +54,7 @@
                         v-model="email"
                         />
                     </div>
-                    <div class="mb-4 ">
+                    <div class="mb-6 ">
                         <input
                         class="
                             shadow-md
@@ -70,16 +75,8 @@
                         v-model="mobile"
                         />
                     </div>
-                    <div class="mb-6">
-                        <div class="checkbox_sec">
-                            <label class="inline-flex items-center">
-                                <input type="checkbox" class="form-checkbox">
-                                <span class="ml-2 cursor-pointer">I have read & understood the disclaimer</span>
-                            </label>
-                        </div>
-                    </div>
                     <div class="btn_box">
-                        <button type="button">Submit</button>
+                        <button type="button" @click="PostValue">Submit</button>
                     </div>
             </form>
           </div>
@@ -88,6 +85,7 @@
 </template>
 
 <script>
+import axios from '~/plugins/axios'
 export default {
     data(){
         return{
@@ -173,7 +171,49 @@ export default {
             name:'',
             email:'',
             mobile:'',
+            success:false,
+            error:false,
+            email_err:false,
             form_tab_index:0
+        }
+    },
+    methods:{
+        PostValue(e){
+            var btn = e.target;
+            btn.innerHTML = 'Loading';
+            var err = 0;
+            this.error = false;
+            this.email_err = false;
+            var emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if(this.email == '' || this.name == '' || this.mobile == ''){
+                err++
+                this.error = true;
+                btn.innerHTML = 'Submit';
+            }else{
+                if(!emailRegex.test(this.email)){
+                    err++;
+                    this.email_err = true;
+                    btn.innerHTML = 'Submit';
+                }
+            }
+            if(err == 0){
+                axios.post('http://127.0.0.1:8000/api/accessories/store',{
+                    full_name:this.name,
+                    email_id:this.email,
+                    page:'accessories',
+                    mobile:this.mobile
+                }).then((res)=>{
+                    this.name = '';
+                    this.email = '';
+                    this.mobile = '';
+                    window.open('https://hyundaimobisin.com/products/genuine-accessories','_blank');
+                    btn.innerHTML = 'Submit';
+                }).catch((err)=>{
+                    console.log(err);
+                    this.error = true;
+                    btn.innerHTML = 'Submit';
+                })
+            }
         }
     }
 }
