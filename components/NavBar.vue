@@ -4,12 +4,12 @@
       <nav class="relative flex flex-wrap items-center justify-between px-2 py-3 header_nav">
         <div class=" flex flex-wrap items-center justify-between">
           <div class="w-full relative flex justify-between lg:w-auto px-4 lg:static lg:block lg:justify-start">
-              <a
-        href="/"
+              <nuxt-link
+        to="/"
         class="p-3 h-full flex items-center group border-r border-gray-600"
       >
         <img src="../assets/it_logo.png" class="h-10"/>
-      </a>
+      </nuxt-link>
             <button class="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none" type="button" v-on:click="toggleNavbar()">
               <i class="fas fa-bars"></i>
             </button>
