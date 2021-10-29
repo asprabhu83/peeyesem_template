@@ -252,7 +252,7 @@
                       </div>
                   </div>
                   <div class="car_spec_tab_box">
-                      <div class="tab_item" v-for="(item,index) in car.car_features_tab" :class="car_feature_tab_index == index ? 'active' : ''" v-show="item !== 'none'" @click="car_feature_tab_index = index, filterFeatures(item)" :key="index">{{item}}</div>
+                      <div class="tab_item" v-for="(item,index) in car.car_features_tab" :class="car_feature_tab_index == index ? 'active' : ''" v-show="item !== 'None'" @click="car_feature_tab_index = index, filterFeatures(item)" :key="index">{{item}}</div>
                   </div>
                    <div class="w-1/2 spec_table_sec mx-auto mt-16">
                             <div class="flex flex-col">
