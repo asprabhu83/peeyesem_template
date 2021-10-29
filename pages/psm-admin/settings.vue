@@ -505,7 +505,7 @@ export default {
             instaLink:'',
             youtubeLink:'',
             SettingData:[],
-            baseUrl:'http://127.0.0.1:8000/',
+            baseUrl:process.env.baseUrl,
         }
     },
     mounted(){
@@ -537,7 +537,7 @@ export default {
             }
         },
         GetDetails(){
-            axios.get('http://127.0.0.1:8000/api/settings/index')
+            axios.get(process.env.baseUrl + 'api/settings/index')
             .then((res)=>{
                 this.SettingData = res.data;
             }).catch((err)=>{
@@ -546,7 +546,7 @@ export default {
         },
         Edit(id){
             this.editDialog = true;
-            axios.get('http://127.0.0.1:8000/api/settings/show/'+ id)
+            axios.get(process.env.baseUrl + 'api/settings/show/'+ id)
             .then((res)=>{
                 this.id = res.data.id;
                 this.serviceNo = res.data.service_number;
@@ -562,7 +562,7 @@ export default {
         Update(e){
             var btn = e.target;
             btn.innerHTML = 'Loading';
-            axios.put('http://127.0.0.1:8000/api/settings/update/' + this.id,{
+            axios.put(process.env.baseUrl + 'api/settings/update/' + this.id,{
                 setting_id:'1',
                 site_logo:this.siteLogo,
                 service_number:this.serviceNo,

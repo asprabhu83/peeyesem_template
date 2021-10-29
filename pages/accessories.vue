@@ -174,7 +174,7 @@ export default {
             success:false,
             error:false,
             email_err:false,
-            form_tab_index:0
+            form_tab_index:0,
         }
     },
     methods:{
@@ -197,7 +197,7 @@ export default {
                 }
             }
             if(err == 0){
-                axios.post('http://127.0.0.1:8000/api/accessories/store',{
+                axios.post(process.env.baseUrl + 'api/accessories/store',{
                     full_name:this.name,
                     email_id:this.email,
                     page:'accessories',
