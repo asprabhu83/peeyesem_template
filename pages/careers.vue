@@ -1,7 +1,7 @@
 <template>
   <div>
       <div class="img_sec">
-          <img :src="require('@/assets/img/cars/career_poster.webp')" alt="img" style="width:100%;" />
+          <img :src="require('@/assets/img/cars/career_poster2.webp')" alt="img" style="width:100%;" />
       </div>
       <div class="my-16">
           <div class="heading my-5">Careers</div>
@@ -11,7 +11,7 @@
                   <div class="card_box ">
                       <div class="head">We Are Hiring Sales Consultants</div>
                       <div class="desc">
-                          Advaith Hyundai Has A Rich Legacy And It Is Karnataka's Largest Hyundai Dealer With A Gigantic Network Of 24 Showrooms, 29 Service Centers, And 4 Pre-Owned Car Showrooms Spread Across Karnataka. To Deliver On Our Promise We Have Most
+                          It Is  Largest Hyundai Dealer With A Gigantic Network Of 6 Showrooms, 255 Service Centers, And 4 Pre-Owned Car Showrooms. To Deliver On Our Promise We Have Most
                       </div>
                       <div class="footer">
                           <div class="exp"> Exp: Freshers / Experienced</div>
@@ -24,7 +24,7 @@
                   <div class="card_box ">
                       <div class="head">We Are Hiring Sales Team Leaders</div>
                       <div class="desc">
-                          Advaith Hyundai Has A Rich Legacy And It Is Karnataka's Largest Hyundai Dealer With A Gigantic Network Of 24 Showrooms, 29 Service Centers, And 4 Pre-Owned Car Showrooms Spread Across Karnataka. We Are Looking For Young, Enthusiastic
+                          It Is  Largest Hyundai Dealer With A Gigantic Network Of 6 Showrooms, 255 Service Centers, And 4 Pre-Owned Car Showrooms. We Are Looking For Young, Enthusiastic
                       </div>
                       <div class="footer">
                           <div class="exp"> Exp: 3 + Years</div>

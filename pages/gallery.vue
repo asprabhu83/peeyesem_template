@@ -47,13 +47,6 @@ export default {
                     items:'2',
                     date:'21-05-2019'
                 },
-                {
-                    id:4,
-                    name:'Advaith Hyundai Special Offers',
-                    image:'4.jpg',
-                    items:'1',
-                    date:'27-06-2019'
-                }
             ]
         }
     }

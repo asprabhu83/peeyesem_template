@@ -49,16 +49,16 @@
                                             <!-- Sub Menu -->
                                             <ul class="sub-menu">
                                                 <li><nuxt-link to="/all-cars">All Cars</nuxt-link></li>
-                                                <li><a href="/cars/?id=1"> Santro</a></li>
-                                                <li><a href="/cars/?id=7"> All New i20</a></li>
-                                                <li><a href="/cars/?id=14"> Grand i10 NIOS</a></li>
-                                                <li><a href="/cars/?id=2"> Aura</a></li>
-                                                <li><a href="/cars/?id=13"> All New Verna</a></li>
-                                                <li><a href="/cars/?id=11"> Elantra</a></li>
-                                                <li><a href="/cars/?id=12"> Venue</a></li>
-                                                <li><a href="/cars/?id=16"> All New Creta</a></li>
-                                                <li><a href="/cars/?id=15"> Alcazar</a></li>
-                                                <li><a href="/cars/?id=10"> Tucson</a></li>
+                                                <li><a href="/cars/?car=Hyundai-Santro"> Santro</a></li>
+                                                <li><a href="/cars/?car=Hyundai-All-New-I20"> All New i20</a></li>
+                                                <li><a href="/cars/?car=Hyundai-Grand-I10-NIOS"> Grand i10 NIOS</a></li>
+                                                <li><a href="/cars/?car=Hyundai-Aura"> Aura</a></li>
+                                                <li><a href="/cars/?car=Hyundai-Verna"> All New Verna</a></li>
+                                                <li><a href="/cars/?car=Hyundai-All-New-Elantra"> Elantra</a></li>
+                                                <li><a href="/cars/?car=Hyundai-Venue"> Venue</a></li>
+                                                <li><a href="/cars/?car=Hyundai-CRETA"> All New Creta</a></li>
+                                                <li><a href="/cars/?car=Hyundai-Alcazar"> Alcazar</a></li>
+                                                <li><a href="/cars/?car=Hyundai-All-New-Tucson"> Tucson</a></li>
                                             </ul>
                                         </li>
                                         <li class="has-dropdown">
@@ -215,43 +215,43 @@ export default {
                                     
                         },
                         {
-                            href: '/cars/?id=1',
+                            href: '/cars/?car=Hyundai-Santro',
                             title: 'Santro'
                         },
                         {
-                            href: '/cars/?id=7',
+                            href: '/cars/?car=Hyundai-All-New-I20',
                             title: 'All New i20'
                         },
                         {
-                            href: '/cars/?id=14',
+                            href: '/cars/?car=Hyundai-Grand-I10-NIOS',
                             title: 'Grand i10 NIOS'
                         },
                         {
-                            href: '/cars/?id=2',
+                            href: '/cars/?car=Hyundai-Aura',
                             title: 'Aura'
                         },
                         {
-                            href: '/cars/?id=13',
+                            href: '/cars/?car=Hyundai-Verna',
                             title: 'All New Verna'
                         },
                         {
-                            href: '/cars/?id=11',
+                            href: '/cars/?car=Hyundai-All-New-Elantra',
                             title: 'Elantra'
                         },
                         {
-                            href: '/cars/?id=12',
+                            href: '/cars/?car=Hyundai-Venue',
                             title: 'Venue'
                         },
                         {
-                            href: '/cars/?id=16',
+                            href: '/cars/?car=Hyundai-CRETA',
                             title: 'All New Creta'
                         },
                         {
-                            href: '/cars/?id=15',
+                            href: '/cars/?car=Hyundai-Alcazar',
                             title: 'Alcazar'
                         },
                         {
-                            href: '/cars/?id=10',
+                            href: '/cars/?car=Hyundai-All-New-Tucson',
                             title: 'Tucson'
                         }
                     ]

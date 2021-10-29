@@ -4911,7 +4911,38 @@ export default {
         //     })
         // },
         GetSingleCarData(){
-            var id = this.$route.query.id;
+            var car = this.$route.query.car;
+            var id;
+            if(car == 'Hyundai-Santro'){
+                id = 1;
+            }
+            if(car == 'Hyundai-All-New-I20'){
+                id = 7;
+            }
+            if(car == 'Hyundai-Grand-I10-NIOS'){
+                id = 14;
+            }
+            if(car == 'Hyundai-Aura'){
+                id = 2;
+            }
+            if(car == 'Hyundai-Verna'){
+                id = 13;
+            }
+            if(car == 'Hyundai-All-New-Elantra'){
+                id = 11;
+            }
+            if(car == 'Hyundai-Venue'){
+                id = 12;
+            }
+            if(car == 'Hyundai-CRETA'){
+                id = 16;
+            }
+            if(car == 'Hyundai-Alcazar'){
+                id = 15;
+            }
+            if(car == 'Hyundai-All-New-Tucson'){
+                id = 10;
+            }
             this.loading = true;
             axios
                 .get(process.env.baseUrl + 'api/show/car/' + id)

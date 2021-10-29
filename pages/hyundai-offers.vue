@@ -6,7 +6,7 @@
       <div class="detail_sec my-16">
           <div class="offer_heading text-center my-5">Special Offers</div>
           <div class="description my-3 text-center">
-              Find the best deals/ Offers on your favorite Hyundai cars from World’s largest and most awarded Hyundai Dealer – Advaith Hyundai. Hyundai Offers / Discount includes, Cash discount, Exchange offer, Corporate discount, and pride of India Offer, Hyundai Motor India / Advaith Hyundai reserves the right to change Offers / prices without prior notice.
+              Find the best deals/ Offers on your favorite Hyundai cars from World’s largest and most awarded Hyundai Dealer – Peeyesyem Hyundai. Hyundai Offers / Discount includes, Cash discount, Exchange offer, Corporate discount, and pride of India Offer, Hyundai Motor India / Peeyesyem Hyundai reserves the right to change Offers / prices without prior notice.
           </div>
           <div class="car_offer_sec">
               <div class="item_box" v-for="offer in offers" :key="offer.id">

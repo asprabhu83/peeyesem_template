@@ -13,7 +13,7 @@
         </div>
         <div class="card_box  flex flex-wrap mt-16 mx-auto" id="isotope">
             <div class="car_box_item" v-for="car in this.$store.state.cars" :key="car.id">
-                <a :href="'/cars/?id='+ car.id" class="text-center block car_image_box cursor-pointer" >
+                <a :href="'/cars/?car='+ car.car_title.replace(/\s+/g, '-')" class="text-center block car_image_box cursor-pointer" >
                     <img :src="baseUrl + 'images/' + car.car_image" alt="" >
                 </a>
                 <div class="car_name">
