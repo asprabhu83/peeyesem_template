@@ -7,6 +7,10 @@
           <div class="step step1" :class="form_tab_index == 0 ? 'active' : ''">
                <div class="title">Personal Details</div>
             <form >
+                <div class="msg_box my-1">
+                   <div class="error pt-3 text-red-500" v-if="error == true">Invalid Data</div>
+                   <div class="error pt-3 text-red-500" v-if="email_err == true">Invalid Email</div>
+              </div>
                 <div class="mb-4 mt-4">
                         <input
                         class="
@@ -71,16 +75,19 @@
                         />
                     </div>
                     <div class="btn_box">
-                        <button type="button" @click="form_tab_index = 1">Next</button>
+                        <button type="button" data-target="1" @click="NextTab">Next</button>
                     </div>
             </form>
           </div>
           <div class="step step2" :class="form_tab_index == 1 ? 'active' : ''">
                <div class="title">Vehicle Details - Part I</div>
             <form >
+                <div class="msg_box my-1">
+                   <div class="error pt-3 text-red-500" v-if="error == true">Invalid Data</div>
+              </div>
                 <div class="mb-4 mt-4">
-                        <input
-                        class="
+                            <select
+                            class="
                             shadow-md
                             appearance-none
                             border
@@ -89,15 +96,18 @@
                             py-2
                             px-3
                             text-gray-700
+                            cursor-pointer
                             leading-tight
                             focus:outline-none
                             focus:shadow-outline
-                        "
-                        id="Manufacturer"
-                        type="text"
-                        placeholder="Manufacturer"
-                        v-model="Manufacturer"
-                        />
+                            "
+                            id="Manufacturer"
+                            v-model="Manufacturer"
+                        >
+                        <option class="text-xl " value="">Select Manufacturer</option>
+                        <option class="text-xl" :value="model.name" v-for="model in Brands"
+                            :key="model.id" >{{model.name}}</option>
+                        </select>
                     </div>
                     <div class="mb-4 ">
                         <input
@@ -121,8 +131,8 @@
                         />
                     </div>
                     <div class="mb-4 ">
-                        <input
-                        class="
+                        <select
+                            class="
                             shadow-md
                             appearance-none
                             border
@@ -131,15 +141,18 @@
                             py-2
                             px-3
                             text-gray-700
+                            cursor-pointer
                             leading-tight
                             focus:outline-none
                             focus:shadow-outline
-                        "
-                        id="fuelType"
-                        type="text"
-                        placeholder="Select fuel type"
-                        v-model="fuelType"
-                        />
+                            "
+                            id="fuelType"
+                            v-model="fuelType"
+                        >
+                        <option class="text-xl " value="">Select fuel type</option>
+                        <option class="text-xl" :value="model.name" v-for="model in FuelList"
+                            :key="model.id" >{{model.name}}</option>
+                        </select>
                     </div>
                     <div class="mb-4 ">
                         <input
@@ -205,17 +218,20 @@
                         />
                     </div>
                     <div class="btn_box">
-                        <button type="button" @click="form_tab_index = 0">Previous</button>
-                        <button type="button" @click="form_tab_index = 2">Next</button>
+                        <button type="button" @click="form_tab_index = 0,error = false">Previous</button>
+                        <button type="button" data-target="2" @click="NextTab">Next</button>
                     </div>
             </form>
           </div>
           <div class="step step3" :class="form_tab_index == 2 ? 'active' : ''">
                <div class="title">Vehicle Details - Part II</div>
             <form >
+                <div class="msg_box my-1">
+                   <div class="error pt-3 text-red-500" v-if="error == true">Invalid Data</div>
+              </div>
                 <div class="mb-4 mt-4">
-                        <input
-                        class="
+                      <select
+                            class="
                             shadow-md
                             appearance-none
                             border
@@ -224,19 +240,22 @@
                             py-2
                             px-3
                             text-gray-700
+                            cursor-pointer
                             leading-tight
                             focus:outline-none
                             focus:shadow-outline
-                        "
-                        id="purchaseYear"
-                        type="text"
-                        placeholder="Select Purchase Year"
-                        v-model="purchaseYear"
-                        />
+                            "
+                            id="purchaseYear"
+                            v-model="purchaseYear"
+                        >
+                        <option class="text-xl " value="">Select Purchase Year</option>
+                        <option class="text-xl" :value="model" v-for="model in yearList"
+                            :key="model" >{{model}}</option>
+                        </select>
                     </div>
                     <div class="mb-4 ">
-                        <input
-                        class="
+                        <select
+                            class="
                             shadow-md
                             appearance-none
                             border
@@ -245,18 +264,21 @@
                             py-2
                             px-3
                             text-gray-700
+                            cursor-pointer
                             leading-tight
                             focus:outline-none
                             focus:shadow-outline
-                        "
-                        id="ownership"
-                        type="text"
-                        placeholder="Select Ownership"
-                        v-model="ownership"
-                        />
+                            "
+                            id="ownership"
+                            v-model="ownership"
+                        >
+                        <option class="text-xl " value="">Select Ownership</option>
+                        <option class="text-xl" :value="model.name" v-for="model in ownershipList"
+                            :key="model.id" >{{model.name}}</option>
+                        </select>
                     </div>
                     <div class="mb-4 ">
-                        <textarea
+                        <input
                         class="
                             shadow-md
                             appearance-none
@@ -277,8 +299,8 @@
                         />
                     </div>
                     <div class="mb-4 ">
-                        <textarea
-                        class="
+                        <select
+                            class="
                             shadow-md
                             appearance-none
                             border
@@ -287,27 +309,30 @@
                             py-2
                             px-3
                             text-gray-700
+                            cursor-pointer
                             leading-tight
                             focus:outline-none
                             focus:shadow-outline
-                        "
-                        id="sellType"
-                        type="text"
-                        placeholder="Sell Type"
-                        v-model="sellType"
-                        />
+                            "
+                            id="sellType"
+                            v-model="sellType"
+                        >
+                        <option class="text-xl " value="">Select Sell Type</option>
+                        <option class="text-xl" :value="model.name" v-for="model in SellTypeList"
+                            :key="model.id" >{{model.name}}</option>
+                        </select>
                     </div>
                     <div class="mb-6">
                         <div class="checkbox_sec">
                             <label class="inline-flex items-center">
-                                <input type="checkbox" class="form-checkbox">
+                                <input type="checkbox" v-model="agreement" class="form-checkbox">
                                 <span class="ml-2 cursor-pointer">I have read & understood the disclaimer</span>
                             </label>
                         </div>
                     </div>
                     <div class="btn_box">
-                        <button type="button" @click="form_tab_index = 1">Previous</button>
-                        <button type="button">Submit</button>
+                        <button type="button" @click="form_tab_index = 1,error = false">Previous</button>
+                        <button type="button" @click="AddSellCarData">Submit</button>
                     </div>
             </form>
           </div>
@@ -321,6 +346,7 @@
 </template>
 
 <script>
+import axios from '~/plugins/axios'
 export default {
     data(){
         return{
@@ -337,7 +363,149 @@ export default {
             purchaseYear:'',
             ownership:'',
             price:'',
-            sellType:''
+            agreement:false,
+            error:false,
+            email_err:false,
+            sellType:'',
+            Brands:[
+                {
+                    id:1,
+                    name:'Hyundai'
+                },
+                {
+                    id:2,
+                    name:'Chevrolet'
+                },
+                {
+                    id:3,
+                    name:'Ford'
+                },
+                {
+                    id:4,
+                    name:'Mahindra'
+                },
+                {
+                    id:5,
+                    name:'Maruti'
+                },
+                {
+                    id:6,
+                    name:'Renault'
+                },
+                {
+                    id:7,
+                    name:'Tata'
+                },
+                {
+                    id:8,
+                    name:'Toyota'
+                },
+                {
+                    id:9,
+                    name:'Volkswagon'
+                },
+                {
+                    id:10,
+                    name:'Honda'
+                },
+                {
+                    id:11,
+                    name:'SKODA'
+                }
+            ],
+            FuelList:[
+                {
+                    id:1,
+                    name:'Petrol'
+                },
+                {
+                    id:2,
+                    name:'Diesel'
+                },
+                {
+                    id:3,
+                    name:'CNG'
+                }
+            ],
+            ownershipList:[
+                {
+                    id:1,
+                    name:'1st owner'
+                },
+                {
+                    id:2,
+                    name:'2nd owner'
+                },
+                {
+                    id:3,
+                    name:'3rd owner'
+                }
+            ],
+            SellTypeList:[
+                {
+                    id:1,
+                    name:'Sell'
+                },
+                {
+                    id:2,
+                    name:'Exchange'
+                }
+            ],
+            yearList:[],
+        }
+    },
+    mounted(){
+        this.IncrementYears();
+    },
+    methods:{
+        IncrementYears(){
+            var startYear = 1990;
+            var currentYear = new Date().getFullYear();
+            for(var i=startYear;i<=currentYear;i++){
+                this.yearList.push(i);
+            }
+        },
+        NextTab(e){
+            this.error = false;
+            var target = e.target.getAttribute('data-target');
+            var err = 0;
+            if(target == '1'){
+               if(this.name == '' || this.email == '' || this.mobile == ''){
+                   err++;
+                   this.error = true;
+               }
+            }
+            if(target == '2'){
+                if(this.Manufacturer == '' || this.ModelVariant == '' || this.fuelType == ''){
+                    err++;
+                    this.error = true;
+                }
+            }
+            if(err == 0){
+                this.form_tab_index = target;
+            }
+        },
+        AddSellCarData(){
+            axios.post('http://127.0.0.1:8000/sell_car/store',{
+                full_name:this.name,
+                email:this.email,
+                mobile:this.mobile,
+                car_model:this.Manufacturer,
+                model_variant:this.ModelVariant,
+                fuel_type:this.fuelType,
+                registration_number:this.regNumber,
+                kms_completed:this.kms,
+                color:this.color,
+                purchase_year:this.purchaseYear,
+                ownership:this.ownership,
+                expected_price:this.price,
+                sell_type:this.sellType,
+                agreement:this.agreement
+            }).then((res)=>{
+                console.log(res)
+            }).catch((err)=>{
+                console.log(err);
+            })
         }
     }
 }
