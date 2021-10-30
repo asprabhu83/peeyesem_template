@@ -350,6 +350,8 @@ import axios from '~/plugins/axios'
 export default {
     data(){
         return{
+            barMinValue: 10,
+            barMaxValue: 90,
             form_tab_index:0,
             name:'',
             email:'',
@@ -486,7 +488,7 @@ export default {
             }
         },
         AddSellCarData(){
-            axios.post('http://127.0.0.1:8000/sell_car/store',{
+            axios.post('http://127.0.0.1:8000/api/sell_car/store',{
                 full_name:this.name,
                 email:this.email,
                 mobile:this.mobile,
@@ -500,9 +502,25 @@ export default {
                 ownership:this.ownership,
                 expected_price:this.price,
                 sell_type:this.sellType,
-                agreement:this.agreement
             }).then((res)=>{
-                console.log(res)
+                if(res){
+                    window.open('https://lifeinsurance.adityabirlacapital.com/','_blank');
+                    this.name = '';
+                    this.email = '';
+                    this.mobile = '';
+                    this.Manufacturer = '';
+                    this.ModelVariant = '';
+                    this.fuelType = '';
+                    this.regNumber = '';
+                    this.kms = '';
+                    this.color = '';
+                    this.purchaseYear = '';
+                    this.ownership = '';
+                    this.price = '';
+                    this.sellType ='';
+                    this.agreement = false;
+                    this.form_tab_index = 0;
+                }
             }).catch((err)=>{
                 console.log(err);
             })

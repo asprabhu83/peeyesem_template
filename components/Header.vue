@@ -65,7 +65,7 @@
                                             <a class="menu-item" href="#">Used Cars<i class="fa fa-angle-down"></i></a>
                                             <!-- Sub Menu -->
                                             <ul class="sub-menu">
-                                                <li><nuxt-link to="/">Buy a car</nuxt-link></li>
+                                                <li><nuxt-link to="/buy-car">Buy a car</nuxt-link></li>
                                                 <li><nuxt-link to="/sell-car">Sell a Car</nuxt-link></li>
                                             </ul>
                                         </li>
