@@ -111,7 +111,7 @@
                           <img :src="require('@/assets/img/cars/used_cars/' + car.image)" alt="img" style="width:100%;" />
                       </div>
                       <div class="detail">
-                          <div class="title">{{car.name}} - {{car.fuel}} - {{car.price}}</div>
+                          <div class="title">{{car.name}} - {{car.fuel}}</div>
                           <div class="year_box">
                               <div class="year">
                                   <div class="mb-1"><font-awesome-icon icon="calendar-alt"  size="1x" class="text-black mr-2" />Year</div>
@@ -240,6 +240,26 @@ export default {
                     kms_driven:'88,261',
                     price:'1,00,000',
                     fuel:'Petrol'
+                },
+                {
+                    id:4,
+                    name:'SKODA - RAPID ACTIVE TDI (D)',
+                    manufacturer:'SKODA',
+                    image:'4.jpg',
+                    year:'2012',
+                    kms_driven:'88,269',
+                    price:'4,00,000',
+                    fuel:'Diesel'
+                },
+                {
+                    id:5,
+                    name:'SKODA - RAPID',
+                    manufacturer:'SKODA',
+                    image:'4.jpg',
+                    year:'2014',
+                    kms_driven:'67,379',
+                    price:'6,00,000',
+                    fuel:'Petrol'
                 }
             ],
             originalCarDetails:[
@@ -272,6 +292,26 @@ export default {
                     kms_driven:'88,261',
                     price:'1,00,000',
                     fuel:'Petrol'
+                },
+                {
+                    id:4,
+                    name:'SKODA - RAPID ACTIVE TDI (D)',
+                    manufacturer:'SKODA',
+                    image:'4.jpg',
+                    year:'2012',
+                    kms_driven:'88,269',
+                    price:'4,00,000',
+                    fuel:'Diesel'
+                },
+                {
+                    id:5,
+                    name:'SKODA - RAPID',
+                    manufacturer:'SKODA',
+                    image:'4.jpg',
+                    year:'2014',
+                    kms_driven:'67,379',
+                    price:'6,00,000',
+                    fuel:'Petrol'
                 }
             ]
         }
@@ -300,16 +340,16 @@ export default {
             var newItem = this.originalCarDetails.filter((item)=>{
                 var price = parseInt(item.price.replace(/,/g,''));
                 if(model !== '' && fuel !==''){
-                    return item.manufacturer == model && item.fuel == fuel && (parseInt(item.year) >= minyear && parseInt(item.year) <= maxyear)
+                    return (item.manufacturer == model && item.fuel == fuel) && (parseInt(item.year) >= minyear && parseInt(item.year) <= maxyear) && (price >= minPrice && price <= maxPrice)
                 }
                 if(model == '' && fuel ==''){
                     return (parseInt(item.year) >= minyear && parseInt(item.year) <= maxyear) && (price >= minPrice && price <= maxPrice)
                 }
                 if(model !== ''){
-                    return item.manufacturer == model
+                    return (item.manufacturer == model) && (parseInt(item.year) >= minyear && parseInt(item.year) <= maxyear) && (price >= minPrice && price <= maxPrice)
                 }
                 if(fuel !==''){
-                    return item.fuel == fuel
+                    return (item.fuel == fuel) && (parseInt(item.year) >= minyear && parseInt(item.year) <= maxyear) && (price >= minPrice && price <= maxPrice)
                 }
             })
             this.CarDetails = newItem;
@@ -321,6 +361,7 @@ export default {
 <style scoped>
 .car_section{
     display: flex;
+    align-items: flex-start;
 }
 .car_section .filter_box{
     width: 26%;
