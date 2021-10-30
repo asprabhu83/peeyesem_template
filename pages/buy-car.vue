@@ -18,8 +18,8 @@
                         :label="true"
                         :minValue="kmsMinValue"
                         :maxValue="kmsMaxValue"
-                        @input="UpdateValues"
-                        class="slider"
+                        @input="UpdateValues1"
+                        id="kms_value"
                     />
               </div>
               <div class="my-4">
@@ -32,8 +32,8 @@
                         :label="true"
                         :minValue="priceMinValue"
                         :maxValue="priceMaxValue"
-                        @input="UpdateValues"
-                        class="slider"
+                        @input="UpdateValues2"
+                        id="price_value"
                     />
               </div>
               <div class="my-4">
@@ -46,8 +46,8 @@
                         :label="true"
                         :minValue="yearMinValue"
                         :maxValue="yearMaxValue"
-                        @input="UpdateValues"
-                        class="slider"
+                        @input="UpdateValues3"
+                        id="year_value"
                     />
               </div>
               <div class="my-4">
@@ -277,16 +277,18 @@ export default {
         }
     },
     methods:{
-        UpdateValues(e) {
+        UpdateValues1(e) {
+
             this.kmsMinValue = e.minValue;
             this.kmsMaxValue = e.maxValue;
-
+        },
+        UpdateValues2(e) {
             this.priceMinValue = e.minValue;
             this.priceMaxValue = e.maxValue;
-
+        },
+        UpdateValues3(e) {
             this.yearMinValue = e.minValue;
             this.yearMaxValue = e.maxValue;
-            
         },
         filterCars(){
             var model = this.CarModel;
@@ -301,29 +303,7 @@ export default {
                     return item.manufacturer == model && item.fuel == fuel && (parseInt(item.year) >= minyear && parseInt(item.year) <= maxyear)
                 }
                 if(model == '' && fuel ==''){
-                    if(price >= minPrice){
-                        console.log(item.id,'min price true');
-                    }else{
-                        console.log(item.id,'false')
-                    }
-                    if(price <= maxPrice){
-                        console.log(item.id,'max price true');
-                    }else{
-                        console.log(item.id,'false')
-                    }
-                    if(parseInt(item.year) >= minyear){
-                        console.log(item.id,'min year true',item.year,minyear);
-                    }else{
-                        console.log(item.id,'false')
-                    }
-                     if(parseInt(item.year) <= maxyear){
-                        console.log(item.id,'max year true',item.year,maxyear);
-                    }else{
-                        console.log(item.id,'false')
-                    }
-                    if( price >= minPrice && price <= maxPrice ){
-                        return item
-                    }
+                    return (parseInt(item.year) >= minyear && parseInt(item.year) <= maxyear) && (price >= minPrice && price <= maxPrice)
                 }
                 if(model !== ''){
                     return item.manufacturer == model
