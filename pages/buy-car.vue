@@ -12,7 +12,7 @@
                   <div class="title my-2">Kms Driven</div>
                    <MultiRangeSlider
                         :min="1000"
-                        :max="20000"
+                        :max="200000"
                         :step="10"
                         :ruler="false"
                         :label="true"
@@ -143,7 +143,7 @@ export default {
     data(){
         return{
             kmsMinValue: 2000,
-            kmsMaxValue: 15000,
+            kmsMaxValue: 150000,
             priceMinValue: 1000,
             priceMaxValue: 500000,
             yearMinValue: 1995,
@@ -337,19 +337,22 @@ export default {
             var maxyear = this.yearMaxValue;
             var minPrice = this.priceMinValue;
             var maxPrice = this.priceMaxValue;
+            var minKms = this.kmsMinValue;
+            var maxKms = this.kmsMaxValue;
             var newItem = this.originalCarDetails.filter((item)=>{
                 var price = parseInt(item.price.replace(/,/g,''));
+                var kms = parseInt(item.kms_driven.replace(/,/g,''));
                 if(model !== '' && fuel !==''){
-                    return (item.manufacturer == model && item.fuel == fuel) && (parseInt(item.year) >= minyear && parseInt(item.year) <= maxyear) && (price >= minPrice && price <= maxPrice)
+                    return (item.manufacturer == model && item.fuel == fuel) && (parseInt(item.year) >= minyear && parseInt(item.year) <= maxyear) && (price >= minPrice && price <= maxPrice) && (kms >= minKms && kms <= maxKms)
                 }
                 if(model == '' && fuel ==''){
-                    return (parseInt(item.year) >= minyear && parseInt(item.year) <= maxyear) && (price >= minPrice && price <= maxPrice)
+                    return (parseInt(item.year) >= minyear && parseInt(item.year) <= maxyear) && (price >= minPrice && price <= maxPrice) && (kms >= minKms && kms <= maxKms)
                 }
                 if(model !== ''){
-                    return (item.manufacturer == model) && (parseInt(item.year) >= minyear && parseInt(item.year) <= maxyear) && (price >= minPrice && price <= maxPrice)
+                    return (item.manufacturer == model) && (parseInt(item.year) >= minyear && parseInt(item.year) <= maxyear) && (price >= minPrice && price <= maxPrice) && (kms >= minKms && kms <= maxKms)
                 }
                 if(fuel !==''){
-                    return (item.fuel == fuel) && (parseInt(item.year) >= minyear && parseInt(item.year) <= maxyear) && (price >= minPrice && price <= maxPrice)
+                    return (item.fuel == fuel) && (parseInt(item.year) >= minyear && parseInt(item.year) <= maxyear) && (price >= minPrice && price <= maxPrice) && (kms >= minKms && kms <= maxKms)
                 }
             })
             this.CarDetails = newItem;
