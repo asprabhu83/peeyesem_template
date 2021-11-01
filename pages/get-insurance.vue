@@ -72,25 +72,28 @@
                     <div class="title">Vehicle Details</div>
                     <form >
                         <div class="mb-4 mt-4">
-                                <input
+                            <select
                                 class="
-                                    shadow-md
-                                    appearance-none
-                                    border
-                                    rounded
-                                    w-full
-                                    py-2
-                                    px-3
-                                    text-gray-700
-                                    leading-tight
-                                    focus:outline-none
-                                    focus:shadow-outline
+                                shadow-md
+                                appearance-none
+                                border
+                                rounded
+                                w-full
+                                py-2
+                                px-3
+                                text-gray-700
+                                cursor-pointer
+                                leading-tight
+                                focus:outline-none
+                                focus:shadow-outline
                                 "
                                 id="vehicleModel"
-                                type="text"
-                                placeholder="Select Vehicle Model"
                                 v-model="vehicleModel"
-                                />
+                            >
+                            <option class="text-xl " value="">Select Vehicle Model</option>
+                            <option class="text-xl" :value="model.car_title" v-for="model in this.$store.state.originalDataCars"
+                                :key="model.id" >{{model.car_title}}</option>
+                            </select>
                             </div>
                             <div class="mb-4 ">
                                 <input
@@ -123,7 +126,7 @@
                             </div>
                     </form>
                     <div class="btn_box">
-                        <button type="button">Submit</button>
+                        <button type="button" @click="AddInsuranceData">Submit</button>
                     </div>
             </form>
           </div>
@@ -132,6 +135,7 @@
 </template>
 
 <script>
+import axios from '~/plugins/axios'
 export default {
     data(){
         return{
@@ -141,6 +145,43 @@ export default {
             vehicleModel:'',
             regNumber:'',
             form_tab_index:0
+        }
+    },
+    mounted(){
+        if(this.$store.state.cars.length == 0){
+            this.GetModels();
+        }
+    },
+    methods:{
+        GetModels(){
+            axios.get(process.env.baseUrl + 'api/cars/index')
+            .then((res)=>{
+                this.$store.state.cars = res.data.cars;
+                this.$store.state.originalDataCars = res.data.cars;
+            }).catch((err)=>{
+                console.log(err);
+            })
+        },
+        AddInsuranceData(){
+            axios.post('http://127.0.0.1:8000/api/insurance/store',{
+                full_name:this.name,
+                email_id:this.email,
+                mobile_no:this.mobile,
+                vehicle_model:this.vehicleModel,
+                registration_no:this.regNumber
+            }).then((res)=>{
+                if(res){
+                    window.open('https://lifeinsurance.adityabirlacapital.com/','_blank');
+                    this.name = '';
+                    this.email = '';
+                    this.mobile = '';
+                    this.vehicleModel = '';
+                    this.regNumber = '';
+                }
+                console.log(res)
+            }).catch((err)=>{
+                console.log(err);
+            })
         }
     }
 }

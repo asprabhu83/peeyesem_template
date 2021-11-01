@@ -362,9 +362,25 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width:300px) and (max-width:600px){
+    .car_section .filter_box{
+        width: 100%!important;
+    }
+    .car_section .cars_items{
+        width: 100%!important;
+        margin: 40px 0px!important;
+    }
+    .car_item_box_sec .item{
+        width: 100%!important;
+    }
+    .car_item_box_sec{
+        margin: 0px 5px 30px 5px!important;
+    }
+}
 .car_section{
     display: flex;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
 .car_section .filter_box{
     width: 26%;

@@ -504,7 +504,6 @@ export default {
                 sell_type:this.sellType,
             }).then((res)=>{
                 if(res){
-                    window.open('https://lifeinsurance.adityabirlacapital.com/','_blank');
                     this.name = '';
                     this.email = '';
                     this.mobile = '';
