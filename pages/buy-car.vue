@@ -390,7 +390,7 @@ export default {
     border-radius: 8px;
 }
 .car_section .cars_items{
-    width: 72%;
+    width: 69%;
     margin: 40px 20px;
 }
 .filter_box .title{
