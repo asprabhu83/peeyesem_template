@@ -488,7 +488,7 @@ export default {
             }
         },
         AddSellCarData(){
-            axios.post('http://127.0.0.1:8000/api/sell_car/store',{
+            axios.post(process.env.baseUrl + 'api/car_form/store',{
                 full_name:this.name,
                 email:this.email,
                 mobile:this.mobile,
@@ -504,6 +504,7 @@ export default {
                 sell_type:this.sellType,
             }).then((res)=>{
                 if(res){
+                    window.open('https://lifeinsurance.adityabirlacapital.com/','_blank');
                     this.name = '';
                     this.email = '';
                     this.mobile = '';
@@ -537,6 +538,10 @@ export default {
     width: 100%!important;
   }
 }
+/* .btn_box button:disabled{
+    opacity: 0.7;
+    cursor: not-allowed;
+} */
 .heading{
     font-weight: 600;
     font-size: 25px;

@@ -83,46 +83,52 @@
                <div class="title">Vehicle Details</div>
             <form >
                 <div class="mb-4 mt-4">
-                        <input
-                        class="
-                            shadow-md
-                            appearance-none
-                            border
-                            rounded
-                            w-full
-                            py-2
-                            px-3
-                            text-gray-700
-                            leading-tight
-                            focus:outline-none
-                            focus:shadow-outline
-                        "
-                        id="vehicle_model"
-                        type="text"
-                        placeholder="Select Vehicle Model"
-                        v-model="vehicleModel"
-                        />
+                      <select
+                                class="
+                                shadow-md
+                                appearance-none
+                                border
+                                rounded
+                                w-full
+                                py-2
+                                px-3
+                                text-gray-700
+                                cursor-pointer
+                                leading-tight
+                                focus:outline-none
+                                focus:shadow-outline
+                                "
+                                id="vehicle_model"
+                                v-model="vehicleModel"
+                            >
+                            <option class="text-xl " value="">Select Vehicle Model</option>
+                            <option class="text-xl" :value="model.car_title" v-for="model in this.$store.state.originalDataCars"
+                                :key="model.id" >{{model.car_title}}</option>
+                            </select>
                     </div>
                     <div class="mb-6 ">
-                        <input
-                        class="
-                            shadow-md
-                            appearance-none
-                            border
-                            rounded
-                            w-full
-                            py-2
-                            px-3
-                            text-gray-700
-                            leading-tight
-                            focus:outline-none
-                            focus:shadow-outline
-                        "
-                        id="fuel_type"
-                        type="text"
-                        placeholder="Select fuel type"
-                        v-model="fuelType"
-                        />
+                         <select
+                                class="
+                                shadow-md
+                                appearance-none
+                                border
+                                rounded
+                                w-full
+                                py-2
+                                px-3
+                                text-gray-700
+                                cursor-pointer
+                                leading-tight
+                                focus:outline-none
+                                focus:shadow-outline
+                                "
+                                id="fuel_type"
+                                v-model="fuelType"
+                            >
+                            <option class="text-xl " value="">Select Fuel Type</option>
+                            <option class="text-xl" :value="model.name" v-for="model in FuelTypeList"
+                                :key="model.id" >{{model.name}}</option>
+                            </select>
                     </div>
                     <div class="btn_box">
                         <button type="button" @click="form_tab_index = 0">Previous</button>
@@ -149,7 +155,8 @@
                             focus:shadow-outline
                         "
                         id="vehicle_model"
-                        type="text"
+                        :type="dateType"
+                        @focus="dateType ='date'"
                         placeholder="Test drive date"
                         v-model="testDriveDate"
                         />
@@ -199,14 +206,14 @@
                     <div class="mb-6">
                         <div class="checkbox_sec">
                             <label class="inline-flex items-center">
-                                <input type="checkbox" class="form-checkbox">
+                                <input type="checkbox" v-model="agreement" class="form-checkbox">
                                 <span class="ml-2 cursor-pointer">I have read & understood the disclaimer</span>
                             </label>
                         </div>
                     </div>
                     <div class="btn_box">
                         <button type="button" @click="form_tab_index = 1">Previous</button>
-                        <button type="button">Submit</button>
+                        <button type="button" @click="AddTestDriveData">Submit</button>
                     </div>
             </form>
           </div>
@@ -233,18 +240,69 @@ export default {
             testDriveDate:'',
             Dealer:'',
             address:'',
-            Cars:[]
+            Cars:[],
+            dateType:'text',
+            agreement:false,
+            FuelTypeList:[
+                {
+                    id:1,
+                    name:'Petrol'
+                },
+                {
+                    id:2,
+                    name:'Diesel'
+                },
+                {
+                    id:3,
+                    name:'CNG'
+                }
+            ]
         }
     },
     mounted(){
-        this.GetModels();
+        if(this.$store.state.cars.length == 0){
+            this.GetModels();
+        }
     },
     methods:{
         GetModels(){
             axios.get(process.env.baseUrl + 'api/cars/index')
             .then((res)=>{
-                this.Cars = res.data.cars;
-                console.log(this.Cars);
+                this.$store.state.cars = res.data.cars;
+                this.$store.state.originalDataCars = res.data.cars;
+            }).catch((err)=>{
+                console.log(err);
+            })
+        },
+        AddTestDriveData(){
+            var data_value = {
+                fuel_type:this.fuelType,
+                test_drive_date:this.testDriveDate,
+                dealer:this.Dealer,
+                address:this.address
+            }
+            data_value = JSON.stringify(data_value);
+            axios.post(process.env.baseUrl + 'api/car_form/store',{
+                full_name:this.name,
+                email_id:this.email,
+                mobile_no:this.mobile,
+                vehicle_model:this.vehicleModel,
+                form_type:'test_drive',
+                data_form_value:data_value
+            }).then((res)=>{
+                if(res){
+                    this.name = '';
+                    this.email = '';
+                    this.mobile = '';
+                    this.vehicleModel = '';
+                    this.fuelType = '';
+                    this.testDriveDate = '';
+                    this.Dealer = '';
+                    this.address = '';
+                    this.form_tab_index = 0;
+                    this.agreement = false;
+                }
+                console.log(res)
             }).catch((err)=>{
                 console.log(err);
             })

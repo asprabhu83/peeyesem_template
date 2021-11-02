@@ -100,13 +100,13 @@
                     <div class="mb-6">
                         <div class="checkbox_sec">
                             <label class="inline-flex items-center">
-                                <input type="checkbox" class="form-checkbox">
+                                <input type="checkbox" v-model="agreement" class="form-checkbox">
                                 <span class="ml-2 cursor-pointer">I have read & understood the disclaimer</span>
                             </label>
                         </div>
                     </div>
                     <div class="btn_box">
-                        <button type="button">Submit</button>
+                        <button type="button" @click="AddContactData">Submit</button>
                     </div>
             </form>
           </div>
@@ -115,6 +115,7 @@
 </template>
 
 <script>
+import axios from '~/plugins/axios'
 export default {
     data(){
         return{
@@ -122,6 +123,34 @@ export default {
             name:'',
             email:'',
             mobile:'',
+            message:'',
+            agreement:false
+        }
+    },
+    methods:{
+        AddContactData(){
+            var data_value = {
+                message:this.message
+            }
+            data_value = JSON.stringify(data_value);
+            axios.post(process.env.baseUrl + 'api/car_form/store',{
+                full_name:this.name,
+                email_id:this.email,
+                mobile_no:this.mobile,
+                form_type:'contact',
+                data_form_value:data_value
+            }).then((res)=>{
+                if(res){
+                    this.name = '';
+                    this.email = '';
+                    this.mobile = '';
+                    this.message = '';
+                    this.agreement = false;
+                }
+                console.log(res)
+            }).catch((err)=>{
+                console.log(err);
+            })
         }
     }
 }

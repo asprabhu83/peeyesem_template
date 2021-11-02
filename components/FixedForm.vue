@@ -9,7 +9,7 @@
 
       <!-- Whatsapp Button -->
       <div class="whtsapp_btn">
-        <img class="mob_whtsap_img" :src="require('@/assets/img/whatsapp_mob.png')" alt="img" />
+       <a :href="'https://api.whatsapp.com/send?phone='+ whatsappLink" target="_blank"> <img class="mob_whtsap_img" :src="require('@/assets/img/whatsapp_mob.png')" alt="img" /></a>
     </div>
 
     <!-- Back To Top Button -->
@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import axios from '~/plugins/axios'
 import Modal1 from './modals/formModal1.vue'
 import Modal2 from './modals/formModal2.vue'
 import Modal3 from './modals/formModal3.vue'
@@ -120,6 +121,8 @@ export default {
                 price:'17,00,000'
             }
             ],
+            baseUrl:process.env.baseUrl,
+            whatsappLink:''
         }
     },
     created () {
@@ -128,7 +131,20 @@ export default {
     destroyed () {
         window.removeEventListener('scroll', this.handleScroll);
     },
+    mounted(){
+        this.GetDetails();
+    },
     methods:{
+        GetDetails(){
+            axios.get(process.env.baseUrl + 'api/settings/index')
+            .then((res)=>{
+                const [data] = res.data;
+                const {whatsapp_number} = data;
+                this.whatsappLink = whatsapp_number;
+            }).catch((err)=>{
+                console.log(err)
+            })
+        },
         closeModal(value){
             if(value == 'modal1'){
                 this.formModal = false;

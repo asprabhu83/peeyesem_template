@@ -83,25 +83,28 @@
               <div class="title">Dealership & Enquiry Details</div>
               <form >
                 <div class="mb-4 mt-4">
-                        <input
-                        class="
-                            shadow-md
-                            appearance-none
-                            border
-                            rounded
-                            w-full
-                            py-2
-                            px-3
-                            text-gray-700
-                            leading-tight
-                            focus:outline-none
-                            focus:shadow-outline
-                        "
-                        id="enquiry"
-                        type="text"
-                        placeholder="Select Enquiry for"
-                        v-model="name"
-                        />
+                      <select
+                                class="
+                                shadow-md
+                                appearance-none
+                                border
+                                rounded
+                                w-full
+                                py-2
+                                px-3
+                                text-gray-700
+                                cursor-pointer
+                                leading-tight
+                                focus:outline-none
+                                focus:shadow-outline
+                                "
+                                id="enquiry"
+                                v-model="enquiry"
+                            >
+                            <option class="text-xl " value="">Select Enquiry For</option>
+                            <option class="text-xl" :value="model" v-for="model in enquiryList"
+                                :key="model" >{{model}}</option>
+                            </select>
                     </div>
                     <div class="mb-4 ">
                         <input
@@ -121,7 +124,7 @@
                         id="dealer"
                         type="text"
                         placeholder="Select Dealer"
-                        v-model="email"
+                        v-model="dealer"
                         />
                     </div>
                     <div class="mb-4 ">
@@ -142,20 +145,20 @@
                         id="comments"
                         type="text"
                         placeholder="Comments"
-                        v-model="mobile"
+                        v-model="comments"
                         />
                     </div>
                     <div class="mb-6">
                         <div class="checkbox_sec">
                             <label class="inline-flex items-center">
-                                <input type="checkbox" class="form-checkbox">
+                                <input type="checkbox" v-model="agreement" class="form-checkbox">
                                 <span class="ml-2 cursor-pointer">I have read & understood the disclaimer</span>
                             </label>
                         </div>
                     </div>
                     <div class="btn_box">
                         <button type="button" @click="form_tab_index = 0">Previous</button>
-                        <button type="button">Submit</button>
+                        <button type="button" @click="AddSalesData">Submit</button>
                     </div>
             </form>
           </div>
@@ -168,13 +171,52 @@
 </template>
 
 <script>
+import axios from '~/plugins/axios'
 export default {
     data(){
         return{
             name:'',
             email:'',
             mobile:'',
+            enquiry:'',
+            dealer:'',
+            comments:'',
+            enquiryList:[
+                'sales',
+                'others'
+            ],
             form_tab_index:0,
+            agreement:false,
+        }
+    },
+    methods:{
+        AddSalesData(){
+            var data_value = {
+                enquiry:this.enquiry,
+                dealer:this.dealer,
+                comments:this.comments
+            }
+            data_value = JSON.stringify(data_value);
+            axios.post(process.env.baseUrl + 'api/car_form/store',{
+                full_name:this.name,
+                email_id:this.email,
+                mobile_no:this.mobile,
+                form_type:'sales_enquiry',
+                data_form_value:data_value
+            }).then((res)=>{
+                if(res){
+                    this.name = '';
+                    this.email = '';
+                    this.mobile = '';
+                    this.enquiry = '';
+                    this.dealer = '';
+                    this.comments = '';
+                    this.agreement = false;
+                    this.form_tab_index = 0;
+                }
+            }).catch((err)=>{
+                console.log(err);
+            })
         }
     }
 }

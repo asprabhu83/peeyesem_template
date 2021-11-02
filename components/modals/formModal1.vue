@@ -21,6 +21,7 @@
                     "
                     type="text"
                     placeholder="Your Name"
+                    v-model="name"
                     />
                 </div>
                 <div class="mb-4">
@@ -40,10 +41,11 @@
                       focus:shadow-outline
                     "
                     id="cars"
+                    v-model="vehicleModel"
                   >
                   <option class="text-xl " value="">Choose Model</option>
-                  <option class="text-xl" :value="model.id" v-for="model in originalcars"
-                    :key="model.id" >{{model.name}}</option>
+                  <option class="text-xl" :value="model.car_title" v-for="model in this.$store.state.originalDataCars"
+                    :key="model.id" >{{model.car_title}}</option>
                   </select>
                 </div>
                <div class="mb-4">
@@ -62,6 +64,7 @@
                         focus:shadow-outline
                     "
                     type="text"
+                    v-model="email"
                     placeholder="Your Email"
                     />
                 </div>
@@ -81,11 +84,12 @@
                         focus:shadow-outline
                     "
                     type="number"
+                    v-model="mobile"
                     placeholder="Your Phone"
                     />
                 </div>
                <div class="btn_grp">
-                   <button  type="button" class="  text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
+                   <button  type="button" @click="BookCar" class="  text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
                </div>
            </form>
         </div>
@@ -93,6 +97,7 @@
 </template>
 
 <script>
+import axios from '~/plugins/axios'
 export default {
     data(){
         return{
@@ -175,11 +180,49 @@ export default {
                 price:'17,00,000'
             }
             ],
+            name:'',
+            vehicleModel:'',
+            email:'',
+            mobile:''
+        }
+    },
+    mounted(){
+        if(this.$store.state.cars.length == 0){
+            this.GetModels();
         }
     },
     methods:{
         closeModal(){
             this.$emit('closeModal', 'modal1')
+        },
+        GetModels(){
+            axios.get(process.env.baseUrl + 'api/cars/index')
+            .then((res)=>{
+                this.$store.state.cars = res.data.cars;
+                this.$store.state.originalDataCars = res.data.cars;
+            }).catch((err)=>{
+                console.log(err);
+            })
+        },
+        BookCar(){
+            axios.post('http://127.0.0.1:8000/api/car_form/store',{
+                full_name:this.name,
+                email_id:this.email,
+                mobile_no:this.mobile,
+                vehicle_model:this.vehicleModel,
+                form_type:'book_car',
+            }).then((res)=>{
+                if(res){
+                    this.name = '';
+                    this.email = '';
+                    this.mobile = '';
+                    this.vehicleModel = '';
+                    this.closeModal();
+                }
+                console.log(res)
+            }).catch((err)=>{
+                console.log(err);
+            })
         }
     }
 }

@@ -85,25 +85,28 @@
               <div class="title">Dealership & Enquiry Details</div>
               <form >
                 <div class="mb-4 mt-4">
-                        <input
-                        class="
-                            shadow-md
-                            appearance-none
-                            border
-                            rounded
-                            w-full
-                            py-2
-                            px-3
-                            text-gray-700
-                            leading-tight
-                            focus:outline-none
-                            focus:shadow-outline
-                        "
-                        id="enquiry"
-                        type="text"
-                        placeholder="Select Feedback for"
-                        v-model="Feedback"
-                        />
+                    <select
+                                class="
+                                shadow-md
+                                appearance-none
+                                border
+                                rounded
+                                w-full
+                                py-2
+                                px-3
+                                text-gray-700
+                                cursor-pointer
+                                leading-tight
+                                focus:outline-none
+                                focus:shadow-outline
+                                "
+                                id="feedback"
+                                v-model="Feedback"
+                            >
+                            <option class="text-xl " value="">Select Feedback for</option>
+                            <option class="text-xl" :value="model" v-for="model in feedbackList"
+                                :key="model" >{{model}}</option>
+                            </select>
                     </div>
                     <div class="mb-4 ">
                         <input
@@ -157,7 +160,7 @@
                     </div>
                     <div class="btn_box">
                         <button type="button" @click="form_tab_index = 0">Previous</button>
-                        <button type="button">Submit</button>
+                        <button type="button" @click="AddFeedback">Submit</button>
                     </div>
             </form>
           </div>
@@ -170,6 +173,7 @@
 </template>
 
 <script>
+import axios from '~/plugins/axios'
 export default {
     data(){
         return{
@@ -180,6 +184,41 @@ export default {
             Feedback:'',
             dealer:'',
             comments:'',
+            feedbackList:[
+                'sales',
+                'service',
+                'others'
+            ]
+        }
+    },
+    methods:{
+        AddFeedback(){
+            var data_value = {
+                feedback:this.Feedback,
+                dealer:this.dealer,
+                comments:this.comments
+            }
+            data_value = JSON.stringify(data_value);
+            axios.post(process.env.baseUrl + 'api/car_form/store',{
+                full_name:this.name,
+                email_id:this.email,
+                mobile_no:this.mobile,
+                form_type:'feedback',
+                data_form_value:data_value
+            }).then((res)=>{
+                if(res){
+                    this.name = '';
+                    this.email = '';
+                    this.mobile = '';
+                    this.Feedback = '';
+                    this.dealer = '';
+                    this.comments = '';
+                    this.agreement = false;
+                    this.form_tab_index = 0;
+                }
+            }).catch((err)=>{
+                console.log(err);
+            })
         }
     }
 }
