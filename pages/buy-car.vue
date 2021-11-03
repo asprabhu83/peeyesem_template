@@ -122,6 +122,9 @@
                                   <b>{{car.kms_driven}}</b>
                               </div>
                           </div>
+                          <div class="btn_box">
+                              <button type="button" @click="openDialog(car.id)">Enquire Now</button>
+                          </div>
                       </div>
                   </div>
               </div>
@@ -130,6 +133,125 @@
              </div>
           </div>
       </div>
+      <div class="dialog_box fixed inset-0 h-screen w-full flex justify-center items-center" v-if="editDialog === true">
+      <div class="dialog_content bg-white rounded-md shadow-md">
+         <div class="my-2   flex items-center justify-between py-3 px-10"><span class="font-bold text-lg" >Enquire</span><font-awesome-icon icon="times"  size="1x" class="text-red-600 cursor-pointer" @click="editDialog = false" /></div>
+         <form class="bg-white rounded px-10 pb-10" >
+            <div class="form_box">
+              <div class="err_box ">
+                <div class="success py-3 text-green-500" v-if="success == true">
+                  Added Successfully
+                </div>
+                <div class="error py-3 text-red-500" v-if="empty_valid == true">
+                  Values should not be empty
+                </div>
+              </div>
+              <div class="mb-4">
+                  <label
+                    class="block text-gray-700 text-sm font-bold mb-2"
+                    for="name"
+                  >
+                    Full Name
+                  </label>
+                  <input
+                    class="
+                      shadow-md
+                      appearance-none
+                      border
+                      rounded
+                      w-full
+                      py-2
+                      px-3
+                      text-gray-700
+                      leading-tight
+                      focus:outline-none
+                      focus:shadow-outline
+                    "
+                    id="name"
+                    type="text"
+                    placeholder="Full Name"
+                    v-model="singleCarDetail.name"
+                  />
+              </div>
+              <div class="mb-4">
+                  <label
+                    class="block text-gray-700 text-sm font-bold mb-2"
+                    for="Email"
+                  >
+                    Email
+                  </label>
+                  <input
+                    class="
+                      shadow-md
+                      appearance-none
+                      border
+                      rounded
+                      w-full
+                      py-2
+                      px-3
+                      text-gray-700
+                      leading-tight
+                      focus:outline-none
+                      focus:shadow-outline
+                    "
+                    id="Email"
+                    type="text"
+                    placeholder="Email"
+                    v-model="singleCarDetail.email"
+                  />
+              </div>
+              <div class="mb-6">
+                  <label
+                    class="block text-gray-700 text-sm font-bold mb-2"
+                    for="mobile"
+                  >
+                    Mobile No
+                  </label>
+                  <input
+                    class="
+                      shadow-md
+                      appearance-none
+                      border
+                      rounded
+                      w-full
+                      py-2
+                      px-3
+                      text-gray-700
+                      leading-tight
+                      focus:outline-none
+                      focus:shadow-outline
+                    "
+                    id="mobile"
+                    type="text"
+                    placeholder="Mobile"
+                    v-model="singleCarDetail.mobile"
+                  />
+              </div>
+          <div class="flex items-center justify-between">
+            <button
+              class="
+                bg-blue-500
+                hover:bg-blue-700
+                text-white
+                font-bold
+                w-full
+                py-2
+                px-4
+                rounded
+                focus:outline-none
+                focus:shadow-outline
+                reg_btn
+              "
+              type="button"
+              @click="Enquire"
+            >
+              Enquire Now
+            </button>
+          </div>
+            </div>
+          </form>
+      </div>
+     </div>
   </div>
 </template>
 
@@ -213,12 +335,64 @@ export default {
             CarDetails:[],
             originalCarDetails:[],
             baseUrl:process.env.baseUrl,
+            editDialog:false,
+            success:false,
+            empty_valid:false,
+            singleCarDetail:{
+                carModel:'',
+                purchaseYear:'',
+                fuelType:'',
+                Manufacturer:'',
+                Price:'',
+                kmsDriven:'',
+                name:'',
+                email:'',
+                mobile:''
+            }
         }
     },
     mounted(){
         this.GetCarDetails();
     },
     methods:{
+        openDialog(id){
+            this.editDialog = true;
+            var item = this.originalCarDetails.filter((item)=>{
+                return item.id == id;
+            })
+            const [firstCar] = item;
+            const {car_model,data_form,fuel_type,kms_driven,price,purchase_year} = firstCar;
+            this.singleCarDetail.carModel = car_model;
+            this.singleCarDetail.purchaseYear = purchase_year;
+            this.singleCarDetail.fuelType = fuel_type;
+            this.singleCarDetail.Price = price;
+            this.singleCarDetail.kmsDriven = kms_driven;
+            var data = JSON.parse(data_form);
+            const {manufacturer} = data;
+            this.singleCarDetail.Manufacturer = manufacturer;
+        },
+        Enquire(){
+            var data_value = {
+                car_model:this.singleCarDetail.carModel,
+                purchase_year:this.singleCarDetail.purchaseYear,
+                fuel_type:this.singleCarDetail.fuelType,
+                price:this.singleCarDetail.Price,
+                kms_driven:this.singleCarDetail.kmsDriven,
+                manufacturer:this.singleCarDetail.Manufacturer
+            }
+            data_value = JSON.stringify(data_value);
+            axios.post(process.env.baseUrl + 'api/car_form/store',{
+                full_name:this.singleCarDetail.name,
+                email_id:this.singleCarDetail.email,
+                mobile_no:this.singleCarDetail.mobile,
+                form_type:'Buy_car',
+                data_form_value:data_value
+            }).then((res)=>{
+                this.editDialog = false;
+            }).catch((err)=>{
+                console.log(err);
+            })
+        },
         GetCarDetails(){
             axios.get(process.env.baseUrl + 'api/used_car/index')
             .then((res)=>{
@@ -278,6 +452,21 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width: 1367px) and (max-width: 1600px){
+    .car_section .cars_items{
+        width: 67%!important;
+    }
+}
+@media only screen and (min-width: 1270px) and (max-width: 1366px){
+    .car_section .cars_items{
+        width: 67%!important;
+        margin: 40px 12px!important;
+    }
+    .car_item_box_sec .item{
+        width: 29%!important;
+        margin: 15px!important;
+    }
+}
 @media only screen and (min-width:300px) and (max-width:600px){
     .car_section .filter_box{
         width: 100%!important;
@@ -292,6 +481,27 @@ export default {
     .car_item_box_sec{
         margin: 0px 5px 30px 5px!important;
     }
+}
+.btn_box{
+    text-align: center;
+    margin-top: 12px;
+}
+.dialog_box {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.dialog_content {
+  width: 550px;
+  max-width: 100%;
+}
+.btn_box button{
+    padding: 4px 18px;
+    background: #002c5f;
+    margin: 10px 0;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    border-radius: 5px;
 }
 .car_section{
     display: flex;
