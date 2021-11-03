@@ -136,6 +136,36 @@
                     </select>
           </div>
           <div class="mb-4">
+              <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="Manufacturer"
+            >
+              Manufacturer
+            </label>
+               <select
+                            class="
+                            shadow-md
+                            appearance-none
+                            border
+                            rounded
+                            w-full
+                            py-2
+                            px-3
+                            text-gray-700
+                            cursor-pointer
+                            leading-tight
+                            focus:outline-none
+                            focus:shadow-outline
+                            "
+                            id="Manufacturer"
+                            v-model="Manufacturer"
+                        >
+                        <option class="text-xl " value="">Select Manufacturer</option>
+                        <option class="text-xl" :value="model.name" v-for="model in CarsList"
+                            :key="model.id" >{{model.name}}</option>
+                    </select>
+          </div>
+          <div class="mb-4">
             <label
               class="block text-gray-700 text-sm font-bold mb-2"
               for="price"
@@ -227,6 +257,7 @@ export default {
       kmsDriven:'',
       fuelType:'',
       Price:'',
+      Manufacturer:'',
       empty_valid: false,
       success: false,
       FuelList:[
@@ -243,6 +274,52 @@ export default {
                     name:'CNG'
                 }
       ],
+      CarsList:[
+                {
+                    id:1,
+                    name:'Hyundai'
+                },
+                {
+                    id:2,
+                    name:'Chevrolet'
+                },
+                {
+                    id:3,
+                    name:'Ford'
+                },
+                {
+                    id:4,
+                    name:'Mahindra'
+                },
+                {
+                    id:5,
+                    name:'Maruti'
+                },
+                {
+                    id:6,
+                    name:'Renault'
+                },
+                {
+                    id:7,
+                    name:'Tata'
+                },
+                {
+                    id:8,
+                    name:'Toyota'
+                },
+                {
+                    id:9,
+                    name:'Volkswagon'
+                },
+                {
+                    id:10,
+                    name:'Honda'
+                },
+                {
+                    id:11,
+                    name:'SKODA'
+                }
+            ],
       dateType:'text'
     }
   },
@@ -272,13 +349,18 @@ export default {
             }
     },
     AddUsedCar () {
-        axios.post('http://127.0.0.1:8000/api/used_car/store', {
+          var data_value = {
+              manufacturer:this.Manufacturer,
+            }
+            data_value = JSON.stringify(data_value);
+        axios.post(process.env.baseUrl + 'api/used_car/store', {
           car_model:this.carModel,
           fuel_type:this.fuelType,
           price:this.Price,
           kms_driven:this.kmsDriven,
           model_image:this.modelImage,
           purchase_year:this.purchaseYear,
+          data_form:data_value
         }).then(() => {
           this.success = true
           this.$emit('created')

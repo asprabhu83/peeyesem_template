@@ -1,22 +1,29 @@
 <template>
-  <div>
-      <div class="signle_event" v-for="event in singleEvent" :key="event.id">
-          <div class="heading my-5">{{event.name}}</div>
-          <div class="image_sec">
-              <img :src="require('@/assets/img/cars/news_events/' + event.image)" alt="img" style="width:100%;" />
+  <div class="my-24">
+    <div class="news_heading my-16">
+      <h3 class="text-center">News & Events</h3>
+    </div>
+    <div class="news_events_item_box">
+      <div class="item" v-for="item in newsAndEvents" :key="item.id">
+          <div class="photo_box cursor-pointer">
+             <nuxt-link :to="'/news-events/'+ item.id"> <img :src="require('@/assets/img/cars/news_events/' + item.image)" alt="img" style="width:100%;" /></nuxt-link>
           </div>
-          <div class="description my-16" v-html="event.description">
-
+          <div class="detail">
+              <div class="head cursor-pointer">{{item.name}}</div>
+              <div class="btn_box">
+                  <button><nuxt-link :to="'/news-events/'+ item.id"> Read More</nuxt-link></button>
+              </div>
           </div>
       </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-    data(){
-        return{
-            newsAndEvents: [
+  data() {
+    return {
+      newsAndEvents: [
         {
           id: 1,
           name: "Free Emission Check, Dry Wash And AC Check-Up For Hyundai Cars  ",
@@ -62,41 +69,59 @@ export default {
             image:'6.jpg',
             description:` 23rd Free car care clinic grand inauguration by Ms, Mayuri, Sandalwood Actress at Mission Road`
         }
-            ],
-            singleEvent:[]
-        }
-    },
-    mounted(){
-        this.filterEvent();
-    },
-    methods:{
-        filterEvent(){
-             var item = this.newsAndEvents.filter((eve)=>{
-              return eve.id == this.$route.query.id;
-            })
-            this.singleEvent = item;
-            console.log(this.singleEvent)
-        }
-    }
-}
+      ],
+    };
+  },
+};
 </script>
 
 <style scoped>
 @media only screen and (min-width:300px) and (max-width:600px){
-    .signle_event{
-        width: 85%!important;
-    }
+  .news_events_item_box{
+    width: 96%!important;
+  }
+  .news_events_item_box .item{
+    width: 100%!important;
+    margin: 20px 14px !important;
+  }
 }
-.signle_event{
-    width: 60%;
-    margin: 60px auto;
+.news_events_item_box{
+    width: 85%;
+    margin: 40px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-.heading{
-    font-size: 24px;
-    font-weight: 600;
+.news_events_item_box .item{
+    width: 25%;
+    margin: 20px 30px;
+    box-shadow: 0 2px 10px 4px rgb(0 0 0/15%);
+    border-radius: 8px;
+    overflow: hidden;
 }
-.description{
+.news_events_item_box .item .detail{
+    padding: 20px;
+}
+.news_events_item_box .item .detail .head{
     font-size: 16px;
-    color: black;
+    font-weight: 600;
+    margin: 10px 0;
+}
+.btn_box{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.btn_box a:hover{
+    color: white!important;
+}
+.btn_box button{
+    padding: 3px 15px;
+    background: #002c5f;
+    color: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
 }
 </style>

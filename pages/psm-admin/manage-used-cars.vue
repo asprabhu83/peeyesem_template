@@ -392,6 +392,36 @@
                     </select>
           </div>
           <div class="mb-4">
+              <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="Manufacturer"
+            >
+              Manufacturer
+            </label>
+               <select
+                            class="
+                            shadow-md
+                            appearance-none
+                            border
+                            rounded
+                            w-full
+                            py-2
+                            px-3
+                            text-gray-700
+                            cursor-pointer
+                            leading-tight
+                            focus:outline-none
+                            focus:shadow-outline
+                            "
+                            id="Manufacturer"
+                            v-model="Manufacturer"
+                        >
+                        <option class="text-xl " value="">Select Manufacturer</option>
+                        <option class="text-xl" :value="model.name" v-for="model in CarsList"
+                            :key="model.id" >{{model.name}}</option>
+                    </select>
+          </div>
+          <div class="mb-4">
             <label
               class="block text-gray-700 text-sm font-bold mb-2"
               for="price"
@@ -487,13 +517,14 @@ export default {
       editDialog:false,
       deleteDialog:false,
       usedCars:[],
-      baseUrl:'http://127.0.0.1:8000/',
+      baseUrl:process.env.baseUrl,
       id:'',
       modelImage:'',
       carModel:'',
       purchaseYear:'',
       kmsDriven:'',
       fuelType:'',
+      Manufacturer:'',
       Price:'',
       FuelList:[
                 {
@@ -509,6 +540,52 @@ export default {
                     name:'CNG'
                 }
       ],
+      CarsList:[
+                {
+                    id:1,
+                    name:'Hyundai'
+                },
+                {
+                    id:2,
+                    name:'Chevrolet'
+                },
+                {
+                    id:3,
+                    name:'Ford'
+                },
+                {
+                    id:4,
+                    name:'Mahindra'
+                },
+                {
+                    id:5,
+                    name:'Maruti'
+                },
+                {
+                    id:6,
+                    name:'Renault'
+                },
+                {
+                    id:7,
+                    name:'Tata'
+                },
+                {
+                    id:8,
+                    name:'Toyota'
+                },
+                {
+                    id:9,
+                    name:'Volkswagon'
+                },
+                {
+                    id:10,
+                    name:'Honda'
+                },
+                {
+                    id:11,
+                    name:'SKODA'
+                }
+            ],
       empty_valid: false,
       success: false
     }
@@ -542,7 +619,7 @@ export default {
             }
     },
     GetUsedCars(){
-      axios.get('http://127.0.0.1:8000/api/used_car/index')
+      axios.get(process.env.baseUrl + 'api/used_car/index')
       .then((res) => {
          this.usedCars = res.data;
         }).catch((error) => {
@@ -554,7 +631,7 @@ export default {
     },
     Edit(id){
       this.editDialog = true;
-      axios.get('http://127.0.0.1:8000/api/used_car/show/' + id)
+      axios.get(process.env.baseUrl + 'api/used_car/show/' + id)
       .then((res) => {
         this.id = res.data.id;
           this.carModel = res.data.car_model
@@ -562,19 +639,27 @@ export default {
           this.Price = res.data.price
           this.kmsDriven = res.data.kms_driven
           this.purchaseYear = res.data.purchase_year
+          var data_form = JSON.parse(res.data.data_form);
+          var {manufacturer} = data_form;
+          this.Manufacturer = manufacturer;
         }).catch((error) => {
           console.log(error)
         })
     },
     Update(){
+          var data_value = {
+              manufacturer:this.Manufacturer,
+            }
+            data_value = JSON.stringify(data_value);
       var id = this.id;
-      axios.put('http://127.0.0.1:8000/api/used_car/update/' + id,{
+      axios.put(process.env.baseUrl + 'api/used_car/update/' + id,{
         car_model:this.carModel,
         fuel_type:this.fuelType,
         price:this.Price,
         kms_driven:this.kmsDriven,
         model_image:this.modelImage,
         purchase_year:this.purchaseYear,
+        data_form:data_value
       })
       .then((res) => {
         this.editDialog = false;
@@ -589,7 +674,7 @@ export default {
     },
     Delete(){
       var id = this.$el.getAttribute('data-usedcar-id')
-      axios.delete('http://127.0.0.1:8000/api/used_car/delete/' + id)
+      axios.delete(process.env.baseUrl + 'api/used_car/delete/' + id)
       .then(() => {
         this.deleteDialog = false;
           this.GetUsedCars();

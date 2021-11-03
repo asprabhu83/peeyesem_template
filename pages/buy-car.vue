@@ -108,14 +108,14 @@
               <div class="car_item_box_sec">
                   <div class="item" v-for="car in CarDetails" :key="car.id">
                       <div class="photo">
-                          <img :src="require('@/assets/img/cars/used_cars/' + car.image)" alt="img" style="width:100%;" />
+                          <img :src="baseUrl + 'images/' + car.model_image" style="width:100%;" />
                       </div>
                       <div class="detail">
-                          <div class="title">{{car.name}} - {{car.fuel}}</div>
+                          <div class="title">{{car.car_model}} - {{car.fuel_type}}</div>
                           <div class="year_box">
                               <div class="year">
                                   <div class="mb-1"><font-awesome-icon icon="calendar-alt"  size="1x" class="text-black mr-2" />Year</div>
-                                  <b>{{car.year}}</b>
+                                  <b>{{car.purchase_year}}</b>
                               </div>
                               <div class="kms">
                                   <div class="mb-1"><font-awesome-icon icon="tachometer-alt"  size="1x" class="text-black mr-2" />Kms Driven</div>
@@ -135,7 +135,7 @@
 
 <script>
 import MultiRangeSlider from "multi-range-slider-vue";
-import comingSoonVue from './coming-soon.vue';
+import axios from '~/plugins/axios'
 export default {
     components: {
         MultiRangeSlider
@@ -210,113 +210,27 @@ export default {
             ],
             CarModel:'',
             fuelType:'',
-            CarDetails:[
-                {
-                    id:1,
-                    name:'Maruti - SWIFT LXI',
-                    manufacturer:'Maruti',
-                    image:'1.jpg',
-                    year:'2006',
-                    kms_driven:'1,10,245',
-                    price:'2,50,000',
-                    fuel:'Petrol'
-                },
-                {
-                    id:2,
-                    name:'Hyundai - SANTRO',
-                    manufacturer:'Hyundai',
-                    image:'2.jpg',
-                    year:'2000',
-                    kms_driven:'81,062',
-                    price:'1,00,000',
-                    fuel:'Petrol'
-                },
-                {
-                    id:3,
-                    name:'Maruti - ZEN',
-                    manufacturer:'Maruti',
-                    image:'3.jpg',
-                    year:'1995',
-                    kms_driven:'88,261',
-                    price:'1,00,000',
-                    fuel:'Petrol'
-                },
-                {
-                    id:4,
-                    name:'SKODA - RAPID ACTIVE TDI (D)',
-                    manufacturer:'SKODA',
-                    image:'4.jpg',
-                    year:'2012',
-                    kms_driven:'88,269',
-                    price:'4,00,000',
-                    fuel:'Diesel'
-                },
-                {
-                    id:5,
-                    name:'SKODA - RAPID',
-                    manufacturer:'SKODA',
-                    image:'4.jpg',
-                    year:'2014',
-                    kms_driven:'67,379',
-                    price:'6,00,000',
-                    fuel:'Petrol'
-                }
-            ],
-            originalCarDetails:[
-                {
-                    id:1,
-                    name:'Maruti - SWIFT LXI',
-                    manufacturer:'Maruti',
-                    image:'1.jpg',
-                    year:'2006',
-                    kms_driven:'1,10,245',
-                    price:'2,50,000',
-                    fuel:'Petrol'
-                },
-                {
-                    id:2,
-                    name:'Hyundai - SANTRO',
-                    manufacturer:'Hyundai',
-                    image:'2.jpg',
-                    year:'2000',
-                    kms_driven:'81,062',
-                    price:'1,00,000',
-                    fuel:'Petrol'
-                },
-                {
-                    id:3,
-                    name:'Maruti - ZEN',
-                    manufacturer:'Maruti',
-                    image:'3.jpg',
-                    year:'1995',
-                    kms_driven:'88,261',
-                    price:'1,00,000',
-                    fuel:'Petrol'
-                },
-                {
-                    id:4,
-                    name:'SKODA - RAPID ACTIVE TDI (D)',
-                    manufacturer:'SKODA',
-                    image:'4.jpg',
-                    year:'2012',
-                    kms_driven:'88,269',
-                    price:'4,00,000',
-                    fuel:'Diesel'
-                },
-                {
-                    id:5,
-                    name:'SKODA - RAPID',
-                    manufacturer:'SKODA',
-                    image:'4.jpg',
-                    year:'2014',
-                    kms_driven:'67,379',
-                    price:'6,00,000',
-                    fuel:'Petrol'
-                }
-            ]
+            CarDetails:[],
+            originalCarDetails:[],
+            baseUrl:process.env.baseUrl,
         }
     },
+    mounted(){
+        this.GetCarDetails();
+    },
     methods:{
+        GetCarDetails(){
+            axios.get(process.env.baseUrl + 'api/used_car/index')
+            .then((res)=>{
+                this.CarDetails = res.data;
+                this.originalCarDetails = res.data
+                if(res){
+                    this.filterCars();
+                }
+            }).catch((err)=>{
+                console.log(err);
+            })
+        },
         UpdateValues1(e) {
 
             this.kmsMinValue = e.minValue;
@@ -342,17 +256,19 @@ export default {
             var newItem = this.originalCarDetails.filter((item)=>{
                 var price = parseInt(item.price.replace(/,/g,''));
                 var kms = parseInt(item.kms_driven.replace(/,/g,''));
+                var data_form = JSON.parse(item.data_form);
+                var {manufacturer} = data_form;
                 if(model !== '' && fuel !==''){
-                    return (item.manufacturer == model && item.fuel == fuel) && (parseInt(item.year) >= minyear && parseInt(item.year) <= maxyear) && (price >= minPrice && price <= maxPrice) && (kms >= minKms && kms <= maxKms)
+                    return (manufacturer == model && item.fuel_type == fuel) && (parseInt(item.purchase_year) >= minyear && parseInt(item.purchase_year) <= maxyear) && (price >= minPrice && price <= maxPrice) && (kms >= minKms && kms <= maxKms)
                 }
                 if(model == '' && fuel ==''){
-                    return (parseInt(item.year) >= minyear && parseInt(item.year) <= maxyear) && (price >= minPrice && price <= maxPrice) && (kms >= minKms && kms <= maxKms)
+                    return (parseInt(item.purchase_year) >= minyear && parseInt(item.purchase_year) <= maxyear) && (price >= minPrice && price <= maxPrice) && (kms >= minKms && kms <= maxKms)
                 }
                 if(model !== ''){
-                    return (item.manufacturer == model) && (parseInt(item.year) >= minyear && parseInt(item.year) <= maxyear) && (price >= minPrice && price <= maxPrice) && (kms >= minKms && kms <= maxKms)
+                    return (manufacturer == model) && (parseInt(item.purchase_year) >= minyear && parseInt(item.purchase_year) <= maxyear) && (price >= minPrice && price <= maxPrice) && (kms >= minKms && kms <= maxKms)
                 }
                 if(fuel !==''){
-                    return (item.fuel == fuel) && (parseInt(item.year) >= minyear && parseInt(item.year) <= maxyear) && (price >= minPrice && price <= maxPrice) && (kms >= minKms && kms <= maxKms)
+                    return (item.fuel_type == fuel) && (parseInt(item.purchase_year) >= minyear && parseInt(item.purchase_year) <= maxyear) && (price >= minPrice && price <= maxPrice) && (kms >= minKms && kms <= maxKms)
                 }
             })
             this.CarDetails = newItem;

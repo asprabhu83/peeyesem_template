@@ -13,9 +13,9 @@
         </div>
         <div class="card_box  flex flex-wrap mt-16 mx-auto" id="isotope">
             <div class="car_box_item" v-for="car in this.$store.state.cars" :key="car.id">
-                <a :href="'/cars/?car='+ car.car_title.replace(/\s+/g, '-')" class="text-center block car_image_box cursor-pointer" >
+                <nuxt-link :to="'/cars/'+ car.car_title.replace(/\s+/g, '-').toLowerCase()" class="text-center block car_image_box cursor-pointer" >
                     <img :src="baseUrl + 'images/' + car.car_image" alt="" >
-                </a>
+                </nuxt-link>
                 <div class="car_name">
                      <div class="text-center text-white py-1 font-medium mt-1 mb-1">{{car.car_title}}</div>
                 </div>

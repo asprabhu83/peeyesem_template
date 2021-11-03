@@ -79,9 +79,9 @@
         </div>
         <div class="card_box  flex flex-wrap mt-16 mx-auto" id="isotope">
             <div class="car_box_item" v-for="car in this.$store.state.cars" :key="car.id">
-                <a :href="'/cars/?car='+ car.car_title.replace(/\s+/g, '-')" class="text-center block car_image_box cursor-pointer" >
+                <nuxt-link :to="'/cars/'+ car.car_title.replace(/\s+/g, '-').toLowerCase()" class="text-center block car_image_box cursor-pointer" >
                     <img :src="baseUrl + 'images/' + car.car_image" alt="" >
-                </a>
+                </nuxt-link>
                 <div class="car_name">
                      <div class="text-center text-white py-1 font-medium mt-1 mb-1">{{car.car_title}}</div>
                 </div>
@@ -288,152 +288,6 @@ export default {
 
         cars:this.$store.state.cars,
         originalDataCars:this.$store.state.cars,
-
-        staticcars:[
-            {
-                id:1,
-                name:'Hyundai All New I20',
-                image:'car7.jpg',
-                category:'Hatchback',
-                price:'8,19,900'
-            },
-            {
-                id:2,
-                name:'Hyundai Santro',
-                image:'car8.jpg',
-                category:'Hatchback',
-                price:'4,67,490'
-            },
-            {
-                id:3,
-                name:'GRAND i10 NIOS',
-                image:'car9.webp',
-                category:'Hatchback',
-                price:'8,14,900'
-            },
-            {
-                id:5,
-                name:'Hyundai Aura',
-                image:'car2.webp',
-                category:'Sedan',
-                price:'22,30,000'
-            },
-            {
-                id:6,
-                name:'Hyundai Verna',
-                image:'car15.jpg',
-                category:'Sedan',
-                price:'8,19,900'
-            },
-            {
-                id:7,
-                name:'Hyundai ELANTRA',
-                image:'car11.webp',
-                category:'Sedan',
-                price:'10,68,000'
-            },
-            {
-                id:8,
-                name:'Hyundai Tuscon',
-                image:'car18.webp',
-                category:'SUV',
-                price:'4,67,490'
-            },
-            {
-                id:9,
-                name:'Hyundai Venue',
-                image:'car4.webp',
-                category:'SUV',
-                price:'8,16,500'
-            },
-            {
-                id:11,
-                name:'Hyundai Alcazar',
-                image:'car17.jpg',
-                category:'SUV',
-                price:'16,53,300'
-            },
-            {
-                id:12,
-                name:'Hyundai CRETA',
-                image:'car19.webp',
-                category:'SUV',
-                price:'17,00,000'
-            }
-        ],
-
-        originalcars:[
-            {
-                id:1,
-                name:'Hyundai All New I20',
-                image:'car7.jpg',
-                category:'Hatchback',
-                price:'8,19,900'
-            },
-            {
-                id:2,
-                name:'Hyundai Santro',
-                image:'car8.jpg',
-                category:'Hatchback',
-                price:'4,67,490'
-            },
-            {
-                id:3,
-                name:'GRAND i10 NIOS',
-                image:'car9.webp',
-                category:'Hatchback',
-                price:'8,14,900'
-            },
-            {
-                id:5,
-                name:'Hyundai Aura',
-                image:'car2.webp',
-                category:'Sedan',
-                price:'22,30,000'
-            },
-            {
-                id:6,
-                name:'Hyundai Verna',
-                image:'car15.jpg',
-                category:'Sedan',
-                price:'8,19,900'
-            },
-            {
-                id:7,
-                name:'Hyundai ELANTRA',
-                image:'car11.webp',
-                category:'Sedan',
-                price:'10,68,000'
-            },
-            {
-                id:8,
-                name:'Hyundai Tuscon',
-                image:'car18.webp',
-                category:'SUV',
-                price:'4,67,490'
-            },
-            {
-                id:9,
-                name:'Hyundai Venue',
-                image:'car4.webp',
-                category:'SUV',
-                price:'8,16,500'
-            },
-            {
-                id:11,
-                name:'Hyundai Alcazar',
-                image:'car17.jpg',
-                category:'SUV',
-                price:'16,53,300'
-            },
-            {
-                id:12,
-                name:'Hyundai CRETA',
-                image:'car19.webp',
-                category:'SUV',
-                price:'17,00,000'
-            }
-        ],
 
         shuffledCars:null,
 

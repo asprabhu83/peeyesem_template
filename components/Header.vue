@@ -49,16 +49,16 @@
                                             <!-- Sub Menu -->
                                             <ul class="sub-menu">
                                                 <li><nuxt-link to="/all-cars">All Cars</nuxt-link></li>
-                                                <li><a href="/cars/?car=Hyundai-Santro"> Santro</a></li>
-                                                <li><a href="/cars/?car=Hyundai-All-New-I20"> All New i20</a></li>
-                                                <li><a href="/cars/?car=Hyundai-Grand-I10-NIOS"> Grand i10 NIOS</a></li>
-                                                <li><a href="/cars/?car=Hyundai-Aura"> Aura</a></li>
-                                                <li><a href="/cars/?car=Hyundai-Verna"> All New Verna</a></li>
-                                                <li><a href="/cars/?car=Hyundai-All-New-Elantra"> Elantra</a></li>
-                                                <li><a href="/cars/?car=Hyundai-Venue"> Venue</a></li>
-                                                <li><a href="/cars/?car=Hyundai-CRETA"> All New Creta</a></li>
-                                                <li><a href="/cars/?car=Hyundai-Alcazar"> Alcazar</a></li>
-                                                <li><a href="/cars/?car=Hyundai-All-New-Tucson"> Tucson</a></li>
+                                                <li><nuxt-link to="/cars/hyundai-santro"> Santro</nuxt-link></li>
+                                                <li><nuxt-link to="/cars/hyundai-all-new-i20"> All New i20</nuxt-link></li>
+                                                <li><nuxt-link to="/cars/hyundai-grand-i10-nios"> Grand i10 NIOS</nuxt-link></li>
+                                                <li><nuxt-link to="/cars/hyundai-aura"> Aura</nuxt-link></li>
+                                                <li><nuxt-link to="/cars/hyundai-verna"> All New Verna</nuxt-link></li>
+                                                <li><nuxt-link to="/cars/hyundai-all-new-elantra"> Elantra</nuxt-link></li>
+                                                <li><nuxt-link to="/cars/hyundai-venue"> Venue</nuxt-link></li>
+                                                <li><nuxt-link to="/cars/hyundai-creta"> All New Creta</nuxt-link></li>
+                                                <li><nuxt-link to="/cars/hyundai-alcazar"> Alcazar</nuxt-link></li>
+                                                <li><nuxt-link to="/cars/hyundai-all-new-tucson"> Tucson</nuxt-link></li>
                                             </ul>
                                         </li>
                                         <li class="has-dropdown">
@@ -101,7 +101,7 @@
                                                 <li><nuxt-link to="/testimonials">Testimonials</nuxt-link></li>
                                                 <li><nuxt-link to="/gallery">Gallery</nuxt-link></li>
                                                 <li><nuxt-link to="/careers">Careers</nuxt-link></li>
-                                                <li><nuxt-link to="/news-event">News and Events</nuxt-link></li>
+                                                <li><nuxt-link to="/news-events">News and Events</nuxt-link></li>
                                             </ul>
                                         </li>
 
@@ -215,43 +215,43 @@ export default {
                                     
                         },
                         {
-                            href: '/cars/?car=Hyundai-Santro',
+                            href: '/cars/hyundai-santro',
                             title: 'Santro'
                         },
                         {
-                            href: '/cars/?car=Hyundai-All-New-I20',
+                            href: '/cars/hyundai-all-new-i20',
                             title: 'All New i20'
                         },
                         {
-                            href: '/cars/?car=Hyundai-Grand-I10-NIOS',
+                            href: '/cars/hyundai-grand-i10-nios',
                             title: 'Grand i10 NIOS'
                         },
                         {
-                            href: '/cars/?car=Hyundai-Aura',
+                            href: '/cars/hyundai-aura',
                             title: 'Aura'
                         },
                         {
-                            href: '/cars/?car=Hyundai-Verna',
+                            href: '/cars/hyundai-verna',
                             title: 'All New Verna'
                         },
                         {
-                            href: '/cars/?car=Hyundai-All-New-Elantra',
+                            href: '/cars/hyundai-all-new-elantra',
                             title: 'Elantra'
                         },
                         {
-                            href: '/cars/?car=Hyundai-Venue',
+                            href: '/cars/hyundai-venue',
                             title: 'Venue'
                         },
                         {
-                            href: '/cars/?car=Hyundai-CRETA',
+                            href: '/cars/hyundai-creta',
                             title: 'All New Creta'
                         },
                         {
-                            href: '/cars/?car=Hyundai-Alcazar',
+                            href: '/cars/hyundai-alcazar',
                             title: 'Alcazar'
                         },
                         {
-                            href: '/cars/?car=Hyundai-All-New-Tucson',
+                            href: '/cars/hyundai-all-new-tucson',
                             title: 'Tucson'
                         }
                     ]
@@ -392,7 +392,7 @@ export default {
                             title: 'Careers'
                         },
                         {
-                            href: '/news-event',
+                            href: '/news-events',
                             title: 'News and Events'
                         }
                     ]

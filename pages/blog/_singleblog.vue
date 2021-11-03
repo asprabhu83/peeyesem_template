@@ -68,7 +68,7 @@ export default {
     methods:{
         filterEvent(){
              var item = this.blogs.filter((eve)=>{
-              return eve.id == this.$route.query.id;
+              return eve.id == this.$route.params.singleblog;
             })
             this.singleBlog = item;
         }
