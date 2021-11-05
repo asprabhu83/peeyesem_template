@@ -55,6 +55,9 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   },
+  generate: {
+    fallback: true
+  },
   router: {
     extendRoutes (routes) {
       routes.push({name: 'singlecar', path: '/cars/:model', component: 'pages/cars/index.vue'})
