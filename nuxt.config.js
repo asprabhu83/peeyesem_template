@@ -54,5 +54,12 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+  router: {
+    extendRoutes (routes) {
+      routes.push({name: 'singlecar', path: '/cars/:model', component: 'pages/cars/index.vue'})
+      routes.push({name: 'singleblog', path: '/blog/:singleblog', component: 'pages/blog/singleblog.vue'})
+      routes.push({name: 'news-event', path: '/news-events/:news', component: 'pages/news-events/news.vue'})
+    }
   }
 }
