@@ -42,13 +42,13 @@
                         <div class="footer_left_side_icon pt-0">
                             <ul class="pl-1">
                                 <li>
-                                    <a href="#!"><i class="fab fa-facebook-f"></i></a>
+                                    <a :href="$store.state.HeaderData.fbLink" target="_blank"><i class="fab fa-facebook-f"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#!"><i class="fab fa-youtube"></i></a>
+                                    <a :href="$store.state.HeaderData.youtubeLink" target="_blank"><i class="fab fa-youtube"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#!"><i class="fab fa-instagram"></i></a>
+                                    <a :href="$store.state.HeaderData.instaLink" target="_blank"><i class="fab fa-instagram"></i></a>
                                 </li>
                             </ul>
                         </div>

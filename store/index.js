@@ -11,9 +11,15 @@ const createStore = () => {
       cars:[],
       originalDataCars:[],
       carCategory:[],
-      AllCars:[],
-      AlloriginalDataCars:[],
-      AllcarCategory:[]
+      HeaderData:{
+        logo:'',
+        fbLink:'',
+        instaLink:'',
+        youtubeLink:'',
+        salesNo:'',
+        serviceNo:'',
+        whatsappNo:''
+      }
     },
     modules: {
       products: products,

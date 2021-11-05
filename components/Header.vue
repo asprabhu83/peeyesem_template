@@ -7,20 +7,20 @@
                 <div>
                     <div class="header-logo">
                         <div class="logo">
-                            <nuxt-link to="/"><img class="site_logo" :src="require('@/assets/img/peeyesyem.png')" alt="logo"  /></nuxt-link>
+                            <nuxt-link to="/"><img class="site_logo" :src="baseUrl + 'images/' + $store.state.HeaderData.logo"   /></nuxt-link>
                         </div>
                     </div>
                 </div>
                 <div class="flex items-center call_service_details justify-center">
                     <div class="left mx-2">
-                        <div class="text-lg  font-semibold pt-1 shodow_css_head">Service: +91 9962666118 <span class="divider">|</span> Sales: +91 9962666228</div>
+                        <div class="text-lg  font-semibold pt-1 shodow_css_head">Service: +91 {{$store.state.HeaderData.serviceNo}} <span class="divider">|</span> Sales: +91 {{$store.state.HeaderData.salesNo}}</div>
                     </div>
                     <span class="divider mx-1">|</span>
                     <div class="right flex items-center mx-2">
                         <div class="social_icons_box flex">
-                            <i class="fab fa-facebook-f cursor-pointer"></i>
-                            <i class="fab fa-instagram cursor-pointer"></i>
-                            <i class="fab fa-youtube cursor-pointer"></i>
+                            <a :href="$store.state.HeaderData.fbLink" target="_blank"><i class="fab fa-facebook-f cursor-pointer"></i></a>
+                            <a :href="$store.state.HeaderData.instaLink" target="_blank"> <i class="fab fa-instagram cursor-pointer"></i></a>
+                            <a :href="$store.state.HeaderData.youtubeLink" target="_blank"> <i class="fab fa-youtube cursor-pointer"></i></a>
                         </div>
                     </div>
                 </div>
@@ -150,7 +150,7 @@
                             <li>
                                 <nuxt-link to="/">
                                     <div class="logo">
-                                        <img :src="require('@/assets/img/peeyesyem.png')" alt="logo" />
+                                        <img class="site_logo" :src="baseUrl + 'images/' + $store.state.HeaderData.logo" />
                                     </div>
                                 </nuxt-link>
                             </li>
@@ -197,6 +197,7 @@
 
 <script>
 import { mapState, mapGetters } from 'vuex'
+import axios from '~/plugins/axios'
 export default {
     data() {
         return {
@@ -401,7 +402,8 @@ export default {
             products: [],
             category: [],
             cartproduct: {},
-            searchString: ''
+            searchString: '',
+            baseUrl:process.env.baseUrl
         }
     },
 
@@ -428,6 +430,8 @@ export default {
             };
 
         })
+
+        this.GetHeaderData();
 
 
         // Menu End
@@ -469,6 +473,22 @@ export default {
         },
         searchProduct() {
             this.$store.dispatch('products/searchProduct', this.searchString)
+        },
+        GetHeaderData(){
+            axios.get(process.env.baseUrl + 'api/settings/index')
+            .then((res)=>{
+                const [data] = res.data;
+                const {site_logo,service_number,sales_number,whatsapp_number,fb_link,insta_link,youtube_link} = data;
+                this.$store.state.HeaderData.logo = site_logo;
+                this.$store.state.HeaderData.serviceNo = service_number;
+                this.$store.state.HeaderData.salesNo = sales_number;
+                this.$store.state.HeaderData.whatsappNo = whatsapp_number;
+                this.$store.state.HeaderData.fbLink = fb_link;
+                this.$store.state.HeaderData.instaLink = insta_link;
+                this.$store.state.HeaderData.youtubeLink = youtube_link;
+            }).catch((err)=>{
+                console.log(err);
+            })
         }
 
     }
