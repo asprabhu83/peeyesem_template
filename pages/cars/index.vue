@@ -584,6 +584,18 @@ export default {
     beforeMount(){
         this.GetSingleCarData();
     },
+    head(){
+     return {
+        title: this.car.name,
+        meta: [
+          {
+            hid: 'description',
+            name: 'description',
+            content: 'Home page description'
+          }
+        ]
+      }
+    },
     created () {
         window.addEventListener('scroll', this.handleScroll);
     },
