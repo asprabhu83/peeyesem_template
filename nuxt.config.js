@@ -24,6 +24,29 @@ export default {
   */
   loading: { color: '#002c5f', throttle: 200, height: '3px', css: true },
 
+  
+  router: {
+    extendRoutes (routes, resolve) {
+      routes.push(
+        {
+          name:'singlecar',
+          path: '/cars/:model',
+          component:resolve(__dirname, 'pages/cars/index.vue')
+        },
+        {
+          name:'singleblog',
+          path: '/blog/:singleblog',
+          component:resolve(__dirname, 'pages/blog/singleblog.vue')
+        },
+        {
+          name:'news-event',
+          path: '/news-events/:news',
+          component:resolve(__dirname, 'pages/news-events/news.vue')
+        }
+      )
+    }
+  },
+
 
   env: {
     baseUrl: 'https://site.peeyesyemhyundai.co.in/'
@@ -54,15 +77,5 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  },
-  generate: {
-    fallback: true
-  },
-  router: {
-    extendRoutes (routes) {
-      routes.push({name: 'singlecar', path: '/cars/:model', component: 'pages/cars/index.vue'})
-      routes.push({name: 'singleblog', path: '/blog/:singleblog', component: 'pages/blog/singleblog.vue'})
-      routes.push({name: 'news-event', path: '/news-events/:news', component: 'pages/news-events/news.vue'})
-    }
   }
 }
