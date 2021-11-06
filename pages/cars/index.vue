@@ -596,6 +596,9 @@ export default {
         ]
       }
     },
+    mounted(){
+        window.scrollTo(0, 0)
+    },
     created () {
         window.addEventListener('scroll', this.handleScroll);
     },

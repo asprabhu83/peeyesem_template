@@ -50,6 +50,7 @@ export default {
         }
     },
     mounted(){
+        window.scrollTo(0, 0);
         if(this.$store.state.cars.length == 0){
            this.GetCars()
         }else{
