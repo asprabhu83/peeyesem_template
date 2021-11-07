@@ -107,7 +107,7 @@
                     id="city"
                     v-model="city"
                   >
-                  <option class="text-xl " value="">Choose Model</option>
+                  <option class="text-xl " value="">Choose City</option>
                   <option class="text-xl" :value="model" v-for="model in CityList"
                     :key="model" >{{model}}</option>
                   </select>
