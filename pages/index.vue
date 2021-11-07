@@ -62,6 +62,48 @@
                                     </div>
                                 </div>
                             </swiper-slide>
+                            <swiper-slide>
+                                <div class="carousel_img_sec">
+                                    <img :src="require('@/assets/img/cars/carousel_image_4.jpg')" alt="img" style="width:100%;" />
+                                    <div class="carousel_overlay" />
+                                    <div class="know_more_btn_sec">
+                                        <div>
+                                            <nuxt-link class="knw_mre_btn" to="/contact-us/contact/">Know More</nuxt-link>
+                                        </div>
+                                        <div>
+                                            <nuxt-link class="knw_mre_btn" to="/contact-us/test-drive/"> Test Drive</nuxt-link>
+                                        </div>
+                                    </div>
+                                </div>
+                            </swiper-slide>
+                            <swiper-slide>
+                                <div class="carousel_img_sec">
+                                    <img :src="require('@/assets/img/cars/carousel_image_5.jpg')" alt="img" style="width:100%;" />
+                                    <div class="carousel_overlay" />
+                                    <div class="know_more_btn_sec">
+                                        <div>
+                                            <nuxt-link class="knw_mre_btn" to="/contact-us/contact/">Know More</nuxt-link>
+                                        </div>
+                                        <div>
+                                            <nuxt-link class="knw_mre_btn" to="/contact-us/test-drive/"> Test Drive</nuxt-link>
+                                        </div>
+                                    </div>
+                                </div>
+                            </swiper-slide>
+                            <swiper-slide>
+                                <div class="carousel_img_sec">
+                                    <img :src="require('@/assets/img/cars/carousel_image_6.jpg')" alt="img" style="width:100%;" />
+                                    <div class="carousel_overlay" />
+                                    <div class="know_more_btn_sec">
+                                        <div>
+                                            <nuxt-link class="knw_mre_btn" to="/contact-us/contact/">Know More</nuxt-link>
+                                        </div>
+                                        <div>
+                                            <nuxt-link class="knw_mre_btn" to="/contact-us/test-drive/"> Test Drive</nuxt-link>
+                                        </div>
+                                    </div>
+                                </div>
+                            </swiper-slide>
                             <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
                             <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
 
