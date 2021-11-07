@@ -68,7 +68,7 @@
                     placeholder="Your Email"
                     />
                 </div>
-               <div class="mb-8">
+               <div class="mb-4">
                     <input
                     class="
                         shadow
@@ -86,6 +86,50 @@
                     type="number"
                     v-model="mobile"
                     placeholder="Your Phone"
+                    />
+                </div>
+                <div class="mb-4">
+                    <select
+                    class="
+                      shadow
+                      appearance-none
+                      border
+                      rounded
+                      w-full
+                      py-2
+                      px-3
+                      text-gray-700
+                      cursor-pointer
+                      leading-tight
+                      focus:outline-none
+                      focus:shadow-outline
+                    "
+                    id="city"
+                    v-model="city"
+                  >
+                  <option class="text-xl " value="">Choose Model</option>
+                  <option class="text-xl" :value="model" v-for="model in CityList"
+                    :key="model" >{{model}}</option>
+                  </select>
+                </div>
+                <div class="mb-8">
+                    <textarea
+                    class="
+                        shadow
+                        appearance-none
+                        border
+                        rounded
+                        w-full
+                        py-2
+                        px-3
+                        text-gray-700
+                        leading-tight
+                        focus:outline-none
+                        focus:shadow-outline
+                    "
+                    type="text"
+                    v-model="comment"
+                    placeholder="Comment"
                     />
                 </div>
                <div class="btn_grp">
@@ -183,7 +227,17 @@ export default {
             name:'',
             vehicleModel:'',
             email:'',
-            mobile:''
+            mobile:'',
+            CityList:[
+                'Chennai',
+                'Tuticorin',
+                'Kovilpatti',
+                'Trichendur',
+                'Ramnad',
+                'Madurai'
+            ],
+            city:'',
+            comment:'',
         }
     },
     mounted(){

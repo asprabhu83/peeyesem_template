@@ -7,13 +7,8 @@
           <div class="heading text-center my-4">Media & Gallery</div>
           <div class="gallery_item_box">
               <div class="item" v-for="item in gallery" :key="item.id">
-                  <div class="head">{{item.name}}</div>
                   <div class="photo">
                       <img :src="require('@/assets/img/cars/gallery_page/' + item.image)" alt="img" />
-                  </div>
-                  <div class="detail">
-                      <div class="items_count">{{item.items}} items</div>
-                      <div class="date">{{item.date}}</div>
                   </div>
               </div>
           </div>
@@ -29,21 +24,21 @@ export default {
                 {
                     id:1,
                     name:'Best Selling Partner In South Region',
-                    image:'1.jpg',
+                    image:'5.jpg',
                     items:'4',
                     date:'03-02-2013'
                 },
                 {
                     id:2,
                     name:'Customer Car Delivery Images',
-                    image:'2.jpg',
+                    image:'6.jpg',
                     items:'3',
                     date:'03-01-2013'
                 },
                 {
                     id:3,
                     name:'Hyundai Venue Launch',
-                    image:'3.jpg',
+                    image:'8.jpg',
                     items:'2',
                     date:'21-05-2019'
                 },
@@ -91,6 +86,7 @@ export default {
     width: 30%;
     margin: 20px;
     border-radius: 7px;
+    overflow: hidden;
 }
 .item .head{
     padding: 15px 17px;
@@ -98,7 +94,6 @@ export default {
     font-size: 17px;
 }
 .item .photo{
-    padding: 0 10px;
     min-height: 322px;
     max-height: 322px;
 }

@@ -580,16 +580,18 @@ export default {
         padding: 0;
     }
     .header-logo .logo img {
-        width: 33%;
+        width: 40%;
         height: auto;
+        margin-left: auto;
+        margin-right: auto;
     }
     .call_service_details .left div, .call_service_details .right div{
-        font-size: 10px;
+        font-size: 13px;
     }
     .social_icons_box i{
-        font-size: 11px;
-        margin-left: 5px;
-        margin-right: 5px;
+        font-size: 14px;
+        margin-left: 7px;
+        margin-right: 7px;
     }
     .contact_sec .top_sec{
         padding: 10px 0!important;

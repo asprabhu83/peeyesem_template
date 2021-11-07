@@ -12,7 +12,7 @@
                                     <div class="carousel_overlay" />
                                     <div class="know_more_btn_sec">
                                         <div>
-                                            <nuxt-link class="knw_mre_btn" to="/contact-us/test-drive/">Know More</nuxt-link>
+                                            <nuxt-link class="knw_mre_btn" to="/contact-us/contact/">Know More</nuxt-link>
                                         </div>
                                         <div>
                                             <nuxt-link class="knw_mre_btn" to="/contact-us/test-drive/"> Test Drive</nuxt-link>
@@ -26,7 +26,7 @@
                                     <div class="carousel_overlay" />
                                     <div class="know_more_btn_sec">
                                         <div>
-                                            <nuxt-link class="knw_mre_btn" to="/contact-us/test-drive/">Know More</nuxt-link>
+                                            <nuxt-link class="knw_mre_btn" to="/contact-us/contact/">Know More</nuxt-link>
                                         </div>
                                         <div>
                                             <nuxt-link class="knw_mre_btn" to="/contact-us/test-drive/"> Test Drive</nuxt-link>
@@ -40,7 +40,7 @@
                                     <div class="carousel_overlay" />
                                     <div class="know_more_btn_sec">
                                         <div>
-                                            <nuxt-link class="knw_mre_btn" to="/contact-us/test-drive/">Know More</nuxt-link>
+                                            <nuxt-link class="knw_mre_btn" to="/contact-us/contact/">Know More</nuxt-link>
                                         </div>
                                         <div>
                                             <nuxt-link class="knw_mre_btn" to="/contact-us/test-drive/"> Test Drive</nuxt-link>
@@ -54,7 +54,7 @@
                                     <div class="carousel_overlay" />
                                     <div class="know_more_btn_sec">
                                         <div>
-                                            <nuxt-link class="knw_mre_btn" to="/contact-us/test-drive/">Know More</nuxt-link>
+                                            <nuxt-link class="knw_mre_btn" to="/contact-us/contact/">Know More</nuxt-link>
                                         </div>
                                         <div>
                                             <nuxt-link class="knw_mre_btn" to="/contact-us/test-drive/"> Test Drive</nuxt-link>
@@ -77,6 +77,9 @@
                     <h3 class="text-uppercase about_psm_head">Welcome to Peeyesyem hyundai <hr class="h-1 bg-black w-3/12 my-1" /></h3>
                     <div class="my-6 text-gray">
                         PEEYESYEM Hyundai is an authorized dealer for HYUNDAI Motors India Limited which started it’s operations in the year 2016 and is being administered by an able management with an experience of 4 decades in the Automobile Industry. Being Hyundai’s successful dealer – PEEYESYEM has extended its wings through various showrooms and workshops across Tamil Nadu <br/> ( Chennai, Tuticorin, Kovilpatti, Trichendur, Ramnad and Madurai).
+                    </div>
+                    <div class="my-3 ">
+                        <nuxt-link class="read_mre_btn" to="/about">Read More</nuxt-link>
                     </div>
                 </div>
                 <div class="right_sec w-1/2 mx-10 flex items-center about_psm_cars">
@@ -154,9 +157,6 @@
             <div class="text-center font-bold text-white ">
                 <button type="button" class="blog_post_button" @click="formModal = true">Book a Car</button>
              </div>
-            <div class="text-center font-bold text-white ">
-                <button type="button" class="blog_post_button" @click="formModal2 = true">Book a Service</button> 
-            </div>
             <div class="text-center font-bold text-white ">
                 <button type="button" class="blog_post_button" @click="formModal3 = true">Request a Test drive</button> 
             </div>
@@ -504,6 +504,19 @@ export default {
 .carousel_img_sec{
     position: relative;
 }
+.about_car_sec .read_mre_btn{
+    background: #002c5f;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 8px 25px;
+    font-size: 18px;
+    border-radius: 4px;
+    margin: 5px 0;
+    display: inline-block;
+    text-align: center;
+}
 .carousel_img_sec .carousel_overlay{
     position: absolute;
     height: 100%;
@@ -528,7 +541,7 @@ export default {
     padding: 12px 25px;
     font-size: 18px;
     border-radius: 4px;
-    margin: 5px 0;
+    margin: 7px 0;
     display: block;
     text-align: center;
     min-width: 217px;
