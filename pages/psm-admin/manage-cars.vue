@@ -181,7 +181,7 @@ export default {
   methods: {
     GetCarsList () {
       axios
-        .get(process.env.baseUrl + 'api/cars/index')
+        .get(process.env.baseUrl + 'api/cars/all')
         .then((response) => {
           this.cars = response.data.cars
         })

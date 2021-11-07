@@ -60,7 +60,7 @@ export default {
     methods:{
         GetCars(){
             this.loading = true;
-            axios.get(process.env.baseUrl + 'api/cars/index')
+            axios.get(process.env.baseUrl + 'api/cars/all')
             .then((response) => {
              this.loading =false;
             this.$store.state.cars = response.data.cars;

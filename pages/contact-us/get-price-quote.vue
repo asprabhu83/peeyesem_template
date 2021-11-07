@@ -191,7 +191,7 @@ export default {
     },
     methods:{
         GetModels(){
-            axios.get(process.env.baseUrl + 'api/cars/index')
+            axios.get(process.env.baseUrl + 'api/cars/all')
             .then((res)=>{
                 this.$store.state.cars = res.data.cars;
                 this.$store.state.originalDataCars = res.data.cars;

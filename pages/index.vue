@@ -7,13 +7,60 @@
             <div class="product_single_one_img">
                         <swiper class="swiper product-single-2-slider" :options="swiperOption">
                             <swiper-slide>
-                               <nuxt-link to="/" class="cursor-pointer"><img :src="require('@/assets/img/cars/car15.webp')" alt="img" style="width:100%;" /></nuxt-link>
+                                <div class="carousel_img_sec">
+                                    <img :src="require('@/assets/img/cars/car15.webp')" alt="img" style="width:100%;" />
+                                    <div class="carousel_overlay" />
+                                    <div class="know_more_btn_sec">
+                                        <div>
+                                            <nuxt-link class="knw_mre_btn" to="/contact-us/test-drive/">Know More</nuxt-link>
+                                        </div>
+                                        <div>
+                                            <nuxt-link class="knw_mre_btn" to="/contact-us/test-drive/"> Test Drive</nuxt-link>
+                                        </div>
+                                    </div>
+                                </div>
                             </swiper-slide>
                             <swiper-slide>
-                               <nuxt-link to="/" class="cursor-pointer"> <img :src="require('@/assets/img/cars/car13.webp')" alt="img" style="width:100%;" /></nuxt-link>
+                                <div class="carousel_img_sec">
+                                    <img :src="require('@/assets/img/cars/car13.webp')" alt="img" style="width:100%;" />
+                                    <div class="carousel_overlay" />
+                                    <div class="know_more_btn_sec">
+                                        <div>
+                                            <nuxt-link class="knw_mre_btn" to="/contact-us/test-drive/">Know More</nuxt-link>
+                                        </div>
+                                        <div>
+                                            <nuxt-link class="knw_mre_btn" to="/contact-us/test-drive/"> Test Drive</nuxt-link>
+                                        </div>
+                                    </div>
+                                </div>
                             </swiper-slide>
                             <swiper-slide>
-                               <nuxt-link to="/" class="cursor-pointer"><img :src="require('@/assets/img/cars/car14.webp')" alt="img" style="width:100%;" /></nuxt-link>
+                                <div class="carousel_img_sec">
+                                    <img :src="require('@/assets/img/cars/car14.webp')" alt="img" style="width:100%;" />
+                                    <div class="carousel_overlay" />
+                                    <div class="know_more_btn_sec">
+                                        <div>
+                                            <nuxt-link class="knw_mre_btn" to="/contact-us/test-drive/">Know More</nuxt-link>
+                                        </div>
+                                        <div>
+                                            <nuxt-link class="knw_mre_btn" to="/contact-us/test-drive/"> Test Drive</nuxt-link>
+                                        </div>
+                                    </div>
+                                </div>
+                            </swiper-slide>
+                            <swiper-slide>
+                                <div class="carousel_img_sec">
+                                    <img :src="require('@/assets/img/cars/carousel_image_3.jpg')" alt="img" style="width:100%;" />
+                                    <div class="carousel_overlay" />
+                                    <div class="know_more_btn_sec">
+                                        <div>
+                                            <nuxt-link class="knw_mre_btn" to="/contact-us/test-drive/">Know More</nuxt-link>
+                                        </div>
+                                        <div>
+                                            <nuxt-link class="knw_mre_btn" to="/contact-us/test-drive/"> Test Drive</nuxt-link>
+                                        </div>
+                                    </div>
+                                </div>
                             </swiper-slide>
                             <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
                             <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
@@ -29,7 +76,7 @@
                 <div class="left_sec w-1/2 mx-10 pt-6">
                     <h3 class="text-uppercase about_psm_head">Welcome to Peeyesyem hyundai <hr class="h-1 bg-black w-3/12 my-1" /></h3>
                     <div class="my-6 text-gray">
-                        Peeyesyem Hyundai is one of the largest Hyundai dealer having showrooms at various locations around Tamilnadu. Our branches are located at Chennai, Karaikudi, Kovilpatti, Tuticorin, Tiruchendur, Tuticorin, Madurai and Ramnathapuram. We strive to provide the best services to our customers with great satisfaction and excellency.
+                        PEEYESYEM Hyundai is an authorized dealer for HYUNDAI Motors India Limited which started it’s operations in the year 2016 and is being administered by an able management with an experience of 4 decades in the Automobile Industry. Being Hyundai’s successful dealer – PEEYESYEM has extended its wings through various showrooms and workshops across Tamil Nadu <br/> ( Chennai, Tuticorin, Kovilpatti, Trichendur, Ramnad and Madurai).
                     </div>
                 </div>
                 <div class="right_sec w-1/2 mx-10 flex items-center about_psm_cars">
@@ -359,7 +406,7 @@ export default {
         },
         GetCars(){
             this.loading = true;
-            axios.get(process.env.baseUrl + 'api/cars/index')
+            axios.get(process.env.baseUrl + 'api/cars/all')
             .then((response) => {
             this.$store.state.cars = response.data.cars;
             this.$store.state.originalDataCars = response.data.cars;
@@ -443,9 +490,52 @@ export default {
 
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
     .product_single_one_img img{
-        height: 430px;
+        height: 450px;
         object-fit: cover;
+        object-position: top;
     }
+    .know_more_btn_sec .knw_mre_btn{
+        padding: 6px 15px!important;
+        font-size: 12px!important;
+        min-width: 160px!important;
+    }
+}
+
+.carousel_img_sec{
+    position: relative;
+}
+.carousel_img_sec .carousel_overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 200;
+    top: 0;
+    left: 0;
+}
+.carousel_img_sec .know_more_btn_sec{
+    position: absolute;
+    bottom: 20%;
+    left: 13%;
+    z-index: 300;
+}
+.know_more_btn_sec .knw_mre_btn{
+    background: #002c5f;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 4px;
+    margin: 5px 0;
+    display: block;
+    text-align: center;
+    min-width: 217px;
+    box-shadow: 0 2px 10px 4px rgb(0 0 0/15%);
+}
+.know_more_btn_sec .knw_mre_btn:hover{
+    color: white;
 }
 .btn_box{
     display: flex;
@@ -469,6 +559,9 @@ export default {
     .btn_box{
         width: 100%;
         padding: 40px 0;
+    }
+    .carousel_img_sec .know_more_btn_sec{
+        display: none;
     }
 }
 .swiper-button-prev, .swiper-button-next{
