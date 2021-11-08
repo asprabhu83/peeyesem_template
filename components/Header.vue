@@ -558,7 +558,7 @@ export default {
 }
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
     .sub-menu>li>a{
-        font-size: 9px;
+        font-size: 11px;
         line-height: 28px;
     }
     .sub-menu{

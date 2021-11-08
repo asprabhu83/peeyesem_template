@@ -19,7 +19,8 @@ const createStore = () => {
         salesNo:'',
         serviceNo:'',
         whatsappNo:''
-      }
+      },
+      TestimonialData:[]
     },
     modules: {
       products: products,

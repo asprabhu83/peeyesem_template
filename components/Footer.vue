@@ -3,16 +3,21 @@
     <!-- footer Area -->
     <footer id="footer_one">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+            <div class="main_footer_sec">
+                <div class="footer_item_sec">
                     <div class="footer_left_side">
                         <div class="text-capitalize mb-3  footer_heading text-lg font-semibold">Peeyesyem hyundai</div>
                         <div class="text-sm contact_text mb-2"><i class="far fa-envelope mr-2"></i> peeyesyemhyundai@gmail.com</div>
                         <div class="text-sm contact_text mb-2"> <font-awesome-icon icon="phone-alt"  size="1x" class="text-white  mr-2" />+91 9902099944</div>
-                        <div class="text-sm contact_text mb-3"><font-awesome-icon icon="map-marker-alt"  size="1x" class="text-white  mr-2" />Old No. - 94, New No. - 162, Luz Church Road, Mylapore</div>
+                        <div class="text-sm contact_text mb-3"><font-awesome-icon icon="map-marker-alt"  size="1x" class="text-white  mr-2" />Old No. - 94, New No. - 162,<br/> Luz Church Road, Mylapore</div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 col-6 footer_mobile_menu">
+                <div class="footer_item_sec footer_mobile_menu">
+                    <div class="gmap_canvas">
+                        <iframe width="354" height="274" style="max-width:100%;" id="gmap_canvas" src="https://maps.google.com/maps?q=mylapore&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    </div>
+                </div>
+                <div class="footer_item_sec menus footer_mobile_menu">
                     <div class="footer_one_widget">
                         <h3 class="text-capitalize footer_heading">Information</h3>
                         <ul>
@@ -24,7 +29,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-6 col-sm-12 col-6 footer_mobile_menu">
+                <div class="footer_item_sec menus footer_mobile_menu">
                     <div class="footer_one_widget">
                         <h3 class="text-capitalize footer_heading">Our Services</h3>
                         <ul>
@@ -36,7 +41,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-12 col-sm-12 col-12 follows_us_sec">
+                <div class="footer_item_sec follows_us_sec">
                     <div class="footer_one_widget">
                         <h3 class="text-capitalize follows footer_heading">Follows Us</h3>
                         <div class="footer_left_side_icon pt-0">
@@ -178,8 +183,25 @@ export default {
     color: white;
     margin: 5px 10px 5px 0;
 }
+.main_footer_sec{
+    display: flex;
+    justify-content: center;
+}
+.footer_item_sec{
+    margin: 0 32px;
+}
+
 
 @media only screen and (min-width:300px) and (max-width:600px){
+    .main_footer_sec{
+        flex-wrap: wrap;
+    }
+    .footer_item_sec{
+        width: 95%;
+    }
+    .footer_item_sec.menus{
+        width: 43%;
+    }
     .footer_one_widget .follows{
         text-align: center;
     }
@@ -187,7 +209,7 @@ export default {
         text-align: center;
     }
     .footer_mobile_menu{
-        margin: 30px 0;
+        margin: 30px 10px;
     }
     .mc-form .clear{
         text-align: center;

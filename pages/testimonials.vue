@@ -2,50 +2,20 @@
   <div class="my-16">
       <div>
           <div class="heading text-center my-5">Customer Speaks</div>
-          <div class="select_input">
-              <div class="head text-center my-3">Select Model</div>
-              <div class="my-3">
-                    <select
-                    class="
-                      shadow
-                      appearance-none
-                      border
-                      rounded
-                      w-full
-                      py-2
-                      px-3
-                      text-gray-700
-                      cursor-pointer
-                      leading-tight
-                      focus:outline-none
-                      focus:shadow-outline
-                    "
-                    id="cars"
-                    v-model="model"
-                  >
-                  <option class="text-xl " value="" >All Model</option>
-                  <option class="text-xl" :value="model" v-for="model in cars"
-                    :key="model.id" >{{model}}</option>
-                  </select>
-               </div>
-          </div>
-          <div class="testimonial_sec" v-if="model == ''">
-              <div class="item" v-for="item in testimonial" :key="item.id">
+          <div class="testimonial_sec" >
+              <div class="item" v-for="item in $store.state.TestimonialData" :key="item.id">
                   <div class="top_sec">
                       <div class="left"><img class="mx-1" :src="require('@/assets/img/usericon.png')" alt="img"  /></div>
                       <div class="right">
-                          <div class="head">{{item.name}}</div>
-                          <div class="time">{{item.time}}</div>
+                          <div class="head">{{item.authour}}</div>
+                          <div class="time">{{JSON.parse(item.data_value).date}}</div>
                       </div>
                   </div>
                   <div class="description">
-                      <div class="head">{{item.detail_heading.substring(0,37)}}<span  v-if="item.detail_heading !== ''">...</span></div>
-                      <div class="desc">{{item.description.substring(0,50)}}...<button @click="ReadMore(item.id)">Read More</button></div>
+                      <div class="head">{{JSON.parse(item.data_value).title}}<span  v-if="JSON.parse(item.data_value).title !== ''">...</span></div>
+                      <div class="desc">{{item.quote.substring(0,50)}}...<button @click="ReadMore(item.id)">Read More</button></div>
                   </div>
               </div>
-          </div>
-          <div class="my-16" v-else>
-              <div class="no_result_head">No Reviews Found!</div>
           </div>
       </div>
       <section class="form_modal_box" v-if="testimonialModal == true">
@@ -63,6 +33,7 @@
 </template>
 
 <script>
+import axios from '~/plugins/axios'
 export default {
     data(){
         return{
@@ -78,7 +49,6 @@ export default {
                 ' Alcazar ',
                 ' All New Tucson ',
             ],
-            model:'',
             testimonial:[
                 {
                     id:1,
@@ -151,16 +121,31 @@ export default {
             testimonialModal:false
         }
     },
+    mounted(){
+        if(this.$store.state.TestimonialData.length == 0){
+            this.GetTestimonialData();
+        }
+    },
     methods:{
         ReadMore(id){
-            var item = this.testimonial.filter((item)=>{
+            var item = this.$store.state.TestimonialData.filter((item)=>{
                 return item.id == id;
             })
             const [testimonial] = item;
-            const {detail_heading,description} = testimonial;
-            this.singleTestimonial.heading = detail_heading;
-            this.singleTestimonial.description = description;
+            const {data_value,quote} = testimonial;
+            var Heading = JSON.parse(data_value);
+            this.singleTestimonial.heading = Heading.title;
+            this.singleTestimonial.description = quote;
             this.testimonialModal = true;
+        },
+        GetTestimonialData(){
+            axios.get(process.env.baseUrl + 'api/testimonial/index')
+            .then((response) => {
+            this.$store.state.TestimonialData = response.data;
+            })
+            .catch((error) => {
+            console.log(error)
+            })
         }
     }
 }

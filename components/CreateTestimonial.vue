@@ -14,11 +14,38 @@
           <div class="mb-4">
             <label
               class="block text-gray-700 text-sm font-bold mb-2"
+              for="title"
+            >
+              Title
+            </label>
+            <input
+              class="
+                shadow-md
+                appearance-none
+                border
+                rounded
+                w-full
+                py-2
+                px-3
+                text-gray-700
+                leading-tight
+                focus:outline-none
+                focus:shadow-outline
+              "
+              id="title"
+              type="text"
+              placeholder="Title"
+              v-model="title"
+            />
+          </div>
+          <div class="mb-4">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
               for="quote"
             >
               Quote
             </label>
-            <input
+            <textarea
               class="
                 shadow-md
                 appearance-none
@@ -127,6 +154,7 @@ export default {
       quote:'',
       authour:'',
       authourType:'',
+      title:'',
       empty_valid: false,
       success: false,
     }
@@ -146,10 +174,25 @@ export default {
       }
 
       if (err === 0) {
+        var newDate = new Date();
+           var hours = newDate.getHours();
+           var minutes = newDate.getMinutes();
+           var ampm = hours >= 12 ? 'pm' : 'am';
+            hours = hours % 12;
+            hours = hours ? hours : 12; 
+            minutes = minutes < 10 ? '0'+minutes : minutes;
+            var strTime = hours + ':' + minutes + ' ' + ampm;
+         var date = newDate.getDate() + '-' + (newDate.getMonth() + 1) + '-' + newDate.getFullYear() + ' ' + strTime;
+        var json_data = {
+          title:this.title,
+          date:date
+        }
+        json_data = JSON.stringify(json_data);
         axios.post(process.env.baseUrl + 'api/testimonial/store', {
           quote: this.quote,
           authour: this.authour,
-          authour_type: this.authourType
+          authour_type: this.authourType,
+          data_value: json_data
         }).then(() => {
           this.success = true
           this.$emit('created')

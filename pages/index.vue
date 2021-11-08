@@ -250,39 +250,15 @@
             </div>
             <div class=" relative bg-position_overlay">
                         <swiper class="swiper product-single-2-slider" :options="swiperOption">
-                            <swiper-slide>
+                            <swiper-slide v-for="item in $store.state.TestimonialData" :key="item.id">
                                 <div class="testimonial_content">
                                     <div class="text-center quote_lines text-md mb-10 text-white font-semibold flex items-start justify-center" >
                                         <img class="mx-1 quote_icon" :src="require('@/assets/img/quotewhite.png')" alt="img"  />
-                                        <div class="mt-3">You will begin to realize why this exercise is called the Dickens reference to the ghost showing Scrooge Pattern with reference to the ghost showing Scrooge some different futures as you notice that the idea of this exercise.</div>
+                                        <div class="mt-3">{{item.quote.substring(0,225)}}...</div>
                                     </div>
                                     <div class="flex items-center justify-center">
                                         <img class="mx-1" :src="require('@/assets/img/userwhite2.png')" alt="img"  />
-                                        <div class="mx-1 font-semibold">JOHN DOE | <span class="font-normal">customer</span></div>
-                                    </div>
-                                </div>
-                            </swiper-slide>
-                            <swiper-slide>
-                                <div class="testimonial_content">
-                                    <div class="text-center  quote_lines text-md mb-10 text-white font-semibold flex items-start justify-center" >
-                                        <img class="mx-1 quote_icon" :src="require('@/assets/img/quotewhite.png')" alt="img"  />
-                                        <div class="mt-3">You will begin to realize why this exercise is called the Dickens reference to the ghost showing Scrooge Pattern with reference to the ghost showing Scrooge some different futures as you notice that the idea of this exercise.</div>
-                                    </div>
-                                    <div class="flex items-center justify-center">
-                                        <img class="mx-1" :src="require('@/assets/img/userwhite2.png')" alt="img"  />
-                                        <div class="mx-1 font-semibold">FELICA QUEEN | <span class="font-normal">Auto Dealer</span></div>
-                                    </div>
-                                </div>
-                            </swiper-slide>
-                            <swiper-slide>
-                                <div class="testimonial_content">
-                                    <div class="text-center quote_lines text-md mb-10 text-white font-semibold flex items-start justify-center" >
-                                        <img class="mx-1 quote_icon" :src="require('@/assets/img/quotewhite.png')" alt="img"  />
-                                        <div class="mt-3">You will begin to realize why this exercise is called the Dickens reference to the ghost showing Scrooge Pattern with reference to the ghost showing Scrooge some different futures as you notice that the idea of this exercise.</div>
-                                    </div>
-                                    <div class="flex items-center justify-center">
-                                        <img class="mx-1" :src="require('@/assets/img/userwhite2.png')" alt="img"  />
-                                        <div class="mx-1 font-semibold">ALICE WILLIAMS | <span class="font-normal">Car Dealer</span></div>
+                                        <div class="mx-1 font-semibold">{{item.authour}} | <span class="font-normal">{{item.authour_type}}</span></div>
                                     </div>
                                 </div>
                             </swiper-slide>
@@ -420,6 +396,10 @@ export default {
             this.filterItems('ALL');
         }
 
+        if(this.$store.state.TestimonialData.length == 0){
+            this.GetTestimonialData();
+        }
+
         const obj1 = document.getElementById("value1");
         const obj2 = document.getElementById("value2");
         const obj3 = document.getElementById("value3");
@@ -457,6 +437,15 @@ export default {
             })
             .catch((error) => {
             this.loading = false;
+            console.log(error)
+            })
+        },
+        GetTestimonialData(){
+            axios.get(process.env.baseUrl + 'api/testimonial/index')
+            .then((response) => {
+            this.$store.state.TestimonialData = response.data;
+            })
+            .catch((error) => {
             console.log(error)
             })
         },

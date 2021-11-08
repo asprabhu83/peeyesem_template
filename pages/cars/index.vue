@@ -2,6 +2,18 @@
   <div class="single_page_car_sec">
       <div class="car_poster_sec">
           <img :src="car.baseUrl + 'images/' + car.poster_image"  />
+          <div class="car_poster_details" v-if="car.name == 'Hyundai Santro'">
+              <div class="title1 text-uppercase">Santro</div>
+              <div class="title2">India's Favourite Family Car</div>
+          </div>
+      </div>
+      <div class="mt-16">
+          <div class="main_tab_sec">
+              <nuxt-link to="/contact-us/test-drive">Test drive</nuxt-link>
+              <nuxt-link to="">Prices</nuxt-link>
+              <nuxt-link to="">Book a Car</nuxt-link>
+              <nuxt-link to=""><font-awesome-icon icon="download"  size="1x" class="text-white  mr-2" />e-Brochure</nuxt-link>
+          </div>
       </div>
       <section class="car_title_sticky_header">
           <div class="car_title_sec my-5">
@@ -557,7 +569,6 @@ export default {
                'Specs',
                'Features',
                'Price List',
-               'Variants Compare'
            ],
            VariantFeature:1,
            car_tab_index:0,
@@ -816,6 +827,81 @@ export default {
 
 <style scoped>
 
+.main_tab_sec{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+}
+.main_tab_sec a{
+    background:#002c5f;
+    border: none;
+    outline: none;
+    padding: 6px 25px;
+    color: white;
+    border-radius: 5px;
+    font-size: 17px;
+    margin: 10px 20px;
+}
+.main_tab_sec a:hover{
+    color: white;
+}
+
+@media only screen and (min-width: 1270px) and (max-width: 1366px){
+    .car_video_item iframe{
+        max-width: 100%!important;
+    }
+    .car_title_sec .car_title{
+        font-size: 20px!important;
+    }
+    .tab_item_box .tab_item{
+        font-size: 11px!important;
+        padding: 3px 15px!important;
+        margin: 0 6px!important;
+    }
+    .car_title_sticky_header.sticky .car_title_sec{
+        margin: 8px auto!important;
+    }
+    .car_overview_sec .title, .car_highlights_sec .title, .car_gallery_sec .title, .car_video_sec .title, .car_colour_sec .title, .car_type_main_title{
+        font-size: 22px!important;
+    }
+    .description p{
+        font-size: 13px!important;
+    }
+    .price_details .price_item{
+        margin: 10px 20px!important;
+        padding: 15px 10px!important;
+        width: 18%!important;
+    }
+    .price_item .price_title{
+        font-size: 13px!important;
+    }
+    .price_item .detail{
+        margin: 10px 0 10px 0!important;
+        font-size: 12px!important;
+    }
+    .highlight_items .item{
+        width: 26%!important;
+    }
+    .highlight_items .item .content{
+        padding: 12px 5px!important;
+    }
+    .highlight_items .item_title{
+        font-size: 14px!important;
+    }
+    .highlight_items .item_desc{
+        padding: 14px!important;
+        font-size: 12px!important;
+    }
+    .colour_item_title.car_colour_img{
+        font-size: 16px!important;
+    }
+    .car_spec_tab_box .tab_item{
+        font-size: 13px!important;
+        margin: 10px 15px!important;
+    }
+}
+
 .car_spec_table thead{
     background: #002c5f;
 }
@@ -860,6 +946,7 @@ export default {
 }
 .car_colour_item_box{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
@@ -918,7 +1005,7 @@ export default {
     animation: fadeDown .7s;
 }
 .car_title_sticky_header.sticky .car_title_sec{
-    margin:30px auto!important;
+    margin:30px auto;
 } 
 @keyframes fadeDown {
     from{
@@ -973,6 +1060,24 @@ export default {
     font-size: 28px;
     font-weight: 700;
     margin: 40px 0;
+}
+.car_poster_sec{
+    position: relative;
+}
+.car_poster_details{
+    position: absolute;
+    top: 15%;
+    left: 10%;
+}
+.car_poster_details .title1{
+    font-size: 40px;
+    font-weight: 600;
+    user-select: none;
+}
+.car_poster_details .title2{
+    font-size: 23px;
+    font-weight: 600;
+    user-select: none;
 }
 .car_poster_sec img{
     width: 100%;
@@ -1065,6 +1170,28 @@ export default {
 }
 /* Mobile Fixes */
 @media only screen and (min-width:300px) and (max-width:600px){
+    .main_tab_sec{
+        flex-wrap: wrap;
+    }
+    .main_tab_sec a{
+        min-width: 172px;
+        text-align: center;
+    }
+    .car_poster_details{
+        position: absolute;
+        top: 13%;
+        left: 3%;
+    }
+    .car_poster_details .title1{
+        font-size: 14px;
+        font-weight: 600;
+        user-select: none;
+    }
+    .car_poster_details .title2{
+        font-size: 10px;
+        font-weight: 600;
+        user-select: none;
+    }
     .car_video_item iframe{
        max-width: 100%;
        height: 220px;

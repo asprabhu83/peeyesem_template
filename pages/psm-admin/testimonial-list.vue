@@ -219,11 +219,38 @@
               <div class="mb-4">
                 <label
                   class="block text-gray-700 text-sm font-bold mb-2"
+                  for="title"
+                >
+                  Title
+                </label>
+                <input
+                  class="
+                    shadow-md
+                    appearance-none
+                    border
+                    rounded
+                    w-full
+                    py-2
+                    px-3
+                    text-gray-700
+                    leading-tight
+                    focus:outline-none
+                    focus:shadow-outline
+                  "
+                  id="title"
+                  type="text"
+                  placeholder="Title"
+                  v-model="title"
+                />
+              </div>
+              <div class="mb-4">
+                <label
+                  class="block text-gray-700 text-sm font-bold mb-2"
                   for="quote"
                 >
                   Quote
                 </label>
-                <input
+                <textarea
                   class="
                     shadow-md
                     appearance-none
@@ -349,7 +376,8 @@ export default {
       id:'',
       quote:'',
       authour:'',
-      authourType:''
+      authourType:'',
+      title:''
     }
   },
   mounted () {
@@ -397,6 +425,8 @@ export default {
           this.quote = response.data.quote
           this.authour = response.data.authour
           this.authourType = response.data.authour_type
+          var json_data = JSON.parse(response.data.data_value);
+          this.title = json_data.title;
         })
         .catch((error) => {
           console.log(error)
@@ -415,12 +445,27 @@ export default {
         err++
       }
       if (err === 0) {
+         var newDate = new Date();
+           var hours = newDate.getHours();
+           var minutes = newDate.getMinutes();
+           var ampm = hours >= 12 ? 'pm' : 'am';
+            hours = hours % 12;
+            hours = hours ? hours : 12; 
+            minutes = minutes < 10 ? '0'+minutes : minutes;
+            var strTime = hours + ':' + minutes + ' ' + ampm;
+         var date = newDate.getDate() + '-' + (newDate.getMonth() + 1) + '-' + newDate.getFullYear() + ' ' + strTime;
+        var json_data = {
+          title:this.title,
+          date:date
+        }
+        json_data = JSON.stringify(json_data);
         axios
           .put(process.env.baseUrl + 'api/testimonial/update/' + this.id, {
             id: this.id,
             quote: this.quote,
             authour: this.authour,
-            authour_type: this.authourType
+            authour_type: this.authourType,
+            data_value:json_data
           })
           .then(() => {
             this.editDialog = false
