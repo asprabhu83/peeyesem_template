@@ -6022,6 +6022,9 @@ table {
     border-radius: 5px;
     font-size: 17px;
 }
+.blog_post_button:hover{
+    color: white;
+}
 .category_item.active{
     border-bottom:2px solid #002c5f;
     color:#002c5f;

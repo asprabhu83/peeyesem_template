@@ -20,7 +20,8 @@ const createStore = () => {
         serviceNo:'',
         whatsappNo:''
       },
-      TestimonialData:[]
+      TestimonialData:[],
+      BlogsData:[]
     },
     modules: {
       products: products,

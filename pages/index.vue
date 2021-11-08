@@ -209,37 +209,19 @@
         <div class="container">
             <div class="blog_heading text-capitalize text-center py-16 font-bold text-3xl">LATEST NEWS <hr class="w-1/12 mx-auto bg-black h-0.5" style="background-color:black!important;"/></div>
             <div class="flex blog_card_body items-center justify-around">
-                <div class="blog_card_box w-3/12 cursor-pointer">
+                <div class="blog_card_box w-3/12 cursor-pointer" v-for="item in $store.state.BlogsData" :key="item.id">
                     <div class="photo_box">
-                        <img :src="require('@/assets/img/cars/blog/blog4.webp')" alt="img" style="width:100%;"  />
+                        <img :src="baseUrl + 'images/' + item.blog_image" style="width:100%;" />
                     </div>
                     <div class="content px-3 py-3">
-                        <div class="text-center text-lg font-semibold my-4">Brand<hr class="w-2/12 mx-auto bg-black h-0.5" style="background-color:black!important;"/></div>
-                        <p class="text-gray text-md my-4 text-center">I am i20, I am Born Magnetic</p>
-                    </div>
-                </div>
-                <div class="blog_card_box w-3/12 cursor-pointer">
-                    <div class="photo_box">
-                        <img :src="require('@/assets/img/cars/blog/blog5.webp')" alt="img" style="width:100%;"  />
-                    </div>
-                    <div class="content px-3 py-3">
-                        <div class="text-center text-lg font-semibold my-4">Innovation <hr class="w-2/12 mx-auto bg-black h-0.5" style="background-color:black!important;"/></div>
-                        <p class="text-gray text-md my-4 text-center">Creating Seamless experience!</p>
-                    </div>
-                </div>
-                <div class="blog_card_box w-3/12 cursor-pointer">
-                    <div class="photo_box">
-                        <img :src="require('@/assets/img/cars/blog/blog6.webp')" alt="img" style="width:100%;"  />
-                    </div>
-                    <div class="content px-3 py-3">
-                        <div class="text-center text-lg font-semibold my-4">Community<hr class="w-2/12 mx-auto bg-black h-0.5" style="background-color:black!important;"/></div>
-                        <p class="text-gray text-md my-4 text-center">Because We Care</p>
+                        <div class="text-center text-lg font-semibold my-4">{{JSON.parse(item.data_value).blog_heading}}<hr class="w-2/12 mx-auto bg-black h-0.5" style="background-color:black!important;"/></div>
+                        <p class="text-gray text-md my-4 text-center">{{item.title}}</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="mt-20 text-center">
-            <button type="button" class="blog_post_button">View All Posts</button>
+            <nuxt-link to="/blog" class="blog_post_button">View All Post</nuxt-link>
         </div>
     </section>
     <section class=" fixed_bg_image2">
@@ -396,6 +378,10 @@ export default {
             this.filterItems('ALL');
         }
 
+        if(this.$store.state.BlogsData.length == 0){
+            this.GetBlog();
+        }
+
         if(this.$store.state.TestimonialData.length == 0){
             this.GetTestimonialData();
         }
@@ -425,6 +411,16 @@ export default {
             if(value == 'modal3'){
                 this.formModal3 = false;
             }
+        },
+        GetBlog(){
+            axios
+            .get(process.env.baseUrl + 'api/blog/index')
+            .then((response) => {
+            this.$store.state.BlogsData = response.data
+            })
+            .catch((error) => {
+            console.log(error)
+            })
         },
         GetCars(){
             this.loading = true;
