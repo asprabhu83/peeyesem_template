@@ -42,6 +42,7 @@
                       <nuxt-link to="/psm-admin/add-page" class="text-gray-700 block px-4 py-3 text-sm  dropdown_menu_item" role="menuitem" tabindex="-1" id="menu-item-2">Add Pages</nuxt-link>
                       <nuxt-link to="/psm-admin/settings" class="text-gray-700 block px-4 py-3 text-sm  dropdown_menu_item" role="menuitem" tabindex="-1" id="menu-item-2">Edit Settings</nuxt-link>
                       <nuxt-link to="/psm-admin/manage-used-cars" class="text-gray-700 block px-4 py-3 text-sm  dropdown_menu_item" role="menuitem" tabindex="-1" id="menu-item-2">Manage Used Cars</nuxt-link>
+                      <nuxt-link to="/psm-admin/blog-list" class="text-gray-700 block px-4 py-3 text-sm  dropdown_menu_item" role="menuitem" tabindex="-1" id="menu-item-2">Add Blogs</nuxt-link>
                     </div>
                   </div>
                 </div>
