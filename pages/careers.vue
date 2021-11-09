@@ -11,7 +11,7 @@
                   <div class="card_box ">
                       <div class="head">We Are Hiring Sales Consultants</div>
                       <div class="desc">
-                          It Is  Largest Hyundai Dealer With A Gigantic Network Of 6 Showrooms, 255 Service Centers, And 4 Pre-Owned Car Showrooms. To Deliver On Our Promise We Have Most
+                          It Is  Largest Hyundai Dealer With A Gigantic Network Of 7 Showrooms, 8 Service Workshops, And 10 Used Car Showrooms. To Deliver On Our Promise We Have Most
                       </div>
                       <div class="footer">
                           <div class="exp"> Exp: Freshers / Experienced</div>
@@ -24,7 +24,7 @@
                   <div class="card_box ">
                       <div class="head">We Are Hiring Sales Team Leaders</div>
                       <div class="desc">
-                          It Is  Largest Hyundai Dealer With A Gigantic Network Of 6 Showrooms, 255 Service Centers, And 4 Pre-Owned Car Showrooms. We Are Looking For Young, Enthusiastic
+                          It Is  Largest Hyundai Dealer With A Gigantic Network Of 7 Showrooms, 8 Service Workshops, And 10 Used Car Showrooms. We Are Looking For Young, Enthusiastic
                       </div>
                       <div class="footer">
                           <div class="exp"> Exp: 3 + Years</div>

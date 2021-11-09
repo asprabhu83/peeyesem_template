@@ -19,48 +19,43 @@ export default {
             newsAndEvents: [
         {
           id: 1,
-          name: "Free Emission Check, Dry Wash And AC Check-Up For Hyundai Cars  ",
-          image: "1.jpg",
+          name: "Hyundai Motor India Rolls-Out Fastest ‘10 Millionth’ Car",
+          image: "1.webp",
           description: `
-                    <p>Digital campaign - #DontBeAnIdler to encourage customers to save fuel and reduce ‘Air pollution’</p>
-                    <p>New Delhi, June 05, 2019: Hyundai Motor India Ltd., the country’s first Smart Mobility Solutions Company and the largest exporter since inception announced initiatives driving customer focus towards ‘Air Pollution’ and ‘Water Conservation’ on ‘World Environment Day 2019’.</p>
-                    <p>The Environment Camps across all Hyundai Service Centres will be organized in line with its commitment to sustainable social development and preservation of the environment. The key components of the camp will entail the following benefits:</p>
-                    <p>Free Emission Check-up for all visiting vehicles Free AC Check-up for clean cabin Air Free Dry Wash PUC check-up at select service centers Customer Education about regular maintenance of vehicles at authorized service centers</p>
-                    <p>Commenting on the initiatives, Mr.S Punnaivanam, Vice President – Customer Care, Hyundai Motor India said, “Being a socially responsible and caring brand, Hyundai is committed to upholding its promise of creating a significant difference to the Environment. We adopt eco-friendly initiatives across all processes at workshop and dealerships at a Pan India level. A digital campaign- #DontBeAnIdler on air pollution urging customers to switch off the engine, while waiting at traffic signals will be key to drive behavioral change across the masses.”
-                     In addition to this, HMIL inducted all its 494 Hyundai Dealerships and 1319 Service Workshops to ensure healthy workshop environment practices for its staff such as technicians to wear masks while paint jobs, air filter cleaning, etc and reduce the usage of Non-Biodegradable plastic and encourage the use of jute, cloth and biodegradable bags at workshops.
-                    Hyundai encourages its valuable customers to opt dry wash for their Hyundai car during service thereby saving approx.120 liters per car. In 2017, Hyundai launched a 45 days campaign – ‘Save Water, Share Water’ across India thus saving 40 lakhs litres of Water through Dry wash and distributed the same amount of drinking water in drought-affected areas in Tamil Nadu and Andhra Pradesh. Hyundai has introduced these initiatives to conserve water, control pollution and conserve energy across its network.
-                     To ensure sustainable practices throughout the year, HMIL plant spread across 535 acres follows eco-friendly processes in order to conserve resources and reduce consumption. HMIL recently planted the One-Millionth Tree at the facility and maintain Zero discharge policy with 100% recycling of water and follow Rainwater harvesting. The area is covered with a 56-acre Green Belt inside the plant with flora and fauna. for more details Visit your nearest Advaith Hyundai today, or call:9731097310</p>
+                    <p>
+                       CHENNAI, June 30, 2021: Hyundai Motor India Ltd (HMIL), India’s first Smart Mobility Solutions Provider and largest exporter since inception, reinstated its commitment of Make-in-India with the fastest roll out of 10 million cars from its state-of-art manufacturing facility in India near Chennai, Tamil Nadu. The unparalleled milestone of achieving production of 10 million cars is a result of smart manufacturing and re-affirms Hyundai’s commitment towards making India Self Reliant. The achievement reiterates HMIL’s support towards State and Central Governments to accentuate economic recovery by overcoming the challenges posed by Covid-19 pandemic. Hyundai ALCAZAR became the 10 millionth car to roll out of the production line at HMIL’s plant in Sriperumbudur. Thiru. M.K.Stalin, Hon’ble Chief Minister of Tamil Nadu signed on the car bonnet to mark the momentous occasion.
+                    </p>
                     `,
         },
         {
             id:2,
-            name:`Hyundai Kona - India's 1st Electric SUV Coming Soon To Advaith Hyundai`,
-            image:'2.jpg',
-            description:'Versatile and powerful, the KONA Electric will be the first fully electric SUV in India. Its power packed performance provides a thrilling driving experience with high acceleration over long distances. KONA Electric is here to change the way people think about going electric. Highlights of the KONA Electric - Highest Electric Driving Range - Convenience to charge anywhere - Packed with Hi-Tech & Premium features - Design optimized for superior aerodynamics - Automatic Transmission for a convenient driving experience. - Super Silent'
+            name:`Hyundai ALCAZAR Makes a Grand Entrance in the 6 and 7 Seater SUV Space with Over 11000 Bookings`,
+            image:'2.webp',
+            description:'Commenting on the remarkable bookings performance, Mr Tarun Garg, Director (Sales, Marketing & Service), Hyundai Motor India Ltd., said, “Hyundai ALCAZAR has received an overwhelming response from customers with over 11 000 Bookings received in less than a month since its launch. This superlative response showcases our customer’s affinity towards a high value, versatile and premium package that Hyundai ALCAZAR epitomizes perfectly. We are truly humbled and grateful to our customers who have chosen to live the Grand life with the Hyundai ALCAZAR.”'
         },
         {
             id:3,
-            name:'Celebrates 1st Month Anniversary Of VENUE ',
-            image:'3.jpg',
-            description:`Hyundai India Celebrates 1st Month Anniversary Of VENUE With Delivery Of over 1,000 Cars To Customers In One Single Day - Over 1,000 retail deliveries to customers of VENUE today across the country - VENUE registered over 33,000 bookings highest ever in less than a month of its launch - Over 2 Lac customers expressed “Interest to Purchase” since its Preview New Delhi, June 21, 2019: Hyundai Motor India Ltd., the country’s first Smart Mobility Solutions Company and the largest exporter since inception, today celebrates 1st month Anniversary of Hyundai VENUE, India’s First Connected SUV with over 1,000 retail deliveries to customers of VENUE in a single day. With VENUE, Hyundai has steered the path for Connected Cars in India and once again revolutionized the Industry. Commenting on a momentous day, Mr Vikas Jain, National Sales Head, Hyundai Motor India Ltd. said, “Hyundai VENUE has bolstered our commitment towards offering Smart Mobility Solutions to India’s aspirational customers’ needs. Being India’s first Connected SUV with Blue Link Technology, VENUE received a phenomenal response. Today, as we celebrate 1st month Anniversary of VENUE, I’m overwhelmed to share its historic success with record bookings of 33,000 cars in less than a month and retail delivery of over 1,000 units in a single day. I’m confident that Hyundai VENUE will create new milestones making our customers’ life a ‘Happy Life’.”`
+            name:'Hyundai takes Fun Driving to a New Level: Announces Introduction of N Line range for India',
+            image:'3.webp',
+            description:`Commenting on the introduction of N Line, Mr. S S Kim, MD & CEO, Hyundai Motor India Ltd., said, “As the country’s leading smart mobility solutions provider, Hyundai has been redefining the mobility landscape with products that take customer aspirations to new heights. The introduction of our N Line range to India, will induce sporty experiences like never before, making every drives a fun experience with products that personify excitement and athleticism.`
         },
         {
             id:4,
-            name:`Unveils The Most Awaited Hyundai's Smart SUV ‘Venue’`,
-            image:'car4.webp',
-            description:`Mangaluru, May 21: The long-awaited Hyundai's subcompact SUV ‘Venue’ was launched at Advaith Hyundai Mangalore at Kuntikana on Tuesday, May 21. Trustee of Kanathoor temple Dr Deviprasad kamath, MD of Balaji Enterprises Vishwanath Prabhu, president of Merchants Association C A Rahim, and entrepreneur P B Shenoy unveiled the new car along with Rajesh Ullal, showroom manager, Shivaprasad, sales head, Shashikanth Shetty, cluster head, Meena Rego, Harsharaj and Sudhakar. After the unveiling of the car, chief guests congratulated and gave their best wishes to the team on their success. Rajesh Ullal then handed over the keys to first buyers and thanked them for showing faith and love in Hyundai Venue. Hyundai Venue includes a cascading grille with chrome detailing, projector headlamps with LED DRLs, high mounted indicators, and projector foglamps. The SUV also gets a set of new sporty 16-inch alloys, roof rails, and LED taillamps with Z cluster patterns. Hyundai will offer the SUV in 7 exterior color options- Denim Blue, Lava Orange and Deep Forest along with three Dual Tone options, Speed DCT, Air purifier, Rear AC Vents, Wireless Charger, Cornering Lamps, 6 Airbags, Arkamys sound, Voice recognition, AHSS (Advanced High Strength Steel), Bluelink, Vehicle stability management(VSM), Hiss assist control (HAC).`
+            name:`Experience Excitement Every Day with the most awaited Hyundai i20 N Line, Bookings Now Open`,
+            image:'4.webp',
+            description:`Gurugram, August 24, 2021: Hyundai Motor India Ltd., country’s first Smart Mobility Solutions Provider and largest exporter since inception, today unveiled and opened bookings for its highly anticipated - i20 N Line, the first model to debut under Hyundai’s N Line range of cars for India. Deriving inspiration from Motorsports styling, i20 N Line fuses exhilarating style with a dynamic driving experience to deliver excitement every day. Customers can now book i20 N Line online on the Hyundai Click to Buy platform https://clicktobuy.hyundai.co.in or at Hyundai Signature Dealerships across the country for Rs 25 000/- only.`
         },
         {
             id:5,
-            name:'Mr.Gurukiran, Unveils The All New Hyundai Creta At Advaith Hyundai',
-            image:'5.jpg',
-            description:'Mr.Gurukiran, Sandalwood Music Director, unveils the All new Hyundai Creta at Advaith Hyundai residency road'
+            name:'Hyundai Motor India Foundation Pledges Support to Tamil Nadu Government',
+            image:'5.webp',
+            description:'Chennai, May 19, 2021: Hyundai Motor India Foundation (HMIF), the CSR arm of Hyundai Motor India Ltd. (HMIL) today donated Rs 5 Crores to the “Chief Minister Public Relief Fund” under Hyundai Cares 3.0 COVID-19 relief initiative, to strengthen the state’s war against the second wave of the pandemic. The donation was handed over to Honourable Chief Minister of Tamilnadu Thiru  M K Stalin. Additionally, a donation of Rs 5 Crores worth of Medicare Equipment has been announced, comprising of medical equipment such as High Flow Nasal Oxygen machines, Bipap machines, Oxygen concentrators and 2 oxygen plants to be set-up at government hospitals in Tondiarpet and Tambaram. On the anvil are some other medical consumables for front line workers of various hospitals.'
         },
         {
             id:6,
-            name:` 23rd Free Car Care Clinic`,
-            image:'6.jpg',
-            description:` 23rd Free car care clinic grand inauguration by Ms, Mayuri, Sandalwood Actress at Mission Road`
+            name:`Hyundai Motor India Continues Leadership in Exports`,
+            image:'6.webp',
+            description:`Commenting on the remarkable achievement, Mr. S S Kim, MD & CEO, Hyundai Motor India Ltd. said, “Despite numerous challenges emerging out of the global pandemic, uncertainty in various markets, restriction on imports and disruption in supply-chain, HMIL has continued to drive operational excellence to ensure customer satisfaction. An export of 1 04 342 units in FY 20-21 stands testament to our indomitable spirit. It is a moment of great pride for Hyundai as we step forward in the journey of making world class quality cars from India. Our Smart Manufacturing Processes have led us to maintain our leadership position in passenger vehicle exports and strengthened our commitment to Make in India for the World.” `
         }
             ],
             singleEvent:[]
@@ -68,6 +63,7 @@ export default {
     },
     mounted(){
         this.filterEvent();
+        window.scrollTo(0, 0)
     },
     methods:{
         filterEvent(){
