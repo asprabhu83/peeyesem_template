@@ -234,6 +234,15 @@ export default {
       display: none;
   }
 }
+@media only screen and (min-width: 1270px) and (max-width: 1366px){
+    .form_sec{
+        width: 80%!important;
+    }
+    .image_sec img{
+       object-fit: cover!important;
+       object-position: inherit!important;
+    }
+}
 .heading{
     font-weight: 600;
     font-size: 25px;

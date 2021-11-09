@@ -9,12 +9,12 @@
               Owner's Manual Guide – Hyundai Cars
           </div>
           <div class="car_item_sec">
-              <div class="items" v-for="car in staticcars" :key="car.id">
+              <div class="items" v-for="car in $store.state.originalDataCars" :key="car.id">
                   <div class="photo">
-                      <img :src="require('@/assets/img/cars/static/'+ car.image)" alt="img"  />
+                      <img :src="baseUrl + 'images/' + car.car_image" alt="" >
                   </div>
                   <div class="detail">
-                      <div class="car_detail_name"><a :href="'/cars/?id='+ car.id">{{car.name}}</a></div>
+                      <div class="car_detail_name"><nuxt-link :to="'/cars/'+ car.car_title.replace(/\s+/g, '-').toLowerCase()">{{car.car_title}}</nuxt-link></div>
                       <button type="button"><font-awesome-icon icon="download"  size="1x" class="text-white  mx-2" />Download</button>
                   </div>
               </div>
@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import axios from '~/plugins/axios'
 export default {
     data(){
         return{
@@ -98,7 +99,28 @@ export default {
                 category:'SUV',
                 price:'17,00,000'
             }
-        ],
+            ],
+            baseUrl:process.env.baseUrl,
+        }
+    },
+    mounted(){
+         if(this.$store.state.cars.length == 0){
+           this.GetCars()
+        }
+    },
+    methods:{
+        GetCars(){
+            this.loading = true;
+            axios.get(process.env.baseUrl + 'api/cars/all')
+            .then((response) => {
+             this.loading =false;
+            this.$store.state.cars = response.data.cars;
+            this.$store.state.originalDataCars = response.data.cars;
+            })
+            .catch((error) => {
+            this.loading = false;
+            console.log(error)
+            })
         }
     }
 }

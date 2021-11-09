@@ -21,6 +21,8 @@
                             <a :href="$store.state.HeaderData.fbLink" target="_blank"><i class="fab fa-facebook-f cursor-pointer"></i></a>
                             <a :href="$store.state.HeaderData.instaLink" target="_blank"> <i class="fab fa-instagram cursor-pointer"></i></a>
                             <a :href="$store.state.HeaderData.youtubeLink" target="_blank"> <i class="fab fa-youtube cursor-pointer"></i></a>
+                            <a :href="$store.state.HeaderData.linkedInLink" target="_blank"> <i class="fab fa-linkedin "></i></a>
+                            <a :href="$store.state.HeaderData.buisnessLink" target="_blank"><img class="business_logo_icon" :src="require('@/assets/img/cars/buisness_logo.png')" /> </a>
                         </div>
                     </div>
                 </div>
@@ -52,6 +54,7 @@
                                                 <li><nuxt-link to="/cars/hyundai-santro"> Santro</nuxt-link></li>
                                                 <li><nuxt-link to="/cars/hyundai-all-new-i20"> All New i20</nuxt-link></li>
                                                 <li><nuxt-link to="/cars/hyundai-grand-i10-nios"> Grand i10 NIOS</nuxt-link></li>
+                                                <li><nuxt-link to="/cars/hyundai-i20-n-line"> i20 N Line</nuxt-link></li>
                                                 <li><nuxt-link to="/cars/hyundai-aura"> Aura</nuxt-link></li>
                                                 <li><nuxt-link to="/cars/hyundai-verna"> All New Verna</nuxt-link></li>
                                                 <li><nuxt-link to="/cars/hyundai-all-new-elantra"> Elantra</nuxt-link></li>
@@ -226,6 +229,10 @@ export default {
                         {
                             href: '/cars/hyundai-grand-i10-nios',
                             title: 'Grand i10 NIOS'
+                        },
+                        {
+                            href: '/cars/hyundai-i20-n-line',
+                            title: 'i20 N Line'
                         },
                         {
                             href: '/cars/hyundai-aura',
@@ -478,7 +485,7 @@ export default {
             axios.get(process.env.baseUrl + 'api/settings/index')
             .then((res)=>{
                 const [data] = res.data;
-                const {site_logo,service_number,sales_number,whatsapp_number,fb_link,insta_link,youtube_link} = data;
+                const {site_logo,service_number,sales_number,whatsapp_number,fb_link,insta_link,youtube_link,data_value} = data;
                 this.$store.state.HeaderData.logo = site_logo;
                 this.$store.state.HeaderData.serviceNo = service_number;
                 this.$store.state.HeaderData.salesNo = sales_number;
@@ -486,6 +493,8 @@ export default {
                 this.$store.state.HeaderData.fbLink = fb_link;
                 this.$store.state.HeaderData.instaLink = insta_link;
                 this.$store.state.HeaderData.youtubeLink = youtube_link;
+                this.$store.state.HeaderData.linkedInLink = JSON.parse(data_value).linked_in_link;
+                this.$store.state.HeaderData.buisnessLink = JSON.parse(data_value).buisness_link;
             }).catch((err)=>{
                 console.log(err);
             })
@@ -505,6 +514,10 @@ export default {
     color: #002c5f;
     font-size: 20px;
     margin-top: 3px;
+}
+.business_logo_icon{
+    margin-left: 4px;
+    margin-top: 2px;
 }
 
 /* Mobile Menu Multi Dropdown Items Start */
@@ -555,8 +568,15 @@ export default {
     .sub-menu>li>a{
         font-size: 12px;
     }
+    .business_logo_icon{
+        margin-top: 0px ;
+    }
 }
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
+    .business_logo_icon{
+        margin-top: 1px ;
+        width: 17px;
+    }
     .sub-menu>li>a{
         font-size: 11px;
         line-height: 28px;

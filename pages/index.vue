@@ -9,7 +9,6 @@
                             <swiper-slide>
                                 <div class="carousel_img_sec">
                                     <img :src="require('@/assets/img/cars/car15.webp')" alt="img" style="width:100%;" />
-                                    <div class="carousel_overlay" />
                                     <div class="know_more_btn_sec">
                                         <div>
                                             <nuxt-link class="knw_mre_btn" to="/contact-us/contact/">Know More</nuxt-link>
@@ -23,7 +22,6 @@
                             <swiper-slide>
                                 <div class="carousel_img_sec">
                                     <img :src="require('@/assets/img/cars/car13.webp')" alt="img" style="width:100%;" />
-                                    <div class="carousel_overlay" />
                                     <div class="know_more_btn_sec">
                                         <div>
                                             <nuxt-link class="knw_mre_btn" to="/contact-us/contact/">Know More</nuxt-link>
@@ -37,7 +35,6 @@
                             <swiper-slide>
                                 <div class="carousel_img_sec">
                                     <img :src="require('@/assets/img/cars/car14.webp')" alt="img" style="width:100%;" />
-                                    <div class="carousel_overlay" />
                                     <div class="know_more_btn_sec">
                                         <div>
                                             <nuxt-link class="knw_mre_btn" to="/contact-us/contact/">Know More</nuxt-link>
@@ -51,7 +48,6 @@
                             <swiper-slide>
                                 <div class="carousel_img_sec">
                                     <img :src="require('@/assets/img/cars/carousel_image_3.jpg')" alt="img" style="width:100%;" />
-                                    <div class="carousel_overlay" />
                                     <div class="know_more_btn_sec">
                                         <div>
                                             <nuxt-link class="knw_mre_btn" to="/contact-us/contact/">Know More</nuxt-link>
@@ -65,7 +61,6 @@
                             <swiper-slide>
                                 <div class="carousel_img_sec">
                                     <img :src="require('@/assets/img/cars/carousel_image_4.jpg')" alt="img" style="width:100%;" />
-                                    <div class="carousel_overlay" />
                                     <div class="know_more_btn_sec">
                                         <div>
                                             <nuxt-link class="knw_mre_btn" to="/contact-us/contact/">Know More</nuxt-link>
@@ -79,7 +74,6 @@
                             <swiper-slide>
                                 <div class="carousel_img_sec">
                                     <img :src="require('@/assets/img/cars/carousel_image_5.jpg')" alt="img" style="width:100%;" />
-                                    <div class="carousel_overlay" />
                                     <div class="know_more_btn_sec">
                                         <div>
                                             <nuxt-link class="knw_mre_btn" to="/contact-us/contact/">Know More</nuxt-link>
@@ -93,7 +87,6 @@
                             <swiper-slide>
                                 <div class="carousel_img_sec">
                                     <img :src="require('@/assets/img/cars/carousel_image_6.jpg')" alt="img" style="width:100%;" />
-                                    <div class="carousel_overlay" />
                                     <div class="know_more_btn_sec">
                                         <div>
                                             <nuxt-link class="knw_mre_btn" to="/contact-us/contact/">Know More</nuxt-link>
@@ -135,23 +128,19 @@
             <div class="row  service_items service_item_box flex items-center justify-evenly">
                 <div class="text-white text-center service_items service_item  font-bold text-xl">
                     <div class="mb-2 text-uppercase">Sales Showroom</div>
-                   <div class="flex items-center count_box"><img class="mx-2" :src="require('@/assets/img/vehicle.png')" alt="img"  /><div id="value1"> 6</div></div>
+                   <div class="flex items-center count_box"><img class="mx-2" :src="require('@/assets/img/vehicle.png')" alt="img"  /><div id="value1">7</div></div>
                 </div>
                 <div class="text-white text-center service_items service_item font-bold text-xl">
                     <div class="mb-2 text-uppercase">Service workshops</div>
-                   <div class="flex items-center count_box"><img class="mx-2 car_sold" :src="require('@/assets/img/car_sold.png')" alt="img"  /><div id="value2"> 255</div></div>
+                   <div class="flex items-center count_box"><img class="mx-2 car_sold" :src="require('@/assets/img/car_sold.png')" alt="img"  /><div id="value2">8</div></div>
                 </div>
                 <div class="text-white text-center service_items service_item font-bold text-xl">
                     <div class="mb-2 text-uppercase">Used car Showroom</div>
-                   <div class="flex items-center count_box"><img class="mx-2 car_service" :src="require('@/assets/img/car_service.png')" alt="img"  /><div id="value5"> 255</div></div>
+                   <div class="flex items-center count_box"><img class="mx-2 car_service" :src="require('@/assets/img/car_service.png')" alt="img"  /><div id="value3">10</div></div>
                 </div>
                 <div class="text-white text-center service_items service_item font-bold text-xl">
                    <div class="mb-2">HAPPY CUSTOMERS</div>
-                   <div class="flex items-center count_box"><img class="mx-2" :src="require('@/assets/img/userwhite.png')" alt="img"  /><div id="value3"> 430</div></div>
-                </div>
-                <div class="text-white text-center service_items service_item font-bold text-xl">
-                   <div class="mb-2">AWARDS</div>
-                   <div class="flex items-center count_box"><img class="mx-2" :src="require('@/assets/img/awardicon.png')" alt="img"  /><div id="value4">340</div> </div>
+                   <div class="flex items-center count_box"><img class="mx-2" :src="require('@/assets/img/userwhite.png')" alt="img"  /><div id="value4"> 1000+</div></div>
                 </div>
             </div>
         </div>
@@ -390,14 +379,12 @@ export default {
         const obj2 = document.getElementById("value2");
         const obj3 = document.getElementById("value3");
         const obj4 = document.getElementById("value4");
-        const obj5 = document.getElementById("value5");
 
         setTimeout(()=>{
-            this.animateValue(obj1, 0, 6, 2000);
-            this.animateValue(obj2, 0, 255, 11000);
-            this.animateValue(obj3, 0, 430, 11000);
-            this.animateValue(obj4, 0, 340, 11000);
-            this.animateValue(obj5, 0, 255, 11000);
+            this.animateValue(obj1, 0, 7, 2000);
+            this.animateValue(obj2, 0, 8, 2000);
+            this.animateValue(obj3, 0, 10, 2000);
+            this.animateValue(obj4, 0, 1000, 11000);
         },2000)
     },
     methods: {
@@ -490,6 +477,9 @@ export default {
                 if (!startTimestamp) startTimestamp = timestamp;
                 const progress = Math.min((timestamp - startTimestamp) / duration, 1);
                 obj.innerHTML = Math.floor(progress * (end - start) + start);
+                if(end == 1000){
+                  obj.innerHTML = Math.floor(progress * (end - start) + start) + ' +';  
+                }
                 if (progress < 1) {
                 window.requestAnimationFrame(step);
                 }

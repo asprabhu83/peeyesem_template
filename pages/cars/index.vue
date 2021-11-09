@@ -660,6 +660,9 @@ export default {
             if(car == 'hyundai-all-new-tucson'){
                 id = 10;
             }
+            if(car == 'hyundai-i20-n-line'){
+                id = 20;
+            }
             this.loading = true;
             axios
                 .get(process.env.baseUrl + 'api/show/car/' + id)

@@ -16,6 +16,8 @@ const createStore = () => {
         fbLink:'',
         instaLink:'',
         youtubeLink:'',
+        linkedInLink:'',
+        buisnessLink:'',
         salesNo:'',
         serviceNo:'',
         whatsappNo:''

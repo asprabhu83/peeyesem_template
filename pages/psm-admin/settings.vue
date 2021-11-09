@@ -112,7 +112,7 @@
                       tracking-wider
                     "
                   >
-                    Youtube Link
+                    LinkedIn Link
                   </th>
                   <th
                     scope="col"
@@ -218,7 +218,7 @@
                         text-green-800
                       "
                     >
-                      {{item.youtube_link}}
+                      {{JSON.parse(item.data_value).linked_in_link}}
                     </span>
                   </td>
                   <td
@@ -432,6 +432,60 @@
                   v-model="instaLink"
                 />
               </div>
+              <div class="mb-4">
+                <label
+                  class="block text-gray-700 text-sm font-bold mb-2"
+                  for="linkedin_link"
+                >
+                  LinkedIn Link
+                </label>
+                <input
+                  class="
+                    shadow-md
+                    appearance-none
+                    border
+                    rounded
+                    w-full
+                    py-2
+                    px-3
+                    text-gray-700
+                    leading-tight
+                    focus:outline-none
+                    focus:shadow-outline
+                  "
+                  id="linkedin_link"
+                  type="text"
+                  placeholder="LinkedIn Link"
+                  v-model="linkedInLink"
+                />
+              </div>
+              <div class="mb-4">
+                <label
+                  class="block text-gray-700 text-sm font-bold mb-2"
+                  for="business_link"
+                >
+                  Google Buisness Link
+                </label>
+                <input
+                  class="
+                    shadow-md
+                    appearance-none
+                    border
+                    rounded
+                    w-full
+                    py-2
+                    px-3
+                    text-gray-700
+                    leading-tight
+                    focus:outline-none
+                    focus:shadow-outline
+                  "
+                  id="business_link"
+                  type="text"
+                  placeholder="Google Buisness Link"
+                  v-model="buisnessLink"
+                />
+              </div>
               <div class="mb-12">
                 <label
                   class="block text-gray-700 text-sm font-bold mb-2"
@@ -459,7 +513,8 @@
                   v-model="youtubeLink"
                 />
               </div>
-              <div class="flex items-center justify-between">
+            </div>
+            <div class="flex items-center justify-between">
                 <button
                   class="
                     bg-blue-500
@@ -480,7 +535,6 @@
                   Update
                 </button>
               </div>
-            </div>
           </form>
       </div>
      </div>
@@ -504,6 +558,8 @@ export default {
             fbLink:'',
             instaLink:'',
             youtubeLink:'',
+            linkedInLink:'',
+            buisnessLink:'',
             SettingData:[],
             baseUrl:process.env.baseUrl,
         }
@@ -555,6 +611,8 @@ export default {
                 this.fbLink = res.data.fb_link;
                 this.instaLink = res.data.insta_link;
                 this.youtubeLink = res.data.youtube_link;
+                this.linkedInLink = JSON.parse(res.data.data_value).linked_in_link;
+                this.buisnessLink = JSON.parse(res.data.data_value).buisness_link;
             }).catch((err)=>{
                 console.log(err);
             })
@@ -562,6 +620,11 @@ export default {
         Update(e){
             var btn = e.target;
             btn.innerHTML = 'Loading';
+            var json_data = {
+              linked_in_link:this.linkedInLink,
+              buisness_link:this.buisnessLink
+            }
+            json_data = JSON.stringify(json_data);
             axios.put(process.env.baseUrl + 'api/settings/update/' + this.id,{
                 setting_id:'1',
                 site_logo:this.siteLogo,
@@ -570,7 +633,8 @@ export default {
                 whatsapp_number:this.whatsappNo,
                 fb_link:this.fbLink,
                 insta_link:this.instaLink,
-                youtube_link:this.youtubeLink
+                youtube_link:this.youtubeLink,
+                data_value: json_data
             }).then((res)=>{
                 this.editDialog = false;
                 btn.innerHTML = 'Update';
@@ -599,5 +663,27 @@ export default {
 .dialog_content {
   width: 550px;
   max-width: 100%;
+}
+.form_box{
+  height: 500px;
+  overflow: hidden;
+  overflow-y: scroll;
+  margin-bottom: 30px;
+}
+.form_box::-webkit-scrollbar {
+  width: 4px;
+}
+.form_box::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+.form_box::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+.form_box::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
 </style>

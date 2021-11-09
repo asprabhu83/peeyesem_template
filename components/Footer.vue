@@ -14,7 +14,7 @@
                 </div>
                 <div class="footer_item_sec footer_mobile_menu">
                     <div class="gmap_canvas">
-                        <iframe width="354" height="274" style="max-width:100%;" id="gmap_canvas" src="https://maps.google.com/maps?q=mylapore&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15547.7946740085!2d80.2575787!3d13.0389394!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5b5a4c51158248e4!2sPEEYESYEM%20HYUNDAI%20-%20MYLAPORE!5e0!3m2!1sen!2sin!4v1636443172904!5m2!1sen!2sin" width="354" height="274" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
                 <div class="footer_item_sec menus footer_mobile_menu">
@@ -54,6 +54,12 @@
                                 </li>
                                 <li>
                                     <a :href="$store.state.HeaderData.instaLink" target="_blank"><i class="fab fa-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a :href="$store.state.HeaderData.linkedInLink" target="_blank"><i class="fab fa-linkedin "></i></a>
+                                </li>
+                                <li>
+                                    <a :href="$store.state.HeaderData.buisnessLink" target="_blank"><img class="business_logo_icon2" :src="require('@/assets/img/cars/ggogle_business.png')" /></a>
                                 </li>
                             </ul>
                         </div>
@@ -190,7 +196,9 @@ export default {
 .footer_item_sec{
     margin: 0 32px;
 }
-
+.business_logo_icon2{
+    margin-bottom: -3px;
+}
 
 @media only screen and (min-width:300px) and (max-width:600px){
     .main_footer_sec{
@@ -229,6 +237,13 @@ export default {
     }
 }
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
+    #footer_one .footer_left_side_icon ul li a i {
+        font-size: 15px;
+    }
+    .business_logo_icon2{
+        margin-bottom: -3px;
+        width: 17px;
+    }
     .follows_us_sec{
         max-width: 15%!important;
     }

@@ -163,6 +163,11 @@ export default {
         width: 90%!important;
     }
 }
+@media only screen and (min-width: 1270px) and (max-width: 1366px){
+    .form_sec{
+        justify-content: center;
+    }
+}
 .heading{
     font-size: 24px;
     font-weight: 600;
