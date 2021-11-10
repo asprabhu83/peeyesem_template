@@ -422,6 +422,36 @@
                     </select>
           </div>
           <div class="mb-4">
+              <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="Manufacturer"
+            >
+              Location
+            </label>
+               <select
+                            class="
+                            shadow-md
+                            appearance-none
+                            border
+                            rounded
+                            w-full
+                            py-2
+                            px-3
+                            text-gray-700
+                            cursor-pointer
+                            leading-tight
+                            focus:outline-none
+                            focus:shadow-outline
+                            "
+                            id="Location"
+                            v-model="Location"
+                        >
+                        <option class="text-xl " value="">Select Location</option>
+                        <option class="text-xl" :value="model.name" v-for="model in CityList"
+                            :key="model.id" >{{model.name}}</option>
+                    </select>
+          </div>
+          <div class="mb-4">
             <label
               class="block text-gray-700 text-sm font-bold mb-2"
               for="price"
@@ -523,9 +553,36 @@ export default {
       carModel:'',
       purchaseYear:'',
       kmsDriven:'',
+      Location:'',
       fuelType:'',
       Manufacturer:'',
       Price:'',
+      CityList:[
+                {
+                    id:1,
+                    name:'Madurai'
+                },
+                {
+                    id:2,
+                    name:'Chennai'
+                },
+                {
+                    id:3,
+                    name:'Trichendur'
+                },
+                {
+                    id:4,
+                    name:'Ramanathapuram'
+                },
+                {
+                    id:5,
+                    name:'Kovilpatti'
+                },
+                {
+                    id:6,
+                    name:'Tuticorin'
+                }
+            ],
       FuelList:[
                 {
                     id:1,
@@ -640,8 +697,9 @@ export default {
           this.kmsDriven = res.data.kms_driven
           this.purchaseYear = res.data.purchase_year
           var data_form = JSON.parse(res.data.data_form);
-          var {manufacturer} = data_form;
+          var {manufacturer,location} = data_form;
           this.Manufacturer = manufacturer;
+          this.Location = location;
         }).catch((error) => {
           console.log(error)
         })
@@ -649,6 +707,7 @@ export default {
     Update(){
           var data_value = {
               manufacturer:this.Manufacturer,
+              location:this.Location
             }
             data_value = JSON.stringify(data_value);
       var id = this.id;

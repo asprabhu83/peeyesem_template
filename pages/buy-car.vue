@@ -100,6 +100,31 @@
                             :key="model.id" >{{model.name}}</option>
                         </select>
              </div>
+             <div class="my-4">
+                    <div class="title my-2">Location</div>
+                       <select
+                            class="
+                            shadow-md
+                            appearance-none
+                            border
+                            rounded
+                            w-full
+                            py-2
+                            px-3
+                            text-gray-700
+                            cursor-pointer
+                            leading-tight
+                            focus:outline-none
+                            focus:shadow-outline
+                            "
+                            id="location"
+                            v-model="LocationInput"
+                        >
+                        <option class="text-xl " value="">Select Location</option>
+                        <option class="text-xl" :value="model.name" v-for="model in CityList"
+                            :key="model.id" >{{model.name}}</option>
+                        </select>
+             </div>
              <div class="my-3">
                  <button class="apply_btn" type="button" @click="filterCars">Apply</button>
              </div>
@@ -270,6 +295,32 @@ export default {
             priceMaxValue: 500000,
             yearMinValue: 1995,
             yearMaxValue: 2015,
+            CityList:[
+                {
+                    id:1,
+                    name:'Madurai'
+                },
+                {
+                    id:2,
+                    name:'Chennai'
+                },
+                {
+                    id:3,
+                    name:'Trichendur'
+                },
+                {
+                    id:4,
+                    name:'Ramanathapuram'
+                },
+                {
+                    id:5,
+                    name:'Kovilpatti'
+                },
+                {
+                    id:6,
+                    name:'Tuticorin'
+                }
+            ],
             CarsList:[
                 {
                     id:1,
@@ -332,6 +383,7 @@ export default {
             ],
             CarModel:'',
             fuelType:'',
+            LocationInput:'',
             CarDetails:[],
             originalCarDetails:[],
             baseUrl:process.env.baseUrl,
@@ -347,7 +399,8 @@ export default {
                 kmsDriven:'',
                 name:'',
                 email:'',
-                mobile:''
+                mobile:'',
+                Location:''
             }
         }
     },
@@ -368,7 +421,8 @@ export default {
             this.singleCarDetail.Price = price;
             this.singleCarDetail.kmsDriven = kms_driven;
             var data = JSON.parse(data_form);
-            const {manufacturer} = data;
+            const {manufacturer,location} = data;
+            this.singleCarDetail.Location = location;
             this.singleCarDetail.Manufacturer = manufacturer;
         },
         Enquire(){
@@ -378,7 +432,8 @@ export default {
                 fuel_type:this.singleCarDetail.fuelType,
                 price:this.singleCarDetail.Price,
                 kms_driven:this.singleCarDetail.kmsDriven,
-                manufacturer:this.singleCarDetail.Manufacturer
+                manufacturer:this.singleCarDetail.Manufacturer,
+                location:this.singleCarDetail.Location
             }
             data_value = JSON.stringify(data_value);
             axios.post(process.env.baseUrl + 'api/car_form/store',{
@@ -421,6 +476,7 @@ export default {
         filterCars(){
             var model = this.CarModel;
             var fuel = this.fuelType;
+            var filterlocation = this.LocationInput;
             var minyear = this.yearMinValue;
             var maxyear = this.yearMaxValue;
             var minPrice = this.priceMinValue;
@@ -431,12 +487,21 @@ export default {
                 var price = parseInt(item.price.replace(/,/g,''));
                 var kms = parseInt(item.kms_driven.replace(/,/g,''));
                 var data_form = JSON.parse(item.data_form);
-                var {manufacturer} = data_form;
-                if(model !== '' && fuel !==''){
+                var {manufacturer,location} = data_form;
+                if(model !== '' && fuel !=='' && filterlocation !== ''){
+                    return (manufacturer == model && item.fuel_type == fuel && location == filterlocation) && (parseInt(item.purchase_year) >= minyear && parseInt(item.purchase_year) <= maxyear) && (price >= minPrice && price <= maxPrice) && (kms >= minKms && kms <= maxKms)
+                }
+                if(model == '' && fuel =='' && filterlocation == ''){
+                    return (parseInt(item.purchase_year) >= minyear && parseInt(item.purchase_year) <= maxyear) && (price >= minPrice && price <= maxPrice) && (kms >= minKms && kms <= maxKms)
+                }
+                if(model !== '' && fuel !== ''){
                     return (manufacturer == model && item.fuel_type == fuel) && (parseInt(item.purchase_year) >= minyear && parseInt(item.purchase_year) <= maxyear) && (price >= minPrice && price <= maxPrice) && (kms >= minKms && kms <= maxKms)
                 }
-                if(model == '' && fuel ==''){
-                    return (parseInt(item.purchase_year) >= minyear && parseInt(item.purchase_year) <= maxyear) && (price >= minPrice && price <= maxPrice) && (kms >= minKms && kms <= maxKms)
+                if(model !== '' && filterlocation !== ''){
+                    return (manufacturer == model && location == filterlocation) && (parseInt(item.purchase_year) >= minyear && parseInt(item.purchase_year) <= maxyear) && (price >= minPrice && price <= maxPrice) && (kms >= minKms && kms <= maxKms)
+                }
+                if(fuel !=='' && filterlocation !== ''){
+                    return (item.fuel_type == fuel && location == filterlocation) && (parseInt(item.purchase_year) >= minyear && parseInt(item.purchase_year) <= maxyear) && (price >= minPrice && price <= maxPrice) && (kms >= minKms && kms <= maxKms)
                 }
                 if(model !== ''){
                     return (manufacturer == model) && (parseInt(item.purchase_year) >= minyear && parseInt(item.purchase_year) <= maxyear) && (price >= minPrice && price <= maxPrice) && (kms >= minKms && kms <= maxKms)
@@ -444,6 +509,10 @@ export default {
                 if(fuel !==''){
                     return (item.fuel_type == fuel) && (parseInt(item.purchase_year) >= minyear && parseInt(item.purchase_year) <= maxyear) && (price >= minPrice && price <= maxPrice) && (kms >= minKms && kms <= maxKms)
                 }
+                if(filterlocation !==''){
+                    return (location == filterlocation) && (parseInt(item.purchase_year) >= minyear && parseInt(item.purchase_year) <= maxyear) && (price >= minPrice && price <= maxPrice) && (kms >= minKms && kms <= maxKms)
+                }
+                
             })
             this.CarDetails = newItem;
         }

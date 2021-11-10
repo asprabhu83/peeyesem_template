@@ -5981,7 +5981,7 @@ table {
     color: white;
     margin: 0 15px;
 }
-.fixed_form_sec div .sub_form_div{
+.fixed_form_sec div .sub_form_div, .fixed_form_sec a .sub_form_div{
     padding: 0 8px;
     transition: .6s ease-in-out;
     text-align: center;
@@ -6428,7 +6428,7 @@ table {
     .fixed_form_sec .form_div{
         transform: translateX(0px);
     }
-    .fixed_form_sec div .sub_form_div{
+    .fixed_form_sec div .sub_form_div,.fixed_form_sec a .sub_form_div{
         display: none;
     }
     .book_form_box{
