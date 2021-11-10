@@ -18,7 +18,7 @@
           administered by an able management with an experience of 4 decades in
           the Automobile Industry. Being Hyundai’s successful dealer – PEEYESYEM
           has extended its wings through various showrooms and workshops across
-          Tamil Nadu ( Chennai, Tuticorin, Kovilpatti, Trichendur, Ramnad and
+          Tamil Nadu ( Chennai, Tuticorin, Karaikudi, Kovilpatti, Trichendur, Ramnad and
           Madurai). PEEYESYEM family believe in taking care of greatest asset of
           the company which is our employees as only passionate and committed
           set of employees will take care of customers. Further, we firmly

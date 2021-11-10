@@ -111,7 +111,7 @@
                 <div class="left_sec w-1/2 mx-10 pt-6">
                     <h3 class="text-uppercase about_psm_head">Welcome to Peeyesyem hyundai <hr class="h-1 bg-black w-3/12 my-1" /></h3>
                     <div class="my-6 text-gray">
-                        PEEYESYEM Hyundai is an authorized dealer for HYUNDAI Motors India Limited which started it’s operations in the year 2016 and is being administered by an able management with an experience of 4 decades in the Automobile Industry. Being Hyundai’s successful dealer – PEEYESYEM has extended its wings through various showrooms and workshops across Tamil Nadu <br/> ( Chennai, Tuticorin, Kovilpatti, Trichendur, Ramnad and Madurai).
+                        PEEYESYEM Hyundai is an authorized dealer for HYUNDAI Motors India Limited which started it’s operations in the year 2016 and is being administered by an able management with an experience of 4 decades in the Automobile Industry. Being Hyundai’s successful dealer – PEEYESYEM has extended its wings through various showrooms and workshops across Tamil Nadu <br/> ( Chennai, Tuticorin, Kovilpatti, Karaikudi, Trichendur, Ramnad and Madurai).
                     </div>
                     <div class="my-3 ">
                         <nuxt-link class="read_mre_btn" to="/about">Read More</nuxt-link>
@@ -189,7 +189,7 @@
                 <button type="button" class="blog_post_button" @click="formModal = true">Book a Car</button>
              </div>
             <div class="text-center font-bold text-white ">
-                <button type="button" class="blog_post_button" @click="formModal3 = true">Request a Test drive</button> 
+                <nuxt-link class="blog_post_button" to="/contact-us/test-drive/">Request a Test Drive</nuxt-link>
             </div>
         </div>
     </section>
@@ -216,7 +216,7 @@
     <section class=" fixed_bg_image2">
         <div class="block py-4">
             <div class="relative bg-position_overlay testimonial_haeding">
-                <div class="text-center mb-2 text-lg  text-white sub_head">What Our Happy Clients say about us</div>
+                <div class="text-center mb-2 text-lg  text-white sub_head">What Our Happy Customers say about us</div>
                 <div class="text-center mb-4 text-3xl text-white font-bold testimonial_head">OUR TESTIMONIAL<hr class="h-1 bg-white mx-auto w-1/12 my-1" /></div>
             </div>
             <div class=" relative bg-position_overlay">
@@ -507,7 +507,7 @@ export default {
 
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
     .product_single_one_img img{
-        height: 450px;
+        height: 476px;
         object-fit: cover;
         object-position: top;
     }
@@ -516,6 +516,9 @@ export default {
         font-size: 12px!important;
         min-width: 160px!important;
     }
+}
+.blog_post_button{
+    font-weight: normal;
 }
 
 .carousel_img_sec{

@@ -14,7 +14,7 @@
                 </div>
                 <div class="footer_item_sec footer_mobile_menu">
                     <div class="gmap_canvas">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15547.7946740085!2d80.2575787!3d13.0389394!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5b5a4c51158248e4!2sPEEYESYEM%20HYUNDAI%20-%20MYLAPORE!5e0!3m2!1sen!2sin!4v1636443172904!5m2!1sen!2sin" width="354" height="274" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15547.7946740085!2d80.2575787!3d13.0389394!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5b5a4c51158248e4!2sPEEYESYEM%20HYUNDAI%20-%20MYLAPORE!5e0!3m2!1sen!2sin!4v1636443172904!5m2!1sen!2sin" width="354" height="274" style="border:0;max-width:100%;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
                 <div class="footer_item_sec menus footer_mobile_menu">

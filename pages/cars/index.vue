@@ -7,7 +7,7 @@
               <div class="title2">India's Favourite Family Car</div>
           </div>
       </div>
-      <div class="mt-16">
+      <div class="mt-3 mb-16">
           <div class="main_tab_sec">
               <nuxt-link to="/contact-us/test-drive">Test drive</nuxt-link>
               <nuxt-link to="">Prices</nuxt-link>
@@ -239,6 +239,7 @@
               <div class="car_spec_item_box my-5">
                   <div class="car_feature_variant_box my-14">
                       <div class="select_box w-3/12 mx-auto">
+                          <div class="variant_model_label">choose your variant</div>
                           <select
                                 class="
                                 shadow
@@ -261,6 +262,7 @@
                             <option class="text-xl"  :value="model.id" v-for="(model,index) in car.car_feature_variants"
                                 :key="index" >{{model.feature_type}}</option>
                           </select>
+                          <font-awesome-icon icon="chevron-down"  size="1x" class="text-black variant_model_icon mr-2" />
                       </div>
                   </div>
                   <div class="car_spec_tab_box">
@@ -776,8 +778,9 @@ export default {
            var newItem = this.car.car_specs_original.filter((item)=>{return item.spec_type == cat})
            this.car.car_specs = newItem;
         },
-        filterFeatureCategories(){
-            var category = [...new Set(this.car.car_features.map((item)=>{return item.variant_category}))];
+        filterFeatureCategories(variantId){
+            var othersItem = this.car.car_features_original.filter((item)=> item.features_model_id == variantId);
+            var category = [...new Set(othersItem.map((item)=>{return item.variant_category}))];
             this.car.car_features_tab = category;
             return category;
         },
@@ -814,13 +817,13 @@ export default {
             this.car.car_features = varient_feature;
             this.car.car_features_original = varient_feature;
             this.car.car_feature_variants = feature_model;
-            var Tab1 = this.filterCarSpecCategories();
-            var Tab2 = this.filterFeatureCategories();
-            var Tab3 = this.filterCompareCategories();
-            this.filterCarSpecs(Tab1[0]);
             this.VariantFeature = this.car.car_feature_variants[0].id;
             this.compareData.VariantFeatureCompare1= this.car.car_feature_variants[0].id;
             this.compareData.VariantFeatureCompare2 = this.car.car_feature_variants[1].id;
+            var Tab1 = this.filterCarSpecCategories();
+            var Tab2 = this.filterFeatureCategories(this.VariantFeature);
+            var Tab3 = this.filterCompareCategories();
+            this.filterCarSpecs(Tab1[0]);
             this.filterFeatures(Tab2[0]);
             this.filterCompareFeatures(Tab3[0]);
         },
@@ -832,7 +835,7 @@ export default {
 
 .main_tab_sec{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin: 30px auto;
 }
@@ -849,10 +852,24 @@ export default {
 .main_tab_sec a:hover{
     color: white;
 }
+.variant_model_label{
+    text-align: center;
+    margin: 20px 0;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.variant_model_icon{
+    position: relative;
+    float: right;
+    bottom: 28px;
+    right: 7px;
+}
 
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
     .car_video_item iframe{
-        max-width: 100%!important;
+        width: 860px!important;
     }
     .car_title_sec .car_title{
         font-size: 20px!important;
@@ -902,6 +919,10 @@ export default {
     .car_spec_tab_box .tab_item{
         font-size: 13px!important;
         margin: 10px 15px!important;
+    }
+    .main_tab_sec a{
+        padding: 4px 20px!important;
+        font-size: 12px!important;
     }
 }
 
@@ -1173,6 +1194,9 @@ export default {
 }
 /* Mobile Fixes */
 @media only screen and (min-width:300px) and (max-width:600px){
+    .car_spec_tab_box .tab_item{
+        text-align: center;
+    }
     .main_tab_sec{
         flex-wrap: wrap;
     }

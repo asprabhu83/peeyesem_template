@@ -106,6 +106,54 @@
                                 :key="model.id" >{{model.car_title}}</option>
                             </select>
                     </div>
+                    <div class="mb-4 mt-4">
+                      <select
+                                class="
+                                shadow-md
+                                appearance-none
+                                border
+                                rounded
+                                w-full
+                                py-2
+                                px-3
+                                text-gray-700
+                                cursor-pointer
+                                leading-tight
+                                focus:outline-none
+                                focus:shadow-outline
+                                "
+                                id="state"
+                                v-model="state"
+                            >
+                            <option class="text-xl " value="">Select State</option>
+                            <option class="text-xl" :value="state.name" v-for="state in StateList"
+                                :key="state.id" >{{state.name}}</option>
+                            </select>
+                    </div>
+                    <div class="mb-4 mt-4">
+                      <select
+                                class="
+                                shadow-md
+                                appearance-none
+                                border
+                                rounded
+                                w-full
+                                py-2
+                                px-3
+                                text-gray-700
+                                cursor-pointer
+                                leading-tight
+                                focus:outline-none
+                                focus:shadow-outline
+                                "
+                                id="city"
+                                v-model="city"
+                            >
+                            <option class="text-xl " value="">Select City</option>
+                            <option class="text-xl" :value="city.name" v-for="city in CityList"
+                                :key="city.id" >{{city.name}}</option>
+                            </select>
+                    </div>
                     <div class="mb-6 ">
                          <select
                                 class="
@@ -199,8 +247,8 @@
                         "
                         id="fuel_type"
                         type="text"
-                        placeholder="Address"
-                        v-model="address"
+                        placeholder="Comments"
+                        v-model="comments"
                         />
                     </div>
                     <div class="mb-6">
@@ -239,10 +287,44 @@ export default {
             fuelType:'',
             testDriveDate:'',
             Dealer:'',
-            address:'',
+            comments:'',
             Cars:[],
+            state:'',
+            city:'',
             dateType:'text',
             agreement:false,
+            StateList:[
+                {
+                    id:1,
+                    name:'Tamil Nadu'
+                }
+            ],
+            CityList:[
+                {
+                    id:1,
+                    name:'Madurai'
+                },
+                {
+                    id:2,
+                    name:'Chennai'
+                },
+                {
+                    id:3,
+                    name:'Trichendur'
+                },
+                {
+                    id:4,
+                    name:'Ramanathapuram'
+                },
+                {
+                    id:5,
+                    name:'Kovilpatti'
+                },
+                {
+                    id:6,
+                    name:'Tuticorin'
+                }
+            ],
             FuelTypeList:[
                 {
                     id:1,
@@ -263,6 +345,7 @@ export default {
         if(this.$store.state.cars.length == 0){
             this.GetModels();
         }
+        window.scrollTo(0, 0)
     },
     methods:{
         GetModels(){
@@ -279,7 +362,9 @@ export default {
                 fuel_type:this.fuelType,
                 test_drive_date:this.testDriveDate,
                 dealer:this.Dealer,
-                address:this.address
+                comments:this.comments,
+                state:this.state,
+                city:this.city
             }
             data_value = JSON.stringify(data_value);
             axios.post(process.env.baseUrl + 'api/car_form/store',{
@@ -297,6 +382,8 @@ export default {
                     this.vehicleModel = '';
                     this.fuelType = '';
                     this.testDriveDate = '';
+                    this.city = '';
+                    this.state = '';
                     this.Dealer = '';
                     this.address = '';
                     this.form_tab_index = 0;
