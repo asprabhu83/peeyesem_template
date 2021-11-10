@@ -254,6 +254,7 @@
                                 leading-tight
                                 focus:outline-none
                                 focus:shadow-outline
+                                variant_box_select
                                 "
                                 id="variant"
                                 v-model="VariantFeature"
@@ -859,12 +860,15 @@ export default {
     font-weight: 600;
     text-transform: capitalize;
 }
-
+.variant_box_select{
+    background: transparent;
+}
 .variant_model_icon{
     position: relative;
     float: right;
     bottom: 28px;
     right: 7px;
+    z-index: -2;
 }
 
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
@@ -1199,6 +1203,7 @@ export default {
     }
     .main_tab_sec{
         flex-wrap: wrap;
+        justify-content: center;
     }
     .main_tab_sec a{
         min-width: 172px;

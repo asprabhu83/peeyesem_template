@@ -118,7 +118,7 @@
                     </div>
                 </div>
                 <div class="right_sec w-1/2 mx-10 flex items-center about_psm_cars">
-                    <img :src="require('@/assets/img/cars/hyundai_group_car2.png')" style="margin-left:auto;margin-right:auto;" alt="img" />
+                    <img :src="require('@/assets/img/cars/group_car.png')" style="margin-left:auto;margin-right:auto;transform:scaleX(-1);" alt="img" />
                 </div>
             </div>
         </div>
