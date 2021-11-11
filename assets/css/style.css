@@ -5998,6 +5998,9 @@ table {
 .fixed_form_sec .form4:hover{
     transform: translateX(-188px);
 }
+.fixed_form_sec .form5:hover{
+    transform: translateX(-188px);
+}
 
 .whtsapp_btn{
     position: fixed;

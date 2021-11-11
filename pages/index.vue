@@ -194,6 +194,23 @@
         </div>
     </section>
 
+    <section class="icoty_awards py-16">
+        <div class="container">
+             <div class="blog_heading text-capitalize text-center py-5 font-bold text-3xl">ICOTY AWARDS <hr class="w-1/12 mx-auto bg-black h-0.5" style="background-color:black!important;"/></div>
+            <div class="card_box">
+                <div class="list_detail">
+                    <div>i10 - 2008</div>
+                    <div>Grand i10 - 2014</div>
+                    <div>Elite i20 - 2015</div>
+                    <div>Creta - 2016</div>
+                    <div>Verna - 2018</div>
+                    <div>Venue - 2020</div>
+                    <div>The all-new-i20 - 2021</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="pb-20 blog_post_section">
         <div class="container">
             <div class="blog_heading text-capitalize text-center py-16 font-bold text-3xl">LATEST NEWS <hr class="w-1/12 mx-auto bg-black h-0.5" style="background-color:black!important;"/></div>
@@ -504,6 +521,22 @@ export default {
 }
 </script>
 <style scoped>
+.icoty_awards .card_box{
+    box-shadow: 0 2px 10px 4px rgb(0 0 0/15%);
+    padding: 30px 20px;
+    width: 21%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+}
+.icoty_awards .list_detail{
+    font-size: 18px;
+    font-weight: 500;
+}
+.icoty_awards .list_detail div{
+     margin: 5px 0;
+     padding-left: 10px;
+}
 
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
     .product_single_one_img img{
@@ -515,6 +548,9 @@ export default {
         padding: 6px 15px!important;
         font-size: 12px!important;
         min-width: 160px!important;
+    }
+    .icoty_awards .list_detail{
+        font-size: 16px!important;
     }
 }
 .blog_post_button{
@@ -596,6 +632,9 @@ export default {
     .carousel_img_sec .know_more_btn_sec{
         display: none;
     }
+    .icoty_awards .card_box{
+        width: 91%!important;
+    }
 }
 .swiper-button-prev, .swiper-button-next{
     z-index: 220;
@@ -608,4 +647,5 @@ export default {
 .swiper-button-next:hover, .swiper-button-prev:hover{
     background: black!important;
 }
+
 </style>

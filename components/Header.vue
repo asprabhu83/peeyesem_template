@@ -18,10 +18,10 @@
                     <span class="divider mx-1">|</span>
                     <div class="right flex items-center mx-2">
                         <div class="social_icons_box flex">
-                            <a :href="$store.state.HeaderData.fbLink" target="_blank"><i class="fab fa-facebook-f cursor-pointer"></i></a>
-                            <a :href="$store.state.HeaderData.instaLink" target="_blank"> <i class="fab fa-instagram cursor-pointer"></i></a>
-                            <a :href="$store.state.HeaderData.youtubeLink" target="_blank"> <i class="fab fa-youtube cursor-pointer"></i></a>
-                            <a :href="$store.state.HeaderData.linkedInLink" target="_blank"> <i class="fab fa-linkedin "></i></a>
+                            <a :href="$store.state.HeaderData.fbLink" target="_blank"><img class="flat_icons" :src="require('@/assets/img/fbicon.png')" /></a>
+                            <a :href="$store.state.HeaderData.instaLink" target="_blank"><img class="flat_icons" :src="require('@/assets/img/instaicon.png')" /> </a>
+                            <a :href="$store.state.HeaderData.youtubeLink" target="_blank"> <img class="flat_icons" :src="require('@/assets/img/youtubeicon.png')" /></a>
+                            <a :href="$store.state.HeaderData.linkedInLink" target="_blank"><img class="flat_icons" :src="require('@/assets/img/linkedinicon.png')" /> </a>
                             <a :href="$store.state.HeaderData.buisnessLink" target="_blank"><img class="business_logo_icon" :src="require('@/assets/img/cars/buisness_logo.png')" /> </a>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
     <header class="header-section d-none d-sm-block d-lg-block d-xl-block">
         <div class="header-wrapper">
             <div id="header" class="header-bottom header-bottom-color--golden section-fluid sticky-header sticky-color--golden">
-                <div class="container">
+                <div class="container main_menu_header">
                     <div class="row">
                         <div class="col-12 d-flex align-items-center justify-content-center">
                             <!-- Start Header Logo -->
@@ -45,7 +45,9 @@
                             <div class="main-menu menu-color--black menu-hover-color--golden">
                                 <nav>
                                     <ul>
-                                        
+                                        <li>
+                                            <nuxt-link class="menu-item" to="/">Home</nuxt-link>
+                                        </li>
                                         <li class="has-dropdown">
                                             <a class="menu-item" href="#">New Cars <i class="fa fa-angle-down"></i></a>
                                             <!-- Sub Menu -->
@@ -94,7 +96,7 @@
                                             <nuxt-link class="menu-item" to="/accessories">Accessories</nuxt-link>
                                         </li>
                                         <li>
-                                            <a class="menu-item" href="#">Locations </a>
+                                            <nuxt-link class="menu-item" to="/">Locations </nuxt-link>
                                         </li>
                                         <li  class="has-dropdown">
                                             <nuxt-link class="menu-item" to="/about-us">About Us <i class="fa fa-angle-down"></i></nuxt-link>
@@ -506,6 +508,9 @@ export default {
 </script>
 
 <style>
+.container.main_menu_header{
+    max-width: 1600px;
+}
 .shodow_css_head{
     color: gray;
 }
@@ -517,7 +522,8 @@ export default {
 }
 .business_logo_icon{
     margin-left: 4px;
-    margin-top: 2px;
+    margin-top: 3px;
+    width: 24px;
 }
 
 /* Mobile Menu Multi Dropdown Items Start */
@@ -526,6 +532,11 @@ export default {
     margin-right: 8px;
     color: #002c5f;
     font-size: 20px;
+}
+.social_icons_box .flat_icons{
+    width: 27px;
+    margin-left: 4px;
+    margin-right: 4px;
 }
 
 .site_logo.size_resize{
@@ -569,13 +580,16 @@ export default {
         font-size: 12px;
     }
     .business_logo_icon{
-        margin-top: 0px ;
+        margin-top: 3px ;
     }
 }
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
     .business_logo_icon{
-        margin-top: 1px ;
-        width: 17px;
+        margin-top: 3px ;
+        width: 18px;
+    }
+    .social_icons_box .flat_icons{
+        width: 21px!important;
     }
     .sub-menu>li>a{
         font-size: 11px;
@@ -627,7 +641,7 @@ export default {
         padding: 9px 0;
     }
     .sticky-header.sticky.sticky-color--golden .main-menu{
-        width: 77%;
+        width: 79%;
     }
 }
 
