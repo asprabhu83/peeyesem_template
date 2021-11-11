@@ -1,7 +1,10 @@
 <template>
   <div class="loading">
       <div>
-          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          <img
+                :src="require('@/assets/img/Spinner_load3.svg')"
+                alt="img"
+            />
       </div>
   </div>
 </template>

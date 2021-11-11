@@ -110,8 +110,16 @@
             <div class="about_car_sec flex  justify-center items-center">
                 <div class="left_sec w-1/2 mx-10 pt-6">
                     <h3 class="text-uppercase about_psm_head">Welcome to Peeyesyem hyundai <hr class="h-1 bg-black w-3/12 my-1" /></h3>
-                    <div class="my-6 text-gray">
-                        PEEYESYEM Hyundai is an authorized dealer for HYUNDAI Motors India Limited which started it’s operations in the year 2016 and is being administered by an able management with an experience of 4 decades in the Automobile Industry. Being Hyundai’s successful dealer – PEEYESYEM has extended its wings through various showrooms and workshops across Tamil Nadu <br/> ( Chennai, Tuticorin, Kovilpatti, Karaikudi, Trichendur, Ramnad and Madurai).
+                    <div class="my-5 text-gray">
+                        <ul class="about_psm">
+                            <li>PEEYESYEM Hyundai is an authorized dealer for HYUNDAI Motors India Limited which started it’s operations in the year 2016 and is being administered by proficient management with an experience of 4 decades in the Automobile Industry.</li>
+                            <li>PEEYESYEM has extended its wings through various showrooms and workshops across Tamil Nadu - Chennai, Madurai, Tuticorin, Karaikudi, Kovilpatti, Trichendur & Ramnad.</li>
+                            <li>We ever look forward to constant feedback and suggestions for improvement from customers and employees for continuous development of the organization.</li>
+                            <li>Buying a car is every individual dream and it is very special occasion. We as a premium Hyundai car dealership always endeavour to achieve highest level of customer satisfaction and make the buying experience memorable for our customers.</li>
+                            <li>We have experienced sales & Service team to cater every need of the customer.</li>
+                            <li>Peeyesyem Hyundai also cater Used Cars, Insurance, Finance & Accessories. We serve every need, while buying your car</li>
+                            <li>Please do visit us and buy your dream car</li>
+                        </ul>
                     </div>
                     <div class="my-3 ">
                         <nuxt-link class="read_mre_btn" to="/about">Read More</nuxt-link>
@@ -179,17 +187,29 @@
 
     <div class="notice_card_sec px-2 my-4">
         <div>
-            <font-awesome-icon icon="star-of-life"  size="1x" class="star_icon mx-2" /> - <span style="padding-left:5px;"> Represents Ex-Showroom Price </span>
+            <font-awesome-icon icon="star-of-life"  size="1x" class="star_icon mx-2" /> - <span style="padding-left:5px;"> Exshowroom Price </span>
         </div>
     </div>
 
     <section class="book_form_section py-8" >
-        <div class="flex book_form_box items-center justify-evenly">
-            <div class="text-center font-bold text-white ">
+        <div class="flex book_form_box ">
+            <div class="text-center font-bold text-white btn_grps ">
                 <button type="button" class="blog_post_button" @click="formModal = true">Book a Car</button>
              </div>
-            <div class="text-center font-bold text-white ">
+             <div class="text-center font-bold text-white btn_grps ">
+                <button type="button" class="blog_post_button" @click="formModal2 = true">Book a Service</button>
+             </div>
+            <div class="text-center font-bold text-white btn_grps ">
                 <nuxt-link class="blog_post_button" to="/contact-us/test-drive/">Request a Test Drive</nuxt-link>
+            </div>
+            <div class="text-center font-bold text-white btn_grps ">
+                <nuxt-link class="blog_post_button" to="/sell-car">Exchange your car</nuxt-link>
+            </div>
+            <div class="text-center font-bold text-white btn_grps ">
+                <nuxt-link class="blog_post_button" to="/buy-car">Buy a Used Car</nuxt-link>
+            </div>
+            <div class="text-center font-bold text-white btn_grps ">
+                <nuxt-link class="blog_post_button" to="/">Monthly Offers</nuxt-link>
             </div>
         </div>
     </section>
@@ -537,6 +557,19 @@ export default {
      margin: 5px 0;
      padding-left: 10px;
 }
+.book_form_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.book_form_box .btn_grps{
+    margin: 0 20px;
+}
+.about_car_sec .about_psm li{
+    margin: 13px 0;
+    list-style-type: disc;
+    margin-left: 17px;
+}
 
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
     .product_single_one_img img{
@@ -551,6 +584,9 @@ export default {
     }
     .icoty_awards .list_detail{
         font-size: 16px!important;
+    }
+    .book_form_box .btn_grps{
+        margin: 0 7px!important;
     }
 }
 .blog_post_button{
