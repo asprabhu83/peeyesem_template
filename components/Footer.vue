@@ -47,19 +47,16 @@
                         <div class="footer_left_side_icon pt-0">
                             <ul class="pl-1">
                                 <li>
-                                    <a :href="$store.state.HeaderData.fbLink" target="_blank"><img class="flat_icons" :src="require('@/assets/img/fbicon.png')" /></a>
+                                    <a :href="$store.state.HeaderData.fbLink" target="_blank"><i class="fab fa-facebook-f"></i></a>
                                 </li>
                                 <li>
-                                    <a :href="$store.state.HeaderData.youtubeLink" target="_blank"><img class="flat_icons" :src="require('@/assets/img/youtubeicon.png')" /></a>
+                                    <a :href="$store.state.HeaderData.youtubeLink" target="_blank"><i class="fab fa-youtube"></i></a>
                                 </li>
                                 <li>
-                                    <a :href="$store.state.HeaderData.instaLink" target="_blank"><img class="flat_icons" :src="require('@/assets/img/instaicon.png')" /></a>
+                                    <a :href="$store.state.HeaderData.instaLink" target="_blank"><i class="fab fa-instagram"></i></a>
                                 </li>
                                 <li>
-                                    <a :href="$store.state.HeaderData.linkedInLink" target="_blank"><img class="flat_icons" :src="require('@/assets/img/linkedinicon.png')" /></a>
-                                </li>
-                                <li class="google_buisness">
-                                    <a :href="$store.state.HeaderData.buisnessLink" target="_blank"><img class="business_logo_icon2" :src="require('@/assets/img/cars/ggogle_business.png')" /></a>
+                                    <a :href="$store.state.HeaderData.linkedInLink" target="_blank"><i class="fab fa-linkedin "></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -205,6 +202,10 @@ export default {
 .footer_left_side_icon .flat_icons{
     width: 28px;
 }
+.gmap_canvas iframe{
+    width: 270px!important;
+    height: 177px!important;
+}
 
 
 @media only screen and (min-width:300px) and (max-width:600px){
@@ -233,6 +234,10 @@ export default {
         margin-bottom: 20px!important;
         font-size: 20px;
         padding: 0 17px;
+    }
+    .gmap_canvas iframe{
+        width: 100%!important;
+        height: 274px!important;
     }
 }
 @media only screen and (min-width: 1367px) and (max-width: 1600px){
@@ -279,8 +284,8 @@ export default {
         width: 21px;
     }
     .gmap_canvas iframe{
-        width: 261px!important;
-        height: 203px!important;
+        width: 248px!important;
+        height: 174px!important;
     }
 }
 </style>

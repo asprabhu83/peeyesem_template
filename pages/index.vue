@@ -105,9 +105,9 @@
         </div>
     </section>
 
-    <section class="py-24"  style="background:#e6eaef;">
+    <section class="py-24"  >
         <div class="container">
-            <div class="about_car_sec flex  justify-center">
+            <div class="about_car_sec flex  justify-center items-center">
                 <div class="left_sec w-1/2 mx-10 pt-6">
                     <h3 class="text-uppercase about_psm_head">Welcome to Peeyesyem hyundai <hr class="h-1 bg-black w-3/12 my-1" /></h3>
                     <div class="my-6 text-gray">
@@ -118,7 +118,7 @@
                     </div>
                 </div>
                 <div class="right_sec w-1/2 mx-10 flex items-center about_psm_cars">
-                    <img :src="require('@/assets/img/cars/group_car.png')" style="margin-left:auto;margin-right:auto;transform:scaleX(-1);" alt="img" />
+                    <img :src="require('@/assets/img/cars/static_car_images/car2.webp')" style="margin-left:auto;margin-right:auto;" alt="img" />
                 </div>
             </div>
         </div>

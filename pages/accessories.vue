@@ -9,18 +9,23 @@
             />
           </div>
           <div class="container">
-              <div class="heading my-5">Hyundai Genuine Parts</div>
+              <div class="heading my-16">Hyundai Genuine Parts</div>
+              <div class="circle_btn_sec">
+                  <div class="circle intersec1"><div> Guaranteed to Fit</div></div>
+                  <div class="circle "><div> Guaranteed to Perform</div></div>
+                  <div class="circle intersec2"><div> Guaranteed Genuine</div></div>
+              </div>
               <div class="first_sec">
                   <p>Hyundai Genuine Parts are designed and engineered specifically for delivering performance and longevity of your Hyundai cars, all Hyundai Genuine Parts are made to the highest standards.
                   Hyundai Genuine Parts are tested under various simulated extreme conditions to ensure Quality, Reliability and Durability. Over the years, significant investments in R&D have been made to study the design, material selection and internal construction of Hyundai Genuine Parts. They are also backed by a 6 month/10,000km warranty.</p>
               </div>
               <div class="sec_sec">
-                  <div>
+                  <div class="content">
                       <div class="header">Hyundai Mobis</div>
                       <p>Hyundai MOBIS is an exclusive and official partner of Hyundai Motors in India as well as globally. Hyundai Mobis is leading the trend of change and strives to become a leading company in automotive future technology.</p>
                       <p>We promise to realize the ultimate value that Hyundai Mobis pursues as 'Safety and Happiness of our customers' by steadily advancing into the global market as well as providing fast and accurate as parts .</p>
                   </div>
-                  <div>
+                  <div class="content">
                       <div class="header">Don’t settle for second best</div>
                       <p>The Automotive Parts Market is full of cheap alternatives. As inexpensive as possible, fitting non-Genuine or refurbished Parts to your Hyundai will affect the warranty of your vehicle. Those Parts are not manufactured under such stringent standards as Hyundai Genuine Parts.</p>
                       <p>Fitting such Parts will not only hamper the quality of your car, but will also affect other parts and cause more problems, leading to more repairs, or worse, an accident.So your family’s safety and peace of mind, always insist on Hyundai Genuine Parts.</p>
@@ -257,14 +262,67 @@ export default {
     width: 100%!important;
   }
 }
+@media only screen and (min-width: 1270px) and (max-width: 1366px){
+    .sec_sec{
+        width: 80%;
+        margin: 20px auto;
+    }
+    .form_sec .step{
+        width: 60%!important;
+    }
+}
+.accessories_content_sec .sec_sec .header{
+    font-size: 20px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+.accessories_content_sec .sec_sec p{
+    font-size: 15px;
+    color: black;
+    margin: 10px 0;
+}
+.circle_btn_sec{
+    margin: 30px auto;
+    width: 54%;
+    display: flex;
+}
+.circle_btn_sec .circle{
+    border-radius: 50%;
+    background: #e4dcd3;
+    color: black;
+    font-weight: 600;
+    opacity: 0.7;
+    height: 250px;
+    width: 250px;
+    position: relative;
+    text-align: center;
+}
+.circle_btn_sec .circle.intersec1{
+    left: 23px;
+}
+.circle_btn_sec .circle.intersec2{
+    right: 23px;
+}
+.circle div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.accessories_content_sec .sec_sec .content{
+    margin: 40px 0;
+}
 .acc_head_title .title{
     font-size: 28px;
     font-weight: 600;
 }
 .accessories_content_sec .first_sec{
     width: 50%;
-    margin: 20px auto;
-    font-size: 13px;
+    margin: 40px auto;
+}
+.accessories_content_sec .first_sec p{
+    font-size: 15px;
+    color: black;
 }
 .heading{
     font-weight: 600;

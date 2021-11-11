@@ -18,11 +18,10 @@
                     <span class="divider mx-1">|</span>
                     <div class="right flex items-center mx-2">
                         <div class="social_icons_box flex">
-                            <a :href="$store.state.HeaderData.fbLink" target="_blank"><img class="flat_icons" :src="require('@/assets/img/fbicon.png')" /></a>
-                            <a :href="$store.state.HeaderData.instaLink" target="_blank"><img class="flat_icons" :src="require('@/assets/img/instaicon.png')" /> </a>
-                            <a :href="$store.state.HeaderData.youtubeLink" target="_blank"> <img class="flat_icons" :src="require('@/assets/img/youtubeicon.png')" /></a>
-                            <a :href="$store.state.HeaderData.linkedInLink" target="_blank"><img class="flat_icons" :src="require('@/assets/img/linkedinicon.png')" /> </a>
-                            <a :href="$store.state.HeaderData.buisnessLink" target="_blank"><img class="business_logo_icon" :src="require('@/assets/img/cars/buisness_logo.png')" /> </a>
+                            <a :href="$store.state.HeaderData.fbLink" target="_blank"><img class="flat_icons" :src="require('@/assets/img/facebook.png')" /></a>
+                            <a :href="$store.state.HeaderData.instaLink" target="_blank"><img class="flat_icons" :src="require('@/assets/img/instagram.png')" /> </a>
+                            <a :href="$store.state.HeaderData.youtubeLink" target="_blank"> <img class="flat_icons" :src="require('@/assets/img/youtube.png')" /></a>
+                            <a :href="$store.state.HeaderData.linkedInLink" target="_blank"><img class="flat_icons" :src="require('@/assets/img/linkedin.png')" /> </a>
                         </div>
                     </div>
                 </div>
@@ -96,7 +95,7 @@
                                             <nuxt-link class="menu-item" to="/accessories">Accessories</nuxt-link>
                                         </li>
                                         <li>
-                                            <nuxt-link class="menu-item" to="/">Locations </nuxt-link>
+                                            <nuxt-link class="menu-item" to="/locations">Locations </nuxt-link>
                                         </li>
                                         <li  class="has-dropdown">
                                             <nuxt-link class="menu-item" to="/about-us">About Us <i class="fa fa-angle-down"></i></nuxt-link>
@@ -211,7 +210,10 @@ export default {
 
             // Mobile Menu Item Data 
             menu: [
-                
+                {
+                    title:'Home',
+                    href:'/'
+                },
                 {
                     title: 'New Cars',
                     child: [
@@ -535,8 +537,8 @@ export default {
 }
 .social_icons_box .flat_icons{
     width: 27px;
-    margin-left: 4px;
-    margin-right: 4px;
+    margin-left: 7px;
+    margin-right: 7px;
 }
 
 .site_logo.size_resize{
@@ -587,6 +589,9 @@ export default {
     .business_logo_icon{
         margin-top: 3px ;
         width: 18px;
+    }
+    .main-menu nav>ul>li{
+        padding-left: 25px!important;
     }
     .social_icons_box .flat_icons{
         width: 21px!important;
