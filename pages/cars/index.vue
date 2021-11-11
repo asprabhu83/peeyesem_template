@@ -99,7 +99,7 @@
           <div class="car_video_sec step3 my-24">
               <div class="title">{{car.name}} Video <hr /></div>
               <div class="car_video_item">
-                  <iframe width="1239" height="450"  :src="'https://www.youtube.com/embed/' + car.video_link" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <iframe width="1239" height="450"  :src="'https://www.youtube.com/embed/' + car.video_link + '/?rel=0'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
           </div>
           <div class="car_colour_sec step4 my-24">
