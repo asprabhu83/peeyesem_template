@@ -11,8 +11,8 @@
           <div class="main_tab_sec">
               <nuxt-link to="/contact-us/test-drive">Test drive</nuxt-link>
               <nuxt-link to="">Prices</nuxt-link>
-              <nuxt-link to="">Book a Car</nuxt-link>
-              <nuxt-link to=""><font-awesome-icon icon="download"  size="1x" class="text-white  mr-2" />e-Brochure</nuxt-link>
+              <button type="button" @click="formModal = true">Book a Car</button>
+              <a :href="e_brochure_link" :download="e_brochure_link"><font-awesome-icon icon="download"  size="1x" class="text-white  mr-2" />e-Brochure</a>
           </div>
       </div>
       <section class="car_title_sticky_header">
@@ -510,6 +510,7 @@
              </div>
          </div>
     </div> 
+    <Modal1 @closeModal="closeModal" v-if="formModal == true" />
     <Loading v-if="loading == true" />
   </div>
 </template>
@@ -517,15 +518,19 @@
 <script>
 import axios from '~/plugins/axios'
 import Loading from '../../components/Loading.vue'
+import Modal1 from '../../components/modals/formModal1.vue'
 export default {
     components:{
-        Loading
+        Loading,
+        Modal1
     },
     data(){
         return{
             singleCar:[],
            loading:false,
            DataBaseSingleCar:[],
+           formModal:false,
+           e_brochure_link:'',
            car:{
               baseUrl:process.env.baseUrl, 
               name:'',
@@ -630,38 +635,58 @@ export default {
         //     console.log(error)
         //     })
         // },
+        closeModal(value){
+            if(value == 'modal1'){
+                this.formModal = false;
+            }
+            if(value == 'modal2'){
+                this.formModal2 = false;
+            }
+            if(value == 'modal3'){
+                this.formModal3 = false;
+            }
+        },
         GetSingleCarData(){
             var car = this.$route.params.model;
             var id;
             if(car == 'hyundai-santro'){
                 id = 1;
+                this.e_brochure_link = '/SANTRO_Hatchback_brochure (1).pdf';
             }
             if(car == 'hyundai-all-new-i20'){
                 id = 7;
             }
             if(car == 'hyundai-grand-i10-nios'){
                 id = 14;
+                this.e_brochure_link = '/Grand Nios_Brochure-16PP_A4_2021 Web.pdf';
             }
             if(car == 'hyundai-aura'){
                 id = 2;
+                this.e_brochure_link = '/Aura_Brochure-16PP_A4_Web_22 oct.pdf';
             }
             if(car == 'hyundai-verna'){
                 id = 13;
+                this.e_brochure_link = '/Verna_Brochure-16PP_A4_Web_22 oct.pdf';
             }
             if(car == 'hyundai-all-new-elantra'){
                 id = 11;
+                this.e_brochure_link = '/Hyundai-Elantra-Brochure.pdf';
             }
             if(car == 'hyundai-venue'){
                 id = 12;
+                this.e_brochure_link = '/Tucson_suv_brochure.pdf';
             }
             if(car == 'hyundai-creta'){
                 id = 16;
+                this.e_brochure_link = '/Venue_Brochure-16PP_2021_Web.pdf';
             }
             if(car == 'hyundai-alcazar'){
                 id = 15;
+                this.e_brochure_link = '/Alcazar_Brochure-16PP_A4_2021_Web.pdf';
             }
             if(car == 'hyundai-all-new-tucson'){
                 id = 10;
+                this.e_brochure_link = '/Tucson_suv_brochure.pdf';
             }
             if(car == 'hyundai-i20-n-line'){
                 id = 20;
@@ -849,6 +874,17 @@ export default {
     border-radius: 5px;
     font-size: 17px;
     margin: 10px 20px;
+}
+.main_tab_sec button{
+    background:#002c5f;
+    border: none;
+    outline: none;
+    padding: 6px 25px;
+    color: white;
+    border-radius: 5px;
+    font-size: 17px;
+    margin: 10px 20px;
+    cursor: pointer;
 }
 .main_tab_sec a:hover{
     color: white;
