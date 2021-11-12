@@ -663,6 +663,15 @@ export default {
         width: 100%;
         padding: 40px 0;
     }
+    .book_form_box{
+        flex-wrap: wrap;
+    }
+    .book_form_box .btn_grps{
+        margin: 20px!important;
+    }
+    .book_form_box .btn_grps a{
+        display: inline-block;
+    }
     .carousel_img_sec .know_more_btn_sec{
         display: none;
     }
