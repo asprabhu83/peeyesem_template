@@ -353,6 +353,8 @@ export default {
     },
     methods:{
         GetModels(){
+            axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+            axios.defaults.withCredentials = false;
             axios.get(process.env.baseUrl + 'api/cars/all')
             .then((res)=>{
                 this.$store.state.cars = res.data.cars;
