@@ -180,6 +180,8 @@ export default {
   },
   methods: {
     GetCarsList () {
+      axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+      axios.defaults.withCredentials = false;
       axios
         .get(process.env.baseUrl + 'api/cars/all')
         .then((response) => {
