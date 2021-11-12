@@ -12,41 +12,51 @@
         <h3 class="text-center">About Peeyesyem Hyundai</h3>
       </div>
       <div class="about_description pt-16">
-        <p>
-          PEEYESYEM Hyundai is an authorized dealer for HYUNDAI Motors India
+        <ul>
+          <li>PEEYESYEM Hyundai is an authorized dealer for HYUNDAI Motors India
           Limited which started it’s operations in the year 2016 and is being
           administered by an able management with an experience of 4 decades in
-          the Automobile Industry. Being Hyundai’s successful dealer – PEEYESYEM
+          the Automobile Industry. </li>
+          <li>Being Hyundai’s successful dealer – PEEYESYEM
           has extended its wings through various showrooms and workshops across
           Tamil Nadu ( Chennai, Tuticorin, Karaikudi, Kovilpatti, Trichendur, Ramnad and
-          Madurai). PEEYESYEM family believe in taking care of greatest asset of
+          Madurai).</li>
+          <li>PEEYESYEM family believe in taking care of greatest asset of
           the company which is our employees as only passionate and committed
-          set of employees will take care of customers. Further, we firmly
+          set of employees will take care of customers.</li>
+          <li>Further, we firmly
           believe that our delighted customers will take care of success of our
-          business in return. Our focus is always on providing all stakeholders
+          business in return.</li>
+          <li>Our focus is always on providing all stakeholders
           with the latest technological advancements happening across the globe.
           Teamwork and loyalty are the two pillars of our organization which
-          transform into a culture of everyone associated with PEEYESYEM. We do
+          transform into a culture of everyone associated with PEEYESYEM.</li>
+          <li>We do
           provide a platform to ensure entrepreneurial work culture which
           fosters creativity, innovation to overcome challenges by taping the
-          opportunities . At Last but not the least, We always look forward to
+          opportunities .</li>
+          <li>At Last but not the least, We always look forward to
           constant feedback and suggestions for improvement from customers and
           employees which in other words means we are listening and learning to
-          ensure better organization. Car buying is always everybody's dream and
+          ensure better organization.</li>
+          <li>Car buying is always everybody's dream and
           it is very special occasion, we as a premium Hyundai car dealership
           always endeavor to achieve highest level of customer satisfaction and
-          improving the buying experience for our customers. We have best of the
+          improving the buying experience for our customers.</li>
+          <li>We have best of the
           sales staff to cater all your car buying needs and also have the
           skilled professional to take care for your car services and other
           requirements. We not only sells Hyundai car, we also deals in Used
-          Cars, Insurance, Finance, Accessories. We take care of your every need
+          Cars, Insurance, Finance, Accessories.</li>
+          <li>We take care of your every need
           while buying a car. With state-of-the-art workshops coupled with the
           company-trained technicians, we offers you an instant, efficient and
-          personalized customer service. It is this dedication to service and
+          personalized customer service.</li>
+          <li>It is this dedication to service and
           the maintenance of highest levels of customer satisfaction that have
           been the platform of our dealership success. We welcome you all at our
-          dealership. Please do visit us not only to buy a car but your dream.
-        </p>
+          dealership. Please do visit us not only to buy a car but your dream.</li>
+        </ul>
       </div>
       <div class="form_btns_box pt-16 pb-24">
          <nuxt-link to="/gallery">Media Gallery</nuxt-link>
@@ -75,6 +85,7 @@ export default {
     min-width: 195px !important;
   }
   .about_description {
+    width: 75%!important;
     padding-top: 40px !important;
   }
   .about_heading h3 {
@@ -82,14 +93,18 @@ export default {
   }
 }
 .about_description {
-  width: 80%;
+  width: 65%;
   margin-left: auto;
   margin-right: auto;
 }
-.about_description p {
+.about_description ul {
   margin: 30px 0;
   font-weight: 600;
   font-size: 16px;
+}
+.about_description ul li{
+  margin: 15px 0;
+  list-style-type: disc;
 }
 .form_btns_box {
   display: flex;

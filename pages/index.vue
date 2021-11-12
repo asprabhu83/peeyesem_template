@@ -113,11 +113,7 @@
                     <div class="my-5 text-gray">
                         <ul class="about_psm">
                             <li>PEEYESYEM Hyundai is an authorized dealer for HYUNDAI Motors India Limited which started it’s operations in the year 2016 and is being administered by proficient management with an experience of 4 decades in the Automobile Industry.</li>
-                            <li>PEEYESYEM has extended its wings through various showrooms and workshops across Tamil Nadu - Chennai, Madurai, Tuticorin, Karaikudi, Kovilpatti, Trichendur & Ramnad.</li>
-                            <li>We ever look forward to constant feedback and suggestions for improvement from customers and employees for continuous development of the organization.</li>
-                            <li>Buying a car is every individual dream and it is very special occasion. We as a premium Hyundai car dealership always endeavour to achieve highest level of customer satisfaction and make the buying experience memorable for our customers.</li>
                             <li>We have experienced sales & Service team to cater every need of the customer.</li>
-                            <li>Peeyesyem Hyundai also cater Used Cars, Insurance, Finance & Accessories. We serve every need, while buying your car</li>
                             <li>Please do visit us and buy your dream car</li>
                         </ul>
                     </div>
@@ -262,7 +258,7 @@
                                 <div class="testimonial_content">
                                     <div class="text-center quote_lines text-md mb-10 text-white font-semibold flex items-start justify-center" >
                                         <img class="mx-1 quote_icon" :src="require('@/assets/img/quotewhite.png')" alt="img"  />
-                                        <div class="mt-3">{{item.quote.substring(0,225)}}...</div>
+                                        <div class="mt-3">{{item.quote.substring(0,168)}}...</div>
                                     </div>
                                     <div class="flex items-center justify-center">
                                         <img class="mx-1" :src="require('@/assets/img/userwhite2.png')" alt="img"  />

@@ -4,26 +4,29 @@
       <div class="explanation text-center my-3">EMI calculator helps you to calculate the EMI for the loan amount to make a Hyundai car purchase through finance.</div>
       <div class="form_sec">
           <div class="input_box">
-              <input
-                        class="
-                            shadow-md
-                            appearance-none
-                            border
-                            rounded
-                            w-full
-                            py-2
-                            px-3
-                            text-gray-700
-                            leading-tight
-                            focus:outline-none
-                            focus:shadow-outline
-                        "
-                        id="vehicle"
-                        type="text"
-                        placeholder="Select Vehicle"
-                        v-model="vehicle"
-                        />
-          </div>
+                    <select
+                    class="
+                      shadow-md
+                      appearance-none
+                      border
+                      rounded
+                      w-full
+                      py-2
+                      px-3
+                      text-gray-700
+                      cursor-pointer
+                      leading-tight
+                      focus:outline-none
+                      focus:shadow-outline
+                    "
+                    id="cars"
+                    v-model="vehicle"
+                  >
+                  <option class="text-xl " value="">Select Model</option>
+                  <option class="text-xl" :value="model.car_title" v-for="model in this.$store.state.originalDataCars"
+                    :key="model.id" >{{model.car_title}}</option>
+                  </select>
+                </div>
           <div class="input_box">
               <input
                         class="
@@ -137,6 +140,7 @@
 </template>
 
 <script>
+import axios from '~/plugins/axios'
 export default {
     data(){
         return{
@@ -146,6 +150,22 @@ export default {
             interest:'',
             tenure:'',
             DownPayment:''
+        }
+    },
+    mounted(){
+        if(this.$store.state.cars.length == 0){
+            this.GetModels();
+        }
+    },
+    methods:{
+        GetModels(){
+            axios.get(process.env.baseUrl + 'api/cars/all')
+            .then((res)=>{
+                this.$store.state.cars = res.data.cars;
+                this.$store.state.originalDataCars = res.data.cars;
+            }).catch((err)=>{
+                console.log(err);
+            })
         }
     }
 }

@@ -319,6 +319,10 @@ export default {
                 {
                     id:6,
                     name:'Tuticorin'
+                },
+                {
+                    id:7,
+                    name:'Karaikudi'
                 }
             ],
             CarsList:[

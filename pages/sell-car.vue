@@ -489,7 +489,7 @@ export default {
             }
         },
         AddSellCarData(){
-            axios.post(process.env.baseUrl + 'api/car_form/store',{
+            axios.post(process.env.baseUrl + 'api/sell_car/store',{
                 full_name:this.name,
                 email:this.email,
                 mobile:this.mobile,
@@ -505,7 +505,6 @@ export default {
                 sell_type:this.sellType,
             }).then((res)=>{
                 if(res){
-                    window.open('https://lifeinsurance.adityabirlacapital.com/','_blank');
                     this.name = '';
                     this.email = '';
                     this.mobile = '';
