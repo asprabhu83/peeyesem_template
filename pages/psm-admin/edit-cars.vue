@@ -981,7 +981,7 @@
                     class="block text-gray-700 text-sm font-bold mb-2"
                     for="name"
                     >
-                    Feature Type
+                    Variant Model
                     </label>
                     <input
                     class="
@@ -998,8 +998,34 @@
                         focus:shadow-outline
                     "
                     type="text"
-                    placeholder="Feature Type"
+                    placeholder="Variant Model"
                     v-model="feutureType"
+                    />
+                </div>
+                <div class="mb-4">
+                    <label
+                    class="block text-gray-700 text-sm font-bold mb-2"
+                    for="variant_price"
+                    >
+                    Variant Price
+                    </label>
+                    <input
+                    class="
+                        shadow
+                        appearance-none
+                        border
+                        rounded
+                        w-full
+                        py-2
+                        px-3
+                        text-gray-700
+                        leading-tight
+                        focus:outline-none
+                        focus:shadow-outline
+                    "
+                    type="text"
+                    placeholder="Variant Price"
+                    v-model="variantPrice"
                     />
                 </div>
                 <div class="mt-5">
@@ -1300,6 +1326,7 @@ export default {
       feutureTitle: '',
       featureVariantTitle: '',
       feutureType: '',
+      variantPrice:'',
       variantFeutureType: '',
       variantFeutureValue: '',
       carFuelType: '',
@@ -1487,7 +1514,11 @@ export default {
         return item.id == varId
       })
       const [variant] = item;
-      const {id,feature_type} = variant;
+      const {id,feature_type,data_value} = variant;
+      if(data_value !== null){
+        var variantPrice = JSON.parse(data_value).variant_price;
+        this.variantPrice = variantPrice;
+      }
       this.EditID.variantId = id;
       this.feutureType = feature_type;
     },
@@ -1799,16 +1830,22 @@ export default {
           })
       }
       if (target === '11') {
+        var json_data = {
+          variant_price:this.variantPrice
+        }
+        json_data = JSON.stringify(json_data);
         axios
           .put(process.env.baseUrl + 'api/update/variant_model/' + this.EditID.variantId, {
             features_variant_id: this.featureVariantId,
-            feature_type: this.feutureType
+            feature_type: this.feutureType,
+            data_value:json_data
           })
           .then((response) => {
             this.carvariantsuccess = true
             btn.innerHTML = 'Add'
             this.GetSingleCar();
-            this.feutureType = ''
+            this.feutureType = '',
+            this.variantPrice = ''
              setTimeout(() => {
               this.carvariantsuccess = false
             }, 2000)

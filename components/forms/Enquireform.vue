@@ -394,6 +394,7 @@ export default {
                 state:this.state,
                 city:this.city
             }
+            data_value = JSON.stringify(data_value);
             axios.post(process.env.baseUrl + 'api/car_form/store',{
                 full_name:this.name,
                 email_id:this.email,

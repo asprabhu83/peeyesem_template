@@ -10,7 +10,7 @@
       <div class="mt-3 mb-16">
           <div class="main_tab_sec">
               <nuxt-link to="/contact-us/test-drive">Test drive</nuxt-link>
-              <nuxt-link to="">Prices</nuxt-link>
+              <nuxt-link to="/price-tables">Prices</nuxt-link>
               <button type="button" @click="formModal = true">Book a Car</button>
               <a :href="e_brochure_link" :download="e_brochure_link"><font-awesome-icon icon="download"  size="1x" class="text-white  mr-2" />e-Brochure</a>
           </div>

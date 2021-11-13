@@ -21,7 +21,7 @@
                 <div class="card_items_area">
                     <b-card-header role="tab">
                         <a block v-b-toggle.accordion-16>
-                            <h5 class="mb-0">Peeyesem Hyundai - MYLAPORE(Sales)<i class="fas fa-angle-down rotate-icon"></i></h5>
+                            <h5 class="mb-0">MYLAPORE(Sales)<i class="fas fa-angle-down rotate-icon"></i></h5>
                         </a>
                     </b-card-header>
                     <b-collapse id="accordion-16" accordion="my-accordion" role="tabpanel">
@@ -44,7 +44,7 @@
                 <div class="card_items_area">
                     <b-card-header role="tab">
                         <a block v-b-toggle.accordion-1>
-                            <h5 class="mb-0">Peeyesem Hyundai - GUINDY(Service)<i class="fas fa-angle-down rotate-icon"></i></h5>
+                            <h5 class="mb-0">GUINDY(Service)<i class="fas fa-angle-down rotate-icon"></i></h5>
                         </a>
                     </b-card-header>
                     <b-collapse id="accordion-1" accordion="my-accordion" role="tabpanel">
@@ -67,7 +67,7 @@
                 <div class="card_items_area">
                     <b-card-header role="tab">
                         <a block v-b-toggle.accordion-4>
-                            <h5 class="mb-0">Peeyesem Hyundai - TUTICORIN(Sales)<i class="fas fa-angle-down rotate-icon"></i></h5>
+                            <h5 class="mb-0">TUTICORIN(Sales)<i class="fas fa-angle-down rotate-icon"></i></h5>
                         </a>
                     </b-card-header>
                     <b-collapse id="accordion-4" accordion="my-accordion" role="tabpanel">
@@ -90,7 +90,7 @@
                 <div class="card_items_area">
                     <b-card-header role="tab">
                         <a block v-b-toggle.accordion-5>
-                            <h5 class="mb-0">Peeyesem Hyundai - TUTICORIN(Service)<i class="fas fa-angle-down rotate-icon"></i></h5>
+                            <h5 class="mb-0">TUTICORIN(Service)<i class="fas fa-angle-down rotate-icon"></i></h5>
                         </a>
                     </b-card-header>
                     <b-collapse id="accordion-5" accordion="my-accordion" role="tabpanel">
@@ -113,7 +113,7 @@
                 <div class="card_items_area">
                     <b-card-header role="tab">
                         <a block v-b-toggle.accordion-6>
-                            <h5 class="mb-0">Peeyesem Hyundai - MADURAI(Sales)<i class="fas fa-angle-down rotate-icon"></i></h5>
+                            <h5 class="mb-0">MADURAI(Sales)<i class="fas fa-angle-down rotate-icon"></i></h5>
                         </a>
                     </b-card-header>
                     <b-collapse id="accordion-6" accordion="my-accordion" role="tabpanel">
@@ -136,7 +136,7 @@
                  <div class="card_items_area">
                     <b-card-header role="tab">
                         <a block v-b-toggle.accordion-7>
-                            <h5 class="mb-0">Peeyesem Hyundai - MADURAI(Service)<i class="fas fa-angle-down rotate-icon"></i></h5>
+                            <h5 class="mb-0">MADURAI(Service)<i class="fas fa-angle-down rotate-icon"></i></h5>
                         </a>
                     </b-card-header>
                     <b-collapse id="accordion-7" accordion="my-accordion" role="tabpanel">
@@ -159,7 +159,7 @@
                 <div class="card_items_area">
                     <b-card-header role="tab">
                         <a block v-b-toggle.accordion-8>
-                            <h5 class="mb-0">Peeyesem Hyundai - KARAIKUDI(Sales)<i class="fas fa-angle-down rotate-icon"></i></h5>
+                            <h5 class="mb-0">KARAIKUDI(Sales)<i class="fas fa-angle-down rotate-icon"></i></h5>
                         </a>
                     </b-card-header>
                     <b-collapse id="accordion-8" accordion="my-accordion" role="tabpanel">
@@ -182,7 +182,7 @@
                 <div class="card_items_area">
                     <b-card-header role="tab">
                         <a block v-b-toggle.accordion-9>
-                            <h5 class="mb-0">Peeyesem Hyundai - KARAIKUDI(Service)<i class="fas fa-angle-down rotate-icon"></i></h5>
+                            <h5 class="mb-0">KARAIKUDI(Service)<i class="fas fa-angle-down rotate-icon"></i></h5>
                         </a>
                     </b-card-header>
                     <b-collapse id="accordion-9" accordion="my-accordion" role="tabpanel">
@@ -205,7 +205,7 @@
                 <div class="card_items_area">
                     <b-card-header role="tab">
                         <a block v-b-toggle.accordion-10>
-                            <h5 class="mb-0">Peeyesem Hyundai - RAMNAD(Sales)<i class="fas fa-angle-down rotate-icon"></i></h5>
+                            <h5 class="mb-0">RAMNAD(Sales)<i class="fas fa-angle-down rotate-icon"></i></h5>
                         </a>
                     </b-card-header>
                     <b-collapse id="accordion-10" accordion="my-accordion" role="tabpanel">
@@ -228,7 +228,7 @@
                 <div class="card_items_area">
                     <b-card-header role="tab">
                         <a block v-b-toggle.accordion-11>
-                            <h5 class="mb-0">Peeyesem Hyundai - RAMNAD(Service)<i class="fas fa-angle-down rotate-icon"></i></h5>
+                            <h5 class="mb-0">RAMNAD(Service)<i class="fas fa-angle-down rotate-icon"></i></h5>
                         </a>
                     </b-card-header>
                     <b-collapse id="accordion-11" accordion="my-accordion" role="tabpanel">
@@ -251,7 +251,7 @@
                 <div class="card_items_area">
                     <b-card-header role="tab">
                         <a block v-b-toggle.accordion-12>
-                            <h5 class="mb-0">Peeyesem Hyundai - KOVILPATTI(Sales)<i class="fas fa-angle-down rotate-icon"></i></h5>
+                            <h5 class="mb-0">KOVILPATTI(Sales)<i class="fas fa-angle-down rotate-icon"></i></h5>
                         </a>
                     </b-card-header>
                     <b-collapse id="accordion-12" accordion="my-accordion" role="tabpanel">
@@ -274,7 +274,7 @@
                  <div class="card_items_area">
                     <b-card-header role="tab">
                         <a block v-b-toggle.accordion-13>
-                            <h5 class="mb-0">Peeyesem Hyundai - KOVILPATTI(Service)<i class="fas fa-angle-down rotate-icon"></i></h5>
+                            <h5 class="mb-0">KOVILPATTI(Service)<i class="fas fa-angle-down rotate-icon"></i></h5>
                         </a>
                     </b-card-header>
                     <b-collapse id="accordion-13" accordion="my-accordion" role="tabpanel">
@@ -297,7 +297,7 @@
                 <div class="card_items_area">
                     <b-card-header role="tab">
                         <a block v-b-toggle.accordion-14>
-                            <h5 class="mb-0">Peeyesem Hyundai - THIRUCHENDUR(Sales)<i class="fas fa-angle-down rotate-icon"></i></h5>
+                            <h5 class="mb-0">THIRUCHENDUR(Sales)<i class="fas fa-angle-down rotate-icon"></i></h5>
                         </a>
                     </b-card-header>
                     <b-collapse id="accordion-14" accordion="my-accordion" role="tabpanel">
@@ -320,7 +320,7 @@
                 <div class="card_items_area">
                     <b-card-header role="tab">
                         <a block v-b-toggle.accordion-15>
-                            <h5 class="mb-0">Peeyesem Hyundai - THIRUCHENDUR(Service)<i class="fas fa-angle-down rotate-icon"></i></h5>
+                            <h5 class="mb-0">THIRUCHENDUR(Service)<i class="fas fa-angle-down rotate-icon"></i></h5>
                         </a>
                     </b-card-header>
                     <b-collapse id="accordion-15" accordion="my-accordion" role="tabpanel">
@@ -343,7 +343,7 @@
                 <div class="card_items_area">
                     <b-card-header role="tab">
                         <a block v-b-toggle.accordion-3>
-                            <h5 class="mb-0">Peeyesem Hyundai - TONDIARPET(Service)<i class="fas fa-angle-down rotate-icon"></i></h5>
+                            <h5 class="mb-0">TONDIARPET(Service)<i class="fas fa-angle-down rotate-icon"></i></h5>
                         </a>
                     </b-card-header>
                     <b-collapse id="accordion-3" accordion="my-accordion" role="tabpanel">
@@ -366,7 +366,7 @@
                 <div class="card_items_area">
                     <b-card-header role="tab">
                         <a block v-b-toggle.accordion-2>
-                            <h5 class="mb-0">Peeyesem Hyundai - KOTTURPURAM(Service)<i class="fas fa-angle-down rotate-icon"></i></h5>
+                            <h5 class="mb-0">KOTTURPURAM(Service)<i class="fas fa-angle-down rotate-icon"></i></h5>
                         </a>
                     </b-card-header>
                     <b-collapse id="accordion-2" accordion="my-accordion" role="tabpanel">
