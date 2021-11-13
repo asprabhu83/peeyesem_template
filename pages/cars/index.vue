@@ -583,8 +583,7 @@ export default {
                'Videos',
                'Colors',
                'Specs',
-               'Features',
-               'Price List',
+               'Features'
            ],
            VariantFeature:1,
            car_tab_index:0,
@@ -1245,6 +1244,9 @@ export default {
 }
 /* Mobile Fixes */
 @media only screen and (min-width:300px) and (max-width:600px){
+    .form_component{
+        width: 90%!important;
+    }
     .car_spec_tab_box .tab_item{
         text-align: center;
     }
@@ -1255,6 +1257,10 @@ export default {
     .main_tab_sec a{
         min-width: 172px;
         text-align: center;
+        width: 60%!important;
+    }
+    .main_tab_sec button{
+        width: 60%!important;
     }
     .car_poster_details{
         position: absolute;
