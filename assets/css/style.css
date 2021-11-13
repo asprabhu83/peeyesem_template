@@ -6239,6 +6239,10 @@ table {
     min-height:198px;
     max-height:198px;
 }
+.car_box_item a.know_more_cars{
+    display: flex;
+    align-items: center;
+}
 .car_box_item a img{
     width:100%;
     min-height:198px;
@@ -6506,6 +6510,7 @@ table {
     .car_box_item img{
         width: 100%!important;
     }
+
     .testimonial_content{
         width:95%;
         font-size: 14px;

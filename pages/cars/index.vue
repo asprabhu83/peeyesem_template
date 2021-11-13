@@ -354,6 +354,12 @@
                   </div>
              </div>
          </div>
+         <div class="py-24" >
+             <div class="car_type_main_title">Enquire Now <hr /></div>
+             <div class="form_component">
+                 <EnquireForm />
+             </div>
+         </div>
          <div class="my-24" style="display:none;" >
              <div class="car_type_main_title">{{car.name}} Comparison <hr /></div>
              <div class="comp_box my-5">
@@ -519,14 +525,16 @@
 import axios from '~/plugins/axios'
 import Loading from '../../components/Loading.vue'
 import Modal1 from '../../components/modals/formModal1.vue'
+import EnquireForm from '../../components/forms/Enquireform.vue'
 export default {
     components:{
         Loading,
-        Modal1
+        Modal1,
+        EnquireForm
     },
     data(){
         return{
-            singleCar:[],
+           singleCar:[],
            loading:false,
            DataBaseSingleCar:[],
            formModal:false,
@@ -858,7 +866,10 @@ export default {
 </script>
 
 <style scoped>
-
+.form_component{
+    width: 50%;
+    margin: 30px auto;
+}
 .main_tab_sec{
     display: flex;
     justify-content: flex-start;

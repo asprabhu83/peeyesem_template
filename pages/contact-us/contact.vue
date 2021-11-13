@@ -16,7 +16,7 @@
                   <div><b>Location:</b>{{loc.location}}</div>
                   <div><b>Particulars:</b>{{loc.particulars}}</div>
                   <div><b>Address:</b>{{loc.address}}</div>
-                  <div><b>Email:</b>{{loc.email}}</div>
+                  <div class="email"><b>Email:</b>{{loc.email}}</div>
                   <div><b>Contact Person:</b>{{loc.contact_person}}</div>
                   <div><b>Contact Person Number:</b>{{loc.contact_person_number}}</div>
               </div>
@@ -667,6 +667,25 @@ export default {
   .explain{
       width: 90%!important;
   }
+  .contact_locations_sec{
+      width: 100%!important;
+  }
+  .contact_locations_sec .item_card{
+      width: 94%!important;
+      padding: 13px!important;
+      flex-wrap: wrap;
+  }
+  .contact_locations_sec .item_card .left_side, .contact_locations_sec .item_card .right_side{
+        width: 100%!important;
+        padding: 13px!important;
+    }
+    .contact_locations_sec .item_card .left_side{
+        border: none!important;
+    }
+    .contact_locations_sec .email{
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    }
 }
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
     .form_sec{
@@ -679,7 +698,6 @@ export default {
     .contact_locations_sec .item_card{
         width: 95%!important;
     }
-
 }
 .contact_locations_sec{
     display: flex;

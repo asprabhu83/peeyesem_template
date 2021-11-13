@@ -176,7 +176,7 @@
                 </div>
             </div>
             <div class="car_box_item flex items-center justify-center" style="background:#002c5f;">
-                <nuxt-link class="cursor-pointer text-white" to="/all-cars" style="min-height:unset;" >Know More</nuxt-link>
+                <nuxt-link class="cursor-pointer text-white know_more_cars" to="/all-cars" >Know More</nuxt-link>
             </div>
         </div>
     </section>

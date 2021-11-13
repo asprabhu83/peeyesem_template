@@ -303,7 +303,7 @@ export default {
                     ]
                 },
                 {
-                    href:'/',
+                    href:'/locations',
                     title: 'Locations'
                 },
                 {
