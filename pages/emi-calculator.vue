@@ -21,34 +21,41 @@
                     "
                     id="cars"
                     v-model="vehicle"
+                    @change="filterModel"
                   >
                   <option class="text-xl " value="">Select Model</option>
-                  <option class="text-xl" :value="model.car_title" v-for="model in this.$store.state.originalDataCars"
+                  <option class="text-xl" :value="model.id" v-for="model in this.$store.state.originalDataCars"
                     :key="model.id" >{{model.car_title}}</option>
                   </select>
+                  <font-awesome-icon icon="chevron-down"  size="1x" class="text-black variant_model_icon mr-2" />
                 </div>
           <div class="input_box">
-              <input
-                        class="
-                            shadow-md
-                            appearance-none
-                            border
-                            rounded
-                            w-full
-                            py-2
-                            px-3
-                            text-gray-700
-                            leading-tight
-                            focus:outline-none
-                            focus:shadow-outline
-                        "
-                        id="variant"
-                        type="text"
-                        placeholder="Select Variant"
-                        v-model="variant"
-                        />
+                 <select
+                    class="
+                      shadow-md
+                      appearance-none
+                      border
+                      rounded
+                      w-full
+                      py-2
+                      px-3
+                      text-gray-700
+                      cursor-pointer
+                      leading-tight
+                      focus:outline-none
+                      focus:shadow-outline
+                    "
+                    id="variant"
+                    v-model="variant"
+                    @change="changeRoadPrice"
+                  >
+                  <option class="text-xl " value="">Select Variant</option>
+                  <option class="text-xl" :value="model.id" v-for="model in variantList"
+                    :key="model.id" >{{model.feature_type}}</option>
+                  </select>
+                <font-awesome-icon icon="chevron-down"  size="1x" class="text-black variant_model_icon mr-2" />
           </div>
-          <div class="input_box">
+          <div class="input_box text_box">
               <input
                         class="
                             shadow-md
@@ -69,7 +76,7 @@
                         v-model="roadPrice"
                         />
           </div>
-          <div class="input_box">
+          <div class="input_box text_box">
               <input
                         class="
                             shadow-md
@@ -91,25 +98,29 @@
                         />
           </div>
           <div class="input_box">
-              <input
-                        class="
-                            shadow-md
-                            appearance-none
-                            border
-                            rounded
-                            w-full
-                            py-2
-                            px-3
-                            text-gray-700
-                            leading-tight
-                            focus:outline-none
-                            focus:shadow-outline
-                        "
-                        id="tenure"
-                        type="text"
-                        placeholder="Select Tenure"
-                        v-model="tenure"
-                        />
+                        <select
+                    class="
+                      shadow-md
+                      appearance-none
+                      border
+                      rounded
+                      w-full
+                      py-2
+                      px-3
+                      text-gray-700
+                      cursor-pointer
+                      leading-tight
+                      focus:outline-none
+                      focus:shadow-outline
+                    "
+                    id="tenure"
+                    v-model="tenure"
+                  >
+                  <option class="text-xl " value="">Select Tenure</option>
+                  <option class="text-xl" :value="tenure" v-for="tenure in TenureList"
+                    :key="tenure" >{{tenure}}</option>
+                  </select>
+                <font-awesome-icon icon="chevron-down"  size="1x" class="text-black variant_model_icon mr-2" />
           </div>
           <div class="input_box">
               <input
@@ -149,7 +160,17 @@ export default {
             roadPrice:'',
             interest:'',
             tenure:'',
-            DownPayment:''
+            DownPayment:'',
+            TenureList:[
+                '12 Months',
+                '24 Months',
+                '36 Months',
+                '48 Months',
+                '60 Months',
+                '72 Months',
+                '84 Months'
+            ],
+            variantList:[]
         }
     },
     mounted(){
@@ -166,6 +187,24 @@ export default {
             }).catch((err)=>{
                 console.log(err);
             })
+        },
+        filterModel(){
+            if(this.vehicle !== ''){
+                axios.get(process.env.baseUrl + 'api/show/car/' + this.vehicle)
+                .then((res)=>{
+                    this.variantList = res.data.feature_model;
+                })
+            }
+        },
+        changeRoadPrice(){
+            if(this.variant !== ''){
+                var item = this.variantList.filter((item)=>{
+                    return item.id == this.variant
+                })
+                const [variant] = item;
+                const {data_value} = variant;
+                this.roadPrice = JSON.parse(data_value).variant_price;
+            }
         }
     }
 }
@@ -188,6 +227,16 @@ export default {
         justify-content: center;
     }
 }
+.variant_model_icon{
+    position: relative;
+    float: right;
+    bottom: 28px;
+    right: 7px;
+    z-index: -2;
+}
+select{
+    background: transparent;
+}
 .heading{
     font-size: 24px;
     font-weight: 600;
@@ -205,6 +254,9 @@ export default {
 .form_sec .input_box{
     width: 47%;
     margin: 20px 15px;
+}
+.form_sec .input_box.text_box{
+    margin-top: 0;
 }
 .btn_box{
     text-align: center;
