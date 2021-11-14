@@ -72,7 +72,7 @@
                         "
                         id="roadPrice"
                         type="text"
-                        placeholder="On Road Price"
+                        placeholder="Exshowroom Price"
                         v-model="roadPrice"
                         />
           </div>
