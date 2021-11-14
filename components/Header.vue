@@ -115,7 +115,7 @@
                                                 <li><nuxt-link to="/contact-us/test-drive">Test Drive</nuxt-link></li>
                                                 <li><nuxt-link to="/contact-us/sales-enquiry">Sales Enquiry</nuxt-link></li>
                                                 <li><nuxt-link to="/emi-calculator">EMI Calculator</nuxt-link></li>
-                                                    <li><nuxt-link to="/hyundai-offers">Special Offers</nuxt-link></li>
+                                                    <!-- <li><nuxt-link to="/hyundai-offers">Special Offers</nuxt-link></li> -->
                                                 <li><nuxt-link to="/contact-us/feedback">Feedback</nuxt-link></li>
                                                 <li><nuxt-link to="/contact-us/contact">Contact Us</nuxt-link></li>
                                             <li><nuxt-link to="/contact-us/get-price-quote">Get A Quote</nuxt-link></li>
@@ -284,10 +284,10 @@ export default {
                             href: '/emi-calculator',
                             title: 'EMI Calculator'
                         },
-                        {
-                            href: '/hyundai-offers',
-                            title: 'Special Offers'
-                        },
+                        // {
+                        //     href: '/hyundai-offers',
+                        //     title: 'Special Offers'
+                        // },
                         {
                             href: '/contact-us/feedback',
                             title: 'Feedback'
