@@ -1,10 +1,14 @@
 <template>
   <div class="">
-      <!-- <div class="img_sec">
-           <img :src="require('@/assets/img/cars/car13.webp')" alt="img" style="width:100%;" />
-      </div> -->
-      <div class="my-5">
-            <h3 class="text-center ">Used Cars</h3>
+      <div class="img_sec">
+           <img :src="require('@/assets/img/used_car_poster.webp')" alt="img" style="width:100%;" />
+           <div class="used_car_title">
+                    <h2 class="text-center ">Used Cars</h2>
+          </div>
+      </div>
+      <div class="h_promise_content ">
+          <h3 class="text-center mb-4">H Promise - Approved used car</h3>
+          <div class="desc text-center">Hyundai Motor India Ltd. started its certified used car program under the brand name "H PROMISE" to give good quality of used cars to Indian customers. Vehicles are certified by Hyundai and come with Hyundai warranty upto 1 year or 20,000Km (whichever earlier from the date of delivery) & 2 free services. Through this program customer is assured of trust, transparency, convenience and peace of mind.</div>
       </div>
       <div class="my-5 car_section">
           <div class="filter_box">
@@ -540,6 +544,9 @@ export default {
         width: 29%!important;
         margin: 15px!important;
     }
+    .h_promise_content{
+        width: 70%!important;
+    }
 }
 @media only screen and (min-width:300px) and (max-width:600px){
     .car_section .filter_box{
@@ -555,6 +562,31 @@ export default {
     .car_item_box_sec{
         margin: 0px 5px 30px 5px!important;
     }
+    .h_promise_content{
+        width: 90%!important;
+    }
+    .used_car_title{
+        left: 14%!important;
+    }
+    .used_car_title h2{
+        font-size: 20px!important;
+    }
+}
+.img_sec{
+    position: relative;
+}
+.used_car_title{
+    position: absolute;
+    top: 18%;
+    left: 21%;
+}
+.used_car_title h2{
+    font-size: 40px;
+    font-weight: 600;
+}
+.h_promise_content{
+    width: 50%;
+    margin: 60px auto 0px auto;
 }
 .btn_box{
     text-align: center;
