@@ -1,5 +1,5 @@
 <template>
-    <div class="pt-12 pb-24">
+    <div class="pt-12 pb-24 location_page_sec">
         <div class="acc_head_title mt-16 mb-8">
             <div class="text-center title">Locate Us</div>
         </div>
@@ -485,6 +485,9 @@ export default {
     }
     .acc_content .asides{
         width: 100%!important;
+    }
+    .location_page_sec{
+        padding-top: 0!important;
     }
 }
 </style>

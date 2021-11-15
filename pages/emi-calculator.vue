@@ -1,5 +1,5 @@
 <template>
-  <div class="my-24">
+  <div class="my-24 emi_page_sec">
       <div class="heading text-center my-4">EMI Calculator</div>
       <div class="explanation text-center my-3">EMI calculator helps you to calculate the EMI for the loan amount to make a Hyundai car purchase through finance.</div>
       <div class="form_sec">
@@ -92,7 +92,7 @@
                             focus:shadow-outline
                         "
                         id="interest"
-                        type="text"
+                        type="number"
                         placeholder="Rate of Interest"
                         v-model="interest"
                         />
@@ -138,10 +138,20 @@
                             focus:shadow-outline
                         "
                         id="DownPayment"
-                        type="text"
+                        type="number"
                         placeholder="Down Payment"
                         v-model="DownPayment"
                         />
+          </div>
+      </div>
+      <div class="emi_total_sec" v-if="Loanamount !== '' && calculatedEMI !== ''">
+          <div class="rightside">
+              <div class="emi title">Loan Amount</div>
+              <div class="emi"><font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mr-2" />{{Loanamount}}</div>
+          </div>
+          <div class="leftside">
+              <div class="emi title">Calculated EMI</div>
+              <div class="emi"><font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mr-2" />{{calculatedEMI}}</div>
           </div>
       </div>
       <div class="btn_box">
@@ -170,7 +180,9 @@ export default {
                 '72 Months',
                 '84 Months'
             ],
-            variantList:[]
+            variantList:[],
+            Loanamount:'',
+            calculatedEMI:''
         }
     },
     mounted(){
@@ -208,19 +220,21 @@ export default {
         },
         calculate(){
             var err = 0;
-            if(this.variant == '' || this.vehicle == '' || this.tenure == '' || this.roadPrice == '' || this.DownPayment == '' || this.interest == ''){
+            if(this.tenure == '' || this.roadPrice == '' || this.DownPayment == '' || this.interest == ''){
                 err++;
             }
             if(err == 0){
-                var p = this.roadPrice - this.DownPayment;
-                var r = this.interest;
+                var roadPrice = this.roadPrice.replace(',','');
+                roadPrice = parseInt(roadPrice);
+                var p = roadPrice - this.DownPayment;
+                var r = parseFloat(this.interest)/12/100;
                 var n = this.tenure.match(/(\d+)/);
                 n = n[0];
                 n = parseInt(n);
                 var powElem = (1+r);
                 var ans = p*r*Math.pow(powElem,n)/(Math.pow(powElem,n) - 1);
-                console.log(p,r,n);
-                console.log(ans);
+                this.Loanamount = p;
+                this.calculatedEMI = ans.toFixed(2);
             }
         }
     }
@@ -238,11 +252,53 @@ export default {
     .form_sec .input_box{
         width: 90%!important;
     }
+    .form_sec .input_box{
+        margin: 14px!important;
+    }
+    .form_sec .input_box.text_box{
+        margin: 20px 14px!important;
+    }
+    .emi_page_sec{
+        margin-top: 50px!important;
+    }
+}
+@media only screen and (min-width: 1367px) and (max-width: 1600px){
+    .form_sec{
+        justify-content: center;
+    }
+    .form_sec .input_box{
+        margin: 14px!important;
+    }
+    .form_sec .input_box.text_box{
+        margin: 20px!important;
+    }
 }
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
     .form_sec{
         justify-content: center;
     }
+    .form_sec .input_box{
+        margin: 12px!important;
+    }
+    .form_sec .input_box.text_box{
+        margin: 20px!important;
+    }
+}
+.emi_total_sec{
+    width: 40%;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.emi_total_sec .emi{
+    margin:10px 0;
+    text-align: center;
+    font-size: 18px;
+}
+.emi_total_sec .emi.title{
+    font-weight: 600;
 }
 .variant_model_icon{
     position: relative;
