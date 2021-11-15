@@ -152,8 +152,8 @@
                                                 <tr v-if="singleData.length == 0" >
                                                     <td class="px-6 py-4 whitespace-nowrap" colspan="2" style="text-align:center;"> No Data</td>
                                                 </tr>
-                                                <tr v-for="item in singleData" :key="item.id">
-                                                <td class="px-4 py-3 " >
+                                                <tr v-for="item in singleData" :key="item.id" :class="item.data_value == null ? 'empty_data' : ''">
+                                                <td class="px-4 py-3 " v-if="item.data_value !== null">
                                                     <span
                                                     class="
                                                         inline-flex
@@ -166,7 +166,7 @@
                                                     {{item.feature_type}}
                                                     </span>
                                                 </td>
-                                                <td class="px-4 py-3 " >
+                                                <td class="px-4 py-3 " v-if="item.data_value !== null">
                                                     <span
                                                     class="
                                                         inline-flex
@@ -176,21 +176,8 @@
                                                         font-semibold
                                                         text-black
                                                     "
-                                                    v-if="item.data_value !== null"
                                                     >
                                                     <font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mr-2" />{{JSON.parse(item.data_value).variant_price}}
-                                                    </span>
-                                                    <span
-                                                    class="
-                                                        inline-flex
-                                                        text-xs
-                                                        leading-5
-                                                        font-semibold
-                                                        text-black
-                                                    "
-                                                    v-else
-                                                    >
-                                                    -
                                                     </span>
                                                 </td>
                                                 </tr>
