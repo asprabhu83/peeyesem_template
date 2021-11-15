@@ -224,8 +224,9 @@ export default {
                 err++;
             }
             if(err == 0){
-                var roadPrice = this.roadPrice.replace(',','');
+                var roadPrice = this.roadPrice.replace(/,/g,'');
                 roadPrice = parseInt(roadPrice);
+                console.log(roadPrice)
                 var p = roadPrice - this.DownPayment;
                 var r = parseFloat(this.interest)/12/100;
                 var n = this.tenure.match(/(\d+)/);
