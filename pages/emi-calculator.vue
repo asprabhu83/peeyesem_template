@@ -145,7 +145,7 @@
           </div>
       </div>
       <div class="btn_box">
-          <button type="button">Back</button>
+          <button type="button" @click="calculate">Calculate</button>
       </div>
   </div>
 </template>
@@ -204,6 +204,23 @@ export default {
                 const [variant] = item;
                 const {data_value} = variant;
                 this.roadPrice = JSON.parse(data_value).variant_price;
+            }
+        },
+        calculate(){
+            var err = 0;
+            if(this.variant == '' || this.vehicle == '' || this.tenure == '' || this.roadPrice == '' || this.DownPayment == '' || this.interest == ''){
+                err++;
+            }
+            if(err == 0){
+                var p = this.roadPrice - this.DownPayment;
+                var r = this.interest;
+                var n = this.tenure.match(/(\d+)/);
+                n = n[0];
+                n = parseInt(n);
+                var powElem = (1+r);
+                var ans = p*r*Math.pow(powElem,n)/(Math.pow(powElem,n) - 1);
+                console.log(p,r,n);
+                console.log(ans);
             }
         }
     }
