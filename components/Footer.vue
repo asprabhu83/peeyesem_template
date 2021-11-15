@@ -75,37 +75,39 @@
                             <div>
                                 <div class="location_sec">
                                     <div class="mr-2 font-semibold">Sales:</div>
-                                    <div>Mylapore</div>
+                                    <nuxt-link to="/locations?location=mylapore-sales" class="cursor-pointer">Mylapore</nuxt-link>
                                     <span>|</span>
-                                    <div>Tuticorin</div>
+                                    <nuxt-link to="/locations?location=tuticorin-sales" class="cursor-pointer">Tuticorin</nuxt-link>
                                     <span>|</span>
-                                    <div>Thiruchendur</div>
+                                    <nuxt-link to="/locations?location=thiruchendur-sales" class="cursor-pointer">Thiruchendur</nuxt-link>
                                     <span>|</span>
-                                    <div>Kovilpatti</div>
+                                    <nuxt-link to="/locations?location=kovilpatti-sales" class="cursor-pointer">Kovilpatti</nuxt-link>
                                     <span>|</span>
-                                    <div>Madurai</div>
+                                    <nuxt-link to="/locations?location=madurai-sales" class="cursor-pointer">Madurai</nuxt-link>
                                     <span>|</span>
-                                    <div>Ramnad</div>
+                                    <nuxt-link to="/locations?location=ramnad-sales" class="cursor-pointer">Ramnad</nuxt-link>
                                     <span>|</span>
-                                    <div>Karaikudi</div>
+                                    <nuxt-link to="/locations?location=karaikudi-sales" class="cursor-pointer">Karaikudi</nuxt-link>
                                 </div>
                                 <div class="location_sec ">
                                         <div class="mr-2 font-semibold">Service:</div>
-                                        <div>Tondaripet</div>
+                                        <nuxt-link to="/locations?location=tondiarpet-service" class="cursor-pointer">Tondaripet</nuxt-link>
                                         <span>|</span>
-                                        <div>Kotturpuram</div>
+                                        <nuxt-link to="/locations?location=kotturpuram-service" class="cursor-pointer">Kotturpuram</nuxt-link>
                                         <span>|</span>
-                                        <div>Guindy</div>
+                                        <nuxt-link to="/locations?location=guindy-service" class="cursor-pointer">Guindy</nuxt-link>
                                         <span>|</span>
-                                        <div>Tuticorin</div>
+                                        <nuxt-link to="/locations?location=tuticorin-service" class="cursor-pointer">Tuticorin</nuxt-link>
                                         <span>|</span>
-                                        <div>Madurai</div>
+                                        <nuxt-link to="/locations?location=madurai-service" class="cursor-pointer">Madurai</nuxt-link>
                                         <span>|</span>
-                                        <div>Thiruchendur</div>
+                                        <nuxt-link to="/locations?location=thiruchendur-service" class="cursor-pointer">Thiruchendur</nuxt-link>
                                         <span>|</span>
-                                        <div>Kovilpatti</div>
+                                        <nuxt-link to="/locations?location=kovilpatti-service" class="cursor-pointer">Kovilpatti</nuxt-link>
                                         <span>|</span>
-                                        <div>Ramnad</div>
+                                        <nuxt-link to="/locations?location=ramnad-service" class="cursor-pointer">Ramnad</nuxt-link>
+                                        <span>|</span>
+                                        <nuxt-link to="/locations?location=karaikudi-service" class="cursor-pointer">Karaikudi</nuxt-link>
                                 </div>
                             </div>
                         </div>
@@ -182,9 +184,12 @@ export default {
     flex-wrap: wrap;
     justify-content: center;
 }
-.location_sec div,.location_sec span{
+.location_sec a,.location_sec span, .location_sec div{
     color: white;
     margin: 5px 10px 5px 0;
+}
+.location_sec a:hover{
+    color: white;
 }
 .main_footer_sec{
     display: flex;
