@@ -23,9 +23,10 @@ export default {
         }
     },
     mounted(){
-        this.filterEvent();
         if(this.$store.state.BlogsData.length == 0){
-            this.$router.push('/blog');
+            this.GetBlog();
+        }else{
+            this.filterEvent();
         }
         window.scrollTo(0, 0)
     },
@@ -35,6 +36,19 @@ export default {
               return eve.id == this.$route.params.singleblog;
             })
             this.singleBlog = item;
+        },
+        GetBlog(){
+            axios
+            .get(process.env.baseUrl + 'api/blog/index')
+            .then((response) => {
+            this.$store.state.BlogsData = response.data
+                if(response){
+                    this.filterEvent();
+                }
+            })
+            .catch((error) => {
+            console.log(error)
+            })
         }
     }
 }

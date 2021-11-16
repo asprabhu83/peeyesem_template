@@ -662,6 +662,7 @@ export default {
             }
             if(car == 'hyundai-all-new-i20'){
                 id = 7;
+                this.e_brochure_link = '/i20-Hatchback-2020.pdf'
             }
             if(car == 'hyundai-grand-i10-nios'){
                 id = 14;
@@ -681,11 +682,11 @@ export default {
             }
             if(car == 'hyundai-venue'){
                 id = 12;
-                this.e_brochure_link = '/Tucson_suv_brochure.pdf';
+                this.e_brochure_link = '/Venue_Brochure-16PP_2021_Web.pdf';
             }
             if(car == 'hyundai-creta'){
                 id = 16;
-                this.e_brochure_link = '/Venue_Brochure-16PP_2021_Web.pdf';
+                this.e_brochure_link = '/Creta_Brochure-16PP_A4_2021.pdf';
             }
             if(car == 'hyundai-alcazar'){
                 id = 15;
@@ -697,6 +698,7 @@ export default {
             }
             if(car == 'hyundai-i20-n-line'){
                 id = 20;
+                this.e_brochure_link = '/N-Line.pdf'
             }
             this.loading = true;
             axios

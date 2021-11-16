@@ -9,13 +9,13 @@
               Owner's Manual Guide – Hyundai Cars
           </div>
           <div class="car_item_sec">
-              <div class="items" v-for="car in $store.state.originalDataCars" :key="car.id">
+              <div class="items" v-for="(car,index) in $store.state.originalDataCars" :key="index">
                   <div class="photo">
                       <img :src="baseUrl + 'images/' + car.car_image" alt="" >
                   </div>
                   <div class="detail">
                       <div class="car_detail_name"><nuxt-link :to="'/cars/'+ car.car_title.replace(/\s+/g, '-').toLowerCase()">{{car.car_title}}</nuxt-link></div>
-                      <button type="button"><font-awesome-icon icon="download"  size="1x" class="text-white  mx-2" />Download</button>
+                      <a class="download_manual" :href="brochureList[index].pdf"><font-awesome-icon icon="download"  size="1x" class="text-white  mx-2" />Download</a>
                   </div>
               </div>
           </div>
@@ -28,77 +28,51 @@ import axios from '~/plugins/axios'
 export default {
     data(){
         return{
-            staticcars:[
-            {
-                id:1,
-                name:'Hyundai All New I20',
-                image:'car7.jpg',
-                category:'Hatchback',
-                price:'8,19,900'
-            },
-            {
-                id:2,
-                name:'Hyundai Santro',
-                image:'car8.jpg',
-                category:'Hatchback',
-                price:'4,67,490'
-            },
-            {
-                id:3,
-                name:'GRAND i10 NIOS',
-                image:'car9.webp',
-                category:'Hatchback',
-                price:'8,14,900'
-            },
-            {
-                id:5,
-                name:'Hyundai Aura',
-                image:'car2.webp',
-                category:'Sedan',
-                price:'22,30,000'
-            },
-            {
-                id:6,
-                name:'Hyundai Verna',
-                image:'car15.jpg',
-                category:'Sedan',
-                price:'8,19,900'
-            },
-            {
-                id:7,
-                name:'Hyundai ELANTRA',
-                image:'car11.webp',
-                category:'Sedan',
-                price:'10,68,000'
-            },
-            {
-                id:8,
-                name:'Hyundai Tuscon',
-                image:'car18.webp',
-                category:'SUV',
-                price:'4,67,490'
-            },
-            {
-                id:9,
-                name:'Hyundai Venue',
-                image:'car4.webp',
-                category:'SUV',
-                price:'8,16,500'
-            },
-            {
-                id:11,
-                name:'Hyundai Alcazar',
-                image:'car17.jpg',
-                category:'SUV',
-                price:'16,53,300'
-            },
-            {
-                id:12,
-                name:'Hyundai CRETA',
-                image:'car19.webp',
-                category:'SUV',
-                price:'17,00,000'
-            }
+            brochureList:[
+                {
+                    id:1,
+                    pdf:'/Tucson_suv_brochure.pdf'
+                },
+                {
+                    id:2,
+                    pdf:'/Venue_Brochure-16PP_2021_Web.pdf'
+                },
+                {
+                    id:3,
+                    pdf:'/Alcazar_Brochure-16PP_A4_2021_Web.pdf'
+                },
+                {
+                    id:4,
+                    pdf:'/Creta_Brochure-16PP_A4_2021.pdf.pdf'
+                },
+                {
+                    id:5,
+                    pdf:'/Aura_Brochure-16PP_A4_Web_22 oct.pdf'
+                },
+                {
+                    id:6,
+                    pdf:'/Hyundai-Elantra-Brochure.pdf'
+                },
+                {
+                    id:7,
+                    pdf:'/Verna_Brochure-16PP_A4_Web_22 oct.pdf'
+                },
+                {
+                    id:8,
+                    pdf:'/SANTRO_Hatchback_brochure (1).pdf'
+                },
+                {
+                    id:9,
+                    pdf:'/i20-Hatchback-2020.pdf'
+                },
+                {
+                    id:10,
+                    pdf:'/Grand Nios_Brochure-16PP_A4_2021 Web.pdf'
+                },
+                {
+                    id:11,
+                    pdf:'/N-Line.pdf'
+                }
             ],
             baseUrl:process.env.baseUrl,
         }
@@ -194,7 +168,7 @@ export default {
     cursor: pointer;
     color: #002c5f;
 }
-.car_item_sec .detail button{
+.car_item_sec .detail a.download_manual{
     padding: 5px 20px;
     border:none;
     outline: none;
@@ -202,6 +176,10 @@ export default {
     background: #002c5f;
     color: white;
     border-radius: 4px;
+    text-align: center;
+}
+a.download_manual:hover{
+    color: white;
 }
 .car_detail_name a:hover{
     color: #002c5f;
