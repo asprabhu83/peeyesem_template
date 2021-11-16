@@ -48,7 +48,7 @@
                                             <nuxt-link class="menu-item" to="/">Home</nuxt-link>
                                         </li>
                                         <li class="has-dropdown">
-                                            <a class="menu-item" href="#">New Cars <i class="fa fa-angle-down"></i></a>
+                                            <nuxt-link class="menu-item" to="">New Cars <i class="fa fa-angle-down"></i></nuxt-link>
                                             <!-- Sub Menu -->
                                             <ul class="sub-menu">
                                                 <li><nuxt-link to="/all-cars">All Cars</nuxt-link></li>
@@ -66,7 +66,7 @@
                                             </ul>
                                         </li>
                                         <li class="has-dropdown">
-                                            <a class="menu-item" href="#">Used Cars<i class="fa fa-angle-down"></i></a>
+                                            <nuxt-link class="menu-item" to="">Used Cars<i class="fa fa-angle-down"></i></nuxt-link>
                                             <!-- Sub Menu -->
                                             <ul class="sub-menu">
                                                 <li><nuxt-link to="/buy-car">Buy a car</nuxt-link></li>
@@ -74,7 +74,7 @@
                                             </ul>
                                         </li>
                                         <li class="has-dropdown">
-                                            <a class="menu-item" href="#">Services<i class="fa fa-angle-down"></i></a>
+                                            <nuxt-link class="menu-item" to="">Services<i class="fa fa-angle-down"></i></nuxt-link>
                                             <!-- Sub Menu -->
                                             <ul class="sub-menu">
                                                 <li><nuxt-link to="/service-booking">Book a Service</nuxt-link></li>
@@ -98,7 +98,7 @@
                                             <nuxt-link class="menu-item" to="/locations">Locations </nuxt-link>
                                         </li>
                                         <li  class="has-dropdown">
-                                            <nuxt-link class="menu-item" to="/about-us">About Us <i class="fa fa-angle-down"></i></nuxt-link>
+                                            <nuxt-link class="menu-item" to="">About Us <i class="fa fa-angle-down"></i></nuxt-link>
                                             <ul class="sub-menu">
                                                 <li><nuxt-link to="/about">About</nuxt-link></li>
                                                 <li><nuxt-link to="/blog">Blog</nuxt-link></li>
@@ -110,7 +110,7 @@
                                         </li>
 
                                         <li class="has-dropdown">
-                                            <a class="menu-item" href="#">Contact Us <i class="fa fa-angle-down"></i></a>
+                                            <nuxt-link class="menu-item" to="">Contact Us <i class="fa fa-angle-down"></i></nuxt-link>
                                                <ul class="sub-menu">
                                                 <li><nuxt-link to="/contact-us/test-drive">Test Drive</nuxt-link></li>
                                                 <li><nuxt-link to="/contact-us/sales-enquiry">Sales Enquiry</nuxt-link></li>
@@ -367,8 +367,8 @@ export default {
                     title:'Used Cars',
                     child:[
                         {
-                            href: '/',
-                            title: 'Used Cars'
+                            href: '/buy-car',
+                            title: 'Buy a Car'
                         },
                         {
                             href: '/sell-car',

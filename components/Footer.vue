@@ -77,17 +77,17 @@
                                     <div class="mr-2 font-semibold">Sales:</div>
                                     <nuxt-link to="/locations?location=mylapore-sales" class="cursor-pointer">Mylapore</nuxt-link>
                                     <span>|</span>
-                                    <nuxt-link to="/locations?location=tuticorin-sales" class="cursor-pointer">Tuticorin</nuxt-link>
-                                    <span>|</span>
-                                    <nuxt-link to="/locations?location=thiruchendur-sales" class="cursor-pointer">Thiruchendur</nuxt-link>
-                                    <span>|</span>
-                                    <nuxt-link to="/locations?location=kovilpatti-sales" class="cursor-pointer">Kovilpatti</nuxt-link>
-                                    <span>|</span>
                                     <nuxt-link to="/locations?location=madurai-sales" class="cursor-pointer">Madurai</nuxt-link>
+                                    <span>|</span>
+                                    <nuxt-link to="/locations?location=tuticorin-sales" class="cursor-pointer">Tuticorin</nuxt-link>
                                     <span>|</span>
                                     <nuxt-link to="/locations?location=ramnad-sales" class="cursor-pointer">Ramnad</nuxt-link>
                                     <span>|</span>
                                     <nuxt-link to="/locations?location=karaikudi-sales" class="cursor-pointer">Karaikudi</nuxt-link>
+                                    <span>|</span>
+                                    <nuxt-link to="/locations?location=kovilpatti-sales" class="cursor-pointer">Kovilpatti</nuxt-link>
+                                    <span>|</span>
+                                    <nuxt-link to="/locations?location=thiruchendur-sales" class="cursor-pointer">Thiruchendur</nuxt-link>
                                 </div>
                                 <div class="location_sec ">
                                         <div class="mr-2 font-semibold">Service:</div>
@@ -97,17 +97,17 @@
                                         <span>|</span>
                                         <nuxt-link to="/locations?location=guindy-service" class="cursor-pointer">Guindy</nuxt-link>
                                         <span>|</span>
-                                        <nuxt-link to="/locations?location=tuticorin-service" class="cursor-pointer">Tuticorin</nuxt-link>
-                                        <span>|</span>
                                         <nuxt-link to="/locations?location=madurai-service" class="cursor-pointer">Madurai</nuxt-link>
                                         <span>|</span>
-                                        <nuxt-link to="/locations?location=thiruchendur-service" class="cursor-pointer">Thiruchendur</nuxt-link>
-                                        <span>|</span>
-                                        <nuxt-link to="/locations?location=kovilpatti-service" class="cursor-pointer">Kovilpatti</nuxt-link>
+                                        <nuxt-link to="/locations?location=tuticorin-service" class="cursor-pointer">Tuticorin</nuxt-link>
                                         <span>|</span>
                                         <nuxt-link to="/locations?location=ramnad-service" class="cursor-pointer">Ramnad</nuxt-link>
                                         <span>|</span>
+                                        <nuxt-link to="/locations?location=kovilpatti-service" class="cursor-pointer">Kovilpatti</nuxt-link>
+                                        <span>|</span>
                                         <nuxt-link to="/locations?location=karaikudi-service" class="cursor-pointer">Karaikudi</nuxt-link>
+                                        <span>|</span>
+                                        <nuxt-link to="/locations?location=thiruchendur-service" class="cursor-pointer">Thiruchendur</nuxt-link>
                                 </div>
                             </div>
                         </div>

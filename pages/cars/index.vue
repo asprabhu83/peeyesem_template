@@ -175,6 +175,7 @@
                                                     uppercase
                                                     tracking-wider
                                                     "
+                                                    v-if="specPermission.diesel == true"
                                                 >
                                                     Diesel
                                                 </th>
@@ -209,7 +210,7 @@
                                                     </span>
                                                 </td>
 
-                                                <td class="px-4 py-3 " >
+                                                <td class="px-4 py-3 " v-if="specPermission.diesel == true" >
                                                     <span
                                                     class="
                                                         inline-flex

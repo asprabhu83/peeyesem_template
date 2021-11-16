@@ -145,7 +145,7 @@
           </div>
       </div>
       <div class="price_box" v-if="Loanamount !== '' && calculatedEMI !== ''">
-            <div class="w-1/2 price_table_sec mx-auto mt-16" v-if="data_res == true">
+            <div class="w-1/2 price_table_sec mx-auto mt-16">
                             <div class="flex flex-col">
                                 <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                                     <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -302,7 +302,6 @@ export default {
             if(err == 0){
                 var roadPrice = this.roadPrice.replace(/,/g,'');
                 roadPrice = parseInt(roadPrice);
-                console.log(roadPrice)
                 var p = roadPrice - this.DownPayment;
                 var r = parseFloat(this.interest)/12/100;
                 var n = this.tenure.match(/(\d+)/);
@@ -312,6 +311,7 @@ export default {
                 var ans = p*r*Math.pow(powElem,n)/(Math.pow(powElem,n) - 1);
                 this.Loanamount = p;
                 this.calculatedEMI = ans.toFixed(2);
+                console.log(this.Loanamount,this.calculatedEMI);
             }
         }
     }
