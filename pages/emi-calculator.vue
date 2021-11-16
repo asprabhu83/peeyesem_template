@@ -165,7 +165,7 @@
                                                     class="
                                                     px-6
                                                     py-3
-                                                    text-left text-xs
+                                                    text-center text-xs
                                                     font-medium
                                                     text-white
                                                     uppercase
@@ -179,7 +179,7 @@
                                                     class="
                                                     px-6
                                                     py-3
-                                                    text-left text-xs
+                                                    text-center text-xs
                                                     font-medium
                                                     text-white
                                                     uppercase
@@ -192,10 +192,11 @@
                                             </thead>
                                             <tbody class="bg-white divide-y divide-gray-200">
                                                 <tr >
-                                                <td class="px-4 py-3 ">
+                                                <td class="px-4 py-3 text-center">
                                                     <span
                                                     class="
                                                         inline-flex
+                                                        items-center
                                                         text-xs
                                                         leading-5
                                                         font-semibold
@@ -205,7 +206,7 @@
                                                     <font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mr-2" />{{Loanamount}}
                                                     </span>
                                                 </td>
-                                                <td class="px-4 py-3 ">
+                                                <td class="px-4 py-3 text-center">
                                                     <span
                                                     class="
                                                         inline-flex
@@ -310,8 +311,7 @@ export default {
                 var powElem = (1+r);
                 var ans = p*r*Math.pow(powElem,n)/(Math.pow(powElem,n) - 1);
                 this.Loanamount = p;
-                this.calculatedEMI = ans.toFixed(2);
-                console.log(this.Loanamount,this.calculatedEMI);
+                this.calculatedEMI = Math.round(ans);
             }
         }
     }
