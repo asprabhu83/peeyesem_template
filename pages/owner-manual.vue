@@ -15,7 +15,7 @@
                   </div>
                   <div class="detail">
                       <div class="car_detail_name"><nuxt-link :to="'/cars/'+ car.car_title.replace(/\s+/g, '-').toLowerCase()">{{car.car_title}}</nuxt-link></div>
-                      <a class="download_manual" :href="brochureList[index].pdf"><font-awesome-icon icon="download"  size="1x" class="text-white  mx-2" />Download</a>
+                      <a class="download_manual" :href="brochureList[index].pdf" :download="brochureList[index].pdf"><font-awesome-icon icon="download"  size="1x" class="text-white  mx-2" />Download</a>
                   </div>
               </div>
           </div>
@@ -31,47 +31,47 @@ export default {
             brochureList:[
                 {
                     id:1,
-                    pdf:'/Tucson_suv_brochure.pdf'
+                    pdf:'/pdf/Tucson_suv_brochure.pdf'
                 },
                 {
                     id:2,
-                    pdf:'/Venue_Brochure-16PP_2021_Web.pdf'
+                    pdf:'/pdf/Venue_Brochure-16PP_2021_Web.pdf'
                 },
                 {
                     id:3,
-                    pdf:'/Alcazar_Brochure-16PP_A4_2021_Web.pdf'
+                    pdf:'/pdf/Alcazar_Brochure-16PP_A4_2021_Web.pdf'
                 },
                 {
                     id:4,
-                    pdf:'/Creta_Brochure-16PP_A4_2021.pdf.pdf'
+                    pdf:'/pdf/Creta_Brochure-16PP_A4_2021.pdf.pdf'
                 },
                 {
                     id:5,
-                    pdf:'/Aura_Brochure-16PP_A4_Web_22 oct.pdf'
+                    pdf:'/pdf/Aura_Brochure-16PP_A4_Web_22 oct.pdf'
                 },
                 {
                     id:6,
-                    pdf:'/Hyundai-Elantra-Brochure.pdf'
+                    pdf:'/pdf/Hyundai-Elantra-Brochure.pdf'
                 },
                 {
                     id:7,
-                    pdf:'/Verna_Brochure-16PP_A4_Web_22 oct.pdf'
+                    pdf:'/pdf/Verna_Brochure-16PP_A4_Web_22 oct.pdf'
                 },
                 {
                     id:8,
-                    pdf:'/SANTRO_Hatchback_brochure (1).pdf'
+                    pdf:'/pdf/SANTRO_Hatchback_brochure (1).pdf'
                 },
                 {
                     id:9,
-                    pdf:'/i20-Hatchback-2020.pdf'
+                    pdf:'/pdf/i20-Hatchback-2020.pdf'
                 },
                 {
                     id:10,
-                    pdf:'/Grand Nios_Brochure-16PP_A4_2021 Web.pdf'
+                    pdf:'/pdf/Grand Nios_Brochure-16PP_A4_2021 Web.pdf'
                 },
                 {
                     id:11,
-                    pdf:'/N-Line.pdf'
+                    pdf:'/pdf/N-Line.pdf'
                 }
             ],
             baseUrl:process.env.baseUrl,

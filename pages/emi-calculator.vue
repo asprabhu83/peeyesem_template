@@ -144,15 +144,91 @@
                         />
           </div>
       </div>
-      <div class="emi_total_sec" v-if="Loanamount !== '' && calculatedEMI !== ''">
-          <div class="rightside">
-              <div class="emi title">Loan Amount</div>
-              <div class="emi"><font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mr-2" />{{Loanamount}}</div>
-          </div>
-          <div class="leftside">
-              <div class="emi title">Calculated EMI</div>
-              <div class="emi"><font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mr-2" />{{calculatedEMI}}</div>
-          </div>
+      <div class="price_box" v-if="Loanamount !== '' && calculatedEMI !== ''">
+            <div class="w-1/2 price_table_sec mx-auto mt-16" v-if="data_res == true">
+                            <div class="flex flex-col">
+                                <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                                    <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                                        <div
+                                            class="
+                                            shadow-md
+                                            overflow-hidden
+                                            border-b border-gray-200
+                                            sm:rounded-lg
+                                            "
+                                        >
+                                            <table class="min-w-full car_spec_table divide-y divide-gray-200">
+                                            <thead class="">
+                                                <tr>
+                                                <th
+                                                    scope="col"
+                                                    class="
+                                                    px-6
+                                                    py-3
+                                                    text-left text-xs
+                                                    font-medium
+                                                    text-white
+                                                    uppercase
+                                                    tracking-wider
+                                                    "
+                                                >
+                                                    Loan Amount
+                                                </th>
+                                                <th
+                                                    scope="col"
+                                                    class="
+                                                    px-6
+                                                    py-3
+                                                    text-left text-xs
+                                                    font-medium
+                                                    text-white
+                                                    uppercase
+                                                    tracking-wider
+                                                    "
+                                                >
+                                                    Calculated EMI
+                                                </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="bg-white divide-y divide-gray-200">
+                                                <tr >
+                                                <td class="px-4 py-3 ">
+                                                    <span
+                                                    class="
+                                                        inline-flex
+                                                        text-xs
+                                                        leading-5
+                                                        font-semibold
+                                                        text-black
+                                                    "
+                                                    >
+                                                    <font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mr-2" />{{Loanamount}}
+                                                    </span>
+                                                </td>
+                                                <td class="px-4 py-3 ">
+                                                    <span
+                                                    class="
+                                                        inline-flex
+                                                        items-center
+                                                        text-xs
+                                                        leading-5
+                                                        font-semibold
+                                                        text-black
+                                                    "
+                                                    >
+                                                    <font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mr-2" />{{calculatedEMI}}
+                                                    </span>
+                                                </td>
+                                                </tr>
+
+                                                <!-- More people... -->
+                                            </tbody>
+                                            </table>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+           </div>
       </div>
       <div class="btn_box">
           <button type="button" @click="calculate">Calculate</button>
@@ -262,6 +338,9 @@ export default {
     .emi_page_sec{
         margin-top: 50px!important;
     }
+    .price_table_sec {
+        width: 100%!important;
+    }
 }
 @media only screen and (min-width: 1367px) and (max-width: 1600px){
     .form_sec{
@@ -284,6 +363,19 @@ export default {
     .form_sec .input_box.text_box{
         margin: 20px!important;
     }
+    .price_table_sec{
+        width: 60%!important;
+    }
+}
+.price_table_sec thead {
+    background: #002c5f;
+}
+.price_table_sec tbody tr:nth-child(odd) {
+    background: #e6f0fa;
+}
+.price_box{
+    width: 80%;
+    margin: 40px auto;
 }
 .emi_total_sec{
     width: 40%;

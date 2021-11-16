@@ -604,6 +604,9 @@ export default {
                     prevEl: '.swiper-button-prev'
                 },
                 autoplay: true,
+            },
+            specPermission:{
+                diesel:null
             }
         }
     },
@@ -658,47 +661,47 @@ export default {
             var id;
             if(car == 'hyundai-santro'){
                 id = 1;
-                this.e_brochure_link = '/SANTRO_Hatchback_brochure (1).pdf';
+                this.e_brochure_link = '/pdf/SANTRO_Hatchback_brochure (1).pdf';
             }
             if(car == 'hyundai-all-new-i20'){
                 id = 7;
-                this.e_brochure_link = '/i20-Hatchback-2020.pdf'
+                this.e_brochure_link = '/pdf/i20-Hatchback-2020.pdf'
             }
             if(car == 'hyundai-grand-i10-nios'){
                 id = 14;
-                this.e_brochure_link = '/Grand Nios_Brochure-16PP_A4_2021 Web.pdf';
+                this.e_brochure_link = '/pdf/Grand Nios_Brochure-16PP_A4_2021 Web.pdf';
             }
             if(car == 'hyundai-aura'){
                 id = 2;
-                this.e_brochure_link = '/Aura_Brochure-16PP_A4_Web_22 oct.pdf';
+                this.e_brochure_link = '/pdf/Aura_Brochure-16PP_A4_Web_22 oct.pdf';
             }
             if(car == 'hyundai-verna'){
                 id = 13;
-                this.e_brochure_link = '/Verna_Brochure-16PP_A4_Web_22 oct.pdf';
+                this.e_brochure_link = '/pdf/Verna_Brochure-16PP_A4_Web_22 oct.pdf';
             }
             if(car == 'hyundai-all-new-elantra'){
                 id = 11;
-                this.e_brochure_link = '/Hyundai-Elantra-Brochure.pdf';
+                this.e_brochure_link = '/pdf/Hyundai-Elantra-Brochure.pdf';
             }
             if(car == 'hyundai-venue'){
                 id = 12;
-                this.e_brochure_link = '/Venue_Brochure-16PP_2021_Web.pdf';
+                this.e_brochure_link = '/pdf/Venue_Brochure-16PP_2021_Web.pdf';
             }
             if(car == 'hyundai-creta'){
                 id = 16;
-                this.e_brochure_link = '/Creta_Brochure-16PP_A4_2021.pdf';
+                this.e_brochure_link = '/pdf/Creta_Brochure-16PP_A4_2021.pdf';
             }
             if(car == 'hyundai-alcazar'){
                 id = 15;
-                this.e_brochure_link = '/Alcazar_Brochure-16PP_A4_2021_Web.pdf';
+                this.e_brochure_link = '/pdf/Alcazar_Brochure-16PP_A4_2021_Web.pdf';
             }
             if(car == 'hyundai-all-new-tucson'){
                 id = 10;
-                this.e_brochure_link = '/Tucson_suv_brochure.pdf';
+                this.e_brochure_link = '/pdf/Tucson_suv_brochure.pdf';
             }
             if(car == 'hyundai-i20-n-line'){
                 id = 20;
-                this.e_brochure_link = '/N-Line.pdf'
+                this.e_brochure_link = '/pdf/N-Line.pdf'
             }
             this.loading = true;
             axios
@@ -807,6 +810,12 @@ export default {
         filterCarSpecCategories(){
            var category = [...new Set(this.car.car_specs.map((item)=>{return item.spec_type}))];
            this.car.car_spec_tab = category;
+           var permission = this.car.car_specs.every((e)=>{
+               if(e.spec_diesel !== null){
+                   return true;
+               }
+           })
+           this.specPermission.diesel = permission;
            return category;
         },
         filterCarSpecs(cat){
