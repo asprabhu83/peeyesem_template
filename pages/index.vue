@@ -313,7 +313,6 @@ import { mapState } from 'vuex'
 import ProductBox1 from '~/components/product-box/ProductBox1'
 import Timer from '../components/widgets/Timer'
 import InstagramArea from '../components/instagram/InstagramArea'
-import BlogItem1 from '~/components/blog/BlogItem1'
 
 import axios from '~/plugins/axios'
 import isotope  from 'vueisotope'
@@ -327,7 +326,6 @@ export default {
         ProductBox1,
         Timer,
         InstagramArea,
-        BlogItem1,
         isotope,
         Modal1,
         Modal2,
