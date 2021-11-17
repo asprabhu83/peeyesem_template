@@ -74,6 +74,7 @@
                         type="text"
                         placeholder="Exshowroom Price"
                         v-model="roadPrice"
+                        disabled
                         />
           </div>
           <div class="input_box text_box">
@@ -234,12 +235,17 @@
       <div class="btn_box">
           <button type="button" @click="calculate">Calculate</button>
       </div>
+      <Loading v-if="loading == true" />
   </div>
 </template>
 
 <script>
 import axios from '~/plugins/axios'
+import Loading from '../components/Loading.vue'
 export default {
+    components:{
+        Loading
+    },
     data(){
         return{
             vehicle:'',
@@ -259,7 +265,8 @@ export default {
             ],
             variantList:[],
             Loanamount:'',
-            calculatedEMI:''
+            calculatedEMI:'',
+            loading:false
         }
     },
     mounted(){
@@ -297,8 +304,10 @@ export default {
         },
         calculate(){
             var err = 0;
+            this.loading = true;
             if(this.tenure == '' || this.roadPrice == '' || this.DownPayment == '' || this.interest == ''){
                 err++;
+                this.loading = false;
             }
             if(err == 0){
                 var roadPrice = this.roadPrice.replace(/,/g,'');
@@ -310,8 +319,11 @@ export default {
                 n = parseInt(n);
                 var powElem = (1+r);
                 var ans = p*r*Math.pow(powElem,n)/(Math.pow(powElem,n) - 1);
-                this.Loanamount = p;
-                this.calculatedEMI = Math.round(ans);
+                setTimeout(()=>{
+                  this.Loanamount = p;
+                  this.calculatedEMI = Math.round(ans);
+                  this.loading =false;
+                },2000)
             }
         }
     }
@@ -376,6 +388,9 @@ export default {
 .price_box{
     width: 80%;
     margin: 40px auto;
+}
+#roadPrice{
+    cursor: not-allowed;
 }
 .emi_total_sec{
     width: 40%;

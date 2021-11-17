@@ -102,7 +102,7 @@
                         v-model="mobile"
                         />
                     </div>
-                    <div class="mb-4 ">
+                    <!-- <div class="mb-4 ">
                         <input
                         class="
                             shadow-md
@@ -122,16 +122,64 @@
                         placeholder="Message"
                         v-model="message"
                         />
+                    </div> -->
+                    <div class="mb-4 ">
+                        <select
+                                class="
+                                shadow-md
+                                appearance-none
+                                border
+                                rounded
+                                w-full
+                                py-2
+                                px-3
+                                text-gray-700
+                                cursor-pointer
+                                leading-tight
+                                focus:outline-none
+                                focus:shadow-outline
+                                "
+                                id="showroom"
+                                v-model="showroom"
+                            >
+                            <option class="text-xl " value="">Our Showroom</option>
+                            <option class="text-xl" :value="place" v-for="place in ShowroomList"
+                                :key="place" >{{place}}</option>
+                            </select>
                     </div>
-                    <div class="mb-6">
+                    <div class="mb-6 ">
+                        <select
+                                class="
+                                shadow-md
+                                appearance-none
+                                border
+                                rounded
+                                w-full
+                                py-2
+                                px-3
+                                text-gray-700
+                                cursor-pointer
+                                leading-tight
+                                focus:outline-none
+                                focus:shadow-outline
+                                "
+                                id="detailRequire"
+                                v-model="detailRequire"
+                            >
+                            <option class="text-xl " value="">Detail Required for</option>
+                            <option class="text-xl" :value="item" v-for="item in DetailsList"
+                                :key="item" >{{item}}</option>
+                            </select>
+                    </div>
+                    <!-- <div class="mb-6">
                         <div class="checkbox_sec">
                             <label class="inline-flex items-center">
                                 <input type="checkbox" v-model="agreement" class="form-checkbox">
                                 <span class="ml-2 cursor-pointer">I have read & understood the disclaimer</span>
                             </label>
                         </div>
-                    </div>
-                    <div class="btn_box">
+                    </div> -->
+                    <div class="btn_box" v-if="name !== '' && email !== '' && mobile !== '' && showroom !== '' && detailRequire !== ''">
                         <button type="button" @click="AddContactData">Submit</button>
                     </div>
             </form>
@@ -150,6 +198,8 @@ export default {
             email:'',
             mobile:'',
             message:'',
+            showroom:'',
+            detailRequire:'',
             agreement:false,
             contactLocations:[
                 {
@@ -604,7 +654,27 @@ export default {
                 }
             ],
             tabCategory:[],
-            tabIndex:0
+            tabIndex:0,
+            ShowroomList:[
+                'Mylapore',
+                'Tondaripet',
+                'Kotturpuram',
+                'Guindy',
+                'Madurai',
+                'Tuticorin',
+                'Ramnad',
+                'Karaikudi',
+                'Kovilpatti',
+                'Thiruchendur'
+            ],
+            DetailsList:[
+                'Test Drive',
+                'Sales Quote',
+                'Service',
+                'Accessories',
+                'Extended Warrenty',
+                'Insurance'
+            ]
         }
     },
     mounted(){
@@ -613,7 +683,8 @@ export default {
     methods:{
         AddContactData(){
             var data_value = {
-                message:this.message
+                showroom:this.showroom,
+                detail_require:this.detailRequire
             }
             data_value = JSON.stringify(data_value);
             axios.post(process.env.baseUrl + 'api/car_form/store',{
@@ -627,7 +698,8 @@ export default {
                     this.name = '';
                     this.email = '';
                     this.mobile = '';
-                    this.message = '';
+                    this.showroom = '';
+                    this.detailRequire = '';
                     this.agreement = false;
                 }
                 console.log(res)
