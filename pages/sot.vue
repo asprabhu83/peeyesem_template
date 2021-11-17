@@ -1,6 +1,30 @@
 <template>
   <div class="sot_price_list my-24">
-      <div class="heading_title mb-5">SOT Price List</div>
+      <div class="heading_title mb-5">SOT</div>
+      <div class="page_content">
+          <p><b>Below Attached the SOT Details:</b></p>
+          <ul>
+              <li>Hyundai now offers you “shield of trust” which covers a wide range of Wear & tear parts.</li>
+              <li>Now have peace of mind with SOT up to 5years or 60 K Kms with unlimited coverage of the wear & tear parts in your car. </li>
+              <li>SOT package covers a total of 14 wear & tear parts & is the best package offered in the Automobile industry.</li>
+          </ul>
+          <p><b>Peace of mind:</b></p>
+          <ul>
+              <li>Covers 14 Wear & tear parts with unlimited replacements.</li>
+              <li>Insures against unforeseen breakdown repair bills.</li>
+              <li>Cashless service.</li>
+          </ul>
+          <div class="second_para">
+              <p>*Package can be availed across India with close to 1280 Hyundai Workshops</p>
+                <p>*Only Genuine Hyundai Parts & Service</p>
+                <p>*No out-of-pocket expenses</p>
+                <p>* Package can be availed with comfort from Home (All payment modes accepted)</p>
+                <p>*Protects against unforeseen expenses</p>
+                <p>*Higher Resale Value of car due to minimum financial risk.</p>
+                <p>*Coverage is transferable</p>
+          </div>
+      </div>
+      <div class="heading_title my-5">SOT Price List</div>
       <div class="sot_table">
           <table>
                   <tr>
@@ -119,6 +143,27 @@ export default {
     .sot_price_list{
         margin-top: 50px!important;
     }
+    .page_content{
+        width: 90%!important;
+    }
+}
+.page_content{
+    width: 50%;
+    margin: 30px auto;
+}
+.page_content p{
+    color: black;
+    margin: 15px 0;
+}
+.page_content ul{
+    margin: 20px 0;
+}
+.page_content ul li{
+    list-style-type: disc;
+    margin-left: 24px;
+}
+.page_content .second_para{
+    margin-top: 20px;
 }
 .notice{
     text-align: center;

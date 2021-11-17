@@ -79,7 +79,7 @@
                                             <ul class="sub-menu">
                                                 <li><nuxt-link to="/service-booking">Book a Service</nuxt-link></li>
                                                 <li><nuxt-link to="/sot">SOT</nuxt-link></li>
-                                                <li><nuxt-link to="/">RSA</nuxt-link></li>
+                                                <li><nuxt-link to="/rsa">RSA</nuxt-link></li>
                                                 <li><nuxt-link to="/">ERS</nuxt-link></li>
                                                 <li><nuxt-link to="/tips/safety-tips">Safety Tips</nuxt-link></li>
                                                 <li><nuxt-link to="/tips/maintenance-tips">Maintenance Tips</nuxt-link></li>
@@ -315,13 +315,13 @@ export default {
                                     
                         },
                         {
-                            href: '/',
+                            href: '/sot',
                             title: 'SOT'
                                     
                         },
                         {
-                            href: '/',
-                            title: 'RAS'
+                            href: '/rsa',
+                            title: 'RSA'
                                     
                         },
                         {
