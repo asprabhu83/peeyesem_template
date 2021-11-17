@@ -210,25 +210,28 @@
                         />
                     </div>
                     <div class="mb-4 ">
-                        <input
-                        class="
-                            shadow-md
-                            appearance-none
-                            border
-                            rounded
-                            w-full
-                            py-2
-                            px-3
-                            text-gray-700
-                            leading-tight
-                            focus:outline-none
-                            focus:shadow-outline
-                        "
-                        id="fuel_type"
-                        type="text"
-                        placeholder="Select Dealer"
-                        v-model="Dealer"
-                        />
+                        <select
+                                class="
+                                shadow-md
+                                appearance-none
+                                border
+                                rounded
+                                w-full
+                                py-2
+                                px-3
+                                text-gray-700
+                                cursor-pointer
+                                leading-tight
+                                focus:outline-none
+                                focus:shadow-outline
+                                "
+                                id="Dealer"
+                                v-model="Dealer"
+                            >
+                            <option class="text-xl " value="">Select Dealer</option>
+                             <option class="text-xl" :value="city.name" v-for="city in CityList"
+                                :key="city.id" >{{city.name}}</option>
+                            </select>
                     </div>
                     <div class="mb-4 ">
                         <textarea

@@ -9,7 +9,7 @@
                         <div class="text-capitalize mb-3  footer_heading text-lg font-semibold">Peeyesyem hyundai</div>
                         <div class="text-sm contact_text mb-2"><i class="far fa-envelope mr-2"></i> info@peeyesyemhyundai.in</div>
                         <div class="text-sm contact_text mb-2"> <font-awesome-icon icon="phone-alt"  size="1x" class="text-white  mr-2" />+91 9962666228</div>
-                        <div class="text-sm contact_text mb-3"><font-awesome-icon icon="map-marker-alt"  size="1x" class="text-white  mr-2" />Old No. - 94, New No. - 162,<br/> Opp.Kavery Hospital,<br/> Luz Church Road, Mylapore</div>
+                        <div class="text-sm contact_text mb-3"><font-awesome-icon icon="map-marker-alt"  size="1x" class="text-white  mr-2" />Old No. - 94, New No. - 162,<br/> Luz Church Road, Mylapore</div>
                     </div>
                 </div>
                 <div class="footer_item_sec footer_mobile_menu">
@@ -22,9 +22,10 @@
                         <h3 class="text-capitalize footer_heading">Information</h3>
                         <ul>
                             <li><nuxt-link to="/">Home</nuxt-link></li>
-                            <li><nuxt-link to="/">About Us</nuxt-link></li>
+                            <li><nuxt-link to="/about">About Us</nuxt-link></li>
                             <li><nuxt-link to="/">Privacy Policy</nuxt-link></li>
                             <li><nuxt-link to="/">Terms of Use</nuxt-link></li>
+                            <li><nuxt-link to="/">Disclaimer</nuxt-link></li>
                             <li><nuxt-link to="/">Warranty Policy</nuxt-link></li>
                         </ul>
                     </div>
@@ -33,11 +34,11 @@
                     <div class="footer_one_widget">
                         <h3 class="text-capitalize footer_heading">Our Services</h3>
                         <ul>
-                            <li><nuxt-link to="/">New Cars</nuxt-link></li>
-                            <li><nuxt-link to="/">Used Cars</nuxt-link></li>
-                            <li><nuxt-link to="/">Book a Test Drive</nuxt-link></li>
-                            <li><nuxt-link to="/">Book a Service</nuxt-link></li>
-                            <li><nuxt-link to="/">Accessories</nuxt-link></li>
+                            <li><nuxt-link to="/all-cars">New Cars</nuxt-link></li>
+                            <li><nuxt-link to="/buy-car">Used Cars</nuxt-link></li>
+                            <li><nuxt-link to="/contact-us/test-drive">Book a Test Drive</nuxt-link></li>
+                            <li><nuxt-link to="/service-booking">Book a Service</nuxt-link></li>
+                            <li><nuxt-link to="/accessories">Accessories</nuxt-link></li>
                         </ul>
                     </div>
                 </div>
@@ -112,7 +113,7 @@
                             </div>
                         </div>
                         <div class="copyright_left mt-3">
-                            <h6 class="text-center text-uppercase">© CopyRight {{$store.state.currentYear}} PEEYESEM HYUNDAI</h6>
+                            <h6 class="text-center text-uppercase">© CopyRight {{$store.state.currentYear}} PEEYESYEM HYUNDAI</h6>
                         </div>
                 </div>
             </div>

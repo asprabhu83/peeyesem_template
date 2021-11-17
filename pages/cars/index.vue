@@ -982,7 +982,7 @@ export default {
         font-size: 13px!important;
         margin: 10px 15px!important;
     }
-    .main_tab_sec a{
+    .main_tab_sec a, .main_tab_sec button{
         padding: 4px 20px!important;
         font-size: 12px!important;
     }

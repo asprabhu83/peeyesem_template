@@ -13,9 +13,12 @@
                 </div>
                 <div class="flex items-center call_service_details justify-center">
                     <div class="left mx-2">
-                        <div class="text-lg  font-semibold pt-1 shodow_css_head">Service: +91 {{$store.state.HeaderData.serviceNo}} <span class="divider">|</span> Sales: +91 {{$store.state.HeaderData.salesNo}}</div>
+                        <div class="text-lg  font-semibold pt-1 shodow_css_head">
+                            <div class="mb-1">Email: info@peeyesyemhyundai.in</div>
+                            <div class="mb-1">Service: +91 {{$store.state.HeaderData.serviceNo}}</div>
+                            <div>Sales: +91 {{$store.state.HeaderData.salesNo}}</div> 
+                        </div>
                     </div>
-                    <span class="divider mx-1">|</span>
                     <div class="right flex items-center mx-2">
                         <div class="social_icons_box flex">
                             <a :href="$store.state.HeaderData.fbLink" target="_blank"><img class="flat_icons" :src="require('@/assets/img/facebook.png')" /></a>
@@ -586,6 +589,9 @@ export default {
     }
 }
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
+    .shodow_css_head div{
+        margin-bottom: 0!important;
+    }
     .business_logo_icon{
         margin-top: 3px ;
         width: 18px;

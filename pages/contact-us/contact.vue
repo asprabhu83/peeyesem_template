@@ -102,7 +102,7 @@
                         v-model="mobile"
                         />
                     </div>
-                    <!-- <div class="mb-4 ">
+                    <div class="mb-4 ">
                         <input
                         class="
                             shadow-md
@@ -122,8 +122,8 @@
                         placeholder="Message"
                         v-model="message"
                         />
-                    </div> -->
-                    <div class="mb-4 ">
+                    </div>
+                    <!-- <div class="mb-4 ">
                         <select
                                 class="
                                 shadow-md
@@ -170,7 +170,7 @@
                             <option class="text-xl" :value="item" v-for="item in DetailsList"
                                 :key="item" >{{item}}</option>
                             </select>
-                    </div>
+                    </div> -->
                     <!-- <div class="mb-6">
                         <div class="checkbox_sec">
                             <label class="inline-flex items-center">
@@ -179,7 +179,7 @@
                             </label>
                         </div>
                     </div> -->
-                    <div class="btn_box" v-if="name !== '' && email !== '' && mobile !== '' && showroom !== '' && detailRequire !== ''">
+                    <div class="btn_box" >
                         <button type="button" @click="AddContactData">Submit</button>
                     </div>
             </form>
@@ -198,8 +198,6 @@ export default {
             email:'',
             mobile:'',
             message:'',
-            showroom:'',
-            detailRequire:'',
             agreement:false,
             contactLocations:[
                 {
@@ -683,8 +681,7 @@ export default {
     methods:{
         AddContactData(){
             var data_value = {
-                showroom:this.showroom,
-                detail_require:this.detailRequire
+                message:this.message,
             }
             data_value = JSON.stringify(data_value);
             axios.post(process.env.baseUrl + 'api/car_form/store',{
@@ -698,8 +695,7 @@ export default {
                     this.name = '';
                     this.email = '';
                     this.mobile = '';
-                    this.showroom = '';
-                    this.detailRequire = '';
+                    this.message = '';
                     this.agreement = false;
                 }
                 console.log(res)

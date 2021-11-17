@@ -261,6 +261,12 @@ export default {
   .form_sec{
     width: 100%!important;
   }
+  .accessories_content_sec .first_sec{
+      width: 80%!important;
+  }
+  .circle_btn_sec{
+      width: 100%!important;
+  }
 }
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
     .sec_sec{
