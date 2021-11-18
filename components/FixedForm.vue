@@ -188,6 +188,12 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+@media only screen and (min-width: 1270px) and (max-width: 1366px){
+    .back_to_top img{
+        width: 75%!important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
 </style>

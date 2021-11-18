@@ -23,8 +23,8 @@
                         <ul>
                             <li><nuxt-link to="/">Home</nuxt-link></li>
                             <li><nuxt-link to="/about">About Us</nuxt-link></li>
-                            <li><nuxt-link to="/">Privacy Policy</nuxt-link></li>
-                            <li><nuxt-link to="/">Terms of Use</nuxt-link></li>
+                            <li><nuxt-link to="/privacy-policy">Privacy Policy</nuxt-link></li>
+                            <li><nuxt-link to="/terms-of-use">Terms of Use</nuxt-link></li>
                             <li><nuxt-link to="/">Disclaimer</nuxt-link></li>
                             <li><nuxt-link to="/">Warranty Policy</nuxt-link></li>
                         </ul>

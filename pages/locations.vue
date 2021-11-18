@@ -1,5 +1,5 @@
 <template>
-    <div class="pt-12 pb-24 location_page_sec">
+    <div class=" pb-24 location_page_sec">
         <div class="acc_head_title mt-16 mb-8">
             <div class="text-center title">Locate Us</div>
         </div>
@@ -18,28 +18,55 @@
                 </div>
             </div>
            <div class="accordian_content_sec">
-                <div class="card_items_area" v-for="item in LocationList" :key="item.id">
-                    <b-card-header role="tab">
-                        <a block v-b-toggle="item.target" >
-                            <h5 class="mb-0">{{item.title}}<i class="fas fa-angle-down rotate-icon"></i></h5>
-                        </a>
-                    </b-card-header>
-                    <b-collapse :id="item.target"  :visible="item.target == currentLocation ? true :false"  accordion="my-accordion" role="tabpanel">
-                        <b-card-body>
-                        <div class="acc_content">
-                            <div class="asides">
-                                <div><b>Location:</b> {{item.name}}</div>
-                                    <div><b>Address:</b>{{item.address}}</div>
-                                    <div><b>Contact Person Number:</b> {{item.phone}}</div>
-                            </div>
-                            <div class="asides">
-                                <div class="gmap_canvas">
-                                        <iframe :src="item.map" width="354" height="274" style="border:0;max-width:100%;" allowfullscreen="" loading="lazy"></iframe> 
+                <div class="left_side">
+                    <div class="card_items_area" v-for="item in LocationList.slice(0,8)" :key="item.id">
+                        <b-card-header role="tab">
+                            <a block v-b-toggle="item.target" >
+                                <h5 class="mb-0">{{item.title}}<i class="fas fa-angle-down active rotate-icon down_icon" :class="'down_icon'+item.id" ></i><i class="fas fa-angle-up up_icon  rotate-icon" :class="'up_icon'+item.id"></i></h5>
+                            </a>
+                        </b-card-header>
+                        <b-collapse :id="item.target"  :visible="item.target == currentLocation ? true :false"  accordion="my-accordion" role="tabpanel">
+                            <b-card-body>
+                            <div class="acc_content">
+                                <div class="asides">
+                                    <div><b>Location:</b> {{item.name}}</div>
+                                        <div><b>Address:</b>{{item.address}}</div>
+                                        <div><b>Contact Person Number:</b> {{item.phone}}</div>
+                                </div>
+                                <div class="asides">
+                                    <div class="gmap_canvas">
+                                            <iframe :src="item.map" width="354" height="274" style="border:0;max-width:100%;" allowfullscreen="" loading="lazy"></iframe> 
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        </b-card-body>
-                    </b-collapse>
+                            </b-card-body>
+                        </b-collapse>
+                    </div>
+                </div>
+                <div class="right_side">
+                     <div class="card_items_area" v-for="item in LocationList.slice(8,16)" :key="item.id">
+                        <b-card-header role="tab">
+                            <a block v-b-toggle="item.target" >
+                                <h5 class="mb-0">{{item.title}}<i class="fas fa-angle-down active rotate-icon down_icon" :class="'down_icon'+item.id"></i><i class="fas fa-angle-up up_icon  rotate-icon" :class="'up_icon'+item.id"></i></h5>
+                            </a>
+                        </b-card-header>
+                        <b-collapse :id="item.target"  :visible="item.target == currentLocation ? true :false"  accordion="my-accordion" role="tabpanel">
+                            <b-card-body>
+                            <div class="acc_content">
+                                <div class="asides">
+                                    <div><b>Location:</b> {{item.name}}</div>
+                                        <div><b>Address:</b>{{item.address}}</div>
+                                        <div><b>Contact Person Number:</b> {{item.phone}}</div>
+                                </div>
+                                <div class="asides">
+                                    <div class="gmap_canvas">
+                                            <iframe :src="item.map" width="354" height="274" style="border:0;max-width:100%;" allowfullscreen="" loading="lazy"></iframe> 
+                                    </div>
+                                </div>
+                            </div>
+                            </b-card-body>
+                        </b-collapse>
+                    </div>
                 </div>
             </div> 
         </div>
@@ -62,12 +89,12 @@ export default {
                 },
                 {
                     id:2,
-                    title:'GUINDY(Service)',
-                    target:'guindy-service',
-                    name:'GUINDY',
-                    address:'A-1 & 2, 3rd Phase, Thiru Vi Ka Industrial Estate, SIDCO Industrial Estate, Guindy, Chennai, Tamil Nadu 600032',
+                    title:'MADURAI(Sales)',
+                    target:'madurai-sales',
+                    name:'MADURAI',
+                    address:'No.5, Marriamman Teppakulam West Street, Opp: Thiyagarajar Arts College,Madurai,Tamil Nadu -625009',
                     phone:'9962666228',
-                    map:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.2997607091374!2d80.20717131482249!3d13.016573190826342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52670c75623817%3A0xe0516dc4e6471a50!2sPeeYesYem%20Hyundai%20-%20Guindy%20Service!5e0!3m2!1sen!2sin!4v1636638012037!5m2!1sen!2sin'
+                    map:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.2646824247195!2d78.14429081479346!3d9.911899892911585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c51b1ae28853%3A0x337ceb945d889275!2sPeeYesYem%20Hyundai%20-%20Madurai!5e0!3m2!1sen!2sin!4v1636638461241!5m2!1sen!2sin'
                 },
                 {
                     id:3,
@@ -80,51 +107,6 @@ export default {
                 },
                 {
                     id:4,
-                    title:'TUTICORIN(Service)',
-                    target:'tuticorin-service',
-                    name:'TUTICORIN',
-                    address:'APC Mahalakshmi Women Collage, 4/47 B, Ettayapurm Road, Thoothukudi,Tamil Nadu -628002',
-                    phone:'9962666228',
-                    map:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3942.4868268240302!2d78.12486621478521!3d8.83418419365619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b03e544b24d0947%3A0x3758987dd0b8b9a6!2sPeeyesyem%20-%20Hyundai!5e0!3m2!1sen!2sin!4v1636638410855!5m2!1sen!2sin'
-                },
-                {
-                    id:5,
-                    title:'MADURAI(Sales)',
-                    target:'madurai-sales',
-                    name:'MADURAI',
-                    address:'No.5, Marriamman Teppakulam West Street, Opp: Thiyagarajar Arts College,Madurai,Tamil Nadu -625009',
-                    phone:'9962666228',
-                    map:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.2646824247195!2d78.14429081479346!3d9.911899892911585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c51b1ae28853%3A0x337ceb945d889275!2sPeeYesYem%20Hyundai%20-%20Madurai!5e0!3m2!1sen!2sin!4v1636638461241!5m2!1sen!2sin'
-                },
-                {
-                    id:6,
-                    title:'MADURAI(Service)',
-                    target:'madurai-service',
-                    name:'MADURAI',
-                    address:'No. 249/3, Aruppkottai Main Road, KBL car parking campus, near Vetri Cinemas, Villapuram, Tamil Nadu 625012',
-                    phone:'9962666228',
-                    map:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.4386424921518!2d78.11596091479336!3d9.89737649292155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c535a09c89fd%3A0x4068cb42b69763d5!2sPeeYesYem%20Hyundai%20-%20Madurai%20Service!5e0!3m2!1sen!2sin!4v1636638520783!5m2!1sen!2sin'
-                },
-                {
-                    id:7,
-                    title:'KARAIKUDI(Sales)',
-                    target:'karaikudi-sales',
-                    name:'KARAIKUDI',
-                    address:'Koviloor Rd, Aruna Nagar, Karaikudi, Tamil Nadu',
-                    phone:'9962666228',
-                    map:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.0241222619184!2d78.10740281479366!3d9.931948892897818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00cf9d25334a23%3A0x863bb9bc4241e58f!2sPEEYESYEM%20HYUNDAI%20-%20KARAIKUDI!5e0!3m2!1sen!2sin!4v1636638589194!5m2!1sen!2sin'
-                },
-                {
-                    id:8,
-                    title:'KARAIKUDI(Service)',
-                    target:'karaikudi-service',
-                    name:'KARAIKUDI',
-                    address:'Koviloor Rd, Aruna Nagar, Karaikudi, Tamil Nadu',
-                    phone:'9962666228',
-                    map:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.0241222619184!2d78.10740281479366!3d9.931948892897818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00cf9d25334a23%3A0x863bb9bc4241e58f!2sPEEYESYEM%20HYUNDAI%20-%20KARAIKUDI!5e0!3m2!1sen!2sin!4v1636638652201!5m2!1sen!2sin'
-                },
-                {
-                    id:9,
                     title:'RAMNAD(Sales)',
                     target:'ramnad-sales',
                     name:'RAMNAD',
@@ -133,16 +115,16 @@ export default {
                     map:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.17403982636!2d78.27532761480292!3d11.025565492152737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b01994ea51c3bdf%3A0x8149d134e5403276!2sPeeyesyem%20Hyundai!5e0!3m2!1sen!2sin!4v1636638702800!5m2!1sen!2sin'
                 },
                 {
-                    id:10,
-                    title:'RAMNAD(Service)',
-                    target:'ramnad-service',
-                    name:'RAMNAD',
-                    address:'3/135, Madurai NH Road, Opp: MG Mahal Ramanathapuram,Tamil Nadu -623501',
+                    id:5,
+                    title:'KARAIKUDI(Sales)',
+                    target:'karaikudi-sales',
+                    name:'KARAIKUDI',
+                    address:'Koviloor Rd, Aruna Nagar, Karaikudi, Tamil Nadu',
                     phone:'9962666228',
-                    map:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.17403982636!2d78.27532761480292!3d11.025565492152737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b01994ea51c3bdf%3A0x8149d134e5403276!2sPeeyesyem%20Hyundai!5e0!3m2!1sen!2sin!4v1636638702800!5m2!1sen!2sin'
+                    map:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.0241222619184!2d78.10740281479366!3d9.931948892897818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00cf9d25334a23%3A0x863bb9bc4241e58f!2sPEEYESYEM%20HYUNDAI%20-%20KARAIKUDI!5e0!3m2!1sen!2sin!4v1636638589194!5m2!1sen!2sin'
                 },
                 {
-                    id:11,
+                    id:6,
                     title:'KOVILPATTI(Sales)',
                     target:'kovilpatti-sales',
                     name:'KOVILPATTI',
@@ -151,16 +133,7 @@ export default {
                     map:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3938.9218790383434!2d77.84453571478761!3d9.161520093428997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06b289d373b3ab%3A0x8f9cc337d8800b21!2sPeeYesYem%20Hyundai%20-%20Kovilpatti!5e0!3m2!1sen!2sin!4v1636638802557!5m2!1sen!2sin'
                 },
                 {
-                    id:12,
-                    title:'KOVILPATTI(Service)',
-                    target:'kovilpatti-service',
-                    name:'KOVILPATTI',
-                    address:'5/162A Meenatachi Nagar, A. Salaiputhur,Kovilpatti,Tamil Nadu -628503',
-                    phone:'9962666228',
-                    map:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3938.9218790383434!2d77.84453571478761!3d9.161520093428997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06b289d373b3ab%3A0x8f9cc337d8800b21!2sPeeYesYem%20Hyundai%20-%20Kovilpatti!5e0!3m2!1sen!2sin!4v1636638802557!5m2!1sen!2sin'
-                },
-                {
-                    id:13,
+                    id:7,
                     title:'THIRUCHENDUR(Sales)',
                     target:'thiruchendur-sales',
                     name:'THIRUCHENDUR',
@@ -169,16 +142,7 @@ export default {
                     map:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.878905609981!2d78.09818361478291!3d8.511136993881177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b038faeadb444b3%3A0x3f1ca9f0d7bad57d!2sPeeyesyem%20Hyundai%20Tiruchandur!5e0!3m2!1sen!2sin!4v1636638867974!5m2!1sen!2sin'
                 },
                 {
-                    id:14,
-                    title:'THIRUCHENDUR(Service)',
-                    target:'thiruchendur-service',
-                    name:'THIRUCHENDUR',
-                    address:'59/9, KUMARAPURAM,Trichendur,Tamil Nadu -628215',
-                    phone:'9962666228',
-                    map:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.878905609981!2d78.09818361478291!3d8.511136993881177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b038faeadb444b3%3A0x3f1ca9f0d7bad57d!2sPeeyesyem%20Hyundai%20Tiruchandur!5e0!3m2!1sen!2sin!4v1636638867974!5m2!1sen!2sin'
-                },
-                {
-                    id:15,
+                    id:8,
                     title:'TONDIARPET(Service)',
                     target:'tondiarpet-service',
                     name:'TONDIARPET',
@@ -187,16 +151,81 @@ export default {
                     map:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.4785383799235!2d80.28983831482368!3d13.132186990750657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526f9c47f31db5%3A0x96045e21f0e14b37!2sPeeYesYem%20Hyundai%20-%20Tondiarpet%20Service!5e0!3m2!1sen!2sin!4v1636638184845!5m2!1sen!2sin'
                 },
                 {
-                    id:16,
+                    id:9,
                     title:'KOTTURPURAM(Service)',
                     target:'kotturpuram-service',
                     name:'KOTTURPURAM',
                     address:'No. 17, 45, Gandhi Mandapam Rd, Chitra Nagar, Kotturpuram, Chennai, Tamil Nadu 600085',
                     phone:'9962666228',
                     map:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.2357938447976!2d80.23947221482246!3d13.020650990823787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267bdefa5f0b5%3A0xd29fd546109ace5c!2sPeeyesyem%20Hyundai%20-%20Kotturpuram%20Service!5e0!3m2!1sen!2sin!4v1636638124553!5m2!1sen!2sin'
+                },
+                {
+                    id:10,
+                    title:'GUINDY(Service)',
+                    target:'guindy-service',
+                    name:'GUINDY',
+                    address:'A-1 & 2, 3rd Phase, Thiru Vi Ka Industrial Estate, SIDCO Industrial Estate, Guindy, Chennai, Tamil Nadu 600032',
+                    phone:'9962666228',
+                    map:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.2997607091374!2d80.20717131482249!3d13.016573190826342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52670c75623817%3A0xe0516dc4e6471a50!2sPeeYesYem%20Hyundai%20-%20Guindy%20Service!5e0!3m2!1sen!2sin!4v1636638012037!5m2!1sen!2sin'
+                },
+                {
+                    id:11,
+                    title:'MADURAI(Service)',
+                    target:'madurai-service',
+                    name:'MADURAI',
+                    address:'No. 249/3, Aruppkottai Main Road, KBL car parking campus, near Vetri Cinemas, Villapuram, Tamil Nadu 625012',
+                    phone:'9962666228',
+                    map:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.4386424921518!2d78.11596091479336!3d9.89737649292155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c535a09c89fd%3A0x4068cb42b69763d5!2sPeeYesYem%20Hyundai%20-%20Madurai%20Service!5e0!3m2!1sen!2sin!4v1636638520783!5m2!1sen!2sin'
+                },
+                {
+                    id:12,
+                    title:'TUTICORIN(Service)',
+                    target:'tuticorin-service',
+                    name:'TUTICORIN',
+                    address:'APC Mahalakshmi Women Collage, 4/47 B, Ettayapurm Road, Thoothukudi,Tamil Nadu -628002',
+                    phone:'9962666228',
+                    map:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3942.4868268240302!2d78.12486621478521!3d8.83418419365619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b03e544b24d0947%3A0x3758987dd0b8b9a6!2sPeeyesyem%20-%20Hyundai!5e0!3m2!1sen!2sin!4v1636638410855!5m2!1sen!2sin'
+                },
+                {
+                    id:13,
+                    title:'RAMNAD(Service)',
+                    target:'ramnad-service',
+                    name:'RAMNAD',
+                    address:'3/135, Madurai NH Road, Opp: MG Mahal Ramanathapuram,Tamil Nadu -623501',
+                    phone:'9962666228',
+                    map:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.17403982636!2d78.27532761480292!3d11.025565492152737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b01994ea51c3bdf%3A0x8149d134e5403276!2sPeeyesyem%20Hyundai!5e0!3m2!1sen!2sin!4v1636638702800!5m2!1sen!2sin'
+                },
+                {
+                    id:14,
+                    title:'KOVILPATTI(Service)',
+                    target:'kovilpatti-service',
+                    name:'KOVILPATTI',
+                    address:'5/162A Meenatachi Nagar, A. Salaiputhur,Kovilpatti,Tamil Nadu -628503',
+                    phone:'9962666228',
+                    map:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3938.9218790383434!2d77.84453571478761!3d9.161520093428997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06b289d373b3ab%3A0x8f9cc337d8800b21!2sPeeYesYem%20Hyundai%20-%20Kovilpatti!5e0!3m2!1sen!2sin!4v1636638802557!5m2!1sen!2sin'
+                },
+                {
+                    id:15,
+                    title:'KARAIKUDI(Service)',
+                    target:'karaikudi-service',
+                    name:'KARAIKUDI',
+                    address:'Koviloor Rd, Aruna Nagar, Karaikudi, Tamil Nadu',
+                    phone:'9962666228',
+                    map:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.0241222619184!2d78.10740281479366!3d9.931948892897818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00cf9d25334a23%3A0x863bb9bc4241e58f!2sPEEYESYEM%20HYUNDAI%20-%20KARAIKUDI!5e0!3m2!1sen!2sin!4v1636638652201!5m2!1sen!2sin'
+                },
+                {
+                    id:16,
+                    title:'THIRUCHENDUR(Service)',
+                    target:'thiruchendur-service',
+                    name:'THIRUCHENDUR',
+                    address:'59/9, KUMARAPURAM,Trichendur,Tamil Nadu -628215',
+                    phone:'9962666228',
+                    map:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.878905609981!2d78.09818361478291!3d8.511136993881177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b038faeadb444b3%3A0x3f1ca9f0d7bad57d!2sPeeyesyem%20Hyundai%20Tiruchandur!5e0!3m2!1sen!2sin!4v1636638867974!5m2!1sen!2sin'
                 }
             ],
-            currentLocation:this.$route.query.location
+            currentLocation:this.$route.query.location,
+            collapse:'collapsed',
+            activeTab:0,
         }
     },
     mounted(){
@@ -213,10 +242,24 @@ export default {
             });
         }
     },
+    // methods:{
+    //     toggleIcon(id,e){
+    //         var tab = e.target;
+    //         if(tab.classList.contains('not-collapsed')){
+    //             console.log()
+    //         }
+    //     }
+    // }
 }
 </script>
 
 <style scoped>
+.down_icon, .up_icon{
+    display: none;
+}
+.down_icon.active, .up_icon.active{
+    display: inline-block;
+}
 .main_loc_heading{
     position: relative;
     bottom: 30px;
@@ -249,9 +292,12 @@ export default {
     display: flex;
     flex-wrap: wrap;
 }
+.accordian_content_sec .left_side, .accordian_content_sec .right_side{
+    width: 48%;
+    margin: 0 10px;
+}
 .card_items_area{
     margin: 30px auto;
-    width: 48%;
 }
 .card_items_area h5{
     display: flex;
@@ -285,7 +331,7 @@ export default {
     .main_loc_heading{
         bottom: 15px!important;
     }
-    .card_items_area{
+    .accordian_content_sec .left_side, .accordian_content_sec .right_side{
         width: 100%!important;
     }
     .main_loc_sec{

@@ -582,7 +582,11 @@ export default {
         font-size: 16px!important;
     }
     .book_form_box .btn_grps{
-        margin: 0 7px!important;
+        margin: 0 18px!important;
+    }
+    .blog_post_button{
+        font-size: 13px!important;
+        padding: 6px 20px!important;
     }
 }
 .blog_post_button{

@@ -1,5 +1,6 @@
 <template>
   <div class="my-24">
+      <div class="heading_title mb-5">RSA</div>
       <div class="page_content">
           <p><b>Below attached the RSA Scheme and Price Details:</b></p>
           <p><span>One Year Program:</span> 1,359/- ( This amount is inclusive of applicable taxes ) </p>
@@ -21,7 +22,10 @@
 
 <script>
 export default {
-
+    data(){
+        return{
+        }
+    }
 }
 </script>
 
@@ -30,6 +34,11 @@ export default {
     .page_content{
         width: 90%!important;
     }
+}
+.heading_title{
+    text-align: center;
+    font-size: 27px;
+    font-weight: 600;
 }
 .page_content{
     width: 50%;
@@ -49,4 +58,5 @@ export default {
 .page_content p span{
     font-weight: 600;
 }
+
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div>
         <div class="w-8/12 mx-auto mt-24">
-            <div class="my-4">
+            <div class="my-4 w-3/12">
                 <select
                     class="
                     shadow-md
@@ -250,6 +250,7 @@ export default {
             axios.get(process.env.baseUrl + 'api/car_form/index')
             .then((res)=>{
                 this.formData = res.data;
+                this.GetFormType();
             }).catch((err)=>{
                 console.log(err);
             })
