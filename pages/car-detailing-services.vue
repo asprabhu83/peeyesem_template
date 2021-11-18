@@ -1,6 +1,6 @@
 <template>
   <div class="my-16">
-      <div class="heading text-center my-5">Car Detailing Services</div>
+      <div class="heading text-center my-5">Car Service Detailing</div>
       <div class="select_input">
               <div class="head text-center my-3">Select Model</div>
               <div class="my-3">

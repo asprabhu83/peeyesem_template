@@ -19,7 +19,7 @@
                 </div>
                 <div class="footer_item_sec menus footer_mobile_menu">
                     <div class="footer_one_widget">
-                        <h3 class="text-capitalize footer_heading">Information</h3>
+                        <!-- <h3 class="text-capitalize footer_heading">Information</h3> -->
                         <ul>
                             <li><nuxt-link to="/">Home</nuxt-link></li>
                             <li><nuxt-link to="/about">About Us</nuxt-link></li>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="footer_item_sec menus footer_mobile_menu">
                     <div class="footer_one_widget">
-                        <h3 class="text-capitalize footer_heading">Our Services</h3>
+                        <!-- <h3 class="text-capitalize footer_heading">Our Services</h3> -->
                         <ul>
                             <li><nuxt-link to="/all-cars">New Cars</nuxt-link></li>
                             <li><nuxt-link to="/buy-car">Used Cars</nuxt-link></li>
@@ -44,7 +44,7 @@
                 </div>
                 <div class="footer_item_sec follows_us_sec">
                     <div class="footer_one_widget">
-                        <h3 class="text-capitalize follows footer_heading">Follows Us</h3>
+                        <!-- <h3 class="text-capitalize follows footer_heading">Follows Us</h3> -->
                         <div class="footer_left_side_icon pt-0">
                             <ul class="pl-1">
                                 <li>

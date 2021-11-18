@@ -1549,11 +1549,9 @@ export default {
             const [FirstVariantTitle] = feature_variant;
             const {feature_title,feature_variant_title} = FirstVariantTitle;
 
-            if(car_id !== 15){
               const [FirstHighlightPost] = highlight_post;
               const {highlight_id} = FirstHighlightPost;
               this.highlightId = highlight_id;
-            }
 
             const [firstModel] = feature_model;
             const {features_variant_id} = firstModel;

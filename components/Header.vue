@@ -13,16 +13,16 @@
                 </div>
                 <div class="flex items-center call_service_details justify-center">
                     <div class="left mx-2">
-                        <div class="text-lg  font-semibold pt-1 shodow_css_head">
+                        <!-- <div class="text-lg  font-semibold pt-1 shodow_css_head">
                             <div class="mb-1">Email: info@peeyesyemhyundai.in</div>
                             <div class="mb-1">Service: +91 {{$store.state.HeaderData.serviceNo}}</div>
                             <div>Sales: +91 {{$store.state.HeaderData.salesNo}}</div> 
-                        </div>
-                        <!-- <div class="text-lg  font-semibold pt-1 shodow_css_head">
-                            <div class="mb-1"><span> Service</span> :  +91 {{$store.state.HeaderData.serviceNo}}9943990983</div>
-                            <div class="mb-1"><span style="display:inline-block;min-width:67.08px">Sales </span> :  +91 {{$store.state.HeaderData.salesNo}}9943990983</div>
-                            <div ><span style="display:inline-block;min-width:67.08px">Email</span> : info@peeyesyemhyundai.in</div>
                         </div> -->
+                        <div class="text-lg  font-semibold pt-1 shodow_css_head">
+                            <div class="mb-1"><span class="even_space_head">Sales </span> :  +91 {{$store.state.HeaderData.salesNo}}9943990983</div>
+                            <div class="mb-1"><span> Service</span> :  +91 {{$store.state.HeaderData.serviceNo}}9943990983</div>
+                            <div ><span class="even_space_head">Email</span> : info@peeyesyemhyundai.in</div>
+                        </div>
                     </div>
                     <div class="right flex items-center mx-2">
                         <div class="social_icons_box flex">
@@ -524,6 +524,10 @@ export default {
 .shodow_css_head{
     color: gray;
 }
+.shodow_css_head .even_space_head{
+    display: inline-block;
+    min-width: 67.08px;
+}
 .divider{
     font-weight: 500;
     color: #002c5f;
@@ -596,6 +600,10 @@ export default {
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
     .shodow_css_head div{
         margin-bottom: 0!important;
+    }
+    .shodow_css_head .even_space_head{
+        display: inline-block;
+        min-width: 48.45px!important;
     }
     .business_logo_icon{
         margin-top: 3px ;
