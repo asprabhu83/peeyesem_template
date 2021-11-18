@@ -18,7 +18,7 @@
                 </nuxt-link>
                 <div class="item_details" >
                     <nuxt-link :to="'/cars/'+ car.car_title.replace(/\s+/g, '-').toLowerCase()" class="text-center font-medium mt-1 mb-1 cursor-pointer" >{{car.car_title}}</nuxt-link>
-                   <div class="text-center font-medium mt-1 mb-1">Starting At Rs. {{car.car_price}}<span class="notice_mark">*</span></div>
+                   <div class="text-center font-medium mt-1 mb-1">Starting At <font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mx-2" /> {{car.car_price}}<span class="notice_mark">*</span></div>
                 </div>
             </div>
         </div>
@@ -31,7 +31,7 @@
                     </nuxt-link>
                     <div class="item_details" >
                         <nuxt-link :to="'/cars/'+ car.car_title.replace(/\s+/g, '-').toLowerCase()" class="text-center font-medium mt-1 mb-1 cursor-pointer" >{{car.car_title}}</nuxt-link>
-                         <div class="text-center font-medium mt-1 mb-1">Starting At Rs. {{car.car_price}}<span class="notice_mark">*</span></div>
+                         <div class="text-center font-medium mt-1 mb-1">Starting At <font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mx-2" /> {{car.car_price}}<span class="notice_mark">*</span></div>
                     </div>
                 </div>
             </div>
@@ -43,7 +43,7 @@
                     </nuxt-link>
                     <div class="item_details" >
                         <nuxt-link :to="'/cars/'+ car.car_title.replace(/\s+/g, '-').toLowerCase()" class="text-center font-medium mt-1 mb-1 cursor-pointer" >{{car.car_title}}</nuxt-link>
-                          <div class="text-center font-medium mt-1 mb-1">Starting At Rs. {{car.car_price}}<span class="notice_mark">*</span></div>
+                          <div class="text-center font-medium mt-1 mb-1">Starting At <font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mx-2" /> {{car.car_price}}<span class="notice_mark">*</span></div>
                     </div>
                 </div>
             </div>
@@ -55,7 +55,7 @@
                     </nuxt-link>
                     <div class="item_details" >
                         <nuxt-link :to="'/cars/'+ car.car_title.replace(/\s+/g, '-').toLowerCase()" class="text-center font-medium mt-1 mb-1 cursor-pointer" >{{car.car_title}}</nuxt-link>
-                            <div class="text-center font-medium mt-1 mb-1">Starting At Rs. {{car.car_price}}<span class="notice_mark">*</span></div>
+                            <div class="text-center font-medium mt-1 mb-1">Starting At <font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mx-2" /> {{car.car_price}}<span class="notice_mark">*</span></div>
                     </div>
                 </div>
             </div>

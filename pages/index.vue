@@ -172,7 +172,7 @@
                 </div>
                 <div class="car_details" >
                     <div class="text-center font-medium mt-1 mb-1 cursor-pointer">{{car.car_title}}</div>
-                   <div class="text-center font-medium mt-1 mb-1"><font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mx-2" />{{car.car_price}}<span class="notice_mark">*</span></div>
+                   <div class="text-center font-medium mt-1 mb-1">Starting At <font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mx-2" />{{car.car_price}}<span class="notice_mark">*</span></div>
                 </div>
             </div>
             <div class="car_box_item flex items-center justify-center" style="background:#002c5f;">

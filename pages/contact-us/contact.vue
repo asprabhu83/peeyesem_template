@@ -773,6 +773,9 @@ export default {
             var locId = e.target.value;
             var othersItem = this.originalContactLocations.filter((item)=>item.location == locId);
             var EditCategory = ['ALL',...new Set(othersItem.map((item)=>{return item.particulars}))];
+            if(locId == ''){
+                EditCategory = ['ALL',...new Set(this.originalContactLocations.map((item)=>{return item.particulars}))];
+            }
             this.tabCategory = EditCategory;
             var ind = this.tabIndex;
             var partiCular = this.tabCategory[ind];

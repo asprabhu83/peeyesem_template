@@ -96,6 +96,7 @@
                         type="number"
                         placeholder="Rate of Interest"
                         v-model="interest"
+                        disabled
                         />
           </div>
           <div class="input_box">
@@ -251,7 +252,7 @@ export default {
             vehicle:'',
             variant:'',
             roadPrice:'',
-            interest:'',
+            interest:'7.5',
             tenure:'',
             DownPayment:'',
             TenureList:[
@@ -389,7 +390,7 @@ export default {
     width: 80%;
     margin: 40px auto;
 }
-#roadPrice{
+#roadPrice, #interest{
     cursor: not-allowed;
 }
 .emi_total_sec{

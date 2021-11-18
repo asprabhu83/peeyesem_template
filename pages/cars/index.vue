@@ -930,6 +930,10 @@ export default {
 }
 
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
+    .car_poster_details{
+        top: 12%!important;
+        left: 4%!important;
+    }
     .car_feature_variant_box .select_box{
         width: 33%!important;
     }

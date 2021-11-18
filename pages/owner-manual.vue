@@ -103,6 +103,22 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width: 1270px) and (max-width: 1366px){
+    .car_item_sec .items{
+        width: 31%!important;
+        margin: 11px!important;
+    }
+    .car_item_sec{
+        width: 90%!important;
+    }
+    .car_item_sec .detail a.download_manual{
+        padding: 3px 15px!important;
+        font-size: 14px!important;
+    }
+    .car_item_sec .detail .car_detail_name{
+        font-size: 14px!important;
+    }
+}
 @media only screen and (min-width:300px) and (max-width:600px){
     .main_heading{
         font-size: 18px!important;

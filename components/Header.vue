@@ -19,8 +19,8 @@
                             <div>Sales: +91 {{$store.state.HeaderData.salesNo}}</div> 
                         </div> -->
                         <div class="text-lg  font-semibold pt-1 shodow_css_head">
-                            <div class="mb-1"><span class="even_space_head">Sales </span> :  +91 {{$store.state.HeaderData.salesNo}}9943990983</div>
-                            <div class="mb-1"><span> Service</span> :  +91 {{$store.state.HeaderData.serviceNo}}9943990983</div>
+                            <div class="mb-1"><span class="even_space_head">Sales </span> :  +91 {{$store.state.HeaderData.salesNo}}</div>
+                            <div class="mb-1"><span> Service</span> :  +91 {{$store.state.HeaderData.serviceNo}}</div>
                             <div ><span class="even_space_head">Email</span> : info@peeyesyemhyundai.in</div>
                         </div>
                     </div>
