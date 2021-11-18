@@ -265,6 +265,9 @@ export default {
             var item = this.originalformData.filter((item)=>{
                 return item.form_type == this.formType
             })
+            if(this.formType == ''){
+                item = this.originalformData;
+            }
             this.formData = item;
         },
         filterMoreDetails(id){

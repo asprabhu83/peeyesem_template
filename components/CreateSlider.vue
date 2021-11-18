@@ -134,7 +134,7 @@ export default {
             var vm = this
             if (path === 'sliderImage') {
                 reader.onload = (e) => {
-                 vm.blogImage = e.target.result;
+                 vm.sliderImage = e.target.result;
                 }
             }
             if (flen !== 0) {
