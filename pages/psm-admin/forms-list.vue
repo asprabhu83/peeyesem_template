@@ -235,6 +235,7 @@ export default {
     data(){
         return{
             formData:[],
+            originalformData:[],
             detailsDialog:false,
             itemId:'',
             singleData:[],
@@ -250,6 +251,7 @@ export default {
             axios.get(process.env.baseUrl + 'api/car_form/index')
             .then((res)=>{
                 this.formData = res.data;
+                this.originalformData = res.data;
                 this.GetFormType();
             }).catch((err)=>{
                 console.log(err);
@@ -260,7 +262,7 @@ export default {
           this.formTypeList = item;
         },
         filterFormData(){
-            var item = this.formData.filter((item)=>{
+            var item = this.originalformData.filter((item)=>{
                 return item.form_type == this.formType
             })
             this.formData = item;
