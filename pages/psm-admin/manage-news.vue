@@ -3,12 +3,12 @@
 <div >
   <div class="dialog_box fixed inset-0 h-screen w-full flex justify-center items-center" v-if="addUserDialog === true">
       <div class="dialog_content bg-white rounded-md shadow-md">
-         <div class="my-2   flex items-center justify-between py-3 px-6"><span class="font-bold text-lg" >Add Slider</span><font-awesome-icon icon="times"  size="1x" class="text-red-600 cursor-pointer" @click="addUserDialog = false" /></div>
-         <AddSlider @created="GetSliders" @childDialog="childDialog"/>
+         <div class="my-2   flex items-center justify-between py-3 px-6"><span class="font-bold text-lg" >Add News</span><font-awesome-icon icon="times"  size="1x" class="text-red-600 cursor-pointer" @click="addUserDialog = false" /></div>
+         <AddBlog @created="GetNews" @childDialog="childDialog"/>
       </div>
    </div>
    <div class="w-8/12 mx-auto text-right mt-10">
-     <button @click="addUserDialog = true" class=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 ml-5 px-4 rounded focus:outline-none focus:shadow-outline">Add Slider<font-awesome-icon icon="user-plus"  size="1x" class="text-white ml-2 cursor-pointer"  /></button>
+     <button @click="addUserDialog = true" class=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 ml-5 px-4 rounded focus:outline-none focus:shadow-outline">Add News<font-awesome-icon icon="user-plus"  size="1x" class="text-white ml-2 cursor-pointer"  /></button>
    </div>
   <div class="w-8/12 mx-auto mt-10">
     <div class="flex flex-col">
@@ -37,7 +37,7 @@
                       tracking-wider
                     "
                   >
-                    Slider Image
+                    Image
                   </th>
                   <th
                     scope="col"
@@ -51,7 +51,7 @@
                       tracking-wider
                     "
                   >
-                    Slider Link
+                    Poster Image
                   </th>
                   <th
                     scope="col"
@@ -65,7 +65,21 @@
                       tracking-wider
                     "
                   >
-                    Test Drive Link
+                    Title
+                  </th>
+                  <th
+                    scope="col"
+                    class="
+                      px-6
+                      py-3
+                      text-left text-xs
+                      font-medium
+                      text-gray-500
+                      uppercase
+                      tracking-wider
+                    "
+                  >
+                    Description
                   </th>
                   <th
                     scope="col"
@@ -84,13 +98,18 @@
                 </tr>
               </thead>
               <tbody class="bg-white divide-y divide-gray-200">
-                <tr v-if="Sliders.length == 0" >
-                    <td class="px-6 py-4 whitespace-nowrap" colspan="3" style="text-align:center;"> No Data</td>
+                <tr v-if="News.length == 0" >
+                    <td class="px-6 py-4 whitespace-nowrap" colspan="5" style="text-align:center;"> No Data</td>
                 </tr>
-                <tr v-for="item in Sliders" :key="item.id">
+                <tr v-for="item in News" :key="item.id">
                   <td class="px-6 py-4 whitespace-nowrap" >
                     <div class="model_image">
-                        <img :src="baseUrl + 'images/' + item.slider_image" style="width:100%;" />
+                        <img :src="baseUrl + 'images/' + item.image" style="width:100%;" />
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 " >
+                    <div class="model_image">
+                        <img :src="baseUrl + 'images/' + item.poster_image" style="width:100%;" />
                     </div>
                   </td>
                   <td class="px-6 py-4 " >
@@ -103,10 +122,10 @@
                         text-green-800
                       "
                     >
-                      {{item.slider_link}}
+                      {{item.title}}
                     </span>
                   </td>
-                  <td class="px-6 py-4 " >
+                  <td class="px-6 py-4 "  >
                     <span
                       class="
                         inline-flex
@@ -115,21 +134,10 @@
                         font-semibold
                         text-green-800
                       "
-                      v-if="item.data_value !== null"
+                      :title="item.description"
+                      style="width:20%;"
                     >
-                      {{JSON.parse(item.data_value).test_dive_link}}
-                    </span>
-                    <span
-                      class="
-                        inline-flex
-                        text-xs
-                        leading-5
-                        font-semibold
-                        text-green-800
-                      "
-                      v-else
-                    >
-                      -
+                      {{item.description.substring(0,80)}}...
                     </span>
                   </td>
                   <td
@@ -156,7 +164,7 @@
      <div class="dialog_box fixed inset-0 h-screen w-full flex justify-center items-center" v-if="deleteDialog === true">
       <div class="dialog_content bg-white rounded-md shadow-md">
         <h1 class="text-xl text-center my-8  font-bold">
-          Are you sure you want to delete this Slider?
+          Are you sure you want to delete this News?
         </h1>
         <div class="flex items-center justify-center my-6">
           <button
@@ -167,7 +175,7 @@
           </button>
           <button
             class="bg-red-700 mx-4 text-white rounded-sm py-1 px-6"
-            data-slider-id="" v-on:click="Delete"
+            data-blog-id="" v-on:click="Delete"
           >
             ok
           </button>
@@ -176,7 +184,7 @@
      </div>
      <div class="dialog_box fixed inset-0 h-screen w-full flex justify-center items-center" v-if="editDialog === true">
       <div class="dialog_content bg-white rounded-md shadow-md">
-         <div class="my-2   flex items-center justify-between py-3 px-10"><span class="font-bold text-lg" >Edit Slider</span><font-awesome-icon icon="times"  size="1x" class="text-red-600 cursor-pointer" @click="editDialog = false" /></div>
+         <div class="my-2   flex items-center justify-between py-3 px-10"><span class="font-bold text-lg" >Edit News</span><font-awesome-icon icon="times"  size="1x" class="text-red-600 cursor-pointer" @click="editDialog = false" /></div>
          <form class="bg-white rounded px-10 pb-10" >
             <div class="form_box">
               <div class="err_box ">
@@ -188,78 +196,11 @@
                 </div>
               </div>
               <div class="mb-4">
-                    <label
-                            class="block text-gray-700 text-sm font-bold mb-2"
-                            for="sliderImage"
-                            >
-                            Blog image
-                            </label>
-                            <label
-                            class="shadow-md
-                                block
-                                mt-2
-                                sliderImage
-                                cursor-pointer
-                                appearance-none
-                                border
-                                rounded
-                                w-full
-                                py-2
-                                px-3
-                                text-gray-700
-                                leading-tight
-                                focus:outline-none
-                                focus:shadow-outline"
-                            for="sliderImage"
-                            >
-                            Select image
-                            </label>
-                            <input
-                            class="
-                                hidden
-                            "
-                            accept="image/*"
-                            id="sliderImage"
-                            ref="myFiles"
-                            type="file"
-                            data-file-target="sliderImage"
-                            placeholder="Blog Image"
-                            @change="previewFiles"
-                            />
-                </div>
-                <div class="mb-4">
-                    <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
-                    for="slider_link"
-                    >
-                    Slider Link
-                    </label>
-                    <input
-                    class="
-                        shadow-md
-                        appearance-none
-                        border
-                        rounded
-                        w-full
-                        py-2
-                        px-3
-                        text-gray-700
-                        leading-tight
-                        focus:outline-none
-                        focus:shadow-outline
-                    "
-                    id="slider_link"
-                    type="text"
-                    placeholder="Slider Link"
-                    v-model="sliderLink"
-                    />
-                </div>
-                <div class="mb-4">
             <label
               class="block text-gray-700 text-sm font-bold mb-2"
-              for="slider_link"
+              for="title"
             >
-              Test Drive Link
+              Title
             </label>
             <input
               class="
@@ -275,10 +216,117 @@
                 focus:outline-none
                 focus:shadow-outline
               "
-              id="test_drive_link"
+              id="title"
               type="text"
-              placeholder="Test Drive Link"
-              v-model="testDriveLink"
+              placeholder="Title"
+              v-model="title"
+            />
+          </div>
+          <div class="mb-4">
+            <label
+                    class="block text-gray-700 text-sm font-bold mb-2"
+                    for="mainImage"
+                    >
+                    Image
+                    </label>
+                    <label
+                    class="shadow-md
+                        block
+                        mt-2
+                        mainImage
+                        cursor-pointer
+                        appearance-none
+                        border
+                        rounded
+                        w-full
+                        py-2
+                        px-3
+                        text-gray-700
+                        leading-tight
+                        focus:outline-none
+                        focus:shadow-outline"
+                    for="mainImage"
+                    >
+                    Select image
+                    </label>
+                    <input
+                    class="
+                        hidden
+                    "
+                    accept="image/*"
+                    id="mainImage"
+                    ref="myFiles"
+                    type="file"
+                    data-file-target="mainImage"
+                    placeholder="Blog Image"
+                    @change="previewFiles"
+                    />
+          </div>
+          <div class="mb-4">
+            <label
+                    class="block text-gray-700 text-sm font-bold mb-2"
+                    for="posterImage"
+                    >
+                    Poster image
+                    </label>
+                    <label
+                    class="shadow-md
+                        block
+                        mt-2
+                        posterImage
+                        cursor-pointer
+                        appearance-none
+                        border
+                        rounded
+                        w-full
+                        py-2
+                        px-3
+                        text-gray-700
+                        leading-tight
+                        focus:outline-none
+                        focus:shadow-outline"
+                    for="posterImage"
+                    >
+                    Select image
+                    </label>
+                    <input
+                    class="
+                        hidden
+                    "
+                    accept="image/*"
+                    id="posterImage"
+                    ref="myFiles"
+                    type="file"
+                    data-file-target="posterImage"
+                    placeholder="Blog Image"
+                    @change="previewFiles"
+                    />
+          </div>
+          <div class="mb-4">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="description"
+            >
+              Description
+            </label>
+            <textarea
+              class="
+                shadow-md
+                appearance-none
+                border
+                rounded
+                w-full
+                py-2
+                px-3
+                text-gray-700
+                leading-tight
+                focus:outline-none
+                focus:shadow-outline
+              "
+              id="description"
+              type="text"
+              placeholder="Description"
+              v-model="description"
             />
           </div>
               <div class="flex items-center justify-between">
@@ -299,7 +347,7 @@
                   type="button"
                   @click="Update"
                 >
-                  Update Slider
+                  Update News
                 </button>
               </div>
             </div>
@@ -316,11 +364,11 @@
 
 <script>
 import axios from '~/plugins/axios'
-import AddSlider from '../../components/CreateSlider.vue'
+import AddBlog from '../../components/CreateBlog.vue'
 export default {
   layout:'admin-header-layout',
   components: {
-    AddSlider
+    AddBlog
   },
   data () {
     return {
@@ -329,16 +377,17 @@ export default {
       addUserDialog: false,
       empty_valid: false,
       success: false,
-      Sliders:[],
+      News:[],
       id:'',
-      sliderImage:'',
-      sliderLink:'',
-      testDriveLink:'',
+      mainImage:'',
+      posterImage:'',
+      title:'',
+      description:'',
       baseUrl:process.env.baseUrl,
     }
   },
   mounted () {
-    this.GetSliders()
+    this.GetNews()
     if(!localStorage.getItem('user_token')){
         this.$router.push('/psm-admin')
     }
@@ -359,20 +408,25 @@ export default {
         createImage (file, path, flen) {
             var reader = new FileReader()
             var vm = this
-            if (path === 'sliderImage') {
+            if (path === 'mainImage') {
                 reader.onload = (e) => {
-                 vm.sliderImage = e.target.result;
+                 vm.mainImage = e.target.result;
+                }
+            }
+            if (path === 'posterImage') {
+                reader.onload = (e) => {
+                 vm.posterImage = e.target.result;
                 }
             }
             if (flen !== 0) {
                 reader.readAsDataURL(file)
             }
     },
-    GetSliders () {
+    GetNews () {
       axios
-        .get(process.env.baseUrl + 'api/slider/index')
+        .get(process.env.baseUrl + 'api/news_events/index')
         .then((response) => {
-          this.Sliders = response.data
+          this.News = response.data
         })
         .catch((error) => {
           console.log(error)
@@ -380,15 +434,15 @@ export default {
     },
     DialogBox (id) {
       this.deleteDialog = true
-      this.$el.setAttribute('data-slider-id', id)
+      this.$el.setAttribute('data-blog-id', id)
     },
     Delete () {
-      var id = this.$el.getAttribute('data-slider-id')
+      var id = this.$el.getAttribute('data-blog-id')
       axios
-        .delete(process.env.baseUrl + 'api/slider/delete/' + id)
+        .delete(process.env.baseUrl + 'api/news_events/delete/' + id)
         .then(() => {
           this.deleteDialog = false
-          this.GetSliders()
+          this.GetNews()
         })
         .catch((error) => {
           console.log(error)
@@ -400,14 +454,11 @@ export default {
     Edit (id) {
       this.editDialog = true
       axios
-        .get(process.env.baseUrl + 'api/slider/show/' + id)
+        .get(process.env.baseUrl + 'api/news_events/show/' + id)
         .then((response) => {
-          this.id = response.data.id;
-          this.sliderLink = response.data.slider_link;
-          if(response.data.data_value !== null){
-            var data = JSON.parse(response.data.data_value).test_dive_link;
-            this.testDriveLink = data;
-          }
+          this.id = response.data.id
+          this.title = response.data.title
+          this.description = response.data.description
         })
         .catch((error) => {
           console.log(error)
@@ -417,27 +468,22 @@ export default {
       this.empty_valid = false
       this.success = false
       var err = 0
-      if (
-        this.sliderImage === '' ||
-        this.sliderLink === ''
-      ) {
-        this.empty_valid = true
-        err++
-      }
       if (err === 0) {
-        var json_data = {
-          test_dive_link:this.testDriveLink
-        }
-        json_data = JSON.stringify(json_data);
+        // var json_data = {
+        //   blog_heading:this.blogHeading,
+        //   date:date
+        // }
+        // json_data = JSON.stringify(json_data);
         axios
-          .put(process.env.baseUrl + 'api/slider/update/' + this.id, {
-            slider_image: this.sliderImage,
-            slider_link: this.sliderLink,
-            data_value:json_data
+          .put(process.env.baseUrl + 'api/news_events/update/' + this.id, {
+            title: this.title,
+            image: this.mainImage,
+            poster_image: this.posterImage,
+            description: this.description,
           })
           .then(() => {
             this.editDialog = false
-            this.GetSliders()
+            this.GetNews()
           })
           .catch((error) => {
             console.log(error)

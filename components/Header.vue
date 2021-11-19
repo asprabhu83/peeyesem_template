@@ -605,7 +605,7 @@ export default {
         width: 18px;
     }
     .main-menu nav>ul>li{
-        padding-left: 25px!important;
+        padding-left: 17px!important;
     }
     .social_icons_box .flat_icons{
         width: 21px!important;
