@@ -27,7 +27,7 @@ export default {
         {
           id: 1,
           name: "Hyundai Motor India Rolls-Out Fastest ‘10 Millionth’ Car",
-          image: "1.webp",
+          image: "car18.webp",
           description: `
                     <p>
                        CHENNAI, June 30, 2021: Hyundai Motor India Ltd (HMIL), India’s first Smart Mobility Solutions Provider and largest exporter since inception, reinstated its commitment of Make-in-India with the fastest roll out of 10 million cars from its state-of-art manufacturing facility in India near Chennai, Tamil Nadu. The unparalleled milestone of achieving production of 10 million cars is a result of smart manufacturing and re-affirms Hyundai’s commitment towards making India Self Reliant. The achievement reiterates HMIL’s support towards State and Central Governments to accentuate economic recovery by overcoming the challenges posed by Covid-19 pandemic. Hyundai ALCAZAR became the 10 millionth car to roll out of the production line at HMIL’s plant in Sriperumbudur. Thiru. M.K.Stalin, Hon’ble Chief Minister of Tamil Nadu signed on the car bonnet to mark the momentous occasion.
@@ -37,13 +37,13 @@ export default {
         {
             id:2,
             name:`Hyundai ALCAZAR Makes a Grand Entrance in the 6 and 7 Seater SUV Space with Over 11000 Bookings`,
-            image:'2.webp',
+            image:'1.webp',
             description:'Commenting on the remarkable bookings performance, Mr Tarun Garg, Director (Sales, Marketing & Service), Hyundai Motor India Ltd., said, “Hyundai ALCAZAR has received an overwhelming response from customers with over 11 000 Bookings received in less than a month since its launch. This superlative response showcases our customer’s affinity towards a high value, versatile and premium package that Hyundai ALCAZAR epitomizes perfectly. We are truly humbled and grateful to our customers who have chosen to live the Grand life with the Hyundai ALCAZAR.”'
         },
         {
             id:3,
             name:'Hyundai takes Fun Driving to a New Level: Announces Introduction of N Line range for India',
-            image:'3.webp',
+            image:'car11.webp',
             description:`Commenting on the introduction of N Line, Mr. S S Kim, MD & CEO, Hyundai Motor India Ltd., said, “As the country’s leading smart mobility solutions provider, Hyundai has been redefining the mobility landscape with products that take customer aspirations to new heights. The introduction of our N Line range to India, will induce sporty experiences like never before, making every drives a fun experience with products that personify excitement and athleticism.`
         },
         {
@@ -61,7 +61,7 @@ export default {
         {
             id:6,
             name:`Hyundai Motor India Continues Leadership in Exports`,
-            image:'6.webp',
+            image:'car7.jpg',
             description:`Commenting on the remarkable achievement, Mr. S S Kim, MD & CEO, Hyundai Motor India Ltd. said, “Despite numerous challenges emerging out of the global pandemic, uncertainty in various markets, restriction on imports and disruption in supply-chain, HMIL has continued to drive operational excellence to ensure customer satisfaction. An export of 1 04 342 units in FY 20-21 stands testament to our indomitable spirit. It is a moment of great pride for Hyundai as we step forward in the journey of making world class quality cars from India. Our Smart Manufacturing Processes have led us to maintain our leadership position in passenger vehicle exports and strengthened our commitment to Make in India for the World.” `
         }
       ],
