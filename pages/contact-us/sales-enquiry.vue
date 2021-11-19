@@ -83,7 +83,7 @@
               <div class="title">Dealership & Enquiry Details</div>
               <form >
                 <div class="mb-4 mt-4">
-                      <select
+                        <select
                                 class="
                                 shadow-md
                                 appearance-none
@@ -98,37 +98,64 @@
                                 focus:outline-none
                                 focus:shadow-outline
                                 "
-                                id="enquiry"
-                                v-model="enquiry"
+                                id="vehicle_model"
+                                v-model="vehicleModel"
                             >
-                            <option class="text-xl " value="">Select Enquiry For</option>
-                            <option class="text-xl" :value="model" v-for="model in enquiryList"
-                                :key="model" >{{model}}</option>
+                            <option class="text-xl " value="">Select Model</option>
+                            <option class="text-xl" :value="model.car_title" v-for="model in this.$store.state.originalDataCars"
+                                :key="model.id" >{{model.car_title}}</option>
                             </select>
                     </div>
                     <div class="mb-4 ">
-                        <input
-                        class="
-                            shadow-md
-                            appearance-none
-                            border
-                            rounded
-                            w-full
-                            py-2
-                            px-3
-                            text-gray-700
-                            leading-tight
-                            focus:outline-none
-                            focus:shadow-outline
-                        "
-                        id="dealer"
-                        type="text"
-                        placeholder="Select Dealer"
-                        v-model="dealer"
-                        />
+                        <select
+                                class="
+                                shadow-md
+                                appearance-none
+                                border
+                                rounded
+                                w-full
+                                py-2
+                                px-3
+                                text-gray-700
+                                cursor-pointer
+                                leading-tight
+                                focus:outline-none
+                                focus:shadow-outline
+                                "
+                                id="fuel_type"
+                                v-model="fuelType"
+                            >
+                            <option class="text-xl " value="">Select Fuel Type</option>
+                            <option class="text-xl" :value="model.name" v-for="model in FuelTypeList"
+                                :key="model.id" >{{model.name}}</option>
+                            </select>
                     </div>
                     <div class="mb-4 ">
-                        <input
+                        <select
+                                class="
+                                shadow-md
+                                appearance-none
+                                border
+                                rounded
+                                w-full
+                                py-2
+                                px-3
+                                text-gray-700
+                                cursor-pointer
+                                leading-tight
+                                focus:outline-none
+                                focus:shadow-outline
+                                "
+                                id="city_list"
+                                v-model="city"
+                            >
+                            <option class="text-xl " value="">Select City</option>
+                            <option class="text-xl" :value="model.name" v-for="model in CityList"
+                                :key="model.id" >{{model.name}}</option>
+                            </select>
+                    </div>
+                    <div class="mb-6 ">
+                        <textarea
                         class="
                             shadow-md
                             appearance-none
@@ -147,14 +174,6 @@
                         placeholder="Comments"
                         v-model="comments"
                         />
-                    </div>
-                    <div class="mb-6">
-                        <div class="checkbox_sec">
-                            <label class="inline-flex items-center">
-                                <input type="checkbox" v-model="agreement" class="form-checkbox">
-                                <span class="ml-2 cursor-pointer">I have read & understood the disclaimer</span>
-                            </label>
-                        </div>
                     </div>
                     <div class="btn_box">
                         <button type="button" @click="form_tab_index = 0">Previous</button>
@@ -178,22 +197,81 @@ export default {
             name:'',
             email:'',
             mobile:'',
-            enquiry:'',
-            dealer:'',
+            vehicleModel:'',
+            fuelType:'',
+            city:'',
             comments:'',
-            enquiryList:[
-                'sales',
-                'others'
+            FuelTypeList:[
+                {
+                    id:1,
+                    name:'Petrol'
+                },
+                {
+                    id:2,
+                    name:'Diesel'
+                },
+                {
+                    id:3,
+                    name:'CNG'
+                }
+            ],
+            CityList:[
+                {
+                    id:1,
+                    name:'Madurai'
+                },
+                {
+                    id:2,
+                    name:'Chennai'
+                },
+                {
+                    id:3,
+                    name:'Trichendur'
+                },
+                {
+                    id:4,
+                    name:'Ramanathapuram'
+                },
+                {
+                    id:5,
+                    name:'Kovilpatti'
+                },
+                {
+                    id:6,
+                    name:'Tuticorin'
+                },
+                {
+                    id:7,
+                    name:'Karaikudi'
+                }
             ],
             form_tab_index:0,
             agreement:false,
         }
     },
+    mounted(){
+        if(this.$store.state.cars.length == 0){
+            this.GetModels();
+        }
+        window.scrollTo(0, 0)
+    },
     methods:{
+        GetModels(){
+            axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+            axios.defaults.withCredentials = false;
+            axios.get(process.env.baseUrl + 'api/cars/all')
+            .then((res)=>{
+                this.$store.state.cars = res.data.cars;
+                this.$store.state.originalDataCars = res.data.cars;
+            }).catch((err)=>{
+                console.log(err);
+            })
+        },
         AddSalesData(){
             var data_value = {
-                enquiry:this.enquiry,
-                dealer:this.dealer,
+                model:this.vehicleModel,
+                fuel_type:this.fuelType,
+                city:this.city,
                 comments:this.comments
             }
             data_value = JSON.stringify(data_value);
@@ -208,10 +286,10 @@ export default {
                     this.name = '';
                     this.email = '';
                     this.mobile = '';
-                    this.enquiry = '';
-                    this.dealer = '';
+                    this.vehicleModel = '';
+                    this.fuelType = '';
+                    this.city = '';
                     this.comments = '';
-                    this.agreement = false;
                     this.form_tab_index = 0;
                 }
             }).catch((err)=>{

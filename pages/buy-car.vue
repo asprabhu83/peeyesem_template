@@ -1,11 +1,46 @@
 <template>
   <div class="">
-      <div class="img_sec">
-           <img :src="require('@/assets/img/used_car_poster.webp')" alt="img" style="width:100%;" />
-           <div class="used_car_title">
-                    <h2 class="text-center ">Used Cars</h2>
-          </div>
-      </div>
+      <section class="relative" >
+        <div class="row m-0 block">
+            <div class="product_single_one_img">
+                        <swiper class="swiper product-single-2-slider" :options="swiperOption">
+                            <swiper-slide>
+                                <div class="carousel_img_sec">
+                                    <img :src="require('@/assets/img/cars/h-promise-banners/1.jpg')" alt="img" style="width:100%;" />
+                                    <div class="know_more_btn_sec">
+                                        <div>
+                                            <nuxt-link class="knw_mre_btn" to="">Learn More</nuxt-link>
+                                        </div>
+                                    </div>
+                                </div>
+                            </swiper-slide>
+                            <swiper-slide>
+                                <div class="carousel_img_sec">
+                                    <img :src="require('@/assets/img/cars/h-promise-banners/2.jpg')" alt="img" style="width:100%;" />
+                                    <div class="know_more_btn_sec">
+                                        <div>
+                                            <nuxt-link class="knw_mre_btn" to="">Learn More</nuxt-link>
+                                        </div>
+                                    </div>
+                                </div>
+                            </swiper-slide>
+                            <swiper-slide>
+                                <div class="carousel_img_sec">
+                                    <img :src="require('@/assets/img/cars/h-promise-banners/3.jpg')" alt="img" style="width:100%;" />
+                                    <div class="know_more_btn_sec">
+                                        <div>
+                                            <nuxt-link class="knw_mre_btn" to="">Learn More</nuxt-link>
+                                        </div>
+                                    </div>
+                                </div>
+                            </swiper-slide>
+                            <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
+                            <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
+
+                        </swiper>
+            </div>
+        </div>
+    </section>
       <div class="h_promise_content ">
           <h3 class="text-center mb-4">H Promise - Approved used car</h3>
           <div class="desc text-center">Hyundai Motor India Ltd. started its certified used car program under the brand name "H PROMISE" to give good quality of used cars to Indian customers. Vehicles are certified by Hyundai and come with Hyundai warranty upto 1 year or 20,000Km (whichever earlier from the date of delivery) & 2 free services. Through this program customer is assured of trust, transparency, convenience and peace of mind.</div>
@@ -409,7 +444,22 @@ export default {
                 email:'',
                 mobile:'',
                 Location:''
-            }
+            },
+            swiperOption: {
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+                spaceBetween: 0,
+                loop: true,
+                mousewheel: false,
+                keyboard: {
+                    enabled: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                },
+                autoplay: true,
+            },
         }
     },
     mounted(){
@@ -534,6 +584,11 @@ export default {
     .car_section .cars_items{
         width: 67%!important;
     }
+    .know_more_btn_sec .knw_mre_btn{
+        padding: 8px 15px!important;
+        font-size: 14px!important;
+        min-width: 160px!important;
+    }
 }
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
     .car_section .cars_items{
@@ -546,6 +601,11 @@ export default {
     }
     .h_promise_content{
         width: 70%!important;
+    }
+    .know_more_btn_sec .knw_mre_btn{
+        padding: 6px 15px!important;
+        font-size: 12px!important;
+        min-width: 130px!important;
     }
 }
 @media only screen and (min-width:300px) and (max-width:600px){
@@ -571,6 +631,18 @@ export default {
     .used_car_title h2{
         font-size: 20px!important;
     }
+    .carousel_img_sec .know_more_btn_sec{
+        display: none;
+    }
+}
+.carousel_img_sec .know_more_btn_sec{
+    position: absolute;
+    bottom: 23%;
+    left: 13%;
+    z-index: 300;
+}
+.carousel_img_sec{
+    border-bottom: 1px solid lightgray;
 }
 .img_sec{
     position: relative;
@@ -665,5 +737,34 @@ export default {
     display: flex;
     justify-content: space-between;
     padding: 5px;
+}
+.swiper-button-prev, .swiper-button-next{
+    z-index: 220;
+    border-radius: 50%;
+    width: 40px!important;
+    height: 40px!important;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.swiper-button-next:hover, .swiper-button-prev:hover{
+    background: black!important;
+}
+.know_more_btn_sec .knw_mre_btn{
+    background: #002c5f;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 9px 20px;
+    font-size: 18px;
+    border-radius: 4px;
+    margin: 7px 0;
+    display: block;
+    text-align: center;
+    min-width: 190px;
+    box-shadow: 0 2px 10px 4px rgb(0 0 0/15%);
+}
+.know_more_btn_sec .knw_mre_btn:hover{
+    color: white;
 }
 </style>

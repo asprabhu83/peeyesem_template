@@ -1,7 +1,7 @@
 <template>
   <div>
       <div class="img_sec">
-          <img :src="require('@/assets/img/cars/owner_manual.webp')" alt="img" style="width:100%;" />
+          <img :src="require('@/assets/img/cars/owner_manual.jpg')" alt="img" style="width:100%;" />
           <div class="heading">Owner's Manual</div>
       </div>
       <div class="my-24">
@@ -118,6 +118,9 @@ export default {
     .car_item_sec .detail .car_detail_name{
         font-size: 14px!important;
     }
+    .img_sec .heading{
+        font-size: 35px!important;
+    }
 }
 @media only screen and (min-width:300px) and (max-width:600px){
     .main_heading{
@@ -125,8 +128,8 @@ export default {
         padding: 0 20px;
     }
     .img_sec .heading{
-        font-size: 23px!important;
-        top: 25%!important;
+        font-size: 18px!important;
+        top: 20%!important;
     }
     .car_item_sec{
         width: 95%!important;
@@ -153,11 +156,11 @@ export default {
 }
 .img_sec .heading{
     position: absolute;
-    top: 10%;
+    top: 16%;
     text-align: center;
     width: 100%;
-    font-size: 35px;
-    font-weight: 700;
+    font-size: 50px;
+    font-weight: 600;
 }
 .main_heading{
     font-size: 24px;

@@ -7,6 +7,10 @@
                 alt="img"
                 style="width: 100%"
             />
+            <div class="img_sec_content">
+                <h2>Genuine Parts</h2>
+                <h4>The Perfect Opportunity to Tailor your Car</h4>
+            </div>
           </div>
           <div class="container">
               <div class="heading my-16">Hyundai Genuine Parts</div>
@@ -267,6 +271,30 @@ export default {
   .circle_btn_sec{
       width: 100%!important;
   }
+  .img_sec_content{
+        top: 12%!important;
+        left: 3%!important;
+    }
+    .img_sec_content h2{
+        font-size: 17px!important;
+        margin-bottom: 3px!important;
+    }
+    .img_sec_content h4{
+        font-size: 8px!important;
+    }
+    .circle_btn_sec{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .circle_btn_sec .circle.intersec2{
+        right: 0px!important;
+    }
+    .circle_btn_sec .circle.intersec1{
+        left: 0px!important;
+    }
+    .circle_btn_sec .circle{
+        margin-bottom: 10px;
+    }
 }
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
     .sec_sec{
@@ -276,6 +304,23 @@ export default {
     .form_sec .step{
         width: 60%!important;
     }
+}
+.accessories_img_sec{
+    position: relative;
+}
+.img_sec_content{
+    position: absolute;
+    top: 15%;
+    left: 5%;
+}
+.img_sec_content h2{
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.img_sec_content h4{
+    font-size: 20px;
+    font-weight: 600;
 }
 .accessories_content_sec .sec_sec .header{
     font-size: 20px;

@@ -3,9 +3,9 @@
       <div class="heading text-center my-4">
           Book A Service
       </div>
-      <div class="explain text-center mt-4 mb-5">Peeyesyem Hyundai provide you with Online Service booking for your Convenience time Peeyesyem Hyundai has the largest network of High Quality Workshops for Service and Repair of your Hyundai Cars across Karnataka. Get your car fixed without waiting for service, Make an appointment at your convenience, Pick up and Drop facility also available.
+      <div class="explain text-center mt-4 mb-5">Peeyesyem Hyundai provides you with Online Service booking at your Convenient time. Peeyesyem Hyundai has the largest network of High Quality Workshops for Service and Repair of your Hyundai Cars. Make an appointment at your convenience, Pick up and Drop facility also available.
           <br/>
-          If you wish to book an Appointment for having your Hyundai Car serviced, please fill the form below and send it to us by submitting it. Team Peeyesyem will get back to you to confirm the Appointment
+          Book an appointment for having your Hyundai Car serviced, please fill the form. Our service team will get back to you soon.
       </div>
       <div class="form_sec">
           <div class="image_sec">
@@ -198,31 +198,35 @@
                             focus:shadow-outline
                         "
                         id="fuel_type"
-                        type="text"
+                        :type="timeType"
+                        @focus="timeType ='time'"
                         placeholder="Service Time"
                         v-model="serviceTime"
                         />
                     </div>
                     <div class="mb-4 ">
-                        <textarea
-                        class="
-                            shadow-md
-                            appearance-none
-                            border
-                            rounded
-                            w-full
-                            py-2
-                            px-3
-                            text-gray-700
-                            leading-tight
-                            focus:outline-none
-                            focus:shadow-outline
-                        "
-                        id="fuel_type"
-                        type="text"
-                        placeholder="Select Dealer"
-                        v-model="dealer"
-                        />
+                        <select
+                                class="
+                                shadow-md
+                                appearance-none
+                                border
+                                rounded
+                                w-full
+                                py-2
+                                px-3
+                                text-gray-700
+                                cursor-pointer
+                                leading-tight
+                                focus:outline-none
+                                focus:shadow-outline
+                                "
+                                id="vehicle_model"
+                                v-model="dealer"
+                            >
+                            <option class="text-xl " value="">Select City</option>
+                            <option class="text-xl" :value="model.name" v-for="model in CityList"
+                                :key="model.id" >{{model.name}}</option>
+                            </select>
                     </div>
                     <div class="mb-6">
                         <div class="checkbox_sec">
@@ -263,7 +267,38 @@ export default {
             serviceTime:'',
             dealer:'',
             agreement:false,
-            dateType:'text'
+            dateType:'text',
+            timeType:'text',
+            CityList:[
+                {
+                    id:1,
+                    name:'Madurai'
+                },
+                {
+                    id:2,
+                    name:'Chennai'
+                },
+                {
+                    id:3,
+                    name:'Trichendur'
+                },
+                {
+                    id:4,
+                    name:'Ramanathapuram'
+                },
+                {
+                    id:5,
+                    name:'Kovilpatti'
+                },
+                {
+                    id:6,
+                    name:'Tuticorin'
+                },
+                {
+                    id:7,
+                    name:'Karaikudi'
+                }
+            ]
         }
     },
     mounted(){
@@ -349,9 +384,10 @@ export default {
 }
 .explain{
     font-size: 15px;
-    width: 70%;
+    width: 60%;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.6;
 }
 .btn_box button{
     padding: 4px 20px;

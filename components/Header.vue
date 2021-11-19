@@ -95,7 +95,7 @@
                                                 <li><nuxt-link to="/tips/fuel-saving-tips">Fuel Saving Tips</nuxt-link></li>
                                                 <li><nuxt-link to="/get-insurance">Get Insurance</nuxt-link></li>
                                                 <li><nuxt-link to="/extended-warrenty">Extended Warranty</nuxt-link></li>
-                                                <li><nuxt-link to="/car-detailing-services">Car Service Detailing</nuxt-link></li>
+                                                <li><nuxt-link to="/car-service-detailing">Car Service Detailing</nuxt-link></li>
                                                 <li><nuxt-link to="/owner-manual">Owners Manual</nuxt-link></li>
                                             </ul>
                                         </li>
@@ -126,7 +126,6 @@
                                                     <!-- <li><nuxt-link to="/hyundai-offers">Special Offers</nuxt-link></li> -->
                                                 <li><nuxt-link to="/contact-us/feedback">Feedback</nuxt-link></li>
                                                 <li><nuxt-link to="/contact-us/contact">Contact Us</nuxt-link></li>
-                                            <li><nuxt-link to="/contact-us/get-price-quote">Get A Quote</nuxt-link></li>
                                             </ul>
 
                                         </li>
@@ -303,10 +302,6 @@ export default {
                         {
                             href: '/contact-us/contact',
                             title: 'Contact Us'
-                        },
-                        {
-                            href: '/contact-us/get-price-quote',
-                            title: 'Get A Quote'
                         }
                     ]
                 },
@@ -362,7 +357,7 @@ export default {
                             title: 'Extended Warranty'
                         },
                         {
-                            href: '/car-detailing-services',
+                            href: '/car-service-detailing',
                             title: 'Car Detailing Services'
                         },
                         {

@@ -15,6 +15,12 @@
               <a :href="e_brochure_link" :download="e_brochure_link"><font-awesome-icon icon="download"  size="1x" class="text-white  mr-2" />e-Brochure</a>
           </div>
       </div>
+      <div class=" pb-5" >
+             <div class="car_type_main_title">Enquire Now <hr /></div>
+             <div class="form_component">
+                 <EnquireForm />
+             </div>
+      </div>
       <section class="car_title_sticky_header">
           <div class="car_title_sec my-5">
             <div class="car_title">
@@ -353,12 +359,6 @@
                                </div>
                            </div>
                   </div>
-             </div>
-         </div>
-         <div class="py-24" >
-             <div class="car_type_main_title">Enquire Now <hr /></div>
-             <div class="form_component">
-                 <EnquireForm />
              </div>
          </div>
          <div class="my-24" style="display:none;" >
@@ -878,7 +878,7 @@ export default {
 
 <style scoped>
 .form_component{
-    width: 50%;
+    width: 40%;
     margin: 30px auto;
 }
 .main_tab_sec{

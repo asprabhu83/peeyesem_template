@@ -227,6 +227,24 @@ export default {
         width: 100%!important;
     }
 }
+@media only screen and (min-width: 1270px) and (max-width: 1366px){
+    .car_detail_item_box{
+        width: 90%!important;
+    }
+    .car_detail_item_box .item{
+        width: 23%!important;
+        margin: 10px!important;
+    }
+}
+@media only screen and (min-width: 1367px) and (max-width: 1600px){
+    .car_detail_item_box{
+        width: 85%!important;
+    }
+    .car_detail_item_box .item{
+        width: 23%!important;
+        margin: 11px!important;
+    }
+}
 .car_detail_item_box{
     display: flex;
     flex-wrap: wrap;

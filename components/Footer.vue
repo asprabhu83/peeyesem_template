@@ -25,7 +25,7 @@
                             <li><nuxt-link to="/about">About Us</nuxt-link></li>
                             <li><nuxt-link to="/privacy-policy">Privacy Policy</nuxt-link></li>
                             <li><nuxt-link to="/terms-of-use">Terms of Use</nuxt-link></li>
-                            <li><nuxt-link to="/">Disclaimer</nuxt-link></li>
+                            <li><nuxt-link to="/disclaimer">Disclaimer</nuxt-link></li>
                             <li><nuxt-link to="/">Warranty Policy</nuxt-link></li>
                         </ul>
                     </div>

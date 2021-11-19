@@ -55,7 +55,7 @@
                         v-model="email"
                         />
                     </div>
-                    <div class="mb-6 ">
+                    <div class="mb-4 ">
                         <input
                         class="
                             shadow-md
@@ -76,40 +76,8 @@
                         v-model="mobile"
                         />
                     </div>
-                    <div class="btn_box">
-                        <button type="button" @click="form_tab_index = 1">Next</button>
-                    </div>
-            </form>
-          </div>
-          <div class="step step2" :class="form_tab_index == 1 ? 'active' : ''" >
-              <div class="title">Dealership & Enquiry Details</div>
-              <form >
-                <div class="mb-4 mt-4">
-                    <select
-                                class="
-                                shadow-md
-                                appearance-none
-                                border
-                                rounded
-                                w-full
-                                py-2
-                                px-3
-                                text-gray-700
-                                cursor-pointer
-                                leading-tight
-                                focus:outline-none
-                                focus:shadow-outline
-                                "
-                                id="feedback"
-                                v-model="Feedback"
-                            >
-                            <option class="text-xl " value="">Select Feedback for</option>
-                            <option class="text-xl" :value="model" v-for="model in feedbackList"
-                                :key="model" >{{model}}</option>
-                            </select>
-                    </div>
-                    <div class="mb-4 ">
-                        <input
+                    <div class="mb-6 ">
+                        <textarea
                         class="
                             shadow-md
                             appearance-none
@@ -123,51 +91,17 @@
                             focus:outline-none
                             focus:shadow-outline
                         "
-                        id="dealer"
+                        id="message"
                         type="text"
-                        placeholder="Select Dealer"
-                        v-model="dealer"
+                        placeholder="Message"
+                        v-model="message"
                         />
-                    </div>
-                    <div class="mb-4 ">
-                        <input
-                        class="
-                            shadow-md
-                            appearance-none
-                            border
-                            rounded
-                            w-full
-                            py-2
-                            px-3
-                            text-gray-700
-                            leading-tight
-                            focus:outline-none
-                            focus:shadow-outline
-                        "
-                        id="comments"
-                        type="text"
-                        placeholder="Comments"
-                        v-model="comments"
-                        />
-                    </div>
-                    <div class="mb-6">
-                        <div class="checkbox_sec">
-                            <label class="inline-flex items-center">
-                                <input type="checkbox" class="form-checkbox">
-                                <span class="ml-2 cursor-pointer">I have read & understood the disclaimer</span>
-                            </label>
-                        </div>
                     </div>
                     <div class="btn_box">
-                        <button type="button" @click="form_tab_index = 0">Previous</button>
                         <button type="button" @click="AddFeedback">Submit</button>
                     </div>
             </form>
           </div>
-      </div>
-      <div class="my-5 active_sec">
-          <div :class="form_tab_index == 0 ? 'active' : ''"></div>
-          <div :class="form_tab_index == 1 ? 'active' : ''"></div>
       </div>
   </div>
 </template>
@@ -181,22 +115,13 @@ export default {
             name:'',
             email:'',
             mobile:'',
-            Feedback:'',
-            dealer:'',
-            comments:'',
-            feedbackList:[
-                'sales',
-                'service',
-                'others'
-            ]
+            message:'',
         }
     },
     methods:{
         AddFeedback(){
             var data_value = {
-                feedback:this.Feedback,
-                dealer:this.dealer,
-                comments:this.comments
+                message:this.message
             }
             data_value = JSON.stringify(data_value);
             axios.post(process.env.baseUrl + 'api/car_form/store',{
@@ -210,10 +135,7 @@ export default {
                     this.name = '';
                     this.email = '';
                     this.mobile = '';
-                    this.Feedback = '';
-                    this.dealer = '';
-                    this.comments = '';
-                    this.agreement = false;
+                    this.message = '';
                     this.form_tab_index = 0;
                 }
             }).catch((err)=>{
