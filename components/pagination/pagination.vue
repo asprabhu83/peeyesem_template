@@ -83,6 +83,11 @@ export default {
     width: 25px;
     border-radius: 4px;
 }
+.btn_sec .page_num.active{
+    background: #e6f0fa;
+    color: black;
+    border: 1px solid black;
+}
 .btn_sec .next_btns{
     margin: 10px;
     background: #002c5f;

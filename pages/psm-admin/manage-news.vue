@@ -101,7 +101,7 @@
                 <tr v-if="News.length == 0" >
                     <td class="px-6 py-4 whitespace-nowrap" colspan="5" style="text-align:center;"> No Data</td>
                 </tr>
-                <tr v-for="item in News" :key="item.id">
+                <tr v-for="item in News.slice(pageStart,pageEnd)" :key="item.id">
                   <td class="px-6 py-4 whitespace-nowrap" >
                     <div class="model_image">
                         <img :src="baseUrl + 'images/' + item.image" style="width:100%;" />
@@ -355,6 +355,7 @@
       </div>
      </div>
   </div>
+  <Pagination @page-value="pageValue" :items="News" :perPage="2" />
 </div>
 <!-- <div class="my-60" v-else>
   <h1 class="text-center text-2xl font-bold">You do not have authorization to this page, please contact admin</h1>
@@ -365,10 +366,12 @@
 <script>
 import axios from '~/plugins/axios'
 import AddNews from '../../components/CreateNews.vue'
+import Pagination from '../../components/pagination/pagination.vue'
 export default {
   layout:'admin-header-layout',
   components: {
-    AddNews
+    AddNews,
+    Pagination
   },
   data () {
     return {
@@ -384,6 +387,8 @@ export default {
       title:'',
       description:'',
       baseUrl:process.env.baseUrl,
+      pageStart:0,
+      pageEnd:0,
     }
   },
   mounted () {
@@ -393,6 +398,10 @@ export default {
     }
   },
   methods: {
+      pageValue({start,end}){
+        this.pageStart = start;
+        this.pageEnd = end;
+      },
       previewFiles (event) {
             var label = document.querySelector('.' + event.target.getAttribute('data-file-target'))
             var fileLength = event.target.files.length
@@ -489,6 +498,14 @@ export default {
             console.log(error)
           })
       }
+    }
+  },
+  watch:{
+    pageValue:{
+      handler(){
+        this.pageEnd;
+      },
+      deep:true
     }
   }
 }
