@@ -173,13 +173,6 @@ export default {
       this.empty_valid = false
       this.success = false
       var err = 0
-      if (
-        this.sliderImage === '' ||
-        this.sliderLink === ''
-      ) {
-        this.empty_valid = true
-        err++
-      }
 
       if (err === 0) {
         var json_data = {

@@ -16,7 +16,7 @@ require('vue2-animate/dist/vue2-animate.min.css')
 
 import VueSlider from 'vue-slider-component'
 import 'vue-slider-component/theme/default.css'
-
+import axios from 'axios'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUserSecret, faCloudUploadAlt, faPlus, faTrash, faTimes, faSave, faEdit, faSignOutAlt, faUserPlus, faChevronLeft, faChevronRight, faUserCircle,faSignInAlt, faRupeeSign, faPhoneAlt,faTools,faArrowRight,faStarOfLife,faMapMarkerAlt, faTachometerAlt, faGasPump, faCogs, faDownload,faCalendarAlt,faChevronDown} from '@fortawesome/free-solid-svg-icons'
@@ -25,6 +25,7 @@ library.add(faUserSecret, faCloudUploadAlt, faPlus, faTrash, faTimes, faSave, fa
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 
+Vue.prototype.$axios = axios;
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 

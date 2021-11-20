@@ -6,100 +6,21 @@
         <div class="row m-0 block">
             <div class="product_single_one_img">
                         <swiper class="swiper product-single-2-slider" :options="swiperOption">
-                            <swiper-slide>
+                            <swiper-slide v-for="banner in $store.state.SliderBanners" :key="banner.id">
                                 <div class="carousel_img_sec">
-                                    <img :src="require('@/assets/img/cars/car15.webp')" alt="img" style="width:100%;" />
+                                    <img :src="baseUrl + 'images/' + banner.slider_image" alt="img" style="width:100%;" />
                                     <div class="know_more_btn_sec">
                                         <div>
-                                            <nuxt-link class="knw_mre_btn" to="/contact-us/contact/">Know More</nuxt-link>
+                                            <nuxt-link class="knw_mre_btn" :to="banner.slider_link">Know More</nuxt-link>
                                         </div>
                                         <div>
-                                            <nuxt-link class="knw_mre_btn" to="/contact-us/test-drive/"> Test Drive</nuxt-link>
-                                        </div>
-                                    </div>
-                                </div>
-                            </swiper-slide>
-                            <swiper-slide>
-                                <div class="carousel_img_sec">
-                                    <img :src="require('@/assets/img/cars/car13.webp')" alt="img" style="width:100%;" />
-                                    <div class="know_more_btn_sec">
-                                        <div>
-                                            <nuxt-link class="knw_mre_btn" to="/contact-us/contact/">Know More</nuxt-link>
-                                        </div>
-                                        <div>
-                                            <nuxt-link class="knw_mre_btn" to="/contact-us/test-drive/"> Test Drive</nuxt-link>
-                                        </div>
-                                    </div>
-                                </div>
-                            </swiper-slide>
-                            <swiper-slide>
-                                <div class="carousel_img_sec">
-                                    <img :src="require('@/assets/img/cars/car14.webp')" alt="img" style="width:100%;" />
-                                    <div class="know_more_btn_sec">
-                                        <div>
-                                            <nuxt-link class="knw_mre_btn" to="/contact-us/contact/">Know More</nuxt-link>
-                                        </div>
-                                        <div>
-                                            <nuxt-link class="knw_mre_btn" to="/contact-us/test-drive/"> Test Drive</nuxt-link>
-                                        </div>
-                                    </div>
-                                </div>
-                            </swiper-slide>
-                            <swiper-slide>
-                                <div class="carousel_img_sec">
-                                    <img :src="require('@/assets/img/cars/carousel_image_3.jpg')" alt="img" style="width:100%;" />
-                                    <div class="know_more_btn_sec">
-                                        <div>
-                                            <nuxt-link class="knw_mre_btn" to="/contact-us/contact/">Know More</nuxt-link>
-                                        </div>
-                                        <div>
-                                            <nuxt-link class="knw_mre_btn" to="/contact-us/test-drive/"> Test Drive</nuxt-link>
-                                        </div>
-                                    </div>
-                                </div>
-                            </swiper-slide>
-                            <swiper-slide>
-                                <div class="carousel_img_sec">
-                                    <img :src="require('@/assets/img/cars/carousel_image_4.jpg')" alt="img" style="width:100%;" />
-                                    <div class="know_more_btn_sec">
-                                        <div>
-                                            <nuxt-link class="knw_mre_btn" to="/contact-us/contact/">Know More</nuxt-link>
-                                        </div>
-                                        <div>
-                                            <nuxt-link class="knw_mre_btn" to="/contact-us/test-drive/"> Test Drive</nuxt-link>
-                                        </div>
-                                    </div>
-                                </div>
-                            </swiper-slide>
-                            <swiper-slide>
-                                <div class="carousel_img_sec">
-                                    <img :src="require('@/assets/img/cars/carousel_image_5.jpg')" alt="img" style="width:100%;" />
-                                    <div class="know_more_btn_sec">
-                                        <div>
-                                            <nuxt-link class="knw_mre_btn" to="/contact-us/contact/">Know More</nuxt-link>
-                                        </div>
-                                        <div>
-                                            <nuxt-link class="knw_mre_btn" to="/contact-us/test-drive/"> Test Drive</nuxt-link>
-                                        </div>
-                                    </div>
-                                </div>
-                            </swiper-slide>
-                            <swiper-slide>
-                                <div class="carousel_img_sec">
-                                    <img :src="require('@/assets/img/cars/carousel_image_6.jpg')" alt="img" style="width:100%;" />
-                                    <div class="know_more_btn_sec">
-                                        <div>
-                                            <nuxt-link class="knw_mre_btn" to="/contact-us/contact/">Know More</nuxt-link>
-                                        </div>
-                                        <div>
-                                            <nuxt-link class="knw_mre_btn" to="/contact-us/test-drive/"> Test Drive</nuxt-link>
+                                            <nuxt-link class="knw_mre_btn" :to="JSON.parse(banner.data_value).test_dive_link"> Test Drive</nuxt-link>
                                         </div>
                                     </div>
                                 </div>
                             </swiper-slide>
                             <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
                             <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
-
                         </swiper>
             </div>
         </div>
@@ -406,6 +327,10 @@ export default {
             this.GetTestimonialData();
         }
 
+        if(this.$store.state.SliderBanners.length == 0){
+            this.GetSliderBanners();
+        }
+
         const obj1 = document.getElementById("value1");
         const obj2 = document.getElementById("value2");
         const obj3 = document.getElementById("value3");
@@ -448,7 +373,9 @@ export default {
             .then((response) => {
             this.$store.state.cars = response.data.cars;
             this.$store.state.originalDataCars = response.data.cars;
-            this.loading = false;
+            setTimeout(()=>{
+              this.loading = false;
+            },2000)
             this.categoryNames();
             })
             .catch((error) => {
@@ -463,6 +390,14 @@ export default {
             })
             .catch((error) => {
             console.log(error)
+            })
+        },
+        GetSliderBanners(){
+            this.$axios.get(process.env.baseUrl + 'api/slider/index')
+            .then(res=>{
+                this.$store.state.SliderBanners = res.data;
+            }).catch(err=>{
+                console.log(err);
             })
         },
         filterItems(name){

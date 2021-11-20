@@ -4,7 +4,7 @@
   <div class="dialog_box fixed inset-0 h-screen w-full flex justify-center items-center" v-if="addUserDialog === true">
       <div class="dialog_content bg-white rounded-md shadow-md">
          <div class="my-2   flex items-center justify-between py-3 px-6"><span class="font-bold text-lg" >Add News</span><font-awesome-icon icon="times"  size="1x" class="text-red-600 cursor-pointer" @click="addUserDialog = false" /></div>
-         <AddBlog @created="GetNews" @childDialog="childDialog"/>
+         <AddNews @created="GetNews" @childDialog="childDialog"/>
       </div>
    </div>
    <div class="w-8/12 mx-auto text-right mt-10">
@@ -364,11 +364,11 @@
 
 <script>
 import axios from '~/plugins/axios'
-import AddBlog from '../../components/CreateBlog.vue'
+import AddNews from '../../components/CreateNews.vue'
 export default {
   layout:'admin-header-layout',
   components: {
-    AddBlog
+    AddNews
   },
   data () {
     return {

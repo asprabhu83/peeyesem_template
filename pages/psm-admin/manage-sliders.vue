@@ -87,7 +87,7 @@
                 <tr v-if="Sliders.length == 0" >
                     <td class="px-6 py-4 whitespace-nowrap" colspan="3" style="text-align:center;"> No Data</td>
                 </tr>
-                <tr v-for="item in Sliders" :key="item.id">
+                <tr v-for="item in Sliders.slice(pageStart, pageEnd)" :key="item.id">
                   <td class="px-6 py-4 whitespace-nowrap" >
                     <div class="model_image">
                         <img :src="baseUrl + 'images/' + item.slider_image" style="width:100%;" />
@@ -307,6 +307,7 @@
       </div>
      </div>
   </div>
+  <Pagination @page-value="pageValue" :items="Sliders" :perPage="3" />
 </div>
 <!-- <div class="my-60" v-else>
   <h1 class="text-center text-2xl font-bold">You do not have authorization to this page, please contact admin</h1>
@@ -317,10 +318,12 @@
 <script>
 import axios from '~/plugins/axios'
 import AddSlider from '../../components/CreateSlider.vue'
+import Pagination from '../../components/pagination/pagination.vue'
 export default {
   layout:'admin-header-layout',
   components: {
-    AddSlider
+    AddSlider,
+    Pagination
   },
   data () {
     return {
@@ -335,6 +338,8 @@ export default {
       sliderLink:'',
       testDriveLink:'',
       baseUrl:process.env.baseUrl,
+      pageStart:0,
+      pageEnd:0,
     }
   },
   mounted () {
@@ -344,6 +349,10 @@ export default {
     }
   },
   methods: {
+      pageValue({start,end}){
+        this.pageStart = start;
+        this.pageEnd = end;
+      },
       previewFiles (event) {
             var label = document.querySelector('.' + event.target.getAttribute('data-file-target'))
             var fileLength = event.target.files.length
@@ -417,13 +426,6 @@ export default {
       this.empty_valid = false
       this.success = false
       var err = 0
-      if (
-        this.sliderImage === '' ||
-        this.sliderLink === ''
-      ) {
-        this.empty_valid = true
-        err++
-      }
       if (err === 0) {
         var json_data = {
           test_dive_link:this.testDriveLink
@@ -443,6 +445,14 @@ export default {
             console.log(error)
           })
       }
+    }
+  },
+  watch:{
+    pageValue:{
+      handler(){
+        this.pageEnd;
+      },
+      deep:true
     }
   }
 }

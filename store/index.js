@@ -23,7 +23,9 @@ const createStore = () => {
         whatsappNo:''
       },
       TestimonialData:[],
-      BlogsData:[]
+      BlogsData:[],
+      SliderBanners:[],
+      newsEvents:[]
     },
     modules: {
       products: products,
