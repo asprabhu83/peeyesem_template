@@ -777,6 +777,7 @@ export default {
                 EditCategory = ['ALL',...new Set(this.originalContactLocations.map((item)=>{return item.particulars}))];
             }
             this.tabCategory = EditCategory;
+            this.tabIndex = 0;
             var ind = this.tabIndex;
             var partiCular = this.tabCategory[ind];
            var item = this.originalContactLocations.filter((item=>{
