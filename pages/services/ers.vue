@@ -608,6 +608,11 @@ export default {
             var item = this.originalContactLocations.filter(item=>{
                 return item.location == loc && item.emergency_breakdown_contact !== '';
             })
+            if(loc == ''){
+                item = this.originalContactLocations.filter(item=>{
+                    return item.emergency_breakdown_contact !== '';
+                })
+            }
             this.contactLocations = item;
         }
     }
