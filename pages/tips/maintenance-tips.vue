@@ -859,6 +859,16 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width: 760px) and (max-width: 960px){
+    .accordian_item_box{
+        width: 80%!important;
+    }
+}
+@media only screen and (min-width: 961px) and (max-width: 1030px){
+    .accordian_item_box{
+        width: 80%!important;
+    }
+}
 @media only screen and (min-width:300px) and (max-width:600px){
     .accordian_item_box{
         width: 90%!important;

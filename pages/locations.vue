@@ -601,6 +601,23 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width: 760px) and (max-width: 960px){
+    .main_loc_sec{
+        width: 90%!important;
+    }
+    .accordian_content_sec .left_side, .accordian_content_sec .right_side{
+        width: 85%!important;
+        margin: 0 auto!important;
+    }
+}
+@media only screen and (min-width: 961px) and (max-width: 1030px){
+    .main_loc_sec{
+        width: 80%!important;
+    }
+    .accordian_content_sec .left_side, .accordian_content_sec .right_side{
+        width: 47%!important;
+    }
+}
 .acc_cnt_box{
     margin: 90px 0;
 }

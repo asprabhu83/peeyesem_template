@@ -144,6 +144,16 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width: 760px) and (max-width: 960px){
+    .item_card{
+        width: 42%!important;
+    }
+}
+@media only screen and (min-width: 961px) and (max-width: 1030px){
+    .item_card{
+        width: 33%!important;
+    }
+}
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
     .item_card{
         width: 25%!important;

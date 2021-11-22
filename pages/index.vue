@@ -501,12 +501,21 @@ export default {
         flex-wrap: wrap;
     }
     .blog_card_body .blog_card_box {
-        width: 47%;
-        margin: 15px!important;
+        width: 45%;
+        margin: 20px 15px!important;
     }
     .testimonial_content{
         width: 70%!important;
         padding: 30px 10px!important;
+    }
+    .carousel_img_sec .know_more_btn_sec{
+        bottom: 17%!important;
+        left: 8%!important;
+    }
+    .know_more_btn_sec .knw_mre_btn{
+        min-width: 170px!important;
+        padding: 6px 23px!important;
+        font-size: 16px!important;
     }
 }
 @media only screen and (min-width: 961px) and (max-width: 1030px){
@@ -528,7 +537,7 @@ export default {
         width: 31%!important;
     }
     .blog_card_body{
-        align-items: flex-start!important;
+        align-items: revert!important;
     }
     .blog_card_body .blog_card_box {
         width: 35%;
@@ -537,6 +546,14 @@ export default {
     .testimonial_content{
         width: 60%!important;
         padding: 30px 10px!important;
+    }
+    .carousel_img_sec .know_more_btn_sec{
+        bottom: 17%!important;
+        left: 9%!important;
+    }
+    .know_more_btn_sec .knw_mre_btn{
+        min-width: 200px!important;
+        padding: 9px 23px!important;
     }
 }
 .icoty_awards .card_box{

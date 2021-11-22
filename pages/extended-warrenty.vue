@@ -1067,6 +1067,26 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width: 760px) and (max-width: 960px){
+    .rsa_table{
+        width: 95%!important;
+        overflow: hidden;
+        overflow-x: scroll;
+    }
+    .ew_notice_content{
+        width: 55%!important;
+    }
+}
+@media only screen and (min-width: 961px) and (max-width: 1030px){
+    .rsa_table{
+        width: 95%!important;
+        overflow: hidden;
+        overflow-x: scroll;
+    }
+    .ew_notice_content{
+        width: 50%!important;
+    }
+}
 @media only screen and (min-width:300px) and (max-width:600px){
   .form_sec .step{
      width: 100%!important;

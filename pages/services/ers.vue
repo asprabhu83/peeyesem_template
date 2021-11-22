@@ -620,6 +620,22 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width: 760px) and (max-width: 960px){
+    .select_box{
+        width: 40%!important;
+    }
+    .price_table_sec{
+        width: 70%!important;
+    }
+}
+@media only screen and (min-width: 961px) and (max-width: 1030px){
+    .select_box{
+        width: 35%!important;
+    }
+    .price_table_sec{
+        width: 60%!important;
+    }
+}
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
     .select_box{
         width: 30%!important;

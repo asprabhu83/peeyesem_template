@@ -580,6 +580,38 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width: 760px) and (max-width: 960px){
+    .filter_box{
+        width: 46%!important;
+    }
+    .car_section .cars_items{
+        width: 43%!important;
+    }
+    .car_item_box_sec .item {
+        width: 100%!important;
+        margin: 20px 0!important;
+    }
+    .h_promise_content{
+        width: 65%!important;
+    }
+    .know_more_btn_sec .knw_mre_btn{
+        padding: 7px 20px!important;
+        font-size: 16px!important;
+        min-width: 135px!important;
+    }
+}
+@media only screen and (min-width: 961px) and (max-width: 1030px){
+    .filter_box{
+        width: 39%!important;
+    }
+    .car_section .cars_items{
+        width: 53%!important;
+    }
+    .car_item_box_sec .item {
+        width: 46%!important;
+        margin: 15px 10px!important;
+    }
+}
 @media only screen and (min-width: 1367px) and (max-width: 1600px){
     .car_section .cars_items{
         width: 67%!important;
@@ -666,6 +698,7 @@ export default {
 }
 .dialog_box {
   background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9;
 }
 .dialog_content {
   width: 550px;

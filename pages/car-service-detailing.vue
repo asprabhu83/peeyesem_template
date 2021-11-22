@@ -213,6 +213,30 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width: 760px) and (max-width: 960px){
+    .select_input select{
+        width: 85%!important;
+    }
+    .car_detail_item_box{
+        width: 95%!important;
+    }
+    .car_detail_item_box .item{
+        width: 30%!important;
+        margin: 11px!important;
+    }
+}
+@media only screen and (min-width: 961px) and (max-width: 1030px){
+    .select_input select{
+        width: 75%!important;
+    }
+    .car_detail_item_box{
+        width: 95%!important;
+    }
+    .car_detail_item_box .item{
+        width: 30%!important;
+        margin: 16px!important;
+    }
+}
 @media only screen and (min-width:300px) and (max-width:600px){
     .select_input select{
         width: 80%!important;

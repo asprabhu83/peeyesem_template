@@ -197,6 +197,22 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width: 760px) and (max-width: 960px){
+    .form_sec{
+        width: 90%!important;
+    }
+    .form_sec .step{
+        width: 58%!important;
+    }
+}
+@media only screen and (min-width: 961px) and (max-width: 1030px){
+    .form_sec{
+        width: 90%!important;
+    }
+    .form_sec .step{
+        width: 51%!important;
+    }
+}
 @media only screen and (min-width:300px) and (max-width:600px){
   .form_sec .step{
      width: 100%!important;

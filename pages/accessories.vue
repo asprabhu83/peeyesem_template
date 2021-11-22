@@ -258,6 +258,40 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width: 760px) and (max-width: 960px){
+    .img_sec_content h2{
+        font-size: 35px!important;
+    }
+    .img_sec_content h4{
+        font-size: 16px!important;
+    }
+    .circle_btn_sec{
+        width: 94%!important;
+    }
+    .form_sec{
+        width: 95%!important;
+    }
+    .form_sec .step{
+        width: 59%!important;
+    }
+}
+@media only screen and (min-width: 961px) and (max-width: 1030px){
+    .img_sec_content h2{
+        font-size: 35px!important;
+    }
+    .img_sec_content h4{
+        font-size: 16px!important;
+    }
+    .circle_btn_sec{
+        width: 75%!important;
+    }
+    .form_sec{
+        width: 80%!important;
+    }
+    .form_sec .step{
+        width: 59%!important;
+    }
+}
 @media only screen and (min-width:300px) and (max-width:600px){
   .form_sec .step{
      width: 100%!important;

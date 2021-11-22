@@ -877,6 +877,82 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width: 760px) and (max-width: 960px){
+    .car_poster_details .title1{
+        font-size: 32px!important;
+    }
+    .car_poster_details .title2{
+        font-size: 15px!important;
+    }
+    .car_poster_details {
+        top: 15%!important;
+        left: 2%!important;
+    }
+    .description p{
+        width: 80%!important;
+    }
+    .price_details{
+        flex-wrap: wrap;
+    }
+    .price_details .price_item{
+        margin: 15px 25px!important;
+        width: 40%!important;
+    }
+    .highlight_items .item{
+        width: 44%!important;
+        margin: 35px 20px!important;
+    }
+    .car_title_sticky_header.sticky .car_title_sec{
+        margin: 30px auto!important;
+    }
+    .car_details_tab{
+        padding: 0!important;
+    }
+    .tab_item_box .tab_item{  
+        margin: 0 5px!important;
+        padding: 6px 16px!important;
+        font-size: 14px!important;
+    }
+    .car_feature_variant_box .select_box{
+        width: 55%!important;
+    }
+    .car_spec_tab_box .tab_item{
+        margin: 10px 10px!important;
+       font-size: 16px!important;
+       text-align: center;
+    }
+}
+@media only screen and (min-width: 961px) and (max-width: 1030px){
+    .car_poster_details .title2{
+        font-size: 19px!important;
+    }
+    .car_poster_details {
+        top: 15%!important;
+        left: 2%!important;
+    }
+    .description p{
+        width: 80%!important;
+    }
+    .price_details{
+        flex-wrap: wrap;
+    }
+    .price_details .price_item{
+        margin: 15px 35px!important;
+        width: 36%!important;
+    }
+    .highlight_items .item{
+        width: 43%!important;
+    }
+    .car_title_sticky_header.sticky .car_title_sec{
+        margin: 35px auto!important;
+    }
+    .car_feature_variant_box .select_box{
+        width: 40%!important;
+    }
+    .car_spec_tab_box .tab_item{
+       text-align: center;
+    }
+}
 .form_component{
     width: 40%;
     margin: 30px auto;
@@ -1064,6 +1140,7 @@ export default {
 }
 .car_video_item iframe{
     margin: 60px auto;
+    max-width: 100%;
 }
 .car_gallery_item{
     width: 75%;

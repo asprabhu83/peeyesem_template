@@ -129,6 +129,22 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width: 760px) and (max-width: 960px){
+    .page_content{
+        width: 70%!important;
+    }
+    .sot_table{
+        width: 90%!important;
+    }
+}
+@media only screen and (min-width: 961px) and (max-width: 1030px){
+    .page_content{
+        width: 60%!important;
+    }
+    .sot_table{
+        width: 80%!important;
+    }
+}
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
     .sot_table{
         width: 75%!important;

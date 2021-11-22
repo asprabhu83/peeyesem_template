@@ -596,7 +596,7 @@ export default {
     .main-menu{
         width: 100%!important;
     }
-    .main-menu ul li a{
+    .main-menu ul li a.menu-item{
          padding: 15px 20px!important;
     }
     .logo_item_box{
@@ -613,12 +613,16 @@ export default {
     .sticky-header.sticky .main-menu ul li{
         padding-left: 6px!important;
     }
-    .sticky-header.sticky .main-menu ul li a{
+    .sticky-header.sticky .main-menu ul li a.menu-item{
         padding: 15px 20px!important;
+    }
+    .social_icons_box .flat_icons {
+        margin-left: 9px!important;
+        margin-right: 9px!important;
     }
 }
 @media only screen and (min-width: 961px) and (max-width: 1030px){
-    .main-menu ul li a{
+    .main-menu ul li a.menu-item{
          padding: 10px 6px!important;
     }
     .main-menu{

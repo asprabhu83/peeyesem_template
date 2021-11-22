@@ -103,6 +103,30 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width: 760px) and (max-width: 960px){
+    .img_sec .heading{
+        font-size: 40px!important;
+    }
+    .car_item_sec{
+        width: 95%!important;
+    }
+    .car_item_sec .items{
+        width: 45%!important;
+        margin: 15px!important;
+    }
+}
+@media only screen and (min-width: 961px) and (max-width: 1030px){
+    .img_sec .heading{
+        font-size: 40px!important;
+    }
+    .car_item_sec{
+        width: 100%!important;
+    }
+    .car_item_sec .items{
+        width: 31%!important;
+        margin: 11px!important;
+    }
+}
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
     .car_item_sec .items{
         width: 31%!important;
