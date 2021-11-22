@@ -1,11 +1,11 @@
 <template>
   <div class="my-24">
-      <div class="heading_title mb-5">RSA</div>
+      <div class="heading_title mb-5">ROAD SIDE ASSISTANCE (RSA)</div>
       <div class="page_content">
           <p><b>Below attached the RSA Scheme and Price Details:</b></p>
-          <p><span>One Year Program:</span> 1,359/- ( This amount is inclusive of applicable taxes ) </p>
-          <p><span>Two Year Program:</span> 2,136/- ( This amount is inclusive of applicable taxes ) </p>
-          <p><span>Three Year Program:</span> 2,805/- ( This amount is inclusive of applicable taxes )</p>
+          <p><span>One Year Program:</span><font-awesome-icon icon="rupee-sign"  size="1x" class="text-black ml-2" /> 1,359/- ( This amount is inclusive of applicable taxes ) </p>
+          <p><span>Two Year Program:</span><font-awesome-icon icon="rupee-sign"  size="1x" class="text-black ml-2" /> 2,136/- ( This amount is inclusive of applicable taxes ) </p>
+          <p><span>Three Year Program:</span><font-awesome-icon icon="rupee-sign"  size="1x" class="text-black ml-2" /> 2,805/- ( This amount is inclusive of applicable taxes )</p>
           <p>Max Age at the time of Maturity of RSA Cover should not be more than 7 Years. </p>
           <p>Hyundai 24X7 Roadside Assistance on the Toll Free Number* <b>1800 1024645.</b></p>
           <ul>
@@ -54,6 +54,7 @@ export default {
 .page_content ul li{
     list-style-type: disc;
     margin-left: 20px;
+    margin-bottom:15px;
 }
 .page_content p span{
     font-weight: 600;

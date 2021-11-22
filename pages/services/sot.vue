@@ -1,6 +1,6 @@
 <template>
   <div class="sot_price_list my-24">
-      <div class="heading_title mb-5">SOT</div>
+      <div class="heading_title mb-5">SHIELD OF TRUST (SOT)</div>
       <div class="page_content">
           <p><b>Below Attached the SOT Details:</b></p>
           <ul>
@@ -209,7 +209,8 @@ export default {
     border:1px solid lightgray;
 }
 .sot_table .second_th{
-    background: #e6f0fa;
+    background: #33567f;
+    color: white;
 }
 
 .sot_table .car_model{

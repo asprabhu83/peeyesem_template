@@ -17,58 +17,405 @@
                     </div>
                 </div>
             </div>
-           <div class="accordian_content_sec">
-                <div class="left_side">
-                    <div class="card_items_area" v-for="item in LocationList.slice(0,8)" :key="item.id">
-                        <b-card-header role="tab">
-                            <a block v-b-toggle="item.target" >
-                                <h5 class="mb-0">{{item.title}}<i class="fas fa-angle-down active rotate-icon down_icon" :class="'down_icon'+item.id" ></i><i class="fas fa-angle-up up_icon  rotate-icon" :class="'up_icon'+item.id"></i></h5>
-                            </a>
-                        </b-card-header>
-                        <b-collapse :id="item.target"  :visible="item.target == currentLocation ? true :false"  accordion="my-accordion" role="tabpanel">
-                            <b-card-body>
-                            <div class="acc_content">
-                                <div class="asides">
-                                    <div><b>Location:</b> {{item.name}}</div>
-                                        <div><b>Address:</b>{{item.address}}</div>
-                                        <div><b>Contact Person Number:</b> {{item.phone}}</div>
-                                </div>
-                                <div class="asides">
-                                    <div class="gmap_canvas">
-                                            <iframe :src="item.map" width="354" height="274" style="border:0;max-width:100%;" allowfullscreen="" loading="lazy"></iframe> 
+            <div class="acc_cnt_box">
+                <h4 class="my-4 loc_main_head">Chennai:<hr /></h4>
+                <div class="accordian_content_sec">
+                        <div class="left_side">
+                            <h4 class="text-center">Sales</h4>
+                            <div class="card_items_area" v-for="item in LocationList.slice(0,1)" :key="item.id">
+                                <b-card-header role="tab">
+                                    <a block v-b-toggle="item.target" >
+                                        <h5 class="mb-0">{{item.title}}<span class="when-opened"><i class="fas fa-angle-up rotate-icon"></i></span><span class="when-closed"><i class="fas fa-angle-down rotate-icon"></i></span></h5>
+                                    </a>
+                                </b-card-header>
+                                <b-collapse :id="item.target"  :visible="item.target == currentLocation ? true :false"  accordion="my-accordion" role="tabpanel">
+                                    <b-card-body>
+                                    <div class="acc_content">
+                                        <div class="asides">
+                                            <div><b>Location:</b> {{item.name}}</div>
+                                                <div><b>Address:</b>{{item.address}}</div>
+                                                <div><b>Contact Person Number:</b> {{item.phone}}</div>
+                                        </div>
+                                        <div class="asides">
+                                            <div class="gmap_canvas">
+                                                    <iframe :src="item.map" width="354" height="274" style="border:0;max-width:100%;" allowfullscreen="" loading="lazy"></iframe> 
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                    </b-card-body>
+                                </b-collapse>
                             </div>
-                            </b-card-body>
-                        </b-collapse>
-                    </div>
-                </div>
-                <div class="right_side">
-                     <div class="card_items_area" v-for="item in LocationList.slice(8,16)" :key="item.id">
-                        <b-card-header role="tab">
-                            <a block v-b-toggle="item.target" >
-                                <h5 class="mb-0">{{item.title}}<i class="fas fa-angle-down active rotate-icon down_icon" :class="'down_icon'+item.id"></i><i class="fas fa-angle-up up_icon  rotate-icon" :class="'up_icon'+item.id"></i></h5>
-                            </a>
-                        </b-card-header>
-                        <b-collapse :id="item.target"  :visible="item.target == currentLocation ? true :false"  accordion="my-accordion" role="tabpanel">
-                            <b-card-body>
-                            <div class="acc_content">
-                                <div class="asides">
-                                    <div><b>Location:</b> {{item.name}}</div>
-                                        <div><b>Address:</b>{{item.address}}</div>
-                                        <div><b>Contact Person Number:</b> {{item.phone}}</div>
-                                </div>
-                                <div class="asides">
-                                    <div class="gmap_canvas">
-                                            <iframe :src="item.map" width="354" height="274" style="border:0;max-width:100%;" allowfullscreen="" loading="lazy"></iframe> 
+                        </div>
+                        <div class="right_side">
+                            <h4 class="text-center">Service</h4>
+                            <div class="card_items_area" v-for="item in LocationList.slice(7,10)" :key="item.id">
+                                <b-card-header role="tab">
+                                    <a block v-b-toggle="item.target" >
+                                        <h5 class="mb-0">{{item.title}}<span class="when-opened"><i class="fas fa-angle-up rotate-icon"></i></span><span class="when-closed"><i class="fas fa-angle-down rotate-icon"></i></span></h5>
+                                    </a>
+                                </b-card-header>
+                                <b-collapse :id="item.target"  :visible="item.target == currentLocation ? true :false"  accordion="my-accordion" role="tabpanel">
+                                    <b-card-body>
+                                    <div class="acc_content">
+                                        <div class="asides">
+                                            <div><b>Location:</b> {{item.name}}</div>
+                                                <div><b>Address:</b>{{item.address}}</div>
+                                                <div><b>Contact Person Number:</b> {{item.phone}}</div>
+                                        </div>
+                                        <div class="asides">
+                                            <div class="gmap_canvas">
+                                                    <iframe :src="item.map" width="354" height="274" style="border:0;max-width:100%;" allowfullscreen="" loading="lazy"></iframe> 
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                    </b-card-body>
+                                </b-collapse>
                             </div>
-                            </b-card-body>
-                        </b-collapse>
-                    </div>
+                        </div>
+                 </div> 
+            </div>
+            <div class="acc_cnt_box">
+                <h4 class="my-4 loc_main_head">Madurai:<hr /></h4>
+                <div class="accordian_content_sec">
+                        <div class="left_side">
+                            <h4 class="text-center">Sales</h4>
+                            <div class="card_items_area" v-for="item in LocationList.slice(1,2)" :key="item.id">
+                                <b-card-header role="tab">
+                                    <a block v-b-toggle="item.target" >
+                                        <h5 class="mb-0">{{item.title}}<span class="when-opened"><i class="fas fa-angle-up rotate-icon"></i></span><span class="when-closed"><i class="fas fa-angle-down rotate-icon"></i></span></h5>
+                                    </a>
+                                </b-card-header>
+                                <b-collapse :id="item.target"  :visible="item.target == currentLocation ? true :false"  accordion="my-accordion" role="tabpanel">
+                                    <b-card-body>
+                                    <div class="acc_content">
+                                        <div class="asides">
+                                            <div><b>Location:</b> {{item.name}}</div>
+                                                <div><b>Address:</b>{{item.address}}</div>
+                                                <div><b>Contact Person Number:</b> {{item.phone}}</div>
+                                        </div>
+                                        <div class="asides">
+                                            <div class="gmap_canvas">
+                                                    <iframe :src="item.map" width="354" height="274" style="border:0;max-width:100%;" allowfullscreen="" loading="lazy"></iframe> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </b-card-body>
+                                </b-collapse>
+                            </div>
+                        </div>
+                        <div class="right_side">
+                            <h4 class="text-center">Service</h4>
+                            <div class="card_items_area" v-for="item in LocationList.slice(10,11)" :key="item.id">
+                                <b-card-header role="tab">
+                                    <a block v-b-toggle="item.target" >
+                                        <h5 class="mb-0">{{item.title}}<span class="when-opened"><i class="fas fa-angle-up rotate-icon"></i></span><span class="when-closed"><i class="fas fa-angle-down rotate-icon"></i></span></h5>
+                                    </a>
+                                </b-card-header>
+                                <b-collapse :id="item.target"  :visible="item.target == currentLocation ? true :false"  accordion="my-accordion" role="tabpanel">
+                                    <b-card-body>
+                                    <div class="acc_content">
+                                        <div class="asides">
+                                            <div><b>Location:</b> {{item.name}}</div>
+                                                <div><b>Address:</b>{{item.address}}</div>
+                                                <div><b>Contact Person Number:</b> {{item.phone}}</div>
+                                        </div>
+                                        <div class="asides">
+                                            <div class="gmap_canvas">
+                                                    <iframe :src="item.map" width="354" height="274" style="border:0;max-width:100%;" allowfullscreen="" loading="lazy"></iframe> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </b-card-body>
+                                </b-collapse>
+                            </div>
+                        </div>
+                </div> 
+            </div>
+            <div class="acc_cnt_box">
+                 <h4 class="my-4 loc_main_head">Karaikudi:<hr /></h4>
+                <div class="accordian_content_sec">
+                        <div class="left_side">
+                            <h4 class="text-center">Sales</h4>
+                            <div class="card_items_area" v-for="item in LocationList.slice(4,5)" :key="item.id">
+                                <b-card-header role="tab">
+                                    <a block v-b-toggle="item.target" >
+                                        <h5 class="mb-0">{{item.title}}<span class="when-opened"><i class="fas fa-angle-up rotate-icon"></i></span><span class="when-closed"><i class="fas fa-angle-down rotate-icon"></i></span></h5>
+                                    </a>
+                                </b-card-header>
+                                <b-collapse :id="item.target"  :visible="item.target == currentLocation ? true :false"  accordion="my-accordion" role="tabpanel">
+                                    <b-card-body>
+                                    <div class="acc_content">
+                                        <div class="asides">
+                                            <div><b>Location:</b> {{item.name}}</div>
+                                                <div><b>Address:</b>{{item.address}}</div>
+                                                <div><b>Contact Person Number:</b> {{item.phone}}</div>
+                                        </div>
+                                        <div class="asides">
+                                            <div class="gmap_canvas">
+                                                    <iframe :src="item.map" width="354" height="274" style="border:0;max-width:100%;" allowfullscreen="" loading="lazy"></iframe> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </b-card-body>
+                                </b-collapse>
+                            </div>
+                        </div>
+                        <div class="right_side">
+                            <h4 class="text-center">Service</h4>
+                            <div class="card_items_area" v-for="item in LocationList.slice(14,15)" :key="item.id">
+                                <b-card-header role="tab">
+                                    <a block v-b-toggle="item.target" >
+                                        <h5 class="mb-0">{{item.title}}<span class="when-opened"><i class="fas fa-angle-up rotate-icon"></i></span><span class="when-closed"><i class="fas fa-angle-down rotate-icon"></i></span></h5>
+                                    </a>
+                                </b-card-header>
+                                <b-collapse :id="item.target"  :visible="item.target == currentLocation ? true :false"  accordion="my-accordion" role="tabpanel">
+                                    <b-card-body>
+                                    <div class="acc_content">
+                                        <div class="asides">
+                                            <div><b>Location:</b> {{item.name}}</div>
+                                                <div><b>Address:</b>{{item.address}}</div>
+                                                <div><b>Contact Person Number:</b> {{item.phone}}</div>
+                                        </div>
+                                        <div class="asides">
+                                            <div class="gmap_canvas">
+                                                    <iframe :src="item.map" width="354" height="274" style="border:0;max-width:100%;" allowfullscreen="" loading="lazy"></iframe> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </b-card-body>
+                                </b-collapse>
+                            </div>
+                        </div>
+                </div> 
+            </div>
+            <div class="acc_cnt_box">
+                <h4 class="my-4 loc_main_head">Tuticorin:<hr /></h4>
+                <div class="accordian_content_sec">
+                        <div class="left_side">
+                            <h4 class="text-center">Sales</h4>
+                            <div class="card_items_area" v-for="item in LocationList.slice(2,3)" :key="item.id">
+                                <b-card-header role="tab">
+                                    <a block v-b-toggle="item.target" >
+                                        <h5 class="mb-0">{{item.title}}<span class="when-opened"><i class="fas fa-angle-up rotate-icon"></i></span><span class="when-closed"><i class="fas fa-angle-down rotate-icon"></i></span></h5>
+                                    </a>
+                                </b-card-header>
+                                <b-collapse :id="item.target"  :visible="item.target == currentLocation ? true :false"  accordion="my-accordion" role="tabpanel">
+                                    <b-card-body>
+                                    <div class="acc_content">
+                                        <div class="asides">
+                                            <div><b>Location:</b> {{item.name}}</div>
+                                                <div><b>Address:</b>{{item.address}}</div>
+                                                <div><b>Contact Person Number:</b> {{item.phone}}</div>
+                                        </div>
+                                        <div class="asides">
+                                            <div class="gmap_canvas">
+                                                    <iframe :src="item.map" width="354" height="274" style="border:0;max-width:100%;" allowfullscreen="" loading="lazy"></iframe> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </b-card-body>
+                                </b-collapse>
+                            </div>
+                        </div>
+                        <div class="right_side">
+                            <h4 class="text-center">Service</h4>
+                            <div class="card_items_area" v-for="item in LocationList.slice(11,12)" :key="item.id">
+                                <b-card-header role="tab">
+                                    <a block v-b-toggle="item.target" >
+                                        <h5 class="mb-0">{{item.title}}<span class="when-opened"><i class="fas fa-angle-up rotate-icon"></i></span><span class="when-closed"><i class="fas fa-angle-down rotate-icon"></i></span></h5>
+                                    </a>
+                                </b-card-header>
+                                <b-collapse :id="item.target"  :visible="item.target == currentLocation ? true :false"  accordion="my-accordion" role="tabpanel">
+                                    <b-card-body>
+                                    <div class="acc_content">
+                                        <div class="asides">
+                                            <div><b>Location:</b> {{item.name}}</div>
+                                                <div><b>Address:</b>{{item.address}}</div>
+                                                <div><b>Contact Person Number:</b> {{item.phone}}</div>
+                                        </div>
+                                        <div class="asides">
+                                            <div class="gmap_canvas">
+                                                    <iframe :src="item.map" width="354" height="274" style="border:0;max-width:100%;" allowfullscreen="" loading="lazy"></iframe> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </b-card-body>
+                                </b-collapse>
+                            </div>
+                        </div>
                 </div>
-            </div> 
+            </div>
+            <div class="acc_cnt_box">
+                <h4 class="my-4 loc_main_head">Ramnad:<hr /></h4>
+                <div class="accordian_content_sec">
+                        <div class="left_side">
+                            <h4 class="text-center">Sales</h4>
+                            <div class="card_items_area" v-for="item in LocationList.slice(3,4)" :key="item.id">
+                                <b-card-header role="tab">
+                                    <a block v-b-toggle="item.target" >
+                                        <h5 class="mb-0">{{item.title}}<span class="when-opened"><i class="fas fa-angle-up rotate-icon"></i></span><span class="when-closed"><i class="fas fa-angle-down rotate-icon"></i></span></h5>
+                                    </a>
+                                </b-card-header>
+                                <b-collapse :id="item.target"  :visible="item.target == currentLocation ? true :false"  accordion="my-accordion" role="tabpanel">
+                                    <b-card-body>
+                                    <div class="acc_content">
+                                        <div class="asides">
+                                            <div><b>Location:</b> {{item.name}}</div>
+                                                <div><b>Address:</b>{{item.address}}</div>
+                                                <div><b>Contact Person Number:</b> {{item.phone}}</div>
+                                        </div>
+                                        <div class="asides">
+                                            <div class="gmap_canvas">
+                                                    <iframe :src="item.map" width="354" height="274" style="border:0;max-width:100%;" allowfullscreen="" loading="lazy"></iframe> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </b-card-body>
+                                </b-collapse>
+                            </div>
+                        </div>
+                        <div class="right_side">
+                            <h4 class="text-center">Service</h4>
+                            <div class="card_items_area" v-for="item in LocationList.slice(12,13)" :key="item.id">
+                                <b-card-header role="tab">
+                                    <a block v-b-toggle="item.target" >
+                                        <h5 class="mb-0">{{item.title}}<span class="when-opened"><i class="fas fa-angle-up rotate-icon"></i></span><span class="when-closed"><i class="fas fa-angle-down rotate-icon"></i></span></h5>
+                                    </a>
+                                </b-card-header>
+                                <b-collapse :id="item.target"  :visible="item.target == currentLocation ? true :false"  accordion="my-accordion" role="tabpanel">
+                                    <b-card-body>
+                                    <div class="acc_content">
+                                        <div class="asides">
+                                            <div><b>Location:</b> {{item.name}}</div>
+                                                <div><b>Address:</b>{{item.address}}</div>
+                                                <div><b>Contact Person Number:</b> {{item.phone}}</div>
+                                        </div>
+                                        <div class="asides">
+                                            <div class="gmap_canvas">
+                                                    <iframe :src="item.map" width="354" height="274" style="border:0;max-width:100%;" allowfullscreen="" loading="lazy"></iframe> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </b-card-body>
+                                </b-collapse>
+                            </div>
+                        </div>
+                </div> 
+            </div>
+            <div class="acc_cnt_box">
+                <h4 class="my-4 loc_main_head">Kovilpatti:<hr /></h4>
+                <div class="accordian_content_sec">
+                        <div class="left_side">
+                            <h4 class="text-center">Sales</h4>
+                            <div class="card_items_area" v-for="item in LocationList.slice(5,6)" :key="item.id">
+                                <b-card-header role="tab">
+                                    <a block v-b-toggle="item.target" >
+                                        <h5 class="mb-0">{{item.title}}<span class="when-opened"><i class="fas fa-angle-up rotate-icon"></i></span><span class="when-closed"><i class="fas fa-angle-down rotate-icon"></i></span></h5>
+                                    </a>
+                                </b-card-header>
+                                <b-collapse :id="item.target"  :visible="item.target == currentLocation ? true :false"  accordion="my-accordion" role="tabpanel">
+                                    <b-card-body>
+                                    <div class="acc_content">
+                                        <div class="asides">
+                                            <div><b>Location:</b> {{item.name}}</div>
+                                                <div><b>Address:</b>{{item.address}}</div>
+                                                <div><b>Contact Person Number:</b> {{item.phone}}</div>
+                                        </div>
+                                        <div class="asides">
+                                            <div class="gmap_canvas">
+                                                    <iframe :src="item.map" width="354" height="274" style="border:0;max-width:100%;" allowfullscreen="" loading="lazy"></iframe> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </b-card-body>
+                                </b-collapse>
+                            </div>
+                        </div>
+                        <div class="right_side">
+                            <h4 class="text-center">Service</h4>
+                            <div class="card_items_area" v-for="item in LocationList.slice(13,14)" :key="item.id">
+                                <b-card-header role="tab">
+                                    <a block v-b-toggle="item.target" >
+                                        <h5 class="mb-0">{{item.title}}<span class="when-opened"><i class="fas fa-angle-up rotate-icon"></i></span><span class="when-closed"><i class="fas fa-angle-down rotate-icon"></i></span></h5>
+                                    </a>
+                                </b-card-header>
+                                <b-collapse :id="item.target"  :visible="item.target == currentLocation ? true :false"  accordion="my-accordion" role="tabpanel">
+                                    <b-card-body>
+                                    <div class="acc_content">
+                                        <div class="asides">
+                                            <div><b>Location:</b> {{item.name}}</div>
+                                                <div><b>Address:</b>{{item.address}}</div>
+                                                <div><b>Contact Person Number:</b> {{item.phone}}</div>
+                                        </div>
+                                        <div class="asides">
+                                            <div class="gmap_canvas">
+                                                    <iframe :src="item.map" width="354" height="274" style="border:0;max-width:100%;" allowfullscreen="" loading="lazy"></iframe> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </b-card-body>
+                                </b-collapse>
+                            </div>
+                        </div>
+                </div> 
+            </div>
+            <div class="acc_cnt_box">
+                 <h4 class="my-4 loc_main_head">Thiruchendur:<hr /></h4>
+                <div class="accordian_content_sec">
+                        <div class="left_side">
+                            <h4 class="text-center">Sales</h4>
+                            <div class="card_items_area" v-for="item in LocationList.slice(6,7)" :key="item.id">
+                                <b-card-header role="tab">
+                                    <a block v-b-toggle="item.target" >
+                                        <h5 class="mb-0">{{item.title}}<span class="when-opened"><i class="fas fa-angle-up rotate-icon"></i></span><span class="when-closed"><i class="fas fa-angle-down rotate-icon"></i></span></h5>
+                                    </a>
+                                </b-card-header>
+                                <b-collapse :id="item.target"  :visible="item.target == currentLocation ? true :false"  accordion="my-accordion" role="tabpanel">
+                                    <b-card-body>
+                                    <div class="acc_content">
+                                        <div class="asides">
+                                            <div><b>Location:</b> {{item.name}}</div>
+                                                <div><b>Address:</b>{{item.address}}</div>
+                                                <div><b>Contact Person Number:</b> {{item.phone}}</div>
+                                        </div>
+                                        <div class="asides">
+                                            <div class="gmap_canvas">
+                                                    <iframe :src="item.map" width="354" height="274" style="border:0;max-width:100%;" allowfullscreen="" loading="lazy"></iframe> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </b-card-body>
+                                </b-collapse>
+                            </div>
+                        </div>
+                        <div class="right_side">
+                            <h4 class="text-center">Service</h4>
+                            <div class="card_items_area" v-for="item in LocationList.slice(15,16)" :key="item.id">
+                                <b-card-header role="tab">
+                                    <a block v-b-toggle="item.target" >
+                                        <h5 class="mb-0">{{item.title}}<span class="when-opened"><i class="fas fa-angle-up rotate-icon"></i></span><span class="when-closed"><i class="fas fa-angle-down rotate-icon"></i></span></h5>
+                                    </a>
+                                </b-card-header>
+                                <b-collapse :id="item.target"  :visible="item.target == currentLocation ? true :false"  accordion="my-accordion" role="tabpanel">
+                                    <b-card-body>
+                                    <div class="acc_content">
+                                        <div class="asides">
+                                            <div><b>Location:</b> {{item.name}}</div>
+                                                <div><b>Address:</b>{{item.address}}</div>
+                                                <div><b>Contact Person Number:</b> {{item.phone}}</div>
+                                        </div>
+                                        <div class="asides">
+                                            <div class="gmap_canvas">
+                                                    <iframe :src="item.map" width="354" height="274" style="border:0;max-width:100%;" allowfullscreen="" loading="lazy"></iframe> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </b-card-body>
+                                </b-collapse>
+                            </div>
+                        </div>
+                </div> 
+            </div>
         </div>
     </div>
 </template>
@@ -142,15 +489,6 @@ export default {
                     map:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.878905609981!2d78.09818361478291!3d8.511136993881177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b038faeadb444b3%3A0x3f1ca9f0d7bad57d!2sPeeyesyem%20Hyundai%20Tiruchandur!5e0!3m2!1sen!2sin!4v1636638867974!5m2!1sen!2sin'
                 },
                 {
-                    id:8,
-                    title:'TONDIARPET(Service)',
-                    target:'tondiarpet-service',
-                    name:'TONDIARPET',
-                    address:'NO.666, Thiruvottiyur High Rd, Press Colony, Tondiarpet, Chennai, Tamil Nadu 600081',
-                    phone:'9962666228',
-                    map:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.4785383799235!2d80.28983831482368!3d13.132186990750657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526f9c47f31db5%3A0x96045e21f0e14b37!2sPeeYesYem%20Hyundai%20-%20Tondiarpet%20Service!5e0!3m2!1sen!2sin!4v1636638184845!5m2!1sen!2sin'
-                },
-                {
                     id:9,
                     title:'KOTTURPURAM(Service)',
                     target:'kotturpuram-service',
@@ -167,6 +505,15 @@ export default {
                     address:'A-1 & 2, 3rd Phase, Thiru Vi Ka Industrial Estate, SIDCO Industrial Estate, Guindy, Chennai, Tamil Nadu 600032',
                     phone:'9962666228',
                     map:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.2997607091374!2d80.20717131482249!3d13.016573190826342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52670c75623817%3A0xe0516dc4e6471a50!2sPeeYesYem%20Hyundai%20-%20Guindy%20Service!5e0!3m2!1sen!2sin!4v1636638012037!5m2!1sen!2sin'
+                },
+                 {
+                    id:8,
+                    title:'TONDIARPET(Service)',
+                    target:'tondiarpet-service',
+                    name:'TONDIARPET',
+                    address:'NO.666, Thiruvottiyur High Rd, Press Colony, Tondiarpet, Chennai, Tamil Nadu 600081',
+                    phone:'9962666228',
+                    map:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.4785383799235!2d80.28983831482368!3d13.132186990750657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526f9c47f31db5%3A0x96045e21f0e14b37!2sPeeYesYem%20Hyundai%20-%20Tondiarpet%20Service!5e0!3m2!1sen!2sin!4v1636638184845!5m2!1sen!2sin'
                 },
                 {
                     id:11,
@@ -254,6 +601,23 @@ export default {
 </script>
 
 <style scoped>
+.acc_cnt_box{
+    margin: 90px 0;
+}
+.accordian_content_sec .left_side>h4,.accordian_content_sec .right_side>h4{
+    margin: 15px 0;
+}
+.loc_main_head hr{
+    width: 6%;
+    margin: 3px auto;
+    background: black;
+    height: 3px;
+}
+.acc_cnt_box .loc_main_head{
+    padding: 0 20px;
+    font-size: 25px;
+    text-align: center;
+}
 .down_icon, .up_icon{
     display: none;
 }
@@ -322,12 +686,24 @@ export default {
     margin: 14px 0;
     font-size: 16px;
 }
+.collapsed  .when-opened{
+    display: none;
+}
+.not-collapsed .when-closed{
+    display: none;
+}
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
     .acc_content{
         padding: 0!important;
     }
 }
 @media only screen and (min-width:300px) and (max-width:600px){
+    .loc_main_head hr{
+        width: 15%!important;
+    }
+    .loc_main_head{
+        margin: 30px 0!important;
+    }
     .main_loc_heading{
         bottom: 15px!important;
     }

@@ -106,7 +106,7 @@
                                 :key="model.id" >{{model.car_title}}</option>
                             </select>
                     </div>
-                    <div class="mb-4 mt-4">
+                    <!-- <div class="mb-4 mt-4">
                       <select
                                 class="
                                 shadow-md
@@ -129,7 +129,7 @@
                             <option class="text-xl" :value="state.name" v-for="state in StateList"
                                 :key="state.id" >{{state.name}}</option>
                             </select>
-                    </div>
+                    </div> -->
                     <div class="mb-4 mt-4">
                       <select
                                 class="
@@ -210,30 +210,6 @@
                         />
                     </div>
                     <div class="mb-4 ">
-                        <select
-                                class="
-                                shadow-md
-                                appearance-none
-                                border
-                                rounded
-                                w-full
-                                py-2
-                                px-3
-                                text-gray-700
-                                cursor-pointer
-                                leading-tight
-                                focus:outline-none
-                                focus:shadow-outline
-                                "
-                                id="Dealer"
-                                v-model="Dealer"
-                            >
-                            <option class="text-xl " value="">Select Dealer</option>
-                             <option class="text-xl" :value="city.name" v-for="city in CityList"
-                                :key="city.id" >{{city.name}}</option>
-                            </select>
-                    </div>
-                    <div class="mb-4 ">
                         <textarea
                         class="
                             shadow-md
@@ -289,10 +265,8 @@ export default {
             vehicleModel:'',
             fuelType:'',
             testDriveDate:'',
-            Dealer:'',
             comments:'',
             Cars:[],
-            state:'',
             city:'',
             dateType:'text',
             agreement:false,
@@ -370,9 +344,7 @@ export default {
             var data_value = {
                 fuel_type:this.fuelType,
                 test_drive_date:this.testDriveDate,
-                dealer:this.Dealer,
                 comments:this.comments,
-                state:this.state,
                 city:this.city
             }
             data_value = JSON.stringify(data_value);
@@ -392,8 +364,6 @@ export default {
                     this.fuelType = '';
                     this.testDriveDate = '';
                     this.city = '';
-                    this.state = '';
-                    this.Dealer = '';
                     this.comments = '';
                     this.form_tab_index = 0;
                     this.agreement = false;

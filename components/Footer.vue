@@ -39,6 +39,7 @@
                             <li><nuxt-link to="/contact-us/test-drive">Book a Test Drive</nuxt-link></li>
                             <li><nuxt-link to="/service-booking">Book a Service</nuxt-link></li>
                             <li><nuxt-link to="/accessories">Accessories</nuxt-link></li>
+                            <li><nuxt-link to="/site-map">Sitemap</nuxt-link></li>
                         </ul>
                     </div>
                 </div>
@@ -50,11 +51,11 @@
                                 <li>
                                     <a :href="$store.state.HeaderData.fbLink" target="_blank"><i class="fab fa-facebook-f"></i></a>
                                 </li>
-                                <li>
-                                    <a :href="$store.state.HeaderData.youtubeLink" target="_blank"><i class="fab fa-youtube"></i></a>
+                                 <li>
+                                    <a :href="$store.state.HeaderData.instaLink" target="_blank"><i class="fab fa-instagram"></i></a>
                                 </li>
                                 <li>
-                                    <a :href="$store.state.HeaderData.instaLink" target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a :href="$store.state.HeaderData.youtubeLink" target="_blank"><i class="fab fa-youtube"></i></a>
                                 </li>
                                 <li>
                                     <a :href="$store.state.HeaderData.linkedInLink" target="_blank"><i class="fab fa-linkedin "></i></a>

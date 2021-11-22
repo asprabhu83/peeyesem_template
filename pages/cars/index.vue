@@ -49,7 +49,7 @@
                   <div class="price_item">
                       <div class="price_title"><font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mr-2" />Price</div>
                       <div class="detail">
-                          {{car.price}}*
+                         Rs. {{car.price}}*
                       </div>
                   </div>
                   <div class="price_item">
@@ -1237,7 +1237,6 @@ export default {
 .price_details{
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 .price_details .price_item{
     margin: 10px 45px;
