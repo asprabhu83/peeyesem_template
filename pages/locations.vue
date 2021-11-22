@@ -427,7 +427,7 @@ export default {
             LocationList:[
                 {
                     id:1,
-                    title:'MYLAPORE(Sales)',
+                    title:'MYLAPORE',
                     target:'mylapore-sales',
                     name:'MYLAPORE',
                     address:'Old No. - 94, New No. - 162, Luz Church Road, Mylapore',
@@ -436,7 +436,7 @@ export default {
                 },
                 {
                     id:2,
-                    title:'MADURAI(Sales)',
+                    title:'MADURAI',
                     target:'madurai-sales',
                     name:'MADURAI',
                     address:'No.5, Marriamman Teppakulam West Street, Opp: Thiyagarajar Arts College,Madurai,Tamil Nadu -625009',
@@ -445,7 +445,7 @@ export default {
                 },
                 {
                     id:3,
-                    title:'TUTICORIN(Sales)',
+                    title:'TUTICORIN',
                     target:'tuticorin-sales',
                     name:'TUTICORIN',
                     address:'APC Mahalakshmi Women Collage, 4/47 B, Ettayapurm Road, Thoothukudi,Tamil Nadu -628002',
@@ -454,7 +454,7 @@ export default {
                 },
                 {
                     id:4,
-                    title:'RAMNAD(Sales)',
+                    title:'RAMNAD',
                     target:'ramnad-sales',
                     name:'RAMNAD',
                     address:'3/135, Madurai NH Road, Opp: MG Mahal Ramanathapuram,Tamil Nadu -623501',
@@ -463,7 +463,7 @@ export default {
                 },
                 {
                     id:5,
-                    title:'KARAIKUDI(Sales)',
+                    title:'KARAIKUDI',
                     target:'karaikudi-sales',
                     name:'KARAIKUDI',
                     address:'Koviloor Rd, Aruna Nagar, Karaikudi, Tamil Nadu',
@@ -472,7 +472,7 @@ export default {
                 },
                 {
                     id:6,
-                    title:'KOVILPATTI(Sales)',
+                    title:'KOVILPATTI',
                     target:'kovilpatti-sales',
                     name:'KOVILPATTI',
                     address:'5/162A Meenatachi Nagar, A. Salaiputhur,Kovilpatti,Tamil Nadu -628503',
@@ -481,7 +481,7 @@ export default {
                 },
                 {
                     id:7,
-                    title:'THIRUCHENDUR(Sales)',
+                    title:'THIRUCHENDUR',
                     target:'thiruchendur-sales',
                     name:'THIRUCHENDUR',
                     address:'59/9, KUMARAPURAM,Trichendur,Tamil Nadu -628215',
@@ -490,7 +490,7 @@ export default {
                 },
                 {
                     id:9,
-                    title:'KOTTURPURAM(Service)',
+                    title:'KOTTURPURAM',
                     target:'kotturpuram-service',
                     name:'KOTTURPURAM',
                     address:'No. 17, 45, Gandhi Mandapam Rd, Chitra Nagar, Kotturpuram, Chennai, Tamil Nadu 600085',
@@ -499,7 +499,7 @@ export default {
                 },
                 {
                     id:10,
-                    title:'GUINDY(Service)',
+                    title:'GUINDY',
                     target:'guindy-service',
                     name:'GUINDY',
                     address:'A-1 & 2, 3rd Phase, Thiru Vi Ka Industrial Estate, SIDCO Industrial Estate, Guindy, Chennai, Tamil Nadu 600032',
@@ -508,7 +508,7 @@ export default {
                 },
                  {
                     id:8,
-                    title:'TONDIARPET(Service)',
+                    title:'TONDIARPET',
                     target:'tondiarpet-service',
                     name:'TONDIARPET',
                     address:'NO.666, Thiruvottiyur High Rd, Press Colony, Tondiarpet, Chennai, Tamil Nadu 600081',
@@ -517,7 +517,7 @@ export default {
                 },
                 {
                     id:11,
-                    title:'MADURAI(Service)',
+                    title:'MADURAI',
                     target:'madurai-service',
                     name:'MADURAI',
                     address:'No. 249/3, Aruppkottai Main Road, KBL car parking campus, near Vetri Cinemas, Villapuram, Tamil Nadu 625012',
@@ -526,7 +526,7 @@ export default {
                 },
                 {
                     id:12,
-                    title:'TUTICORIN(Service)',
+                    title:'TUTICORIN',
                     target:'tuticorin-service',
                     name:'TUTICORIN',
                     address:'APC Mahalakshmi Women Collage, 4/47 B, Ettayapurm Road, Thoothukudi,Tamil Nadu -628002',
@@ -535,7 +535,7 @@ export default {
                 },
                 {
                     id:13,
-                    title:'RAMNAD(Service)',
+                    title:'RAMNAD',
                     target:'ramnad-service',
                     name:'RAMNAD',
                     address:'3/135, Madurai NH Road, Opp: MG Mahal Ramanathapuram,Tamil Nadu -623501',
@@ -544,7 +544,7 @@ export default {
                 },
                 {
                     id:14,
-                    title:'KOVILPATTI(Service)',
+                    title:'KOVILPATTI',
                     target:'kovilpatti-service',
                     name:'KOVILPATTI',
                     address:'5/162A Meenatachi Nagar, A. Salaiputhur,Kovilpatti,Tamil Nadu -628503',
@@ -553,7 +553,7 @@ export default {
                 },
                 {
                     id:15,
-                    title:'KARAIKUDI(Service)',
+                    title:'KARAIKUDI',
                     target:'karaikudi-service',
                     name:'KARAIKUDI',
                     address:'Koviloor Rd, Aruna Nagar, Karaikudi, Tamil Nadu',
@@ -562,7 +562,7 @@ export default {
                 },
                 {
                     id:16,
-                    title:'THIRUCHENDUR(Service)',
+                    title:'THIRUCHENDUR',
                     target:'thiruchendur-service',
                     name:'THIRUCHENDUR',
                     address:'59/9, KUMARAPURAM,Trichendur,Tamil Nadu -628215',

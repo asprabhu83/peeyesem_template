@@ -3,7 +3,7 @@
     <!-- Start Header Area -->
     <div class="contact_sec" >
         <div class="container">
-            <div class="flex justify-around py-3 top_sec">
+            <div class="flex logo_item_box justify-around py-3 top_sec">
                 <div>
                     <div class="header-logo">
                         <div class="logo">
@@ -11,7 +11,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex items-center call_service_details justify-center">
+                <div class="flex items-center contact_item_box call_service_details justify-center">
                     <div class="left mx-2">
                         <!-- <div class="text-lg  font-semibold pt-1 shodow_css_head">
                             <div class="mb-1">Email: info@peeyesyemhyundai.in</div>
@@ -590,6 +590,48 @@ export default {
     }
     .business_logo_icon{
         margin-top: 3px ;
+    }
+}
+@media only screen and (min-width: 760px) and (max-width: 960px){
+    .main-menu{
+        width: 100%!important;
+    }
+    .main-menu ul li a{
+         padding: 15px 20px!important;
+    }
+    .logo_item_box{
+        align-items: center;
+    }
+    .contact_item_box{
+        width: 80%!important;
+    }
+    .sticky-header.sticky .main-menu ul{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .sticky-header.sticky .main-menu ul li{
+        padding-left: 6px!important;
+    }
+    .sticky-header.sticky .main-menu ul li a{
+        padding: 15px 20px!important;
+    }
+}
+@media only screen and (min-width: 961px) and (max-width: 1030px){
+    .main-menu ul li a{
+         padding: 10px 6px!important;
+    }
+    .main-menu{
+        width: 100%!important;
+    }
+    .main-menu ul li{
+        padding-left: 13px!important;
+    }
+    .sticky-header.sticky .main-menu ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
     }
 }
 @media only screen and (min-width: 1270px) and (max-width: 1366px){

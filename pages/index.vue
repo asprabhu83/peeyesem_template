@@ -472,6 +472,73 @@ export default {
 }
 </script>
 <style scoped>
+@media only screen and (min-width: 760px) and (max-width: 960px){
+    .service_item_box div{
+        margin: 7px 20px!important;
+    }
+    .about_car_sec .left_sec {
+        margin: 0 20px!important;
+    }
+    .cars_product_section .car_box_item{
+        width: 50%!important;
+    }
+    .book_form_section .book_form_box{
+        flex-wrap: wrap;
+    }
+    .book_form_box .btn_grps{
+        min-width: 231px!important;
+        margin: 30px!important;
+    }
+    .btn_grps .blog_post_button{
+        display: block;
+        width: 100%;
+    }
+    .icoty_awards .card_box{
+        width: 41%!important;
+    }
+    .blog_card_body{
+        align-items: flex-start!important;
+        flex-wrap: wrap;
+    }
+    .blog_card_body .blog_card_box {
+        width: 47%;
+        margin: 15px!important;
+    }
+    .testimonial_content{
+        width: 70%!important;
+        padding: 30px 10px!important;
+    }
+}
+@media only screen and (min-width: 961px) and (max-width: 1030px){
+    .cars_product_section .car_box_item{
+        width: 33.33%!important;
+    }
+    .book_form_section .book_form_box{
+        flex-wrap: wrap;
+    }
+    .book_form_box .btn_grps{
+        min-width: 231px!important;
+        margin: 30px!important;
+    }
+    .btn_grps .blog_post_button{
+        display: block;
+        width: 100%;
+    }
+    .icoty_awards .card_box{
+        width: 31%!important;
+    }
+    .blog_card_body{
+        align-items: flex-start!important;
+    }
+    .blog_card_body .blog_card_box {
+        width: 35%;
+        margin: 15px!important;
+    }
+    .testimonial_content{
+        width: 60%!important;
+        padding: 30px 10px!important;
+    }
+}
 .icoty_awards .card_box{
     box-shadow: 0 2px 10px 4px rgb(0 0 0/15%);
     padding: 30px 20px;

@@ -181,6 +181,19 @@ export default {
     background: white;
     margin: 0 7px;
 } */
+@media only screen and (min-width: 760px) and (max-width: 960px){
+    .main_footer_sec{
+        flex-wrap: wrap;
+    }
+    .footer_item_sec{
+        margin: 15px 32px!important;
+    }
+}
+@media only screen and (min-width: 961px) and (max-width: 1030px){
+    .footer_item_sec{
+        margin: 0 15px!important;
+    }
+}
 .location_sec{
     display: flex;
     flex-wrap: wrap;
