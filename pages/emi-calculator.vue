@@ -332,6 +332,22 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width: 760px) and (max-width: 960px){
+    .form_sec{
+        width: 96%!important;
+    }
+    .form_sec .input_box{
+        width:45%!important
+    }
+}
+@media only screen and (min-width: 961px) and (max-width: 1030px){
+    .form_sec{
+        width: 92%!important;
+    }
+    .form_sec .input_box{
+        width:46%!important
+    }
+}
 @media only screen and (min-width:300px) and (max-width:600px){
     .explanation {
         padding: 0 15px;

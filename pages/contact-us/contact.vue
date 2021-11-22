@@ -31,7 +31,8 @@
             </select>
             <font-awesome-icon icon="chevron-down"  size="1x" class="text-black variant_model_icon mr-2" />
     </div>
-      <div class="my-5">
+    <div class="contact_loc_details_sec" v-if="selectedLocation !== ''">
+        <div class="my-5">
           <div class="tab_sec">
               <div class="tab_item"  v-for="(cat,index) in tabCategory" :class="index == tabIndex ? 'active' : ''" :key="index" @click="tabIndex = index,filterLocations(cat)">
                 {{cat}}
@@ -58,6 +59,7 @@
           </div>
           <div class="my-3 text-center text-lg font-semibold" v-if="contactLocations.length == 0">Search Not Found</div>
       </div>
+    </div>
       <div class="explain  text-center mt-4 mb-5">
           We care about you and your vehicle. Our goal is to resolve any problems if you have, quickly and completely. Please fill the below form and choose your reason for contacting us. We are always eager to assist you – Advaith Hyundai caring for you always
       </div>
@@ -803,6 +805,39 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width: 760px) and (max-width: 960px){
+    .select_box{
+        width: 40%!important;
+    }
+    .contact_locations_sec{
+        width: 95%!important;
+    }
+    .contact_locations_sec .item_card{
+        width: 100%!important;
+    }
+    .contact_locations_sec .email{
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    }
+    .form_sec{
+        width: 96%!important;
+    }
+}
+@media only screen and (min-width: 961px) and (max-width: 1030px){
+    .select_box{
+        width: 35%!important;
+    }
+    .contact_locations_sec .item_card{
+        width: 95%!important;
+    }
+    .contact_locations_sec .email{
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    }
+    .form_sec{
+        width: 92%!important;
+    }
+}
 @media only screen and (min-width:300px) and (max-width:600px){
   .form_sec .step{
      width: 100%!important;
@@ -853,6 +888,9 @@ export default {
     .select_box{
         width: 30%!important;
     }
+}
+.select_box{
+    margin: 50px 0;
 }
 .contact_locations_sec{
     display: flex;

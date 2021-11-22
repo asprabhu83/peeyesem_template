@@ -49,6 +49,19 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width: 760px) and (max-width: 960px){
+    .blog_item_sec{
+        width: 100%!important;
+    }
+    .blog_item_sec .item{
+        width: 95%!important;
+    }
+}
+@media only screen and (min-width: 961px) and (max-width: 1030px){
+    .blog_item_sec{
+        width: 90%!important;
+    }
+}
 @media only screen and (min-width:300px) and (max-width:600px){
     .blog_item_sec{
         width: 95%!important;

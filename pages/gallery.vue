@@ -49,6 +49,22 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width: 760px) and (max-width: 960px){
+    .gallery_item_box{
+        width: 95%!important;
+    }
+    .gallery_item_box .item{
+        width: 44%!important;
+    }
+}
+@media only screen and (min-width: 961px) and (max-width: 1030px){
+    .gallery_item_box{
+        width: 95%!important;
+    }
+    .gallery_item_box .item{
+        width: 45%!important;
+    }
+}
 @media only screen and (min-width:300px) and (max-width:600px){
     .img_Sec img{
         object-position: left;

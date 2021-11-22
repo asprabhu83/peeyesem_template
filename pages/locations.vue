@@ -617,6 +617,9 @@ export default {
     .accordian_content_sec .left_side, .accordian_content_sec .right_side{
         width: 47%!important;
     }
+    .acc_content{
+        padding: 0px!important;
+    }
 }
 .acc_cnt_box{
     margin: 90px 0;

@@ -152,6 +152,22 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width: 760px) and (max-width: 960px){
+    .testimonial_sec{
+        width: 100%!important;
+    }
+    .testimonial_sec .item{
+        width: 40%!important;
+    }
+}
+@media only screen and (min-width: 961px) and (max-width: 1030px){
+    .testimonial_sec{
+        width: 100%!important;
+    }
+    .testimonial_sec .item{
+        width: 40%!important;
+    }
+}
 @media only screen and (min-width:300px) and (max-width:600px){
     .select_input{
         width: 95%!important;

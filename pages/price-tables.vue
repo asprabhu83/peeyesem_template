@@ -325,6 +325,18 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width: 760px) and (max-width: 960px){
+    .form_sec form div{
+        width: 27%!important;
+        margin: 0 10px!important;
+    }
+}
+@media only screen and (min-width: 961px) and (max-width: 1030px){
+    .form_sec form div{
+        width: 27%!important;
+        margin: 0 10px!important;
+    }
+}
 .page_heading{
     text-align: center;
     margin: 20px 0;

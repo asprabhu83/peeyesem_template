@@ -188,10 +188,18 @@ export default {
     .footer_item_sec{
         margin: 15px 32px!important;
     }
+    .gmap_canvas iframe{
+        width: 215px!important;
+        height: 150px!important;
+    }
 }
 @media only screen and (min-width: 961px) and (max-width: 1030px){
     .footer_item_sec{
         margin: 0 15px!important;
+    }
+    .gmap_canvas iframe{
+        width: 215px!important;
+        height: 150px!important;
     }
 }
 .location_sec{

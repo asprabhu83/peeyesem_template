@@ -46,6 +46,24 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width: 760px) and (max-width: 960px){
+    .news_events_item_box{
+      width: 100%!important;
+    }
+    .news_events_item_box .item{
+      width: 46%!important;
+      margin: 20px 10px!important;
+    }
+}
+@media only screen and (min-width: 961px) and (max-width: 1030px){
+    .news_events_item_box{
+      width: 95%!important;
+    }
+    .news_events_item_box .item{
+      width: 46%!important;
+      margin: 20px 15px!important;
+    }
+}
 @media only screen and (min-width:300px) and (max-width:600px){
   .news_events_item_box{
     width: 96%!important;

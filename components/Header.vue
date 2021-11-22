@@ -605,12 +605,12 @@ export default {
     .contact_item_box{
         width: 80%!important;
     }
-    .sticky-header.sticky .main-menu ul{
+    .sticky-header.sticky .main-menu>nav>ul{
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
     }
-    .sticky-header.sticky .main-menu ul li{
+    .sticky-header.sticky .main-menu>nav> ul>li{
         padding-left: 6px!important;
     }
     .sticky-header.sticky .main-menu ul li a.menu-item{
@@ -620,6 +620,10 @@ export default {
         margin-left: 9px!important;
         margin-right: 9px!important;
     }
+    .sub-menu {
+        min-width: 184px!important;
+        padding: 15px 9px!important;
+    }
 }
 @media only screen and (min-width: 961px) and (max-width: 1030px){
     .main-menu ul li a.menu-item{
@@ -628,14 +632,18 @@ export default {
     .main-menu{
         width: 100%!important;
     }
-    .main-menu ul li{
-        padding-left: 13px!important;
+    .main-menu> nav> ul>li{
+        padding-left: 5px!important;
     }
-    .sticky-header.sticky .main-menu ul{
+    .sticky-header.sticky .main-menu > nav > ul{
         display: flex;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
+    }
+    .sub-menu {
+        min-width: 184px!important;
+        padding: 15px 9px!important;
     }
 }
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
