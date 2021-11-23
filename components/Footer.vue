@@ -231,8 +231,8 @@ export default {
     width: 28px;
 }
 .gmap_canvas iframe{
-    width: 270px!important;
-    height: 177px!important;
+    width: 270px;
+    height: 177px;
 }
 
 

@@ -621,7 +621,7 @@ export default {
         margin-right: 9px!important;
     }
     .sub-menu {
-        min-width: 184px!important;
+        min-width: 153px!important;
         padding: 15px 9px!important;
     }
 }

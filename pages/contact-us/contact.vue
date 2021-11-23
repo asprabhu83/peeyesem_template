@@ -808,6 +808,7 @@ export default {
 @media only screen and (min-width: 760px) and (max-width: 960px){
     .select_box{
         width: 40%!important;
+        margin: 50px auto!important;
     }
     .contact_locations_sec{
         width: 95%!important;
@@ -826,6 +827,7 @@ export default {
 @media only screen and (min-width: 961px) and (max-width: 1030px){
     .select_box{
         width: 35%!important;
+        margin: 50px auto!important;
     }
     .contact_locations_sec .item_card{
         width: 95%!important;
