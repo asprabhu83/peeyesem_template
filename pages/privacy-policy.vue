@@ -87,6 +87,16 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width: 760px) and (max-width: 960px){
+    .title_heading p{
+        padding: 0 30px!important;
+    }
+}
+@media only screen and (min-width: 961px) and (max-width: 1030px){
+    .title_heading p{
+        padding: 0 30px!important;
+    }
+}
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
     .content_sec{
         width: 80%!important;

@@ -192,6 +192,9 @@ export default {
         width: 215px!important;
         height: 150px!important;
     }
+    .footer_one_widget {
+        padding-top: 0!important;
+    }
 }
 @media only screen and (min-width: 961px) and (max-width: 1030px){
     .footer_item_sec{
@@ -200,6 +203,9 @@ export default {
     .gmap_canvas iframe{
         width: 215px!important;
         height: 150px!important;
+    }
+    .footer_one_widget {
+        padding-top: 0!important;
     }
 }
 .location_sec{

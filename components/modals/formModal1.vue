@@ -284,6 +284,15 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+@media only screen and (min-width: 760px) and (max-width: 960px){
+    .form_modal_box .card_body{
+        width: 55%!important;
+    }
+}
+@media only screen and (min-width: 961px) and (max-width: 1030px){
+    .form_modal_box .card_body{
+        width: 45%!important;
+    }
+}
 </style>

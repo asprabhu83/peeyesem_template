@@ -165,6 +165,16 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width: 760px) and (max-width: 960px){
+    .accordian_sec{
+        width: 95%!important;
+    }
+}
+@media only screen and (min-width: 961px) and (max-width: 1030px){
+    .accordian_sec{
+        width: 85%!important;
+    }
+}
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
     .img_sec .heading{
         font-size: 35px!important;
