@@ -346,7 +346,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 export default {
     data(){
         return{
@@ -489,7 +488,7 @@ export default {
             }
         },
         AddSellCarData(){
-            axios.post(process.env.baseUrl + 'api/sell_car/store',{
+            this.$axios.post(process.env.baseUrl + 'api/sell_car/store',{
                 full_name:this.name,
                 email:this.email,
                 mobile:this.mobile,

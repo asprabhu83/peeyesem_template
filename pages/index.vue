@@ -235,7 +235,6 @@ import ProductBox1 from '~/components/product-box/ProductBox1'
 import Timer from '../components/widgets/Timer'
 import InstagramArea from '../components/instagram/InstagramArea'
 
-import axios from '~/plugins/axios'
 import isotope  from 'vueisotope'
 import Modal1 from '../components/modals/formModal1.vue'
 import Modal2 from '../components/modals/formModal2.vue'
@@ -356,7 +355,7 @@ export default {
             }
         },
         GetBlog(){
-            axios
+            this.$axios
             .get(process.env.baseUrl + 'api/blog/index')
             .then((response) => {
             this.$store.state.BlogsData = response.data
@@ -367,9 +366,9 @@ export default {
         },
         GetCars(){
             this.loading = true;
-            axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
-            axios.defaults.withCredentials = false;
-            axios.get(process.env.baseUrl + 'api/cars/all')
+            this.$axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+            this.$axios.defaults.withCredentials = false;
+            this.$axios.get(process.env.baseUrl + 'api/cars/all')
             .then((response) => {
             this.$store.state.cars = response.data.cars;
             this.$store.state.originalDataCars = response.data.cars;
@@ -384,7 +383,7 @@ export default {
             })
         },
         GetTestimonialData(){
-            axios.get(process.env.baseUrl + 'api/testimonial/index')
+            this.$axios.get(process.env.baseUrl + 'api/testimonial/index')
             .then((response) => {
             this.$store.state.TestimonialData = response.data;
             })
