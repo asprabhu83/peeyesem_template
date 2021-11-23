@@ -19,7 +19,7 @@
               <!-- <li class="nav-item">
                 <nuxt-link  class="px-3 py-2 mt-1 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"  to="/" >Profile</nuxt-link>
               </li> -->
-              <li class="nav-item" v-if="permission === 'manage users' || type === 'super_admin'">
+              <li class="nav-item" >
                 <div class="relative inline-block text-left">
                   <div>
                     <button type="button" @click="drpdwn = true"  class="drpdwn outline-none border-none inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-transparent text-sm font-medium text-gray-700 " id="menu-button" aria-expanded="true" aria-haspopup="true">

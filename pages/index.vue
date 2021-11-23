@@ -366,8 +366,6 @@ export default {
         },
         GetCars(){
             this.loading = true;
-            this.$axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
-            this.$axios.defaults.withCredentials = false;
             this.$axios.get(process.env.baseUrl + 'api/cars/all')
             .then((response) => {
             this.$store.state.cars = response.data.cars;

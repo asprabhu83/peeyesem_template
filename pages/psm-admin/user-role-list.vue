@@ -153,7 +153,7 @@
                         text-green-800
                       "
                     >
-                      {{userRole.permission_id.toString()}}
+                      {{JSON.parse(userRole.permission_id).toString()}}
                     </span>
                   </td>
                   <td

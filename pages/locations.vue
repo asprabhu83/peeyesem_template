@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="acc_cnt_box">
-                <h4 class="my-4 loc_main_head">Chennai:<hr /></h4>
+                <h4 class="my-4 loc_main_head">Chennai<hr /></h4>
                 <div class="accordian_content_sec">
                         <div class="left_side">
                             <h4 class="text-center">Sales</h4>
@@ -75,7 +75,7 @@
                  </div> 
             </div>
             <div class="acc_cnt_box">
-                <h4 class="my-4 loc_main_head">Madurai:<hr /></h4>
+                <h4 class="my-4 loc_main_head">Madurai<hr /></h4>
                 <div class="accordian_content_sec">
                         <div class="left_side">
                             <h4 class="text-center">Sales</h4>
@@ -132,7 +132,7 @@
                 </div> 
             </div>
             <div class="acc_cnt_box">
-                 <h4 class="my-4 loc_main_head">Karaikudi:<hr /></h4>
+                 <h4 class="my-4 loc_main_head">Karaikudi<hr /></h4>
                 <div class="accordian_content_sec">
                         <div class="left_side">
                             <h4 class="text-center">Sales</h4>
@@ -189,7 +189,7 @@
                 </div> 
             </div>
             <div class="acc_cnt_box">
-                <h4 class="my-4 loc_main_head">Tuticorin:<hr /></h4>
+                <h4 class="my-4 loc_main_head">Tuticorin<hr /></h4>
                 <div class="accordian_content_sec">
                         <div class="left_side">
                             <h4 class="text-center">Sales</h4>
@@ -246,7 +246,7 @@
                 </div>
             </div>
             <div class="acc_cnt_box">
-                <h4 class="my-4 loc_main_head">Ramnad:<hr /></h4>
+                <h4 class="my-4 loc_main_head">Ramnad<hr /></h4>
                 <div class="accordian_content_sec">
                         <div class="left_side">
                             <h4 class="text-center">Sales</h4>
@@ -303,7 +303,7 @@
                 </div> 
             </div>
             <div class="acc_cnt_box">
-                <h4 class="my-4 loc_main_head">Kovilpatti:<hr /></h4>
+                <h4 class="my-4 loc_main_head">Kovilpatti<hr /></h4>
                 <div class="accordian_content_sec">
                         <div class="left_side">
                             <h4 class="text-center">Sales</h4>
@@ -360,7 +360,7 @@
                 </div> 
             </div>
             <div class="acc_cnt_box">
-                 <h4 class="my-4 loc_main_head">Thiruchendur:<hr /></h4>
+                 <h4 class="my-4 loc_main_head">Thiruchendur<hr /></h4>
                 <div class="accordian_content_sec">
                         <div class="left_side">
                             <h4 class="text-center">Sales</h4>

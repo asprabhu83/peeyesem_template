@@ -179,8 +179,8 @@ export default {
   },
   methods: {
     GetCarsList () {
-      this.$axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
-      this.$axios.defaults.withCredentials = false;
+      // this.$axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+      // this.$axios.defaults.withCredentials = false;
       this.$axios
         .get(process.env.baseUrl + 'api/cars/all')
         .then((response) => {
