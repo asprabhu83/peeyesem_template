@@ -49,6 +49,7 @@ export default {
             var page = Math.ceil(count/per_page);
             this.Page = page;
             this.end = per_page;
+            this.totalPages = [];
             for(var i=1;i<=page;i++){
                 this.totalPages.push(i);
             }
