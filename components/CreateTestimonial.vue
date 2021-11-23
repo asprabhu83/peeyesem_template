@@ -147,7 +147,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 export default {
   data () {
     return {
@@ -188,7 +187,7 @@ export default {
           date:date
         }
         json_data = JSON.stringify(json_data);
-        axios.post(process.env.baseUrl + 'api/testimonial/store', {
+        this.$axios.post(process.env.baseUrl + 'api/testimonial/store', {
           quote: this.quote,
           authour: this.authour,
           authour_type: this.authourType,

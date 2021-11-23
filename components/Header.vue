@@ -208,7 +208,6 @@
 
 <script>
 import { mapState, mapGetters } from 'vuex'
-import axios from '~/plugins/axios'
 export default {
     data() {
         return {
@@ -489,7 +488,7 @@ export default {
             this.$store.dispatch('products/searchProduct', this.searchString)
         },
         GetHeaderData(){
-            axios.get(process.env.baseUrl + 'api/settings/index')
+            this.$axios.get(process.env.baseUrl + 'api/settings/index')
             .then((res)=>{
                 const [data] = res.data;
                 const {site_logo,service_number,sales_number,whatsapp_number,fb_link,insta_link,youtube_link,data_value} = data;

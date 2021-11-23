@@ -78,7 +78,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 export default {
   data () {
     return {
@@ -97,7 +96,7 @@ export default {
   methods: {
     Logout () {
       var token = localStorage.getItem('user_token')
-      axios.get(process.env.baseUrl + 'api/users/logout', {
+      this.$axios.get(process.env.baseUrl + 'api/users/logout', {
         headers: {
           Authorization: 'Bearer ' + token
         }

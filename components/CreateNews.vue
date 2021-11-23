@@ -173,7 +173,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 export default {
   data () {
     return {
@@ -226,7 +225,7 @@ export default {
         //   date:date
         // }
         // json_data = JSON.stringify(json_data);
-        axios.post(process.env.baseUrl + 'api/news_events/store', {
+        this.$axios.post(process.env.baseUrl + 'api/news_events/store', {
           title: this.title,
           image: this.mainImage,
           poster_image: this.posterImage,

@@ -1269,7 +1269,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 import DeleteModal from '../../components/modals/DeleteModal.vue'
 export default {
   layout:'admin-header-layout',
@@ -1454,7 +1453,7 @@ export default {
       document.querySelector('.tab_item' + next).classList.add('active')
     },
     GetModels () {
-      axios
+      this.$axios
         .get(process.env.baseUrl + 'api/car/types')
         .then((response) => {
           this.models = response.data.types
@@ -1466,7 +1465,7 @@ export default {
 
     GetSingleCar(){
       var id = this.$route.query.car_id;
-      axios
+      this.$axios
           .get(process.env.baseUrl + 'api/show/car/' + id)
           .then((response) => {
               this.DataBaseSingleCar = response.data;
@@ -1591,7 +1590,7 @@ export default {
       btn.innerText = 'Loading'
       this.error = false
       if (target === '1') {
-        axios
+        this.$axios
           .put(process.env.baseUrl + 'api/update/car_detail/'+ this.carId, {
             car_title: this.modelName,
             car_image: this.modelImage,
@@ -1613,7 +1612,7 @@ export default {
           })
       }
       if (target === '2') {
-        axios
+        this.$axios
           .put(process.env.baseUrl + 'api/update/car_overview/' + this.overviewId, {
             car_id: this.carId,
             car_description: this.description,
@@ -1635,7 +1634,7 @@ export default {
           })
       }
       if (target === '3') {
-        axios
+        this.$axios
           .put(process.env.baseUrl + 'api/update/overview_details/' + this.EditID.overviewDetailId, {
             overview_id: this.overviewId,
             car_power: this.power,
@@ -1658,7 +1657,7 @@ export default {
           })
       }
       if (target === '4') {
-        axios
+        this.$axios
           .put(process.env.baseUrl + 'api/update/highlight/' + this.highlightId , {
             car_id: this.carId,
             highlight_title: this.highlight
@@ -1679,7 +1678,7 @@ export default {
           })
       }
       if (target === '5') {
-        axios
+        this.$axios
           .put(process.env.baseUrl + 'api/update/highlight_post/' + this.EditID.postId, {
             highlight_id: this.highlightId,
             post_title: this.postTitle,
@@ -1706,7 +1705,7 @@ export default {
           })
       }
       if (target === '6') {
-        axios
+        this.$axios
           .post(process.env.baseUrl + 'api/store/gallery', {
             car_id: this.carId,
             gallery_image: this.galleryImage
@@ -1729,7 +1728,7 @@ export default {
           })
       }
       if (target === '7') {
-        axios
+        this.$axios
           .put(process.env.baseUrl + 'api/update/video/' + this.EditID.VideoId, {
             car_id: this.carId,
             youtube_link: this.youtubeLink
@@ -1750,7 +1749,7 @@ export default {
           })
       }
       if (target === '8') {
-        axios
+        this.$axios
           .put(process.env.baseUrl + 'api/update/color/' + this.EditID.colorId, {
             car_id: this.carId,
             color_code: this.colorCode,
@@ -1779,7 +1778,7 @@ export default {
           })
       }
       if (target === '9') {
-        axios
+        this.$axios
           .put(process.env.baseUrl + 'api/update/specs/' + this.EditID.specId, {
             car_id: this.carId,
             spec_type: this.specType,
@@ -1806,7 +1805,7 @@ export default {
           })
       }
       if (target === '10') {
-        axios
+        this.$axios
           .put(process.env.baseUrl + 'api/update/variant/' + this.featureVariantId, {
             car_id: this.carId,
             feature_title: this.feutureTitle,
@@ -1832,7 +1831,7 @@ export default {
           variant_price:this.variantPrice
         }
         json_data = JSON.stringify(json_data);
-        axios
+        this.$axios
           .put(process.env.baseUrl + 'api/update/variant_model/' + this.EditID.variantId, {
             features_variant_id: this.featureVariantId,
             feature_type: this.feutureType,
@@ -1855,7 +1854,7 @@ export default {
           })
       }
       if (target === '12') {
-        axios
+        this.$axios
           .put(process.env.baseUrl + 'api/update/feature/' + this.EditID.featureId, {
             features_model_id: this.featureModelId,
             variant_feature_type: this.variantFeutureType,
@@ -1881,7 +1880,7 @@ export default {
           })
       }
       if (target === '13') {
-        axios
+        this.$axios
           .put(process.env.baseUrl + 'api/update/price/' + this.EditID.priceId, {
             car_id: this.carId,
             features_variant_id: this.featureVariantId,

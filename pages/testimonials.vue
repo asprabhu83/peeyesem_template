@@ -33,7 +33,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 export default {
     data(){
         return{
@@ -48,71 +47,6 @@ export default {
                 ' All New Creta ',
                 ' Alcazar ',
                 ' All New Tucson ',
-            ],
-            testimonial:[
-                {
-                    id:1,
-                    name:'Sathosh Reddy',
-                    time:'11-04-2019',
-                    detail_heading:'Lovely looks and good performance..u can bindly go for it',
-                    description:`Good Riding Experience..Superb Looks...CC Wise Good Pickup.Mainantence Is Very Less Compare To Maruthi.Mileage 18 In City 21 On The Highway With Always AC On.Servicing Cost 2 Nd -Rs1500 3 Rd-Rs 3000 4th Paid Servicers 6500..Inculding Wheel Alignment. Electronic Mirrors Are Very Comfortable. Headrests Is Only Drawback In This Car.For A Height Of 5.9 It's Very Decent`
-                },
-                {
-                    id:2,
-                    name:'Mr. Joby George',
-                    time:'06-01-2019',
-                    detail_heading:'Low-cost maintenance and great customer service',
-                    description:`Fluidic Design, Better Driving Position, Low-Cost Maintenance And Great Customer Service, As Compared To Fortuner & Endeavour, Were The Major Reasons For Me To Buy The Hyundai Tucson.`
-                },
-                {
-                    id:3,
-                    name:'Ms. Nayna H Patel',
-                    time:'26-07-2018',
-                    detail_heading:'Excellent car, outperformed all the other SUVs that I drove',
-                    description:`Wanted To Purchase A SUV For My Birthday And After Having Test Driven Ford SUVs Where The Price Is Too Steep And Renault Duster, I Decided To Buy The Ultimate SUV Recently Launched - The Tucson. Excellent Car, Outperformed All The Other SUVs That I Drove And The Premium Feeling It Gives Is Great And Not To Mention Its Brilliant Smart High-Tech Features.`
-                },
-                {
-                    id:4,
-                    name:'Dimitiros Synanidis',
-                    time:'25-09-2018',
-                    detail_heading:'20 years ago i purchased my first Hyundai. Today, the entire family is a Hyundai family',
-                    description:`20 Years Ago I Purchased My First Hyundai. Today, The Entire Family Is A Hyundai Family. Keep On Producing Great CARS!`
-                },
-                {
-                    id:5,
-                    name:'Mr. Mangal Kumar Agarwal',
-                    time:'07-10-2018',
-                    detail_heading:`I'm grateful for the wonderful treatment at the Hyundai dealership`,
-                    description:`I Decided To Buy The Hyundai Elantra Because I Found Both The Interior & Exterior To Be Very Stylish As Compared To Honda City. I Knew I Made The Right Choice Not Only Because Of The Product, But The Entire Purchase Experience During Which I Felt Valued. I'm Grateful For The Wonderful Treatment At The Hyundai Dealership.`
-                },
-                {
-                    id:6,
-                    name:'Mr. Gaurav Aditya',
-                    time:'23-11-2017',
-                    detail_heading:'The looks of the Elantra are stellar',
-                    description:`I Purchased The Hyundai Elantra Recently. It Has A Lot Of High-Tech Features Which I Couldn’t Find In Any Other Car For A Good Price. The Looks Of The Elantra Are Stellar. Overall I Am Very Happy And Content With The Purchase Of My Elantra.`
-                },
-                {
-                    id:7,
-                    name:'Mr. Ramakant Verma',
-                    time:'27-02-2019',
-                    detail_heading:'',
-                    description:`I Was Eagerly Waiting For The Launch Of The Hyundai Elantra As I Really Wanted To Buy This Car. I Really Like The Premium And Stylish Looks Of The Elantra And Also The Fact That It Is Packed With All The Important Features. It Is Much Better As Compared To Skoda Which Was Recommended To Me By A Friend.`
-                },
-                {
-                    id:8,
-                    name:'Mr. Hiralal Choudhary',
-                    time:'15-11-2018 ',
-                    detail_heading:'',
-                    description:`Bought The Hyundai Elantra, Which Was Recommended To Me By Friends Its Best In Class And First In Class Features And Its Powerful Petrol Engine. It’s A Total Stunner On The Road; Feels Luxurious And Is Extremely Spacious. It Scores Much Above The Toyota Octavia In My Opinion.`
-                },
-                {
-                    id:9,
-                    name:'Mr. R Raman Kasharbani',
-                    time:'29-12-2018 ',
-                    detail_heading:'',
-                    description:`I Was Absolutely Impressed With The Design Of The Elantra. Nothing Comes Close To The Stunning Fluidic Design Of The Hyundai Elantra In India And It Comes With So Many High-Tech Features Which Made It An Irresistible Purchase For Me. The List Of 1st-In-Class And Best-In-Segment Features Is Huge And Hyundai Elantra Offers All That For A Very Good Price. `
-                }
             ],
             singleTestimonial:{
                 heading:'',
@@ -139,7 +73,7 @@ export default {
             this.testimonialModal = true;
         },
         GetTestimonialData(){
-            axios.get(process.env.baseUrl + 'api/testimonial/index')
+            this.$axios.get(process.env.baseUrl + 'api/testimonial/index')
             .then((response) => {
             this.$store.state.TestimonialData = response.data;
             })

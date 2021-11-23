@@ -523,7 +523,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 import Loading from '../../components/Loading.vue'
 import Modal1 from '../../components/modals/formModal1.vue'
 import EnquireForm from '../../components/forms/Enquireform.vue'
@@ -705,7 +704,7 @@ export default {
                 this.e_brochure_link = '/pdf/N-Line.pdf'
             }
             this.loading = true;
-            axios
+            this.$axios
                 .get(process.env.baseUrl + 'api/show/car/' + id)
                 .then((response) => {
                     this.DataBaseSingleCar = response.data;

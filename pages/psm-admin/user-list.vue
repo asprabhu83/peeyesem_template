@@ -389,7 +389,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 import AddUser from '~/components/CreateUser.vue'
 export default {
   components: {
@@ -438,7 +437,7 @@ export default {
   },
   methods: {
     GetUser () {
-      axios
+      this.$axios
         .get(process.env.baseUrl + 'api/users/index')
         .then((response) => {
           this.users = response.data
@@ -453,7 +452,7 @@ export default {
     },
     Delete () {
       var id = this.$el.getAttribute('data-id')
-      axios
+      this.$axios
         .delete(process.env.baseUrl + 'api/users/delete/' + id)
         .then(() => {
           this.deleteDialog = false
@@ -465,7 +464,7 @@ export default {
     },
     Edit (id) {
       this.editDialog = true
-      axios
+      this.$axios
         .get(process.env.baseUrl + 'api/users/show/' + id)
         .then((response) => {
           this.id = response.data.id
@@ -500,7 +499,7 @@ export default {
         }
       }
       if (err === 0) {
-        axios
+        this.$axios
           .put(process.env.baseUrl + 'api/users/update/' + this.id, {
             id: this.id,
             name: this.name,
@@ -518,7 +517,7 @@ export default {
       }
     },
     GetUserRoleName () {
-      axios.get(process.env.baseUrl + 'api/userrole/index')
+      this.$axios.get(process.env.baseUrl + 'api/userrole/index')
         .then((response) => {
           this.userRoleNames = response.data
         }).catch((error) => {

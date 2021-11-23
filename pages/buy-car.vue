@@ -321,7 +321,6 @@
 
 <script>
 import MultiRangeSlider from "multi-range-slider-vue";
-import axios from '~/plugins/axios'
 export default {
     components: {
         MultiRangeSlider
@@ -495,7 +494,7 @@ export default {
                 location:this.singleCarDetail.Location
             }
             data_value = JSON.stringify(data_value);
-            axios.post(process.env.baseUrl + 'api/car_form/store',{
+            this.$axios.post(process.env.baseUrl + 'api/car_form/store',{
                 full_name:this.singleCarDetail.name,
                 email_id:this.singleCarDetail.email,
                 mobile_no:this.singleCarDetail.mobile,
@@ -508,7 +507,7 @@ export default {
             })
         },
         GetCarDetails(){
-            axios.get(process.env.baseUrl + 'api/used_car/index')
+            this.$axios.get(process.env.baseUrl + 'api/used_car/index')
             .then((res)=>{
                 this.CarDetails = res.data;
                 this.originalCarDetails = res.data

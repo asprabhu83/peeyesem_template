@@ -534,7 +534,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 import UsedCar from '../../components/CreateUsedCars.vue'
 export default {
   layout:'admin-header-layout',
@@ -676,7 +675,7 @@ export default {
             }
     },
     GetUsedCars(){
-      axios.get(process.env.baseUrl + 'api/used_car/index')
+      this.$axios.get(process.env.baseUrl + 'api/used_car/index')
       .then((res) => {
          this.usedCars = res.data;
         }).catch((error) => {
@@ -688,7 +687,7 @@ export default {
     },
     Edit(id){
       this.editDialog = true;
-      axios.get(process.env.baseUrl + 'api/used_car/show/' + id)
+      this.$axios.get(process.env.baseUrl + 'api/used_car/show/' + id)
       .then((res) => {
         this.id = res.data.id;
           this.carModel = res.data.car_model
@@ -711,7 +710,7 @@ export default {
             }
             data_value = JSON.stringify(data_value);
       var id = this.id;
-      axios.put(process.env.baseUrl + 'api/used_car/update/' + id,{
+      this.$axios.put(process.env.baseUrl + 'api/used_car/update/' + id,{
         car_model:this.carModel,
         fuel_type:this.fuelType,
         price:this.Price,
@@ -733,7 +732,7 @@ export default {
     },
     Delete(){
       var id = this.$el.getAttribute('data-usedcar-id')
-      axios.delete(process.env.baseUrl + 'api/used_car/delete/' + id)
+      this.$axios.delete(process.env.baseUrl + 'api/used_car/delete/' + id)
       .then(() => {
         this.deleteDialog = false;
           this.GetUsedCars();

@@ -217,7 +217,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 import Loading from '../components/Loading.vue'
 import FormModal from '../components/modals/formModal1.vue'
 export default {
@@ -291,9 +290,9 @@ export default {
             }
         },
         GetModels(){
-            axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
-            axios.defaults.withCredentials = false;
-            axios.get(process.env.baseUrl + 'api/cars/all')
+            this.$axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+            this.$axios.defaults.withCredentials = false;
+            this.$axios.get(process.env.baseUrl + 'api/cars/all')
             .then((res)=>{
                 this.$store.state.cars = res.data.cars;
                 this.$store.state.originalDataCars = res.data.cars;
@@ -304,7 +303,7 @@ export default {
         filterPrice(){
             if(this.city !== '' && this.state !== '' && this.vehicleModel !== ''){
                 this.loading = true
-                axios.get(process.env.baseUrl + 'api/show/car/' + this.vehicleModel)
+                this.$axios.get(process.env.baseUrl + 'api/show/car/' + this.vehicleModel)
                 .then((res)=>{
                     var data = res.data;
                     const {feature_model} = data;

@@ -542,7 +542,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 export default {
     layout:'admin-header-layout',
     data(){
@@ -593,7 +592,7 @@ export default {
             }
         },
         GetDetails(){
-            axios.get(process.env.baseUrl + 'api/settings/index')
+            this.$axios.get(process.env.baseUrl + 'api/settings/index')
             .then((res)=>{
                 this.SettingData = res.data;
             }).catch((err)=>{
@@ -602,7 +601,7 @@ export default {
         },
         Edit(id){
             this.editDialog = true;
-            axios.get(process.env.baseUrl + 'api/settings/show/'+ id)
+            this.$axios.get(process.env.baseUrl + 'api/settings/show/'+ id)
             .then((res)=>{
                 this.id = res.data.id;
                 this.serviceNo = res.data.service_number;
@@ -625,7 +624,7 @@ export default {
               buisness_link:this.buisnessLink
             }
             json_data = JSON.stringify(json_data);
-            axios.put(process.env.baseUrl + 'api/settings/update/' + this.id,{
+            this.$axios.put(process.env.baseUrl + 'api/settings/update/' + this.id,{
                 setting_id:'1',
                 site_logo:this.siteLogo,
                 service_number:this.serviceNo,

@@ -162,7 +162,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 export default {
   layout: 'admin-header-layout',
   data () {
@@ -180,9 +179,9 @@ export default {
   },
   methods: {
     GetCarsList () {
-      axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
-      axios.defaults.withCredentials = false;
-      axios
+      this.$axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+      this.$axios.defaults.withCredentials = false;
+      this.$axios
         .get(process.env.baseUrl + 'api/cars/all')
         .then((response) => {
           this.cars = response.data.cars
@@ -200,7 +199,7 @@ export default {
     },
     Delete () {
       var id = this.$el.getAttribute('data-car-id')
-      axios
+      this.$axios
         .delete(process.env.baseUrl + 'api/cars/delete/' + id)
         .then(() => {
           this.deleteDialog = false

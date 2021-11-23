@@ -90,7 +90,6 @@
 
 <script>
 import {VueEditor} from 'vue2-editor'
-import axios from '~/plugins/axios'
 export default {
     layout:'admin-header-layout',
     components:{
@@ -106,7 +105,7 @@ export default {
     },
     methods:{
         AddPage(){
-            axios.post(process.env.baseUrl + 'api/page/store',{
+            this.$axios.post(process.env.baseUrl + 'api/page/store',{
               page_title: this.PageTitle,
               page_content:this.pageContent,
               form_id:this.formId

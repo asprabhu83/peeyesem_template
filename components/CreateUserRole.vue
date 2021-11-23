@@ -110,7 +110,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 export default {
   data () {
     return {
@@ -141,7 +140,7 @@ export default {
 
       if (err === 0) {
         this.permissions = JSON.stringify(this.permissions)
-        axios.post(process.env.baseUrl + 'api/userrole/store', {
+        this.$axios.post(process.env.baseUrl + 'api/userrole/store', {
           user_role: this.userRole,
           description: this.description,
           permission_id: this.permissions
@@ -155,7 +154,7 @@ export default {
       }
     },
     GetPermission () {
-      axios.get(process.env.baseUrl + 'api/permission/index')
+      this.$axios.get(process.env.baseUrl + 'api/permission/index')
         .then((response) => {
           this.permNames = response.data
         }).catch((error) => {

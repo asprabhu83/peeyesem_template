@@ -123,7 +123,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 export default {
     data(){
         return{
@@ -235,7 +234,7 @@ export default {
                 }
             }
             if(err == 0){
-                axios.post(process.env.baseUrl + 'api/accessories/store',{
+                this.$axios.post(process.env.baseUrl + 'api/accessories/store',{
                     full_name:this.name,
                     email_id:this.email,
                     page:'accessories',

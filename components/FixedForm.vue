@@ -22,7 +22,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 import Modal1 from './modals/formModal1.vue'
 import Modal2 from './modals/formModal2.vue'
 import Modal3 from './modals/formModal3.vue'
@@ -134,7 +133,7 @@ export default {
     },
     methods:{
         GetDetails(){
-            axios.get(process.env.baseUrl + 'api/settings/index')
+            this.$axios.get(process.env.baseUrl + 'api/settings/index')
             .then((res)=>{
                 const [data] = res.data;
                 const {whatsapp_number} = data;

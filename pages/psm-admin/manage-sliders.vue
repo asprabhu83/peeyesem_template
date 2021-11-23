@@ -316,7 +316,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 import AddSlider from '../../components/CreateSlider.vue'
 import Pagination from '../../components/pagination/pagination.vue'
 export default {
@@ -378,7 +377,7 @@ export default {
             }
     },
     GetSliders () {
-      axios
+      this.$axios
         .get(process.env.baseUrl + 'api/slider/index')
         .then((response) => {
           this.Sliders = response.data
@@ -393,7 +392,7 @@ export default {
     },
     Delete () {
       var id = this.$el.getAttribute('data-slider-id')
-      axios
+      this.$axios
         .delete(process.env.baseUrl + 'api/slider/delete/' + id)
         .then(() => {
           this.deleteDialog = false
@@ -408,7 +407,7 @@ export default {
     },
     Edit (id) {
       this.editDialog = true
-      axios
+      this.$axios
         .get(process.env.baseUrl + 'api/slider/show/' + id)
         .then((response) => {
           this.id = response.data.id;
@@ -431,7 +430,7 @@ export default {
           test_dive_link:this.testDriveLink
         }
         json_data = JSON.stringify(json_data);
-        axios
+        this.$axios
           .put(process.env.baseUrl + 'api/slider/update/' + this.id, {
             slider_image: this.sliderImage,
             slider_link: this.sliderLink,

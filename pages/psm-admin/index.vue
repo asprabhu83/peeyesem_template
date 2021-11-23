@@ -117,7 +117,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 export default {
   layout:'headless-layout',
   data () {
@@ -136,7 +135,7 @@ export default {
     Login () {
       var btn = document.querySelector('.login_btn')
       btn.innerHTML = 'Loading'
-      axios.post(process.env.baseUrl + 'api/users/login', {
+      this.$axios.post(process.env.baseUrl + 'api/users/login', {
         email: this.email,
         password: this.password
       })

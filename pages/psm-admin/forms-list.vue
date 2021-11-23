@@ -229,7 +229,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 export default {
     layout:'admin-header-layout',
     data(){
@@ -248,7 +247,7 @@ export default {
     },
     methods:{
         GetFormData(){
-            axios.get(process.env.baseUrl + 'api/car_form/index')
+            this.$axios.get(process.env.baseUrl + 'api/car_form/index')
             .then((res)=>{
                 this.formData = res.data;
                 this.originalformData = res.data;

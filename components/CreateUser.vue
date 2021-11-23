@@ -178,7 +178,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 export default {
   data () {
     return {
@@ -224,7 +223,7 @@ export default {
         }
       }
       if (err === 0) {
-        axios.post(process.env.baseUrl + 'api/users/register', {
+        this.$axios.post(process.env.baseUrl + 'api/users/register', {
           email: this.email,
           password: this.password,
           user_role: this.userRole,
@@ -245,7 +244,7 @@ export default {
       }
     },
     GetUserRoleName () {
-      axios.get(process.env.baseUrl + 'api/userrole/index')
+      this.$axios.get(process.env.baseUrl + 'api/userrole/index')
         .then((response) => {
           this.userRoleNames = response.data
         }).catch((error) => {

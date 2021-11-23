@@ -277,7 +277,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 export default {
   data () {
     return {
@@ -411,7 +410,7 @@ export default {
               location:this.Location
             }
             data_value = JSON.stringify(data_value);
-        axios.post(process.env.baseUrl + 'api/used_car/store', {
+        this.$axios.post(process.env.baseUrl + 'api/used_car/store', {
           car_model:this.carModel,
           fuel_type:this.fuelType,
           price:this.Price,

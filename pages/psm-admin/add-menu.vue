@@ -246,7 +246,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 export default {
     layout:'admin-header-layout',
     data(){
@@ -269,7 +268,7 @@ export default {
     methods:{
       AddTitle(e){
           e.target.classList.add('loading');
-          axios.post(process.env.baseUrl + 'api/menu/title',{
+          this.$axios.post(process.env.baseUrl + 'api/menu/title',{
               menu_type: this.menuTitle
           }).then((res)=>{
               console.log(res)
@@ -282,7 +281,7 @@ export default {
           })
       },
       GetMenu(){
-          axios.get(process.env.baseUrl + 'api/menu/index')
+          this.$axios.get(process.env.baseUrl + 'api/menu/index')
           .then((res)=>{
               this.titles = res.data.menu
             //   this.FilterMenu()
@@ -308,7 +307,7 @@ export default {
     //   },
       AddMenu(e){
           e.target.classList.add('loading');
-          axios.post(process.env.baseUrl + 'api/menu/menu',{
+          this.$axios.post(process.env.baseUrl + 'api/menu/menu',{
               menu_title_id:this.menuHeading,
               menu_name: this.menuName,
               menu_link: this.menuLink
@@ -338,7 +337,7 @@ export default {
           }
       },
       Delete(id){
-          axios.delete(process.env.baseUrl + 'api/menu/delete/' + id)
+          this.$axios.delete(process.env.baseUrl + 'api/menu/delete/' + id)
           .then((res)=>{
               console.log(res)
               this.GetMenu()
@@ -347,7 +346,7 @@ export default {
           })
       },
       menuDelete(id){
-          axios.delete(process.env.baseUrl + 'api/menu/delete/item/' + id)
+          this.$axios.delete(process.env.baseUrl + 'api/menu/delete/item/' + id)
           .then((res)=>{
               console.log(res)
               this.GetMenu()

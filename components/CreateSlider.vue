@@ -133,7 +133,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 export default {
   data () {
     return {
@@ -179,7 +178,7 @@ export default {
           test_dive_link:this.testDriveLink
         }
         json_data = JSON.stringify(json_data);
-        axios.post(process.env.baseUrl + 'api/slider/store', {
+        this.$axios.post(process.env.baseUrl + 'api/slider/store', {
           slider_image: this.sliderImage,
           slider_link: this.sliderLink,
           data_value:json_data

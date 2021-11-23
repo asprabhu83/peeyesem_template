@@ -364,7 +364,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 import AddNews from '../../components/CreateNews.vue'
 import Pagination from '../../components/pagination/pagination.vue'
 export default {
@@ -432,7 +431,7 @@ export default {
             }
     },
     GetNews () {
-      axios
+      this.$axios
         .get(process.env.baseUrl + 'api/news_events/index')
         .then((response) => {
           this.News = response.data
@@ -447,7 +446,7 @@ export default {
     },
     Delete () {
       var id = this.$el.getAttribute('data-blog-id')
-      axios
+      this.$axios
         .delete(process.env.baseUrl + 'api/news_events/delete/' + id)
         .then(() => {
           this.deleteDialog = false
@@ -462,7 +461,7 @@ export default {
     },
     Edit (id) {
       this.editDialog = true
-      axios
+      this.$axios
         .get(process.env.baseUrl + 'api/news_events/show/' + id)
         .then((response) => {
           this.id = response.data.id
@@ -483,7 +482,7 @@ export default {
         //   date:date
         // }
         // json_data = JSON.stringify(json_data);
-        axios
+        this.$axios
           .put(process.env.baseUrl + 'api/news_events/update/' + this.id, {
             title: this.title,
             image: this.mainImage,

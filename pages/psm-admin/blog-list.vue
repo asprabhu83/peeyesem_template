@@ -358,7 +358,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 import AddBlog from '../../components/CreateBlog.vue'
 export default {
   layout:'admin-header-layout',
@@ -413,7 +412,7 @@ export default {
             }
     },
     GetBlogs () {
-      axios
+      this.$axios
         .get(process.env.baseUrl + 'api/blog/index')
         .then((response) => {
           this.Blogs = response.data
@@ -428,7 +427,7 @@ export default {
     },
     Delete () {
       var id = this.$el.getAttribute('data-blog-id')
-      axios
+      this.$axios
         .delete(process.env.baseUrl + 'api/blog/delete/' + id)
         .then(() => {
           this.deleteDialog = false
@@ -443,7 +442,7 @@ export default {
     },
     Edit (id) {
       this.editDialog = true
-      axios
+      this.$axios
         .get(process.env.baseUrl + 'api/blog/show/' + id)
         .then((response) => {
           this.id = response.data.id
@@ -483,7 +482,7 @@ export default {
           date:date
         }
         json_data = JSON.stringify(json_data);
-        axios
+        this.$axios
           .put(process.env.baseUrl + 'api/blog/update/' + this.id, {
             title: this.title,
             blog_image: this.blogImage,

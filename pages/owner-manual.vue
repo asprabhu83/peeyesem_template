@@ -24,7 +24,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 export default {
     data(){
         return{
@@ -85,9 +84,9 @@ export default {
     methods:{
         GetCars(){
             this.loading = true;
-            axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
-            axios.defaults.withCredentials = false;
-            axios.get(process.env.baseUrl + 'api/cars/all')
+            this.$axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+            this.$axios.defaults.withCredentials = false;
+            this.$axios.get(process.env.baseUrl + 'api/cars/all')
             .then((response) => {
              this.loading =false;
             this.$store.state.cars = response.data.cars;

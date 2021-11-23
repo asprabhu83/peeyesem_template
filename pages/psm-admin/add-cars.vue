@@ -1097,7 +1097,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 export default {
   layout:'admin-header-layout',
 
@@ -1239,7 +1238,7 @@ export default {
       document.querySelector('.tab_item' + next).classList.add('active')
     },
     GetModels () {
-      axios
+      this.$axios
         .get(process.env.baseUrl + 'api/car/types')
         .then((response) => {
           this.models = response.data.types
@@ -1249,7 +1248,7 @@ export default {
         })
     },
     GetVariant(){
-      axios
+      this.$axios
         .get(process.env.baseUrl + 'api/cars_variant/index')
         .then((response) => {
           this.variantsTypes = response.data
@@ -1265,7 +1264,7 @@ export default {
       btn.innerText = 'Loading'
       this.error = false
       if (target === '1') {
-        axios
+        this.$axios
           .post(process.env.baseUrl + 'api/store/car', {
             car_title: this.modelName,
             car_image: this.modelImage,
@@ -1287,7 +1286,7 @@ export default {
           })
       }
       if (target === '2') {
-        axios
+        this.$axios
           .post(process.env.baseUrl + 'api/store/overview', {
             car_id: this.carId,
             car_description: this.description,
@@ -1309,7 +1308,7 @@ export default {
           })
       }
       if (target === '3') {
-        axios
+        this.$axios
           .post(process.env.baseUrl + 'api/store/overview_details', {
             overview_id: this.overviewId,
             car_power: this.power,
@@ -1331,7 +1330,7 @@ export default {
           })
       }
       if (target === '4') {
-        axios
+        this.$axios
           .post(process.env.baseUrl + 'api/store/highlight', {
             car_id: this.carId,
             highlight_title: this.highlight
@@ -1352,7 +1351,7 @@ export default {
           })
       }
       if (target === '5') {
-        axios
+        this.$axios
           .post(process.env.baseUrl + 'api/store/highlight_post', {
             highlight_id: this.highlightId,
             post_title: this.postTitle,
@@ -1378,7 +1377,7 @@ export default {
           })
       }
       if (target === '6') {
-        axios
+        this.$axios
           .post(process.env.baseUrl + 'api/store/gallery', {
             car_id: this.carId,
             gallery_image: this.galleryImage
@@ -1400,7 +1399,7 @@ export default {
           })
       }
       if (target === '7') {
-        axios
+        this.$axios
           .post(process.env.baseUrl + 'api/store/videolink', {
             car_id: this.carId,
             youtube_link: this.youtubeLink
@@ -1420,7 +1419,7 @@ export default {
           })
       }
       if (target === '8') {
-        axios
+        this.$axios
           .post(process.env.baseUrl + 'api/store/carcolor', {
             car_id: this.carId,
             color_code: this.colorCode,
@@ -1448,7 +1447,7 @@ export default {
           })
       }
       if (target === '9') {
-        axios
+        this.$axios
           .post(process.env.baseUrl + 'api/store/specs', {
             car_id: this.carId,
             spec_type: this.specType,
@@ -1474,7 +1473,7 @@ export default {
           })
       }
       if (target === '10') {
-        axios
+        this.$axios
           .post(process.env.baseUrl + 'api/store/variant', {
             car_id: this.carId,
             feature_title: this.feutureTitle,
@@ -1496,7 +1495,7 @@ export default {
           })
       }
       if (target === '11') {
-        axios
+        this.$axios
           .post(process.env.baseUrl + 'api/store/feature_model', {
             features_variant_id: this.featureVariantId,
             feature_type: this.feutureType
@@ -1517,7 +1516,7 @@ export default {
           })
       }
       if (target === '12') {
-        axios
+        this.$axios
           .post(process.env.baseUrl + 'api/store/variant_feature', {
             features_model_id: this.featureModelId,
             variant_feature_type: this.variantFeutureType,
@@ -1542,7 +1541,7 @@ export default {
           })
       }
       if (target === '13') {
-        axios
+        this.$axios
           .post(process.env.baseUrl + 'api/store/pricelist', {
             car_id: this.carId,
             features_variant_id: this.featureVariantId,

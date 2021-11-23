@@ -358,7 +358,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 import AddTesimonial from '~/components/CreateTestimonial.vue'
 export default {
   layout:'admin-header-layout',
@@ -388,7 +387,7 @@ export default {
   },
   methods: {
     GetTestimonials () {
-      axios
+      this.$axios
         .get(process.env.baseUrl + 'api/testimonial/index')
         .then((response) => {
           this.testimonials = response.data
@@ -403,7 +402,7 @@ export default {
     },
     Delete () {
       var id = this.$el.getAttribute('data-testimonial-id')
-      axios
+      this.$axios
         .delete(process.env.baseUrl + 'api/testimonial/delete/' + id)
         .then(() => {
           this.deleteDialog = false
@@ -418,7 +417,7 @@ export default {
     },
     Edit (id) {
       this.editDialog = true
-      axios
+      this.$axios
         .get(process.env.baseUrl + 'api/testimonial/show/' + id)
         .then((response) => {
           this.id = response.data.id
@@ -459,7 +458,7 @@ export default {
           date:date
         }
         json_data = JSON.stringify(json_data);
-        axios
+        this.$axios
           .put(process.env.baseUrl + 'api/testimonial/update/' + this.id, {
             id: this.id,
             quote: this.quote,

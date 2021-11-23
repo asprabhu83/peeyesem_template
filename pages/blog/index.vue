@@ -20,7 +20,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 export default {
     data(){
         return{
@@ -35,7 +34,7 @@ export default {
     },
     methods:{
         GetBlog(){
-            axios
+            this.$axios
             .get(process.env.baseUrl + 'api/blog/index')
             .then((response) => {
             this.$store.state.BlogsData = response.data

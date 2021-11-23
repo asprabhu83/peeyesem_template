@@ -153,7 +153,7 @@
                         text-green-800
                       "
                     >
-                      {{userRole.permission_id}}
+                      {{userRole.permission_id.toString()}}
                     </span>
                   </td>
                   <td
@@ -319,7 +319,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 import AddUserRole from '~/components/CreateUserRole.vue'
 export default {
   layout:'admin-header-layout',
@@ -354,7 +353,7 @@ export default {
   },
   methods: {
     GetUserRoles () {
-      axios
+      this.$axios
         .get(process.env.baseUrl + 'api/userrole/index')
         .then((response) => {
           this.userRoles = response.data
@@ -369,7 +368,7 @@ export default {
     },
     Delete () {
       var id = this.$el.getAttribute('data-role-id')
-      axios
+      this.$axios
         .delete(process.env.baseUrl + 'api/userrole/delete/' + id)
         .then(() => {
           this.deleteDialog = false
@@ -380,7 +379,7 @@ export default {
         })
     },
     GetPermission () {
-      axios.get(process.env.baseUrl + 'api/permission/index')
+      this.$axios.get(process.env.baseUrl + 'api/permission/index')
         .then((response) => {
           this.permNames = response.data
         }).catch((error) => {
@@ -392,7 +391,7 @@ export default {
     },
     Edit (id) {
       this.editDialog = true
-      axios
+      this.$axios
         .get(process.env.baseUrl + 'api/userrole/show/' + id)
         .then((response) => {
           this.id = response.data.id
@@ -418,7 +417,7 @@ export default {
       }
       if (err === 0) {
         this.permissions = JSON.stringify(this.permissions)
-        axios
+        this.$axios
           .put(process.env.baseUrl + 'api/userrole/update/' + this.id, {
             id: this.id,
             user_role: this.userRole,

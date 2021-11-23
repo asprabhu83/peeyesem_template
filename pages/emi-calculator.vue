@@ -241,7 +241,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 import Loading from '../components/Loading.vue'
 export default {
     components:{
@@ -277,7 +276,7 @@ export default {
     },
     methods:{
         GetModels(){
-            axios.get(process.env.baseUrl + 'api/cars/all')
+            this.$axios.get(process.env.baseUrl + 'api/cars/all')
             .then((res)=>{
                 this.$store.state.cars = res.data.cars;
                 this.$store.state.originalDataCars = res.data.cars;
@@ -287,7 +286,7 @@ export default {
         },
         filterModel(){
             if(this.vehicle !== ''){
-                axios.get(process.env.baseUrl + 'api/show/car/' + this.vehicle)
+                this.$axios.get(process.env.baseUrl + 'api/show/car/' + this.vehicle)
                 .then((res)=>{
                     this.variantList = res.data.feature_model;
                 })

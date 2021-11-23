@@ -107,7 +107,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 export default {
     data(){
         return{
@@ -124,7 +123,7 @@ export default {
                 message:this.message
             }
             data_value = JSON.stringify(data_value);
-            axios.post(process.env.baseUrl + 'api/car_form/store',{
+            this.$axios.post(process.env.baseUrl + 'api/car_form/store',{
                 full_name:this.name,
                 email_id:this.email,
                 mobile_no:this.mobile,

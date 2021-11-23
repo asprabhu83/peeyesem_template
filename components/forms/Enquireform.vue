@@ -154,7 +154,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 export default {
     data(){
         return{
@@ -224,9 +223,9 @@ export default {
     },
     methods:{
         GetModels(){
-            axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
-            axios.defaults.withCredentials = false;
-            axios.get(process.env.baseUrl + 'api/cars/all')
+            this.$axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+            this.$axios.defaults.withCredentials = false;
+            this.$axios.get(process.env.baseUrl + 'api/cars/all')
             .then((res)=>{
                 this.$store.state.cars = res.data.cars;
                 this.$store.state.originalDataCars = res.data.cars;
@@ -241,7 +240,7 @@ export default {
                 city:this.city
             }
             data_value = JSON.stringify(data_value);
-            axios.post(process.env.baseUrl + 'api/car_form/store',{
+            this.$axios.post(process.env.baseUrl + 'api/car_form/store',{
                 full_name:this.name,
                 email_id:this.email,
                 mobile_no:this.mobile,
