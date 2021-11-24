@@ -234,11 +234,11 @@ export default {
                 }
             }
             if(err == 0){
-                this.$axios.post(process.env.baseUrl + 'api/accessories/store',{
+                this.$axios.post(process.env.baseUrl + 'api/car_form/store',{
                     full_name:this.name,
                     email_id:this.email,
-                    page:'accessories',
-                    mobile:this.mobile
+                    form_type:'accessories',
+                    mobile_no:this.mobile
                 }).then((res)=>{
                     this.name = '';
                     this.email = '';
