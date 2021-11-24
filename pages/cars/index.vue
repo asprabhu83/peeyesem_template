@@ -22,7 +22,7 @@
              </div>
       </div>
       <section class="car_title_sticky_header">
-          <div class="car_title_sec my-5">
+          <div class="car_title_sec my-4">
             <div class="car_title">
                 {{car.name}}
                 <hr/>
