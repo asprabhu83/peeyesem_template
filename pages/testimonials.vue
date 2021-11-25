@@ -116,6 +116,14 @@ export default {
         width: 96%!important;
     }
 }
+@media only screen and (min-width: 1270px) and (max-width: 1366px){
+    .testimonial_sec{
+        width: 95%!important;
+    }
+    .testimonial_sec .item{
+        margin: 16px!important;
+    }
+}
 .testimonialModal{
     font-size: 19px;
     font-weight: 500;

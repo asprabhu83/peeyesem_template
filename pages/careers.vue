@@ -62,6 +62,16 @@ export default {
         width: 95%!important;
     }
 }
+@media only screen and (min-width: 1367px) and (max-width: 1600px){
+    .item{
+        width: 33%!important;
+    }
+}
+@media only screen and (min-width: 1270px) and (max-width: 1366px){
+    .item{
+        width: 44%!important;
+    }
+}
 .heading{
     font-size: 24px;
     font-weight: 600;

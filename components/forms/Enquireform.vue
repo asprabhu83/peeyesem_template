@@ -5,7 +5,7 @@
                         <div class="error py-3 text-green-500" v-if="success == true">Success</div>
                         <div class="error py-3 text-red-500" v-if="error == true">Invalid Data</div>
                     </div>
-                     <div class="mb-4 mt-4">
+                     <div class="mb-4 mt-4 input_box">
                          <label
                             class="block text-gray-700 text-sm font-bold mb-2"
                             for="name"
@@ -32,7 +32,7 @@
                         v-model="name"
                         />
                     </div>
-                    <div class="mb-4 ">
+                    <div class="mb-4  input_box">
                         <label
                             class="block text-gray-700 text-sm font-bold mb-2"
                             for="email"
@@ -59,7 +59,7 @@
                         v-model="email"
                         />
                     </div>
-                    <div class="mb-4 ">
+                    <div class="mb-4  input_box">
                         <label
                             class="block text-gray-700 text-sm font-bold mb-2"
                             for="mobile"
@@ -86,7 +86,7 @@
                         v-model="mobile"
                         />
                     </div>
-                    <div class="mb-4">
+                    <div class="mb-4 input_box">
                         <label
                             class="block text-gray-700 text-sm font-bold mb-2"
                             for="vehicle_model"
@@ -116,7 +116,37 @@
                                 :key="model.id" >{{model.car_title}}</option>
                             </select>
                     </div>
-                    <div class="mb-12">
+                    <div class="mb-4 input_box">
+                        <label
+                            class="block text-gray-700 text-sm font-bold mb-2"
+                            for="fuel_type"
+                            >
+                            Fuel Type
+                         </label>
+                      <select
+                                class="
+                                shadow-md
+                                appearance-none
+                                border
+                                rounded
+                                w-full
+                                py-2
+                                px-3
+                                text-gray-700
+                                cursor-pointer
+                                leading-tight
+                                focus:outline-none
+                                focus:shadow-outline
+                                "
+                                id="fuel_type"
+                                v-model="fuelType"
+                            >
+                            <option class="text-xl " value="">Select Fuel Type</option>
+                            <option class="text-xl" :value="model.name" v-for="model in FuelTypeList"
+                                :key="model.id" >{{model.name}}</option>
+                            </select>
+                    </div>
+                    <div class="mb-6 input_box">
                         <label
                             class="block text-gray-700 text-sm font-bold mb-2"
                             for="city"
@@ -146,7 +176,15 @@
                                 :key="city.id" >{{city.name}}</option>
                             </select>
                     </div>
-                    <div class="btn_box">
+                    <div class="my-4">
+                        <div class="checkbox_sec text-center">
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" v-model="agreement" class="form-checkbox">
+                                <span class="ml-2 cursor-pointer">I have read & understood the disclaimer</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="btn_box text-center">
                         <button type="button" @click="Enquire" class="enquire_btn">Submit</button>
                     </div>
                  </form>
@@ -212,6 +250,8 @@ export default {
             mobile:'',
             vehicleModel:'',
             city:'',
+            fuelType:'',
+            agreement:false,
             success:false,
             error:false
         }
@@ -237,7 +277,8 @@ export default {
             this.success = false;
             this.error = false;
             var data_value = {
-                city:this.city
+                city:this.city,
+                fuel_type:this.fuelType
             }
             data_value = JSON.stringify(data_value);
             this.$axios.post(process.env.baseUrl + 'api/car_form/store',{
@@ -254,6 +295,7 @@ export default {
                     this.mobile = '';
                     this.vehicleModel = '';
                     this.city = '';
+                    this.fuelType = '';
                     this.success = true
                 }
             }).catch((err)=>{
@@ -266,14 +308,19 @@ export default {
 </script>
 
 <style scoped>
+   form .input_box{
+       width: 46%;
+       margin-left: 15px;
+       margin-right: 15px;
+       display: inline-block;
+   }
    .enquire_btn{
-        padding: 8px 25px;
+        padding: 8px 55px;
         background: #002c5f;
         color: white;
         outline: none;
         border: none;
         cursor: pointer;
         border-radius: 4px;
-        width: 100%;
    }
 </style>

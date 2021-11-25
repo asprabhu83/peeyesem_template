@@ -14,7 +14,43 @@
                                             <nuxt-link class="knw_mre_btn" :to="banner.slider_link">Know More</nuxt-link>
                                         </div>
                                         <div>
-                                            <nuxt-link class="knw_mre_btn" :to="JSON.parse(banner.data_value).test_dive_link"> Test Drive</nuxt-link>
+                                            <nuxt-link class="knw_mre_btn" :to="JSON.parse(banner.data_value).test_dive_link" v-if="banner.id !== 8"> Test Drive</nuxt-link>
+                                        </div>
+                                    </div>
+                                </div>
+                            </swiper-slide>
+                            <swiper-slide>
+                                <div class="carousel_img_sec">
+                                    <div style="height:736px;">
+                                        <video class="desktopVideo" height="100%" width="100%" id="7" preload="auto" loop muted autoplay playsinline> 
+                                            <source :src="require('@/assets/img/cars/videos/n-line.webm')" type="video/webm">
+                                                    Your browser does not support HTML5 video.
+                                        </video>
+                                        <div class="know_more_btn_sec">
+                                            <div>
+                                                <nuxt-link class="knw_mre_btn" to="/cars/hyundai-i20-n-line">Know More</nuxt-link>
+                                            </div>
+                                            <div>
+                                                <nuxt-link class="knw_mre_btn" to="/contact-us/test-drive"> Test Drive</nuxt-link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </swiper-slide>
+                             <swiper-slide>
+                                <div class="carousel_img_sec">
+                                    <div style="height:736px;">
+                                        <video class="desktopVideo" height="100%" width="100%" id="7" preload="auto" loop muted autoplay playsinline> 
+                                            <source :src="require('@/assets/img/cars/videos/alcazar.webm')" type="video/webm">
+                                                    Your browser does not support HTML5 video.
+                                        </video>
+                                        <div class="know_more_btn_sec">
+                                            <div>
+                                                <nuxt-link class="knw_mre_btn" to="/cars/hyundai-alcazar">Know More</nuxt-link>
+                                            </div>
+                                            <div>
+                                                <nuxt-link class="knw_mre_btn" to="/contact-us/test-drive"> Test Drive</nuxt-link>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -84,7 +120,7 @@
             </div>
         </div>
         <div class="card_box  flex flex-wrap mt-16 mx-auto" id="isotope">
-            <div class="car_box_item" v-for="car in this.$store.state.cars" :key="car.id">
+            <div class="car_box_item" v-for="car in $store.state.cars" :key="car.id">
                 <nuxt-link :to="'/cars/'+ car.car_title.replace(/\s+/g, '-').toLowerCase()" class="text-center block car_image_box cursor-pointer" >
                     <img :src="baseUrl + 'images/' + car.car_image" alt="" >
                 </nuxt-link>
@@ -136,13 +172,13 @@
              <div class="blog_heading text-capitalize text-center py-5 font-bold text-3xl">ICOTY AWARDS <hr class="w-1/12 mx-auto bg-black h-0.5" style="background-color:black!important;"/></div>
             <div class="card_box">
                 <div class="list_detail">
-                    <div>i10 - 2008</div>
-                    <div>Grand i10 - 2014</div>
-                    <div>Elite i20 - 2015</div>
-                    <div>Creta - 2016</div>
-                    <div>Verna - 2018</div>
-                    <div>Venue - 2020</div>
-                    <div>The all-new-i20 - 2021</div>
+                    <div><span>i10</span> - 2008</div>
+                    <div><span>Grand i10</span> - 2014</div>
+                    <div><span>Elite i20</span> - 2015</div>
+                    <div><span>Creta</span> - 2016</div>
+                    <div><span>Verna</span> - 2018</div>
+                    <div><span>Venue</span> - 2020</div>
+                    <div><span>The all-new-i20</span> - 2021</div>
                 </div>
             </div>
         </div>
@@ -364,12 +400,28 @@ export default {
             console.log(error)
             })
         },
+        sortedArray() {
+            let sortedRecipes = this.$store.state.cars;
+            
+            sortedRecipes = sortedRecipes.sort((a,b) => {
+                let fa = a.car_type.toLowerCase(), fb = b.car_type.toLowerCase();
+                if (fa < fb) {
+                    return -1
+                }
+                if (fa > fb) {
+                    return 1
+                }
+                return 0
+            })
+            this.$store.state.cars = sortedRecipes;
+        },
         GetCars(){
             this.loading = true;
             this.$axios.get(process.env.baseUrl + 'api/cars/all')
             .then((response) => {
             this.$store.state.cars = response.data.cars;
             this.$store.state.originalDataCars = response.data.cars;
+            this.sortedArray();
             setTimeout(()=>{
               this.loading = false;
             },2000)
@@ -407,7 +459,6 @@ export default {
         },
         categoryNames(){
            var items =  this.$store.state.cars.map((item)=>{return item.car_type});
-           items.reverse()
            var category = ['ALL',...new Set(items)]
            this.$store.state.carCategory = category;
            
@@ -552,6 +603,10 @@ export default {
         min-width: 200px!important;
         padding: 9px 23px!important;
     }
+}
+.icoty_awards .list_detail span{
+    display: inline-block;
+    min-width: 148px;
 }
 .icoty_awards .card_box{
     box-shadow: 0 2px 10px 4px rgb(0 0 0/15%);

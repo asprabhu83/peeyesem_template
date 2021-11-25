@@ -49,6 +49,14 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width: 1270px) and (max-width: 1366px){
+    .gallery_item_box{
+        width: 90%!important;
+    }
+    .gallery_item_box .item{
+        width: 29%!important;
+    }
+}
 @media only screen and (min-width: 760px) and (max-width: 960px){
     .gallery_item_box{
         width: 95%!important;

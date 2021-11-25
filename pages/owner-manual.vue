@@ -102,6 +102,11 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width: 1367px) and (max-width: 1600px){
+    .car_item_sec{
+        width: 80%!important;
+    }
+}
 @media only screen and (min-width: 760px) and (max-width: 960px){
     .img_sec .heading{
         font-size: 40px!important;

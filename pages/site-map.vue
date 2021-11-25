@@ -9,28 +9,11 @@
               <div class="card_items_area">
                 <b-card-header role="tab">
                     <a block v-b-toggle.accordion-1>
-                        <h5 class="mb-0">Find a Car <span class="when-opened"><i class="fas fa-angle-up rotate-icon"></i></span><span class="when-closed"><i class="fas fa-angle-down rotate-icon"></i></span></h5>
+                        <h5 class="mb-0">New Cars <span class="when-opened"><i class="fas fa-angle-up rotate-icon"></i></span><span class="when-closed"><i class="fas fa-angle-down rotate-icon"></i></span></h5>
                     </a>
                 </b-card-header>
                 <b-collapse id="accordion-1" accordion="my-accordion" role="tabpanel">
                     <b-card-body>
-                        <div class="card_item">
-                            <b>ALL </b>
-                            <b>Hatchback</b>
-                            <nuxt-link to="/cars/hyundai-santro">Santro</nuxt-link>
-                            <nuxt-link to="/cars/hyundai-all-new-i20"> All New i20</nuxt-link>
-                            <nuxt-link to="/cars/hyundai-grand-i10-nios"> Grand i10 NIOS</nuxt-link>
-                            <nuxt-link to="/cars/hyundai-i20-n-line"> i20 N Line</nuxt-link>
-                            <b>Sedan</b>
-                            <nuxt-link to="/cars/hyundai-aura"> Aura</nuxt-link>
-                            <nuxt-link to="/cars/hyundai-verna"> All New Verna</nuxt-link>
-                            <nuxt-link to="/cars/hyundai-all-new-elantra"> Elantra</nuxt-link>
-                            <b>Suv</b>
-                            <nuxt-link to="/cars/hyundai-venue"> Venue</nuxt-link>
-                            <nuxt-link to="/cars/hyundai-creta"> All New Creta</nuxt-link>
-                            <nuxt-link to="/cars/hyundai-alcazar"> Alcazar</nuxt-link>
-                            <nuxt-link to="/cars/hyundai-all-new-tucson"> Tucson</nuxt-link>
-                        </div>
                           <div class="card_item">
                             <b>Hatchback</b>
                             <nuxt-link to="/cars/hyundai-santro">Santro</nuxt-link>
@@ -57,7 +40,7 @@
               <div class="card_items_area">
                     <b-card-header role="tab">
                         <a block v-b-toggle.accordion-2>
-                            <h5 class="mb-0">Buy a Car <span class="when-opened"><i class="fas fa-angle-up rotate-icon"></i></span><span class="when-closed"><i class="fas fa-angle-down rotate-icon"></i></span></h5>
+                            <h5 class="mb-0">Used Cars <span class="when-opened"><i class="fas fa-angle-up rotate-icon"></i></span><span class="when-closed"><i class="fas fa-angle-down rotate-icon"></i></span></h5>
                         </a>
                     </b-card-header>
                     <b-collapse id="accordion-2" accordion="my-accordion" role="tabpanel">

@@ -377,8 +377,8 @@ export default {
     .form_sec .input_box{
         margin: 14px!important;
     }
-    .form_sec .input_box.text_box{
-        margin: 20px!important;
+    .form_sec{
+        width: 68%!important;
     }
 }
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
@@ -388,8 +388,8 @@ export default {
     .form_sec .input_box{
         margin: 12px!important;
     }
-    .form_sec .input_box.text_box{
-        margin: 20px!important;
+    .form_sec{
+        width: 80%!important;
     }
     .price_table_sec{
         width: 60%!important;

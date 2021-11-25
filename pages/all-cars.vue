@@ -125,7 +125,6 @@ export default {
         },
         filterItems(name){
           var newItems =  this.$store.state.originalDataCars.filter((item)=> item.car_type == name);
-          newItems.reverse()
           this.$store.state.cars = newItems;
           if(name == 'ALL'){
               this.$store.state.cars = this.$store.state.originalDataCars

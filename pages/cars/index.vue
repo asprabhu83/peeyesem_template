@@ -1,10 +1,20 @@
 <template>
   <div class="single_page_car_sec">
       <div class="car_poster_sec">
-          <img :src="car.baseUrl + 'images/' + car.poster_image"  />
+          <img :src="car.baseUrl + 'images/' + car.poster_image" v-if="loading == false" />
           <div class="car_poster_details" v-if="car.name == 'Hyundai Santro'">
               <div class="title1 text-uppercase">Santro</div>
               <div class="title2">India's Favourite Family Car</div>
+          </div>
+          <div class="car_poster_details" v-if="car.name == 'Hyundai CRETA'">
+              <div class="title1 ">All-new CRETA</div>
+          </div>
+          <div class="car_poster_details" v-if="car.name == 'Hyundai Aura'">
+              <div class="title1 text-uppercase">Hyundai AURA</div>
+              <div class="title2">Makes You Shine</div>
+          </div>
+          <div class="car_poster_details" v-if="car.name == 'Hyundai All New Elantra'">
+              <div class="title1 text-uppercase text-white drop-shadow-xl">ELANTRA</div>
           </div>
       </div>
       <div class="mt-3 mb-16">
@@ -15,8 +25,8 @@
               <a :href="e_brochure_link" :download="e_brochure_link"><font-awesome-icon icon="download"  size="1x" class="text-white  mr-2" />e-Brochure</a>
           </div>
       </div>
-      <div class=" pb-5" >
-             <div class="car_type_main_title">Enquire Now <hr /></div>
+      <div class=" pb-5" style="background: #e6eaef;" >
+             <div class="car_type_main_title enquire">Enquire Now <hr /></div>
              <div class="form_component">
                  <EnquireForm />
              </div>
@@ -42,7 +52,7 @@
                     <p>{{car.description}}</p>
                   </div>
                   <div class="img_sec">
-                    <img :src="car.baseUrl + 'images/' + car.overview_image"  />
+                    <img :src="car.baseUrl + 'images/' + car.overview_image" :style="car.id == '14' ? 'transform:scaleX(-1);' : '' " />
                   </div>
               </div>
               <div class="price_details my-16">
@@ -540,6 +550,7 @@ export default {
            formModal:false,
            e_brochure_link:'',
            car:{
+              id:'',
               baseUrl:process.env.baseUrl, 
               name:'',
               price:'',
@@ -842,7 +853,7 @@ export default {
             const [video] = videos;
             const {youtube_link} = video;
             const {car_price} = price
-
+            this.car.id = car.id;
             this.car.name=car_title;
             this.car.price=car_price;
             this.car.poster_image=poster_image;
@@ -952,9 +963,19 @@ export default {
        text-align: center;
     }
 }
+@media only screen and (min-width: 1367px) and (max-width: 1600px){
+    .car_poster_sec img{
+        min-height: 461.05px!important;
+        object-fit: cover;
+    }
+}
+.car_poster_sec img{
+        min-height: 651.05px;
+        object-fit: cover;
+}
 .form_component{
-    width: 40%;
-    margin: 30px auto;
+    width: 55%;
+    margin: 0px auto;
 }
 .main_tab_sec{
     display: flex;
@@ -1068,6 +1089,13 @@ export default {
         padding: 4px 20px!important;
         font-size: 12px!important;
     }
+    .main_tab_sec{
+        margin: 15px auto!important;
+    }
+    .car_poster_sec img{
+        min-height: 391.77px!important;
+        object-fit: cover;
+    }
 }
 
 .car_spec_table thead{
@@ -1142,9 +1170,9 @@ export default {
     max-width: 100%;
 }
 .car_gallery_item{
-    width: 75%;
-    margin: 60px auto;
+    margin: 60px 0;
 }
+
 .car_gallery_sec .title, .car_video_sec .title, .car_colour_sec .title{
     text-align: center;
     font-size: 28px;
@@ -1156,6 +1184,10 @@ export default {
     font-size: 28px;
     font-weight: 700;
     margin: 40px 0;
+}
+.car_type_main_title.enquire{
+    margin: 0;
+    padding: 40px 0;
 }
 .car_type_main_title hr{
     width: 8%;
@@ -1338,6 +1370,9 @@ export default {
 }
 /* Mobile Fixes */
 @media only screen and (min-width:300px) and (max-width:600px){
+    .car_poster_sec img{
+        min-height: revert!important;
+    }
     .form_component{
         width: 90%!important;
     }

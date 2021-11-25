@@ -444,7 +444,9 @@ export default {
 
         })
 
-        this.GetHeaderData();
+        if (this.$store.state.HeaderData.logo == ''){
+            this.GetHeaderData();
+        }
 
 
         // Menu End
