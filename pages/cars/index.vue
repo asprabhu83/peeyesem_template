@@ -968,6 +968,9 @@ export default {
         min-height: 461.05px!important;
         object-fit: cover;
     }
+    .form_component{
+        width: 62%!important;
+    }
 }
 .car_poster_sec img{
         min-height: 651.05px;
@@ -1026,6 +1029,9 @@ export default {
 }
 
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
+    .form_component{
+        width: 75%!important;
+    }
     .car_poster_details{
         top: 12%!important;
         left: 4%!important;
