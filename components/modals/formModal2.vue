@@ -194,6 +194,21 @@ export default {
         closeModal(){
             this.$emit('closeModal', 'modal2')
         },
+        sortedArray() {
+            let sortedRecipes = this.$store.state.cars;
+            
+            sortedRecipes = sortedRecipes.sort((a,b) => {
+                let fa = a.car_type.toLowerCase(), fb = b.car_type.toLowerCase();
+                if (fa < fb) {
+                    return -1
+                }
+                if (fa > fb) {
+                    return 1
+                }
+                return 0
+            })
+            this.$store.state.cars = sortedRecipes;
+        },
         GetModels(){
             this.$axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
             this.$axios.defaults.withCredentials = false;
@@ -201,6 +216,7 @@ export default {
             .then((res)=>{
                 this.$store.state.cars = res.data.cars;
                 this.$store.state.originalDataCars = res.data.cars;
+                this.sortedArray();
             }).catch((err)=>{
                 console.log(err);
             })
