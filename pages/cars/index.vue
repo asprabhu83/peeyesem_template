@@ -740,10 +740,12 @@ export default {
         },
         handleScroll(){
             var car_header = document.querySelector('.car_title_sticky_header');
-            if(pageYOffset > 640){
-                car_header.classList.add('sticky');
-            }else{
-                car_header.classList.remove('sticky');
+            if(window.screen.width > 600){
+                if(pageYOffset > 640){
+                    car_header.classList.add('sticky');
+                }else{
+                    car_header.classList.remove('sticky');
+                }
             }
             // if(pageYOffset < 1045){
             //     this.car_tab_index = 0
@@ -888,6 +890,9 @@ export default {
 
 <style scoped>
 @media only screen and (min-width: 760px) and (max-width: 960px){
+    .form_component{
+        width: 93%!important;
+    }
     .car_poster_details .title1{
         font-size: 32px!important;
     }
@@ -933,6 +938,9 @@ export default {
     }
 }
 @media only screen and (min-width: 961px) and (max-width: 1030px){
+    .form_component{
+        width: 85%!important;
+    }
     .car_poster_details .title2{
         font-size: 19px!important;
     }
@@ -1411,7 +1419,7 @@ export default {
         user-select: none;
     }
     .car_poster_details .title2{
-        font-size: 10px;
+        font-size: 6px;
         font-weight: 600;
         user-select: none;
     }

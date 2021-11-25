@@ -278,6 +278,7 @@ export default {
         if(this.$store.state.cars.length == 0){
             this.GetModels();
         }
+        window.scrollTo(0, 0)
     },
     methods:{
         sortedArray() {
@@ -419,6 +420,7 @@ export default {
 .notice{
     text-align: center;
     font-weight: 600;
+    padding: 10px;
 }
 .notice li{
     display: flex;

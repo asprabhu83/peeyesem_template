@@ -180,7 +180,7 @@
                         <div class="checkbox_sec text-center">
                             <label class="inline-flex items-center">
                                 <input type="checkbox" v-model="agreement" class="form-checkbox">
-                                <span class="ml-2 cursor-pointer">I have read & understood the disclaimer</span>
+                                <span class="ml-2 cursor-pointer check_box_text">I have read & understood the disclaimer</span>
                             </label>
                         </div>
                     </div>
@@ -324,6 +324,19 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width: 760px) and (max-width: 960px){
+    form .input_box{
+        width: 45%!important;
+    }
+}
+@media only screen and (min-width:300px) and (max-width:600px){
+    form .input_box{
+        width: 92%!important;
+    }
+    .check_box_text{
+        font-size: 14px!important;
+    }
+}
    form .input_box{
        width: 46%;
        margin-left: 15px;
