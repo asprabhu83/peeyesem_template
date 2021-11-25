@@ -962,6 +962,9 @@ export default {
     .car_spec_tab_box .tab_item{
        text-align: center;
     }
+    .car_poster_sec img{
+        min-height: revert!important;
+    }
 }
 @media only screen and (min-width: 1367px) and (max-width: 1600px){
     .car_poster_sec img{

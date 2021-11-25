@@ -21,7 +21,7 @@
                             </swiper-slide>
                             <swiper-slide>
                                 <div class="carousel_img_sec">
-                                    <div style="height:736px;">
+                                    <div class="banner_video_box" >
                                         <video class="desktopVideo" height="100%" width="100%" id="7" preload="auto" loop muted autoplay playsinline> 
                                             <source :src="require('@/assets/img/cars/videos/n-line.webm')" type="video/webm">
                                                     Your browser does not support HTML5 video.
@@ -39,7 +39,7 @@
                             </swiper-slide>
                              <swiper-slide>
                                 <div class="carousel_img_sec">
-                                    <div style="height:736px;">
+                                    <div class="banner_video_box" >
                                         <video class="desktopVideo" height="100%" width="100%" id="7" preload="auto" loop muted autoplay playsinline> 
                                             <source :src="require('@/assets/img/cars/videos/alcazar.webm')" type="video/webm">
                                                     Your browser does not support HTML5 video.
@@ -565,8 +565,19 @@ export default {
         padding: 6px 23px!important;
         font-size: 16px!important;
     }
+    .banner_video_box{
+        height: 297px!important;
+    }
+}
+@media only screen and (min-width: 1367px) and (max-width: 1600px){
+    .banner_video_box{
+        height: 589.15px!important;
+    }
 }
 @media only screen and (min-width: 961px) and (max-width: 1030px){
+    .banner_video_box{
+        height: 396.38px!important;
+    }
     .cars_product_section .car_box_item{
         width: 33.33%!important;
     }
@@ -603,6 +614,9 @@ export default {
         min-width: 200px!important;
         padding: 9px 23px!important;
     }
+}
+.banner_video_box{
+    height: 736.64px;
 }
 .icoty_awards .list_detail span{
     display: inline-block;
@@ -658,6 +672,9 @@ export default {
     .blog_post_button{
         font-size: 13px!important;
         padding: 6px 20px!important;
+    }
+    .banner_video_box{
+        height: 476px!important;
     }
 }
 .blog_post_button{
@@ -735,6 +752,9 @@ export default {
     .btn_box{
         width: 100%;
         padding: 40px 0;
+    }
+    .banner_video_box{
+        height: 139px!important;
     }
     .book_form_box{
         flex-wrap: wrap;

@@ -236,6 +236,11 @@
       <div class="btn_box">
           <button type="button" @click="calculate">Calculate</button>
       </div>
+      <div class="my-5">
+          <ul class="notice">
+              <li><font-awesome-icon icon="star-of-life"  size="1x" class="star_icon mx-2" /> Above mentioned prices are MRP. Package applicable for both diesel and petrol variants.</li>
+          </ul>
+      </div>
       <Loading v-if="loading == true" />
   </div>
 </template>
@@ -410,6 +415,18 @@ export default {
     .price_table_sec{
         width: 60%!important;
     }
+}
+.notice{
+    text-align: center;
+    font-weight: 600;
+}
+.notice li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.notice li svg{
+    font-size: 12px;
 }
 .price_table_sec thead {
     background: #002c5f;
