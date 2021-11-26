@@ -1,6 +1,14 @@
 <template>
   <div class="my-24">
-      
+  <div class="dialog_box fixed inset-0 h-screen w-full flex justify-center items-center" v-if="setupMailDialog === true">
+      <div class="dialog_content bg-white rounded-md shadow-md">
+         <div class="my-2   flex items-center justify-between py-3 px-6"><span class="font-bold text-lg" >Setup Mail</span><font-awesome-icon icon="times"  size="1x" class="text-red-600 cursor-pointer" @click="setupMailDialog = false" /></div>
+         <SetupMail @created="GetDetails" @childDialog="childDialog"/>
+      </div>
+   </div>
+   <div class="w-10/12 mx-auto text-right mt-10">
+     <button @click="setupMailDialog = true" class=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 ml-5 px-4 rounded focus:outline-none focus:shadow-outline">Setup Mail</button>
+   </div>
   <div class="w-10/12 mx-auto mt-10">
     <div class="flex flex-col">
       <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -459,33 +467,6 @@
                   v-model="linkedInLink"
                 />
               </div>
-              <div class="mb-4">
-                <label
-                  class="block text-gray-700 text-sm font-bold mb-2"
-                  for="business_link"
-                >
-                  Google Buisness Link
-                </label>
-                <input
-                  class="
-                    shadow-md
-                    appearance-none
-                    border
-                    rounded
-                    w-full
-                    py-2
-                    px-3
-                    text-gray-700
-                    leading-tight
-                    focus:outline-none
-                    focus:shadow-outline
-                  "
-                  id="business_link"
-                  type="text"
-                  placeholder="Google Buisness Link"
-                  v-model="buisnessLink"
-                />
-              </div>
               <div class="mb-12">
                 <label
                   class="block text-gray-700 text-sm font-bold mb-2"
@@ -542,8 +523,12 @@
 </template>
 
 <script>
+import SetupMail from '../../components/forms/EnquireMail.vue'
 export default {
     layout:'admin-header-layout',
+    components:{
+      SetupMail
+    },
     data(){
         return{
             editDialog:false,
@@ -558,9 +543,16 @@ export default {
             instaLink:'',
             youtubeLink:'',
             linkedInLink:'',
-            buisnessLink:'',
+            buyCar:'',
+            insurance:'',
+            singleCar:'',
+            testDrive:'',
+            contact:'',
+            accessories:'',
+            bookService:'',
             SettingData:[],
             baseUrl:process.env.baseUrl,
+            setupMailDialog:false
         }
     },
     mounted(){
@@ -591,6 +583,9 @@ export default {
                 reader.readAsDataURL(file)
             }
         },
+        childDialog () {
+          this.setupMailDialog = false
+        },
         GetDetails(){
             this.$axios.get(process.env.baseUrl + 'api/settings/index')
             .then((res)=>{
@@ -611,7 +606,13 @@ export default {
                 this.instaLink = res.data.insta_link;
                 this.youtubeLink = res.data.youtube_link;
                 this.linkedInLink = JSON.parse(res.data.data_value).linked_in_link;
-                this.buisnessLink = JSON.parse(res.data.data_value).buisness_link;
+                this.buyCar = JSON.parse(res.data.data_value).buy_car_mail;
+                this.insurance = JSON.parse(res.data.data_value).insurance_mail;
+                this.singleCar = JSON.parse(res.data.data_value).single_car_mail;
+                this.testDrive = JSON.parse(res.data.data_value).test_drive_mail;
+                this.contact = JSON.parse(res.data.data_value).contact_mail;
+                this.accessories = JSON.parse(res.data.data_value).accessories_mail;
+                this.bookService = JSON.parse(res.data.data_value).book_service_mail;
             }).catch((err)=>{
                 console.log(err);
             })
@@ -620,8 +621,14 @@ export default {
             var btn = e.target;
             btn.innerHTML = 'Loading';
             var json_data = {
-              linked_in_link:this.linkedInLink,
-              buisness_link:this.buisnessLink
+                buy_car_mail:this.buyCar,
+                insurance_mail:this.insurance,
+                single_car_mail:this.singleCar,
+                test_drive_mail:this.testDrive,
+                contact_mail:this.contact,
+                accessories_mail:this.accessories,
+                book_service_mail:this.bookService,
+                linked_in_link:this.linkedInLink,
             }
             json_data = JSON.stringify(json_data);
             this.$axios.put(process.env.baseUrl + 'api/settings/update/' + this.id,{
