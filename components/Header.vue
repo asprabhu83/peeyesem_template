@@ -445,7 +445,6 @@ export default {
         })
 
         if (this.$store.state.HeaderData.logo == ''){
-            location.reload();
             this.GetHeaderData();
         }
 

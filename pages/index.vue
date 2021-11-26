@@ -6,19 +6,6 @@
         <div class="row m-0 block">
             <div class="product_single_one_img">
                         <swiper class="swiper product-single-2-slider" :options="swiperOption">
-                            <swiper-slide v-for="banner in $store.state.SliderBanners" :key="banner.id">
-                                <div class="carousel_img_sec">
-                                    <img :src="baseUrl + 'images/' + banner.slider_image" alt="img" style="width:100%;" />
-                                    <div class="know_more_btn_sec">
-                                        <div>
-                                            <nuxt-link class="knw_mre_btn" :to="banner.slider_link">Know More</nuxt-link>
-                                        </div>
-                                        <div>
-                                            <nuxt-link class="knw_mre_btn" :to="JSON.parse(banner.data_value).test_dive_link" v-if="banner.id !== 8"> Test Drive</nuxt-link>
-                                        </div>
-                                    </div>
-                                </div>
-                            </swiper-slide>
                             <swiper-slide>
                                 <div class="carousel_img_sec">
                                     <div class="banner_video_box" >
@@ -33,6 +20,19 @@
                                             <div>
                                                 <nuxt-link class="knw_mre_btn" to="/contact-us/test-drive"> Test Drive</nuxt-link>
                                             </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </swiper-slide>
+                            <swiper-slide v-for="banner in $store.state.SliderBanners" :key="banner.id">
+                                <div class="carousel_img_sec">
+                                    <img :src="baseUrl + 'images/' + banner.slider_image" alt="img" style="width:100%;" />
+                                    <div class="know_more_btn_sec">
+                                        <div>
+                                            <nuxt-link class="knw_mre_btn" :to="banner.slider_link">Know More</nuxt-link>
+                                        </div>
+                                        <div>
+                                            <nuxt-link class="knw_mre_btn" :to="JSON.parse(banner.data_value).test_dive_link" v-if="banner.id !== 8"> Test Drive</nuxt-link>
                                         </div>
                                     </div>
                                 </div>
@@ -332,7 +332,10 @@ export default {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev'
                 },
-                autoplay: true,
+                 autoplay: {
+                    delay: 6000,
+                    disableOnInteraction: true
+                }
             },
 
       }

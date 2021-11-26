@@ -2,7 +2,7 @@
   <div class="my-24">
       <div class="title_heading mb-5">Terms & Conditions Of The Website</div>
       <div class="content_sec">
-          <div class="second_title">PEEYESYEM HK Motors LLP CORPORATE WEBSITE</div>
+          <div class="second_title">PEEYESYEM HK Motors LLP WEBSITE</div>
           <div class="paragraph">
               <div class="heading">Acceptance of Terms of service</div>
               <div class="cont">

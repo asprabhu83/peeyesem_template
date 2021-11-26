@@ -59,7 +59,7 @@
                   <div class="price_item">
                       <div class="price_title"><font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mr-2" />Price</div>
                       <div class="detail">
-                         Rs. {{car.price}}*
+                        Starting from Rs. {{car.price}}*
                       </div>
                   </div>
                   <div class="price_item">
