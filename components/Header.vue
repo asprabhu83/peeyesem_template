@@ -6,7 +6,7 @@
             <div class="flex logo_item_box justify-around py-3 top_sec">
                 <div>
                     <div class="header-logo">
-                        <div class="logo">
+                        <div class="logo" v-if="headerData == false">
                             <nuxt-link to="/"><img class="site_logo" :src="baseUrl + 'images/' + $store.state.HeaderData.logo"   /></nuxt-link>
                         </div>
                     </div>
@@ -416,7 +416,8 @@ export default {
             category: [],
             cartproduct: {},
             searchString: '',
-            baseUrl:process.env.baseUrl
+            baseUrl:process.env.baseUrl,
+            headerData:false
         }
     },
 
@@ -490,6 +491,7 @@ export default {
             this.$store.dispatch('products/searchProduct', this.searchString)
         },
         GetHeaderData(){
+            this.headerData = true;
             this.$axios.get(process.env.baseUrl + 'api/settings/index')
             .then((res)=>{
                 const [data] = res.data;
@@ -503,8 +505,10 @@ export default {
                 this.$store.state.HeaderData.youtubeLink = youtube_link;
                 this.$store.state.HeaderData.linkedInLink = JSON.parse(data_value).linked_in_link;
                 this.$store.state.HeaderData.buisnessLink = JSON.parse(data_value).buisness_link;
+                this.headerData = false;
             }).catch((err)=>{
                 console.log(err);
+                this.headerData = false;
             })
         }
 
