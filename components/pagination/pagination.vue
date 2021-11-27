@@ -2,7 +2,7 @@
   <div>
       <div class="btn_sec" v-if="perPage < items.length">
           <button type="button" class="next_btns" @click="Prev">Prev</button>
-          <button type="button" class="page_num" v-for="page in totalPages" :class="currentPage == page ? 'active' : ''" :key="page" @click="setPages(page),currentPage = page">{{page}}</button>
+          <button type="button" class="page_num" v-for="page in totalPages.slice(firstbtn,lastbtn)" :class="currentPage == page ? 'active' : ''" :key="page" @click="currentPage = page,setPages(page)">{{page}}</button>
           <button type="button" class="next_btns" @click="Next">Next</button>
       </div>
   </div>
@@ -18,6 +18,8 @@ export default {
             start:0,
             end:0,
             currentPage:1,
+            firstbtn:0,
+            lastbtn: 0
         }
     },
     mounted(){
@@ -41,6 +43,7 @@ export default {
             this.setPages(nextPage);
         },
         Pagination(){
+            this.lastbtn = this.items.length > 5 ? 5 : this.items.length;
             var count = this.items.length;
             var per_page = this.perPage;
             if(per_page > count){
@@ -56,6 +59,15 @@ export default {
             this.$emit('page-value',{start:this.start,end:this.end})
         },
         setPages(crnt_page){
+            var btnlength = this.totalPages.length;
+            if(this.lastbtn  == this.currentPage && this.currentPage !== btnlength){
+                this.lastbtn = this.lastbtn + 1;
+                this.firstbtn = this.firstbtn + 1;
+            }
+            if(this.firstbtn + 1 == this.currentPage && this.currentPage !== 1){
+                this.lastbtn = this.lastbtn - 1;
+                this.firstbtn = this.firstbtn - 1;
+            }
             var totalPage = this.items.length;
             var start = (crnt_page - 1)*this.perPage;
             var end = Math.min(start + this.perPage-1, totalPage - 1);
