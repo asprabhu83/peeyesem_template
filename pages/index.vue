@@ -187,7 +187,7 @@
     <section class="pb-20 blog_post_section">
         <div class="container">
             <div class="blog_heading text-capitalize text-center py-16 font-bold text-3xl">LATEST NEWS <hr class="w-1/12 mx-auto bg-black h-0.5" style="background-color:black!important;"/></div>
-            <div class="flex blog_card_body items-center justify-around">
+            <div class="flex blog_card_body  justify-around">
                 <div class="blog_card_box w-3/12 cursor-pointer" v-for="item in $store.state.BlogsData" :key="item.id">
                     <div class="photo_box">
                         <img :src="baseUrl + 'images/' + item.blog_image" style="width:100%;" />
@@ -333,7 +333,7 @@ export default {
                     prevEl: '.swiper-button-prev'
                 },
                  autoplay: {
-                    delay: 6000,
+                    delay: 8000,
                     disableOnInteraction: true
                 }
             },
