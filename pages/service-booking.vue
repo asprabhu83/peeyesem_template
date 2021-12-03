@@ -3,7 +3,7 @@
       <div class="heading text-center my-4">
           Book A Service
       </div>
-      <div class="explain text-center mt-4 mb-5">Peeyesyem Hyundai provides you with Online Service booking at your Convenient time. Peeyesyem Hyundai has the largest network of High Quality Workshops for Service and Repair of your Hyundai Cars. Make an appointment at your convenience, Pick up and Drop facility also available.
+      <div class="explain text-center mt-4 mb-5">Peeyesyem Hyundai provides you with Online Service booking at your Convenient time. Peeyesyem Hyundai has the largest network of High Quality Workshops for Service and Repair of your Hyundai Cars.<b> Make an appointment at your convenience</b>, Pick up and Drop facility also available.
           <br/>
           Book an appointment for having your Hyundai Car serviced, please fill the form. Our service team will get back to you soon.
       </div>
@@ -275,26 +275,34 @@ export default {
                 },
                 {
                     id:2,
-                    name:'Chennai'
+                    name:'Guindy'
                 },
                 {
                     id:3,
-                    name:'Trichendur'
+                    name:'Kotturpuram'
                 },
                 {
                     id:4,
-                    name:'Ramanathapuram'
+                    name:'Tondiarpet'
                 },
                 {
                     id:5,
-                    name:'Kovilpatti'
+                    name:'Trichendur'
                 },
                 {
                     id:6,
-                    name:'Tuticorin'
+                    name:'Ramanathapuram'
                 },
                 {
                     id:7,
+                    name:'Kovilpatti'
+                },
+                {
+                    id:8,
+                    name:'Tuticorin'
+                },
+                {
+                    id:9,
                     name:'Karaikudi'
                 }
             ]
@@ -423,6 +431,9 @@ export default {
     margin-left: auto;
     margin-right: auto;
     line-height: 1.6;
+}
+.explain b{
+    font-weight: 600;
 }
 .btn_box button{
     padding: 4px 20px;

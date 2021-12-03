@@ -1,8 +1,10 @@
 <template>
-  <div class="sot_price_list my-24">
-      <div class="heading_title mb-5">SHIELD OF TRUST (SOT)</div>
+  <div class="sot_price_list mb-24">
+      <div class="poster_img_sec">
+          <img :src="require('@/assets/img/cars/sot_poster.webp')" alt="img"   />
+      </div>
+      <div class="heading_title my-5">SHIELD OF TRUST (SOT)</div>
       <div class="page_content">
-          <p><b>Below Attached the SOT Details:</b></p>
           <ul>
               <li>Hyundai now offers you “shield of trust” which covers a wide range of Wear & tear parts.</li>
               <li>Now have peace of mind with SOT up to 5years or 60 K Kms with unlimited coverage of the wear & tear parts in your car. </li>

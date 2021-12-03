@@ -30,19 +30,19 @@ export default {
             brochureList:[
                 {
                     id:1,
-                    pdf:'/pdf/Tucson_suv_brochure.pdf'
+                    pdf:'/pdf/SANTRO_Hatchback_brochure (1).pdf'
                 },
                 {
                     id:2,
-                    pdf:'/pdf/Venue_Brochure-16PP_2021_Web.pdf'
+                    pdf:'/pdf/i20-Hatchback-2020.pdf'
                 },
                 {
                     id:3,
-                    pdf:'/pdf/Alcazar_Brochure-16PP_A4_2021_Web.pdf'
+                    pdf:'/pdf/Grand Nios_Brochure-16PP_A4_2021 Web.pdf'
                 },
                 {
                     id:4,
-                    pdf:'/pdf/Creta_Brochure-16PP_A4_2021.pdf.pdf'
+                    pdf:'/pdf/N-Line.pdf'
                 },
                 {
                     id:5,
@@ -58,19 +58,19 @@ export default {
                 },
                 {
                     id:8,
-                    pdf:'/pdf/SANTRO_Hatchback_brochure (1).pdf'
+                    pdf:'/pdf/Tucson_suv_brochure.pdf'
                 },
                 {
                     id:9,
-                    pdf:'/pdf/i20-Hatchback-2020.pdf'
+                    pdf:'/pdf/Venue_Brochure-16PP_2021_Web.pdf'
                 },
                 {
                     id:10,
-                    pdf:'/pdf/Grand Nios_Brochure-16PP_A4_2021 Web.pdf'
+                    pdf:'/pdf/Alcazar_Brochure-16PP_A4_2021_Web.pdf'
                 },
                 {
                     id:11,
-                    pdf:'/pdf/N-Line.pdf'
+                    pdf:'/pdf/Creta_Brochure-16PP_A4_2021.pdf.pdf'
                 }
             ],
             baseUrl:process.env.baseUrl,

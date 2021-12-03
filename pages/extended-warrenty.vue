@@ -16,7 +16,8 @@
 
       <div class="rsa_table">
           <table>
-                  <tr>
+                <thead>
+                    <tr>
                       <th class="model_head2"  colspan="11" rowspan="1">Comprehensive Ext Wty Scheme Pricelist:Jan'2021</th>
                   </tr>
                   <tr class="second_head">
@@ -32,6 +33,7 @@
                       <th>5th Yr 120K</th>
                       <th>5th Yr 140K</th>
                   </tr>
+                </thead>
                   <tbody></tbody>
           </table>
       </div>
@@ -1123,7 +1125,17 @@ export default {
 }
 .rsa_table{
     width: 70%;
+    height: 600px;
+    overflow: auto;
     margin: 40px auto 90px auto;
+}
+.rsa_table::-webkit-scrollbar{
+    display: none;
+}
+.rsa_table thead{
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 .ew_notice_content{
     width: 35%;

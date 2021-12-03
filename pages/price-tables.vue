@@ -152,7 +152,7 @@
                                                 <tr v-if="singleData.length == 0" >
                                                     <td class="px-6 py-4 whitespace-nowrap" colspan="2" style="text-align:center;"> No Data</td>
                                                 </tr>
-                                                <tr v-for="item in singleData" :key="item.id" :class="item.data_value == null ? 'empty_data' : ''">
+                                                <tr v-for="item in singleData" class="price_data" :key="item.id" :class="item.data_value == null ? 'empty_data' : ''">
                                                 <td class="px-4 py-3 " >
                                                     <span
                                                     class="
@@ -397,7 +397,7 @@ export default {
 .price_table_sec thead {
     background: #002c5f;
 }
-.price_table_sec tbody tr:nth-child(odd) {
+.price_table_sec tbody tr.price_data:hover {
     background: #e6f0fa;
 }
 .price_box{

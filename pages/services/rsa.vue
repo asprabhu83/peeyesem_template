@@ -2,7 +2,6 @@
   <div class="my-24">
       <div class="heading_title mb-5">ROAD SIDE ASSISTANCE (RSA)</div>
       <div class="page_content">
-          <p><b>Below attached the RSA Scheme and Price Details:</b></p>
           <p><span>One Year Program:</span><font-awesome-icon icon="rupee-sign"  size="1x" class="text-black ml-2" /> 1,359/- ( This amount is inclusive of applicable taxes ) </p>
           <p><span>Two Year Program:</span><font-awesome-icon icon="rupee-sign"  size="1x" class="text-black ml-2" /> 2,136/- ( This amount is inclusive of applicable taxes ) </p>
           <p><span>Three Year Program:</span><font-awesome-icon icon="rupee-sign"  size="1x" class="text-black ml-2" /> 2,805/- ( This amount is inclusive of applicable taxes )</p>

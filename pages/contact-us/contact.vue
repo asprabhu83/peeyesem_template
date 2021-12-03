@@ -240,7 +240,7 @@ export default {
                     contact_person:'SAFRAN',
                     contact_person_number:'9962666228',
                     service_appointment_number:'9962666228/9962666118',
-                    insurance_contact_number:'SAM SUNDAR - 78239 47148',
+                    insurance_contact_number:'SHAM SUNDAR - 78239 47148',
                     road_side_contact:'18001024645',
                     emergency_breakdown_contact:'',
                     customer_care:'JAYA SHREE - 7823947154'
@@ -338,7 +338,7 @@ export default {
                     contact_person:'SAFRAN',
                     contact_person_number:'9962666228',
                     service_appointment_number:'7397393432',
-                    insurance_contact_number:'SAM SUNDAR - 78239 47148',
+                    insurance_contact_number:'SHAM SUNDAR - 78239 47148',
                     road_side_contact:'18001024645',
                     emergency_breakdown_contact:'9790718181',
                     customer_care:'RAYAPPAN - 8754508466'
@@ -352,7 +352,7 @@ export default {
                     contact_person:'SAFRAN',
                     contact_person_number:'9962666228',
                     service_appointment_number:'7550099934',
-                    insurance_contact_number:'SAM SUNDAR - 78239 47148',
+                    insurance_contact_number:'SHAM SUNDAR - 78239 47148',
                     road_side_contact:'18001024645',
                     emergency_breakdown_contact:'8220389333',
                     customer_care:'JAYAKUMAR - 7825889069'
@@ -366,7 +366,7 @@ export default {
                     contact_person:'SAFRAN',
                     contact_person_number:'9962666228',
                     service_appointment_number:'9384834348',
-                    insurance_contact_number:'SAM SUNDAR - 78239 47148',
+                    insurance_contact_number:'SHAM SUNDAR - 78239 47148',
                     road_side_contact:'18001024645',
                     emergency_breakdown_contact:'9952022200',
                     customer_care:'ASWIN - 7823947150'
@@ -466,7 +466,7 @@ export default {
                     contact_person:'SAFRAN',
                     contact_person_number:'9962666228',
                     service_appointment_number:'9962666228/9962666118',
-                    insurance_contact_number:'SAM SUNDAR - 78239 47148',
+                    insurance_contact_number:'SHAM SUNDAR - 78239 47148',
                     road_side_contact:'18001024645',
                     emergency_breakdown_contact:'',
                     customer_care:'JAYA SHREE - 7823947154'
@@ -564,7 +564,7 @@ export default {
                     contact_person:'SAFRAN',
                     contact_person_number:'9962666228',
                     service_appointment_number:'7397393432',
-                    insurance_contact_number:'SAM SUNDAR - 78239 47148',
+                    insurance_contact_number:'SHAM SUNDAR - 78239 47148',
                     road_side_contact:'18001024645',
                     emergency_breakdown_contact:'9790718181',
                     customer_care:'RAYAPPAN - 8754508466'
@@ -578,7 +578,7 @@ export default {
                     contact_person:'SAFRAN',
                     contact_person_number:'9962666228',
                     service_appointment_number:'7550099934',
-                    insurance_contact_number:'SAM SUNDAR - 78239 47148',
+                    insurance_contact_number:'SHAM SUNDAR - 78239 47148',
                     road_side_contact:'18001024645',
                     emergency_breakdown_contact:'8220389333',
                     customer_care:'JAYAKUMAR - 7825889069'
@@ -592,7 +592,7 @@ export default {
                     contact_person:'SAFRAN',
                     contact_person_number:'9962666228',
                     service_appointment_number:'9384834348',
-                    insurance_contact_number:'SAM SUNDAR - 78239 47148',
+                    insurance_contact_number:'SHAM SUNDAR - 78239 47148',
                     road_side_contact:'18001024645',
                     emergency_breakdown_contact:'9952022200',
                     customer_care:'ASWIN - 7823947150'

@@ -4,15 +4,15 @@
     <footer id="footer_one">
         <div class="container">
             <div class="main_footer_sec">
-                <div class="footer_item_sec">
+                <div class="footer_item_sec two_col_item">
                     <div class="footer_left_side">
                         <div class="text-capitalize mb-3  footer_heading text-lg font-semibold">Peeyesyem hyundai</div>
                         <div class="text-sm contact_text mb-2"><i class="far fa-envelope mr-2"></i> info@peeyesyemhyundai.in</div>
                         <div class="text-sm contact_text mb-2"> <font-awesome-icon icon="phone-alt"  size="1x" class="text-white  mr-2" />+91 9962666228</div>
-                        <div class="text-sm contact_text mb-3"><font-awesome-icon icon="map-marker-alt"  size="1x" class="text-white  mr-2" />Old No. - 94, New No. - 162,<br/> Luz Church Road, Mylapore,<br/>Chennai - 600004</div>
+                        <div class="text-sm contact_text mb-3"><font-awesome-icon icon="map-marker-alt"  size="1x" class="text-white  mr-2" />Old No. - 94, New No. - 162,<br/> Luz Church Road, Opp to <br/> Kauvery hospital,Mylapore,<br/>Chennai - 600004</div>
                     </div>
                 </div>
-                <div class="footer_item_sec footer_mobile_menu">
+                <div class="footer_item_sec two_col_item footer_mobile_menu">
                     <div class="gmap_canvas">
                         <iframe  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15547.7946740085!2d80.2575787!3d13.0389394!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5b5a4c51158248e4!2sPEEYESYEM%20HYUNDAI%20-%20MYLAPORE!5e0!3m2!1sen!2sin!4v1636443172904!5m2!1sen!2sin" width="354" height="274" style="border:0;max-width:100%;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
@@ -49,16 +49,19 @@
                         <div class="footer_left_side_icon pt-0">
                             <ul class="pl-1">
                                 <li>
-                                    <a :href="$store.state.HeaderData.fbLink" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                   <a :href="'https://api.whatsapp.com/send?phone='+ $store.state.HeaderData.whatsappNo" target="_blank"><img class="flat_icons" :src="require('@/assets/img/whatsapp.png')" /></a>
+                                </li>
+                                <li>
+                                    <a :href="$store.state.HeaderData.fbLink" target="_blank"><img class="flat_icons" :src="require('@/assets/img/facebook.png')" /></a>
                                 </li>
                                  <li>
-                                    <a :href="$store.state.HeaderData.instaLink" target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a :href="$store.state.HeaderData.instaLink" target="_blank"><img class="flat_icons" :src="require('@/assets/img/instagram.png')" /> </a>
                                 </li>
                                 <li>
-                                    <a :href="$store.state.HeaderData.youtubeLink" target="_blank"><i class="fab fa-youtube"></i></a>
+                                    <a :href="$store.state.HeaderData.youtubeLink" target="_blank"> <img class="flat_icons" :src="require('@/assets/img/youtube.png')" /></a>
                                 </li>
                                 <li>
-                                    <a :href="$store.state.HeaderData.linkedInLink" target="_blank"><i class="fab fa-linkedin "></i></a>
+                                    <a :href="$store.state.HeaderData.linkedInLink" target="_blank"><img class="flat_icons" :src="require('@/assets/img/linkedin.png')" /> </a>
                                 </li>
                             </ul>
                         </div>
@@ -188,9 +191,12 @@ export default {
     .footer_item_sec{
         margin: 15px 32px!important;
     }
+    .footer_item_sec.two_col_item{
+        width: 41%!important;
+    }
     .gmap_canvas iframe{
-        width: 215px!important;
-        height: 150px!important;
+        width: 255px!important;
+        height: 180px!important;
     }
     .footer_one_widget {
         padding-top: 0!important;
@@ -198,7 +204,7 @@ export default {
 }
 @media only screen and (min-width: 961px) and (max-width: 1030px){
     .footer_item_sec{
-        margin: 0 15px!important;
+        margin: 0 12px!important;
     }
     .gmap_canvas iframe{
         width: 215px!important;

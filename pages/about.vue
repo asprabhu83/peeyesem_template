@@ -9,7 +9,7 @@
     </div> -->
     <section style="background: #e6eaef">
       <div class="about_heading pt-24">
-        <h3 class="text-center">About Peeyesyem Hyundai</h3>
+        <h3 class="text-center">About PeeYesYem Hyundai</h3>
       </div>
       <div class="about_description pt-16">
         <ul>

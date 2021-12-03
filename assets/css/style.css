@@ -6231,6 +6231,7 @@ table {
 }
 .car_box_item{
     width: 16.66%;
+    border: 2px solid white;
 }
 .car_box_item a{
     margin-bottom:0!important;
@@ -6286,7 +6287,8 @@ table {
         padding: 20px 10px;
     }
     .testimonial_content .quote_lines div{
-        font-size: 11px;
+        margin-top: 11px!important;
+        font-size: 13px;
     }
     .testimonial_content div{
         font-size: 11px;

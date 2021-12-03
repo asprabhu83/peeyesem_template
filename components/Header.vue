@@ -26,6 +26,7 @@
                     </div>
                     <div class="right flex items-center mx-2">
                         <div class="social_icons_box flex">
+                            <a :href="'https://api.whatsapp.com/send?phone='+ $store.state.HeaderData.whatsappNo" target="_blank"><img class="flat_icons" :src="require('@/assets/img/whatsapp.png')" /></a>
                             <a :href="$store.state.HeaderData.fbLink" target="_blank"><img class="flat_icons" :src="require('@/assets/img/facebook.png')" /></a>
                             <a :href="$store.state.HeaderData.instaLink" target="_blank"><img class="flat_icons" :src="require('@/assets/img/instagram.png')" /> </a>
                             <a :href="$store.state.HeaderData.youtubeLink" target="_blank"> <img class="flat_icons" :src="require('@/assets/img/youtube.png')" /></a>
@@ -44,7 +45,7 @@
                         <div class="col-12 d-flex align-items-center justify-content-center">
                             <!-- Start Header Logo -->
                                 <div class="sticky_logo">
-                                    <nuxt-link to="/"><img class="site_logo" :src="require('@/assets/img/resized_logo.png')" alt="logo"  /></nuxt-link>
+                                    <nuxt-link to="/"><img class="site_logo" :src="require('@/assets/img/resized_logo2.png')" alt="logo"  /></nuxt-link>
                                 </div>
                             <!-- End Header Logo -->
 
@@ -622,8 +623,8 @@ export default {
         padding: 15px 20px!important;
     }
     .social_icons_box .flat_icons {
-        margin-left: 9px!important;
-        margin-right: 9px!important;
+        margin-left: 18px!important;
+        margin-right: 18px!important;
     }
     .sub-menu {
         min-width: 153px!important;
@@ -664,6 +665,9 @@ export default {
         width: 18px;
     }
     .main-menu nav>ul>li{
+        padding-left: 12px!important;
+    }
+    .sticky-header.sticky.sticky-color--golden .main-menu nav>ul>li{
         padding-left: 17px!important;
     }
     .social_icons_box .flat_icons{
@@ -686,7 +690,7 @@ export default {
     }
     .main-menu nav > ul > li > a{
         padding: 1px 10px;
-        font-size: 10px;
+        font-size: 11px;
     }
     .header-bottom-color--golden{
         padding: 0;

@@ -150,7 +150,7 @@
                 <button type="button" class="blog_post_button" @click="formModal = true">Book a Car</button>
              </div>
              <div class="text-center font-bold text-white btn_grps ">
-                <button type="button" class="blog_post_button" @click="formModal2 = true">Book a Service</button>
+                <nuxt-link class="blog_post_button" to="/service-booking">Book a Service</nuxt-link>
              </div>
             <div class="text-center font-bold text-white btn_grps ">
                 <nuxt-link class="blog_post_button" to="/contact-us/test-drive/">Request a Test Drive</nuxt-link>

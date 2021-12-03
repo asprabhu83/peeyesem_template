@@ -34,14 +34,14 @@
                 </div>
                 <div class="detail">
                     <div class="title">{{item.name}}</div>
-                    <div class="price_detail">
+                    <!-- <div class="price_detail">
                         <div class="price"><font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mr-2" />{{item.price}}</div>
                         <div class="checkbox_sec">
                             <label class="inline-flex items-center">
                                 <input type="checkbox" class="form-checkbox cursor-pointer">
                             </label>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
