@@ -178,7 +178,7 @@
                                                     "
                                                     v-if="item.data_value !== null"
                                                     >
-                                                    <font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mr-2" />{{JSON.parse(item.data_value).variant_price}}
+                                                    Starting from <font-awesome-icon icon="rupee-sign"  size="1x" class="text-black mx-2" />{{JSON.parse(item.data_value).variant_price}}
                                                     </span>
                                                     <span
                                                     class="
