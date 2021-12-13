@@ -32,8 +32,64 @@ export default {
         closeModal(){
             this.$emit('closeModal', 'deleteModal')
         },
+        deleteModal(){
+            this.$emit('deleteModal',this.name)
+        },
         Delete(){
-            console.log();
+            if(this.name == 'post'){
+              this.$axios.delete(process.env.baseUrl + 'api/delete/highlight_post/' + this.id)
+              .then(res=>{
+                console.log(res)
+                this.deleteModal();
+              }).catch(err=>{
+                console.log(err);
+              })
+            }
+            if(this.name == 'gallery'){
+              this.$axios.delete(process.env.baseUrl + 'api/delete/gallery/' + this.id)
+              .then(res=>{
+                console.log(res)
+                this.deleteModal();
+              }).catch(err=>{
+                console.log(err);
+              })
+            }
+            if(this.name == 'color'){
+              this.$axios.delete(process.env.baseUrl + 'api/delete/color/' + this.id)
+              .then(res=>{
+                console.log(res)
+                this.deleteModal();
+              }).catch(err=>{
+                console.log(err);
+              })
+            }
+            if(this.name == 'spec'){
+              this.$axios.delete(process.env.baseUrl + 'api/delete/specs/' + this.id)
+              .then(res=>{
+                console.log(res)
+                this.deleteModal();
+              }).catch(err=>{
+                console.log(err);
+              })
+            }
+            if(this.name == 'variant'){
+              this.$axios.delete(process.env.baseUrl + 'api/delete/variant_model/' + this.id)
+              .then(res=>{
+                console.log(res)
+                this.deleteModal();
+              }).catch(err=>{
+                console.log(err);
+              })
+            }
+            if(this.name == 'feature'){
+              this.$axios.delete(process.env.baseUrl + 'api/delete/feature/' + this.id)
+              .then(res=>{
+                console.log(res)
+                this.deleteModal();
+              }).catch(err=>{
+                console.log(err);
+              })
+            }
         }
     }
 }
@@ -42,6 +98,7 @@ export default {
 <style scoped>
 .dialog_box {
   background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
 }
 .dialog_content {
   width: 500px;

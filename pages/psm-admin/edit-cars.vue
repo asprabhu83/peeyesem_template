@@ -1264,7 +1264,7 @@
             </div>
         </div>
       </div>
-      <DeleteModal  @closeModal="closeModal" :itemName="itemName" :id="modalId.id" :name="modalId.name" v-if="DeleteModal == true" />
+      <DeleteModal  @closeModal="closeModal" @deleteModal="deleteModal" :itemName="itemName" :id="modalId.id" :name="modalId.name" v-if="DeleteModal == true" />
   </section>
 </template>
 
@@ -1370,6 +1370,9 @@ export default {
   methods: {
     closeModal(){
       this.DeleteModal = false;
+    },
+    deleteModal(){
+      this.GetSingleCar();
     },
     OpenDeleteModal(ItemId,name){
       this.modalId.id = ItemId;
@@ -1928,9 +1931,15 @@ export default {
   display: none;
 } */
 .edit_table{
-  height: 200px;
+  max-height: 200px;
   overflow: hidden;
   overflow-y: scroll;
+}
+.edit_table table thead{
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: #e6f0fa;
 }
 .edit_table::-webkit-scrollbar{
   display: none;

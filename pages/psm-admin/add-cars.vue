@@ -464,6 +464,33 @@
                 <div class="mt-5">
                   <button type="button" class="bg-blue-500 hover:bg-blue-700 flex items-center text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="5" data-next="6" @click="AddCars">Add <font-awesome-icon icon="plus"  size="1x" class="text-white cursor-pointer ml-2"  /></button>
                 </div>
+                <div class="edit_table my-5" v-if="LoopDatas.highlightPost != ''" >
+                   <table>
+                     <thead>
+                       <tr>
+                         <th>Title</th>
+                         <th>Description</th>
+                         <th>Image</th>
+                         <th>Actions</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <tr v-for="post in LoopDatas.highlightPost" :key="post.id">
+                         <td>{{post.post_title}}</td>
+                         <td>{{post.post_description.substring(0,30)}}...</td>
+                         <td>
+                            <div class="model_image">
+                                <img :src="baseUrl + 'images/' + post.post_image" style="width:100%;" />
+                            </div>
+                         </td>
+                         <td class="actions">
+                           <font-awesome-icon icon="edit"  size="1x" class="text-green-600  cursor-pointer mx-1" @click="filterPost(post.id)"  />
+                           <font-awesome-icon icon="trash"  size="1x" class="text-red-600 cursor-pointer mx-1"  @click="OpenDeleteModal(post.id,'post')" />
+                         </td>
+                       </tr>
+                     </tbody>
+                   </table>
+                </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="5" data-prev="4" @click="prevstep">Previous</button> -->
                     <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="5" data-next="6" @click="NextTab">Submit</button>
@@ -516,6 +543,28 @@
                 </div>
                 <div class="mt-5">
                   <button type="button" class="bg-blue-500 hover:bg-blue-700 flex items-center text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="6" data-next="7"  @click="AddCars">Add <font-awesome-icon icon="plus"  size="1x" class="text-white cursor-pointer ml-2"  /></button>
+                </div>
+                <div class="edit_table my-5" v-if="LoopDatas.gallery != ''">
+                   <table>
+                     <thead>
+                       <tr>
+                         <th>Image</th>
+                         <th>Actions</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <tr v-for="gallery in LoopDatas.gallery" :key="gallery.id">
+                         <td>
+                            <div class="model_image">
+                                <img :src="baseUrl + 'images/' + gallery.gallery_image" style="width:100%;" />
+                            </div>
+                         </td>
+                         <td class="actions">
+                           <font-awesome-icon icon="trash"  size="1x" class="text-red-600 cursor-pointer mx-1" @click="OpenDeleteModal(gallery.id,'gallery')" />
+                         </td>
+                       </tr>
+                     </tbody>
+                   </table>
                 </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="6" data-prev="5" @click="prevstep">Previous</button> -->
@@ -684,6 +733,35 @@
                 <div class="mt-5">
                   <button type="button" class="bg-blue-500 hover:bg-blue-700 flex items-center text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="8" data-next="9" @click="AddCars">Add <font-awesome-icon icon="plus"  size="1x" class="text-white cursor-pointer ml-2"  /></button>
                 </div>
+                <div class="edit_table my-5" v-if="LoopDatas.colors != ''">
+                   <table>
+                     <thead>
+                       <tr>
+                         <th>First Color</th>
+                         <th>Second Color</th>
+                         <th>Title</th>
+                         <th>Image</th>
+                         <th>Actions</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <tr v-for="color in LoopDatas.colors" :key="color.id">
+                         <td>{{color.color_code}}</td>
+                         <td>{{color.second_color_code}}</td>
+                         <td>{{color.color_title}}</td>
+                         <td>
+                            <div class="model_image">
+                                <img :src="baseUrl + 'images/' + color.color_image" style="width:100%;" />
+                            </div>
+                         </td>
+                         <td class="actions">
+                           <font-awesome-icon icon="edit"  size="1x" class="text-green-600  cursor-pointer mx-1" @click="filterColor(color.id)"/>
+                           <font-awesome-icon icon="trash"  size="1x" class="text-red-600 cursor-pointer mx-1" @click="OpenDeleteModal(color.id,'color')"  />
+                         </td>
+                       </tr>
+                     </tbody>
+                   </table>
+                </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="8" data-prev="7" @click="prevstep">Previous</button> -->
                     <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="8" data-next="9" @click="NextTab" >Submit</button>
@@ -801,6 +879,31 @@
                 <div class="mt-5">
                   <button type="button" class="bg-blue-500 hover:bg-blue-700 flex items-center text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="9" data-next="10" @click="AddCars">Add <font-awesome-icon icon="plus"  size="1x" class="text-white cursor-pointer ml-2"  /></button>
                 </div>
+                <div class="edit_table my-5" v-if="LoopDatas.specs !=''">
+                   <table>
+                     <thead>
+                       <tr>
+                         <th>Type</th>
+                         <th>Model</th>
+                         <th>Petrol</th>
+                         <th>Diesel</th>
+                         <th>Actions</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <tr v-for="spec in LoopDatas.specs" :key="spec.id">
+                         <td>{{spec.spec_type}}</td>
+                         <td>{{spec.spec_model}}</td>
+                         <td>{{spec.spec_petrol}}</td>
+                         <td>{{spec.spec_diesel}}</td>
+                         <td class="actions">
+                           <font-awesome-icon icon="edit"  size="1x" class="text-green-600  cursor-pointer mx-1" @click="filterSpec(spec.id)"/>
+                           <font-awesome-icon icon="trash"  size="1x" class="text-red-600 cursor-pointer mx-1" @click="OpenDeleteModal(spec.id,'spec')" />
+                         </td>
+                       </tr>
+                     </tbody>
+                   </table>
+                </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="9" data-prev="8" @click="prevstep">Previous</button> -->
                     <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="9" data-next="10" @click="NextTab">Submit</button>
@@ -902,6 +1005,25 @@
                 <div class="mt-5">
                   <button type="button" class="bg-blue-500 hover:bg-blue-700 flex items-center text-white font-bold  mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="11" data-next="12" @click="AddCars">Add <font-awesome-icon icon="plus"  size="1x" class="text-white cursor-pointer ml-2"  /></button>
                 </div>
+                <div class="edit_table my-5" v-if="LoopDatas.featureModel != ''">
+                   <table>
+                     <thead>
+                       <tr>
+                         <th>Varaint Model</th>
+                         <th>Actions</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <tr v-for="variant in LoopDatas.featureModel" :key="variant.id">
+                         <td>{{variant.feature_type}}</td>
+                         <td class="actions">
+                           <font-awesome-icon icon="edit"  size="1x" class="text-green-600  cursor-pointer mx-1" @click="filterVariant(variant.id)"/>
+                           <font-awesome-icon icon="trash"  size="1x" class="text-red-600 cursor-pointer mx-1" @click="OpenDeleteModal(variant.id,'variant')" />
+                         </td>
+                       </tr>
+                     </tbody>
+                   </table>
+                </div>
                 <div class="mt-16 flex items-center justify-between">
                     <!-- <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full mr-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="10" data-prev="9" @click="prevstep">Previous</button> -->
                     <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full  py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-current="11" data-next="12" @click="NextTab">Submit</button>
@@ -938,7 +1060,7 @@
                     v-model="featureModelId"
                   >
                   <option class="text-xl " value="">Choose Variant Model</option>
-                  <option class="text-xl" :value="model.id" v-for="model in variantsTypes"
+                  <option class="text-xl" :value="model.id" v-for="model in LoopDatas.featureModel"
                     :key="model.id" >{{model.feature_type}}</option>
                   </select>
                 </div>
@@ -1093,15 +1215,25 @@
             </div>
         </div>
       </div>
+      <DeleteModal  @closeModal="closeModal" @deleteModal="deleteModal" :itemName="itemName" :id="modalId.id" :name="modalId.name" v-if="DeleteModal == true" />
   </section>
 </template>
 
 <script>
+import DeleteModal from '../../components/modals/DeleteModal.vue'
 export default {
   layout:'admin-header-layout',
-
+  components:{
+    DeleteModal
+  },
   data () {
     return {
+      DeleteModal:false,
+      itemName:'item',
+      modalId:{
+        id:'',
+        name:''
+      },
       postTable: [],
       cars: [],
       models: [],
@@ -1150,8 +1282,17 @@ export default {
       carPrice: '',
       variantCategory:'',
       variantFeatureModel:'',
-      variantsTypes:[]
-
+      variantsTypes:[],
+      baseUrl:process.env.baseUrl,
+      LoopDatas:{
+        DataBaseSingleCar:[],
+        highlightPost:[],
+        gallery:[],
+        colors:[],
+        specs:[],
+        featureModel:[],
+        variantFeature:[]
+      }
     }
   },
   beforeCreate(){
@@ -1257,6 +1398,32 @@ export default {
           console.log(error)
         })
     },
+    closeModal(){
+      this.DeleteModal = false;
+    },
+    deleteModal(val){
+      if(val =='post'){
+        this.GetHighlightPosts();
+      }
+      if(val =='gallery'){
+        this.Getgallery();
+      }
+      if(val =='color'){
+        this.GetColors();
+      }
+      if(val =='spec'){
+        this.GetSpecs();
+      }
+      if(val =='variant'){
+        this.GetfeatureModel();
+      }
+      this.DeleteModal = false;
+    },
+    OpenDeleteModal(ItemId,name){
+      this.modalId.id = ItemId;
+      this.modalId.name = name;
+      this.DeleteModal = true;
+    },
     AddCars (e) {
       var target = e.target.getAttribute('data-current')
       var next = e.target.getAttribute('data-next')
@@ -1359,6 +1526,7 @@ export default {
             post_image: this.postImage
           })
           .then((response) => {
+            this.GetHighlightPosts();
             btn.innerText = 'Add'
             this.postsuccess = true
             this.postTitle = ''
@@ -1384,6 +1552,7 @@ export default {
           })
           .then((response) => {
             this.gallerysuccess = true
+            this.Getgallery();
             btn.innerText = 'Add'
             this.galleryImage = ''
             var label = document.querySelector('.galleryImage')
@@ -1429,6 +1598,7 @@ export default {
           })
           .then((response) => {
             btn.innerText = 'Add'
+            this.GetColors();
             this.colorsuccess = true
             this.colorCode = ''
             this.colorCode2 = ''
@@ -1457,6 +1627,7 @@ export default {
           })
           .then((response) => {
             this.specsuccess = true
+            this.GetSpecs();
             btn.innerHTML = 'Add'
             this.specType = ''
             this.specModel = ''
@@ -1503,6 +1674,7 @@ export default {
           .then((response) => {
             this.carvariantsuccess = true
             btn.innerHTML = 'Add'
+            this.GetfeatureModel();
             this.feutureType = ''
              setTimeout(() => {
               this.carvariantsuccess = false
@@ -1558,12 +1730,98 @@ export default {
             console.log(error)
           })
       }
+    },
+    GetHighlightPosts(){
+       this.$axios
+        .get(process.env.baseUrl + 'api/show/highlight_index')
+        .then((response) => {
+            var item = response.data.filter(item=>{
+              return item.highlight_id == this.highlightId
+            })
+            this.LoopDatas.highlightPost = item;
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+    },
+    Getgallery(){
+       this.$axios
+        .get(process.env.baseUrl + 'api/show/gallery_index')
+        .then((response) => {
+            var item = response.data.filter(item=>{
+              return item.car_id == this.carId
+            })
+            this.LoopDatas.gallery = item;
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+    },
+    GetColors(){
+       this.$axios
+        .get(process.env.baseUrl + 'api/show/colors_index')
+        .then((response) => {
+            var item = response.data.filter(item=>{
+              return item.car_id == this.carId
+            })
+            this.LoopDatas.colors = item;
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+    },
+    GetSpecs(){
+       this.$axios
+        .get(process.env.baseUrl + 'api/show/specs_index')
+        .then((response) => {
+            var item = response.data.filter(item=>{
+              return item.car_id == this.carId
+            })
+            this.LoopDatas.specs = item;
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+    },
+    GetfeatureModel(){
+       this.$axios
+        .get(process.env.baseUrl + 'api/show/feature_model_index')
+        .then((response) => {
+            var item = response.data.filter(item=>{
+              return item.features_variant_id == this.featureVariantId
+            })
+            this.LoopDatas.featureModel = item;
+        })
+        .catch((error) => {
+            console.log(error)
+        })
     }
   }
 }
 </script>
 
 <style scoped>
+.edit_table table{
+  border-collapse: collapse;
+}
+.edit_table table td, .edit_table th{
+  border: 1px solid lightgray;
+  padding: 10px;
+}
+.edit_table{
+  max-height: 200px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.edit_table table thead{
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: #e6f0fa;
+}
+.edit_table::-webkit-scrollbar{
+  display: none;
+}
 .tab_box{
   box-shadow: 0 2px 10px 4px rgb(0 0 0/15%);
   border-radius: 10px;
