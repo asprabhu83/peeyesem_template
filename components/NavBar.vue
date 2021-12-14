@@ -58,7 +58,7 @@
                       <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
                       <nuxt-link to="/psm-admin/add-cars" class="text-gray-700 block px-4 py-3 text-sm  dropdown_menu_item" role="menuitem" tabindex="-1" id="menu-item-2">Add Cars</nuxt-link>
                       <nuxt-link to="/psm-admin/manage-cars" class="text-gray-700 block px-4 py-3 text-sm  dropdown_menu_item" role="menuitem" tabindex="-1" id="menu-item-2">Manage Cars</nuxt-link>
-                      <nuxt-link to="/psm-admin/add-menu" class="text-gray-700 block px-4 py-3 text-sm  dropdown_menu_item" role="menuitem" tabindex="-1" id="menu-item-2">Add Menus</nuxt-link>
+                      <!-- <nuxt-link to="/psm-admin/add-menu" class="text-gray-700 block px-4 py-3 text-sm  dropdown_menu_item" role="menuitem" tabindex="-1" id="menu-item-2">Add Menus</nuxt-link> -->
                       <nuxt-link to="/psm-admin/testimonial-list" class="text-gray-700 block px-4 py-3 text-sm  dropdown_menu_item" role="menuitem" tabindex="-1" id="menu-item-2">Add Testimonials</nuxt-link>
                       <nuxt-link to="/psm-admin/manage-used-cars" class="text-gray-700 block px-4 py-3 text-sm  dropdown_menu_item" role="menuitem" tabindex="-1" id="menu-item-2">Manage Used Cars</nuxt-link>
                       <nuxt-link to="/psm-admin/blog-list" class="text-gray-700 block px-4 py-3 text-sm  dropdown_menu_item" role="menuitem" tabindex="-1" id="menu-item-2">Add Blogs</nuxt-link>
