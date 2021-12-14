@@ -1783,6 +1783,48 @@ export default {
             console.log(error)
         })
     },
+    filterPost(postid){
+      var item = this.LoopDatas.highlightPost.filter((item)=>{
+        return item.id == postid
+      })
+      const [post] = item;
+      const {id,post_title,post_description} = post;
+      this.postTitle = post_title;
+      this.postDescription = post_description;
+    },
+    filterColor(clrId){
+       var item = this.LoopDatas.colors.filter((item)=>{
+        return item.id == clrId
+      })
+      const [color] = item;
+      const {id,color_code,second_color_code,color_title} = color;
+      this.colorCode = color_code;
+      this.colorCode2 = second_color_code;
+      this.colorTitle = color_title;
+    },
+    filterSpec(specId){
+       var item = this.LoopDatas.specs.filter((item)=>{
+        return item.id == specId
+      })
+      const [spec] = item;
+      const {id,spec_type,spec_model,spec_petrol,spec_diesel} = spec;
+      this.specType = spec_type;
+      this.specModel = spec_model;
+      this.specPetrol = spec_petrol;
+      this.specDiesel = spec_diesel;
+    },
+    filterVariant(varId){
+      var item = this.LoopDatas.featureModel.filter((item)=>{
+        return item.id == varId
+      })
+      const [variant] = item;
+      const {id,feature_type,data_value} = variant;
+      if(data_value !== null){
+        var variantPrice = JSON.parse(data_value).variant_price;
+        this.variantPrice = variantPrice;
+      }
+      this.feutureType = feature_type;
+    },
     GetfeatureModel(){
        this.$axios
         .get(process.env.baseUrl + 'api/show/feature_model_index')
@@ -1807,11 +1849,13 @@ export default {
 .edit_table table td, .edit_table th{
   border: 1px solid lightgray;
   padding: 10px;
+  border-top: 0;
 }
 .edit_table{
   max-height: 200px;
   overflow: hidden;
   overflow-y: scroll;
+  border: 1px solid lightgray;
 }
 .edit_table table thead{
   position: sticky;

@@ -1036,12 +1036,14 @@
                      <thead>
                        <tr>
                          <th>Varaint Model</th>
+                         <th>Varaint Price</th>
                          <th>Actions</th>
                        </tr>
                      </thead>
                      <tbody>
                        <tr v-for="variant in LoopDatas.Variants" :key="variant.id">
                          <td>{{variant.feature_type}}</td>
+                         <td>{{JSON.parse(variant.data_value).variant_price}}</td>
                          <td class="actions">
                            <font-awesome-icon icon="edit"  size="1x" class="text-green-600  cursor-pointer mx-1" @click="filterVariant(variant.id)"/>
                            <font-awesome-icon icon="trash"  size="1x" class="text-red-600 cursor-pointer mx-1" @click="OpenDeleteModal(variant.id,'variant')" />
@@ -1919,6 +1921,13 @@ export default {
 .edit_table table td, .edit_table th{
   border: 1px solid lightgray;
   padding: 10px;
+  border-top: 0;
+}
+.edit_table{
+  max-height: 200px;
+  overflow: hidden;
+  overflow-y: scroll;
+  border: 1px solid lightgray;
 }
 
 
@@ -1930,11 +1939,7 @@ export default {
 .form_tab_box::-webkit-scrollbar{
   display: none;
 } */
-.edit_table{
-  max-height: 200px;
-  overflow: hidden;
-  overflow-y: scroll;
-}
+
 .edit_table table thead{
   position: sticky;
   top: 0;
