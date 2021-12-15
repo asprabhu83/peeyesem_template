@@ -555,7 +555,6 @@ export default {
 }
 
 .site_logo.size_resize{
-    width:59%!important;
     transition: .4s ease-in-out;
 }
 .v-sidebar-menu .vsm--toggle-btn {
