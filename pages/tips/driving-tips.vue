@@ -2,7 +2,7 @@
   <div>
       <div class="my-16">
           <div class="heading text-center my-5">
-              Maintenance Tips
+              Driving Tips
           </div>
           <div class="accordian_item_box">
 
