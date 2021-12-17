@@ -1,6 +1,11 @@
 <template>
   <div class="add-page">
+     
       <div class="PageTitle">
+           <div class="msg_box my-1">
+                   <div class="error pt-3 text-red-500" v-if="error == true">Invalid Data</div>
+                    <div class="error pt-3 text-red-500" v-if="success == true">Added Successfully</div>
+            </div>
             <div class="">
                  <label
                     class="block text-gray-700 text-sm font-bold mb-2"
@@ -30,21 +35,12 @@
             </div>
       </div>
       <div class="PageTitle">
-          <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
-                    for="page_content"
-                    >
-                    Page Content
-            </label>
-          <vue-editor id="page_content" v-model="pageContent"></vue-editor>
-      </div>
-      <div class="PageTitle">
-          <div class=" ">
+            <div class="">
                  <label
                     class="block text-gray-700 text-sm font-bold mb-2"
-                    for="form_id"
+                    for="meta_name"
                     >
-                    Form Id
+                    Meta Name
                     </label>
                 <input
                     class="
@@ -60,12 +56,50 @@
                         focus:outline-none
                         focus:shadow-outline
                     "
-                    id="form_id"
+                    id="meta_name"
                     type="text"
-                    placeholder="Form Id"
-                    v-model="formId"
+                    placeholder="Meta Name"
+                    v-model="metaName"
                     />
             </div>
+      </div>
+      <div class="PageTitle">
+            <div class="">
+                 <label
+                    class="block text-gray-700 text-sm font-bold mb-2"
+                    for="meta_content"
+                    >
+                    Meta Content
+                    </label>
+                <textarea
+                    class="
+                        shadow-md
+                        appearance-none
+                        border
+                        rounded
+                        w-1/2
+                        py-2
+                        px-3
+                        text-gray-700
+                        leading-tight
+                        focus:outline-none
+                        focus:shadow-outline
+                    "
+                    id="meta_content"
+                    type="text"
+                    placeholder="Meta Content"
+                    v-model="metaContent"
+                    />
+            </div>
+      </div>
+      <div class="PageTitle">
+          <label
+                    class="block text-gray-700 text-sm font-bold mb-2"
+                    for="page_content"
+                    >
+                    Page Content
+            </label>
+          <vue-editor id="page_content" v-model="pageContent"></vue-editor>
       </div>
       <div class="save_page_btn_box">
           <button type="button" 
@@ -99,18 +133,34 @@ export default {
         return {
          PageTitle:'',
          pageContent:'',
-         formId:'',
+         metaName:'',
+         metaContent:'',
          htmlValue:[],
+         error:false,
+         success:false
         }
     },
     methods:{
         AddPage(){
+            this.success=false;
+            this.error=false;
+            var data = {
+                meta_name:this.metaName,
+                meta_content:this.metaContent
+            }
+            data = JSON.stringify(data);
             this.$axios.post(process.env.baseUrl + 'api/page/store',{
               page_title: this.PageTitle,
               page_content:this.pageContent,
-              form_id:this.formId
+              data_value:data
           }).then((res)=>{
-              console.log(res)
+              if (res){
+                  this.success=true;
+                  this.PageTitle = '';
+                  this.pageContent = '';
+                  this.metaName = '';
+                  this.metaContent = '';
+              }
           }).catch((err)=>{
               console.log(err)
           })
