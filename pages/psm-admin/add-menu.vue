@@ -7,7 +7,27 @@
                 appearance-none
                 border
                 rounded
-                w-1/2
+                w-1/4
+                py-2
+                mr-3
+                px-3
+                text-gray-700
+                leading-tight
+                focus:outline-none
+                focus:shadow-outline
+              "
+              id="name"
+              type="text"
+              placeholder="Menu"
+              v-model="menuTitle"
+            />
+            <input
+              class="
+                shadow-md
+                appearance-none
+                border
+                rounded
+                w-1/4
                 py-2
                 px-3
                 text-gray-700
@@ -17,8 +37,8 @@
               "
               id="name"
               type="text"
-              placeholder="Menu Title"
-              v-model="menuTitle"
+              placeholder="Link"
+              v-model="mainMenuLink"
             />
             <div>
                 <button type="button" 
@@ -61,114 +81,23 @@
                         Save changes</button>
               </div>
               <div class="menu_sec my-3 p-2">
-                    <div   v-for="(title, index) in titles" :key="title.id"  >
-                        <div class="border border-black acc_title  flex select-none items-center font-bold cursor-pointer justify-between p-2 mt-3" data-menu="menu" :class="index === 0 ? 'active': '' " @click="Toggle">
-                            {{title.menu_type}} 
-                            <font-awesome-icon icon="trash"   size="1x" class="text-red-600 mx-2 cursor-pointer delete_icon" @click="Delete(title.id)"/>
-                        </div>
-                        <div class="acc_item border border-black p-2" :class="index !== 0 ? 'hidden': '' "  >
-                            <div class=" my-3 mx-2 select-none cursor-pointer" v-for="menu in title.menu_titles" :key="menu.id">
-                                <h6 class="inline-flex px-2 items-center justify-between py-2 border border-black select-none">
-                                    {{menu.menu_name}}
-                                    <!-- <font-awesome-icon icon="edit"  size="1x" class="text-green-600 ml-2  cursor-pointer "  /> -->
-                                    <font-awesome-icon icon="trash"  size="1x" class="text-red-600 ml-2 cursor-pointer " @click="menuDelete(menu.id)"  />
-                                </h6>
-                            </div>
-                            <h6 class="p-1 my-1 select-none cursor-pointer" v-if="title.menu_titles.length === 0">Add Menus in right section -></h6>
-                        </div>
-                    </div>
+                   <div class="my-3" v-for="menu in titles" :key="menu.id" :class="'btn-id-'+ menu.id">
+                       <span style="display:inline-block;min-width:100px;font-weight:bold;">{{menu.menu_type}}</span> <button class="bg-blue-500 text-white px-3 py-1 mx-2" type="button" v-if="menu.menu_type !=='Home'" @click="dialogBox = true,menuId = menu.id">Add Submenu</button>
+                       <div class="pl-3 pt-2">
+                           <div v-for="sub in menu.menu_titles" :key="sub.id">
+                               {{sub.menu_name}}
+                           </div>
+                       </div>
+                   </div>
               </div>
             </div>
-            <div class="w-4/12 p-5 mx-5 menu_box  my-16">
-                    <div class="my-4">
-                        <label
-                        class="block text-gray-700 text-sm font-bold mb-2"
-                        for="menuHeading"
-                        >
-                        Menu Title
-                        </label>
-                        <select
-                        class="
-                            shadow-md
-                            appearance-none
-                            cursor-pointer
-                            border
-                            rounded
-                            w-full
-                            py-1
-                            px-3
-                            text-gray-700
-                            leading-tight
-                            focus:outline-none
-                            focus:shadow-outline
-                        "
-                        id="menuHeading"
-                        v-model="menuHeading"
-                        >
-                        <option class="text-xl " value="">Choose Menu Title</option>
-                        <option class="text-xl" v-for="(title) in titles" :key="title.id" :value="title.id">{{title.menu_type}}</option>
-                      </select>
-                    </div>
-                    <!-- <div class="mb-4">
-                        <label
-                        class="block text-gray-700 text-sm font-bold mb-2"
-                        for="menuType"
-                        >
-                        Menu Type
-                        </label>
-                        <select
-                        class="
-                            shadow-md
-                            appearance-none
-                            cursor-pointer
-                            border
-                            rounded
-                            w-full
-                            py-1
-                            px-3
-                            text-gray-700
-                            leading-tight
-                            focus:outline-none
-                            focus:shadow-outline
-                        "
-                        id="menuType"
-                        v-model="menuType"
-                        >
-                        <option class="text-xl " value="">Choose Menu Type</option>
-                        <option class="text-xl" value="menu">Menu</option>
-                        <option class="text-xl" value="sub_menu">Sub Menu</option>
-                      </select>
-                    </div>
-                    <div class="mb-4" v-if="menuType == 'sub_menu'">
-                        <label
-                        class="block text-gray-700 text-sm font-bold mb-2"
-                        for="parentMenu"
-                        >
-                        Menu Name
-                        </label>
-                        <select
-                        class="
-                            shadow-md
-                            appearance-none
-                            cursor-pointer
-                            border
-                            rounded
-                            w-full
-                            py-1
-                            px-3
-                            text-gray-700
-                            leading-tight
-                            focus:outline-none
-                            focus:shadow-outline
-                        "
-                        id="parentMenu"
-                        v-model="parentMenu"
-                        >
-                        <option class="text-xl " value="">Choose Menu Name</option>
-                        <option class="text-xl" v-for="menu in MenuItems" :key="menu.id" :value="menu.id">{{menu.menu_name}}</option>
-                      </select>
-                    </div> -->
-                <div class="mb-4">
+      </div>
+      <div class="dialog_box fixed inset-0 h-screen w-full flex justify-center items-center" v-if="dialogBox == true">
+      <div class="dialog_content bg-white rounded-md shadow-md">
+          <div class="flex justify-between mb-4">
+            SubMenu <font-awesome-icon icon="times"  size="1x" class="text-red-600 cursor-pointer" @click="dialogBox = false" />
+        </div>
+         <div class="mb-4">
                     <label
                     class="block text-gray-700 text-sm font-bold mb-2"
                     for="menuName"
@@ -240,8 +169,8 @@
                         Add
                         </button>
                 </div>
-            </div>
       </div>
+     </div>
   </div>
 </template>
 
@@ -251,6 +180,7 @@ export default {
     data(){
         return{
             menuTitle: '',
+            mainMenuLink:'',
             menuHeading:'',
             menuName:'',
             menuLink:'',
@@ -259,7 +189,9 @@ export default {
             menuType:'',
             parentMenu:'',
             Menus:[],
-            MenuItems:[]
+            MenuItems:[],
+            dialogBox:false,
+            menuId:''
         }
     },
     mounted(){
@@ -268,11 +200,17 @@ export default {
     methods:{
       AddTitle(e){
           e.target.classList.add('loading');
+          var data = {
+               menu_link:this.mainMenuLink
+            }
+            data = JSON.stringify(data);
           this.$axios.post(process.env.baseUrl + 'api/menu/title',{
-              menu_type: this.menuTitle
+              menu_type: this.menuTitle,
+              data_value:data
           }).then((res)=>{
               console.log(res)
               this.menuTitle = ''
+              this.mainMenuLink = ''
               e.target.classList.remove('loading');
               this.GetMenu()
           }).catch((err)=>{
@@ -308,15 +246,13 @@ export default {
       AddMenu(e){
           e.target.classList.add('loading');
           this.$axios.post(process.env.baseUrl + 'api/menu/menu',{
-              menu_title_id:this.menuHeading,
+              menu_title_id:this.menuId,
               menu_name: this.menuName,
               menu_link: this.menuLink
           }).then((res)=>{
-              this.menuHeading = '';
               this.menuName = '';
               this.menuLink = '';
               this.GetMenu()
-              console.log(res)
               e.target.classList.remove('loading');
           }).catch((err)=>{
               console.log(err)
@@ -398,6 +334,28 @@ button.loading .spinner-border-sm{
         opacity: 1;
         transform: scaleY(1);
     }
+}
+
+.dialog_box {
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+.dialog_content {
+  width: 500px;
+  padding: 40px;
+  padding-top: 30px;
+  max-width: 100%;
+  animation: fadeDowns .3s;
+}
+@keyframes fadeDowns {
+  from{
+    opacity: 0;
+    transform: scale(0);
+  }
+  to{
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 </style>
