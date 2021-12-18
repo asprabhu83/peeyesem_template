@@ -146,7 +146,8 @@ export default {
             this.error=false;
             var data = {
                 meta_name:this.metaName,
-                meta_content:this.metaContent
+                meta_content:this.metaContent,
+                slug:this.PageTitle.replace(/\s+/g, '-').toLowerCase()
             }
             data = JSON.stringify(data);
             this.$axios.post(process.env.baseUrl + 'api/page/store',{
