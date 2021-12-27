@@ -64,29 +64,14 @@
             <div class="w-6/12 p-4 menu_box mx-5 my-16">
               <div class="flex justify-between items-center">
                   <h5 class="font-semibold">Add menus</h5>
-                  <button class="bg-blue-500
-                        sm_menu
-                        hover:bg-blue-700
-                        text-white
-                        font-bold
-                        flex
-                        items-center
-                        justify-center
-                        py-2
-                        px-4
-                        rounded
-                        focus:outline-none
-                        focus:shadow-outline">
-                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                        Save changes</button>
               </div>
               <div class="menu_sec my-3 p-2">
                    <div class="my-3" v-for="menu in titles" :key="menu.id" :class="'btn-id-'+ menu.id">
-                       <span style="display:inline-block;min-width:100px;font-weight:bold;">{{menu.menu_type}}</span> <button class="bg-blue-500 text-white px-3 py-1 mx-2" type="button" v-if="menu.menu_type !=='Home'" @click="dialogBox = true,menuId = menu.id">Add Submenu</button>
-                       <div class="pl-3 pt-2">
-                           <div v-for="sub in menu.menu_titles" :key="sub.id">
-                               {{sub.menu_name}}
-                           </div>
+                       <span class="menu_title" >{{menu.menu_type}}</span> <font-awesome-icon icon="trash"  size="1x" class="text-red-600 cursor-pointer mx-1" @click="Delete(menu.id)" /> <button class="add_submenu_btn" type="button" v-if="menu.menu_type !=='Home'" @click="dialogBox = true,menuId = menu.id">Add Submenu</button>
+                       <div class=" pt-2">
+                           <ul v-for="sub in menu.menu_titles" :key="sub.id">
+                              <li>{{sub.menu_name}}</li>
+                           </ul>
                        </div>
                    </div>
               </div>
@@ -295,6 +280,26 @@ export default {
 </script>
 
 <style scoped>
+.menu_sec ul li{
+    list-style-type: disc;
+    margin-left: 20px;
+}
+.menu_title{
+    display:inline-block;
+    min-width:150px;
+    font-weight:bold;
+}
+.add_submenu_btn{
+    background: #002c5f;
+    color: white;
+    padding: 5px 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 13px;
+    margin-left: 10px;
+}
 .menu_box{
     box-shadow: 0 2px 10px 4px rgb(0 0 0/7%);
     border: 1px solid #ced4da;

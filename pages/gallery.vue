@@ -23,25 +23,69 @@ export default {
             gallery:[
                 {
                     id:1,
-                    name:'Best Selling Partner In South Region',
                     image:'5.jpg',
-                    items:'4',
                     date:'03-02-2013'
                 },
                 {
                     id:2,
-                    name:'Customer Car Delivery Images',
                     image:'6.jpg',
-                    items:'3',
                     date:'03-01-2013'
                 },
                 {
                     id:3,
-                    name:'Hyundai Venue Launch',
                     image:'8.jpg',
-                    items:'2',
                     date:'21-05-2019'
                 },
+                {
+                    id:4,
+                    image:'9.jpg',
+                    date:'21-05-2019'
+                },
+                {
+                    id:5,
+                    image:'10.jpg',
+                    date:'21-05-2019'
+                },
+                {
+                    id:6,
+                    image:'11.jpg',
+                    date:'21-05-2019'
+                },
+                {
+                    id:7,
+                    image:'12.jpg',
+                    date:'21-05-2019'
+                },
+                {
+                    id:8,
+                    image:'13.jpg',
+                    date:'21-05-2019'
+                },
+                {
+                    id:9,
+                    image:'14.jpg',
+                    date:'21-05-2019'
+                },
+                {
+                    id:10,
+                    image:'15.jpg',
+                    date:'21-05-2019'
+                },
+                {
+                    id:11,
+                    image:'16.jpg',
+                    date:'21-05-2019'
+                },
+                {
+                    id:12,
+                    image:'17.jpg',
+                    date:'21-05-2019'
+                },
+                {
+                    id:13,
+                    image:'18.jpg',
+                    date:'21-05-2019'
+                }
             ]
         }
     }
