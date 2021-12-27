@@ -1,7 +1,8 @@
 <template>
   <div class="my-24 emi_page_sec">
       <div class="heading text-center my-4">EMI Calculator</div>
-      <div class="explanation text-center my-3">EMI calculator helps you to calculate the EMI for the loan amount to make a Hyundai car purchase through finance.</div>
+      <div class="explanation text-center my-3">EMI calculator helps you to calculate the EMI for the loan amount to make a Hyundai car purchase through finance.<br/>EMI Value is subject to be the approval of bank instructed
+</div>
       <div class="form_sec">
           <div class="input_box">
                     <select

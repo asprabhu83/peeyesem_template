@@ -12,11 +12,11 @@
                         <div class="text-sm contact_text mb-3"><font-awesome-icon icon="map-marker-alt"  size="1x" class="text-white  mr-2" />Old No. - 94, New No. - 162,<br/> Luz Church Road, Opp to <br/> Kauvery hospital,Mylapore,<br/>Chennai - 600004</div>
                     </div>
                 </div>
-                <div class="footer_item_sec two_col_item footer_mobile_menu">
+                <!-- <div class="footer_item_sec two_col_item footer_mobile_menu">
                     <div class="gmap_canvas">
                         <iframe  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15547.7946740085!2d80.2575787!3d13.0389394!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5b5a4c51158248e4!2sPEEYESYEM%20HYUNDAI%20-%20MYLAPORE!5e0!3m2!1sen!2sin!4v1636443172904!5m2!1sen!2sin" width="354" height="274" style="border:0;max-width:100%;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
-                </div>
+                </div> -->
                 <div class="footer_item_sec menus footer_mobile_menu">
                     <div class="footer_one_widget">
                         <!-- <h3 class="text-capitalize footer_heading">Information</h3> -->
@@ -25,8 +25,8 @@
                             <li><nuxt-link to="/about">About Us</nuxt-link></li>
                             <li><nuxt-link to="/privacy-policy">Privacy Policy</nuxt-link></li>
                             <li><nuxt-link to="/terms-of-use">Terms of Use</nuxt-link></li>
-                            <li><nuxt-link to="/disclaimer">Disclaimer</nuxt-link></li>
                             <li><nuxt-link to="/">Warranty Policy</nuxt-link></li>
+                            <li><nuxt-link to="/disclaimer">Disclaimer</nuxt-link></li>
                         </ul>
                     </div>
                 </div>
@@ -35,9 +35,9 @@
                         <!-- <h3 class="text-capitalize footer_heading">Our Services</h3> -->
                         <ul>
                             <li><nuxt-link to="/all-cars">New Cars</nuxt-link></li>
-                            <li><nuxt-link to="/buy-car">Used Cars</nuxt-link></li>
-                            <li><nuxt-link to="/contact-us/test-drive">Book a Test Drive</nuxt-link></li>
-                            <li><nuxt-link to="/service-booking">Book a Service</nuxt-link></li>
+                            <li><nuxt-link to="/buy-car">Exchange Your Car</nuxt-link></li>
+                            <li><nuxt-link to="/contact-us/test-drive">Test Drive Your Car</nuxt-link></li>
+                            <li><nuxt-link to="/service-booking">Service Your Car</nuxt-link></li>
                             <li><nuxt-link to="/accessories">Accessories</nuxt-link></li>
                             <li><nuxt-link to="/site-map">Sitemap</nuxt-link></li>
                         </ul>
@@ -80,7 +80,7 @@
                             <div>
                                 <div class="location_sec">
                                     <div class="mr-2 font-semibold">Sales:</div>
-                                    <nuxt-link to="/locations?location=mylapore-sales" class="cursor-pointer">Mylapore</nuxt-link>
+                                    <nuxt-link to="/locations?location=mylapore-sales" class="cursor-pointer">Chennai</nuxt-link>
                                     <span>|</span>
                                     <nuxt-link to="/locations?location=madurai-sales" class="cursor-pointer">Madurai</nuxt-link>
                                     <span>|</span>
@@ -228,7 +228,7 @@ export default {
 }
 .main_footer_sec{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 .footer_item_sec{
     margin: 0 32px;

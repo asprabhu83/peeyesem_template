@@ -4,135 +4,215 @@
           <img :src="require('@/assets/img/cars/career_poster2.webp')" alt="img" style="width:100%;" />
       </div>
       <div class="my-16">
-          <div class="heading my-5">Careers</div>
-          <div class="career_item_box">
-              <div class="item my-16">
-                  <div class="tag_heading">Sales Consultants</div>
-                  <div class="card_box ">
-                      <div class="head">We Are Hiring Sales Consultants</div>
-                      <div class="desc">
-                          It Is  Largest Hyundai Dealer With A Gigantic Network Of 7 Showrooms, 8 Service Workshops, And 10 Used Car Showrooms. To Deliver On Our Promise We Have Most
-                      </div>
-                      <div class="footer">
-                          <div class="exp"> Exp: Freshers / Experienced</div>
-                          <button>Apply Now</button>
-                      </div>
-                  </div>
-              </div>
-              <div class="item my-16">
-                  <div class="tag_heading">Team Leader - Sales</div>
-                  <div class="card_box ">
-                      <div class="head">We Are Hiring Sales Team Leaders</div>
-                      <div class="desc">
-                          It Is  Largest Hyundai Dealer With A Gigantic Network Of 7 Showrooms, 8 Service Workshops, And 10 Used Car Showrooms. We Are Looking For Young, Enthusiastic
-                      </div>
-                      <div class="footer">
-                          <div class="exp"> Exp: 3 + Years</div>
-                          <button>Apply Now</button>
-                      </div>
-                  </div>
-              </div>
+          <div class="form_sec">
+          <div class="step step1" :class="form_tab_index == 0 ? 'active' : ''" >
+               <div class="title">We are Hiring</div>
+            <form >
+                <div class="mb-4 mt-4">
+                        <input
+                        class="
+                            shadow-md
+                            appearance-none
+                            border
+                            rounded
+                            w-full
+                            py-2
+                            px-3
+                            text-gray-700
+                            leading-tight
+                            focus:outline-none
+                            focus:shadow-outline
+                        "
+                        id="name"
+                        type="text"
+                        placeholder="Full Name"
+                        v-model="name"
+                        />
+                    </div>
+                    <div class="mb-4 ">
+                        <input
+                        class="
+                            shadow-md
+                            appearance-none
+                            border
+                            rounded
+                            w-full
+                            py-2
+                            px-3
+                            text-gray-700
+                            leading-tight
+                            focus:outline-none
+                            focus:shadow-outline
+                        "
+                        id="email"
+                        type="email"
+                        placeholder="Email Id"
+                        v-model="email"
+                        />
+                    </div>
+                    <div class="mb-4 ">
+                        <input
+                        class="
+                            shadow-md
+                            appearance-none
+                            border
+                            rounded
+                            w-full
+                            py-2
+                            px-3
+                            text-gray-700
+                            leading-tight
+                            focus:outline-none
+                            focus:shadow-outline
+                        "
+                        id="mobile"
+                        type="text"
+                        placeholder="Mobile Number"
+                        v-model="mobile"
+                        />
+                    </div>
+                    <div class="mb-4 ">
+                        <input
+                        class="
+                            shadow-md
+                            appearance-none
+                            border
+                            rounded
+                            w-full
+                            py-2
+                            px-3
+                            text-gray-700
+                            leading-tight
+                            focus:outline-none
+                            focus:shadow-outline
+                        "
+                        id="message"
+                        type="text"
+                        placeholder="Position"
+                        v-model="position"
+                        />
+                    </div>
+                    <div class="btn_box" >
+                        <button type="button" @click="AddContactData">Submit</button>
+                    </div>
+            </form>
           </div>
+      </div>
       </div>
   </div>
 </template>
 
 <script>
 export default {
-
+    data(){
+        return{
+            form_tab_index:0,
+            name:'',
+            email:'',
+            mobile:'',
+            position:'',
+        }
+    }
 }
 </script>
 
 <style scoped>
 @media only screen and (min-width: 760px) and (max-width: 960px){
-    .career_item_box .item{
-        width: 70%!important;
+    .form_sec{
+        width: 90%!important;
+    }
+    .form_sec .step{
+        width: 58%!important;
     }
 }
 @media only screen and (min-width: 961px) and (max-width: 1030px){
-    .career_item_box .item{
-        width: 55%!important;
+    .form_sec{
+        width: 90%!important;
+    }
+    .form_sec .step{
+        width: 51%!important;
     }
 }
 @media only screen and (min-width:300px) and (max-width:600px){
-    .career_item_box{
-        width: 95%!important;
-    }
-    .career_item_box .item{
-        width: 95%!important;
-    }
+  .form_sec .step{
+     width: 100%!important;
+   }
+  .form_sec{
+    width: 100%!important;
+  }
 }
-@media only screen and (min-width: 1367px) and (max-width: 1600px){
-    .item{
-        width: 33%!important;
-    }
-}
-@media only screen and (min-width: 1270px) and (max-width: 1366px){
-    .item{
-        width: 44%!important;
-    }
-}
+/* .btn_box button:disabled{
+    opacity: 0.7;
+    cursor: not-allowed;
+} */
 .heading{
-    font-size: 24px;
     font-weight: 600;
-    text-align: center;
+    font-size: 25px;
 }
-.item{
-    width: 30%;
-    margin-left: auto;
-    margin-right: auto;
+.explain{
+    font-size: 16px;
 }
-.item .card_box{
-    border-radius: 7px;
-    box-shadow: 0 2px 10px 4px rgb(0 0 0/15%);
-    margin-top: -8px;
-}
-.card_box .head{
-    font-size: 17px;
-    font-weight: 600;
-    margin: 10px 0;
-    padding: 15px 20px;
-} 
-.card_box .desc{
-    font-size: 15px;
-    font-weight: 500;
-    color: gray;
-    padding: 3px 20px;
-    margin: 10px 0;
-} 
-.card_box .footer{
-    padding: 15px 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid lightgray;
-    padding: 20px;
-}
-.footer .exp{
-    font-weight: 500;
-}
-.footer button{
-    padding: 3px 12px;
-    background: #002c5f;
-    color: white;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    border-radius: 4px;
-}
-.career_item_box{
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-}
-.tag_heading{
-    display: inline-block;
-    margin-left: 2px;
+.btn_box button{
     padding: 4px 20px;
     background: #002c5f;
     color: white;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
-
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.form_sec{
+    width: 60%;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+}
+.form_sec .image_sec{
+    width: 49%;
+    height: 370px;
+    object-fit: cover;
+    object-position: left;
+}
+.image_sec img{
+    height: 100%;
+}
+.form_sec .step{
+    width: 49%;
+    padding: 0 40px;
+    display: none;
+}
+.form_sec .step.active{
+    display: block;
+}
+.form_sec .step .title{
+    font-weight: 600;
+    font-size: 19px;
+}
+.active_sec{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.active_sec div{
+    height: 10px;
+    width: 10px;
+    background: lightgray;
+    margin: 10px;
+}
+.active_sec div.active{
+    background: #002c5f;
+    height: 11px;
+    width: 11px;
+}
+.step2 .btn_box, .step3 .btn_box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.checkbox_sec span{
+    font-size: 15px;
+}
+.checkbox_sec{
+    padding-left:4px;
 }
 </style>

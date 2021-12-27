@@ -38,52 +38,52 @@ export default {
                 },
                 {
                     id:4,
-                    image:'9.jpg',
+                    image:'9.jpeg',
                     date:'21-05-2019'
                 },
                 {
                     id:5,
-                    image:'10.jpg',
+                    image:'10.jpeg',
                     date:'21-05-2019'
                 },
                 {
                     id:6,
-                    image:'11.jpg',
+                    image:'11.jpeg',
                     date:'21-05-2019'
                 },
                 {
                     id:7,
-                    image:'12.jpg',
+                    image:'12.jpeg',
                     date:'21-05-2019'
                 },
                 {
                     id:8,
-                    image:'13.jpg',
+                    image:'13.jpeg',
                     date:'21-05-2019'
                 },
                 {
                     id:9,
-                    image:'14.jpg',
+                    image:'14.jpeg',
                     date:'21-05-2019'
                 },
                 {
                     id:10,
-                    image:'15.jpg',
+                    image:'15.jpeg',
                     date:'21-05-2019'
                 },
                 {
                     id:11,
-                    image:'16.jpg',
+                    image:'16.jpeg',
                     date:'21-05-2019'
                 },
                 {
                     id:12,
-                    image:'17.jpg',
+                    image:'17.jpeg',
                     date:'21-05-2019'
                 },
                 {
                     id:13,
-                    image:'18.jpg',
+                    image:'18.jpeg',
                     date:'21-05-2019'
                 }
             ]

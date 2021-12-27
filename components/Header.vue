@@ -122,8 +122,8 @@
                                             <nuxt-link class="menu-item" to="">Contact Us <i class="fa fa-angle-down"></i></nuxt-link>
                                                <ul class="sub-menu">
                                                 <li><nuxt-link to="/contact-us/contact">Contact Us</nuxt-link></li>
-                                                <li><nuxt-link to="/contact-us/test-drive">Test Drive</nuxt-link></li>
-                                                <li><nuxt-link to="/contact-us/sales-enquiry">Sales Enquiry</nuxt-link></li>
+                                                <!-- <li><nuxt-link to="/contact-us/test-drive">Test Drive</nuxt-link></li>
+                                                <li><nuxt-link to="/contact-us/sales-enquiry">Sales Enquiry</nuxt-link></li> -->
                                                 <li><nuxt-link to="/emi-calculator">EMI Calculator</nuxt-link></li>
                                                     <!-- <li><nuxt-link to="/hyundai-offers">Special Offers</nuxt-link></li> -->
                                                 <li><nuxt-link to="/contact-us/feedback">Feedback</nuxt-link></li>

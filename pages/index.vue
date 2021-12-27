@@ -93,11 +93,11 @@
                 </div>
                 <div class="text-white text-center service_items service_item font-bold text-xl">
                     <div class="mb-2 text-uppercase">Service workshops</div>
-                   <div class="flex items-center count_box"><img class="mx-2 car_sold" :src="require('@/assets/img/car_sold.png')" alt="img"  /><div id="value2">8</div></div>
+                   <div class="flex items-center count_box"><img class="mx-2 car_sold" :src="require('@/assets/img/car_sold.png')" alt="img"  /><div id="value2">9</div></div>
                 </div>
                 <div class="text-white text-center service_items service_item font-bold text-xl">
                     <div class="mb-2 text-uppercase">Used car Showroom</div>
-                   <div class="flex items-center count_box"><img class="mx-2 car_service" :src="require('@/assets/img/car_service.png')" alt="img"  /><div id="value3">10</div></div>
+                   <div class="flex items-center count_box"><img class="mx-2 car_service" :src="require('@/assets/img/car_service.png')" alt="img"  /><div id="value3">6</div></div>
                 </div>
                 <div class="text-white text-center service_items service_item font-bold text-xl">
                    <div class="mb-2">HAPPY CUSTOMERS</div>
@@ -376,8 +376,8 @@ export default {
 
         setTimeout(()=>{
             this.animateValue(obj1, 0, 7, 2000);
-            this.animateValue(obj2, 0, 8, 2000);
-            this.animateValue(obj3, 0, 10, 2000);
+            this.animateValue(obj2, 0, 9, 2000);
+            this.animateValue(obj3, 0, 6, 2000);
             this.animateValue(obj4, 0, 1000, 11000);
         },2000)
     },
