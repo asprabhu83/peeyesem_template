@@ -595,6 +595,7 @@ export default {
     },
     mounted(){
         this.filterLocations();
+        window.scrollTo(0, 0)
     },
     methods:{
         filterLocations(){

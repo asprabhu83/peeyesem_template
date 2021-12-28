@@ -5999,6 +5999,9 @@ table {
 .fixed_form_sec .form5:hover{
     transform: translateX(-188px);
 }
+.fixed_form_sec .form6:hover{
+    transform: translateX(-188px);
+}
 
 .whtsapp_btn{
     position: fixed;
@@ -6265,6 +6268,12 @@ table {
     .fixed_form_sec .form4:hover{
         transform: translateX(-148px);
     }
+    .fixed_form_sec .form5:hover{
+        transform: translateX(-148px);
+    }
+    .fixed_form_sec .form6:hover{
+        transform: translateX(-148px);
+    }
     .fixed_form_sec{
         right: -148px;
     }
@@ -6377,6 +6386,12 @@ table {
         transform: translateX(-148px);
     }
     .fixed_form_sec .form4:hover{
+        transform: translateX(-148px);
+    }
+    .fixed_form_sec .form5:hover{
+        transform: translateX(-148px);
+    }
+    .fixed_form_sec .form6:hover{
         transform: translateX(-148px);
     }
     .fixed_form_sec{

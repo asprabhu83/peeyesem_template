@@ -312,6 +312,7 @@ export default {
         if(this.$store.state.cars.length == 0){
             this.GetModels();
         }
+        window.scrollTo(0, 0)
     },
     methods:{
         sortedArray() {

@@ -232,6 +232,7 @@ export default {
                     this.email_err = true;
                     btn.innerHTML = 'Submit';
                 }
+                btn.innerHTML = 'Submit';
             }
             if(err == 0){
                 this.$axios.post(process.env.baseUrl + 'api/car_form/store',{

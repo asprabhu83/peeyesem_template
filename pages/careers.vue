@@ -7,6 +7,11 @@
           <div class="form_sec">
           <div class="step step1" :class="form_tab_index == 0 ? 'active' : ''" >
                <div class="title">We are Hiring</div>
+               <div class="msg_box my-1">
+                   <div class="error pt-3 text-green-500" v-if="success == true">Added Successfully</div>
+                   <div class="error pt-3 text-red-500" v-if="error == true">Invalid Data</div>
+                   <div class="error pt-3 text-red-500" v-if="email_err == true">Invalid Email</div>
+              </div>
             <form >
                 <div class="mb-4 mt-4">
                         <input
@@ -93,7 +98,7 @@
                         />
                     </div>
                     <div class="btn_box" >
-                        <button type="button" @click="AddContactData">Submit</button>
+                        <button type="button" @click="PostValue">Submit</button>
                     </div>
             </form>
           </div>
@@ -111,6 +116,58 @@ export default {
             email:'',
             mobile:'',
             position:'',
+            success:false,
+            error:false,
+            email_err:false
+        }
+    },
+    methods:{
+        PostValue(e){
+            var btn = e.target;
+            btn.innerHTML = 'Loading';
+            var err = 0;
+            this.error = false;
+            this.email_err = false;
+            var emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if(this.email == '' || this.name == '' || this.mobile == ''){
+                err++
+                this.error = true;
+                btn.innerHTML = 'Submit';
+            }else{
+                if(!emailRegex.test(this.email)){
+                    err++;
+                    this.email_err = true;
+                    btn.innerHTML = 'Submit';
+                }
+                btn.innerHTML = 'Submit';
+            }
+            if(err == 0){
+                var data_value = {
+                    position:this.position
+                }
+                data_value = JSON.stringify(data_value);
+                this.$axios.post(process.env.baseUrl + 'api/car_form/store',{
+                    full_name:this.name,
+                    email_id:this.email,
+                    form_type:'careers',
+                    mobile_no:this.mobile,
+                    data_form_value:data_value
+                }).then((res)=>{
+                    this.name = '';
+                    this.email = '';
+                    this.mobile = '';
+                    this.position = '';
+                    this.success = true;
+                    setTimeout(()=>{
+                        this.success = false;
+                    },2500)
+                    btn.innerHTML = 'Submit';
+                }).catch((err)=>{
+                    console.log(err);
+                    this.error = true;
+                    btn.innerHTML = 'Submit';
+                })
+            }
         }
     }
 }
