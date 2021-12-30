@@ -25,7 +25,7 @@
                             <li><nuxt-link to="/about">About Us</nuxt-link></li>
                             <li><nuxt-link to="/privacy-policy">Privacy Policy</nuxt-link></li>
                             <li><nuxt-link to="/terms-of-use">Terms of Use</nuxt-link></li>
-                            <li><nuxt-link to="/">Warranty Policy</nuxt-link></li>
+                            <li><nuxt-link to="/site-map">Sitemap</nuxt-link></li>
                             <li><nuxt-link to="/disclaimer">Disclaimer</nuxt-link></li>
                         </ul>
                     </div>
@@ -39,7 +39,7 @@
                             <li><nuxt-link to="/contact-us/test-drive">Test Drive Your Car</nuxt-link></li>
                             <li><nuxt-link to="/service-booking">Service Your Car</nuxt-link></li>
                             <li><nuxt-link to="/accessories">Accessories</nuxt-link></li>
-                            <li><nuxt-link to="/site-map">Sitemap</nuxt-link></li>
+                            <li><nuxt-link to="/get-insurance">Insurance and Finance</nuxt-link></li>
                         </ul>
                     </div>
                 </div>
@@ -66,6 +66,117 @@
                             </ul>
                         </div>
                     </div>
+                </div>
+                <div class="footer_item_sec footer_mobile_menu">
+                    <form class="">
+                        <div class="heading  pb-2 font-semibold text-lg">Feedback</div>
+                        <div class="mb-2">
+                                <input
+                                class="
+                                    shadow
+                                    appearance-none
+                                    border
+                                    rounded
+                                    w-full
+                                    py-1
+                                    px-3
+                                    text-gray-700
+                                    leading-tight
+                                    focus:outline-none
+                                    focus:shadow-outline
+                                "
+                                type="text"
+                                placeholder="Your Name"
+                                v-model="name"
+                                />
+                            </div>
+                        <div class="mb-2">
+                                <input
+                                class="
+                                    shadow
+                                    appearance-none
+                                    border
+                                    rounded
+                                    w-full
+                                    py-1
+                                    px-3
+                                    text-gray-700
+                                    leading-tight
+                                    focus:outline-none
+                                    focus:shadow-outline
+                                "
+                                type="text"
+                                v-model="email"
+                                placeholder="Your Email"
+                                />
+                            </div>
+                        <div class="mb-2">
+                                <input
+                                class="
+                                    shadow
+                                    appearance-none
+                                    border
+                                    rounded
+                                    w-full
+                                    py-1
+                                    px-3
+                                    text-gray-700
+                                    leading-tight
+                                    focus:outline-none
+                                    focus:shadow-outline
+                                "
+                                type="number"
+                                v-model="mobile"
+                                placeholder="Your Phone"
+                                />
+                            </div>
+                            <div class="mb-2">
+                                <select
+                                class="
+                                shadow
+                                border
+                                rounded
+                                w-full
+                                py-1
+                                px-3
+                                text-gray-700
+                                cursor-pointer
+                                leading-tight
+                                focus:outline-none
+                                focus:shadow-outline
+                                "
+                                id="city"
+                                v-model="feedbackFor"
+                            >
+                            <option class="text-xl " value="">Feedback for</option>
+                            <option class="text-xl" :value="model" v-for="model in FeedbackList"
+                                :key="model" >{{model}}</option>
+                            </select>
+                            </div>
+                            <div class="mb-2">
+                                <textarea
+                                class="
+                                    shadow
+                                    appearance-none
+                                    border
+                                    rounded
+                                    w-full
+                                    py-2
+                                    px-3
+                                    text-gray-700
+                                    leading-tight
+                                    focus:outline-none
+                                    focus:shadow-outline
+                                "
+                                type="text"
+                                v-model="description"
+                                placeholder="Description"
+                                />
+                            </div>
+                        <div class="btn_grp">
+                            <button  type="button" @click="AddFeedback" class="feedback_btn">Submit</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -127,48 +238,50 @@
 </template>
 
 <script>
-import { required, email } from "vuelidate/lib/validators";
 export default {
     data() {
         return {
 
-            title: 'Contact Us',
-
-            // Breadcrumb Items Data
-            breadcrumbItems: [
-                {
-                    text: 'Home',
-                    to: '/'
-                },
-                {
-                    text: 'Contact'
-                }
+            FeedbackList:[
+                'Sales',
+                'Service',
+                'Finance'
             ],
-            // Form Validation
-            user: {
-                email: "",
-            },
-            submitted: false
+            name:'',
+            email:'',
+            mobile:'',
+            feedbackFor:'',
+            description:'',
+
+            title: 'Contact Us',
         }
     },
-
-    validations: {
-        user: {
-            email: { required, email }
-        }
-    },
-    methods: {
-        handleSubmit(e) {
-            this.submitted = true;
-
-            // stop here if form is invalid
-            this.$v.$touch();
-            if (this.$v.$invalid) {
-                return;
+    methods:{
+        AddFeedback(){
+            var data_value = {
+                feedback_for:this.feedbackFor,
+                description:this.description
             }
-            alert("Thanks for Subscribe newsletter!");
+            data_value = JSON.stringify(data_value);
+            this.$axios.post(process.env.baseUrl + 'api/car_form/store',{
+                full_name:this.name,
+                email_id:this.email,
+                mobile_no:this.mobile,
+                form_type:'feedback',
+                data_form_value:data_value
+            }).then((res)=>{
+                if(res){
+                    this.name = '';
+                    this.email = '';
+                    this.mobile = '';
+                    this.description = '';
+                    this.feedbackFor = '';
+                }
+            }).catch((err)=>{
+                console.log(err);
+            })
         }
-    },
+    }
 }
 </script>
 <style scoped>
@@ -184,6 +297,16 @@ export default {
     background: white;
     margin: 0 7px;
 } */
+.btn_grp .feedback_btn{
+    width: 100%;
+    padding: 7px;
+    outline: none;
+    border: none;
+    background: black;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
 @media only screen and (min-width: 760px) and (max-width: 960px){
     .main_footer_sec{
         flex-wrap: wrap;
@@ -249,6 +372,9 @@ export default {
 
 
 @media only screen and (min-width:300px) and (max-width:600px){
+    form .heading{
+        text-align: center;
+    }
     .main_footer_sec{
         flex-wrap: wrap;
     }
@@ -287,8 +413,14 @@ export default {
     #footer_one .row{
         justify-content: center;
     }
+    input[type="text"]{
+        min-height: 34px!important;
+    }
 }
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
+    input[type="text"]{
+        min-height: 34px!important;
+    }
     #footer_one .footer_left_side_icon ul li a i {
         font-size: 15px;
     }

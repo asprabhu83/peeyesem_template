@@ -1,15 +1,10 @@
 <template>
   <div class="my-16">
       <div class="heading text-center my-4">
-          Book A Service
-      </div>
-      <div class="explain text-center mt-4 mb-5">Peeyesyem Hyundai provides you with Online Service booking at your Convenient time. Peeyesyem Hyundai has the largest network of High Quality Workshops for Service and Repair of your Hyundai Cars.<b> Make an appointment at your convenience</b>, Pick up and Drop facility also available.
-          <br/>
-          Book an appointment for having your Hyundai Car serviced, please fill the form. Our service team will get back to you soon.
+          Body Shop
       </div>
       <div class="form_sec">
           <div class="step step1" :class="form_tab_index == 0 ? 'active' : ''">
-               <div class="title">Personal Details</div>
             <form >
                 <div class="mb-4 mt-4">
                         <input
@@ -53,7 +48,7 @@
                         v-model="email"
                         />
                     </div>
-                    <div class="mb-6 ">
+                    <div class="mb-4 ">
                         <input
                         class="
                             shadow-md
@@ -74,8 +69,7 @@
                         v-model="mobile"
                         />
                     </div>
-                    <div class="title">Vehicle Details</div>
-                    <div class="mb-4 mt-4">
+                    <div class="mb-4">
                       <select
                                 class="
                                 shadow-md
@@ -100,91 +94,28 @@
                             </select>
                     </div>
                     <div class="mb-4 ">
-                        <input
-                        class="
-                            shadow-md
-                            appearance-none
-                            border
-                            rounded
-                            w-full
-                            py-2
-                            px-3
-                            text-gray-700
-                            leading-tight
-                            focus:outline-none
-                            focus:shadow-outline
-                        "
-                        id="fuel_type"
-                        type="text"
-                        placeholder="Registration Number"
-                        v-model="regNumber"
-                        />
-                    </div>
-                    <div class="mb-6 ">
-                        <input
-                        class="
-                            shadow-md
-                            appearance-none
-                            border
-                            rounded
-                            w-full
-                            py-2
-                            px-3
-                            text-gray-700
-                            leading-tight
-                            focus:outline-none
-                            focus:shadow-outline
-                        "
-                        id="fuel_type"
-                        type="text"
-                        placeholder="Kms Driven"
-                        v-model="kmsDriven"
-                        />
-                    </div>
-                    <div class="title">Service & Dealership Details</div>
-                    <div class="mb-4 mt-4">
-                        <input
-                        class="
-                            shadow-md
-                            appearance-none
-                            border
-                            rounded
-                            w-full
-                            py-2
-                            px-3
-                            text-gray-700
-                            leading-tight
-                            focus:outline-none
-                            focus:shadow-outline
-                        "
-                        id="vehicle_model"
-                        :type="dateType"
-                        @focus="dateType ='date'"
-                        placeholder="Service date"
-                        v-model="serviceDate"
-                        />
-                    </div>
-                    <div class="mb-4 ">
-                        <input
-                        class="
-                            shadow-md
-                            appearance-none
-                            border
-                            rounded
-                            w-full
-                            py-2
-                            px-3
-                            text-gray-700
-                            leading-tight
-                            focus:outline-none
-                            focus:shadow-outline
-                        "
-                        id="fuel_type"
-                        :type="timeType"
-                        @focus="timeType ='time'"
-                        placeholder="Service Time"
-                        v-model="serviceTime"
-                        />
+                        <select
+                                class="
+                                shadow-md
+                                appearance-none
+                                border
+                                rounded
+                                w-full
+                                py-2
+                                px-3
+                                text-gray-700
+                                cursor-pointer
+                                leading-tight
+                                focus:outline-none
+                                focus:shadow-outline
+                                "
+                                id="fuel_type"
+                                v-model="fuelType"
+                            >
+                            <option class="text-xl " value="">Select Fuel Type</option>
+                            <option class="text-xl" :value="model.name" v-for="model in FuelTypeList"
+                                :key="model.id" >{{model.name}}</option>
+                            </select>
                     </div>
                     <div class="mb-4 ">
                         <select
@@ -202,13 +133,34 @@
                                 focus:outline-none
                                 focus:shadow-outline
                                 "
-                                id="vehicle_model"
-                                v-model="dealer"
+                                id="city"
+                                v-model="city"
                             >
                             <option class="text-xl " value="">Select City</option>
-                            <option class="text-xl" :value="model.name" v-for="model in CityList"
-                                :key="model.id" >{{model.name}}</option>
+                            <option class="text-xl" :value="city.name" v-for="city in CityList"
+                                :key="city.id" >{{city.name}}</option>
                             </select>
+                    </div>
+                    <div class="mb-4 ">
+                        <textarea
+                        class="
+                            shadow-md
+                            appearance-none
+                            border
+                            rounded
+                            w-full
+                            py-2
+                            px-3
+                            text-gray-700
+                            leading-tight
+                            focus:outline-none
+                            focus:shadow-outline
+                        "
+                        id="desc"
+                        type="text"
+                        placeholder="Description"
+                        v-model="description"
+                        />
                     </div>
                     <div class="mb-6">
                         <div class="checkbox_sec">
@@ -236,14 +188,10 @@ export default {
             email:'',
             mobile:'',
             vehicleModel:'',
-            regNumber:'',
-            kmsDriven:'',
-            serviceDate:'',
-            serviceTime:'',
-            dealer:'',
+            fuelType:'',
+            city:'',
+            description:'',
             agreement:false,
-            dateType:'text',
-            timeType:'text',
             CityList:[
                 {
                     id:1,
@@ -251,37 +199,43 @@ export default {
                 },
                 {
                     id:2,
-                    name:'Guindy'
+                    name:'Chennai'
                 },
                 {
                     id:3,
-                    name:'Kotturpuram'
-                },
-                {
-                    id:4,
-                    name:'Tondiarpet'
-                },
-                {
-                    id:5,
                     name:'Trichendur'
                 },
                 {
-                    id:6,
+                    id:4,
                     name:'Ramanathapuram'
                 },
                 {
-                    id:7,
+                    id:5,
                     name:'Kovilpatti'
                 },
                 {
-                    id:8,
+                    id:6,
                     name:'Tuticorin'
                 },
                 {
-                    id:9,
+                    id:7,
                     name:'Karaikudi'
                 }
-            ]
+            ],
+            FuelTypeList:[
+                {
+                    id:1,
+                    name:'Petrol'
+                },
+                {
+                    id:2,
+                    name:'Diesel'
+                },
+                {
+                    id:3,
+                    name:'CNG'
+                }
+            ],
         }
     },
     mounted(){
@@ -320,11 +274,9 @@ export default {
         },
         AddServiceData(){
             var data_value = {
-                reg_number:this.regNumber,
-                kms_driven:this.kmsDriven,
-                service_date:this.serviceDate,
-                service_time:this.serviceTime,
-                dealer:this.dealer
+                description:this.description,
+                fuel_type:this.fuelType,
+                city:this.city
             }
             data_value = JSON.stringify(data_value);
             this.$axios.post(process.env.baseUrl + 'api/car_form/store',{

@@ -244,7 +244,6 @@ export default {
                     this.name = '';
                     this.email = '';
                     this.mobile = '';
-                    window.open('https://hyundaimobisin.com/products/genuine-accessories','_blank');
                     btn.innerHTML = 'Submit';
                 }).catch((err)=>{
                     console.log(err);

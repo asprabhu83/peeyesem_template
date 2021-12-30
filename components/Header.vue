@@ -101,6 +101,9 @@
                                             </ul>
                                         </li>
                                         <li>
+                                            <nuxt-link class="menu-item" to="/body-shop">Body Shop</nuxt-link>
+                                        </li>
+                                        <li>
                                             <nuxt-link class="menu-item" to="/accessories">Accessories</nuxt-link>
                                         </li>
                                         <li>
@@ -527,7 +530,7 @@ export default {
 }
 .shodow_css_head .even_space_head{
     display: inline-block;
-    min-width: 67.08px;
+    min-width: 60.33px;
 }
 .divider{
     font-weight: 500;
@@ -578,8 +581,14 @@ export default {
     }
 }
 @media only screen and (min-width: 1367px) and (max-width: 1600px){
+    .sticky-header.sticky.sticky-color--golden .main-menu nav>ul>li{
+        padding-left: 43px!important;
+    }
+    .shodow_css_head .even_space_head{
+        min-width: 41.63px!important;
+    }
     .header-logo .logo img{
-        width: 36%;
+        width: 48%;
     }
     .call_service_details .left div, .call_service_details .right div{
         font-size: 13px;
@@ -657,17 +666,17 @@ export default {
     }
     .shodow_css_head .even_space_head{
         display: inline-block;
-        min-width: 48.45px!important;
+        min-width: 44.69px!important;
     }
     .business_logo_icon{
         margin-top: 3px ;
         width: 18px;
     }
     .main-menu nav>ul>li{
-        padding-left: 12px!important;
+        padding-left: 1px!important;
     }
     .sticky-header.sticky.sticky-color--golden .main-menu nav>ul>li{
-        padding-left: 17px!important;
+        padding-left: 25px!important;
     }
     .social_icons_box .flat_icons{
         width: 21px!important;
