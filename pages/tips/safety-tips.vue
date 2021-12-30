@@ -120,6 +120,9 @@ export default {
                 'Air bags can only be used once.'
             ]
         }
+    },
+    mounted(){
+        window.scrollTo(0, 0)
     }
 }
 </script>
