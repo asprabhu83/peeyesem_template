@@ -418,8 +418,15 @@ export default {
     }
 }
 @media only screen and (min-width: 1270px) and (max-width: 1366px){
-    input[type="text"]{
-        min-height: 34px!important;
+    input[type="text"], input[type="number"], form select{
+        min-height: 33px!important;
+        font-size: 14px;
+    }
+    .btn_grp .feedback_btn{
+        font-size: 14px;
+    }
+    form .heading{
+        font-size: 14px;
     }
     #footer_one .footer_left_side_icon ul li a i {
         font-size: 15px;

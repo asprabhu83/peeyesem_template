@@ -284,7 +284,7 @@ export default {
                 email_id:this.email,
                 mobile_no:this.mobile,
                 vehicle_model:this.vehicleModel,
-                form_type:'book_service',
+                form_type:'body_shop',
                 data_form_value:data_value
             }).then((res)=>{
                 if(res){
@@ -292,15 +292,11 @@ export default {
                     this.email = '';
                     this.mobile = '';
                     this.vehicleModel = '';
-                    this.regNumber = '';
-                    this.kmsDriven = '';
-                    this.serviceDate = '';
-                    this.serviceTime = '';
-                    this.dealer = '';
-                    this.form_tab_index = 0;
+                    this.description = '';
+                    this.fuelType = '';
+                    this.city = '';
                     this.agreement = false;
                 }
-                console.log(res)
             }).catch((err)=>{
                 console.log(err);
             })

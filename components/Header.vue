@@ -673,10 +673,10 @@ export default {
         width: 18px;
     }
     .main-menu nav>ul>li{
-        padding-left: 1px!important;
+        padding-left: 0px!important;
     }
     .sticky-header.sticky.sticky-color--golden .main-menu nav>ul>li{
-        padding-left: 25px!important;
+        padding-left: 15px!important;
     }
     .social_icons_box .flat_icons{
         width: 21px!important;
@@ -697,7 +697,7 @@ export default {
         width:90%;
     }
     .main-menu nav > ul > li > a{
-        padding: 1px 10px;
+        padding: 1px 9px;
         font-size: 11px;
     }
     .header-bottom-color--golden{

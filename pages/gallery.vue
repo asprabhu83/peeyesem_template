@@ -1,7 +1,7 @@
 <template>
   <div>
       <div class="img_Sec">
-          <img :src="require('@/assets/img/cars/counter_poster.jpg')" alt="img" style="width:100%;" />
+          <img :src="require('@/assets/img/cars/counter_poster.webp')" alt="img" style="width:100%;" />
       </div>
       <div class="my-16">
           <div class="heading text-center my-4">Media & Gallery</div>
