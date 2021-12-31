@@ -232,32 +232,7 @@
         <div class="overlay2 testimonial" />
     </section>
 
-
-    <!-- Upcoming Cars -->
-    <!-- <section class="" >
-        <div class="text-capitalize text-center pt-14 pb-10 font-bold text-3xl upcoming_car_heading">Upcoming Cars<hr class="h-1 w-1/12 my-2 mx-auto bg-black" style="background-color:black!important;" /></div>
-        <div class="row m-0 block">
-            <div class="product_single_one_img">
-                <swiper class="swiper product-single-2-slider" :options="swiperOption">
-                    <swiper-slide>
-                        <nuxt-link to="/" class="cursor-pointer"><img :src="require('@/assets/img/cars/car12.jpg')" alt="img" class="" style="width:100%;height:auto;"></nuxt-link>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <nuxt-link to="/" class="cursor-pointer"><img :src="require('@/assets/img/cars/poster_car1.jpg')" alt="img" class="" style="width:100%;height:auto;"></nuxt-link>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <nuxt-link to="/" class="cursor-pointer"><img :src="require('@/assets/img/cars/poster_car2.jpg')" alt="img" class="" style="width:100%;height:auto;"></nuxt-link>
-                    </swiper-slide>
-                    <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
-                    <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
-                </swiper>
-            </div>
-        </div>
-    </section> -->
     <Modal1 @closeModal="closeModal" v-if="formModal == true" />
-    <Modal2 @closeModal="closeModal" v-if="formModal2 == true" />
-    <Modal3 @closeModal="closeModal" v-if="formModal3 == true" />
-
     <Loading v-if="loading == true" />
 
     
@@ -266,26 +241,12 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
-import ProductBox1 from '~/components/product-box/ProductBox1'
-import Timer from '../components/widgets/Timer'
-import InstagramArea from '../components/instagram/InstagramArea'
-
-import isotope  from 'vueisotope'
 import Modal1 from '../components/modals/formModal1.vue'
-import Modal2 from '../components/modals/formModal2.vue'
-import Modal3 from '../components/modals/formModal3.vue'
 import Loading from '../components/Loading.vue'
 export default {
     name: 'Home',
     components: {
-        ProductBox1,
-        Timer,
-        InstagramArea,
-        isotope,
         Modal1,
-        Modal2,
-        Modal3,
         Loading
     },
 
@@ -296,8 +257,6 @@ export default {
             sortBy : "category"
         },
         formModal:false,
-        formModal2:false,
-        formModal3:false,
         loading:false,
 
         products: [],
@@ -340,17 +299,10 @@ export default {
 
       }
     },
-    computed: {
-        ...mapState({
-            productslist: state => state.products.productslist
-        }),
-    },
     mounted() {
         // For scroll page top for every Route 
 
         window.scrollTo(0, 0)
-
-        this.productsArray()
         if(this.$store.state.cars.length == 0){
             this.GetCars();
         }else{
@@ -465,30 +417,6 @@ export default {
            var category = ['ALL',...new Set(items)]
            this.$store.state.carCategory = category;
            
-        },
-        productsArray: function () {
-            this.productslist.map((item) => {
-                if (item.type === 'fashion') {
-                this.products.push(item)
-                item.collection.map((i) => {
-                        const index = this.category.indexOf(i)
-                        if (index === -1) this.category.push(i)
-                    })
-                }
-            })
-        },
-        // For Product Tab
-        getCategoryProduct(collection) {
-            return this.products.filter((item) => {
-                if (item.collection.find(i => i === collection)) {
-                    return item
-                }
-            })
-        },
-
-        // Product added Alert / notificaion 
-        alert(item) {
-            this.dismissCountDown = item
         },
          animateValue(obj, start, end, duration) {
             let startTimestamp = null;

@@ -6,7 +6,7 @@
                         <swiper class="swiper product-single-2-slider" :options="swiperOption">
                             <swiper-slide>
                                 <div class="carousel_img_sec">
-                                    <img :src="require('@/assets/img/cars/h-promise-banners/1.jpg')" alt="img" style="width:100%;" />
+                                    <img :src="require('@/assets/img/cars/h-promise-banners/1.webp')" alt="img" style="width:100%;" />
                                     <div class="know_more_btn_sec">
                                         <div>
                                             <nuxt-link class="knw_mre_btn" to="">Learn More</nuxt-link>
@@ -16,7 +16,7 @@
                             </swiper-slide>
                             <swiper-slide>
                                 <div class="carousel_img_sec">
-                                    <img :src="require('@/assets/img/cars/h-promise-banners/2.jpg')" alt="img" style="width:100%;" />
+                                    <img :src="require('@/assets/img/cars/h-promise-banners/2.webp')" alt="img" style="width:100%;" />
                                     <div class="know_more_btn_sec">
                                         <div>
                                             <nuxt-link class="knw_mre_btn" to="">Learn More</nuxt-link>
@@ -26,7 +26,7 @@
                             </swiper-slide>
                             <swiper-slide>
                                 <div class="carousel_img_sec">
-                                    <img :src="require('@/assets/img/cars/h-promise-banners/3.jpg')" alt="img" style="width:100%;" />
+                                    <img :src="require('@/assets/img/cars/h-promise-banners/3.webp')" alt="img" style="width:100%;" />
                                     <div class="know_more_btn_sec">
                                         <div>
                                             <nuxt-link class="knw_mre_btn" to="">Learn More</nuxt-link>

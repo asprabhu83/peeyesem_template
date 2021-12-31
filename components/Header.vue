@@ -211,7 +211,6 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex'
 export default {
     data() {
         return {
@@ -458,42 +457,7 @@ export default {
         
         // this.productsArray()
     },
-
-    computed: {
-        ...mapState({
-            productslist: state => state.products.productslist,
-            searchItems: state => state.products.searchProduct
-        }),
-        ...mapGetters({
-            cart: 'cart/cartItems',
-            cartTotal: 'cart/cartTotalAmount',
-            wishlist: 'products/wishlistItems',
-        })
-    },
-
     methods: {
-        // Image Url 
-        getImageUrl(path) {
-            return require('@/assets/img/product-image/' + path )
-        },
-
-        // Discount Price 
-        discountedPrice(product) {
-            const price = product.price - ( product.price * product.discount / 100)
-            return price
-        },
-
-        // For Delete/Remove Product Item 
-        removeCartItem: function (product) {
-            this.$store.dispatch('cart/removeCartItem', product)
-        },
-        // For Delete/Remove wishlist Item 
-        removeWishlistItem: function (product) {
-            this.$store.dispatch('products/removeWishlistItem', product)
-        },
-        searchProduct() {
-            this.$store.dispatch('products/searchProduct', this.searchString)
-        },
         GetHeaderData(){
             this.headerData = true;
             this.$axios.get(process.env.baseUrl + 'api/settings/index')
