@@ -448,14 +448,15 @@ export default {
 
         })
 
-        if (this.$store.state.HeaderData.logo == ''){
-            this.GetHeaderData();
-        }
-
 
         // Menu End
         
         // this.productsArray()
+    },
+    created(){
+        if (this.$store.state.HeaderData.logo == ''){
+            this.GetHeaderData();
+        }
     },
     methods: {
         GetHeaderData(){

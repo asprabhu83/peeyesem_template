@@ -303,6 +303,21 @@ export default {
         // For scroll page top for every Route 
 
         window.scrollTo(0, 0)
+        
+
+        const obj1 = document.getElementById("value1");
+        const obj2 = document.getElementById("value2");
+        const obj3 = document.getElementById("value3");
+        const obj4 = document.getElementById("value4");
+
+        setTimeout(()=>{
+            this.animateValue(obj1, 0, 7, 2000);
+            this.animateValue(obj2, 0, 9, 2000);
+            this.animateValue(obj3, 0, 6, 2000);
+            this.animateValue(obj4, 0, 1000, 11000);
+        },2000)
+    },
+    created(){
         if(this.$store.state.cars.length == 0){
             this.GetCars();
         }else{
@@ -320,18 +335,6 @@ export default {
         if(this.$store.state.SliderBanners.length == 0){
             this.GetSliderBanners();
         }
-
-        const obj1 = document.getElementById("value1");
-        const obj2 = document.getElementById("value2");
-        const obj3 = document.getElementById("value3");
-        const obj4 = document.getElementById("value4");
-
-        setTimeout(()=>{
-            this.animateValue(obj1, 0, 7, 2000);
-            this.animateValue(obj2, 0, 9, 2000);
-            this.animateValue(obj3, 0, 6, 2000);
-            this.animateValue(obj4, 0, 1000, 11000);
-        },2000)
     },
     methods: {
         closeModal(value){
