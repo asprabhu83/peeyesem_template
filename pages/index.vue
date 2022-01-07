@@ -382,7 +382,7 @@ export default {
             this.sortedArray();
             setTimeout(()=>{
               this.loading = false;
-            },2000)
+            },600)
             this.categoryNames();
             })
             .catch((error) => {
