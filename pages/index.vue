@@ -348,31 +348,6 @@ export default {
                 this.formModal3 = false;
             }
         },
-        GetBlog(){
-            this.$axios
-            .get(process.env.baseUrl + 'api/blog/index')
-            .then((response) => {
-            this.$store.state.BlogsData = response.data
-            })
-            .catch((error) => {
-            console.log(error)
-            })
-        },
-        sortedArray() {
-            let sortedRecipes = this.$store.state.cars;
-            
-            sortedRecipes = sortedRecipes.sort((a,b) => {
-                let fa = a.car_type.toLowerCase(), fb = b.car_type.toLowerCase();
-                if (fa < fb) {
-                    return -1
-                }
-                if (fa > fb) {
-                    return 1
-                }
-                return 0
-            })
-            this.$store.state.cars = sortedRecipes;
-        },
         GetCars(){
             this.loading = true;
             this.$axios.get(process.env.baseUrl + 'api/cars/all')
@@ -388,23 +363,6 @@ export default {
             .catch((error) => {
             this.loading = false;
             console.log(error)
-            })
-        },
-        GetTestimonialData(){
-            this.$axios.get(process.env.baseUrl + 'api/testimonial/index')
-            .then((response) => {
-            this.$store.state.TestimonialData = response.data;
-            })
-            .catch((error) => {
-            console.log(error)
-            })
-        },
-        GetSliderBanners(){
-            this.$axios.get(process.env.baseUrl + 'api/slider/index')
-            .then(res=>{
-                this.$store.state.SliderBanners = res.data;
-            }).catch(err=>{
-                console.log(err);
             })
         },
         filterItems(name){

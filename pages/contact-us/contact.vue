@@ -70,6 +70,10 @@
           <div class="step step1" :class="form_tab_index == 0 ? 'active' : ''" >
                <div class="title">Personal Details</div>
             <form >
+                <div class="msg_box my-3">
+                    <div class="error text-red-500" v-if="error == true">{{$store.state.empty_error_msg}}</div>
+                    <div class="error text-red-500" v-if="email_err == true">{{$store.state.email_error_msg}}</div>
+                </div>
                 <div class="mb-4 mt-4">
                         <input
                         class="
@@ -128,7 +132,7 @@
                             focus:shadow-outline
                         "
                         id="mobile"
-                        type="text"
+                        type="number"
                         placeholder="Mobile Number"
                         v-model="mobile"
                         />
@@ -154,54 +158,6 @@
                         v-model="message"
                         />
                     </div>
-                    <!-- <div class="mb-4 ">
-                        <select
-                                class="
-                                shadow-md
-                                appearance-none
-                                border
-                                rounded
-                                w-full
-                                py-2
-                                px-3
-                                text-gray-700
-                                cursor-pointer
-                                leading-tight
-                                focus:outline-none
-                                focus:shadow-outline
-                                "
-                                id="showroom"
-                                v-model="showroom"
-                            >
-                            <option class="text-xl " value="">Our Showroom</option>
-                            <option class="text-xl" :value="place" v-for="place in ShowroomList"
-                                :key="place" >{{place}}</option>
-                            </select>
-                    </div>
-                    <div class="mb-6 ">
-                        <select
-                                class="
-                                shadow-md
-                                appearance-none
-                                border
-                                rounded
-                                w-full
-                                py-2
-                                px-3
-                                text-gray-700
-                                cursor-pointer
-                                leading-tight
-                                focus:outline-none
-                                focus:shadow-outline
-                                "
-                                id="detailRequire"
-                                v-model="detailRequire"
-                            >
-                            <option class="text-xl " value="">Detail Required for</option>
-                            <option class="text-xl" :value="item" v-for="item in DetailsList"
-                                :key="item" >{{item}}</option>
-                            </select>
-                    </div> -->
                     <!-- <div class="mb-6">
                         <div class="checkbox_sec">
                             <label class="inline-flex items-center">
@@ -224,6 +180,8 @@ export default {
     data(){
         return{
             form_tab_index:0,
+            error:false,
+            email_err:false,
             name:'',
             email:'',
             mobile:'',
@@ -723,28 +681,42 @@ export default {
     },
     methods:{
         AddContactData(){
+            var err = 0;
+            this.email_err=false;
+            this.error=false;
+            if(this.is_empty_value(this.name,this.email,this.mobile,this.message)){
+                err++;
+                this.error=true;
+            }else{
+                if(this.is_invalid_email(this.email)){
+                    err++;
+                    this.email_err=true;
+                }
+            }
             var data_value = {
                 message:this.message,
             }
             data_value = JSON.stringify(data_value);
-            this.$axios.post(process.env.baseUrl + 'api/car_form/store',{
-                full_name:this.name,
-                email_id:this.email,
-                mobile_no:this.mobile,
-                form_type:'contact',
-                data_form_value:data_value
-            }).then((res)=>{
-                if(res){
-                    this.name = '';
-                    this.email = '';
-                    this.mobile = '';
-                    this.message = '';
-                    this.agreement = false;
-                }
-                console.log(res)
-            }).catch((err)=>{
-                console.log(err);
-            })
+            if(err == 0){
+                this.$axios.post(process.env.baseUrl + 'api/car_form/store',{
+                    full_name:this.name,
+                    email_id:this.email,
+                    mobile_no:this.mobile,
+                    form_type:'contact',
+                    data_form_value:data_value
+                }).then((res)=>{
+                    if(res){
+                        this.name = '';
+                        this.email = '';
+                        this.mobile = '';
+                        this.message = '';
+                        this.agreement = false;
+                    }
+                    console.log(res)
+                }).catch((err)=>{
+                    console.log(err);
+                })
+            }
         },
         filterTabCategories(){
             var item = this.contactLocations.map((item)=> {return item.particulars})

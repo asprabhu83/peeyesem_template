@@ -646,16 +646,6 @@ export default {
         window.removeEventListener('scroll', this.handleScroll);
     },
     methods:{
-        // GetCars(){
-        //     axios.get(process.env.baseUrl + 'api/cars/index')
-        //     .then((response) => {
-        //       this.cars = response.data.cars
-        //       this.SingleCar()
-        //     })
-        //     .catch((error) => {
-        //     console.log(error)
-        //     })
-        // },
         closeModal(value){
             if(value == 'modal1'){
                 this.formModal = false;
@@ -747,33 +737,6 @@ export default {
                     car_header.classList.remove('sticky');
                 }
             }
-            // if(pageYOffset < 1045){
-            //     this.car_tab_index = 0
-            // }
-            // if(pageYOffset > 1050){
-            //     this.car_tab_index = 1
-            // }
-            //  if(pageYOffset > 2918){
-            //     this.car_tab_index = 2
-            // }
-            // if(pageYOffset > 4058){
-            //     this.car_tab_index = 3
-            // }
-            // if(this.$route.query.id == 4){
-            //     if(pageYOffset > 4606){
-            //         this.car_tab_index = 4
-            //     }
-            // }else{
-            //     if(pageYOffset > 4560){
-            //         this.car_tab_index = 4
-            //     }
-            // }
-            // if(pageYOffset > 5433){
-            //     this.car_tab_index = 5
-            // }
-            // if(pageYOffset > 6218){
-            //     this.car_tab_index = 6
-            // }
             return pageYOffset;
         },
         filterCompareCategories(){

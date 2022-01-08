@@ -5,12 +5,13 @@
       </div>
       <div class="explain text-center mt-4 mb-5">Please fill the below fields to test drive/ know more about your favorite Hyundai car.</div>
       <div class="form_sec">
-          <div class="image_sec">
-              <img :src="require('@/assets/img/cars/form_poster2.jpg')" alt="img" style="width:100%;" />
-          </div>
           <div class="step step1" :class="form_tab_index == 0 ? 'active' : ''">
                <div class="title">Personal Details</div>
             <form >
+                <div class="msg_box my-3">
+                    <div class="error text-red-500" v-if="error == true">{{$store.state.empty_error_msg}}</div>
+                    <div class="error text-red-500" v-if="email_err == true">{{$store.state.email_error_msg}}</div>
+                </div>
                 <div class="mb-4 mt-4">
                         <input
                         class="
@@ -69,20 +70,13 @@
                             focus:shadow-outline
                         "
                         id="mobile"
-                        type="text"
+                        type="number"
                         placeholder="Mobile Number"
                         v-model="mobile"
                         />
                     </div>
-                    <div class="btn_box">
-                        <button type="button" @click="form_tab_index = 1">Next</button>
-                    </div>
-            </form>
-          </div>
-          <div class="step step2" :class="form_tab_index == 1 ? 'active' : ''">
-               <div class="title">Vehicle Details</div>
-            <form >
-                <div class="mb-4 mt-4">
+                    <div class="title">Vehicle Details</div>
+                    <div class="mb-4 mt-4">
                       <select
                                 class="
                                 shadow-md
@@ -106,30 +100,6 @@
                                 :key="model.id" >{{model.car_title}}</option>
                             </select>
                     </div>
-                    <!-- <div class="mb-4 mt-4">
-                      <select
-                                class="
-                                shadow-md
-                                appearance-none
-                                border
-                                rounded
-                                w-full
-                                py-2
-                                px-3
-                                text-gray-700
-                                cursor-pointer
-                                leading-tight
-                                focus:outline-none
-                                focus:shadow-outline
-                                "
-                                id="state"
-                                v-model="state"
-                            >
-                            <option class="text-xl " value="">Select State</option>
-                            <option class="text-xl" :value="state.name" v-for="state in StateList"
-                                :key="state.id" >{{state.name}}</option>
-                            </select>
-                    </div> -->
                     <div class="mb-4 mt-4">
                       <select
                                 class="
@@ -178,16 +148,8 @@
                                 :key="model.id" >{{model.name}}</option>
                             </select>
                     </div>
-                    <div class="btn_box">
-                        <button type="button" @click="form_tab_index = 0">Previous</button>
-                        <button type="button" @click="form_tab_index = 2">Next</button>
-                    </div>
-            </form>
-          </div>
-          <div class="step step3" :class="form_tab_index == 2 ? 'active' : ''">
-               <div class="title">Dealership Details</div>
-            <form >
-                <div class="mb-4 mt-4">
+                    <div class="title">Dealership Details</div>
+                    <div class="mb-4 mt-4">
                         <input
                         class="
                             shadow-md
@@ -239,16 +201,10 @@
                         </div>
                     </div>
                     <div class="btn_box">
-                        <button type="button" @click="form_tab_index = 1">Previous</button>
                         <button type="button" @click="AddTestDriveData">Submit</button>
                     </div>
             </form>
           </div>
-      </div>
-      <div class="my-5 active_sec">
-          <div :class="form_tab_index == 0 ? 'active' : ''"></div>
-          <div :class="form_tab_index == 1 ? 'active' : ''"></div>
-          <div :class="form_tab_index == 2 ? 'active' : ''"></div>
       </div>
   </div>
 </template>
@@ -269,6 +225,8 @@ export default {
             city:'',
             dateType:'text',
             agreement:false,
+            error:false,
+            email_err:false,
             StateList:[
                 {
                     id:1,
@@ -328,34 +286,19 @@ export default {
         window.scrollTo(0, 0)
     },
     methods:{
-        sortedArray() {
-            let sortedRecipes = this.$store.state.cars;
-            
-            sortedRecipes = sortedRecipes.sort((a,b) => {
-                let fa = a.car_type.toLowerCase(), fb = b.car_type.toLowerCase();
-                if (fa < fb) {
-                    return -1
-                }
-                if (fa > fb) {
-                    return 1
-                }
-                return 0
-            })
-            this.$store.state.cars = sortedRecipes;
-        },
-        GetModels(){
-            this.$axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
-            this.$axios.defaults.withCredentials = false;
-            this.$axios.get(process.env.baseUrl + 'api/cars/all')
-            .then((res)=>{
-                this.$store.state.cars = res.data.cars;
-                this.$store.state.originalDataCars = res.data.cars;
-                this.sortedArray();
-            }).catch((err)=>{
-                console.log(err);
-            })
-        },
         AddTestDriveData(){
+            var err = 0;
+            this.email_err=false;
+            this.error=false;
+            if(this.is_empty_value(this.name,this.email,this.mobile,this.vehicleModel)){
+                err++;
+                this.error=true;
+            }else{
+                if(this.is_invalid_email(this.email)){
+                    err++;
+                    this.email_err=true;
+                }
+            }
             var data_value = {
                 fuel_type:this.fuelType,
                 test_drive_date:this.testDriveDate,
@@ -446,6 +389,7 @@ export default {
     width: 60%;
     margin: 30px auto;
     display: flex;
+    justify-content: center;
 }
 .form_sec .image_sec{
     width: 49%;

@@ -3,7 +3,11 @@
         <div class="w-4/12 card_body bg-white card mx-auto">
            <form class="pb-12 px-8">
                <div class="heading flex items-center justify-between pt-6 pb-2 font-semibold text-lg">Request a callback<font-awesome-icon icon="times"  size="1x" class="text-red-600 cursor-pointer" @click="closeModal" /></div>
-               <hr class="mb-8" style="height:1px;background:gray;opacity:0.3;" />
+               <hr class="mb-4" style="height:1px;background:gray;opacity:0.3;" />
+               <div class="msg_box mb-3">
+                   <div class="error text-red-500" v-if="error == true">{{$store.state.empty_error_msg}}</div>
+                   <div class="error text-red-500" v-if="email_err == true">{{$store.state.email_error_msg}}</div>
+              </div>
                <div class="mb-4">
                     <input
                     class="
@@ -103,7 +107,9 @@ export default {
             name:'',
             vehicleModel:'',
             email:'',
-            mobile:''
+            mobile:'',
+            error:false,
+            email_err:false
         }
     },
     mounted(){
@@ -115,34 +121,19 @@ export default {
         closeModal(){
             this.$emit('closeModal', 'modal4')
         },
-        sortedArray() {
-            let sortedRecipes = this.$store.state.cars;
-            
-            sortedRecipes = sortedRecipes.sort((a,b) => {
-                let fa = a.car_type.toLowerCase(), fb = b.car_type.toLowerCase();
-                if (fa < fb) {
-                    return -1
-                }
-                if (fa > fb) {
-                    return 1
-                }
-                return 0
-            })
-            this.$store.state.cars = sortedRecipes;
-        },
-        GetModels(){
-            this.$axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
-            this.$axios.defaults.withCredentials = false;
-            this.$axios.get(process.env.baseUrl + 'api/cars/all')
-            .then((res)=>{
-                this.$store.state.cars = res.data.cars;
-                this.$store.state.originalDataCars = res.data.cars;
-                this.sortedArray();
-            }).catch((err)=>{
-                console.log(err);
-            })
-        },
         RequestCallBack(){
+            var err = 0;
+            this.email_err=false;
+            this.error=false;
+            if(this.name=='' || this.email == '' || this.mobile == '' || this.vehicleModel ==''){
+                err++;
+                this.error=true;
+            }else{
+                if(this.is_invalid_email(this.email)){
+                    err++;
+                    this.email_err=true;
+                }
+            }
             this.$axios.post(process.env.baseUrl + 'api/car_form/store',{
                 full_name:this.name,
                 email_id:this.email,

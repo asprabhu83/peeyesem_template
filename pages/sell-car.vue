@@ -8,8 +8,8 @@
                <div class="title">Personal Details</div>
             <form >
                 <div class="msg_box my-1">
-                   <div class="error pt-3 text-red-500" v-if="error == true">Invalid Data</div>
-                   <div class="error pt-3 text-red-500" v-if="email_err == true">Invalid Email</div>
+                   <div class="error pt-3 text-red-500" v-if="error == true">{{$store.state.empty_error_msg}}</div>
+                   <div class="error pt-3 text-red-500" v-if="email_err == true">{{$store.state.email_error_msg}}</div>
               </div>
                 <div class="mb-4 mt-4">
                         <input
@@ -69,7 +69,7 @@
                             focus:shadow-outline
                         "
                         id="mobile"
-                        type="text"
+                        type="number"
                         placeholder="Mobile Number"
                         v-model="mobile"
                         />
@@ -475,6 +475,11 @@ export default {
                if(this.name == '' || this.email == '' || this.mobile == ''){
                    err++;
                    this.error = true;
+               }else{
+                   if(this.is_invalid_email(this.email)){
+                       err++;
+                       this.email_err=true;
+                   }
                }
             }
             if(target == '2'){

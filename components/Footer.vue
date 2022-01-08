@@ -69,7 +69,11 @@
                 </div>
                 <div class="footer_item_sec footer_mobile_menu">
                     <form class="">
-                        <div class="heading  pb-2 font-semibold text-lg">Feedback</div>
+                        <div class="heading font-semibold text-lg">Feedback</div>
+                        <div class="msg_box mt-1 mb-2">
+                            <div class="error text-red-500" v-if="error == true">{{$store.state.empty_error_msg}}</div>
+                            <div class="error text-red-500" v-if="email_err == true">{{$store.state.email_error_msg}}</div>
+                        </div>
                         <div class="mb-2">
                                 <input
                                 class="
@@ -252,34 +256,49 @@ export default {
             mobile:'',
             feedbackFor:'',
             description:'',
-
+            email_err:false,
+            error:false,
             title: 'Contact Us',
         }
     },
     methods:{
         AddFeedback(){
+            var err = 0;
+            this.email_err=false;
+            this.error=false;
+            if(this.is_empty_value(this.name,this.email,this.mobile,this.feedbackFor,this.description)){
+                err++;
+                this.error=true;
+            }else{
+                if(this.is_invalid_email(this.email)){
+                    err++;
+                    this.email_err=true;
+                }
+            }
             var data_value = {
                 feedback_for:this.feedbackFor,
                 description:this.description
             }
             data_value = JSON.stringify(data_value);
-            this.$axios.post(process.env.baseUrl + 'api/car_form/store',{
-                full_name:this.name,
-                email_id:this.email,
-                mobile_no:this.mobile,
-                form_type:'feedback',
-                data_form_value:data_value
-            }).then((res)=>{
-                if(res){
-                    this.name = '';
-                    this.email = '';
-                    this.mobile = '';
-                    this.description = '';
-                    this.feedbackFor = '';
-                }
-            }).catch((err)=>{
-                console.log(err);
-            })
+            if(err == 0){
+                this.$axios.post(process.env.baseUrl + 'api/car_form/store',{
+                    full_name:this.name,
+                    email_id:this.email,
+                    mobile_no:this.mobile,
+                    form_type:'feedback',
+                    data_form_value:data_value
+                }).then((res)=>{
+                    if(res){
+                        this.name = '';
+                        this.email = '';
+                        this.mobile = '';
+                        this.description = '';
+                        this.feedbackFor = '';
+                    }
+                }).catch((err)=>{
+                    console.log(err);
+                })
+            }
         }
     }
 }

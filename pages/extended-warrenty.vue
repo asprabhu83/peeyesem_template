@@ -102,7 +102,7 @@
                             focus:shadow-outline
                         "
                         id="mobile"
-                        type="text"
+                        type="number"
                         placeholder="Mobile Number"
                         v-model="mobile"
                         />

@@ -81,7 +81,7 @@
                             focus:shadow-outline
                         "
                         id="mobile"
-                        type="text"
+                        type="number"
                         placeholder="Mobile Number"
                         v-model="mobile"
                         />
@@ -262,33 +262,6 @@ export default {
         }
     },
     methods:{
-        sortedArray() {
-            let sortedRecipes = this.$store.state.cars;
-            
-            sortedRecipes = sortedRecipes.sort((a,b) => {
-                let fa = a.car_type.toLowerCase(), fb = b.car_type.toLowerCase();
-                if (fa < fb) {
-                    return -1
-                }
-                if (fa > fb) {
-                    return 1
-                }
-                return 0
-            })
-            this.$store.state.cars = sortedRecipes;
-        },
-        GetModels(){
-            this.$axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
-            this.$axios.defaults.withCredentials = false;
-            this.$axios.get(process.env.baseUrl + 'api/cars/all')
-            .then((res)=>{
-                this.$store.state.cars = res.data.cars;
-                this.$store.state.originalDataCars = res.data.cars;
-                this.sortedArray();
-            }).catch((err)=>{
-                console.log(err);
-            })
-        },
         Enquire(){
             this.success = false;
             this.error = false;

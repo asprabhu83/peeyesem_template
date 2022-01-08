@@ -23,7 +23,11 @@ const createStore = () => {
       TestimonialData:[],
       BlogsData:[],
       SliderBanners:[],
-      newsEvents:[]
+      newsEvents:[],
+      success_msg:'Success!!',
+      empty_error_msg:'Invalid Data',
+      email_error_msg:'Invalid Email',
+      emailRegex:/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     },
   })
 }

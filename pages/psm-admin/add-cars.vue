@@ -1353,23 +1353,6 @@ export default {
         reader.readAsDataURL(file)
       }
     },
-    // tabFunc (e) {
-    //   var alltabs = document.querySelectorAll('.tab_item')
-    //   alltabs.forEach(tab => {
-    //     if (tab.classList.contains('active')) {
-    //       tab.classList.remove('active')
-    //     }
-    //   })
-    //   var alltabItems = document.querySelectorAll('.step')
-    //   alltabItems.forEach(item => {
-    //     if (item.classList.contains('active')) {
-    //       item.classList.remove('active')
-    //     }
-    //   })
-    //   var target = e.target.getAttribute('data-target')
-    //   document.querySelector('.step' + target).classList.add('active')
-    //   e.target.classList.add('active')
-    // },
     NextTab (e) {
       var current = e.target.getAttribute('data-current')
       var next = e.target.getAttribute('data-next')

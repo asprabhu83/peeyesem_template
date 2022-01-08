@@ -282,31 +282,6 @@ export default {
         window.scrollTo(0, 0)
     },
     methods:{
-        sortedArray() {
-            let sortedRecipes = this.$store.state.cars;
-            
-            sortedRecipes = sortedRecipes.sort((a,b) => {
-                let fa = a.car_type.toLowerCase(), fb = b.car_type.toLowerCase();
-                if (fa < fb) {
-                    return -1
-                }
-                if (fa > fb) {
-                    return 1
-                }
-                return 0
-            })
-            this.$store.state.cars = sortedRecipes;
-        },
-        GetModels(){
-            this.$axios.get(process.env.baseUrl + 'api/cars/all')
-            .then((res)=>{
-                this.$store.state.cars = res.data.cars;
-                this.$store.state.originalDataCars = res.data.cars;
-                this.sortedArray();
-            }).catch((err)=>{
-                console.log(err);
-            })
-        },
         filterModel(){
             if(this.vehicle !== ''){
                 this.$axios.get(process.env.baseUrl + 'api/show/car/' + this.vehicle)

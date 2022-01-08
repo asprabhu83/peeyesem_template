@@ -212,22 +212,6 @@ export default {
               console.log(err)
           })
       },
-    //   FilterMenu(){
-    //      var menu =  this.titles.map((item)=>{
-    //          return item.menu_titles
-    //       })
-    //      var sub_menu = menu.filter((item)=>{
-    //           if(item.length > 0){
-    //               return item
-    //           }
-    //       })
-    //      this.Menus = sub_menu
-    //      this.Menus.filter((item)=>{
-    //          item.filter((item)=>{
-    //              this.MenuItems.push(item)
-    //          })
-    //      })
-    //   },
       AddMenu(e){
           e.target.classList.add('loading');
           this.$axios.post(process.env.baseUrl + 'api/menu/menu',{
