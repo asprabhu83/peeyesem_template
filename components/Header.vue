@@ -547,7 +547,7 @@ export default {
 }
 @media only screen and (min-width: 1367px) and (max-width: 1600px){
     .sticky-header.sticky.sticky-color--golden .main-menu nav>ul>li{
-        padding-left: 43px!important;
+        padding-left: 38px!important;
     }
     .shodow_css_head .even_space_head{
         min-width: 41.63px!important;

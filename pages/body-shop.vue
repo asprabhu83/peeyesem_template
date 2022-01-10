@@ -5,6 +5,11 @@
       </div>
       <div class="form_sec">
           <div class="step step1" :class="form_tab_index == 0 ? 'active' : ''">
+              <div class="msg_box my-2">
+                   <div class="error text-green-500" v-if="success == true">{{$store.state.success_msg}}</div>
+                   <div class="error text-red-500" v-if="error == true">{{$store.state.empty_error_msg}}</div>
+                   <div class="error text-red-500" v-if="email_err == true">{{$store.state.email_error_msg}}</div>
+              </div>
             <form >
                 <div class="mb-4 mt-4">
                         <input
@@ -192,6 +197,9 @@ export default {
             city:'',
             description:'',
             agreement:false,
+            success:false,
+            error:false,
+            email_err:false,
             CityList:[
                 {
                     id:1,
@@ -246,33 +254,51 @@ export default {
     },
     methods:{
         AddServiceData(){
+            var err = 0;
+            this.error = false;
+            this.email_err = false;
+            if(this.is_empty_value(this.name,this.email,this.mobile,this.vehicleModel,this.description,this.fuelType,this.city)){
+                err++
+                this.error = true;
+            }else{
+                if(this.is_invalid_email(this.email)){
+                    err++;
+                    this.email_err = true;
+                }
+            }
             var data_value = {
                 description:this.description,
                 fuel_type:this.fuelType,
                 city:this.city
             }
             data_value = JSON.stringify(data_value);
-            this.$axios.post(process.env.baseUrl + 'api/car_form/store',{
-                full_name:this.name,
-                email_id:this.email,
-                mobile_no:this.mobile,
-                vehicle_model:this.vehicleModel,
-                form_type:'body_shop',
-                data_form_value:data_value
-            }).then((res)=>{
-                if(res){
-                    this.name = '';
-                    this.email = '';
-                    this.mobile = '';
-                    this.vehicleModel = '';
-                    this.description = '';
-                    this.fuelType = '';
-                    this.city = '';
-                    this.agreement = false;
-                }
-            }).catch((err)=>{
-                console.log(err);
-            })
+            if(err == 0){
+                this.$axios.post(process.env.baseUrl + 'api/car_form/store',{
+                    full_name:this.name,
+                    email_id:this.email,
+                    mobile_no:this.mobile,
+                    vehicle_model:this.vehicleModel,
+                    form_type:'body_shop',
+                    data_form_value:data_value
+                }).then((res)=>{
+                    if(res){
+                        this.name = '';
+                        this.email = '';
+                        this.mobile = '';
+                        this.vehicleModel = '';
+                        this.description = '';
+                        this.fuelType = '';
+                        this.city = '';
+                        this.agreement = false;
+                        this.success=true;
+                        setTimeout(()=>{
+                            this.success=false;
+                        },2000)
+                    }
+                }).catch((err)=>{
+                    console.log(err);
+                })
+            }
         }
     }
 }

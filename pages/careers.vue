@@ -8,9 +8,9 @@
           <div class="step step1" :class="form_tab_index == 0 ? 'active' : ''" >
                <div class="title">We are Hiring</div>
                <div class="msg_box my-1">
-                   <div class="error pt-3 text-green-500" v-if="success == true">Added Successfully</div>
-                   <div class="error pt-3 text-red-500" v-if="error == true">Invalid Data</div>
-                   <div class="error pt-3 text-red-500" v-if="email_err == true">Invalid Email</div>
+                   <div class="error pt-3 text-green-500" v-if="success == true">{{$store.state.success_msg}}</div>
+                   <div class="error pt-3 text-red-500" v-if="error == true">{{$store.state.empty_error_msg}}</div>
+                   <div class="error pt-3 text-red-500" v-if="email_err == true">{{$store.state.email_error_msg}}</div>
               </div>
             <form >
                 <div class="mb-4 mt-4">
@@ -128,13 +128,12 @@ export default {
             var err = 0;
             this.error = false;
             this.email_err = false;
-            var emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            if(this.email == '' || this.name == '' || this.mobile == ''){
+            if(this.is_empty_value(this.name,this.email,this.mobile,this.position)){
                 err++
                 this.error = true;
                 btn.innerHTML = 'Submit';
             }else{
-                if(!emailRegex.test(this.email)){
+                if(this.is_invalid_email(this.email)){
                     err++;
                     this.email_err = true;
                     btn.innerHTML = 'Submit';

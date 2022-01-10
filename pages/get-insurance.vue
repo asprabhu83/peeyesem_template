@@ -3,6 +3,10 @@
       <div class="heading my-5">Get Insurance</div>
       <div class="form_sec">
           <div class="step step1" :class="form_tab_index == 0 ? 'active' : ''" >
+              <div class="msg_box my-3">
+                   <div class="error  text-red-500" v-if="error == true">{{$store.state.empty_error_msg}}</div>
+                   <div class="error  text-red-500" v-if="email_err == true">{{$store.state.email_error_msg}}</div>
+              </div>
                <div class="title">Personal Details</div>
             <form >
                 <div class="mb-4 mt-4">
@@ -144,41 +148,58 @@ export default {
             vehicleModel:'',
             regNumber:'',
             form_tab_index:0,
-            agreement:false
+            agreement:false,
+            email_err:false,
+            error:false
         }
     },
     mounted(){
         if(this.$store.state.cars.length == 0){
             this.GetModels();
         }
+        window.scrollTo(0, 0)
     },
     methods:{
         AddInsuranceData(){
+            var err = 0;
+            this.email_err=false;
+            this.error=false;
+            if(this.is_empty_value(this.name,this.email,this.mobile,this.vehicleModel,this.regNumber)){
+                err++;
+                this.error=true;
+            }else{
+                if(this.is_invalid_email(this.email)){
+                    err++;
+                    this.email_err=true;
+                }
+            }
            var data_value = {
                 registration_no:this.regNumber
             }
             data_value = JSON.stringify(data_value);
-            this.$axios.post(process.env.baseUrl + 'api/car_form/store',{
-                full_name:this.name,
-                email_id:this.email,
-                mobile_no:this.mobile,
-                vehicle_model:this.vehicleModel,
-                form_type:'insurance',
-                data_form_value:data_value
-            }).then((res)=>{
-                if(res){
-                    window.open('https://lifeinsurance.adityabirlacapital.com/','_blank');
-                    this.name = '';
-                    this.email = '';
-                    this.mobile = '';
-                    this.vehicleModel = '';
-                    this.regNumber = '';
-                    this.agreement = false;
-                }
-                console.log(res)
-            }).catch((err)=>{
-                console.log(err);
-            })
+            if(err == 0){
+                this.$axios.post(process.env.baseUrl + 'api/car_form/store',{
+                    full_name:this.name,
+                    email_id:this.email,
+                    mobile_no:this.mobile,
+                    vehicle_model:this.vehicleModel,
+                    form_type:'insurance',
+                    data_form_value:data_value
+                }).then((res)=>{
+                    if(res){
+                        window.open('https://lifeinsurance.adityabirlacapital.com/','_blank');
+                        this.name = '';
+                        this.email = '';
+                        this.mobile = '';
+                        this.vehicleModel = '';
+                        this.regNumber = '';
+                        this.agreement = false;
+                    }
+                    console.log(res)
+                }).catch((err)=>{
+                    console.log(err);
+                })
+            }
         }
     }
 }

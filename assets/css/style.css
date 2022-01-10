@@ -17,7 +17,7 @@ This files table contents are outlined below>>>>>
 Default CSS
 =================================================*/
 
-@import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 /* @font-face { 
     font-family: "Cambria";
@@ -34,7 +34,7 @@ body {
     padding: 0;
     margin: 0;
     font-size: 16px;
-    font-family: "Poppins", sans-serif;
+    font-family: 'PT Serif', serif;
 }
 
 img {
@@ -76,7 +76,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Poppins", sans-serif;
+    font-family: 'PT Serif', serif;
 }
 
 h1 {
@@ -115,7 +115,7 @@ p {
     line-height: 24px;
     color: var(--paragraph-color);
     font-weight: 400;
-    font-family: "Poppins", sans-serif;
+    font-family: 'PT Serif', serif;
     margin-bottom: 0;
 }
 
@@ -5950,7 +5950,7 @@ table {
     position: fixed;
     z-index: 999999;
     bottom: 40%;
-    right: -185px;
+    right: -197px;
     display: none;
     animation: moveLeft .7s;
 }
@@ -5986,22 +5986,22 @@ table {
     text-align: center;
 }
 .fixed_form_sec .form1:hover{
-    transform: translateX(-185px);
+    transform: translateX(-197px);
 }
 .fixed_form_sec .form2:hover{
-    transform: translateX(-185px);
+    transform: translateX(-197px);
 }
 .fixed_form_sec .form3:hover{
-    transform: translateX(-185px);
+    transform: translateX(-197px);
 }
 .fixed_form_sec .form4:hover{
-    transform: translateX(-185px);
+    transform: translateX(-197px);
 }
 .fixed_form_sec .form5:hover{
-    transform: translateX(-185px);
+    transform: translateX(-197px);
 }
 .fixed_form_sec .form6:hover{
-    transform: translateX(-185px);
+    transform: translateX(-197px);
 }
 
 .whtsapp_btn{
@@ -6258,25 +6258,25 @@ table {
         margin-right: auto;
     }
     .fixed_form_sec .form1:hover{
-        transform: translateX(-139px);
+        transform: translateX(-152px);
     }
     .fixed_form_sec .form2:hover{
-        transform: translateX(-139px);
+        transform: translateX(-152px);
     }
     .fixed_form_sec .form3:hover{
-        transform: translateX(-139px);
+        transform: translateX(-152px);
     }
     .fixed_form_sec .form4:hover{
-        transform: translateX(-139px);
+        transform: translateX(-152px);
     }
     .fixed_form_sec .form5:hover{
-        transform: translateX(-139px);
+        transform: translateX(-152px);
     }
     .fixed_form_sec .form6:hover{
-        transform: translateX(-139px);
+        transform: translateX(-152px);
     }
     .fixed_form_sec{
-        right: -139px;
+        right: -152px;
     }
     .form_div img{
         width: 25px !important;
@@ -6378,25 +6378,25 @@ table {
 
 @media only screen and (min-width: 1367px) and (max-width: 1600px){
     .fixed_form_sec .form1:hover{
-        transform: translateX(-139px);
+        transform: translateX(-152px);
     }
     .fixed_form_sec .form2:hover{
-        transform: translateX(-139px);
+        transform: translateX(-152px);
     }
     .fixed_form_sec .form3:hover{
-        transform: translateX(-139px);
+        transform: translateX(-152px);
     }
     .fixed_form_sec .form4:hover{
-        transform: translateX(-139px);
+        transform: translateX(-152px);
     }
     .fixed_form_sec .form5:hover{
-        transform: translateX(-139px);
+        transform: translateX(-152px);
     }
     .fixed_form_sec .form6:hover{
-        transform: translateX(-139px);
+        transform: translateX(-152px);
     }
     .fixed_form_sec{
-        right: -139px;
+        right: -152px;
     }
     .form_div img{
         width: 30px !important;

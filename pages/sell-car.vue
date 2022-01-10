@@ -83,7 +83,7 @@
                <div class="title">Vehicle Details - Part I</div>
             <form >
                 <div class="msg_box my-1">
-                   <div class="error pt-3 text-red-500" v-if="error == true">Invalid Data</div>
+                   <div class="error pt-3 text-red-500" v-if="error == true">{{$store.state.empty_error_msg}}</div>
               </div>
                 <div class="mb-4 mt-4">
                             <select
@@ -227,7 +227,7 @@
                <div class="title">Vehicle Details - Part II</div>
             <form >
                 <div class="msg_box my-1">
-                   <div class="error pt-3 text-red-500" v-if="error == true">Invalid Data</div>
+                   <div class="error pt-3 text-red-500" v-if="error == true">{{$store.state.empty_error_msg}}</div>
               </div>
                 <div class="mb-4 mt-4">
                       <select
@@ -469,10 +469,11 @@ export default {
         },
         NextTab(e){
             this.error = false;
+            this.email_err=false;
             var target = e.target.getAttribute('data-target');
             var err = 0;
             if(target == '1'){
-               if(this.name == '' || this.email == '' || this.mobile == ''){
+               if(this.is_empty_value(this.name,this.email,this.mobile)){
                    err++;
                    this.error = true;
                }else{
@@ -483,7 +484,7 @@ export default {
                }
             }
             if(target == '2'){
-                if(this.Manufacturer == '' || this.ModelVariant == '' || this.fuelType == ''){
+                if(this.is_empty_value(this.Manufacturer,this.ModelVariant,this.fuelType)){
                     err++;
                     this.error = true;
                 }
