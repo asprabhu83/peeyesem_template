@@ -8,7 +8,7 @@
                     <div class="footer_left_side">
                         <div class="text-capitalize mb-3  footer_heading text-lg font-semibold">Peeyesyem hyundai</div>
                         <div class="text-sm contact_text mb-2"><i class="far fa-envelope mr-2"></i> info@peeyesyemhyundai.in</div>
-                        <div class="text-sm contact_text mb-2"> <font-awesome-icon icon="phone-alt"  size="1x" class="text-white  mr-2" />+91 9962666228</div>
+                        <div class="text-sm contact_text mb-2"> <font-awesome-icon icon="phone-alt"  size="1x" class="text-white  mr-2" />+91 9962666228, +91 9962207774</div>
                         <div class="text-sm contact_text mb-3"><font-awesome-icon icon="map-marker-alt"  size="1x" class="text-white  mr-2" />Old No. - 94, New No. - 162,<br/> Luz Church Road, Opp to <br/> Kauvery hospital,Mylapore,<br/>Chennai - 600004</div>
                     </div>
                 </div>
