@@ -491,7 +491,7 @@ export default {
     max-width: 1600px;
 }
 .shodow_css_head{
-    color: gray;
+    color: black;
 }
 .shodow_css_head .even_space_head{
     display: inline-block;
@@ -538,6 +538,9 @@ export default {
 .v-sidebar-menu .vsm--link_level-1.vsm--link_exact-active, .v-sidebar-menu .vsm--link_level-1.vsm--link_active {
     -webkit-box-shadow: 3px 0px 0px 0px var(--main-theme-color) inset;
     box-shadow: 3px 0px 0px 0px var(--main-theme-color) inset;
+}
+.contact_sec{
+    box-shadow: inset 0 0 0 2000px rgb(173 216 230 / 25%);
 }
 
 @media only screen and (min-width:300px) and (max-width:600px){

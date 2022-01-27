@@ -69,7 +69,7 @@
                 </div>
                 <div class="footer_item_sec footer_mobile_menu">
                     <form class="">
-                        <div class="heading font-semibold text-lg">Feedback</div>
+                        <div class="heading font-semibold text-lg">Your Queries</div>
                         <div class="msg_box mt-1 mb-2">
                             <div class="error text-red-500" v-if="error == true">{{$store.state.empty_error_msg}}</div>
                             <div class="error text-red-500" v-if="email_err == true">{{$store.state.email_error_msg}}</div>
@@ -152,7 +152,7 @@
                                 id="city"
                                 v-model="feedbackFor"
                             >
-                            <option class="text-xl " value="">Feedback for</option>
+                            <option class="text-xl " value="">Queries for</option>
                             <option class="text-xl" :value="model" v-for="model in FeedbackList"
                                 :key="model" >{{model}}</option>
                             </select>

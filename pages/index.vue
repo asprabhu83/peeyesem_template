@@ -140,7 +140,7 @@
 
     <div class="notice_card_sec px-2 my-4">
         <div>
-            <font-awesome-icon icon="star-of-life"  size="1x" class="star_icon mx-2" /> - <span style="padding-left:5px;"> Exshowroom Price </span>
+            <font-awesome-icon icon="star-of-life"  size="1x" class="star_icon mx-2" /> - <span style="padding-left:5px;"> Ex-Showroom Price </span>
         </div>
     </div>
 

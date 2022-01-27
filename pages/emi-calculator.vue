@@ -73,7 +73,7 @@
                         "
                         id="roadPrice"
                         type="text"
-                        placeholder="Exshowroom Price"
+                        placeholder="Ex-Showroom Price"
                         v-model="roadPrice"
                         disabled
                         />
