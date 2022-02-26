@@ -557,6 +557,9 @@ export default {
     },
     mounted(){
         this.GetDetails();
+        if(!localStorage.getItem('user_token')){
+            this.$router.push('/psm-admin')
+        }
     },
     methods:{
         previewFiles (event) {

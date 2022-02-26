@@ -3,7 +3,7 @@
     <div
       class="w-full h-screen flex items-center justify-center login_full_scrn bg-gray-900"
     >
-      <form @submit.prevent="Login"
+      <form  onSubmit="return false;"
         class="
           bg-white
           xl:w-8/12
@@ -18,10 +18,170 @@
           mb-4
         "
       >
-        <div class="w-1/2">
-          <img src="~assets/hello.png" alt="" />
+        <div class="w-1/2 ">
+          <img src="~assets/img/peeyesyem.png" style="width:80%;" alt="" />
         </div>
-        <div class="form_box w-1/2 px-10 pb-16 pt-8 border-l-2 border-gainsboro">
+        
+        <div class="form_box w-1/2 px-10 pb-16 pt-8 border-l-2 border-gainsboro" v-if="$route.query.action == 'forgot_password'" @keypress.enter="ResetPassword">
+          <div class="err_box h-12">
+            <div class="error py-3 text-red-500" v-if="error2 == true">Email is Required field.</div>
+            <div class="error py-3 text-red-500" v-if="exist_error == true">Email does not exists.</div>
+         </div>
+          <div class="mb-4 mt-2">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="email2"
+            >
+              Your Email
+            </label>
+            <input
+              class="
+                shadow-md
+                appearance-none
+                border
+                rounded
+                w-full
+                py-2
+                px-3
+                text-gray-700
+                leading-tight
+                focus:outline-none
+                focus:shadow-outline
+              "
+              id="email2"
+              type="text"
+              placeholder="Your Email"
+              v-model="email2"
+            />
+          </div>
+          <div class="flex items-center justify-between">
+            <button
+              class="
+                bg-blue-500
+                hover:bg-blue-700
+                text-white
+                font-bold
+                py-2
+                px-4
+                rounded
+                focus:outline-none
+                focus:shadow-outline
+                login_btn
+              "
+              type="button"
+              @click="ResetPassword"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+        <div class="form_box w-1/2 px-10 pb-16 pt-8 border-l-2 border-gainsboro" v-if="$route.query.action == 'reset_password'">
+          <div class="err_box h-12">
+            <div class="error py-3 text-red-500" v-if="error2 == true">Email is Required field.</div>
+            <div class="error py-3 text-red-500" v-if="exist_error == true">Email does not exists.</div>
+         </div>
+          <div class="mb-4 mt-2">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="email"
+            >
+              Your Email
+            </label>
+            <input
+              class="
+                shadow-md
+                appearance-none
+                border
+                rounded
+                w-full
+                py-2
+                px-3
+                text-gray-700
+                leading-tight
+                focus:outline-none
+                focus:shadow-outline
+              "
+              id="email"
+              type="text"
+              placeholder="Your Email"
+              v-model="email3"
+            />
+          </div>
+          <div class="mb-4">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="new_pwd"
+            >
+              New Password
+            </label>
+            <input
+              class="
+                shadow-md
+                appearance-none
+                border
+                rounded
+                w-full
+                py-2
+                px-3
+                text-gray-700
+                leading-tight
+                focus:outline-none
+                focus:shadow-outline
+              "
+              id="new_pwd"
+              type="text"
+              placeholder="New Password"
+              v-model="new_pwd"
+            />
+          </div>
+          <div class="mb-4">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="cnfirm_pwd"
+            >
+              Confirm password
+            </label>
+            <input
+              class="
+                shadow-md
+                appearance-none
+                border
+                rounded
+                w-full
+                py-2
+                px-3
+                text-gray-700
+                leading-tight
+                focus:outline-none
+                focus:shadow-outline
+              "
+              id="cnfirm_pwd"
+              type="text"
+              placeholder="Confirm password"
+              v-model="cnfirm_pwd"
+            />
+          </div>
+          <div class="flex items-center justify-between">
+            <button
+              class="
+                bg-blue-500
+                hover:bg-blue-700
+                text-white
+                font-bold
+                py-2
+                px-4
+                rounded
+                focus:outline-none
+                focus:shadow-outline
+                login_btn
+              "
+              type="button"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+        <div class="form_box w-1/2 px-10 pb-16 pt-8 border-l-2 border-gainsboro" @keypress.enter="Login" v-if="!$route.query.action">
           <div class="err_box h-12">
             <div class="error py-3 text-red-500" v-if="error == true">Invalid Credentials</div>
          </div>
@@ -93,7 +253,8 @@
                 focus:shadow-outline
                 login_btn
               "
-              type="submit"
+              type="button"
+              @click="Login"
             >
               Sign In
             </button>
@@ -105,7 +266,7 @@
                 text-sm text-blue-500
                 hover:text-blue-800
               "
-              href="#"
+              href="/psm-admin?action=forgot_password"
             >
               Forgot Password?
             </a>
@@ -123,7 +284,14 @@ export default {
     return {
       email: '',
       password: '',
-      error: false
+      email2:'',
+      email3:this.$route.query.email,
+      new_pwd:'',
+      cnfirm_pwd:'',
+      error: false,
+      error2:false,
+      exist_error:false,
+      reset_token:this.$route.query.token
     }
   },
   beforeCreate(){
@@ -167,6 +335,32 @@ export default {
           this.error = true
           btn.innerHTML = 'Sign In'
         })
+    },
+    ResetPassword(e){
+      e.target.innerHTML = 'Loading..';
+      this.exist_error = false;
+      this.error2 = false;
+      this.$axios.post(process.env.baseUrl + 'api/send_reset_link', {
+        email: this.email2,
+      }).then(res=>{
+        console.log(res)
+        e.target.innerHTML = 'Submit';
+      }).catch(err=>{
+        if(err.response.data.errors.email){
+          var err_res = err.response.data.errors.email;
+          err_res.forEach(item=>{
+          console.log(item)
+            if(item == 'validation.required'){
+              this.error2 = true;
+            }
+            if(item == 'validation.exists'){
+              this.exist_error = true;
+            }
+          })
+        }
+        e.target.innerHTML = 'Submit';
+        
+      })
     }
   }
 }

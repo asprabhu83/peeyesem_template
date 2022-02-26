@@ -130,7 +130,7 @@
                         <tr v-if="formData.length == 0" >
                             <td class="px-6 py-4 whitespace-nowrap" colspan="6" style="text-align:center;"> No Data</td>
                         </tr>
-                        <tr v-for="item in formData" :key="item.id">
+                        <tr v-for="item in formData.slice(pageStart, pageEnd)" :key="item.id">
                         <td class="px-6 py-4 whitespace-nowrap" >
                             <span
                             class="
@@ -225,12 +225,17 @@
                 </div>
             </div>
         </div>
+        <Pagination @page-value="pageValue" :items="formData" :perPage="5" />
   </div>
 </template>
 
 <script>
+import Pagination from '../../components/pagination/pagination.vue'
 export default {
     layout:'admin-header-layout',
+    components:{
+        Pagination
+    },
     data(){
         return{
             formData:[],
@@ -239,13 +244,19 @@ export default {
             itemId:'',
             singleData:[],
             formTypeList:[],
-            formType:''
+            formType:'',
+            pageStart:0,
+            pageEnd:0,
         }
     },
     mounted(){
         this.GetFormData();
     },
     methods:{
+        pageValue({start,end}){
+            this.pageStart = start;
+            this.pageEnd = end;
+        },
         GetFormData(){
             this.$axios.get(process.env.baseUrl + 'api/car_form/index')
             .then((res)=>{
@@ -279,7 +290,15 @@ export default {
             var data = JSON.parse(data_form_value);
             this.singleData = data;
         }
+    },
+    watch:{
+    pageValue:{
+      handler(){
+        this.pageEnd;
+      },
+      deep:true
     }
+  }
 }
 </script>
 

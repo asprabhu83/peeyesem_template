@@ -1,6 +1,6 @@
 <template>
   <div class="add-page">
-     
+     <h3 class="font-bold PageTitle">Add Page</h3>
       <div class="PageTitle">
            <div class="msg_box my-1">
                    <div class="error pt-3 text-red-500" v-if="error == true">Invalid Data</div>
@@ -140,6 +140,11 @@ export default {
          success:false
         }
     },
+    mounted(){
+        if(!localStorage.getItem('user_token')){
+            this.$router.push('/psm-admin')
+        }
+    },
     methods:{
         AddPage(){
             this.success=false;
@@ -173,6 +178,7 @@ export default {
 <style scoped>
 .add-page{
     margin:80px 0;
+    padding-bottom: 50px;
 }
 .editor_button{
     width: 60%;

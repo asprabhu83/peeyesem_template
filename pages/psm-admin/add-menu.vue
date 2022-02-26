@@ -181,6 +181,9 @@ export default {
     },
     mounted(){
         this.GetMenu();
+        if(!localStorage.getItem('user_token')){
+            this.$router.push('/psm-admin')
+        }
     },
     methods:{
       AddTitle(e){
