@@ -26,6 +26,7 @@
           <div class="err_box h-12">
             <div class="error py-3 text-red-500" v-if="error2 == true">Email is Required field.</div>
             <div class="error py-3 text-red-500" v-if="exist_error == true">Email does not exists.</div>
+            <div class="error py-3 text-green-500" v-if="success_msg == true">we have emailed your password reset link!</div>
          </div>
           <div class="mb-4 mt-2">
             <label
@@ -66,7 +67,7 @@
                 rounded
                 focus:outline-none
                 focus:shadow-outline
-                login_btn
+                frgt_btn
               "
               type="button"
               @click="ResetPassword"
@@ -173,7 +174,7 @@
                 rounded
                 focus:outline-none
                 focus:shadow-outline
-                login_btn
+                reset_btn
               "
               type="button"
             >
@@ -291,6 +292,7 @@ export default {
       error: false,
       error2:false,
       exist_error:false,
+      success_msg:false,
       reset_token:this.$route.query.token
     }
   },
@@ -337,16 +339,19 @@ export default {
         })
     },
     ResetPassword(e){
-      e.target.innerHTML = 'Loading..';
+      var btn = document.querySelector('.frgt_btn');
+      btn.innerHTML = 'Loading..';
       this.exist_error = false;
       this.error2 = false;
       this.$axios.post(process.env.baseUrl + 'api/send_reset_link', {
         email: this.email2,
       }).then(res=>{
-        console.log(res)
-        e.target.innerHTML = 'Submit';
+        if(res.data.message){
+          this.success_msg = true;
+        }
+        btn.innerHTML = 'Submit';
       }).catch(err=>{
-        if(err.response.data.errors.email){
+        if(err.response.data.errors){
           var err_res = err.response.data.errors.email;
           err_res.forEach(item=>{
           console.log(item)
@@ -358,7 +363,7 @@ export default {
             }
           })
         }
-        e.target.innerHTML = 'Submit';
+        btn.innerHTML = 'Submit';
         
       })
     }
