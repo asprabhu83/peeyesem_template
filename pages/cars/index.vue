@@ -538,6 +538,7 @@ import Loading from '../../components/Loading.vue'
 import Modal1 from '../../components/modals/formModal1.vue'
 import EnquireForm from '../../components/forms/Enquireform.vue'
 import axios from 'axios'
+
 export default {
     components:{
         Loading,
@@ -648,18 +649,7 @@ export default {
       context.store.state.originalDataCars = post.data.cars
       return { post }
     },
-    async beforeCreate() {
-        this.$axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
-            this.$axios.defaults.withCredentials = false;
-        await this.$axios.get(process.env.baseUrl + 'api/cars/all')
-            .then((res)=>{
-                this.$store.state.cars = res.data.cars;
-                this.$store.state.originalDataCars = res.data.cars;
-                this.sortedArray();
-            }).catch((err)=>{
-                console.log(err);
-            })
-    },
+   
     async mounted(){
       
         window.scrollTo(0, 0)
@@ -677,6 +667,12 @@ export default {
             return this.$store.state.originalDataCars
         }
     },
+    watch: {
+        stateCars (newCars, oldCount) {
+                  console.log(newCars)
+        }
+    },
+   
     methods:{
         closeModal(value){
             if(value == 'modal1'){
