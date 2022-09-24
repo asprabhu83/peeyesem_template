@@ -121,7 +121,8 @@
         </div>
         <div class="card_box  flex flex-wrap mt-16 mx-auto" id="isotope">
             <div class="car_box_item" v-for="car in $store.state.cars" :key="car.id">
-                <nuxt-link :to="'/cars/'+ car.car_title.replace(/\s+/g, '-').toLowerCase()" class="text-center block car_image_box cursor-pointer" >
+                
+                <nuxt-link :to="'/cars/'+ car.urlLink" class="text-center block car_image_box cursor-pointer" >
                     <img :src="baseUrl + 'images/' + car.car_image" alt="" >
                 </nuxt-link>
                 <div class="car_name">
@@ -318,7 +319,7 @@ export default {
         },2000)
     },
     created(){
-        if(this.$store.state.cars.length == 0){
+        if(this.$store.state.cars.length == 0 ||this.$store.state.cars.length > 0){
             this.GetCars();
         }else{
             this.filterItems('ALL');
@@ -352,6 +353,9 @@ export default {
             this.loading = true;
             this.$axios.get(process.env.baseUrl + 'api/cars/all')
             .then((response) => {
+                response.data.cars.forEach(car => {
+                    car.urlLink = car.car_title.replace(/\s+/g, '-').toLowerCase()
+                })
             this.$store.state.cars = response.data.cars;
             this.$store.state.originalDataCars = response.data.cars;
             this.sortedArray();

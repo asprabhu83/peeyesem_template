@@ -1,5 +1,6 @@
 <template>
   <div class="single_page_car_sec">
+    
       <div class="car_poster_sec">
           <img :src="car.baseUrl + 'images/' + car.poster_image" v-if="loading == false" />
           <div class="car_poster_details" v-if="car.name == 'Hyundai Santro'">
@@ -536,6 +537,7 @@
 import Loading from '../../components/Loading.vue'
 import Modal1 from '../../components/modals/formModal1.vue'
 import EnquireForm from '../../components/forms/Enquireform.vue'
+import axios from 'axios'
 export default {
     components:{
         Loading,
@@ -622,7 +624,8 @@ export default {
         }
     },
     beforeMount(){
-        this.GetSingleCarData();
+        
+        this.GetSingleCarData();  
     },
     head(){
      return {
@@ -636,14 +639,43 @@ export default {
         ]
       }
     },
-    mounted(){
+    async asyncData(context) {
+      const post = await axios.get(process.env.baseUrl + 'api/cars/all')
+      post.data.cars.forEach(car => {
+                    car.urlLink = car.car_title.replace(/\s+/g, '-').toLowerCase()
+                })
+                context.store.state.cars = post.data.cars;
+      context.store.state.originalDataCars = post.data.cars
+      return { post }
+    },
+    async beforeCreate() {
+        this.$axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+            this.$axios.defaults.withCredentials = false;
+        await this.$axios.get(process.env.baseUrl + 'api/cars/all')
+            .then((res)=>{
+                this.$store.state.cars = res.data.cars;
+                this.$store.state.originalDataCars = res.data.cars;
+                this.sortedArray();
+            }).catch((err)=>{
+                console.log(err);
+            })
+    },
+    async mounted(){
+      
         window.scrollTo(0, 0)
     },
     created () {
+       
         window.addEventListener('scroll', this.handleScroll);
+      
     },
     destroyed () {
         window.removeEventListener('scroll', this.handleScroll);
+    },
+    computed: {
+        stateCars() {
+            return this.$store.state.originalDataCars
+        }
     },
     methods:{
         closeModal(value){
@@ -660,6 +692,7 @@ export default {
         GetSingleCarData(){
             var car = this.$route.params.model;
             var id;
+
             if(car == 'hyundai-santro'){
                 id = 1;
                 this.e_brochure_link = '/pdf/SANTRO_Hatchback_brochure (1).pdf';
@@ -705,8 +738,11 @@ export default {
                 this.e_brochure_link = '/pdf/N-Line.pdf'
             }
             this.loading = true;
+            console.log(this.$store.state.originalDataCars,'state')
+            var car_id = this.stateCars.filter(carDetails=>carDetails.urlLink === car)
+          
             this.$axios
-                .get(process.env.baseUrl + 'api/show/car/' + id)
+                .get(process.env.baseUrl + 'api/show/car/' + car_id[0].id)
                 .then((response) => {
                     this.DataBaseSingleCar = response.data;
                     this.FilterDatabasedata();

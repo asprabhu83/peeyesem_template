@@ -249,9 +249,11 @@
               v-model="kmsDriven"
             />
           </div>
-          <div class="flex items-center justify-between">
+        </div>
+        <div class="flex items-center justify-between">
             <button
               class="
+              mt-6
                 bg-blue-500
                 hover:bg-blue-700
                 text-white
@@ -270,7 +272,6 @@
               Add Car
             </button>
           </div>
-        </div>
       </form>
     </div>
   </div>
@@ -430,5 +431,25 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+@media only screen and (min-width:1270px) and (max-width:1600px){
+  .form_box{
+    height: 300px!important;
+  }
+}
+.form_box{
+  height: 500px;
+  overflow: hidden;
+  overflow-y: scroll;
+  padding-right: 5px;
+}
+.form_box::-webkit-scrollbar {
+  width: 6px;
+}
+.form_box::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+.form_box::-webkit-scrollbar-thumb {
+  background: #888; 
+}
 </style>

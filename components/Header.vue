@@ -59,19 +59,12 @@
                                         <li class="has-dropdown">
                                             <nuxt-link class="menu-item" to="">New Cars <i class="fa fa-angle-down"></i></nuxt-link>
                                             <!-- Sub Menu -->
-                                            <ul class="sub-menu">
+                                            <ul class="sub-menu" v-if="$store.state.originalDataCars.length > 0">
+                                              
                                                 <li><nuxt-link to="/all-cars">All Cars</nuxt-link></li>
-                                                <li><nuxt-link to="/cars/hyundai-santro"> Santro</nuxt-link></li>
-                                                <li><nuxt-link to="/cars/hyundai-all-new-i20"> All New i20</nuxt-link></li>
-                                                <li><nuxt-link to="/cars/hyundai-grand-i10-nios"> Grand i10 NIOS</nuxt-link></li>
-                                                <li><nuxt-link to="/cars/hyundai-i20-n-line"> i20 N Line</nuxt-link></li>
-                                                <li><nuxt-link to="/cars/hyundai-aura"> Aura</nuxt-link></li>
-                                                <li><nuxt-link to="/cars/hyundai-verna"> All New Verna</nuxt-link></li>
-                                                <li><nuxt-link to="/cars/hyundai-all-new-elantra"> Elantra</nuxt-link></li>
-                                                <li><nuxt-link to="/cars/hyundai-venue"> Venue</nuxt-link></li>
-                                                <li><nuxt-link to="/cars/hyundai-creta"> All New Creta</nuxt-link></li>
-                                                <li><nuxt-link to="/cars/hyundai-alcazar"> Alcazar</nuxt-link></li>
-                                                <li><nuxt-link to="/cars/hyundai-all-new-tucson"> Tucson</nuxt-link></li>
+                                                <li v-for="car in $store.state.originalDataCars" :key="car.id">
+                                                    <nuxt-link :to="'/cars/'+ car.urlLink"> {{car.car_title}}</nuxt-link>
+                                                </li>
                                             </ul>
                                         </li>
                                         <li class="has-dropdown">
@@ -198,7 +191,7 @@
         <!-- Start Mobile Menu Navbar Wrap -->
         <div class="mobile-menu-navbar-wrap">
             <!-- Start Mobile Menu Nav -->
-            <div class="offcanvas-menu">
+            <div class="offcanvas-menu" v-if="$store.state.originalDataCars.length > 0">
                 <sidebar-menu :menu="menu" />
             </div>
             <!-- End Mobile Menu Nav -->
@@ -226,55 +219,7 @@ export default {
                 {
                     title: 'New Cars',
                     child: [
-                        {
-                            href: '/all-cars',
-                            title: 'All Cars'
-                                    
-                        },
-                        {
-                            href: '/cars/hyundai-santro',
-                            title: 'Santro'
-                        },
-                        {
-                            href: '/cars/hyundai-all-new-i20',
-                            title: 'All New i20'
-                        },
-                        {
-                            href: '/cars/hyundai-grand-i10-nios',
-                            title: 'Grand i10 NIOS'
-                        },
-                        {
-                            href: '/cars/hyundai-i20-n-line',
-                            title: 'i20 N Line'
-                        },
-                        {
-                            href: '/cars/hyundai-aura',
-                            title: 'Aura'
-                        },
-                        {
-                            href: '/cars/hyundai-verna',
-                            title: 'All New Verna'
-                        },
-                        {
-                            href: '/cars/hyundai-all-new-elantra',
-                            title: 'Elantra'
-                        },
-                        {
-                            href: '/cars/hyundai-venue',
-                            title: 'Venue'
-                        },
-                        {
-                            href: '/cars/hyundai-creta',
-                            title: 'All New Creta'
-                        },
-                        {
-                            href: '/cars/hyundai-alcazar',
-                            title: 'Alcazar'
-                        },
-                        {
-                            href: '/cars/hyundai-all-new-tucson',
-                            title: 'Tucson'
-                        }
+                       
                     ]
                 },
                 {
@@ -423,11 +368,19 @@ export default {
             headerData:false
         }
     },
-
+    async asyncData(context) {
+      const post = await axios.get(process.env.baseUrl + 'api/cars/all')
+      post.data.cars.forEach(car => {
+                    car.urlLink = car.car_title.replace(/\s+/g, '-').toLowerCase()
+                })
+      context.store.state.cars = post.data.cars;
+      context.store.state.originalDataCars = post.data.cars
+      return { post }
+    },
     mounted: function () {
         // Menu Js
         this.$nextTick(function () {
-
+      
             window.onscroll = function() {myFunction()};
 
             var header = document.getElementById("header");
@@ -445,6 +398,7 @@ export default {
                 logo.classList.remove("size_resize");
                 }
             };
+        
 
         })
 
@@ -453,10 +407,39 @@ export default {
         
         // this.productsArray()
     },
+    computed: {
+        stateCars () {
+            return this.$store.state.originalDataCars? this.$store.state.originalDataCars:[]
+        }
+    },
+    watch: {
+        stateCars (newCars, oldCount) {
+      // Our fancy notification (2).
+      newCars.forEach(car=> {
+            
+            this.menu[1].child.push({
+                href: car.urlLink,
+                title: car.car_title
+            })
+        })
+        }
+    },
     created(){
+   
+        
         if (this.$store.state.HeaderData.logo == ''){
             this.GetHeaderData();
         }
+        this.$nextTick(function () {
+            console.log(this.menu[1], this.stateCars)
+        this.stateCars.forEach(car=> {
+            
+            this.menu[1].child.push({
+                href: car.urlLink,
+                title: car.car_title
+            })
+        })
+        })
     },
     methods: {
         GetHeaderData(){
